@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 260px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: #0e0e16;
+      color: #e2e8f0;
+      padding: 16px;
+      margin: 0;
+    }
+    h3 {
+      color: #f5b731;
+      margin-top: 0;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      background: rgba(34, 211, 238, 0.1);
+      color: #22d3ee;
+      border: 1px solid rgba(34, 211, 238, 0.2);
+    }
+    .monitor-card {
+      background: #16161e;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 6px;
+      padding: 10px;
+      margin-top: 12px;
+    }
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+    .metric span:last-child {
+      font-weight: 600;
+      color: #22d3ee;
+    }
+  </style>
+</head>
+<body>
+  <h3>⚡ AgentFlow Companion</h3>
+  <div class="status-badge">V3 Extension Enabled</div>
+  
+  <div class="monitor-card">
+    <div class="metric">
+      <span>Auto-Handoff Status</span>
+      <span>ACTIVE</span>
+    </div>
+    <div class="metric">
+      <span>Intercepted Accounts</span>
+      <span id="account-count">3</span>
+    </div>
+    <div class="metric">
+      <span>Active Session Sync</span>
+      <span>CONNECTED</span>
+    </div>
+  </div>
+</body>
+</html>

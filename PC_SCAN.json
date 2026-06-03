@@ -1,0 +1,2468 @@
+{
+  "scanned": 12903,
+  "found": 10529,
+  "top": [
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\FleetPromptModal.tsx",
+      "name": "FleetPromptModal.tsx",
+      "size": 31715,
+      "hits": [
+        "fleet",
+        "prompt",
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 6,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\AccountCard.tsx",
+      "name": "AccountCard.tsx",
+      "size": 13128,
+      "hits": [
+        "account",
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 5,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\AccountDetailDrawer.tsx",
+      "name": "AccountDetailDrawer.tsx",
+      "size": 13123,
+      "hits": [
+        "account",
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 5,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\AccountTagBadge.tsx",
+      "name": "AccountTagBadge.tsx",
+      "size": 1665,
+      "hits": [
+        "account",
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 5,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\AddAccountModal.tsx",
+      "name": "AddAccountModal.tsx",
+      "size": 8150,
+      "hits": [
+        "account",
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 5,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\BulkPromptModal.tsx",
+      "name": "BulkPromptModal.tsx",
+      "size": 22426,
+      "hits": [
+        "prompt",
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 5,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\DailySchedulerModal.tsx",
+      "name": "DailySchedulerModal.tsx",
+      "size": 10937,
+      "hits": [
+        "scheduler",
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 5,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\EditAccountModal.tsx",
+      "name": "EditAccountModal.tsx",
+      "size": 6317,
+      "hits": [
+        "account",
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 5,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\ManusDialog.tsx",
+      "name": "ManusDialog.tsx",
+      "size": 2432,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "manus",
+        "dashboard",
+        "component"
+      ],
+      "score": 5,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\PromptHistoryModal.tsx",
+      "name": "PromptHistoryModal.tsx",
+      "size": 14001,
+      "hits": [
+        "prompt",
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 5,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\agent-settings-DdSm4GqV.js",
+      "name": "agent-settings-DdSm4GqV.js",
+      "size": 36664,
+      "hits": [
+        "agent",
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 4,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\automation-C-yCkhaR.js",
+      "name": "automation-C-yCkhaR.js",
+      "size": 10869,
+      "hits": [
+        "automation",
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 4,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\codex-api-C2NeCz46.js",
+      "name": "codex-api-C2NeCz46.js",
+      "size": 31910,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension",
+        "api"
+      ],
+      "score": 4,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\external-agent-config-utils-C-CMWx9y.js",
+      "name": "external-agent-config-utils-C-CMWx9y.js",
+      "size": 7831,
+      "hits": [
+        "agent",
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 4,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\gracefulDecodeURIComponent-tHnsnRZP.js",
+      "name": "gracefulDecodeURIComponent-tHnsnRZP.js",
+      "size": 161,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\use-browser-agent-availability-K9L9ibbB.js",
+      "name": "use-browser-agent-availability-K9L9ibbB.js",
+      "size": 941,
+      "hits": [
+        "agent",
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 4,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\use-is-background-subagents-enabled-Cp3E8Pio.js",
+      "name": "use-is-background-subagents-enabled-Cp3E8Pio.js",
+      "size": 177,
+      "hits": [
+        "agent",
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 4,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\vscode-api-CDW2bZ79.js",
+      "name": "vscode-api-CDW2bZ79.js",
+      "size": 177834,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension",
+        "api"
+      ],
+      "score": 4,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\saoudrizwan.claude-dev-3.83.0-universal\\.agents\\skills\\create-pull-request\\SKILL.md",
+      "name": "SKILL.md",
+      "size": 6224,
+      "hits": [
+        "agent",
+        "antigravity",
+        "claude",
+        "extension"
+      ],
+      "score": 4,
+      "dir": "~\\.antigravity\\extensions\\saoudrizwan.claude-dev-3.83.0-universal\\.agents\\skills\\create-pull-request"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\saoudrizwan.claude-dev-3.83.0-universal\\webview-ui\\components.json",
+      "name": "components.json",
+      "size": 435,
+      "hits": [
+        "antigravity",
+        "claude",
+        "extension",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\.antigravity\\extensions\\saoudrizwan.claude-dev-3.83.0-universal\\webview-ui"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\ANTIGRAVITY_START_PROMPT.md",
+      "name": "ANTIGRAVITY_START_PROMPT.md",
+      "size": 1747,
+      "hits": [
+        "prompt",
+        "antigravity",
+        "lovable",
+        "dashboard"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\public\\__manus__\\debug-collector.js",
+      "name": "debug-collector.js",
+      "size": 25168,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "manus",
+        "dashboard"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\public\\__manus__"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\AIChatBox.tsx",
+      "name": "AIChatBox.tsx",
+      "size": 10851,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\BulkAddModal.tsx",
+      "name": "BulkAddModal.tsx",
+      "size": 14888,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\DashboardLayout.tsx",
+      "name": "DashboardLayout.tsx",
+      "size": 6672,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\DashboardLayoutSkeleton.tsx",
+      "name": "DashboardLayoutSkeleton.tsx",
+      "size": 1628,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\ErrorBoundary.tsx",
+      "name": "ErrorBoundary.tsx",
+      "size": 1688,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\LiveRunLog.tsx",
+      "name": "LiveRunLog.tsx",
+      "size": 2670,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\LovableScreenWall.tsx",
+      "name": "LovableScreenWall.tsx",
+      "size": 27564,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\Map.tsx",
+      "name": "Map.tsx",
+      "size": 4932,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\NotificationCenter.tsx",
+      "name": "NotificationCenter.tsx",
+      "size": 6323,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\ProjectListModal.tsx",
+      "name": "ProjectListModal.tsx",
+      "size": 6454,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\SummaryPanel.tsx",
+      "name": "SummaryPanel.tsx",
+      "size": 9073,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components\\TagManager.tsx",
+      "name": "TagManager.tsx",
+      "size": 2831,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\components"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\hooks\\useAccountFilters.ts",
+      "name": "useAccountFilters.ts",
+      "size": 3116,
+      "hits": [
+        "account",
+        "antigravity",
+        "lovable",
+        "dashboard"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\hooks"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\hooks\\useAccountSelection.ts",
+      "name": "useAccountSelection.ts",
+      "size": 1089,
+      "hits": [
+        "account",
+        "antigravity",
+        "lovable",
+        "dashboard"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\hooks"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\pages\\Automation.tsx",
+      "name": "Automation.tsx",
+      "size": 55881,
+      "hits": [
+        "automation",
+        "antigravity",
+        "lovable",
+        "dashboard"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\pages"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\pages\\ComponentShowcase.tsx",
+      "name": "ComponentShowcase.tsx",
+      "size": 58315,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\pages"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\pages\\PromptQueue.tsx",
+      "name": "PromptQueue.tsx",
+      "size": 11218,
+      "hits": [
+        "prompt",
+        "antigravity",
+        "lovable",
+        "dashboard"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\client\\src\\pages"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\components.json",
+      "name": "components.json",
+      "size": 388,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "component"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\accounts.crud.test.ts",
+      "name": "accounts.crud.test.ts",
+      "size": 1951,
+      "hits": [
+        "account",
+        "antigravity",
+        "lovable",
+        "dashboard"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\accounts.test.ts",
+      "name": "accounts.test.ts",
+      "size": 1247,
+      "hits": [
+        "account",
+        "antigravity",
+        "lovable",
+        "dashboard"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\antigravityApi.ts",
+      "name": "antigravityApi.ts",
+      "size": 2653,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "api"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\autoScheduler.ts",
+      "name": "autoScheduler.ts",
+      "size": 15002,
+      "hits": [
+        "scheduler",
+        "antigravity",
+        "lovable",
+        "dashboard"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\crypto.ts",
+      "name": "crypto.ts",
+      "size": 1023,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "crypto"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\lovableApi.ts",
+      "name": "lovableApi.ts",
+      "size": 3402,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "api"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\relayRunner.ts",
+      "name": "relayRunner.ts",
+      "size": 12190,
+      "hits": [
+        "relay",
+        "antigravity",
+        "lovable",
+        "dashboard"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\webhook.ts",
+      "name": "webhook.ts",
+      "size": 620,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "webhook"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\_core\\dataApi.ts",
+      "name": "dataApi.ts",
+      "size": 1899,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "api"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\_core"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\_core\\types\\manusTypes.ts",
+      "name": "manusTypes.ts",
+      "size": 1406,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "manus",
+        "dashboard"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\antigravity-handoff-lovable-dashboard\\server\\_core\\types"
+    },
+    {
+      "path": "C:\\Users\\absh5\\Documents\\lovable work\\lovable-dashboard-v2\\lovable-updated\\server\\antigravityApi.ts",
+      "name": "antigravityApi.ts",
+      "size": 2653,
+      "hits": [
+        "antigravity",
+        "lovable",
+        "dashboard",
+        "api"
+      ],
+      "score": 4,
+      "dir": "~\\Documents\\lovable work\\lovable-dashboard-v2\\lovable-updated\\server"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\claude-code-settings.schema.json",
+      "name": "claude-code-settings.schema.json",
+      "size": 105840,
+      "hits": [
+        "antigravity",
+        "claude",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\package.json",
+      "name": "package.json",
+      "size": 13872,
+      "hits": [
+        "antigravity",
+        "claude",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\README.md",
+      "name": "README.md",
+      "size": 1463,
+      "hits": [
+        "antigravity",
+        "claude",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\resources\\walkthrough\\step1.md",
+      "name": "step1.md",
+      "size": 433,
+      "hits": [
+        "antigravity",
+        "claude",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\resources\\walkthrough"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\resources\\walkthrough\\step2.md",
+      "name": "step2.md",
+      "size": 239,
+      "hits": [
+        "antigravity",
+        "claude",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\resources\\walkthrough"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\resources\\walkthrough\\step3.md",
+      "name": "step3.md",
+      "size": 439,
+      "hits": [
+        "antigravity",
+        "claude",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\resources\\walkthrough"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\resources\\walkthrough\\step4.md",
+      "name": "step4.md",
+      "size": 445,
+      "hits": [
+        "antigravity",
+        "claude",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\resources\\walkthrough"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\webview\\index.css",
+      "name": "index.css",
+      "size": 373699,
+      "hits": [
+        "antigravity",
+        "claude",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\anthropic.claude-code-2.1.120-win32-x64\\webview"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\agent-behaviour\\mcp-server-creation.md",
+      "name": "mcp-server-creation.md",
+      "size": 4187,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\agent-behaviour"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\agent-behaviour\\modes-subtab-parity.md",
+      "name": "modes-subtab-parity.md",
+      "size": 9336,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\agent-behaviour"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\agent-behaviour\\rules-workflows-subtab-parity.md",
+      "name": "rules-workflows-subtab-parity.md",
+      "size": 5200,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\agent-behaviour"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\cli-side\\plan-mode-over-prompting.md",
+      "name": "plan-mode-over-prompting.md",
+      "size": 700,
+      "hits": [
+        "prompt",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\cli-side"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\authentication-organization-enterprise-enforcement.md",
+      "name": "authentication-organization-enterprise-enforcement.md",
+      "size": 406,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\auto-purge.md",
+      "name": "auto-purge.md",
+      "size": 329,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\cloud-task-support.md",
+      "name": "cloud-task-support.md",
+      "size": 199,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\code-reviews.md",
+      "name": "code-reviews.md",
+      "size": 345,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\codebase-indexing-semantic-search.md",
+      "name": "codebase-indexing-semantic-search.md",
+      "size": 534,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\contribution-tracking.md",
+      "name": "contribution-tracking.md",
+      "size": 462,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\custom-command-system.md",
+      "name": "custom-command-system.md",
+      "size": 567,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\marketplace.md",
+      "name": "marketplace.md",
+      "size": 318,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\mcp-and-mcp-hub.md",
+      "name": "mcp-and-mcp-hub.md",
+      "size": 389,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\repository-initialization.md",
+      "name": "repository-initialization.md",
+      "size": 507,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\rules-and-workflows.md",
+      "name": "rules-and-workflows.md",
+      "size": 354,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\settings-sync-integration.md",
+      "name": "settings-sync-integration.md",
+      "size": 291,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\settings-ui.md",
+      "name": "settings-ui.md",
+      "size": 565,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\skills-system.md",
+      "name": "skills-system.md",
+      "size": 257,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features\\speech-to-text.md",
+      "name": "speech-to-text.md",
+      "size": 429,
+      "hits": [
+        "agent",
+        "antigravity",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\kilocode.kilo-code-7.2.24-win32-x64\\docs\\non-agent-features"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\package.json",
+      "name": "package.json",
+      "size": 7185,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\readme.md",
+      "name": "readme.md",
+      "size": 1203,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\syntaxes\\starlark.configuration.json",
+      "name": "starlark.configuration.json",
+      "size": 481,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\syntaxes"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\syntaxes\\starlark.tmLanguage.json",
+      "name": "starlark.tmLanguage.json",
+      "size": 24009,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\syntaxes"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\abap-Bgsc75Ve.js",
+      "name": "abap-Bgsc75Ve.js",
+      "size": 15887,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\absolutely-dark-BXvoZ7AL.js",
+      "name": "absolutely-dark-BXvoZ7AL.js",
+      "size": 1345,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\absolutely-light-CeBkMhhf.js",
+      "name": "absolutely-light-CeBkMhhf.js",
+      "size": 1348,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\actionscript-3-Dz7bGsn9.js",
+      "name": "actionscript-3-Dz7bGsn9.js",
+      "size": 14094,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\ada-DRWIJvar.js",
+      "name": "ada-DRWIJvar.js",
+      "size": 48116,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\ajs-destination-CMX1imcQ.js",
+      "name": "ajs-destination-CMX1imcQ.js",
+      "size": 8005,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\alert-BQQ7fk8w.js",
+      "name": "alert-BQQ7fk8w.js",
+      "size": 683,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\analytics-logger-provider-CqhR48MH.js",
+      "name": "analytics-logger-provider-CqhR48MH.js",
+      "size": 23107,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\analyze_image_animation-CFCESzdN.js",
+      "name": "analyze_image_animation-CFCESzdN.js",
+      "size": 8441,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\andromeeda-BX3PaU7B.js",
+      "name": "andromeeda-BX3PaU7B.js",
+      "size": 9021,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\angular-html-BKLTDct1.js",
+      "name": "angular-html-BKLTDct1.js",
+      "size": 24225,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\angular-ts-D-yQaHtO.js",
+      "name": "angular-ts-D-yQaHtO.js",
+      "size": 183774,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\apache-cdCji3LD.js",
+      "name": "apache-cdCji3LD.js",
+      "size": 12493,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\apex-CqG0QfCv.js",
+      "name": "apex-CqG0QfCv.js",
+      "size": 47003,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\apl-CIZ_hNol.js",
+      "name": "apl-CIZ_hNol.js",
+      "size": 24070,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\app-server-manager-hooks-D38_zd4C.js",
+      "name": "app-server-manager-hooks-D38_zd4C.js",
+      "size": 7691,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\app-server-manager-signals-DaIWbgQQ.js",
+      "name": "app-server-manager-signals-DaIWbgQQ.js",
+      "size": 354236,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\appearance-settings-kOvYKu9O.js",
+      "name": "appearance-settings-kOvYKu9O.js",
+      "size": 9569,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\applescript-BXiwQ4nf.js",
+      "name": "applescript-BXiwQ4nf.js",
+      "size": 29613,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\ara-D56sYVzO.js",
+      "name": "ara-D56sYVzO.js",
+      "size": 6396,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\arc-5SzOIBoe.js",
+      "name": "arc-5SzOIBoe.js",
+      "size": 3513,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\architecture-U656AL7Q-Ctcqw_f4.js",
+      "name": "architecture-U656AL7Q-Ctcqw_f4.js",
+      "size": 126,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\architectureDiagram-VXUJARFQ-QyZGfvsL.js",
+      "name": "architectureDiagram-VXUJARFQ-QyZGfvsL.js",
+      "size": 146456,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\array-B4rubdDx.js",
+      "name": "array-B4rubdDx.js",
+      "size": 150,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\arrow-left-X9_2WKSC.js",
+      "name": "arrow-left-X9_2WKSC.js",
+      "size": 25284,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\arrow-top-right-aMMI4AsU.js",
+      "name": "arrow-top-right-aMMI4AsU.js",
+      "size": 791,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\artifact-tab-content-bSMtq4D9.js",
+      "name": "artifact-tab-content-bSMtq4D9.js",
+      "size": 687,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\asciidoc-CMGZUx6h.js",
+      "name": "asciidoc-CMGZUx6h.js",
+      "size": 131552,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\asm-C0Wlo7js.js",
+      "name": "asm-C0Wlo7js.js",
+      "size": 40751,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\astro-DtxOJDpd.js",
+      "name": "astro-DtxOJDpd.js",
+      "size": 24073,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\aurora-x-5zVoLAVs.js",
+      "name": "aurora-x-5zVoLAVs.js",
+      "size": 13702,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\auto-track-whI4ZJ_d.js",
+      "name": "auto-track-whI4ZJ_d.js",
+      "size": 1419,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\awk-D0P-RzZc.js",
+      "name": "awk-D0P-RzZc.js",
+      "size": 5495,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\ayu-dark-6WyZVCr2.js",
+      "name": "ayu-dark-6WyZVCr2.js",
+      "size": 14992,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\ballerina-DA4R9P7A.js",
+      "name": "ballerina-DA4R9P7A.js",
+      "size": 58733,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\banner-DAlXmbk6.js",
+      "name": "banner-DAlXmbk6.js",
+      "size": 5490,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\bat-DitmEZK8.js",
+      "name": "bat-DitmEZK8.js",
+      "size": 12922,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\beancount-BlnGimcZ.js",
+      "name": "beancount-BlnGimcZ.js",
+      "size": 10413,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\berry-S-ig3u47.js",
+      "name": "berry-S-ig3u47.js",
+      "size": 3041,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\bibtex-ZA6uDKqb.js",
+      "name": "bibtex-ZA6uDKqb.js",
+      "size": 4832,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\bicep-BVRRfaFe.js",
+      "name": "bicep-BVRRfaFe.js",
+      "size": 5418,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\blade-6qtjAmKL.js",
+      "name": "blade-6qtjAmKL.js",
+      "size": 103846,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\blockDiagram-VD42YOAC-CntryqJ7.js",
+      "name": "blockDiagram-VD42YOAC-CntryqJ7.js",
+      "size": 70868,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\browser-use-settings-pWuAGc2Q.js",
+      "name": "browser-use-settings-pWuAGc2Q.js",
+      "size": 23350,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\browsing_animation-C76L2FSp.js",
+      "name": "browsing_animation-C76L2FSp.js",
+      "size": 5366,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\bs-BA-BadK5TIz.js",
+      "name": "bs-BA-BadK5TIz.js",
+      "size": 366838,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\bsl-BqMd8jzZ.js",
+      "name": "bsl-BqMd8jzZ.js",
+      "size": 33910,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\c-BUsod-Kg.js",
+      "name": "c-BUsod-Kg.js",
+      "size": 72139,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\c4Diagram-YG6GDRKO-BSJr0p3T.js",
+      "name": "c4Diagram-YG6GDRKO-BSJr0p3T.js",
+      "size": 69418,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\ca-ES-C6bqkOrX.js",
+      "name": "ca-ES-C6bqkOrX.js",
+      "size": 385899,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\cadence-CiQ7b-Jv.js",
+      "name": "cadence-CiQ7b-Jv.js",
+      "size": 23707,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\cairo-DPtxKdyY.js",
+      "name": "cairo-DPtxKdyY.js",
+      "size": 2981,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\callback-CtV2dgLT.js",
+      "name": "callback-CtV2dgLT.js",
+      "size": 587,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\catppuccin-frappe-D6orNcSN.js",
+      "name": "catppuccin-frappe-D6orNcSN.js",
+      "size": 47310,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\catppuccin-latte-uybI5690.js",
+      "name": "catppuccin-latte-uybI5690.js",
+      "size": 47307,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\catppuccin-macchiato-CnT7GoHI.js",
+      "name": "catppuccin-macchiato-CnT7GoHI.js",
+      "size": 47318,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\catppuccin-mocha-B-G7mfpn.js",
+      "name": "catppuccin-mocha-B-G7mfpn.js",
+      "size": 47306,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\channel-BHAbl9Zk.js",
+      "name": "channel-BHAbl9Zk.js",
+      "size": 159,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\check-circle-filled-B0yLJmyX.js",
+      "name": "check-circle-filled-B0yLJmyX.js",
+      "size": 961,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\check-md-DE-ezHM2.js",
+      "name": "check-md-DE-ezHM2.js",
+      "size": 795,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chronicle-setup-state-ConGJ-mX.js",
+      "name": "chronicle-setup-state-ConGJ-mX.js",
+      "size": 15485,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-4BX2VUAB-aXWzGHc7.js",
+      "name": "chunk-4BX2VUAB-aXWzGHc7.js",
+      "size": 264,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-55IACEB6-BOifeme1.js",
+      "name": "chunk-55IACEB6-BOifeme1.js",
+      "size": 272,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-76Q3JFCE-DCWj4eIS.js",
+      "name": "chunk-76Q3JFCE-DCWj4eIS.js",
+      "size": 500,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-ABZYJK2D-Cbqp7ha9.js",
+      "name": "chunk-ABZYJK2D-Cbqp7ha9.js",
+      "size": 124127,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-ATLVNIR6-C4lCPvGs.js",
+      "name": "chunk-ATLVNIR6-C4lCPvGs.js",
+      "size": 1890,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-B4BG7PRW-Dl5RR8nC.js",
+      "name": "chunk-B4BG7PRW-Dl5RR8nC.js",
+      "size": 45025,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-CFjPhJqf.js",
+      "name": "chunk-CFjPhJqf.js",
+      "size": 874,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-CVBHYZKI-808-tKJ5.js",
+      "name": "chunk-CVBHYZKI-808-tKJ5.js",
+      "size": 317,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-DI55MBZ5-7fjnPBtN.js",
+      "name": "chunk-DI55MBZ5-7fjnPBtN.js",
+      "size": 36007,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-EXTU4WIE-CbZy1MCS.js",
+      "name": "chunk-EXTU4WIE-CbZy1MCS.js",
+      "size": 331,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-FMBD7UC4-CuKtAc-Q.js",
+      "name": "chunk-FMBD7UC4-CuKtAc-Q.js",
+      "size": 403,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-FPAJGGOC-CzxS8Tyg.js",
+      "name": "chunk-FPAJGGOC-CzxS8Tyg.js",
+      "size": 333596,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-FWNWRKHM-CcQzXOYN.js",
+      "name": "chunk-FWNWRKHM-CcQzXOYN.js",
+      "size": 1514,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-HN2XXSSU-n_jlEywx.js",
+      "name": "chunk-HN2XXSSU-n_jlEywx.js",
+      "size": 1937,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-JA3XYJ7Z-CICsNG5W.js",
+      "name": "chunk-JA3XYJ7Z-CICsNG5W.js",
+      "size": 51782,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-JZLCHNYA-xS1XHBlf.js",
+      "name": "chunk-JZLCHNYA-xS1XHBlf.js",
+      "size": 120300,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-KS23V3DP-hh7jgdc7.js",
+      "name": "chunk-KS23V3DP-hh7jgdc7.js",
+      "size": 3940,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-LBM3YZW2-CNkZCC-O.js",
+      "name": "chunk-LBM3YZW2-CNkZCC-O.js",
+      "size": 508,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-LHMN2FUI-DCx5age1.js",
+      "name": "chunk-LHMN2FUI-DCx5age1.js",
+      "size": 511,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-MI3HLSF2-pllqsWQ3.js",
+      "name": "chunk-MI3HLSF2-pllqsWQ3.js",
+      "size": 41857,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-N4CR4FBY--YICWSAR.js",
+      "name": "chunk-N4CR4FBY--YICWSAR.js",
+      "size": 2294,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-O7ZBX7Z2-BgYRgUlZ.js",
+      "name": "chunk-O7ZBX7Z2-BgYRgUlZ.js",
+      "size": 800,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-OIYGIGL5-DcxwgWQK.js",
+      "name": "chunk-OIYGIGL5-DcxwgWQK.js",
+      "size": 35992,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-QN33PNHL-rImU8tKW.js",
+      "name": "chunk-QN33PNHL-rImU8tKW.js",
+      "size": 584,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-QXUST7PY-BeX4AWF_.js",
+      "name": "chunk-QXUST7PY-BeX4AWF_.js",
+      "size": 21536,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-QZHKN3VN-PHLZwHoZ.js",
+      "name": "chunk-QZHKN3VN-PHLZwHoZ.js",
+      "size": 232,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-S3R3BYOJ-D7t5hdn5.js",
+      "name": "chunk-S3R3BYOJ-D7t5hdn5.js",
+      "size": 25319,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-S6J4BHB3-JkVB6y0l.js",
+      "name": "chunk-S6J4BHB3-JkVB6y0l.js",
+      "size": 508,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-T53DSG4Q-SO-81Wqg.js",
+      "name": "chunk-T53DSG4Q-SO-81Wqg.js",
+      "size": 650,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\chunk-TZMSLE5B-Cm3YyPuE.js",
+      "name": "chunk-TZMSLE5B-Cm3YyPuE.js",
+      "size": 1536,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\clarity-CeZwm4_C.js",
+      "name": "clarity-CeZwm4_C.js",
+      "size": 14313,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\classDiagram-2ON5EDUG-BWIuuKEz.js",
+      "name": "classDiagram-2ON5EDUG-BWIuuKEz.js",
+      "size": 792,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\classDiagram-v2-WZHVMYZB-C6Ou6PCa.js",
+      "name": "classDiagram-v2-WZHVMYZB-C6Ou6PCa.js",
+      "size": 795,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\clojure-qa1dkHAm.js",
+      "name": "clojure-qa1dkHAm.js",
+      "size": 6451,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\clone-QFYLy-Nh.js",
+      "name": "clone-QFYLy-Nh.js",
+      "size": 138,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\cmake-DaD5AYXC.js",
+      "name": "cmake-DaD5AYXC.js",
+      "size": 9885,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\cobol-C8kqh2tx.js",
+      "name": "cobol-C8kqh2tx.js",
+      "size": 39134,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\code-searching-icon-Bqf6QEAW.js",
+      "name": "code-searching-icon-Bqf6QEAW.js",
+      "size": 7115,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\codeowners-BkcBJeWw.js",
+      "name": "codeowners-BkcBJeWw.js",
+      "size": 588,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\codeql-DGxbAKIl.js",
+      "name": "codeql-DGxbAKIl.js",
+      "size": 26920,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\codex-avatar-D4ZxyTf1.js",
+      "name": "codex-avatar-D4ZxyTf1.js",
+      "size": 5219,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\codex-avatar-D82knaKt.css",
+      "name": "codex-avatar-D82knaKt.css",
+      "size": 135,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\codex-dark-CNg4XnIJ.js",
+      "name": "codex-dark-CNg4XnIJ.js",
+      "size": 25262,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\codex-happy-small-CnkH0dd1.js",
+      "name": "codex-happy-small-CnkH0dd1.js",
+      "size": 12682,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\codex-light-CTMPjNrt.js",
+      "name": "codex-light-CTMPjNrt.js",
+      "size": 25265,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\codex-looking-around-Cy80P59x.js",
+      "name": "codex-looking-around-Cy80P59x.js",
+      "size": 13396,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\coffee-DLVJYP4h.js",
+      "name": "coffee-DLVJYP4h.js",
+      "size": 27468,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\common-lisp-BdO0B879.js",
+      "name": "common-lisp-BdO0B879.js",
+      "size": 22623,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\compiler-runtime-BEfDZ_Ra.js",
+      "name": "compiler-runtime-BEfDZ_Ra.js",
+      "size": 308,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\computer-use-app-approvals-query-2lK6LnX8.js",
+      "name": "computer-use-app-approvals-query-2lK6LnX8.js",
+      "size": 761,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\computer-use-settings-ygPJRsh_.js",
+      "name": "computer-use-settings-ygPJRsh_.js",
+      "size": 15050,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\config-queries-CYOdpjRI.js",
+      "name": "config-queries-CYOdpjRI.js",
+      "size": 8763,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\control-group-Cre3I2qD.js",
+      "name": "control-group-Cre3I2qD.js",
+      "size": 465,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\copy-6dqunfn9.js",
+      "name": "copy-6dqunfn9.js",
+      "size": 11637,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\coq-BpXoLSjL.js",
+      "name": "coq-BpXoLSjL.js",
+      "size": 5588,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\cose-bilkent-S5V4N54A-BkptFmh8.js",
+      "name": "cose-bilkent-S5V4N54A-BkptFmh8.js",
+      "size": 81456,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    },
+    {
+      "path": "C:\\Users\\absh5\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets\\crystal-tbC1iZhH.js",
+      "name": "crystal-tbC1iZhH.js",
+      "size": 29455,
+      "hits": [
+        "antigravity",
+        "openai",
+        "extension"
+      ],
+      "score": 3,
+      "dir": "~\\.antigravity\\extensions\\openai.chatgpt-26.422.30944-win32-x64\\webview\\assets"
+    }
+  ]
+}
