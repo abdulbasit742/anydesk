@@ -1,0 +1,42 @@
+{
+  "title": "RemoteDesk Production Readiness",
+  "schemaVersion": 38,
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Active sessions",
+      "targets": [
+        {
+          "expr": "remotedesk_active_sessions"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "API p95 latency",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m]))"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Reconnect attempts",
+      "targets": [
+        {
+          "expr": "rate(remotedesk_reconnect_attempts_total[5m])"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "File transfer failures",
+      "targets": [
+        {
+          "expr": "rate(remotedesk_file_transfer_failures_total[5m])"
+        }
+      ]
+    }
+  ]
+}

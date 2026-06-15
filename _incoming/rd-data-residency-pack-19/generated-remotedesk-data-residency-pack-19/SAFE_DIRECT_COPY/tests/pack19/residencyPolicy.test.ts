@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { regionAllowedByPolicy } from "../../packages/shared/src/pack19/residencyPolicy.js"; assert.equal(regionAllowedByPolicy({ tenantId: "t", primaryRegion: "eu", allowedBackupRegions: ["uk"], crossRegionSupportAccess: false }, "uk", "backup"), true);

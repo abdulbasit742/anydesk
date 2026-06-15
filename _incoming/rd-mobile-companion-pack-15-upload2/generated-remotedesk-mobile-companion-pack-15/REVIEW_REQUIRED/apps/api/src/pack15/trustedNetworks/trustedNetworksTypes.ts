@@ -1,0 +1,2 @@
+export interface TrustedNetworkRecord { id: string; teamId: string; label: string; cidr: string; enabled: boolean; createdAt: string; }
+export interface TrustedNetworkRecordRepository { create(record: TrustedNetworkRecord): Promise<TrustedNetworkRecord>; update(id: string, patch: Partial<TrustedNetworkRecord>): Promise<TrustedNetworkRecord | null>; list(filter: Partial<TrustedNetworkRecord>, limit: number): Promise<TrustedNetworkRecord[]>; }

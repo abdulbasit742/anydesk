@@ -1,0 +1,1 @@
+Pack 16 adds enterprise org management, departments, role assignments, SAML group mappings, SCIM directory events, reporting definitions, scheduled reports, CSV exports, admin dashboards and enterprise audit.

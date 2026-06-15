@@ -1,0 +1,2 @@
+export interface SupportEscalationRecord { id: string; ticketId: string; target: "tier2" | "engineering" | "security" | "billing"; reason: string; status: "open" | "acknowledged" | "resolved"; createdAt: string; }
+export interface SupportEscalationRecordRepository { create(record: SupportEscalationRecord): Promise<SupportEscalationRecord>; update(id: string, patch: Partial<SupportEscalationRecord>): Promise<SupportEscalationRecord | null>; list(filter: Partial<SupportEscalationRecord>, limit: number): Promise<SupportEscalationRecord[]>; }

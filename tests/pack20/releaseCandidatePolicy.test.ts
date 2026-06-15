@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { releaseCandidateCanApprove } from '../../REVIEW_REQUIRED/apps/api/src/pack20/releaseCandidates/releaseCandidatePolicy.js'; assert.equal(releaseCandidateCanApprove({status:'certifying',blockers:[],approvals:2}).allowed, true);

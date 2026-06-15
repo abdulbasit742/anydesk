@@ -1,0 +1,1 @@
+Pack 9 adds launch readiness checks, import/migration controls, rollout approvals, customer announcements, support escalations, session quality, license compliance, API health snapshots, security drills, desktop self-diagnostics and smoke automation.

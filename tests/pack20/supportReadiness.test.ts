@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { supportReadinessMissing } from '../../packages/shared/src/pack20/supportReadiness.js'; assert.deepEqual(supportReadinessMissing({runbookPublished:true,macrosPublished:true,onCallAssigned:true,escalationPathTested:true}), []);

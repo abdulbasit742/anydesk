@@ -1,0 +1,2 @@
+export interface MobileAuditRecord { id: string; teamId: string; actorUserId: string; action: string; occurredAt: string; metadata?: Record<string, unknown>; }
+export interface MobileAuditRecordRepository { create(record: MobileAuditRecord): Promise<MobileAuditRecord>; update(id: string, patch: Partial<MobileAuditRecord>): Promise<MobileAuditRecord | null>; list(filter: Partial<MobileAuditRecord>, limit: number): Promise<MobileAuditRecord[]>; }

@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { testCaseBlocksRelease } from "../../packages/shared/src/pack22/testCaseStatus.js"; assert.equal(testCaseBlocksRelease("failed"), true); assert.equal(testCaseBlocksRelease("passed"), false);

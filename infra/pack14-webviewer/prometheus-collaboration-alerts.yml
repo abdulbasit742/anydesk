@@ -1,0 +1,13 @@
+groups:
+  - name: remotedesk-collaboration-pack14
+    rules:
+      - alert: RemoteDeskInviteAbuse
+        expr: rate(remotedesk_session_invite_failures_total[10m]) > 0.2
+        for: 10m
+        labels:
+          severity: warning
+      - alert: RemoteDeskConsentBacklog
+        expr: remotedesk_host_consent_pending > 50
+        for: 15m
+        labels:
+          severity: info

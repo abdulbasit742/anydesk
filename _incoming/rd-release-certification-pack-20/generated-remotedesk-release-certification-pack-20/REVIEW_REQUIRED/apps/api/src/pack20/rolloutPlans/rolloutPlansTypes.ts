@@ -1,0 +1,2 @@
+export interface RolloutPlanRecord { id:string; releaseId:string; percentage:number; channel:string; startedAt?:string; pausedAt?:string; }
+export interface RolloutPlanRecordRepository { create(record:RolloutPlanRecord): Promise<RolloutPlanRecord>; update(id:string, patch:Partial<RolloutPlanRecord>): Promise<RolloutPlanRecord|null>; list(filter:Partial<RolloutPlanRecord>, limit:number): Promise<RolloutPlanRecord[]>; }

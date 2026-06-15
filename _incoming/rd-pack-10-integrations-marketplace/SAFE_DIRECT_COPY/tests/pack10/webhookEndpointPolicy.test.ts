@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { validateWebhookEndpoint } from "../../REVIEW_REQUIRED/apps/api/src/pack10/webhookEndpoints/webhookEndpointPolicy.js"; assert.deepEqual(validateWebhookEndpoint("https://example.com/hook"), []); assert.ok(validateWebhookEndpoint("http://example.com").includes("https-required"));

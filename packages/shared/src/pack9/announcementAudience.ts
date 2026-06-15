@@ -1,0 +1,2 @@
+export type AnnouncementAudience = "all" | "admins" | "billing_admins" | "support_users" | "affected_team";
+export function canSendAnnouncement(role: string, audience: AnnouncementAudience): boolean { if (audience === "all") return role === "owner" || role === "admin"; if (audience === "billing_admins") return ["owner", "admin", "billing"].includes(role); if (audience === "support_users") return ["owner", "admin", "support"].includes(role); return ["owner", "admin"].includes(role); }

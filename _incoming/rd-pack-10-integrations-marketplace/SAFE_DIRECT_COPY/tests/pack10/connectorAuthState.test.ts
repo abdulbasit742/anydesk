@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { connectorNeedsReconnect } from "../../packages/shared/src/pack10/connectorAuthState.js"; assert.equal(connectorNeedsReconnect("expired"), true); assert.equal(connectorNeedsReconnect("connected"), false);

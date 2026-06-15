@@ -1,0 +1,2 @@
+export interface ReleaseAuditRecord { id:string; releaseId:string; actorUserId:string; action:string; occurredAt:string; metadata?:Record<string, unknown>; }
+export interface ReleaseAuditRecordRepository { create(record:ReleaseAuditRecord): Promise<ReleaseAuditRecord>; update(id:string, patch:Partial<ReleaseAuditRecord>): Promise<ReleaseAuditRecord|null>; list(filter:Partial<ReleaseAuditRecord>, limit:number): Promise<ReleaseAuditRecord[]>; }

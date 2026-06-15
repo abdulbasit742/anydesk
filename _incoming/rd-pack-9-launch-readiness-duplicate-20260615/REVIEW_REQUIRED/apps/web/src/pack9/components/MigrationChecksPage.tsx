@@ -1,0 +1,3 @@
+import React from "react";
+export interface MigrationChecksPageRow { id: string; title: string; status: string; detail?: string; }
+export function MigrationChecksPage(props: { rows: MigrationChecksPageRow[]; onReview?: (id: string) => void }): JSX.Element { return (<main><h1>Migration checks</h1>{props.rows.length === 0 ? <p>No records yet.</p> : (<ul>{props.rows.map((row) => (<li key={row.id} data-status={row.status}><strong>{row.title}</strong> · {row.status} {row.detail && <span>· {row.detail}</span>}{props.onReview && <button type="button" onClick={() => props.onReview?.(row.id)}>Review</button>}</li>))}</ul>)}</main>); }

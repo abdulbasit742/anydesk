@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { isOAuthStateValid } from "../../packages/shared/src/pack10/oauthStateToken.js"; assert.equal(isOAuthStateValid({ state: "s", nonce: "abcdefghijkl", expiresAt: 9999999999999 }, "s"), true);

@@ -1,0 +1,37 @@
+openapi: 3.0.3
+info:
+  title: RemoteDesk Audit API
+  version: 1.0.0
+paths:
+  /api/v1/audit:
+    get:
+      summary: List audit events
+      security: [ { bearerAuth: [] } ]
+      parameters:
+        - { name: page, in: query, schema: { type: integer } }
+        - { name: limit, in: query, schema: { type: integer } }
+        - { name: resourceType, in: query, schema: { type: string } }
+        - { name: actorId, in: query, schema: { type: string } }
+      responses:
+        '200':
+          description: Paginated audit events
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success: { type: boolean }
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: string }
+                        actorId: { type: string }
+                        action: { type: string }
+                        resourceType: { type: string }
+                        resourceId: { type: string }
+                        metadata: { type: object }
+                        createdAt: { type: integer }
+                        ip: { type: string }
+                        userAgent: { type: string }

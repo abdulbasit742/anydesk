@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { redactPushMessage } from '../../packages/shared/src/pack15/pushRedaction.js'; assert.equal(redactPushMessage({ title: 'token', body: 'hello' }).title, '[redacted]');

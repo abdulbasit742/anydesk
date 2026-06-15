@@ -1,0 +1,56 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "settings": "Settings",
+    "dashboard": "Dashboard",
+    "connect": "Connect",
+    "disconnect": "Disconnect",
+    "viewOnly": "View Only",
+    "fullControl": "Full Control"
+  },
+  "auth": {
+    "login": {
+      "title": "Login to RemoteDesk",
+      "emailLabel": "Email Address",
+      "passwordLabel": "Password",
+      "forgotPassword": "Forgot Password?",
+      "loginButton": "Login",
+      "signupPrompt": "Don\'t have an account? Sign Up"
+    },
+    "errors": {
+      "invalidCredentials": "Incorrect email or password.",
+      "accountLocked": "Your account is locked. Please contact support."
+    }
+  },
+  "session": {
+    "remoteId": "Remote ID",
+    "enterRemoteId": "Enter Remote ID",
+    "connectionStatus": {
+      "connecting": "Connecting...",
+      "connected": "Connected",
+      "disconnected": "Disconnected",
+      "failed": "Connection Failed"
+    },
+    "toolbar": {
+      "fileTransfer": "File Transfer",
+      "clipboard": "Clipboard",
+      "chat": "Chat",
+      "remoteInput": "Remote Input",
+      "screenSelection": "Screen Selection"
+    }
+  },
+  "notifications": {
+    "fileTransferComplete": "File transfer complete: {fileName}",
+    "fileTransferFailed": "File transfer failed: {fileName}",
+    "clipboardSyncEnabled": "Clipboard synchronization enabled.",
+    "clipboardSyncDisabled": "Clipboard synchronization disabled."
+  }
+}

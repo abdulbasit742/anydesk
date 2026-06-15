@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { syntheticProbeIntervalValid } from "../../REVIEW_REQUIRED/apps/api/src/pack22/syntheticProbes/syntheticProbePolicy.js"; assert.equal(syntheticProbeIntervalValid(60), true);

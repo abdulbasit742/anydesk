@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { testResultBlocksRelease } from "../../REVIEW_REQUIRED/apps/api/src/pack22/testResults/testResultPolicy.js"; assert.equal(testResultBlocksRelease({ status: "failed", priority: "p0", quarantined: false }), true);

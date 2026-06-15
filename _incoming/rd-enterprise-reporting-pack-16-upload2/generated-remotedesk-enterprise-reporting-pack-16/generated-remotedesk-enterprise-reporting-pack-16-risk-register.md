@@ -1,0 +1,1 @@
+| Risk | Severity | Mitigation |\n| --- | --- | --- |\n| Cross-org data leak | Critical | organization-scoped repositories |\n| Role escalation | Critical | role assignment policy |\n| CSV injection | High | escape formula cells |\n| SCIM unsafe patch | High | block password/token/secret paths |\n| Oversized report | Medium | async export and row limits |

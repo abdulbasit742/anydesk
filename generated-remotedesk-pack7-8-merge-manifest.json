@@ -1,0 +1,69 @@
+{
+  "name": "generated-remotedesk-pack7-8-plus-200-batch-plan",
+  "createdAt": "2026-06-14",
+  "buildEstimateAfterMerge": "40-47%",
+  "sources": [
+    {
+      "type": "zip",
+      "zip": "generated-remotedesk-customer-success-reliability-pack-7.zip",
+      "entries": 124,
+      "safeDirectCopyCount": 25,
+      "reviewRequiredCount": 88,
+      "patchesCount": 4,
+      "stagingRoot": "C:/Users/bsphy2304/Documents/New project/_incoming/rd-pack-7-success",
+      "mergeMode": "safe-docs-shared-scripts-plus-safe-device-command-port"
+    },
+    {
+      "type": "zip",
+      "zip": "generated-remotedesk-governance-automation-pack-8.zip",
+      "entries": 123,
+      "safeDirectCopyCount": 27,
+      "reviewRequiredCount": 85,
+      "patchesCount": 4,
+      "stagingRoot": "C:/Users/bsphy2304/Documents/New project/_incoming/rd-pack-8-governance",
+      "mergeMode": "safe-docs-infra-shared-scripts"
+    },
+    {
+      "type": "zip",
+      "zip": "generated-remotedesk-entitlements-security-pack-6.zip",
+      "entries": 113,
+      "stagingRoot": "C:/Users/bsphy2304/Documents/New project/_incoming/rd-pack-6-entitlements",
+      "mergeMode": "duplicate-already-processed-in-previous-pack-merge"
+    },
+    {
+      "type": "pdf",
+      "file": "RemoteDesk - 200-File Batch Plan (Codex Handoff)-2026061421040178.pdf",
+      "bytes": 16690268,
+      "extractedTextBytes": 3820494,
+      "stagingRoot": "C:/Users/bsphy2304/Documents/New project/_incoming/rd-batch-plan-200-pdf",
+      "mergeMode": "review-only-planning-reference"
+    }
+  ],
+  "safeImportsApplied": [
+    "docs/pack7/**",
+    "docs/pack8/**",
+    "infra/pack8/**",
+    "scripts/pack7/**",
+    "scripts/pack8/**",
+    "packages/shared/src/pack7/**",
+    "packages/shared/src/pack8/**"
+  ],
+  "runtimePortsApplied": [
+    "apps/api/src/routes/device.routes.ts",
+    "apps/web/app/dashboard/devices/[deviceId]/page.tsx",
+    "packages/shared/src/index.ts"
+  ],
+  "reviewOnly": [
+    "all REVIEW_REQUIRED/** runtime files from packs 7 and 8",
+    "generated pack 7 and 8 tests that import REVIEW_REQUIRED runtime paths",
+    "generated patch markdown until applied module-by-module against current contracts",
+    "200-file PDF gap report because it is based on an older missing-feature snapshot"
+  ],
+  "validation": {
+    "manifestParse": "passed",
+    "fillerSymbolScan": "passed",
+    "runtimeReviewLabelScan": "passed",
+    "nodeRuntime": "blocked: node.exe returns Access is denied",
+    "npmRuntime": "blocked: npm is not installed on PATH"
+  }
+}

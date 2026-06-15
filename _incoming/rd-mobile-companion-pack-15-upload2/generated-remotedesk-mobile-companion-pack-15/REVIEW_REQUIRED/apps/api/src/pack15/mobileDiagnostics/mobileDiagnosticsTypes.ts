@@ -1,0 +1,2 @@
+export interface MobileDiagnosticRecord { id: string; deviceId: string; appVersion: string; platform: string; redactedPayloadKey: string; createdAt: string; }
+export interface MobileDiagnosticRecordRepository { create(record: MobileDiagnosticRecord): Promise<MobileDiagnosticRecord>; update(id: string, patch: Partial<MobileDiagnosticRecord>): Promise<MobileDiagnosticRecord | null>; list(filter: Partial<MobileDiagnosticRecord>, limit: number): Promise<MobileDiagnosticRecord[]>; }

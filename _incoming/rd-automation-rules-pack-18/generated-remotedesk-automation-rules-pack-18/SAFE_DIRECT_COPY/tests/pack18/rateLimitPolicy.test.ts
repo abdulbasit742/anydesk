@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { automationRateLimitExceeded } from "../../REVIEW_REQUIRED/apps/api/src/pack18/automationRateLimits/rateLimitPolicy.js"; assert.equal(automationRateLimitExceeded({ perMinute: 10, usedThisMinute: 10, enabled: true }), true);

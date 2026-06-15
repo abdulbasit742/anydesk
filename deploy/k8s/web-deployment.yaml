@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: remotedesk-web
+  namespace: remotedesk
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: remotedesk-web
+  template:
+    metadata:
+      labels:
+        app: remotedesk-web
+    spec:
+      containers:
+        - name: web
+          image: ghcr.io/remotedesk/web:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: NEXT_PUBLIC_API_URL
+              value: https://api.example.com
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

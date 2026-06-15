@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { syntheticProbeFailed } from "../../packages/shared/src/pack22/syntheticProbe.js"; assert.equal(syntheticProbeFailed({ kind: "api_health", ok: true, latencyMs: 100 }), false);

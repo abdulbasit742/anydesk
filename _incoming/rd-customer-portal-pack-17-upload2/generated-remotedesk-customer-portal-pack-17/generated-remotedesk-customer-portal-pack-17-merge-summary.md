@@ -1,0 +1,1 @@
+Pack 17 adds customer portal and self-serve billing surfaces: billing sessions, invoices, tax profiles, receipts, public status, help center, theming, notification preferences, portal feedback/audit, web/desktop UI, docs/tests/scripts.

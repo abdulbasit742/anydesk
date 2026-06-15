@@ -1,0 +1,2 @@
+export interface SessionQualityAggregateRecord { id: string; teamId?: string; windowStart: string; windowEnd: string; totalSessions: number; failedSessions: number; avgRttMs?: number; }
+export interface SessionQualityAggregateRecordRepository { create(record: SessionQualityAggregateRecord): Promise<SessionQualityAggregateRecord>; update(id: string, patch: Partial<SessionQualityAggregateRecord>): Promise<SessionQualityAggregateRecord | null>; list(filter: Partial<SessionQualityAggregateRecord>, limit: number): Promise<SessionQualityAggregateRecord[]>; }

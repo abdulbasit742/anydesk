@@ -1,0 +1,3 @@
+export interface QrPairingPayload { version: 1; code: string; apiBaseUrl: string; expiresAt: string; }
+export function encodeQrPairingPayload(payload: QrPairingPayload): string { return JSON.stringify(payload); }
+export function parseQrPairingPayload(value: string): QrPairingPayload | undefined { try { const parsed = JSON.parse(value) as Partial<QrPairingPayload>; if (parsed.version !== 1 || typeof parsed.code !== 'string' || typeof parsed.apiBaseUrl !== 'string' || typeof parsed.expiresAt !== 'string') return undefined; if (!parsed.apiBaseUrl.startsWith('https://')) return undefined; return parsed as QrPairingPayload; } catch { return undefined; } }

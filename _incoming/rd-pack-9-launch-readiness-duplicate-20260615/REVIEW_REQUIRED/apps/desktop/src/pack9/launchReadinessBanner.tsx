@@ -1,0 +1,2 @@
+import React from "react";
+export function LaunchReadinessBanner(props: { blocked: boolean; warnings: number; onOpenDetails: () => void }): JSX.Element { return (<aside role="status" data-blocked={props.blocked}><strong>{props.blocked ? "Launch blocked" : "Desktop readiness"}</strong><span>{props.warnings} warnings</span><button type="button" onClick={props.onOpenDetails}>Open details</button></aside>); }

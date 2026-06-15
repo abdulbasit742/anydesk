@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { sanitizeViewerPermissions } from "../../REVIEW_REQUIRED/apps/api/src/pack14/viewerPermissions/viewerPermissionPolicy.js"; assert.deepEqual(sanitizeViewerPermissions(["view_screen", "clipboard_sync"]), ["view_screen"]);

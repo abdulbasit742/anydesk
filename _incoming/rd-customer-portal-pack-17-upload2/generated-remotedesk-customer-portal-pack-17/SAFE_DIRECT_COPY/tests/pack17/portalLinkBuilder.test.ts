@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { buildSafePortalLink } from "../../REVIEW_REQUIRED/apps/desktop/src/pack17/portalLinkBuilder.js"; assert.equal(buildSafePortalLink("https://example.com", "/billing"), "https://example.com/billing");

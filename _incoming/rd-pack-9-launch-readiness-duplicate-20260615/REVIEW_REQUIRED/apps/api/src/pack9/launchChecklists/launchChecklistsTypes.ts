@@ -1,0 +1,2 @@
+export interface LaunchChecklistRecord { id: string; area: string; label: string; status: "pass" | "warn" | "fail" | "not_applicable"; required: boolean; updatedAt: string; }
+export interface LaunchChecklistRecordRepository { create(record: LaunchChecklistRecord): Promise<LaunchChecklistRecord>; update(id: string, patch: Partial<LaunchChecklistRecord>): Promise<LaunchChecklistRecord | null>; list(filter: Partial<LaunchChecklistRecord>, limit: number): Promise<LaunchChecklistRecord[]>; }

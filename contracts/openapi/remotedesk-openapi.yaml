@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  title: RemoteDesk Production API
+  version: 0.4.0
+  description: Contract skeleton for production readiness review.
+servers:
+  - url: https://api.remotedesk.example.com
+paths:
+  /health/live:
+    get:
+      operationId: getLiveHealth
+      responses:
+        "200":
+          description: API process is alive
+  /support/tickets:
+    get:
+      operationId: listSupportTickets
+      responses:
+        "200":
+          description: Support ticket list
+    post:
+      operationId: createSupportTicket
+      responses:
+        "201":
+          description: Ticket created
+  /audit/logs:
+    get:
+      operationId: listAuditLogs
+      responses:
+        "200":
+          description: Audit log list
+  /sessions/{sessionId}/events:
+    get:
+      operationId: listSessionEvents
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Session event list
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []

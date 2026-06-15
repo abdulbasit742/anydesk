@@ -1,0 +1,61 @@
+{
+  "artifactSet": [
+    {
+      "name": "Title for Uploaded Content Analysis (1).zip",
+      "stagedPath": "_incoming/title-for-uploaded-content-analysis-1-tree",
+      "actualFileCount": 162,
+      "decision": "Imported docs and mined clipboard helper ideas; runtime API/web/infra files kept review-only."
+    },
+    {
+      "name": "Kimi_Agent_RemoteDesk Sprint Pack.zip",
+      "stagedPath": "_incoming/kimi-agent-remotedesk-sprint-pack-tree",
+      "actualFileCount": 77,
+      "decision": "Imported docs and source reports; API runtime stayed review-only due auth/schema mismatch; desktop alternate runtime stayed review-only where it used older paths."
+    },
+    {
+      "name": "generated-remotedesk-1000-sprint-part2-desktop (1).zip",
+      "stagedPath": "_incoming/generated-remotedesk-1000-sprint-part2-desktop-1-tree",
+      "actualFileCount": 93,
+      "decision": "Duplicate of previously processed Part 2 desktop pack by SHA256; only previously skipped clipboard runtime was now adapted and merged."
+    }
+  ],
+  "buildEstimateAfterMerge": "31-38%",
+  "imported": {
+    "docsFromTitlePack": 54,
+    "docsFromKimiSprintPack": 8,
+    "sourceReportsFromKimiSprintPack": 5,
+    "clipboardRendererFiles": 5,
+    "clipboardServiceFiles": 1,
+    "clipboardTests": 1
+  },
+  "modifiedExistingFiles": [
+    "packages/shared/src/clipboard/types.ts",
+    "packages/shared/src/clipboard/helpers.ts",
+    "apps/desktop/src/renderer/src/services/sessionDataChannel.ts",
+    "apps/desktop/src/renderer/src/components/RemoteSessionView.tsx",
+    "apps/desktop/src/renderer/src/main.tsx",
+    "apps/desktop/src/renderer/src/styles.css",
+    "IMPLEMENTATION_NOTES.md"
+  ],
+  "newRuntimeFiles": [
+    "apps/desktop/src/renderer/src/services/clipboardChannel.ts",
+    "apps/desktop/src/renderer/src/features/clipboard/ClipboardPermissionToggle.tsx",
+    "apps/desktop/src/renderer/src/features/clipboard/ClipboardStatusIndicator.tsx",
+    "apps/desktop/src/renderer/src/features/clipboard/ClipboardSyncPanel.tsx",
+    "apps/desktop/src/renderer/src/features/clipboard/clipboardSettings.ts",
+    "apps/desktop/src/renderer/src/features/clipboard/useClipboardSync.ts",
+    "apps/desktop/test/clipboardChannel.test.ts"
+  ],
+  "skippedReviewOnly": [
+    "Kimi Sprint Pack apps/api runtime routes/services/middleware",
+    "Kimi Sprint Pack alternate desktop src/features tree",
+    "Title pack API/web/infra runtime files",
+    "Duplicate Part 2 files already merged previously"
+  ],
+  "verification": {
+    "jsonParse": "passed",
+    "relativeImportExistenceScan": "passed",
+    "fillerPlaceholderEncodingScan": "passed",
+    "typescriptTypecheck": "not run because node.exe is access denied and npm/npx/tsc are not on PATH"
+  }
+}

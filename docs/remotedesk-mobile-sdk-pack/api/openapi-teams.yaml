@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: RemoteDesk Teams API
+  version: 1.0.0
+paths:
+  /api/v1/teams:
+    get:
+      summary: List teams
+      security: [ { bearerAuth: [] } ]
+      parameters:
+        - { name: orgId, in: query, required: true, schema: { type: string } }
+      responses:
+        '200':
+          description: Teams list
+    post:
+      summary: Create team
+      security: [ { bearerAuth: [] } ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                orgId: { type: string }
+                name: { type: string }
+      responses:
+        '201':
+          description: Team created
+  /api/v1/teams/{id}/invitations:
+    post:
+      summary: Invite member
+      security: [ { bearerAuth: [] } ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email: { type: string, format: email }
+                role: { type: string, enum: [owner, admin, member, viewer, billing] }
+      responses:
+        '201':
+          description: Invitation sent

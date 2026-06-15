@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { enforceSafeViewerPermissions } from "../../packages/shared/src/pack14Webviewer/viewerPermission.js"; assert.deepEqual(enforceSafeViewerPermissions({ permissions: ["view_screen", "remote_input"] }).permissions, ["view_screen"]);

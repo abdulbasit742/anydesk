@@ -1,0 +1,3 @@
+import React from "react";
+export interface ApiHealthPageRow { id: string; title: string; status: string; detail?: string; }
+export function ApiHealthPage(props: { rows: ApiHealthPageRow[]; onReview?: (id: string) => void }): JSX.Element { return (<main><h1>API health snapshots</h1>{props.rows.length === 0 ? <p>No records yet.</p> : (<ul>{props.rows.map((row) => (<li key={row.id} data-status={row.status}><strong>{row.title}</strong> · {row.status} {row.detail && <span>· {row.detail}</span>}{props.onReview && <button type="button" onClick={() => props.onReview?.(row.id)}>Review</button>}</li>))}</ul>)}</main>); }

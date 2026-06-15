@@ -1,0 +1,13 @@
+groups:
+  - name: remotedesk-residency-pack19
+    rules:
+      - alert: RemoteDeskTenantIsolationCheckFailed
+        expr: remotedesk_tenant_isolation_checks_failed_total > 0
+        for: 1m
+        labels:
+          severity: critical
+      - alert: RemoteDeskKeyRotationOverdue
+        expr: remotedesk_encryption_key_rotation_overdue_total > 0
+        for: 24h
+        labels:
+          severity: warning

@@ -1,0 +1,1 @@
+Pack 7 adds customer success, fleet reliability, accessibility, localization, safe device commands, release channels, offline queues, and support automation. Copy SAFE_DIRECT_COPY first; review runtime files before wiring.

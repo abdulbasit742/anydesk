@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { canPublishHelpArticle } from "../../REVIEW_REQUIRED/apps/api/src/pack17/helpArticles/helpArticlePolicy.js"; assert.deepEqual(canPublishHelpArticle({ title: "Install", body: "This article explains installation." }), []);

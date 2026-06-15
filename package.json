@@ -1,0 +1,26 @@
+{
+  "name": "remotedesk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RemoteDesk full-stack SaaS remote desktop starter.",
+  "workspaces": [
+    "apps/api",
+    "apps/web",
+    "apps/desktop",
+    "packages/shared",
+    "packages/client-sdk"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --workspace=@remotedesk/api",
+    "dev:web": "npm run dev --workspace=@remotedesk/web",
+    "dev:desktop": "npm run dev --workspace=@remotedesk/desktop",
+    "build:client-sdk": "npm run build --workspace=@remotedesk/client-sdk",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}

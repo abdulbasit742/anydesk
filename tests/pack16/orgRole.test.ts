@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { canAssignOrgRole } from "../../packages/shared/src/pack16/orgRole.js"; assert.equal(canAssignOrgRole("admin", "owner"), false); assert.equal(canAssignOrgRole("owner", "admin"), true);

@@ -1,0 +1,3 @@
+import { useEffect, useState } from 'react';
+export interface usePairingCodesResult<T> { data?: T; loading: boolean; error?: string; }
+export function usePairingCodes<T>(loader: () => Promise<T>): usePairingCodesResult<T> { const [state, setState] = useState<usePairingCodesResult<T>>({ loading: true }); useEffect(() => { let cancelled = false; loader().then((data) => { if (!cancelled) setState({ loading: false, data }); }).catch((error: unknown) => { if (!cancelled) setState({ loading: false, error: error instanceof Error ? error.message : 'Unknown error' }); }); return () => { cancelled = true; }; }, [loader]); return state; }

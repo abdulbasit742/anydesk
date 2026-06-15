@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { contrastPasses } from "../../packages/shared/src/pack17/themeContrast.js"; assert.equal(contrastPasses({ foregroundLuma: 1, backgroundLuma: 0 }), true);

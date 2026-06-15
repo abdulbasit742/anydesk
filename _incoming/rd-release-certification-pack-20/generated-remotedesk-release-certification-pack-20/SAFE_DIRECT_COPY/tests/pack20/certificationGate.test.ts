@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { certificationBlockers } from '../../packages/shared/src/pack20/certificationGate.js'; assert.deepEqual(certificationBlockers({smokePassed:true,securityPassed:true,performancePassed:true,docsPublished:true,supportReady:true}), []);

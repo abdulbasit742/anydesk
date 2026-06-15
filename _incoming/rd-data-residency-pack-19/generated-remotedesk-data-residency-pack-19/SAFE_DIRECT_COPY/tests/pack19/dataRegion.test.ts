@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { normalizeDataRegion, regionDisplayName } from "../../packages/shared/src/pack19/dataRegion.js"; assert.equal(normalizeDataRegion("EU"), "eu"); assert.equal(regionDisplayName("us"), "United States");

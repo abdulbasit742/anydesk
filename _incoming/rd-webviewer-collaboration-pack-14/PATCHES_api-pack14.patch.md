@@ -1,0 +1,1 @@
+Mount Pack 14 routes behind authenticated session collaboration permissions. Enforce team/session ownership in repositories. Keep remote_input and clipboard_sync stripped unless separately reviewed gates exist.

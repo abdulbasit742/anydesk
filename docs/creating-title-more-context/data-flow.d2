@@ -1,0 +1,64 @@
+direction: right
+
+User -> WebApp: Login/Manage Devices
+User -> DesktopApp: Initiate/Host Session
+
+RemoteDeskSystem: "RemoteDesk System" {
+  WebApp: "Web Application (Next.js)" {
+    WebUI: "Web UI (React)"
+    WebAPIClient: "Web API Client"
+  }
+
+  DesktopApp: "Desktop Application (Electron)" {
+    DesktopUI: "Desktop UI (React)"
+    WebRTCClient: "WebRTC Client"
+    ScreenCapture: "Screen Capture"
+    InputHandler: "Input Handler"
+  }
+
+  BackendAPI: "Backend API (Node.js)" {
+    AuthService: "Auth Service"
+    DeviceService: "Device Service"
+    SessionService: "Session Service"
+    SocketIOServer: "Socket.IO Server"
+  }
+
+  DataLayer: "Data Layer" {
+    PostgreSQL: "PostgreSQL DB"
+    PrismaORM: "Prisma ORM"
+  }
+
+  ExternalServices: "External Services" {
+    TURNServer: "TURN/STUN Server"
+  }
+
+  WebApp.WebUI <-> WebApp.WebAPIClient: API Calls
+  WebApp.WebAPIClient <-> BackendAPI.AuthService: REST (Auth)
+  WebApp.WebAPIClient <-> BackendAPI.DeviceService: REST (Devices)
+  WebApp.WebAPIClient <-> BackendAPI.SessionService: REST (Sessions)
+
+  DesktopApp.DesktopUI <-> BackendAPI.AuthService: REST (Auth)
+  DesktopApp.DesktopUI <-> BackendAPI.DeviceService: REST (Device Reg)
+  DesktopApp.DesktopUI <-> BackendAPI.SessionService: REST (Session Mgmt)
+
+  DesktopApp.DesktopUI <-> SocketIOServer: Signaling (Socket.IO)
+  WebApp.WebUI <-> SocketIOServer: Signaling (Socket.IO)
+
+  DesktopApp.WebRTCClient <-> TURNServer: WebRTC (Media/Data)
+
+  BackendAPI.AuthService <-> PrismaORM: Data Access
+  BackendAPI.DeviceService <-> PrismaORM: Data Access
+  BackendAPI.SessionService <-> PrismaORM: Data Access
+  PrismaORM <-> PostgreSQL: SQL
+
+  DesktopApp.ScreenCapture -> DesktopApp.WebRTCClient: Video Stream
+  DesktopApp.InputHandler -> DesktopApp.WebRTCClient: Input Events (Data Channel)
+}
+
+User -> WebApp.WebUI: Access Dashboard
+User -> DesktopApp.DesktopUI: Install/Run App
+
+DesktopApp.DesktopUI -> DesktopApp.ScreenCapture: Request Screen Share
+DesktopApp.DesktopUI -> DesktopApp.InputHandler: Capture Input
+
+DesktopApp.WebRTCClient -> DesktopApp.DesktopUI: Remote Video/Control

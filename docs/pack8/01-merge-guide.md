@@ -1,0 +1,1 @@
+Pack 8 adds SOC2/evidence automation, procurement workflows, governance approvals, email/in-app notifications, backup restore verification, legal holds, data classification, privacy impact assessments and governance UI.

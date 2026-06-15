@@ -1,0 +1,239 @@
+You are continuing RemoteDesk, an AnyDesk-style full-stack SaaS remote desktop app.
+
+CURRENT VERIFIED STATE:
+- Monorepo root: remotedesk/
+- apps/api: Express + Prisma + Socket.IO signaling
+- apps/web: Next.js dashboard starter
+- apps/desktop: Electron + React desktop client
+- packages/shared: shared contracts
+
+ALREADY IMPLEMENTED:
+- Desktop auth/login/signup
+- RemoteDesk ID display
+- Device password setup
+- Host incoming accept/reject modal
+- Screen source picker
+- Local screen capture preview
+- WebRTC offer/answer/ICE
+- Remote video session view
+- WebRTC quality diagnostics
+- SessionDataChannel over WebRTC control channel
+- In-session chat
+- Remote input permission toggles
+- Emergency stop state
+- Viewer-side normalized remote input capture
+- Host receives remote input but native execution is intentionally disabled
+
+IMPORTANT:
+The next output must focus on making the current project compile, run, and integrate cleanly.
+Do not generate filler files.
+Do not create huge unrelated modules.
+Do not rewrite the whole project.
+Do not change existing socket event names.
+
+EXISTING SOCKET EVENTS TO PRESERVE:
+ClientEvents:
+- connect:request
+- connect:response
+- webrtc:offer
+- webrtc:answer
+- webrtc:ice
+- session:end
+
+ServerEvents:
+- incoming:request
+- request:accepted
+- request:rejected
+- webrtc:offer
+- webrtc:answer
+- webrtc:ice
+- peer:disconnected
+- error
+
+YOUR JOB:
+Generate up to 750 production-useful files focused on:
+- build fixes
+- integration fixes
+- type safety
+- runnable local setup
+- test harness
+- docs for running the full stack
+
+PART 1: TYPECHECK / BUILD FIX PACK
+Generate:
+- shared contract cleanup suggestions
+- TypeScript strict fixes
+- path alias notes
+- electron-vite config review
+- package script fixes
+- workspace dependency notes
+- minimal patches for compile errors
+- build troubleshooting docs
+
+Preferred paths:
+docs/development/build-fix-guide.md
+generated-build-fix-patches/
+apps/desktop/
+apps/api/
+apps/web/
+packages/shared/
+
+Mark risky runtime patches REVIEW_REQUIRED.
+
+PART 2: LOCAL RUN SETUP
+Generate:
+- Windows PowerShell run guide
+- npm install guide
+- Docker Compose startup guide
+- Prisma generate/migrate guide
+- env file matrix
+- API run guide
+- web run guide
+- desktop run guide
+- TURN server local guide
+- troubleshooting common errors
+
+Preferred paths:
+docs/development/
+docs/troubleshooting/
+
+PART 3: ENVIRONMENT FILES
+Generate review-ready:
+- root .env.example improvements
+- apps/api .env.example
+- apps/web .env.example
+- apps/desktop .env.example
+- docker env example
+- local development env guide
+
+Preferred paths:
+.env.example.review
+apps/api/.env.example.review
+apps/web/.env.example.review
+apps/desktop/.env.example.review
+docs/development/env-vars.md
+
+PART 4: API INTEGRATION CHECKS
+Generate:
+- API health check script
+- auth endpoint smoke test script
+- user endpoint smoke test script
+- session endpoint smoke test script
+- socket signaling smoke test design
+- Prisma connection check script
+- Redis check script
+- test data seed script design
+
+Preferred paths:
+scripts/checks/
+apps/api/scripts/
+docs/qa/api/
+
+PART 5: DESKTOP INTEGRATION CHECKS
+Generate:
+- desktop startup checklist
+- preload API verification checklist
+- screen source picker test
+- screen capture test
+- WebRTC peer creation test
+- data channel test plan
+- chat test plan
+- remote input permission test plan
+- emergency stop test plan
+- diagnostics test plan
+
+Preferred paths:
+docs/qa/desktop/
+apps/desktop/tests/
+
+PART 6: WEB INTEGRATION CHECKS
+Generate:
+- web dashboard smoke checklist
+- auth UI test plan
+- device UI test plan
+- sessions UI test plan
+- security settings test plan
+- billing UI placeholder test plan
+
+Preferred paths:
+docs/qa/web/
+apps/web/tests/
+
+PART 7: TWO-CLIENT LOCAL TEST HARNESS
+Generate:
+- instructions to run two desktop clients
+- host/client account setup
+- connect request flow
+- accept/reject flow
+- screen stream flow
+- WebRTC ICE debugging
+- local TURN fallback guide
+- logs to collect
+
+Preferred paths:
+docs/qa/two-client-local-test.md
+scripts/checks/two-client-checklist.md
+
+PART 8: LOGGING + DEBUGGING
+Generate:
+- API debug logging guide
+- desktop renderer debug guide
+- Electron main debug guide
+- WebRTC logs guide
+- Socket.IO debug guide
+- support bundle checklist
+- common failure matrix
+
+Preferred paths:
+docs/troubleshooting/
+docs/observability/
+
+PART 9: TEST HARNESS FOUNDATION
+Generate:
+- unit test setup docs
+- vitest/jest recommendation
+- shared package pure helper tests
+- API route test skeleton
+- desktop component test skeleton
+- mock WebRTC helper
+- mock Socket.IO helper
+
+Preferred paths:
+tests/
+packages/shared/tests/
+apps/api/tests/
+apps/desktop/tests/
+docs/qa/testing-strategy.md
+
+PART 10: MERGE / REVIEW REPORTS
+Generate:
+- build readiness checklist
+- compile blocker checklist
+- integration blocker checklist
+- runbook for Codex merge
+- review-required file list
+- safe direct copy list
+
+Preferred paths:
+generated-build-integration-750-pack-manifest.json
+generated-build-integration-750-pack-merge-guide.md
+generated-build-integration-750-pack-risk-register.md
+generated-build-integration-750-pack-qa-checklist.md
+generated-build-integration-750-pack-review-required.md
+
+OUTPUT FORMAT:
+For every file:
+- exact path
+- complete content
+- mark:
+  - SAFE_DIRECT_COPY
+  - REVIEW_REQUIRED
+  - IDEA_ONLY
+
+QUALITY BAR:
+- No placeholder-only files.
+- No fake success logic.
+- No random generated config spam.
+- Keep files small and useful.
+- Prefer docs, scripts, smoke tests, and minimal patches that help run the real current app.
+- Do not overwrite existing runtime files unless the patch is clearly minimal and compatible.

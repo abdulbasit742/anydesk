@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { canDeleteByRetention } from "../../packages/shared/src/pack19/retentionWindow.js"; assert.equal(canDeleteByRetention("2020-01-01T00:00:00Z", { keepDays: 30, legalHold: false }, new Date("2020-03-01T00:00:00Z")), true);

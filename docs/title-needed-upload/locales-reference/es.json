@@ -1,0 +1,56 @@
+{
+  "common": {
+    "ok": "Aceptar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "confirm": "Confirmar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "close": "Cerrar",
+    "settings": "Configuración",
+    "dashboard": "Panel de control",
+    "connect": "Conectar",
+    "disconnect": "Desconectar",
+    "viewOnly": "Solo ver",
+    "fullControl": "Control total"
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar sesión en RemoteDesk",
+      "emailLabel": "Correo electrónico",
+      "passwordLabel": "Contraseña",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "loginButton": "Iniciar sesión",
+      "signupPrompt": "¿No tienes una cuenta? Regístrate"
+    },
+    "errors": {
+      "invalidCredentials": "Correo electrónico o contraseña incorrectos.",
+      "accountLocked": "Tu cuenta está bloqueada. Contacta con soporte."
+    }
+  },
+  "session": {
+    "remoteId": "ID remoto",
+    "enterRemoteId": "Ingresar ID remoto",
+    "connectionStatus": {
+      "connecting": "Conectando...",
+      "connected": "Conectado",
+      "disconnected": "Desconectado",
+      "failed": "Conexión fallida"
+    },
+    "toolbar": {
+      "fileTransfer": "Transferencia de archivos",
+      "clipboard": "Portapapeles",
+      "chat": "Chat",
+      "remoteInput": "Entrada remota",
+      "screenSelection": "Selección de pantalla"
+    }
+  },
+  "notifications": {
+    "fileTransferComplete": "Transferencia de archivo completa: {fileName}",
+    "fileTransferFailed": "Transferencia de archivo fallida: {fileName}",
+    "clipboardSyncEnabled": "Sincronización del portapapeles habilitada.",
+    "clipboardSyncDisabled": "Sincronización del portapapeles deshabilitada."
+  }
+}

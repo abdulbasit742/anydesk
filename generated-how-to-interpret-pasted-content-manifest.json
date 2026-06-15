@@ -1,0 +1,29 @@
+{
+  "sourceZip": "C:/Users/bsphy2304/Downloads/How to Interpret Content in pasted_content.zip",
+  "stagedAt": "_incoming/how-to-interpret-pasted-content",
+  "buildEstimateAfterTriage": "26-33%",
+  "zipEntryCount": 10,
+  "zipFileCount": 10,
+  "stagedFileCount": 10,
+  "contentTypes": {
+    "markdown": 4,
+    "json": 3,
+    "typescript": 2,
+    "text": 1
+  },
+  "mergeDecision": "reject-runtime-merge",
+  "runtimeFilesMerged": [],
+  "reviewOnlyFiles": [
+    "RemoteDesk Duplicate Risk Report.md",
+    "RemoteDesk Generated Files Summary.md",
+    "RemoteDesk Next Batch Plan.md",
+    "RemoteDesk Gap Report.md",
+    "generated-files-manifest.json",
+    "tsconfig.json",
+    "generate-10000-batch-3.ts",
+    "10000-batch-3-blueprint.json",
+    "generate-10000-batch-3.config.ts",
+    "pasted_content.txt"
+  ],
+  "reason": "The pack is a generation plan and script for producing boilerplate files, not a working RemoteDesk feature implementation."
+}

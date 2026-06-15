@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { evaluateMobileDevicePosture } from '../../packages/shared/src/pack15/mobileDevicePosture.js'; assert.equal(evaluateMobileDevicePosture({ appVersionSupported: true, pushEnabled: true, screenLockKnown: true, rootedOrJailbrokenKnown: false }).trusted, true);

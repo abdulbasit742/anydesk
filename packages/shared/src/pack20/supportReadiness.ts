@@ -1,0 +1,2 @@
+export interface SupportReadiness { runbookPublished:boolean; macrosPublished:boolean; onCallAssigned:boolean; escalationPathTested:boolean; }
+export function supportReadinessMissing(i: SupportReadiness): string[] { const m:string[]=[]; if(!i.runbookPublished)m.push('runbook'); if(!i.macrosPublished)m.push('macros'); if(!i.onCallAssigned)m.push('on-call'); if(!i.escalationPathTested)m.push('escalation-test'); return m; }

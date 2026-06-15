@@ -1,0 +1,527 @@
+﻿{
+    "sourceZip":  "C:\\Users\\bsphy2304\\Downloads\\Kimi_Agent_RemoteDesk Build Overview.zip",
+    "stagedAt":  "_incoming/kimi-build-overview/",
+    "strategy":  "stage and review generated runtime; import safe docs/manifests; manually port compatible desktop remote-input permission slice",
+    "totalFiles":  103,
+    "typeScriptFiles":  85,
+    "markdownFiles":  17,
+    "jsonFiles":  1,
+    "yamlFiles":  0,
+    "stagedFiles":  [
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\fileTransfer\\ipcHandlers.ts",
+                            "extension":  ".ts",
+                            "bytes":  5785
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\inputExecution\\abstractExecutor.ts",
+                            "extension":  ".ts",
+                            "bytes":  9506
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\inputExecution\\darwinNotes.md",
+                            "extension":  ".md",
+                            "bytes":  2434
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\inputExecution\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  367
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\inputExecution\\linuxNotes.md",
+                            "extension":  ".md",
+                            "bytes":  3915
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\inputExecution\\platformNotes.md",
+                            "extension":  ".md",
+                            "bytes":  2785
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\inputExecution\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  3084
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\inputExecution\\win32Notes.md",
+                            "extension":  ".md",
+                            "bytes":  2930
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\preload\\fileTransfer.ts",
+                            "extension":  ".ts",
+                            "bytes":  2849
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\clipboard\\clipboardService.ts",
+                            "extension":  ".ts",
+                            "bytes":  8683
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\clipboard\\ClipboardStatusBadge.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1418
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\clipboard\\ClipboardToggle.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1888
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\clipboard\\conflictResolver.ts",
+                            "extension":  ".ts",
+                            "bytes":  3786
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\clipboard\\debounce.ts",
+                            "extension":  ".ts",
+                            "bytes":  3274
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\clipboard\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  670
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\clipboard\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  889
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\clipboard\\useClipboardSync.ts",
+                            "extension":  ".ts",
+                            "bytes":  2273
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\fileTransfer\\chunking.ts",
+                            "extension":  ".ts",
+                            "bytes":  6090
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\fileTransfer\\filenameSanitizer.ts",
+                            "extension":  ".ts",
+                            "bytes":  4154
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\fileTransfer\\FileTransferPanel.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  4836
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\fileTransfer\\IncomingFileDialog.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  4749
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\fileTransfer\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  951
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\fileTransfer\\receiverStateMachine.ts",
+                            "extension":  ".ts",
+                            "bytes":  7171
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\fileTransfer\\senderStateMachine.ts",
+                            "extension":  ".ts",
+                            "bytes":  6566
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\fileTransfer\\transferStore.ts",
+                            "extension":  ".ts",
+                            "bytes":  2751
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\fileTransfer\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  1824
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\fileTransfer\\useFileTransfer.ts",
+                            "extension":  ".ts",
+                            "bytes":  6000
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\deniedResponses.ts",
+                            "extension":  ".ts",
+                            "bytes":  2937
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  903
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\PermissionAuditLog.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  2123
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\PermissionConsentModal.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  3838
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\PermissionGate.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1696
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\permissionReducer.ts",
+                            "extension":  ".ts",
+                            "bytes":  6870
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\permissionSettings.ts",
+                            "extension":  ".ts",
+                            "bytes":  2607
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\PermissionStatusBar.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1792
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  2381
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\usePermissions.ts",
+                            "extension":  ".ts",
+                            "bytes":  6723
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\captureKeyboard.ts",
+                            "extension":  ".ts",
+                            "bytes":  6197
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\captureMouse.ts",
+                            "extension":  ".ts",
+                            "bytes":  5543
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\EmergencyStopButton.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  2182
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\HostInputToggle.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  2611
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  997
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\inputValidation.ts",
+                            "extension":  ".ts",
+                            "bytes":  5277
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\normalizeCoordinates.ts",
+                            "extension":  ".ts",
+                            "bytes":  5521
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\RemoteInputProvider.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  8840
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\sessionSettings.ts",
+                            "extension":  ".ts",
+                            "bytes":  3245
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\throttle.ts",
+                            "extension":  ".ts",
+                            "bytes":  5331
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  2889
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\useHostInputControl.ts",
+                            "extension":  ".ts",
+                            "bytes":  8330
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\useRemoteInput.ts",
+                            "extension":  ".ts",
+                            "bytes":  1512
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\services\\fileTransferService.ts",
+                            "extension":  ".ts",
+                            "bytes":  5270
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\services\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  282
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\services\\metricsService.ts",
+                            "extension":  ".ts",
+                            "bytes":  5010
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\services\\permissionAuditService.ts",
+                            "extension":  ".ts",
+                            "bytes":  4332
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\clipboardProtocol.md",
+                            "extension":  ".md",
+                            "bytes":  3127
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\clipboardQA.md",
+                            "extension":  ".md",
+                            "bytes":  2130
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\emergencyProcedures.md",
+                            "extension":  ".md",
+                            "bytes":  3145
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\failureModes.md",
+                            "extension":  ".md",
+                            "bytes":  3611
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\fileTransferIPC.md",
+                            "extension":  ".md",
+                            "bytes":  4651
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\fileTransferProtocol.md",
+                            "extension":  ".md",
+                            "bytes":  4131
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\integrationTestPlan.md",
+                            "extension":  ".md",
+                            "bytes":  4871
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\manualQAChecklist.md",
+                            "extension":  ".md",
+                            "bytes":  4286
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\mergeGuide.md",
+                            "extension":  ".md",
+                            "bytes":  3833
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\permissionLifecycle.md",
+                            "extension":  ".md",
+                            "bytes":  4143
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\riskRegister.md",
+                            "extension":  ".md",
+                            "bytes":  2789
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\securityModel.md",
+                            "extension":  ".md",
+                            "bytes":  3530
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\threatModel.md",
+                            "extension":  ".md",
+                            "bytes":  6468
+                        },
+                        {
+                            "path":  "remotedesk\\manifest.json",
+                            "extension":  ".json",
+                            "bytes":  8283
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\clipboard\\constants.ts",
+                            "extension":  ".ts",
+                            "bytes":  676
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\clipboard\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  102
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\clipboard\\protocol.ts",
+                            "extension":  ".ts",
+                            "bytes":  3776
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\clipboard\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  2309
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\fileTransfer\\constants.ts",
+                            "extension":  ".ts",
+                            "bytes":  1236
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\fileTransfer\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  106
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\fileTransfer\\protocol.ts",
+                            "extension":  ".ts",
+                            "bytes":  5395
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\fileTransfer\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  4808
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\permissions\\defaults.ts",
+                            "extension":  ".ts",
+                            "bytes":  2101
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\permissions\\events.ts",
+                            "extension":  ".ts",
+                            "bytes":  2057
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\permissions\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  129
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\permissions\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  2623
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\remoteInput\\events.ts",
+                            "extension":  ".ts",
+                            "bytes":  2546
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\remoteInput\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  136
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\remoteInput\\serialization.ts",
+                            "extension":  ".ts",
+                            "bytes":  4157
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\remoteInput\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  3155
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\clipboard\\conflictResolver.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  4090
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\clipboard\\debounce.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  2955
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\clipboard\\protocol.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  4081
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\clipboard\\sizeLimit.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  1842
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\fileTransfer\\chunking.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  3467
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\fileTransfer\\cleanup.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  3415
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\fileTransfer\\filenameSanitizer.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  4696
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\fileTransfer\\stateMachines.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  5371
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\fileTransfer\\transferLimits.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  2754
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\permissions\\auditEvents.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  3628
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\permissions\\consentFlow.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  3795
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\permissions\\permissionReducer.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  6881
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\remoteInput\\captureMouse.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  3289
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\remoteInput\\inputValidation.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  6287
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\remoteInput\\normalizeCoordinates.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  4598
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\remoteInput\\serialization.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  4131
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\remoteInput\\sessionSettings.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  3666
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\remoteInput\\throttle.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  4134
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\setup.ts",
+                            "extension":  ".ts",
+                            "bytes":  1828
+                        }
+                    ]
+}

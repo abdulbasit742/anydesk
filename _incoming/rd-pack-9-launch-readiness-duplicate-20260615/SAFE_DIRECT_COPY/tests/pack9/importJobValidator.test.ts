@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { validateImportJobKind } from "../../REVIEW_REQUIRED/apps/api/src/pack9/dataImportJobs/importJobValidator.js"; assert.equal(validateImportJobKind("users"), true); assert.equal(validateImportJobKind("bad"), false);

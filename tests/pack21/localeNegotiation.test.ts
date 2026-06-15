@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { chooseSupportedLocale } from "../../packages/shared/src/pack21/localeNegotiation.js"; assert.equal(chooseSupportedLocale(["ur-PK"], ["en", "ur"]), "ur");

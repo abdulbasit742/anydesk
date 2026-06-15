@@ -1,0 +1,2 @@
+export interface RolloutApprovalRecord { id: string; version: string; environment: "staging" | "production"; status: "pending" | "approved" | "rejected"; approverUserId?: string; createdAt: string; }
+export interface RolloutApprovalRecordRepository { create(record: RolloutApprovalRecord): Promise<RolloutApprovalRecord>; update(id: string, patch: Partial<RolloutApprovalRecord>): Promise<RolloutApprovalRecord | null>; list(filter: Partial<RolloutApprovalRecord>, limit: number): Promise<RolloutApprovalRecord[]>; }

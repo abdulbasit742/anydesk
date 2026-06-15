@@ -1,0 +1,19 @@
+import { useEffect, useState } from "react";
+
+export interface useTestCasesResult<T> {
+  data?: T;
+  loading: boolean;
+  error?: string;
+}
+
+export function useTestCases<T>(loader: () => Promise<T>): useTestCasesResult<T> {
+  const [state, setState] = useState<useTestCasesResult<T>>({ loading: true });
+  useEffect(() => {
+    let cancelled = false;
+    loader()
+      .then((data) => { if (!cancelled) setState({ loading: false, data }); })
+      .catch((error: unknown) => { if (!cancelled) setState({ loading: false, error: error instanceof Error ? error.message : "Unknown error" }); });
+    return () => { cancelled = true; };
+  }, [loader]);
+  return state;
+}

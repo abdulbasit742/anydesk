@@ -1,0 +1,2 @@
+export interface LicenseComplianceRecord { id: string; dependencyName: string; license: string; allowed: boolean; reviewedAt: string; notes?: string; }
+export interface LicenseComplianceRecordRepository { create(record: LicenseComplianceRecord): Promise<LicenseComplianceRecord>; update(id: string, patch: Partial<LicenseComplianceRecord>): Promise<LicenseComplianceRecord | null>; list(filter: Partial<LicenseComplianceRecord>, limit: number): Promise<LicenseComplianceRecord[]>; }

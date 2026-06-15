@@ -1,0 +1,2 @@
+export interface ReleaseEvidenceRecord { id:string; releaseId:string; kind:string; objectKey:string; sha256:string; createdAt:string; }
+export interface ReleaseEvidenceRecordRepository { create(record:ReleaseEvidenceRecord): Promise<ReleaseEvidenceRecord>; update(id:string, patch:Partial<ReleaseEvidenceRecord>): Promise<ReleaseEvidenceRecord|null>; list(filter:Partial<ReleaseEvidenceRecord>, limit:number): Promise<ReleaseEvidenceRecord[]>; }

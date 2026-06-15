@@ -1,0 +1,13 @@
+groups:
+  - name: remotedesk-portal-pack17
+    rules:
+      - alert: RemoteDeskPortalErrorRateHigh
+        expr: rate(remotedesk_portal_http_errors_total[10m]) > 0.05
+        for: 10m
+        labels:
+          severity: warning
+      - alert: RemoteDeskPublicStatusMajorOutage
+        expr: remotedesk_public_status_level{level="major_outage"} > 0
+        for: 1m
+        labels:
+          severity: critical

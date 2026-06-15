@@ -1,0 +1,79 @@
+{
+  "generatedAt": "2026-06-15T00:00:00.000Z",
+  "sourceUploads": {
+    "zipPacks": [
+      {
+        "name": "generated-remotedesk-customer-portal-pack-17.zip",
+        "stagedAt": "_incoming/rd-customer-portal-pack-17/",
+        "actualFileCount": 123,
+        "safeDirectCopyCount": 28,
+        "reviewRequiredCount": 84,
+        "patchesCount": 4,
+        "runtimeMergeDecision": "review-only"
+      },
+      {
+        "name": "generated-remotedesk-automation-rules-pack-18 (1).zip",
+        "stagedAt": "_incoming/rd-automation-rules-pack-18/",
+        "actualFileCount": 123,
+        "safeDirectCopyCount": 27,
+        "reviewRequiredCount": 85,
+        "patchesCount": 4,
+        "runtimeMergeDecision": "review-only"
+      },
+      {
+        "name": "generated-remotedesk-data-residency-pack-19.zip",
+        "stagedAt": "_incoming/rd-data-residency-pack-19/",
+        "actualFileCount": 124,
+        "safeDirectCopyCount": 28,
+        "reviewRequiredCount": 85,
+        "patchesCount": 4,
+        "runtimeMergeDecision": "review-only"
+      }
+    ],
+    "desktopPdfPacks": [
+      "Pack 15 - CI/CD, Desktop Release Packaging, Signed-Build Readiness and Smoke QA",
+      "Pack 15 Desktop - Device Access Policy Enforcement and Remote Input Safety Gates",
+      "Pack 16 Desktop - Session Approval Consent, Clipboard/File-Transfer Gating and Session Expiry",
+      "Pack 17 Desktop - Safe Host Input Executor Shell, Rate Limiting and Audit Hooks",
+      "Pack 18 Desktop - Host API Audit Forwarding, Session Timeline and Reconnect Policy Re-check",
+      "Pack 19 Desktop - File-Transfer Resumption Guards and Clipboard Resync After Reconnect",
+      "Pack 20 Desktop - First-Connect Device Fingerprint, Viewer Trust Prompt and TOFU",
+      "Pack 21 Desktop - Unattended Access Pre-Authorization Grants and Auto-Accept Guards",
+      "Pack 22 Desktop - Session Summary and Verifiable Consent Receipt at Disconnect"
+    ]
+  },
+  "manualPorts": [
+    "Pack 15 Desktop policy evaluator and permission snapshot model",
+    "Desktop device policy fetcher using existing GET /api/devices/:deviceId settings payload",
+    "Host session permission builder with fail-closed remote input, clipboard, and file-transfer state",
+    "Permission snapshot sync over the existing WebRTC control data channel",
+    "RemoteSessionView policy banner, read-only viewer overlay, and policy-blocked file/clipboard states",
+    "Remote command refresh_policy now performs a real device-policy refresh"
+  ],
+  "changedRuntimeFiles": [
+    "packages/shared/src/permissions/devicePolicy.ts",
+    "packages/shared/src/permissions/policyEvaluator.ts",
+    "packages/shared/src/permissions/index.ts",
+    "apps/desktop/src/renderer/src/services/devicePolicyClient.ts",
+    "apps/desktop/src/renderer/src/services/permissionState.ts",
+    "apps/desktop/src/renderer/src/services/remoteInputGate.ts",
+    "apps/desktop/src/renderer/src/services/sessionDataChannel.ts",
+    "apps/desktop/src/renderer/src/components/PolicyStatusBanner.tsx",
+    "apps/desktop/src/renderer/src/components/EmergencyStopButton.tsx",
+    "apps/desktop/src/renderer/src/components/RemoteSessionView.tsx",
+    "apps/desktop/src/renderer/src/main.tsx",
+    "apps/desktop/src/renderer/src/styles.css",
+    "tests/permissions/policyEvaluator.test.ts"
+  ],
+  "skippedRuntimeAreas": [
+    "Pack 16 approval receipts and expiry persistence",
+    "Pack 17 real native input execution",
+    "Pack 18 host-to-API audit timeline forwarding",
+    "Pack 19 file-transfer resume persistence and clipboard reconnect replay",
+    "Pack 20 device fingerprint persistence and viewer trust prompt",
+    "Pack 21 unattended pre-authorization grants",
+    "Pack 22 verifiable consent receipt signing",
+    "ZIP pack API/web/desktop runtime replacements"
+  ],
+  "buildEstimateAfterThisMerge": "60-66%"
+}

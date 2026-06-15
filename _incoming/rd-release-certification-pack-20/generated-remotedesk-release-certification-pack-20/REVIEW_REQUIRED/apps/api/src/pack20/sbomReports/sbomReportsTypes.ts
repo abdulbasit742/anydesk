@@ -1,0 +1,2 @@
+export interface SbomReportRecord { id:string; releaseId:string; objectKey:string; packageCount:number; unknownLicenses:number; createdAt:string; }
+export interface SbomReportRecordRepository { create(record:SbomReportRecord): Promise<SbomReportRecord>; update(id:string, patch:Partial<SbomReportRecord>): Promise<SbomReportRecord|null>; list(filter:Partial<SbomReportRecord>, limit:number): Promise<SbomReportRecord[]>; }

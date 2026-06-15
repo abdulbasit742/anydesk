@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { retentionRunCanDelete } from "../../REVIEW_REQUIRED/apps/api/src/pack19/retentionRuns/retentionRunPolicy.js"; assert.equal(retentionRunCanDelete({ legalHold: true, dryRun: false, approved: true }).reason, "legal-hold");

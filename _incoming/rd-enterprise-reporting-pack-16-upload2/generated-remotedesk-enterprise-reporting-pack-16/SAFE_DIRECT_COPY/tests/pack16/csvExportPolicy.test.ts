@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { csvExportAllowed } from "../../REVIEW_REQUIRED/apps/api/src/pack16/csvExports/csvExportPolicy.js"; assert.equal(csvExportAllowed({ role: "viewer", rows: 10 }).allowed, false);

@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { webhookEventAllowed } from "../../packages/shared/src/pack10/webhookEventFilter.js"; assert.equal(webhookEventAllowed({ eventTypes: ["session.started"] }, { type: "session.started" }), true);

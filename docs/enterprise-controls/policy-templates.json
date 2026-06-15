@@ -1,0 +1,40 @@
+{
+  "templates": [
+    {
+      "id": "strict",
+      "name": "Strict Enterprise",
+      "description": "Maximum security, all features require approval",
+      "rules": {
+        "remote_input": { "enabled": true, "requireApproval": true },
+        "clipboard": { "enabled": false, "requireApproval": true },
+        "file_transfer": { "enabled": false, "requireApproval": true },
+        "recording": { "enabled": true, "requireApproval": true },
+        "unattended": { "enabled": false, "requireApproval": true }
+      }
+    },
+    {
+      "id": "balanced",
+      "name": "Balanced",
+      "description": "Standard security with usability",
+      "rules": {
+        "remote_input": { "enabled": true, "requireApproval": false },
+        "clipboard": { "enabled": true, "requireApproval": true },
+        "file_transfer": { "enabled": true, "requireApproval": true },
+        "recording": { "enabled": true, "requireApproval": true },
+        "unattended": { "enabled": false, "requireApproval": true }
+      }
+    },
+    {
+      "id": "permissive",
+      "name": "Permissive",
+      "description": "Maximum usability for trusted environments",
+      "rules": {
+        "remote_input": { "enabled": true, "requireApproval": false },
+        "clipboard": { "enabled": true, "requireApproval": false },
+        "file_transfer": { "enabled": true, "requireApproval": false },
+        "recording": { "enabled": true, "requireApproval": true },
+        "unattended": { "enabled": true, "requireApproval": true }
+      }
+    }
+  ]
+}

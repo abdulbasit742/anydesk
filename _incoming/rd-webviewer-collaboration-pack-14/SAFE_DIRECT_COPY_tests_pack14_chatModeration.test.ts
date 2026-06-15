@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { moderateSessionChatMessage } from "../../packages/shared/src/pack14/chatModeration.js"; assert.equal(moderateSessionChatMessage("my password is x").allowed, false);

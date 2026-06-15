@@ -1,0 +1,1 @@
+Pack 10 adds connector marketplace, team connectors, OAuth connections, webhooks, Slack/Teams/Jira/Zendesk/SIEM/storage mapping layers, connector audit, web admin pages, desktop connector status, tests/docs/scripts.

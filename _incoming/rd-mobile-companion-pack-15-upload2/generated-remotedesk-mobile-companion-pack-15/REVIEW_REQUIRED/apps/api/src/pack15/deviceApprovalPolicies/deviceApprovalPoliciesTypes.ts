@@ -1,0 +1,2 @@
+export interface DeviceApprovalPolicyRecord { id: string; teamId: string; requireMobileApproval: boolean; trustedNetworkOnly: boolean; updatedAt: string; }
+export interface DeviceApprovalPolicyRecordRepository { create(record: DeviceApprovalPolicyRecord): Promise<DeviceApprovalPolicyRecord>; update(id: string, patch: Partial<DeviceApprovalPolicyRecord>): Promise<DeviceApprovalPolicyRecord | null>; list(filter: Partial<DeviceApprovalPolicyRecord>, limit: number): Promise<DeviceApprovalPolicyRecord[]>; }

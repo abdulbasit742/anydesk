@@ -1,0 +1,32 @@
+{
+  "name": "remotedesk-self-work-launch-operations",
+  "createdAt": "2026-06-15",
+  "buildEstimateBefore": "44-51%",
+  "buildEstimateAfter": "48-55%",
+  "purpose": "Add Prisma-backed launch readiness operations with API and dashboard surface.",
+  "addedFiles": [
+    "apps/api/src/lib/launchOperations.ts",
+    "apps/api/src/routes/launch.routes.ts",
+    "apps/api/prisma/migrations/20260615090000_launch_operations/migration.sql",
+    "apps/web/app/dashboard/launch/page.tsx",
+    "docs/launch-operations.md",
+    "generated-remotedesk-self-work-launch-operations-summary.md",
+    "generated-remotedesk-self-work-launch-operations-manifest.json"
+  ],
+  "modifiedFiles": [
+    "apps/api/prisma/schema.prisma",
+    "apps/api/src/server.ts",
+    "apps/web/app/dashboard/page.tsx",
+    "IMPLEMENTATION_NOTES.md"
+  ],
+  "runtimeBoundaries": {
+    "appsApi": "updated",
+    "appsWeb": "updated",
+    "appsDesktop": "not touched",
+    "packagesShared": "not touched in this chunk"
+  },
+  "notes": [
+    "Launch gates remain intentionally blocked until real production QA and signing pass.",
+    "Prisma generate/migrate must be run on a machine where Node/npm are available."
+  ]
+}

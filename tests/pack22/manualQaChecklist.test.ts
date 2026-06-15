@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { manualQaComplete } from "../../packages/shared/src/pack22/manualQaChecklist.js"; assert.equal(manualQaComplete([{ id: "x", required: true, checked: true }]), true);

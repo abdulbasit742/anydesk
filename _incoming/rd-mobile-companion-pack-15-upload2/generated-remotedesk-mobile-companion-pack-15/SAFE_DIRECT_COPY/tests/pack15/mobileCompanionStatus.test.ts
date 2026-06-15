@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { mobileCompanionNeedsAttention } from '../../REVIEW_REQUIRED/apps/desktop/src/pack15/mobileCompanionStatus.js'; assert.equal(mobileCompanionNeedsAttention({ pairedDevices: 1, pushEnabled: false, pendingApprovals: 0 }), true);

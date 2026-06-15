@@ -1,0 +1,1 @@
+Review tenant-scoped repository filters, region policy validation, cross-region transfer approval, retention legal-hold handling, KMS key lifecycle boundaries, compliance export role gates and dashboard authorization.

@@ -1,0 +1,2 @@
+export interface SecurityDrillRunRecord { id: string; drill: "incident_response" | "backup_restore" | "tenant_isolation" | "webhook_rotation"; status: "planned" | "running" | "passed" | "failed"; scheduledAt: string; completedAt?: string; }
+export interface SecurityDrillRunRecordRepository { create(record: SecurityDrillRunRecord): Promise<SecurityDrillRunRecord>; update(id: string, patch: Partial<SecurityDrillRunRecord>): Promise<SecurityDrillRunRecord | null>; list(filter: Partial<SecurityDrillRunRecord>, limit: number): Promise<SecurityDrillRunRecord[]>; }

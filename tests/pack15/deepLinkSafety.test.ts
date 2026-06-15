@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { isSafeMobileDeepLink } from '../../packages/shared/src/pack15/deepLinkSafety.js'; assert.equal(isSafeMobileDeepLink('remotedesk://pair'), true); assert.equal(isSafeMobileDeepLink('javascript:alert(1)'), false);

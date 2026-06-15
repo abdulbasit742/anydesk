@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { canPromoteReleaseCandidate } from "../../packages/shared/src/pack9/releaseCandidate.js"; assert.equal(canPromoteReleaseCandidate({ version: "1.0.0", gitSha: "abc", signedDesktopBuild: true, migrationsReviewed: true, smokeTestsPassed: true }).ok, true);

@@ -1,0 +1,27 @@
+{
+  "sourceZip": "C:/Users/bsphy2304/Downloads/remotedesk-5000-file-production-sprint.zip",
+  "stagedAt": "_incoming/remotedesk-5000-file-production-sprint",
+  "buildEstimateAfterTriage": "26-33%",
+  "zipEntryCount": 507,
+  "extractedFileCount": 506,
+  "zipManifestClaim": {
+    "totalFiles": 4500,
+    "safeDirectCopyFiles": 2800,
+    "reviewRequiredFiles": 1700,
+    "expectedBuildPercentageAfterSelectiveMerge": 48
+  },
+  "actualContent": {
+    "typescriptFiles": 501,
+    "jsonFiles": 4,
+    "javascriptFiles": 1,
+    "extraConstantFiles": 500
+  },
+  "mergeDecision": "reject-runtime-merge",
+  "importedIntoRuntime": [],
+  "notMergedPatterns": [
+    "src/shared/extra/extraFile*.ts",
+    "scripts/create_extra_5000_files.ts",
+    "scripts/create_extra_5000_files.js"
+  ],
+  "reason": "The archive is mostly generated filler constants and its manifest claim does not match the actual archive contents."
+}

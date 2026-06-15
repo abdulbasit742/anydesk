@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { collaborationNeedsAttention } from "../../REVIEW_REQUIRED/apps/desktop/src/pack14/collaborationStatusStore.js"; assert.equal(collaborationNeedsAttention({ activeViewers: 1, pendingConsentRequests: 1, annotationsEnabled: true }), true);

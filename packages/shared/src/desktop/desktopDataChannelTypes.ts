@@ -1,0 +1,4 @@
+export type DesktopDataChannelKind = "chat" | "file-transfer" | "clipboard" | "input" | "diagnostics" | "control";
+export interface DesktopDataChannelEnvelope<TPayload = unknown> { id: string; kind: DesktopDataChannelKind; sessionId: string; senderId: string; sentAt: string; payload: TPayload; }
+export interface DesktopDataChannelCapabilities { channelOpen: boolean; fileTransfer: boolean; clipboardText: boolean; remoteInput: boolean; diagnostics: boolean; }
+export function channelCapabilityEnabled(capabilities: DesktopDataChannelCapabilities, kind: DesktopDataChannelKind): boolean { if (!capabilities.channelOpen) return false; if (kind === "file-transfer") return capabilities.fileTransfer; if (kind === "clipboard") return capabilities.clipboardText; if (kind === "input") return capabilities.remoteInput; if (kind === "diagnostics") return capabilities.diagnostics; return true; }

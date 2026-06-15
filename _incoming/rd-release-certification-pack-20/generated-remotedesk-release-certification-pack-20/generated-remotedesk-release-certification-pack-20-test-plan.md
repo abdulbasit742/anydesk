@@ -1,0 +1,1 @@
+Run Pack 20 shared/API/desktop tests, release secret scanner, then manual QA for certification checks, SBOM/vulnerability blockers, installer signature evidence, release approvals, rollout plans, rollback records and launch signoffs.

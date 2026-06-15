@@ -1,0 +1,42 @@
+{
+  "title": "RemoteDesk Ops Pack 5",
+  "schemaVersion": 38,
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Open incidents",
+      "targets": [
+        {
+          "expr": "remotedesk_incidents_open"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "TURN region health",
+      "targets": [
+        {
+          "expr": "remotedesk_turn_region_healthy"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Notification failures",
+      "targets": [
+        {
+          "expr": "rate(remotedesk_notification_failures_total[5m])"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "File scan failures",
+      "targets": [
+        {
+          "expr": "rate(remotedesk_file_scan_failures_total[5m])"
+        }
+      ]
+    }
+  ]
+}

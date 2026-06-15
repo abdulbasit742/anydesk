@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { normalizeDepartmentPath, isChildDepartment } from "../../packages/shared/src/pack16/departmentPath.js"; assert.equal(normalizeDepartmentPath(" Sales / EU "), "Sales/EU"); assert.equal(isChildDepartment("Sales", "Sales/EU"), true);

@@ -1,0 +1,1 @@
+export function migrationBlocksLaunch(input: { risk: "low" | "medium" | "high" | "critical"; reviewed: boolean; destructive: boolean }): boolean { if (input.risk === "critical") return true; if (input.destructive && !input.reviewed) return true; if (input.risk === "high" && !input.reviewed) return true; return false; }

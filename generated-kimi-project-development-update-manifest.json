@@ -1,0 +1,367 @@
+﻿{
+    "sourceZip":  "C:\\Users\\bsphy2304\\Downloads\\Kimi_Agent_RemoteDesk Project Development Update.zip",
+    "stagedAt":  "_incoming/kimi-project-development-update/",
+    "strategy":  "stage and review generated runtime; import safe docs/manifests; manually port compatible desktop remote-input permission slice",
+    "totalFiles":  71,
+    "typeScriptFiles":  55,
+    "markdownFiles":  9,
+    "jsonFiles":  7,
+    "yamlFiles":  0,
+    "stagedFiles":  [
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\package.json",
+                            "extension":  ".json",
+                            "bytes":  709
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\input\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  1327
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\input\\linuxExecutor.ts",
+                            "extension":  ".ts",
+                            "bytes":  3158
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\input\\macOSExecutor.ts",
+                            "extension":  ".ts",
+                            "bytes":  2896
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\input\\noopExecutor.ts",
+                            "extension":  ".ts",
+                            "bytes":  3414
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\input\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  2605
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\main\\input\\windowsExecutor.ts",
+                            "extension":  ".ts",
+                            "bytes":  3285
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\preload\\input\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  459
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\preload\\input\\inputPreload.ts",
+                            "extension":  ".ts",
+                            "bytes":  3687
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\preload\\input\\ipcContract.ts",
+                            "extension":  ".ts",
+                            "bytes":  3602
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\components\\RemoteSessionView.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  4929
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\HostPermissionToggle.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  7491
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  617
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\PermissionBanner.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  3246
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\usePermissionStore.ts",
+                            "extension":  ".ts",
+                            "bytes":  4408
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\permissions\\ViewerPermissionBadge.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  5173
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\clickMap.ts",
+                            "extension":  ".ts",
+                            "bytes":  3269
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  2534
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\inputDiagnostics.ts",
+                            "extension":  ".ts",
+                            "bytes":  4986
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\inputThrottle.ts",
+                            "extension":  ".ts",
+                            "bytes":  5505
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\keyboardMap.ts",
+                            "extension":  ".ts",
+                            "bytes":  3911
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\modifiers.ts",
+                            "extension":  ".ts",
+                            "bytes":  2468
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\normalize.ts",
+                            "extension":  ".ts",
+                            "bytes":  3201
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\pointerCapture.ts",
+                            "extension":  ".ts",
+                            "bytes":  4015
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\RemoteInputCapture.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  10180
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\remoteInputSender.ts",
+                            "extension":  ".ts",
+                            "bytes":  6887
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\RemoteVideoInputOverlay.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  6193
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\scrollMap.ts",
+                            "extension":  ".ts",
+                            "bytes":  2453
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\remoteInput\\throttle.ts",
+                            "extension":  ".ts",
+                            "bytes":  4164
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\safety\\EmergencyStopButton.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  5306
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\safety\\emergencyStopService.ts",
+                            "extension":  ".ts",
+                            "bytes":  4788
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\safety\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  646
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\features\\safety\\SafetyWarningPanel.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  4662
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\main.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  930
+                        },
+                        {
+                            "path":  "remotedesk\\apps\\desktop\\src\\renderer\\src\\services\\sessionDataChannel.ts",
+                            "extension":  ".ts",
+                            "bytes":  3517
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\architecture\\native-input-execution.md",
+                            "extension":  ".md",
+                            "bytes":  5995
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\architecture\\remote-input-architecture.md",
+                            "extension":  ".md",
+                            "bytes":  7127
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\qa\\qa-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  4209
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\security\\abuse-prevention-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  2348
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\security\\emergency-stop.md",
+                            "extension":  ".md",
+                            "bytes":  4792
+                        },
+                        {
+                            "path":  "remotedesk\\docs\\security\\threat-model.md",
+                            "extension":  ".md",
+                            "bytes":  5016
+                        },
+                        {
+                            "path":  "remotedesk\\generated-remote-input-1000-pack-manifest.json",
+                            "extension":  ".json",
+                            "bytes":  13990
+                        },
+                        {
+                            "path":  "remotedesk\\generated-remote-input-1000-pack-merge-guide.md",
+                            "extension":  ".md",
+                            "bytes":  6089
+                        },
+                        {
+                            "path":  "remotedesk\\generated-remote-input-1000-pack-qa-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  5146
+                        },
+                        {
+                            "path":  "remotedesk\\generated-remote-input-1000-pack-risk-register.md",
+                            "extension":  ".md",
+                            "bytes":  5204
+                        },
+                        {
+                            "path":  "remotedesk\\package.json",
+                            "extension":  ".json",
+                            "bytes":  672
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\package.json",
+                            "extension":  ".json",
+                            "bytes":  513
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\events\\socketEvents.ts",
+                            "extension":  ".ts",
+                            "bytes":  864
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  306
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\permissions\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  89
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\permissions\\reducer.ts",
+                            "extension":  ".ts",
+                            "bytes":  2886
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\permissions\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  1821
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\remoteInput\\constants.ts",
+                            "extension":  ".ts",
+                            "bytes":  3826
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\remoteInput\\errors.ts",
+                            "extension":  ".ts",
+                            "bytes":  3147
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\remoteInput\\index.ts",
+                            "extension":  ".ts",
+                            "bytes":  292
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\remoteInput\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  7775
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\remoteInput\\validation.ts",
+                            "extension":  ".ts",
+                            "bytes":  12159
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\session\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  427
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\src\\webrtc\\types.ts",
+                            "extension":  ".ts",
+                            "bytes":  878
+                        },
+                        {
+                            "path":  "remotedesk\\packages\\shared\\tsconfig.json",
+                            "extension":  ".json",
+                            "bytes":  179
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\unit\\permissions\\reducer.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  5281
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\unit\\remoteInput\\clickMap.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  3403
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\unit\\remoteInput\\keyboardMap.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  4723
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\unit\\remoteInput\\normalize.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  4134
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\unit\\remoteInput\\sender.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  4839
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\unit\\remoteInput\\throttle.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  4104
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\unit\\remoteInput\\validation.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  5592
+                        },
+                        {
+                            "path":  "remotedesk\\tests\\unit\\safety\\emergencyStop.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  5706
+                        },
+                        {
+                            "path":  "remotedesk\\tsconfig.json",
+                            "extension":  ".json",
+                            "bytes":  463
+                        },
+                        {
+                            "path":  "remotedesk\\turbo.json",
+                            "extension":  ".json",
+                            "bytes":  452
+                        },
+                        {
+                            "path":  "remotedesk\\vitest.config.ts",
+                            "extension":  ".ts",
+                            "bytes":  487
+                        }
+                    ]
+}

@@ -1,0 +1,2 @@
+export interface PairingCodeRecord { id: string; teamId: string; codeHash: string; expiresAt: string; attempts: number; maxAttempts: number; createdByUserId: string; }
+export interface PairingCodeRecordRepository { create(record: PairingCodeRecord): Promise<PairingCodeRecord>; update(id: string, patch: Partial<PairingCodeRecord>): Promise<PairingCodeRecord | null>; list(filter: Partial<PairingCodeRecord>, limit: number): Promise<PairingCodeRecord[]>; }

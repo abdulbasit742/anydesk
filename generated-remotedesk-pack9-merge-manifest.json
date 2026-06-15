@@ -1,0 +1,50 @@
+{
+  "name": "generated-remotedesk-pack9-launch-readiness",
+  "createdAt": "2026-06-14",
+  "buildEstimateAfterMerge": "41-48%",
+  "sources": [
+    {
+      "type": "zip",
+      "zip": "generated-remotedesk-launch-readiness-pack-9.zip",
+      "entries": 117,
+      "safeDirectCopyCount": 27,
+      "reviewRequiredCount": 79,
+      "patchesCount": 4,
+      "stagingRoot": "C:/Users/bsphy2304/Documents/New project/_incoming/rd-pack-9-launch",
+      "mergeMode": "safe-docs-infra-shared-scripts-plus-launch-readiness-port"
+    },
+    {
+      "type": "zip",
+      "zip": "generated-remotedesk-governance-automation-pack-8 (1).zip",
+      "entries": 123,
+      "stagingRoot": "C:/Users/bsphy2304/Documents/New project/_incoming/rd-pack-8-governance",
+      "mergeMode": "duplicate-skipped",
+      "duplicateOf": "generated-remotedesk-governance-automation-pack-8.zip"
+    }
+  ],
+  "safeImportsApplied": [
+    "docs/pack9/**",
+    "infra/pack9/**",
+    "scripts/pack9/**",
+    "packages/shared/src/pack9/**"
+  ],
+  "runtimePortsApplied": [
+    "apps/api/src/observability/launchReadiness.ts",
+    "apps/api/src/observability/health.ts",
+    "apps/api/src/server.ts",
+    "packages/shared/src/index.ts"
+  ],
+  "reviewOnly": [
+    "all REVIEW_REQUIRED/** runtime files from Pack 9",
+    "generated Pack 9 tests that import REVIEW_REQUIRED runtime paths",
+    "generated patch markdown until applied module-by-module against current contracts",
+    "duplicate Pack 8 archive"
+  ],
+  "validation": {
+    "manifestParse": "passed",
+    "fillerSymbolScan": "passed",
+    "runtimeReviewLabelScan": "passed",
+    "nodeRuntime": "blocked: node.exe returns Access is denied",
+    "npmRuntime": "blocked: npm is not installed on PATH"
+  }
+}

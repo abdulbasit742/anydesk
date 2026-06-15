@@ -1,0 +1,1 @@
+Run Pack 21 shared/API/desktop tests, copy/accessibility scanner, then manual QA for locale selector, RTL pages, translation review, accessibility audit blockers, shortcut help, onboarding tours and UX experiment guardrails.

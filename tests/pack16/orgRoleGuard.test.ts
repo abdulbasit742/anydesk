@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { desktopRoleCanViewEnterpriseSettings } from "../../REVIEW_REQUIRED/apps/desktop/src/pack16/orgRoleGuard.js"; assert.equal(desktopRoleCanViewEnterpriseSettings("auditor"), true); assert.equal(desktopRoleCanViewEnterpriseSettings("member"), false);

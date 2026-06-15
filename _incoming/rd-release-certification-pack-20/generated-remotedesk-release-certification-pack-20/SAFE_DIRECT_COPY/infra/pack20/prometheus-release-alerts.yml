@@ -1,0 +1,13 @@
+groups:
+  - name: remotedesk-release-pack20
+    rules:
+      - alert: RemoteDeskReleaseBlockersOpen
+        expr: remotedesk_release_blockers_open_total > 0
+        for: 5m
+        labels:
+          severity: warning
+      - alert: RemoteDeskRollbackRunning
+        expr: remotedesk_rollback_running_total > 0
+        for: 1m
+        labels:
+          severity: critical

@@ -1,0 +1,13 @@
+groups:
+  - name: remotedesk-experience-pack21
+    rules:
+      - alert: RemoteDeskAccessibilityCriticalIssues
+        expr: remotedesk_accessibility_critical_issues_total > 0
+        for: 5m
+        labels:
+          severity: warning
+      - alert: RemoteDeskLocalizationPublishFailures
+        expr: rate(remotedesk_localization_publish_failures_total[10m]) > 0
+        for: 10m
+        labels:
+          severity: info

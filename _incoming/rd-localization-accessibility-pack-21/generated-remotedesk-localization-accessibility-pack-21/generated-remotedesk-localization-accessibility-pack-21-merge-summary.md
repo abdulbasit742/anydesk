@@ -1,0 +1,1 @@
+Pack 21 adds localization bundles, translation keys/reviews, locale preferences, accessibility audits/issues, keyboard shortcut profiles, onboarding tours/progress, UX experiments, copy review, experience audit, web/desktop UI, docs/tests/scripts.

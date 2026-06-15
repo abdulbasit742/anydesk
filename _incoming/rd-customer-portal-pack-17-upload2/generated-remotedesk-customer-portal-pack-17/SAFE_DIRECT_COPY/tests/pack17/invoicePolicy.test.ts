@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { invoiceCanBeDownloaded } from "../../REVIEW_REQUIRED/apps/api/src/pack17/invoices/invoicePolicy.js"; assert.equal(invoiceCanBeDownloaded("paid"), true); assert.equal(invoiceCanBeDownloaded("draft"), false);

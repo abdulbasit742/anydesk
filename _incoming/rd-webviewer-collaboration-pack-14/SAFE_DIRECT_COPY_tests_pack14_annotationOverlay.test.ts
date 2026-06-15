@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { filterVisibleAnnotations } from "../../REVIEW_REQUIRED/apps/desktop/src/pack14/annotationOverlay.js"; assert.equal(filterVisibleAnnotations([{ id: "a", x: .1, y: .1 }, { id: "b", x: 2, y: .1 }]).length, 1);

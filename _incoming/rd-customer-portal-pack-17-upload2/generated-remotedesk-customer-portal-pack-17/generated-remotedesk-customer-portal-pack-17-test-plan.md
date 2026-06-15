@@ -1,0 +1,1 @@
+Run Pack 17 shared/API/desktop tests, portal content safety scanner, then manual QA for billing role access, invoice downloads, public status, help center publishing, theme settings, notifications and portal audit.

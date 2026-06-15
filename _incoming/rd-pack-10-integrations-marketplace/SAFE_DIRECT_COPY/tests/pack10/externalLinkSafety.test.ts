@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { isSafeExternalUrl } from "../../packages/shared/src/pack10/externalLinkSafety.js"; assert.equal(isSafeExternalUrl("https://example.com"), true); assert.equal(isSafeExternalUrl("http://example.com"), false);

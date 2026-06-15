@@ -1,0 +1,340 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String         @id @default(uuid())
+  email            String         @unique
+  passwordHash     String
+  fullName         String
+  remoteDeskId     String         @unique
+  devicePassword   String?
+  isOnline         Boolean        @default(false)
+  socketId         String?
+  lastSeenAt       DateTime?
+  plan             Plan           @default(FREE)
+  stripeCustomerId String?        @unique
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  devices          Device[]
+  issuedCommands   DeviceCommand[] @relation("IssuedDeviceCommands")
+  deviceAuditEvents DeviceAuditEvent[] @relation("DeviceAuditActors")
+  launchChecks      LaunchCheck[] @relation("LaunchCheckCreators")
+  releaseCandidates ReleaseCandidate[] @relation("ReleaseCandidateCreators")
+  rolloutApprovals  RolloutApproval[] @relation("RolloutApprovalActors")
+  migrationChecks   MigrationCheck[] @relation("MigrationCheckCreators")
+  supportEscalationsCreated SupportEscalation[] @relation("SupportEscalationCreators")
+  supportEscalationsAssigned SupportEscalation[] @relation("SupportEscalationAssignees")
+  connectorInstallations ConnectorInstallation[] @relation("ConnectorInstallationUsers")
+  connectorAuditEvents ConnectorAuditEvent[] @relation("ConnectorAuditActors")
+  subscriptions    Subscription[]
+  hostSessions     Session[]      @relation("HostSessions")
+  clientSessions   Session[]      @relation("ClientSessions")
+}
+
+model Device {
+  id           String   @id @default(uuid())
+  userId       String
+  name         String
+  platform     String
+  remoteDeskId String   @unique
+  isOnline     Boolean  @default(false)
+  lastSeenAt   DateTime?
+  createdAt    DateTime @default(now())
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  commands     DeviceCommand[]
+  auditEvents  DeviceAuditEvent[]
+  trustRecord  DeviceTrust?
+  accessPolicy DeviceAccessPolicy?
+}
+
+model DeviceTrust {
+  id              String   @id @default(uuid())
+  deviceId        String   @unique
+  status          String   @default("untrusted")
+  reason          String?
+  trustedAt       DateTime?
+  revokedAt       DateTime?
+  updatedByUserId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  device          Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@index([status, updatedAt])
+  @@index([updatedByUserId, updatedAt])
+}
+
+model DeviceAccessPolicy {
+  id                       String   @id @default(uuid())
+  deviceId                 String   @unique
+  unattendedAccessEnabled  Boolean  @default(false)
+  remoteInputEnabled       Boolean  @default(false)
+  clipboardSyncEnabled     Boolean  @default(false)
+  fileTransferEnabled      Boolean  @default(false)
+  requiresSessionApproval  Boolean  @default(true)
+  maxSessionMinutes        Int      @default(60)
+  updatedByUserId          String?
+  createdAt                DateTime @default(now())
+  updatedAt                DateTime @updatedAt
+
+  device                   Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@index([unattendedAccessEnabled, updatedAt])
+  @@index([remoteInputEnabled, updatedAt])
+  @@index([updatedByUserId, updatedAt])
+}
+
+model DeviceCommand {
+  id             String   @id @default(uuid())
+  deviceId       String
+  issuedByUserId String
+  type           String
+  status         String   @default("pending")
+  payload        Json?
+  result         Json?
+  issuedAt       DateTime @default(now())
+  expiresAt      DateTime
+  deliveredAt    DateTime?
+  completedAt    DateTime?
+  failedAt       DateTime?
+  failureReason  String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  device         Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  issuedBy       User     @relation("IssuedDeviceCommands", fields: [issuedByUserId], references: [id], onDelete: Cascade)
+
+  @@index([deviceId, status, expiresAt])
+  @@index([issuedByUserId, createdAt])
+}
+
+model DeviceAuditEvent {
+  id          String   @id @default(uuid())
+  deviceId    String
+  actorUserId String?
+  type        String
+  message     String
+  metadata    Json?
+  createdAt   DateTime @default(now())
+
+  device      Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  actor       User?    @relation("DeviceAuditActors", fields: [actorUserId], references: [id], onDelete: SetNull)
+
+  @@index([deviceId, createdAt])
+  @@index([actorUserId, createdAt])
+}
+
+model LaunchCheck {
+  id              String   @id @default(uuid())
+  key             String   @unique
+  area            String
+  label           String
+  status          String   @default("fail")
+  required        Boolean  @default(true)
+  notes           String?
+  createdByUserId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  createdBy       User?    @relation("LaunchCheckCreators", fields: [createdByUserId], references: [id], onDelete: SetNull)
+
+  @@index([area, status])
+  @@index([createdByUserId, createdAt])
+}
+
+model ReleaseCandidate {
+  id                 String   @id @default(uuid())
+  version            String
+  gitSha             String
+  status             String   @default("draft")
+  signedDesktopBuild Boolean  @default(false)
+  migrationsReviewed Boolean  @default(false)
+  smokeTestsPassed   Boolean  @default(false)
+  notes              String?
+  createdByUserId    String?
+  promotedAt         DateTime?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  createdBy          User?    @relation("ReleaseCandidateCreators", fields: [createdByUserId], references: [id], onDelete: SetNull)
+  approvals          RolloutApproval[]
+  migrationChecks    MigrationCheck[]
+
+  @@unique([version, gitSha])
+  @@index([status, createdAt])
+  @@index([createdByUserId, createdAt])
+}
+
+model RolloutApproval {
+  id                 String   @id @default(uuid())
+  releaseCandidateId String?
+  requestedByUserId  String?
+  area               String
+  decision           String   @default("pending")
+  reason             String?
+  decidedAt          DateTime?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  releaseCandidate   ReleaseCandidate? @relation(fields: [releaseCandidateId], references: [id], onDelete: Cascade)
+  requestedBy         User?    @relation("RolloutApprovalActors", fields: [requestedByUserId], references: [id], onDelete: SetNull)
+
+  @@index([releaseCandidateId, decision])
+  @@index([requestedByUserId, createdAt])
+}
+
+model MigrationCheck {
+  id                 String   @id @default(uuid())
+  releaseCandidateId String?
+  name               String
+  risk               String
+  touchesAuth        Boolean  @default(false)
+  touchesBilling     Boolean  @default(false)
+  reviewed           Boolean  @default(false)
+  destructive        Boolean  @default(false)
+  backfillRows       Int      @default(0)
+  status             String   @default("pending")
+  notes              String?
+  createdByUserId    String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  releaseCandidate   ReleaseCandidate? @relation(fields: [releaseCandidateId], references: [id], onDelete: Cascade)
+  createdBy          User?    @relation("MigrationCheckCreators", fields: [createdByUserId], references: [id], onDelete: SetNull)
+
+  @@index([releaseCandidateId, status])
+  @@index([risk, reviewed])
+  @@index([createdByUserId, createdAt])
+}
+
+model SupportEscalation {
+  id               String   @id @default(uuid())
+  title            String
+  priority         String
+  category         String
+  target           String
+  status           String   @default("open")
+  description      String?
+  createdByUserId  String?
+  assignedToUserId String?
+  resolvedAt       DateTime?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  createdBy        User?    @relation("SupportEscalationCreators", fields: [createdByUserId], references: [id], onDelete: SetNull)
+  assignedTo       User?    @relation("SupportEscalationAssignees", fields: [assignedToUserId], references: [id], onDelete: SetNull)
+
+  @@index([status, priority, createdAt])
+  @@index([createdByUserId, createdAt])
+  @@index([assignedToUserId, createdAt])
+}
+
+model ConnectorDefinition {
+  id           String   @id @default(uuid())
+  key          String   @unique
+  name         String
+  category     String
+  availability String   @default("available")
+  description  String
+  capabilities Json
+  docsUrl      String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  installations ConnectorInstallation[]
+  auditEvents   ConnectorAuditEvent[]
+
+  @@index([category, availability])
+}
+
+model ConnectorInstallation {
+  id           String   @id @default(uuid())
+  connectorKey String
+  userId       String
+  status       String   @default("installed")
+  installedAt  DateTime @default(now())
+  uninstalledAt DateTime?
+  config       Json?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  connector    ConnectorDefinition @relation(fields: [connectorKey], references: [key], onDelete: Cascade)
+  user         User     @relation("ConnectorInstallationUsers", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([connectorKey, userId])
+  @@index([userId, status])
+  @@index([connectorKey, status])
+}
+
+model ConnectorAuditEvent {
+  id           String   @id @default(uuid())
+  connectorKey String
+  userId       String?
+  type         String
+  message      String
+  metadata     Json?
+  createdAt    DateTime @default(now())
+
+  connector    ConnectorDefinition @relation(fields: [connectorKey], references: [key], onDelete: Cascade)
+  user         User?    @relation("ConnectorAuditActors", fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([connectorKey, createdAt])
+  @@index([userId, createdAt])
+  @@index([type, createdAt])
+}
+
+model Session {
+  id        String        @id @default(uuid())
+  hostId    String
+  clientId  String
+  status    SessionStatus @default(PENDING)
+  startedAt DateTime?
+  endedAt   DateTime?
+  duration  Int?
+  createdAt DateTime      @default(now())
+  host      User          @relation("HostSessions", fields: [hostId], references: [id])
+  client    User          @relation("ClientSessions", fields: [clientId], references: [id])
+}
+
+model Subscription {
+  id                   String             @id @default(uuid())
+  userId               String
+  plan                 Plan               @default(FREE)
+  status               SubscriptionStatus @default(ACTIVE)
+  stripeSubscriptionId String?            @unique
+  stripePriceId        String?
+  currentPeriodEnd     DateTime?
+  cancelAtPeriodEnd    Boolean            @default(false)
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+  user                 User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum Plan {
+  FREE
+  PRO
+  BUSINESS
+  ENTERPRISE
+}
+
+enum SessionStatus {
+  PENDING
+  ACTIVE
+  ENDED
+  REJECTED
+  FAILED
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  PAST_DUE
+  CANCELED
+  TRIALING
+  INCOMPLETE
+}

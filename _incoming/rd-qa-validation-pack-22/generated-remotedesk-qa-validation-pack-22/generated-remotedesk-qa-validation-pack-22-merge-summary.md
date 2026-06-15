@@ -1,0 +1,1 @@
+Pack 22 adds QA automation, test suites/cases/runs/results, test matrix configs, synthetic monitoring, flaky quarantine, coverage reports, manual QA checklists, validation evidence, QA audit, web/desktop UI, docs/tests/scripts.

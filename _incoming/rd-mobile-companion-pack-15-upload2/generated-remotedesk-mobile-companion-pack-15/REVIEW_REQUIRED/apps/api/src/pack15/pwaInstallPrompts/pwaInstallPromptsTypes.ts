@@ -1,0 +1,2 @@
+export interface PwaInstallPromptRecord { id: string; userId: string; shownAt: string; acceptedAt?: string; dismissedAt?: string; }
+export interface PwaInstallPromptRecordRepository { create(record: PwaInstallPromptRecord): Promise<PwaInstallPromptRecord>; update(id: string, patch: Partial<PwaInstallPromptRecord>): Promise<PwaInstallPromptRecord | null>; list(filter: Partial<PwaInstallPromptRecord>, limit: number): Promise<PwaInstallPromptRecord[]>; }

@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { validateAutomationAction } from "../../REVIEW_REQUIRED/apps/api/src/pack18/automationActions/automationActionPolicy.js"; assert.deepEqual(validateAutomationAction("require_mfa"), { ok: true }); assert.equal(validateAutomationAction("execute_command").ok, false);

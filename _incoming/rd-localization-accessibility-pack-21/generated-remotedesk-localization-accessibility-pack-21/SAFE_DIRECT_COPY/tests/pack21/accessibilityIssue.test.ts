@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { accessibilityBlocksRelease } from "../../packages/shared/src/pack21/accessibilityIssue.js"; assert.equal(accessibilityBlocksRelease({ id: "a", severity: "high", rule: "contrast", message: "bad" }), true);

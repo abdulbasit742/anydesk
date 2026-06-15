@@ -1,0 +1,1 @@
+import { readFileSync } from "node:fs"; const manifestPath = process.argv[2]; if (!manifestPath) throw new Error("manifest path required"); const manifest = JSON.parse(readFileSync(manifestPath, "utf8")); if (manifest.doNotMergeCount && manifest.doNotMergeCount > 0) { console.error("DO_NOT_MERGE files present"); process.exit(1); } console.log("No release blockers in manifest.");

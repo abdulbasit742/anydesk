@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { evaluateCondition } from "../../packages/shared/src/pack18/automationCondition.js"; assert.equal(evaluateCondition({ field: "failures", operator: "greater_than", value: 3 }, { failures: 5 }), true);

@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { experimentRolloutAllowed } from "../../REVIEW_REQUIRED/apps/api/src/pack21/uxExperiments/uxExperimentPolicy.js"; assert.equal(experimentRolloutAllowed({ rolloutPercent: 50, enabled: true, guardrailPassed: true }).allowed, true);

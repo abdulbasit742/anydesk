@@ -1,0 +1,1 @@
+Review locale fallback, RTL handling, translation approval gates, accessibility release blockers, copy review publish policy, UX experiment guardrails, user-scoped onboarding progress and desktop settings integration.

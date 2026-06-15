@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { evaluateQualityBudget } from "../../packages/shared/src/pack9/qualityBudget.js"; assert.ok(evaluateQualityBudget({ maxCrashRatePercent: 1, maxSessionFailurePercent: 5, maxApiP95Ms: 500 }, { crashRatePercent: 2, sessionFailurePercent: 1, apiP95Ms: 100 }).includes("crash-rate"));

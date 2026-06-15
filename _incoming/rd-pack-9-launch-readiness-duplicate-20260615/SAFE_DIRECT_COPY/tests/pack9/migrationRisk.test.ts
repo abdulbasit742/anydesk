@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { classifyMigrationRisk } from "../../packages/shared/src/pack9/migrationRisk.js"; assert.equal(classifyMigrationRisk({ touchesAuth: true, touchesBilling: false, destructive: false, backfillRows: 0 }), "medium");

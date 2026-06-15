@@ -1,0 +1,2 @@
+export interface DataImportRowRecord { id: string; importJobId: string; rowNumber: number; status: "valid" | "invalid" | "imported" | "skipped"; errors: string[]; }
+export interface DataImportRowRecordRepository { create(record: DataImportRowRecord): Promise<DataImportRowRecord>; update(id: string, patch: Partial<DataImportRowRecord>): Promise<DataImportRowRecord | null>; list(filter: Partial<DataImportRowRecord>, limit: number): Promise<DataImportRowRecord[]>; }

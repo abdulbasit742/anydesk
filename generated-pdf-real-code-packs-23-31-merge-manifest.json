@@ -1,0 +1,99 @@
+{
+  "name": "pdf-real-code-packs-23-31",
+  "stagedAt": "2026-06-15",
+  "stagePath": "_incoming/pdf-real-code-packs-23-31-20260615",
+  "sourceType": "uploaded_pdf_real_code_packs",
+  "buildEstimateAfterMerge": "62-68%",
+  "packs": [
+    {
+      "pack": 23,
+      "title": "Device Trust, Unattended Grants & Consent Receipt Admin",
+      "safeName": "pack23-device-trust-grants-consent-admin",
+      "textBytes": 50422,
+      "sha256": "4C6AA5BE4E2F3753C89D8F6B45DFF9990B1DFF32B6181EEDC77CED21635F36E4",
+      "mergeStatus": "review_only"
+    },
+    {
+      "pack": 24,
+      "title": "Admin RBAC on Trust-Grant Mutations + Server-Side Receipt Verification",
+      "safeName": "pack24-admin-rbac-receipt-verification",
+      "textBytes": 29763,
+      "sha256": "E33C76BEFB5BBBC12092225126808DE10DF6A0B6A66A6C92CCCCD250872ABCCA",
+      "mergeStatus": "review_only"
+    },
+    {
+      "pack": 25,
+      "title": "Device-Admin Audit Trail",
+      "safeName": "pack25-device-admin-audit-trail",
+      "textBytes": 27021,
+      "sha256": "684986248539BE1E37BD158F58D1EF0612021F5004CC809BFAE5D25735FA701A",
+      "mergeStatus": "adapted"
+    },
+    {
+      "pack": 26,
+      "title": "Ed25519 Receipt Signing + Server Key Management for Non-Repudiation",
+      "safeName": "pack26-ed25519-receipt-signing",
+      "textBytes": 34250,
+      "sha256": "CDE565E25E2B67D196213BFA781D92DD44DDC26101243E24E73E281DF896A9F3",
+      "mergeStatus": "review_only"
+    },
+    {
+      "pack": 27,
+      "title": "KMS Envelope Encryption for Signing Keys + Key Rotation",
+      "safeName": "pack27-kms-envelope-key-rotation",
+      "textBytes": 31991,
+      "sha256": "DE2496EC93805C5F323230FE4BABF20A346916C069EBA8A257C222F5D5DE6A81",
+      "mergeStatus": "review_only"
+    },
+    {
+      "pack": 28,
+      "title": "Desktop-Side Receipt Signature Verification + Public-Key Pinning",
+      "safeName": "pack28-desktop-receipt-verification-pinning",
+      "textBytes": 31026,
+      "sha256": "9A630ED0657032123672E06A9C79939AE6FF185A2FDA34CAAFCF1F05D2388FD3",
+      "mergeStatus": "review_only"
+    },
+    {
+      "pack": 29,
+      "title": "Public Receipt Verification Portal for Third-Party Auditors",
+      "safeName": "pack29-public-receipt-verification",
+      "textBytes": 31262,
+      "sha256": "A92A206146DA2B8B015523E2B0323D65085532B11BA5545CE2F00BDE49EAA40F",
+      "mergeStatus": "review_only"
+    },
+    {
+      "pack": 30,
+      "title": "Scheduled Key Rotation with Overlap Windows + Rotation Policy",
+      "safeName": "pack30-scheduled-key-rotation",
+      "textBytes": 30802,
+      "sha256": "ECCBD94AAB072ECD8A559EC7A64F09E8C9AE90CFF2E2953EEA8A9634266F559A",
+      "mergeStatus": "review_only"
+    },
+    {
+      "pack": 31,
+      "title": "Session Recording Capture + Encrypted Storage + Playback",
+      "safeName": "pack31-session-recording-encrypted-playback",
+      "textBytes": 12101,
+      "sha256": "B4A1AB6DA9C14817FB41C51AE5D11A67C025C2D757E5D91876025668ACF6C024",
+      "mergeStatus": "review_only"
+    }
+  ],
+  "runtimeFilesMerged": [
+    "packages/shared/src/permissions/deviceAdminAudit.ts",
+    "packages/shared/src/permissions/index.ts",
+    "apps/api/src/lib/deviceAdminAudit.ts",
+    "apps/api/src/lib/deviceSecurity.ts",
+    "apps/api/src/routes/device.routes.ts",
+    "tests/permissions/deviceAdminAudit.test.ts"
+  ],
+  "runtimeFilesSkipped": [
+    "Pack 23 generated API/Web admin trust-grant runtime",
+    "Pack 24 generated RBAC and receipt verification runtime",
+    "Pack 26 generated receipt signing/key-management runtime",
+    "Pack 27 generated KMS envelope encryption runtime",
+    "Pack 28 generated desktop public-key pinning runtime",
+    "Pack 29 generated public verification portal runtime",
+    "Pack 30 generated scheduled key rotation runtime",
+    "Pack 31 generated recording capture/storage/playback runtime"
+  ]
+}

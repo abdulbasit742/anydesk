@@ -1,0 +1,2 @@
+import React from "react";
+export function SystemPermissionsPanel(props: { screen: boolean; inputMonitoring: boolean; accessibility: boolean }): JSX.Element { return (<section><h3>System permissions</h3><ul><li>Screen capture: {props.screen ? "granted" : "missing"}</li><li>Input monitoring: {props.inputMonitoring ? "granted" : "not required unless native input is reviewed"}</li><li>Accessibility: {props.accessibility ? "granted" : "not required unless native input is reviewed"}</li></ul></section>); }

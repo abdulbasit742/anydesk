@@ -1,0 +1,99 @@
+{
+  "name": "generated-remotedesk-production-packs-2-6",
+  "createdAt": "2026-06-14",
+  "stagingRoots": [
+    "C:/Users/bsphy2304/Documents/New project/_incoming/rd-pack-2-hardening",
+    "C:/Users/bsphy2304/Documents/New project/_incoming/rd-pack-3-hardening",
+    "C:/Users/bsphy2304/Documents/New project/_incoming/rd-pack-4-readiness",
+    "C:/Users/bsphy2304/Documents/New project/_incoming/rd-pack-5-ops",
+    "C:/Users/bsphy2304/Documents/New project/_incoming/rd-pack-6-entitlements",
+    "C:/Users/bsphy2304/Documents/New project/_incoming/rd-pack-more-prod-1"
+  ],
+  "archives": [
+    {
+      "zip": "generated-remotedesk-production-hardening-pack-2.zip",
+      "entries": 126,
+      "safeDirectCopyCount": 25,
+      "reviewRequiredCount": 91,
+      "mergeMode": "safe-docs-infra-shared-scripts"
+    },
+    {
+      "zip": "generated-remotedesk-production-hardening-pack-3.zip",
+      "entries": 178,
+      "safeDirectCopyCount": 44,
+      "reviewRequiredCount": 123,
+      "mergeMode": "safe-docs-infra-shared-scripts"
+    },
+    {
+      "zip": "generated-remotedesk-production-readiness-pack-4.zip",
+      "entries": 131,
+      "safeDirectCopyCount": 47,
+      "reviewRequiredCount": 73,
+      "mergeMode": "safe-docs-infra-contracts-shared-scripts"
+    },
+    {
+      "zip": "generated-remotedesk-ops-enterprise-pack-5.zip",
+      "entries": 146,
+      "safeDirectCopyCount": 38,
+      "reviewRequiredCount": 97,
+      "mergeMode": "safe-docs-infra-shared-scripts"
+    },
+    {
+      "zip": "generated-remotedesk-entitlements-security-pack-6.zip",
+      "entries": 113,
+      "safeDirectCopyCount": 28,
+      "reviewRequiredCount": 74,
+      "mergeMode": "safe-docs-infra-shared-scripts"
+    },
+    {
+      "zip": "generated-remotedesk-more-production-files (1).zip",
+      "entries": 129,
+      "safeDirectCopyCount": 27,
+      "reviewRequiredCount": 92,
+      "mergeMode": "duplicate-skipped"
+    }
+  ],
+  "totalNewZipEntriesInspected": 823,
+  "duplicateArchivesSkipped": [
+    "generated-remotedesk-more-production-files (1).zip"
+  ],
+  "safeImportsApplied": [
+    "docs/hardening/**",
+    "docs/production-hardening-pack-3/**",
+    "docs/readiness/**",
+    "docs/ops-pack-5/**",
+    "docs/pack6/**",
+    "infra/hardening/**",
+    "infra/production-hardening/**",
+    "infra/readiness/**",
+    "infra/ops/**",
+    "infra/pack6/**",
+    "contracts/openapi/**",
+    "scripts/hardening/**",
+    "scripts/production-hardening/**",
+    "scripts/readiness/**",
+    "scripts/ops/**",
+    "scripts/pack6/**",
+    "packages/shared/src/hardening/**",
+    "packages/shared/src/production-hardening/**",
+    "packages/shared/src/readiness/**",
+    "packages/shared/src/readiness-sdk/**",
+    "packages/shared/src/ops/**",
+    "packages/shared/src/pack6/**"
+  ],
+  "runtimePortsApplied": [
+    "apps/api/src/routes/device.routes.ts",
+    "apps/api/src/server.ts",
+    "apps/web/app/dashboard/devices/page.tsx",
+    "apps/web/app/dashboard/devices/[deviceId]/page.tsx",
+    "apps/web/app/dashboard/page.tsx",
+    "packages/shared/src/index.ts"
+  ],
+  "reviewOnly": [
+    "all REVIEW_REQUIRED/** files from packs 2-6",
+    "raw GitHub workflow files",
+    "generated tests that depend on REVIEW_REQUIRED paths",
+    "duplicate more-production-files archive"
+  ],
+  "buildEstimateAfterMerge": "39-46%"
+}

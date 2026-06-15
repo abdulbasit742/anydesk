@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { connectorStatusNeedsAttention } from "../../REVIEW_REQUIRED/apps/desktop/src/pack10/connectorStatusStore.js"; assert.equal(connectorStatusNeedsAttention({ connectorKey: "slack", state: "error" }), true);

@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { enforceTenantBoundary } from "../../packages/shared/src/pack19/tenantBoundary.js"; assert.equal(enforceTenantBoundary([{ tenantId: "a" }, { tenantId: "b" }], "a").length, 1);

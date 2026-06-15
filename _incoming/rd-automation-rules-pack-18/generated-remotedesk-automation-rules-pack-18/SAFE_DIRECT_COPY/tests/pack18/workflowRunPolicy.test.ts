@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { workflowRunCanStart } from "../../REVIEW_REQUIRED/apps/api/src/pack18/workflowRuns/workflowRunPolicy.js"; assert.equal(workflowRunCanStart({ ruleEnabled: true, rateLimited: false, approvalRequired: true, approvalApproved: false }).reason, "approval-required");

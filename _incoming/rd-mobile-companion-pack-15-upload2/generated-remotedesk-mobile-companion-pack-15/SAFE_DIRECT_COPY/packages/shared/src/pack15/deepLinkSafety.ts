@@ -1,0 +1,1 @@
+export function isSafeMobileDeepLink(url: string): boolean { try { const parsed = new URL(url); return parsed.protocol === 'remotedesk:' || (parsed.protocol === 'https:' && parsed.hostname.length > 0); } catch { return false; } }

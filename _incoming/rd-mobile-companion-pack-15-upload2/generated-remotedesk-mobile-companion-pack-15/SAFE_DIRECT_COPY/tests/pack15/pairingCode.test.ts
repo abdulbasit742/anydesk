@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { normalizePairingCode, canUsePairingCode } from '../../packages/shared/src/pack15/pairingCode.js'; assert.equal(normalizePairingCode('ab-cd 1234'), 'ABCD1234'); assert.equal(canUsePairingCode({ code: 'ABCD1234', expiresAt: '2999-01-01T00:00:00Z', maxAttempts: 3, attempts: 0 }), true);

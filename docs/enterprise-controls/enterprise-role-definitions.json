@@ -1,0 +1,8 @@
+{
+  "roles": [
+    { "id": "super_admin", "name": "Super Administrator", "permissions": ["*"], "scope": "global" },
+    { "id": "it_admin", "name": "IT Administrator", "permissions": ["manage_users","manage_devices","view_sessions","view_audit_logs","manage_policies"], "scope": "global" },
+    { "id": "security_admin", "name": "Security Administrator", "permissions": ["manage_policies","view_audit_logs","configure_sso","export_data"], "scope": "global" },
+    { "id": "help_desk", "name": "Help Desk", "permissions": ["view_sessions","join_session"], "scope": "team" }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "total_files_created": 28,
+  "total_files_modified": 0,
+  "files_by_domain": {
+    "Shared Contracts (Types)": [
+      "packages/shared/src/types/dataChannel.ts",
+      "packages/shared/src/types/fileTransfer.ts",
+      "packages/shared/src/types/clipboard.ts",
+      "packages/shared/src/types/chat.ts",
+      "packages/shared/src/types/permissions.ts",
+      "packages/shared/src/types/errors.ts",
+      "packages/shared/src/types/index.ts"
+    ],
+    "Shared Contracts (Validation)": [
+      "packages/shared/src/validation/dataChannelValidation.ts",
+      "packages/shared/src/validation/fileTransferValidation.ts",
+      "packages/shared/src/validation/clipboardValidation.ts",
+      "packages/shared/src/validation/chatValidation.ts",
+      "packages/shared/src/validation/permissionsValidation.ts",
+      "packages/shared/src/validation/index.ts"
+    ],
+    "Data Channel Multiplexing": [
+      "packages/shared/src/dataChannel/MessageRouter.ts",
+      "packages/shared/src/dataChannel/ChannelRegistry.ts",
+      "packages/shared/src/dataChannel/HeartbeatManager.ts",
+      "packages/shared/src/dataChannel/BackpressureHandler.ts",
+      "packages/shared/src/dataChannel/MultiplexedDataChannel.ts",
+      "packages/shared/src/dataChannel/index.ts"
+    ],
+    "File Transfer Protocol (Core)": [
+      "packages/shared/src/fileTransfer/constants.ts",
+      "packages/shared/src/fileTransfer/FileTransferSender.ts",
+      "packages/shared/src/fileTransfer/FileTransferReceiver.ts",
+      "packages/shared/src/fileTransfer/index.ts"
+    ],
+    "Desktop File Transfer UI": [
+      "apps/desktop/src/renderer/components/FileTransfer/FileTransferPanel.tsx",
+      "apps/desktop/src/renderer/components/FileTransfer/IncomingFileConsent.tsx"
+    ],
+    "Main Process File Bridge": [
+      "apps/desktop/src/main/fileBridge/FileSystemBridge.ts",
+      "apps/desktop/src/main/fileBridge/FilenameSanitizer.ts"
+    ],
+    "Clipboard Sync Protocol & UI": [
+      "packages/shared/src/clipboard/ClipboardSyncManager.ts",
+      "apps/desktop/src/renderer/components/Clipboard/ClipboardPanel.tsx"
+    ],
+    "In-Session Chat": [
+      "packages/shared/src/chat/ChatManager.ts",
+      "apps/desktop/src/renderer/components/Chat/ChatPanel.tsx"
+    ],
+    "Backend Support (API)": [
+      "apps/api/src/services/AuditService.ts",
+      "apps/api/src/services/FeatureFlagService.ts"
+    ],
+    "Tests": [
+      "packages/shared/tests/filenameSanitizer.test.ts",
+      "packages/shared/tests/messageRouter.test.ts"
+    ],
+    "Documentation": [
+      "docs/file-transfer-protocol.md",
+      "docs/clipboard-sync-security.md",
+      "docs/chat-data-channel.md",
+      "docs/data-channel-architecture.md",
+      "docs/manual-qa-checklist.md",
+      "docs/troubleshooting-guide.md"
+    ]
+  }
+}

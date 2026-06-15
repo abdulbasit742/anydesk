@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { worstPublicStatus } from "../../packages/shared/src/pack17/publicStatus.js"; assert.equal(worstPublicStatus(["operational", "major_outage", "degraded"]), "major_outage");

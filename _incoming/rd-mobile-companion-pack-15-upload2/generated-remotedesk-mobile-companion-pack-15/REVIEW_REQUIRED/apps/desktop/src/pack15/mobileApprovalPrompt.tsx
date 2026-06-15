@@ -1,0 +1,2 @@
+import React from 'react';
+export function MobileApprovalPrompt(props: { requesterName: string; onApprove: () => void; onReject: () => void }): JSX.Element { return <section role='dialog' aria-label='Mobile approval request'><h3>Approve session?</h3><p>{props.requesterName} is requesting approval.</p><button onClick={props.onApprove}>Approve</button><button onClick={props.onReject}>Reject</button></section>; }

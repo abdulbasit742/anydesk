@@ -1,0 +1,237 @@
+﻿{
+    "sourceZip":  "C:\\Users\\bsphy2304\\Downloads\\Creating a title requires understanding the content.zip",
+    "stagedAt":  "_incoming/kimi-title-content-upload/",
+    "strategy":  "review-only flat batch 6 code pack; port compatible session data channel chat foundation",
+    "totalFiles":  44,
+    "typeScriptFiles":  32,
+    "markdownFiles":  10,
+    "jsonFiles":  1,
+    "portedRuntimeFiles":  [
+                               "apps/desktop/src/renderer/src/services/sessionDataChannel.ts",
+                               "apps/desktop/src/renderer/src/components/RemoteSessionView.tsx",
+                               "apps/desktop/src/renderer/src/main.tsx",
+                               "apps/desktop/src/renderer/src/styles.css"
+                           ],
+    "stagedFiles":  [
+                        {
+                            "name":  "AuditService.ts",
+                            "extension":  ".ts",
+                            "bytes":  982
+                        },
+                        {
+                            "name":  "BackpressureHandler.ts",
+                            "extension":  ".ts",
+                            "bytes":  994
+                        },
+                        {
+                            "name":  "ChannelRegistry.ts",
+                            "extension":  ".ts",
+                            "bytes":  618
+                        },
+                        {
+                            "name":  "chat.ts",
+                            "extension":  ".ts",
+                            "bytes":  467
+                        },
+                        {
+                            "name":  "ChatManager.ts",
+                            "extension":  ".ts",
+                            "bytes":  5516
+                        },
+                        {
+                            "name":  "ChatPanel.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  4754
+                        },
+                        {
+                            "name":  "chatValidation.ts",
+                            "extension":  ".ts",
+                            "bytes":  322
+                        },
+                        {
+                            "name":  "clipboard.ts",
+                            "extension":  ".ts",
+                            "bytes":  967
+                        },
+                        {
+                            "name":  "ClipboardPanel.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1980
+                        },
+                        {
+                            "name":  "ClipboardSyncManager.ts",
+                            "extension":  ".ts",
+                            "bytes":  3004
+                        },
+                        {
+                            "name":  "clipboardValidation.ts",
+                            "extension":  ".ts",
+                            "bytes":  1011
+                        },
+                        {
+                            "name":  "constants.ts",
+                            "extension":  ".ts",
+                            "bytes":  236
+                        },
+                        {
+                            "name":  "dataChannel.ts",
+                            "extension":  ".ts",
+                            "bytes":  715
+                        },
+                        {
+                            "name":  "dataChannelValidation.ts",
+                            "extension":  ".ts",
+                            "bytes":  639
+                        },
+                        {
+                            "name":  "errors.ts",
+                            "extension":  ".ts",
+                            "bytes":  865
+                        },
+                        {
+                            "name":  "FeatureFlagService.ts",
+                            "extension":  ".ts",
+                            "bytes":  339
+                        },
+                        {
+                            "name":  "filenameSanitizer.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  731
+                        },
+                        {
+                            "name":  "FilenameSanitizer.ts",
+                            "extension":  ".ts",
+                            "bytes":  724
+                        },
+                        {
+                            "name":  "FileSystemBridge.ts",
+                            "extension":  ".ts",
+                            "bytes":  1921
+                        },
+                        {
+                            "name":  "fileTransfer.ts",
+                            "extension":  ".ts",
+                            "bytes":  1894
+                        },
+                        {
+                            "name":  "FileTransferPanel.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  3457
+                        },
+                        {
+                            "name":  "FileTransferReceiver.ts",
+                            "extension":  ".ts",
+                            "bytes":  4971
+                        },
+                        {
+                            "name":  "FileTransferSender.ts",
+                            "extension":  ".ts",
+                            "bytes":  5739
+                        },
+                        {
+                            "name":  "fileTransferValidation.ts",
+                            "extension":  ".ts",
+                            "bytes":  2216
+                        },
+                        {
+                            "name":  "generated-batch-6-200-files-manifest.json",
+                            "extension":  ".json",
+                            "bytes":  2780
+                        },
+                        {
+                            "name":  "HeartbeatManager.ts",
+                            "extension":  ".ts",
+                            "bytes":  1343
+                        },
+                        {
+                            "name":  "IncomingFileConsent.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1952
+                        },
+                        {
+                            "name":  "index.ts",
+                            "extension":  ".ts",
+                            "bytes":  173
+                        },
+                        {
+                            "name":  "messageRouter.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  674
+                        },
+                        {
+                            "name":  "MessageRouter.ts",
+                            "extension":  ".ts",
+                            "bytes":  998
+                        },
+                        {
+                            "name":  "MultiplexedDataChannel.ts",
+                            "extension":  ".ts",
+                            "bytes":  3106
+                        },
+                        {
+                            "name":  "pasted_content.txt",
+                            "extension":  ".txt",
+                            "bytes":  4547
+                        },
+                        {
+                            "name":  "permissions.ts",
+                            "extension":  ".ts",
+                            "bytes":  518
+                        },
+                        {
+                            "name":  "permissionsValidation.ts",
+                            "extension":  ".ts",
+                            "bytes":  341
+                        },
+                        {
+                            "name":  "RemoteDesk Batch 6 Gap Report.md",
+                            "extension":  ".md",
+                            "bytes":  9025
+                        },
+                        {
+                            "name":  "RemoteDesk Batch 6 Implementation Notes.md",
+                            "extension":  ".md",
+                            "bytes":  7682
+                        },
+                        {
+                            "name":  "RemoteDesk Batch 6 Risk Register.md",
+                            "extension":  ".md",
+                            "bytes":  4809
+                        },
+                        {
+                            "name":  "RemoteDesk Batch 6 Summary Report.md",
+                            "extension":  ".md",
+                            "bytes":  4882
+                        },
+                        {
+                            "name":  "RemoteDesk Chat Data Channel.md",
+                            "extension":  ".md",
+                            "bytes":  3417
+                        },
+                        {
+                            "name":  "RemoteDesk Clipboard Sync Security.md",
+                            "extension":  ".md",
+                            "bytes":  3099
+                        },
+                        {
+                            "name":  "RemoteDesk Data Channel Architecture.md",
+                            "extension":  ".md",
+                            "bytes":  5868
+                        },
+                        {
+                            "name":  "RemoteDesk File Transfer Protocol.md",
+                            "extension":  ".md",
+                            "bytes":  4029
+                        },
+                        {
+                            "name":  "RemoteDesk Manual QA Checklist.md",
+                            "extension":  ".md",
+                            "bytes":  6229
+                        },
+                        {
+                            "name":  "RemoteDesk Troubleshooting Guide.md",
+                            "extension":  ".md",
+                            "bytes":  5803
+                        }
+                    ]
+}

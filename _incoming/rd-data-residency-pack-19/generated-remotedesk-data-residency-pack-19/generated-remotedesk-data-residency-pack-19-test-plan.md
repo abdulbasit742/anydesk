@@ -1,0 +1,1 @@
+Run Pack 19 shared/API tests, residency safe-default scanner, then manual QA for region assignments, tenant isolation dashboards, key rotation jobs, retention legal hold, cross-region transfer approval and compliance exports.

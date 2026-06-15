@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { chooseEscalationTarget } from "../../packages/shared/src/pack9/supportEscalation.js"; assert.equal(chooseEscalationTarget({ priority: "urgent", category: "connection" }), "engineering");

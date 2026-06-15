@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { scopesAllowed } from "../../REVIEW_REQUIRED/apps/api/src/pack10/oauthConnections/oauthScopePolicy.js"; assert.equal(scopesAllowed(["read"], ["read", "write"]), true); assert.equal(scopesAllowed(["admin"], ["read"]), false);

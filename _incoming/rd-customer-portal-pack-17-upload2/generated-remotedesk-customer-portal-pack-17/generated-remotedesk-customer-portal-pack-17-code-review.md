@@ -1,0 +1,1 @@
+Review billing portal authorization, team-scoped repository filtering, invoice download policy, help article sanitization, theme contrast checks, portal link HTTPS enforcement and payment provider boundaries.

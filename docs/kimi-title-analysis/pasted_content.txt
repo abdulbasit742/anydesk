@@ -1,0 +1,223 @@
+You are continuing RemoteDesk, an AnyDesk-style full-stack SaaS remote desktop app.
+
+CURRENT VERIFIED STATE:
+- Monorepo root: remotedesk/
+- apps/api: Express + Prisma + Socket.IO signaling
+- apps/web: Next.js dashboard starter
+- apps/desktop: Electron + React desktop client
+- packages/shared: shared contracts
+
+ALREADY IMPLEMENTED:
+- Desktop auth/login/signup
+- RemoteDesk ID display
+- Device password setup
+- Host incoming accept/reject
+- Screen source picker
+- Local capture preview
+- WebRTC offer/answer/ICE
+- Remote video rendering
+- WebRTC quality badge
+- SessionDataChannel
+- In-session chat
+- Remote input permission toggles
+- Emergency stop state
+- Viewer-side normalized remote input capture
+- Host receives input but native execution is disabled for safety
+
+YOUR JOB:
+Generate the next production-useful pack, up to 500 files.
+No filler.
+Every file must be useful, complete, and small/modular.
+
+MAIN FOCUS:
+CLIPBOARD SYNC + FILE TRANSFER SAFE FOUNDATIONS.
+
+STRICT SAFETY:
+- Clipboard sync disabled by default.
+- Clipboard sync requires both sides opt-in.
+- File transfer disabled by default.
+- Every incoming file requires receiver consent.
+- Renderer must not access filesystem directly.
+- Electron main/preload must mediate file access.
+- Sanitize all filenames.
+- Prevent path traversal.
+- Enforce file size limits.
+- Enforce clipboard size limits.
+- No fake success logic.
+
+PART 1: CLIPBOARD SHARED HELPERS
+Create:
+- clipboard message types
+- text-only payload
+- max size constants
+- size validator
+- duplicate prevention helper
+- debounce helper
+- conflict resolver
+- permission state helper
+- tests
+
+Preferred paths:
+packages/shared/src/clipboard/
+tests/unit/clipboard/
+
+PART 2: CLIPBOARD DESKTOP UI
+Create:
+- clipboard sync toggle
+- clipboard status badge
+- clipboard warning banner
+- clipboard disabled state
+- clipboard permission explanation
+- clipboard error state
+
+Preferred paths:
+apps/desktop/src/renderer/src/features/clipboard/
+
+PART 3: CLIPBOARD IPC DESIGN
+Create:
+- Electron preload clipboard API
+- Electron main clipboard handler
+- safe readText/writeText wrappers
+- permission checks before write
+- docs for clipboard security boundary
+
+Preferred paths:
+apps/desktop/src/preload/clipboard/
+apps/desktop/src/main/clipboard/
+docs/security/clipboard-sync-security.md
+
+PART 4: FILE TRANSFER SHARED TYPES
+Create:
+- file metadata type
+- transfer status enum
+- chunk message type
+- ack/nack message type
+- pause/resume/cancel messages
+- constants
+- transfer id helper
+- tests
+
+Preferred paths:
+packages/shared/src/fileTransfer/
+tests/unit/fileTransfer/
+
+PART 5: FILENAME SECURITY
+Create:
+- filename sanitizer
+- path traversal prevention
+- Windows reserved name protection
+- max filename length helper
+- extension preservation helper
+- tests for dangerous filenames:
+  - ../secret.txt
+  - ..\\secret.txt
+  - CON
+  - PRN
+  - AUX
+  - NUL
+  - COM1
+  - LPT1
+  - very long filename
+
+Preferred paths:
+packages/shared/src/fileTransfer/filenameSanitizer.ts
+tests/unit/fileTransfer/filenameSanitizer.test.ts
+
+PART 6: TRANSFER STATE MACHINES
+Create:
+- sender state
+- receiver state
+- transfer reducer
+- progress calculator
+- speed estimator
+- ETA calculator
+- cancel/pause/resume reducer
+- tests
+
+Preferred paths:
+packages/shared/src/fileTransfer/state/
+tests/unit/fileTransfer/state/
+
+PART 7: DESKTOP FILE TRANSFER UI
+Create:
+- FileTransferPanel
+- IncomingFileConsentDialog
+- TransferRow
+- TransferProgressBar
+- FileDropZone
+- FilePickerButton
+- TransferErrorBanner
+- disabled-by-default state
+
+Preferred paths:
+apps/desktop/src/renderer/src/features/fileTransfer/
+
+PART 8: ELECTRON FILE IPC DESIGN
+Create:
+- preload API:
+  - pickFile
+  - chooseSaveLocation
+  - readFileChunk
+  - writeFileChunk
+  - cancelTransfer
+- main IPC handler design
+- safe file handle token model
+- no arbitrary path writes
+- docs for secure file bridge
+
+Preferred paths:
+apps/desktop/src/preload/fileTransfer/
+apps/desktop/src/main/fileTransfer/
+docs/architecture/file-transfer-ipc.md
+
+PART 9: DATA CHANNEL INTEGRATION
+Create:
+- clipboard message sender/receiver over SessionDataChannel envelope
+- file transfer message sender/receiver over SessionDataChannel envelope
+- malformed message handling
+- backpressure notes
+- transfer queue design
+
+Preferred paths:
+apps/desktop/src/renderer/src/features/clipboard/
+apps/desktop/src/renderer/src/features/fileTransfer/
+packages/shared/src/dataChannel/
+
+PART 10: QA + DOCS
+Generate:
+- clipboard QA checklist
+- file transfer QA checklist
+- large file test plan
+- receiver consent test plan
+- permission denial test plan
+- abuse prevention checklist
+- threat model
+
+Preferred paths:
+docs/qa/desktop/
+docs/security/
+docs/architecture/
+
+OUTPUT FORMAT:
+For every generated file:
+- exact path
+- complete content
+- mark:
+  - SAFE_DIRECT_COPY
+  - REVIEW_REQUIRED
+  - IDEA_ONLY
+
+ALSO INCLUDE:
+- generated-clipboard-filetransfer-500-pack-manifest.json
+- generated-clipboard-filetransfer-500-pack-merge-guide.md
+- generated-clipboard-filetransfer-500-pack-risk-register.md
+- generated-clipboard-filetransfer-500-pack-qa-checklist.md
+- generated-clipboard-filetransfer-500-pack-review-required.md
+
+QUALITY BAR:
+- No placeholder-only files.
+- No unsafe renderer filesystem access.
+- No clipboard/file transfer enabled by default.
+- TypeScript strict-compatible.
+- Prefer pure helpers with tests.
+- Keep files small and modular.

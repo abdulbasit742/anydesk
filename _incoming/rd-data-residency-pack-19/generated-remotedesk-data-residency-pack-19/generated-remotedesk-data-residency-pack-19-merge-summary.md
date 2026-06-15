@@ -1,0 +1,1 @@
+Pack 19 adds data residency policy, tenant region assignments, encryption key lifecycle, retention policies/runs, tenant isolation checks, cross-region transfer approvals, compliance exports, data inventory, field classification, residency audit, dashboards, desktop badges and ops checks.

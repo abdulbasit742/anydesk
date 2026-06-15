@@ -1,0 +1,25 @@
+{
+  "sourceZip": "C:/Users/bsphy2304/Downloads/Title needed for uploaded file content.zip",
+  "stagedAt": "_incoming/title-needed-upload",
+  "buildEstimateAfterMerge": "26-33%",
+  "zipEntryCount": 166,
+  "zipFileCount": 161,
+  "stagedFileCountIncludingExtractionMap": 162,
+  "importedFiles": {
+    "markdownDocs": 154,
+    "localeReferenceJson": 4
+  },
+  "reviewOnlyFiles": [
+    "generate-docs-index.js",
+    "localization.test.ts",
+    "pasted_content.txt",
+    "_extraction-map.json"
+  ],
+  "runtimeFilesMerged": [],
+  "notes": [
+    "The zip was extracted with sanitized Windows-safe filenames because several original entries contained ':' or nested category separators.",
+    "Markdown docs were imported under docs/title-needed-upload.",
+    "Locale JSON files were imported as reference docs only under docs/title-needed-upload/locales-reference.",
+    "No apps/api, apps/web, apps/desktop, or packages/shared runtime files were changed."
+  ]
+}

@@ -1,0 +1,1 @@
+Review release admin authorization, certification blockers, installer signature/notarization policy, SBOM/vulnerability gates, approval counts, rollout plans, rollback readiness, support signoffs and evidence hash storage.

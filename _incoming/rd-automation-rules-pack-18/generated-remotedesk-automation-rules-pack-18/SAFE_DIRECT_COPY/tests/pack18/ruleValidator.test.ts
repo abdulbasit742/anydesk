@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { validateAutomationRuleDraft } from "../../packages/shared/src/pack18/ruleValidator.js"; assert.deepEqual(validateAutomationRuleDraft({ name: "Notify", trigger: "session.started", actions: ["send_notification"] }), []);

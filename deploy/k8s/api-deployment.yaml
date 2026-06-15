@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: remotedesk-api
+  namespace: remotedesk
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: remotedesk-api
+  template:
+    metadata:
+      labels:
+        app: remotedesk-api
+    spec:
+      containers:
+        - name: api
+          image: ghcr.io/remotedesk/api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: PORT
+              value: "5000"
+          envFrom:
+            - secretRef:
+                name: remotedesk-api-secrets
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

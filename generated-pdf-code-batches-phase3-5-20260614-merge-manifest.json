@@ -1,0 +1,78 @@
+{
+  "name": "pdf-code-batches-phase3-5-20260614",
+  "createdAt": "2026-06-14",
+  "stagingRoot": "C:/Users/bsphy2304/Documents/New project/_incoming/pdf-code-batches-phase3-5-20260614",
+  "totalExtractedFiles": 95,
+  "batches": [
+    {
+      "id": "phase3-batch1-auth-identity",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Phase 3 - Batch 1 - Auth & Identity (real code)-2026061408545431.pdf",
+      "extractedFiles": 15,
+      "mergeMode": "runtime-review-only"
+    },
+    {
+      "id": "phase4-batch1-ci-playwright-release-packaging",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Phase 4 - Batch 1 - CI, Playwright E2E & Release Packaging (real code)-2026061408550265.pdf",
+      "extractedFiles": 11,
+      "mergeMode": "docs-imported-runtime-review-only"
+    },
+    {
+      "id": "phase4-batch2-observability-docker-deploy",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Phase 4 - Batch 2 - Observability + Docker Deploy (real code)-2026061408550677.pdf",
+      "extractedFiles": 16,
+      "mergeMode": "manual-runtime-port-and-docs"
+    },
+    {
+      "id": "phase4-batch3-security-hardening-k8s",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Phase 4 - Batch 3 - Security Hardening + K8s Manifests (real code)-2026061408551350.pdf",
+      "extractedFiles": 18,
+      "mergeMode": "manual-runtime-port-and-clean-deploy-manifests"
+    },
+    {
+      "id": "phase4-batch4-postgres-prisma-persistence",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Phase 4 - Batch 4 - Postgres + Prisma Persistence (real code)-2026061408551733.pdf",
+      "extractedFiles": 6,
+      "mergeMode": "docs-imported-runtime-review-only"
+    },
+    {
+      "id": "phase5-batch1-signaling-redis-fanout",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Phase 5 - Batch 1 - Signaling Server + Redis Fan-out (real code)-2026061408552285.pdf",
+      "extractedFiles": 11,
+      "mergeMode": "clean-deploy-manifest-and-docs"
+    },
+    {
+      "id": "phase5-batch4-unattended-access-wol",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Phase 5 - Batch 4 - Unattended Access + Wake-on-LAN (real code)-2026061408553268.pdf",
+      "extractedFiles": 18,
+      "mergeMode": "manual-helper-port-and-docs"
+    }
+  ],
+  "runtimePorts": [
+    "apps/api/src/middleware/requestId.ts",
+    "apps/api/src/middleware/securityHeaders.ts",
+    "apps/api/src/middleware/rateLimit.ts",
+    "apps/api/src/observability/health.ts",
+    "apps/api/src/server.ts",
+    "apps/api/src/lib/accessSchedule.ts",
+    "apps/api/src/lib/wakeOnLan.ts",
+    "apps/web/Dockerfile",
+    "deploy/k8s/*.yaml"
+  ],
+  "docsImported": [
+    "docs/pdf-code-batches-phase3-5-20260614/phase4-batch1-ci-playwright-release-packaging/ci-and-release.md",
+    "docs/pdf-code-batches-phase3-5-20260614/phase4-batch2-observability-docker-deploy/observability.md",
+    "docs/pdf-code-batches-phase3-5-20260614/phase4-batch3-security-hardening-k8s/security-and-k8s.md",
+    "docs/pdf-code-batches-phase3-5-20260614/phase4-batch4-postgres-prisma-persistence/persistence.md",
+    "docs/pdf-code-batches-phase3-5-20260614/phase5-batch1-signaling-redis-fanout/signaling.md",
+    "docs/pdf-code-batches-phase3-5-20260614/phase5-batch4-unattended-access-wol/unattended-access.md"
+  ],
+  "blockedRuntimeMerges": [
+    "Phase 3 auth runtime replacements",
+    "Phase 4 malformed raw GitHub workflow YAML",
+    "Phase 4 raw K8s YAML copied from PDF",
+    "Phase 4 Prisma schema replacement",
+    "Phase 5 Redis fan-out socket replacement",
+    "Phase 5 unattended access route/repository runtime"
+  ],
+  "buildEstimateAfterMerge": "36-43%"
+}

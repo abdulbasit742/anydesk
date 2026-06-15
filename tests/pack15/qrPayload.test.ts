@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { encodeQrPairingPayload, parseQrPairingPayload } from '../../packages/shared/src/pack15/qrPayload.js'; const text = encodeQrPairingPayload({ version: 1, code: 'ABC', apiBaseUrl: 'https://api.example.com', expiresAt: '2999-01-01T00:00:00Z' }); assert.equal(parseQrPairingPayload(text)?.version, 1);

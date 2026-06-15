@@ -1,0 +1,18 @@
+groups:
+  - name: remotedesk-ops
+    rules:
+      - alert: RemoteDeskSev1IncidentOpen
+        expr: remotedesk_incidents_open{severity="sev1"} > 0
+        for: 1m
+        labels:
+          severity: critical
+      - alert: RemoteDeskTurnRegionUnhealthy
+        expr: remotedesk_turn_region_healthy == 0
+        for: 5m
+        labels:
+          severity: warning
+      - alert: RemoteDeskFileScanFailures
+        expr: rate(remotedesk_file_scan_failures_total[10m]) > 0.05
+        for: 10m
+        labels:
+          severity: warning

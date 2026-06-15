@@ -1,0 +1,2 @@
+import type { Request, Response, NextFunction } from "express";
+export function requireLaunchAdmin(req: Request, res: Response, next: NextFunction): void { const user = req.user as { role?: string; permissions?: string[] } | undefined; if (user?.role === "owner" || user?.role === "admin" || user?.permissions?.includes("launch:manage")) { next(); return; } res.status(403).json({ error: "launch_admin_required" }); }

@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  title: RemoteDesk Devices API
+  version: 1.0.0
+paths:
+  /api/v1/devices:
+    get:
+      summary: List devices
+      security: [ { bearerAuth: [] } ]
+      parameters:
+        - { name: page, in: query, schema: { type: integer, default: 1 } }
+        - { name: limit, in: query, schema: { type: integer, default: 20 } }
+      responses:
+        '200':
+          description: Paginated devices
+    post:
+      summary: Register device
+      security: [ { bearerAuth: [] } ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: { type: string }
+                os: { type: string }
+      responses:
+        '201':
+          description: Device created
+  /api/v1/devices/{id}:
+    get:
+      summary: Get device
+      security: [ { bearerAuth: [] } ]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        '200':
+          description: Device details
+    patch:
+      summary: Update device
+      security: [ { bearerAuth: [] } ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: { type: string }
+                password: { type: string }
+                tags: { type: array, items: { type: string } }
+      responses:
+        '200':
+          description: Updated
+    delete:
+      summary: Delete device
+      security: [ { bearerAuth: [] } ]
+      responses:
+        '204':
+          description: Deleted

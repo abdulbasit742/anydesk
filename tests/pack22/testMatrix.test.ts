@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { estimateMatrixCases, matrixTooLarge } from "../../packages/shared/src/pack22/testMatrix.js"; assert.equal(estimateMatrixCases([{ name: "os", values: ["mac", "win"] }, { name: "browser", values: ["chrome", "edge"] }]), 4); assert.equal(matrixTooLarge([{ name: "x", values: Array(501).fill("a") }]), true);

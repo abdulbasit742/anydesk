@@ -1,0 +1,16 @@
+# QA CI Configuration
+
+```yaml
+test:
+  stage: test
+  parallel:
+    - unit
+    - integration
+    - e2e
+  coverage: '/Coverage: \d+\.\d+%/'
+  artifacts:
+    reports:
+      junit: junit.xml
+    paths:
+      - coverage/
+```

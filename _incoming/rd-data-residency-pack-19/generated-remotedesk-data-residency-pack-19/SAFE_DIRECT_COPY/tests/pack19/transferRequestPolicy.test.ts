@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { transferRequestAllowed } from "../../REVIEW_REQUIRED/apps/api/src/pack19/crossRegionTransferRequests/transferRequestPolicy.js"; assert.equal(transferRequestAllowed({ sourceRegion: "eu", targetRegion: "us", purpose: "support", approved: true }).allowed, false);

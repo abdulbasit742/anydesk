@@ -1,0 +1,1 @@
+export function validatePairingCodeRequest(input: { expiresAt: string; maxAttempts: number }): string[] { const errors: string[] = []; if (new Date(input.expiresAt) <= new Date()) errors.push('expiry-in-past'); if (input.maxAttempts < 1 || input.maxAttempts > 10) errors.push('invalid-max-attempts'); return errors; }

@@ -1,0 +1,2 @@
+export interface MobileApprovalRequestRecord { id: string; sessionId: string; requestedByUserId: string; approverUserId: string; state: 'pending' | 'approved' | 'rejected' | 'expired'; createdAt: string; }
+export interface MobileApprovalRequestRecordRepository { create(record: MobileApprovalRequestRecord): Promise<MobileApprovalRequestRecord>; update(id: string, patch: Partial<MobileApprovalRequestRecord>): Promise<MobileApprovalRequestRecord | null>; list(filter: Partial<MobileApprovalRequestRecord>, limit: number): Promise<MobileApprovalRequestRecord[]>; }

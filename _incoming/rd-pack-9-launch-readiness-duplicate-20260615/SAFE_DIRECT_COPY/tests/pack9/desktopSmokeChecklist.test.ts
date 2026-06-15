@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { desktopSmokeChecklistPassed } from "../../REVIEW_REQUIRED/apps/desktop/src/pack9/desktopSmokeChecklist.js"; assert.equal(desktopSmokeChecklistPassed({ auth: true, screenPreview: true, signaling: true, dataChannel: true, disconnect: true }), true);

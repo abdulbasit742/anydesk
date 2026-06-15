@@ -1,0 +1,1 @@
+Run Pack 10 shared/API/desktop tests, no-connector-secrets scanner, then manual QA for connector catalog, OAuth state, webhook URL validation, Slack/Teams/Jira/Zendesk mapping pages, SIEM/storage connector pages and desktop connector warnings.

@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { findSamlGroupMapping } from "../../packages/shared/src/pack16/samlGroupMapping.js"; assert.equal(findSamlGroupMapping([{ groupName: "Admins", orgRole: "admin" }], ["admins"])?.orgRole, "admin");

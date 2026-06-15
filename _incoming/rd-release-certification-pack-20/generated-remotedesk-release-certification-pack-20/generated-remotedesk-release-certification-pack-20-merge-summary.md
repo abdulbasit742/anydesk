@@ -1,0 +1,1 @@
+Pack 20 adds release certification gates, release candidates, installer artifacts, SBOM reports, vulnerability findings, approvals, rollout plans, rollback records, support readiness checks, release evidence, launch signoffs, release audit, web/desktop UI, docs/tests/scripts.

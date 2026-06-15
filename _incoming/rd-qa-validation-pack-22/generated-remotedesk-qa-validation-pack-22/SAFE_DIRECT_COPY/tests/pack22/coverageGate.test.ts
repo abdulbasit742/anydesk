@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { coverageGatePassed } from "../../packages/shared/src/pack22/coverageGate.js"; assert.equal(coverageGatePassed({ statements: 90, branches: 80, functions: 90, lines: 90 }, { statements: 80, branches: 70, functions: 80, lines: 80 }), true);

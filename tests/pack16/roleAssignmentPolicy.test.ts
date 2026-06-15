@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { roleAssignmentAllowed } from "../../REVIEW_REQUIRED/apps/api/src/pack16/roleAssignments/roleAssignmentPolicy.js"; assert.equal(roleAssignmentAllowed("admin", "member"), true); assert.equal(roleAssignmentAllowed("member", "viewer"), false);

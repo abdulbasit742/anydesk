@@ -1,0 +1,2 @@
+export const MAX_CLIPBOARD_TEXT_SIZE_BYTES = 256 * 1024;
+export const CLIPBOARD_DEBOUNCE_MS = 300;

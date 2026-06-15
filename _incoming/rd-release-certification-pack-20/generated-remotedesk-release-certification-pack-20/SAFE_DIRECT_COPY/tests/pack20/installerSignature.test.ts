@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { installerSignatureValid } from '../../packages/shared/src/pack20/installerSignature.js'; assert.equal(installerSignatureValid({platform:'macos',signed:true,notarized:true}), true);

@@ -1,0 +1,747 @@
+﻿{
+    "sourceZip":  "C:\\Users\\bsphy2304\\Downloads\\How to Analyze Content from Uploaded File.zip",
+    "stagedAt":  "_incoming/kimi-flat-code-upload/",
+    "strategy":  "review-only flat generated code pack; port small compatible diagnostics into current desktop runtime",
+    "totalFiles":  146,
+    "typeScriptFiles":  143,
+    "jsonFiles":  3,
+    "portedRuntimeFiles":  [
+                               "apps/desktop/src/renderer/src/services/webrtcStats.ts",
+                               "apps/desktop/src/renderer/src/services/webrtc.ts",
+                               "apps/desktop/src/renderer/src/components/RemoteSessionView.tsx",
+                               "apps/desktop/src/renderer/src/main.tsx",
+                               "apps/desktop/src/renderer/src/styles.css"
+                           ],
+    "stagedFiles":  [
+                        {
+                            "name":  "ActiveSessionsTable.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  3393
+                        },
+                        {
+                            "name":  "admin-device-visibility.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  541
+                        },
+                        {
+                            "name":  "admin-session-visibility.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  593
+                        },
+                        {
+                            "name":  "advanced-audit.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  2173
+                        },
+                        {
+                            "name":  "AdvancedAuditLogViewer.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  3797
+                        },
+                        {
+                            "name":  "AdvancedAuditService.ts",
+                            "extension":  ".ts",
+                            "bytes":  5843
+                        },
+                        {
+                            "name":  "advanced-clipboard.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  493
+                        },
+                        {
+                            "name":  "AdvancedClipboardService.ts",
+                            "extension":  ".ts",
+                            "bytes":  2897
+                        },
+                        {
+                            "name":  "advanced-remote-control.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  1720
+                        },
+                        {
+                            "name":  "advanced-webhooks.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  1322
+                        },
+                        {
+                            "name":  "AdvancedWebhooksService.ts",
+                            "extension":  ".ts",
+                            "bytes":  6418
+                        },
+                        {
+                            "name":  "ai.routes.ts",
+                            "extension":  ".ts",
+                            "bytes":  9946
+                        },
+                        {
+                            "name":  "annotation.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  537
+                        },
+                        {
+                            "name":  "AnnotationService.ts",
+                            "extension":  ".ts",
+                            "bytes":  2537
+                        },
+                        {
+                            "name":  "AnnotationToolbar.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  2330
+                        },
+                        {
+                            "name":  "ApiKeyManagementUI.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  7572
+                        },
+                        {
+                            "name":  "api-key-scopes.ts",
+                            "extension":  ".ts",
+                            "bytes":  615
+                        },
+                        {
+                            "name":  "api-usage-logs.ts",
+                            "extension":  ".ts",
+                            "bytes":  1164
+                        },
+                        {
+                            "name":  "api-webhook-maturity.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  668
+                        },
+                        {
+                            "name":  "audit.routes.ts",
+                            "extension":  ".ts",
+                            "bytes":  2777
+                        },
+                        {
+                            "name":  "auth.ts",
+                            "extension":  ".ts",
+                            "bytes":  46
+                        },
+                        {
+                            "name":  "AutomatedTroubleshootingService.ts",
+                            "extension":  ".ts",
+                            "bytes":  5405
+                        },
+                        {
+                            "name":  "chat.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  296
+                        },
+                        {
+                            "name":  "ChatService.ts",
+                            "extension":  ".ts",
+                            "bytes":  1490
+                        },
+                        {
+                            "name":  "ChatWindow.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  2034
+                        },
+                        {
+                            "name":  "clipboard-policy-enforcement.ts",
+                            "extension":  ".ts",
+                            "bytes":  2465
+                        },
+                        {
+                            "name":  "collaboration.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  1417
+                        },
+                        {
+                            "name":  "compliance-reporting.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  833
+                        },
+                        {
+                            "name":  "ComplianceReportingService.ts",
+                            "extension":  ".ts",
+                            "bytes":  6606
+                        },
+                        {
+                            "name":  "copy-session-diagnostics.ts",
+                            "extension":  ".ts",
+                            "bytes":  1310
+                        },
+                        {
+                            "name":  "customization.routes.ts",
+                            "extension":  ".ts",
+                            "bytes":  11905
+                        },
+                        {
+                            "name":  "dashboard.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  33
+                        },
+                        {
+                            "name":  "device.api.ts",
+                            "extension":  ".ts",
+                            "bytes":  1380
+                        },
+                        {
+                            "name":  "device.routes.ts",
+                            "extension":  ".ts",
+                            "bytes":  2865
+                        },
+                        {
+                            "name":  "device.types.ts",
+                            "extension":  ".ts",
+                            "bytes":  346
+                        },
+                        {
+                            "name":  "DeviceDetailPage.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  4114
+                        },
+                        {
+                            "name":  "DeviceHealthStatus.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1190
+                        },
+                        {
+                            "name":  "DeviceInventoryPage.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  4193
+                        },
+                        {
+                            "name":  "diagnostics.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  659
+                        },
+                        {
+                            "name":  "diagnostics-collector.ts",
+                            "extension":  ".ts",
+                            "bytes":  1659
+                        },
+                        {
+                            "name":  "dlp.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  1301
+                        },
+                        {
+                            "name":  "DlpEnforcementService.ts",
+                            "extension":  ".ts",
+                            "bytes":  6532
+                        },
+                        {
+                            "name":  "domain-verification.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  486
+                        },
+                        {
+                            "name":  "DomainVerificationUI.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  5586
+                        },
+                        {
+                            "name":  "edge-routing.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  785
+                        },
+                        {
+                            "name":  "EdgeRoutingService.ts",
+                            "extension":  ".ts",
+                            "bytes":  5444
+                        },
+                        {
+                            "name":  "enterprise.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  2014
+                        },
+                        {
+                            "name":  "enterprise-policy-enforcement.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  3140
+                        },
+                        {
+                            "name":  "file-transfer-policy-enforcement.ts",
+                            "extension":  ".ts",
+                            "bytes":  2904
+                        },
+                        {
+                            "name":  "force-disconnect-action.ts",
+                            "extension":  ".ts",
+                            "bytes":  4043
+                        },
+                        {
+                            "name":  "generated-batch-17-400-files-manifest.json",
+                            "extension":  ".json",
+                            "bytes":  9224
+                        },
+                        {
+                            "name":  "generated-batch-18-400-files-manifest.json",
+                            "extension":  ".json",
+                            "bytes":  5758
+                        },
+                        {
+                            "name":  "generated-batch-19-400-files-manifest.json",
+                            "extension":  ".json",
+                            "bytes":  2264
+                        },
+                        {
+                            "name":  "GuidedTour.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  4784
+                        },
+                        {
+                            "name":  "host-emergency-stop-action.ts",
+                            "extension":  ".ts",
+                            "bytes":  4952
+                        },
+                        {
+                            "name":  "idp-integration.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  1026
+                        },
+                        {
+                            "name":  "IdpIntegrationService.ts",
+                            "extension":  ".ts",
+                            "bytes":  3690
+                        },
+                        {
+                            "name":  "InAppFeedback.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  4181
+                        },
+                        {
+                            "name":  "incident.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  1238
+                        },
+                        {
+                            "name":  "incident.service.ts",
+                            "extension":  ".ts",
+                            "bytes":  2973
+                        },
+                        {
+                            "name":  "incident-management.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  469
+                        },
+                        {
+                            "name":  "input-control-policy-enforcement.ts",
+                            "extension":  ".ts",
+                            "bytes":  2119
+                        },
+                        {
+                            "name":  "InviteParticipantUI.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  2652
+                        },
+                        {
+                            "name":  "itsm.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  746
+                        },
+                        {
+                            "name":  "ItsmIntegrationService.ts",
+                            "extension":  ".ts",
+                            "bytes":  3178
+                        },
+                        {
+                            "name":  "linux-distribution.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  418
+                        },
+                        {
+                            "name":  "macos-distribution.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  417
+                        },
+                        {
+                            "name":  "max-session-duration-enforcement.ts",
+                            "extension":  ".ts",
+                            "bytes":  3932
+                        },
+                        {
+                            "name":  "mobile.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  1321
+                        },
+                        {
+                            "name":  "mobile-device.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  453
+                        },
+                        {
+                            "name":  "mobile-device.routes.ts",
+                            "extension":  ".ts",
+                            "bytes":  3112
+                        },
+                        {
+                            "name":  "mobile-sdk.ts",
+                            "extension":  ".ts",
+                            "bytes":  3556
+                        },
+                        {
+                            "name":  "multi-monitor.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  341
+                        },
+                        {
+                            "name":  "MultiMonitorSelectionUI.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  2131
+                        },
+                        {
+                            "name":  "multi-user-session.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  826
+                        },
+                        {
+                            "name":  "MultiUserSessionService.ts",
+                            "extension":  ".ts",
+                            "bytes":  4876
+                        },
+                        {
+                            "name":  "network-info-collector.ts",
+                            "extension":  ".ts",
+                            "bytes":  2431
+                        },
+                        {
+                            "name":  "notification.service.ts",
+                            "extension":  ".ts",
+                            "bytes":  5115
+                        },
+                        {
+                            "name":  "notification.types.ts",
+                            "extension":  ".ts",
+                            "bytes":  1227
+                        },
+                        {
+                            "name":  "NotificationCenter.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  5176
+                        },
+                        {
+                            "name":  "notification-system.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  678
+                        },
+                        {
+                            "name":  "OrganizationPrivacySettingsUI.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  7295
+                        },
+                        {
+                            "name":  "performance.routes.ts",
+                            "extension":  ".ts",
+                            "bytes":  7378
+                        },
+                        {
+                            "name":  "plan-limits.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  1171
+                        },
+                        {
+                            "name":  "plan-limits.routes.ts",
+                            "extension":  ".ts",
+                            "bytes":  4680
+                        },
+                        {
+                            "name":  "PlanLimitsDashboard.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  14532
+                        },
+                        {
+                            "name":  "PluginManagementService.ts",
+                            "extension":  ".ts",
+                            "bytes":  5942
+                        },
+                        {
+                            "name":  "plugin-system.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  1276
+                        },
+                        {
+                            "name":  "policy.types.ts",
+                            "extension":  ".ts",
+                            "bytes":  1469
+                        },
+                        {
+                            "name":  "policy-audit-events.ts",
+                            "extension":  ".ts",
+                            "bytes":  1109
+                        },
+                        {
+                            "name":  "policy-evaluator.ts",
+                            "extension":  ".ts",
+                            "bytes":  4605
+                        },
+                        {
+                            "name":  "privacy.routes.ts",
+                            "extension":  ".ts",
+                            "bytes":  2828
+                        },
+                        {
+                            "name":  "privacy-settings.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  947
+                        },
+                        {
+                            "name":  "push-notification.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  571
+                        },
+                        {
+                            "name":  "PushNotificationService.ts",
+                            "extension":  ".ts",
+                            "bytes":  2929
+                        },
+                        {
+                            "name":  "reconnect-action.ts",
+                            "extension":  ".ts",
+                            "bytes":  2654
+                        },
+                        {
+                            "name":  "release.types.ts",
+                            "extension":  ".ts",
+                            "bytes":  888
+                        },
+                        {
+                            "name":  "release-notes.service.ts",
+                            "extension":  ".ts",
+                            "bytes":  2603
+                        },
+                        {
+                            "name":  "release-rollback.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  832
+                        },
+                        {
+                            "name":  "remote-audio.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  396
+                        },
+                        {
+                            "name":  "RemoteAudioService.ts",
+                            "extension":  ".ts",
+                            "bytes":  3582
+                        },
+                        {
+                            "name":  "remotedesk-ids.ts",
+                            "extension":  ".ts",
+                            "bytes":  32
+                        },
+                        {
+                            "name":  "remote-printing.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  354
+                        },
+                        {
+                            "name":  "RemotePrintingService.ts",
+                            "extension":  ".ts",
+                            "bytes":  1755
+                        },
+                        {
+                            "name":  "resource-management.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  1252
+                        },
+                        {
+                            "name":  "ResourceManagementService.ts",
+                            "extension":  ".ts",
+                            "bytes":  6029
+                        },
+                        {
+                            "name":  "security.routes.ts",
+                            "extension":  ".ts",
+                            "bytes":  9973
+                        },
+                        {
+                            "name":  "security-event.service.ts",
+                            "extension":  ".ts",
+                            "bytes":  2429
+                        },
+                        {
+                            "name":  "security-event.types.ts",
+                            "extension":  ".ts",
+                            "bytes":  1080
+                        },
+                        {
+                            "name":  "SecurityEventsDashboard.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  8448
+                        },
+                        {
+                            "name":  "session.api.ts",
+                            "extension":  ".ts",
+                            "bytes":  1899
+                        },
+                        {
+                            "name":  "session.routes.ts",
+                            "extension":  ".ts",
+                            "bytes":  4412
+                        },
+                        {
+                            "name":  "session.types.ts",
+                            "extension":  ".ts",
+                            "bytes":  705
+                        },
+                        {
+                            "name":  "session-debug-panel.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  4375
+                        },
+                        {
+                            "name":  "SessionDetailPage.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  5421
+                        },
+                        {
+                            "name":  "session-insights.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  1503
+                        },
+                        {
+                            "name":  "SessionInsightsService.ts",
+                            "extension":  ".ts",
+                            "bytes":  5403
+                        },
+                        {
+                            "name":  "session-log-exporter.ts",
+                            "extension":  ".ts",
+                            "bytes":  1553
+                        },
+                        {
+                            "name":  "SessionParticipantsList.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1878
+                        },
+                        {
+                            "name":  "session-recording.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  777
+                        },
+                        {
+                            "name":  "SessionRecordingService.ts",
+                            "extension":  ".ts",
+                            "bytes":  4025
+                        },
+                        {
+                            "name":  "session-summary.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  782
+                        },
+                        {
+                            "name":  "SessionSummaryService.ts",
+                            "extension":  ".ts",
+                            "bytes":  4265
+                        },
+                        {
+                            "name":  "siem.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  920
+                        },
+                        {
+                            "name":  "SiemIntegrationService.ts",
+                            "extension":  ".ts",
+                            "bytes":  2028
+                        },
+                        {
+                            "name":  "socket.ts",
+                            "extension":  ".ts",
+                            "bytes":  29
+                        },
+                        {
+                            "name":  "sso-provider-settings.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  871
+                        },
+                        {
+                            "name":  "support-tools.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  773
+                        },
+                        {
+                            "name":  "system-info-collector.ts",
+                            "extension":  ".ts",
+                            "bytes":  3284
+                        },
+                        {
+                            "name":  "threat-detection.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  1178
+                        },
+                        {
+                            "name":  "ThreatDetectionService.ts",
+                            "extension":  ".ts",
+                            "bytes":  6656
+                        },
+                        {
+                            "name":  "troubleshooting.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  1034
+                        },
+                        {
+                            "name":  "update-available-ui.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1192
+                        },
+                        {
+                            "name":  "update-error-ui.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1282
+                        },
+                        {
+                            "name":  "update-progress-ui.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  969
+                        },
+                        {
+                            "name":  "UserPrivacySettingsUI.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  6750
+                        },
+                        {
+                            "name":  "ux-polish.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  682
+                        },
+                        {
+                            "name":  "viewer-retry-connection-action.ts",
+                            "extension":  ".ts",
+                            "bytes":  2667
+                        },
+                        {
+                            "name":  "webhook-delivery-logs.ts",
+                            "extension":  ".ts",
+                            "bytes":  1182
+                        },
+                        {
+                            "name":  "WebhookManagementUI.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  8613
+                        },
+                        {
+                            "name":  "webrtc-optimization.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  926
+                        },
+                        {
+                            "name":  "WebRtcOptimizationService.ts",
+                            "extension":  ".ts",
+                            "bytes":  4047
+                        },
+                        {
+                            "name":  "webrtc-stats-exporter.ts",
+                            "extension":  ".ts",
+                            "bytes":  1900
+                        },
+                        {
+                            "name":  "white-labeling.dto.ts",
+                            "extension":  ".ts",
+                            "bytes":  794
+                        },
+                        {
+                            "name":  "WhiteLabelingService.ts",
+                            "extension":  ".ts",
+                            "bytes":  4326
+                        },
+                        {
+                            "name":  "windows-distribution.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  346
+                        }
+                    ]
+}

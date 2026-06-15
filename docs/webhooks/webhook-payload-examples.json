@@ -1,0 +1,22 @@
+{
+  "session.started": {
+    "event": "session.started",
+    "timestamp": "2026-06-12T10:00:00Z",
+    "data": {
+      "session_id": "sess_123456",
+      "host_id": "user_789",
+      "viewer_id": "user_abc",
+      "host_desk_id": "123456789",
+      "viewer_desk_id": "987654321"
+    }
+  },
+  "user.created": {
+    "event": "user.created",
+    "timestamp": "2026-06-12T10:00:00Z",
+    "data": {
+      "user_id": "usr_123",
+      "email": "newuser@example.com",
+      "plan": "free"
+    }
+  }
+}

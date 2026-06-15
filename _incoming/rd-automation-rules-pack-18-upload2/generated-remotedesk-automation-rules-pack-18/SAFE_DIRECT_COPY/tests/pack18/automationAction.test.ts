@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { isSafeAutomationAction } from "../../packages/shared/src/pack18/automationAction.js"; assert.equal(isSafeAutomationAction("send_notification"), true); assert.equal(isSafeAutomationAction("run_shell"), false);

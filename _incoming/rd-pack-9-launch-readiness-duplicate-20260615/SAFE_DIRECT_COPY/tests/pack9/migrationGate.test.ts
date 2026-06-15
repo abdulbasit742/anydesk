@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { migrationBlocksLaunch } from "../../REVIEW_REQUIRED/apps/api/src/pack9/migrationChecks/migrationGate.js"; assert.equal(migrationBlocksLaunch({ risk: "high", reviewed: false, destructive: false }), true);

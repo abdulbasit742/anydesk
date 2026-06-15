@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { accessibilityAuditBlocksRelease } from "../../REVIEW_REQUIRED/apps/api/src/pack21/accessibilityAudits/accessibilityAuditPolicy.js"; assert.equal(accessibilityAuditBlocksRelease({ highIssues: 1, criticalIssues: 0 }), true);

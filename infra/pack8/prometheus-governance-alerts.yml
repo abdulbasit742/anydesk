@@ -1,0 +1,13 @@
+groups:
+  - name: remotedesk-governance-pack8
+    rules:
+      - alert: RemoteDeskEvidenceOverdue
+        expr: remotedesk_evidence_controls_overdue > 0
+        for: 24h
+        labels:
+          severity: warning
+      - alert: RemoteDeskBackupRestoreFailed
+        expr: remotedesk_backup_restore_failed_total > 0
+        for: 5m
+        labels:
+          severity: critical

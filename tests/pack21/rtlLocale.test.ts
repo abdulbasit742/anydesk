@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { textDirectionForLocale } from "../../packages/shared/src/pack21/rtlLocale.js"; assert.equal(textDirectionForLocale("ur-PK"), "rtl"); assert.equal(textDirectionForLocale("en-US"), "ltr");

@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { workflowApprovalAllowsRun } from "../../packages/shared/src/pack18/workflowApproval.js"; assert.equal(workflowApprovalAllowsRun("approved"), true); assert.equal(workflowApprovalAllowsRun("pending"), false);

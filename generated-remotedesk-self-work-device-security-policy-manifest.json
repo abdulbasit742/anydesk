@@ -1,0 +1,33 @@
+{
+  "name": "remotedesk-self-work-device-security-policy",
+  "createdAt": "2026-06-15",
+  "buildEstimateBefore": "48-55%",
+  "buildEstimateAfter": "52-59%",
+  "purpose": "Persist device trust and access policy, replacing device detail placeholders with real API-backed controls.",
+  "addedFiles": [
+    "apps/api/src/lib/deviceSecurity.ts",
+    "apps/api/prisma/migrations/20260615100000_device_trust_access_policy/migration.sql",
+    "docs/device-security-policy.md",
+    "generated-remotedesk-self-work-device-security-policy-summary.md",
+    "generated-remotedesk-self-work-device-security-policy-manifest.json"
+  ],
+  "modifiedFiles": [
+    "apps/api/prisma/schema.prisma",
+    "apps/api/src/routes/device.routes.ts",
+    "apps/web/app/dashboard/devices/[deviceId]/page.tsx",
+    "IMPLEMENTATION_NOTES.md"
+  ],
+  "runtimeBoundaries": {
+    "appsApi": "updated",
+    "appsWeb": "updated",
+    "appsDesktop": "not touched",
+    "packagesShared": "not touched in this chunk"
+  },
+  "safetyRules": [
+    "New devices start untrusted.",
+    "Unattended access requires explicit trust.",
+    "Blocked devices cannot enable access features.",
+    "Blocking a device disables access features.",
+    "Native input execution remains disabled."
+  ]
+}

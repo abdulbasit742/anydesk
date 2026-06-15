@@ -1,0 +1,7 @@
+groups:
+  - name: remotedesk-readiness
+    rules:
+      - record: remotedesk:api_error_rate5m
+        expr: rate(http_requests_total{status=~"5.."}[5m])
+      - record: remotedesk:session_reconnect_rate5m
+        expr: rate(remotedesk_reconnect_attempts_total[5m])

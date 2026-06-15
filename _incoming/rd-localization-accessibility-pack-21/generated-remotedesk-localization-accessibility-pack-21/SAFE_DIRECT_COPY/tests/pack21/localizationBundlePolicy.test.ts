@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { localizationBundleCanPublish } from "../../REVIEW_REQUIRED/apps/api/src/pack21/localizationBundles/localizationBundlePolicy.js"; assert.equal(localizationBundleCanPublish({ approvedTranslations: 95, totalTranslations: 100, issueCount: 0 }).allowed, true);

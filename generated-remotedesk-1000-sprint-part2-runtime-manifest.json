@@ -1,0 +1,185 @@
+{
+  "manifestVersion": "1.0.0",
+  "generatedAt": "2026-06-14T00:00:00Z",
+  "sprint": "Part 2 — Runtime Features + API Wiring",
+  "project": "RemoteDesk",
+  "actualFileCount": 55,
+  "filesByArea": {
+    "desktopFileTransfer": 10,
+    "desktopClipboard": 5,
+    "desktopInput": 6,
+    "desktopDiagnostics": 4,
+    "desktopReconnect": 3,
+    "desktopAudit": 7,
+    "desktopServices": 3,
+    "apiRoutes": 5,
+    "apiServices": 7,
+    "apiMiddleware": 2,
+    "apiValidators": 1,
+    "apiUtils": 1,
+    "apiSocket": 1,
+    "testsDesktop": 7,
+    "testsApi": 3,
+    "docs": 8
+  },
+  "safeDirectCopy": [
+    "apps/desktop/src/features/fileTransfer/FileTransferPanel.module.css",
+    "apps/desktop/src/features/fileTransfer/FileTransferRow.module.css",
+    "apps/desktop/src/features/fileTransfer/ReceiveFileModal.module.css",
+    "apps/desktop/src/features/clipboard/ClipboardPanel.module.css",
+    "apps/desktop/src/features/reconnect/ReconnectBanner.module.css",
+    "tests/desktop/fileTransferStore.test.ts",
+    "tests/desktop/inputValidator.test.ts",
+    "tests/desktop/rateLimiter.test.ts",
+    "tests/desktop/clipboardTypes.test.ts",
+    "tests/desktop/auditQueue.test.ts",
+    "tests/desktop/reconnectManager.test.ts",
+    "tests/desktop/supportBundle.test.ts",
+    "tests/api/auditValidators.test.ts",
+    "tests/api/permissionMiddleware.test.ts",
+    "tests/api/planLimits.test.ts",
+    "docs/desktop-file-transfer-flow.md",
+    "docs/clipboard-sync-safety-model.md",
+    "docs/native-input-safety-model.md",
+    "docs/audit-event-catalog.md",
+    "docs/api-audit-session-support-wiring-guide.md",
+    "docs/reconnect-ice-restart-model.md",
+    "docs/desktop-qa-checklist.md",
+    "docs/merge-guide.md",
+    "generated-remotedesk-1000-sprint-part2-runtime-manifest.json",
+    "generated-remotedesk-1000-sprint-part2-runtime-merge-summary.md",
+    "generated-remotedesk-1000-sprint-part2-runtime-code-review.md",
+    "generated-remotedesk-1000-sprint-part2-runtime-risk-register.md",
+    "generated-remotedesk-1000-sprint-part2-runtime-test-plan.md"
+  ],
+  "reviewRequired": [
+    "apps/desktop/src/features/fileTransfer/types.ts",
+    "apps/desktop/src/features/fileTransfer/fileTransferStore.ts",
+    "apps/desktop/src/features/fileTransfer/fileTransferManager.ts",
+    "apps/desktop/src/features/fileTransfer/FileTransferPanel.tsx",
+    "apps/desktop/src/features/fileTransfer/FileTransferRow.tsx",
+    "apps/desktop/src/features/fileTransfer/ReceiveFileModal.tsx",
+    "apps/desktop/src/features/clipboard/clipboardTypes.ts",
+    "apps/desktop/src/features/clipboard/clipboardStore.ts",
+    "apps/desktop/src/features/clipboard/clipboardManager.ts",
+    "apps/desktop/src/features/clipboard/ClipboardPanel.tsx",
+    "apps/desktop/src/features/input/inputTypes.ts",
+    "apps/desktop/src/features/input/inputValidator.ts",
+    "apps/desktop/src/features/input/rateLimiter.ts",
+    "apps/desktop/src/features/input/permissionGate.ts",
+    "apps/desktop/src/features/input/noopExecutor.ts",
+    "apps/desktop/src/features/input/inputManager.ts",
+    "apps/desktop/src/features/diagnostics/diagnosticsTypes.ts",
+    "apps/desktop/src/features/diagnostics/diagnosticsStore.ts",
+    "apps/desktop/src/features/diagnostics/diagnosticsCollector.ts",
+    "apps/desktop/src/features/diagnostics/supportBundle.ts",
+    "apps/desktop/src/features/reconnect/reconnectManager.ts",
+    "apps/desktop/src/features/reconnect/ReconnectBanner.tsx",
+    "apps/desktop/src/features/audit/auditTypes.ts",
+    "apps/desktop/src/features/audit/auditQueue.ts",
+    "apps/desktop/src/features/audit/auditEmitter.ts",
+    "apps/desktop/src/features/audit/sessionAudit.ts",
+    "apps/desktop/src/features/audit/fileTransferAudit.ts",
+    "apps/desktop/src/features/audit/clipboardAudit.ts",
+    "apps/desktop/src/features/audit/inputAudit.ts",
+    "apps/desktop/src/services/fileSystem.ts",
+    "apps/desktop/src/preload/fileTransfer.ts",
+    "apps/desktop/src/main/fileTransfer.ts",
+    "apps/api/src/routes/audit.routes.ts",
+    "apps/api/src/routes/session.routes.ts",
+    "apps/api/src/routes/support.routes.ts",
+    "apps/api/src/routes/team.routes.ts",
+    "apps/api/src/routes/security.routes.ts",
+    "apps/api/src/services/auditLogService.ts",
+    "apps/api/src/services/sessionEventService.ts",
+    "apps/api/src/services/supportTicketService.ts",
+    "apps/api/src/services/teamInvitationService.ts",
+    "apps/api/src/services/securityEventService.ts",
+    "apps/api/src/services/billingUsageService.ts",
+    "apps/api/src/services/adminMetricsService.ts",
+    "apps/api/src/middleware/rolePermission.ts",
+    "apps/api/src/middleware/planLimits.ts",
+    "apps/api/src/validators/auditValidators.ts",
+    "apps/api/src/utils/errorMapper.ts",
+    "apps/api/src/socket/auditSocket.ts"
+  ],
+  "doNotMerge": [],
+  "existingFilesTouched": [],
+  "dependenciesRequired": {
+    "api": {
+      "existing": ["express", "@prisma/client", "socket.io"],
+      "new": []
+    },
+    "desktop": {
+      "existing": ["electron", "react"],
+      "new": []
+    },
+    "shared": {
+      "existing": ["@shared/checksums", "@shared/retry"],
+      "new": []
+    }
+  },
+  "prismaSchemaChangesRequired": [
+    "model AuditLog (new)",
+    "model SessionEvent (new)",
+    "model SupportTicket (new)",
+    "model SupportTicketComment (new)",
+    "model TeamInvitation (new)",
+    "model SecurityEvent (new)",
+    "model TrustedDevice (new)",
+    "model UsageRecord (new)"
+  ],
+  "ipcSurfacesAdded": {
+    "rendererToMain": [
+      "file-transfer:show-open-dialog",
+      "file-transfer:show-save-dialog",
+      "file-transfer:read-file",
+      "file-transfer:write-file"
+    ],
+    "mainToRenderer": [
+      "file-transfer:action"
+    ]
+  },
+  "socketIoEventsAdded": {
+    "clientToServer": [
+      "audit:event",
+      "audit:events:batch",
+      "session:event",
+      "session:events:batch",
+      "peer:ice-restart",
+      "session:reconnecting"
+    ],
+    "serverToClient": [
+      "peer:ice-restart-request",
+      "peer:reconnecting",
+      "audit:system"
+    ]
+  },
+  "securityRisks": [
+    {
+      "risk": "File transfer writes user-selected files via main process IPC",
+      "mitigation": "Electron save dialog ensures user chooses path; path validation prevents traversal"
+    },
+    {
+      "risk": "Clipboard sync could leak sensitive data",
+      "mitigation": "Disabled by default; text-only; no content in audit logs; HTML rejected"
+    },
+    {
+      "risk": "Native input execution could allow unauthorized remote control",
+      "mitigation": "No-op executor default; explicit permission required; emergency stop; rate limiting"
+    },
+    {
+      "risk": "Audit queue could grow unbounded if API unreachable",
+      "mitigation": "Max 1000 entries; oldest dropped; no blocking"
+    }
+  ],
+  "knownLimitations": [
+    "File transfer does not support folders (files only)",
+    "Clipboard sync is text-only (no images, no HTML)",
+    "Native input uses no-op executor until platform executor is explicitly enabled",
+    "Reconnect manager does not handle total network failure (only peer disconnect)",
+    "Diagnostics stats are sampled every 1s (not real-time)",
+    "Admin metrics service has placeholder zeros for some derived metrics"
+  ],
+  "expectedBuildImpact": "Should build cleanly. No changes to existing build pipeline. New files are additive only. Estimated progress from 27-34% to 40-45% if fully merged."
+}

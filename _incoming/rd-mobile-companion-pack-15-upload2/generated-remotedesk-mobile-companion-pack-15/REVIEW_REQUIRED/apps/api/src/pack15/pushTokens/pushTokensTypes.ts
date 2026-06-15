@@ -1,0 +1,2 @@
+export interface PushTokenRecord { id: string; userId: string; deviceId: string; provider: 'apns' | 'fcm' | 'webpush'; tokenHash: string; revokedAt?: string; createdAt: string; }
+export interface PushTokenRecordRepository { create(record: PushTokenRecord): Promise<PushTokenRecord>; update(id: string, patch: Partial<PushTokenRecord>): Promise<PushTokenRecord | null>; list(filter: Partial<PushTokenRecord>, limit: number): Promise<PushTokenRecord[]>; }

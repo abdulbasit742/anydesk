@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { routeAutomationNotification } from "../../packages/shared/src/pack18/notificationRouter.js"; assert.ok(routeAutomationNotification("security.alert.opened").includes("security"));

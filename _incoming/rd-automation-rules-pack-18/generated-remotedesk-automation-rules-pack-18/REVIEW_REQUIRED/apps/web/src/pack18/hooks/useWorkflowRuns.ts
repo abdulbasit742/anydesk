@@ -1,0 +1,19 @@
+import { useEffect, useState } from "react";
+
+export interface useWorkflowRunsResult<T> {
+  data?: T;
+  loading: boolean;
+  error?: string;
+}
+
+export function useWorkflowRuns<T>(loader: () => Promise<T>): useWorkflowRunsResult<T> {
+  const [state, setState] = useState<useWorkflowRunsResult<T>>({ loading: true });
+  useEffect(() => {
+    let cancelled = false;
+    loader()
+      .then((data) => { if (!cancelled) setState({ loading: false, data }); })
+      .catch((error: unknown) => { if (!cancelled) setState({ loading: false, error: error instanceof Error ? error.message : "Unknown error" }); });
+    return () => { cancelled = true; };
+  }, [loader]);
+  return state;
+}

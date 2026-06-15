@@ -1,0 +1,1 @@
+Pack 6 adds entitlements, usage counters, billing reconciliation, audit integrity, data export/deletion workflows, support SLA, desktop managed policy and web admin controls. Copy SAFE_DIRECT_COPY first; review runtime files before wiring.

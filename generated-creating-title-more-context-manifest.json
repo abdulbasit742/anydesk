@@ -1,0 +1,408 @@
+﻿{
+    "sourceZip":  "C:/Users/bsphy2304/Downloads/Creating a title requires more context or details from the uploaded file\u0027s content.zip",
+    "stagedPath":  "C:/Users/bsphy2304/Documents/New project/_incoming/creating-title-more-context-upload",
+    "entryCount":  188,
+    "fileCount":  188,
+    "directoryCount":  0,
+    "totalBytes":  1591865,
+    "extensionCounts":  [
+                            {
+                                "extension":  ".ts",
+                                "count":  69
+                            },
+                            {
+                                "extension":  ".tsx",
+                                "count":  63
+                            },
+                            {
+                                "extension":  ".md",
+                                "count":  45
+                            },
+                            {
+                                "extension":  ".js",
+                                "count":  3
+                            },
+                            {
+                                "extension":  ".json",
+                                "count":  2
+                            },
+                            {
+                                "extension":  ".prisma",
+                                "count":  1
+                            },
+                            {
+                                "extension":  ".txt",
+                                "count":  1
+                            },
+                            {
+                                "extension":  ".py",
+                                "count":  1
+                            },
+                            {
+                                "extension":  ".yml",
+                                "count":  1
+                            },
+                            {
+                                "extension":  ".d2",
+                                "count":  1
+                            },
+                            {
+                                "extension":  ".png",
+                                "count":  1
+                            }
+                        ],
+    "importedDocs":  [
+                         {
+                             "source":  "auto-scaling.md",
+                             "destination":  "docs/creating-title-more-context/auto-scaling.md"
+                         },
+                         {
+                             "source":  "Backend Deployment Guide.md",
+                             "destination":  "docs/creating-title-more-context/Backend Deployment Guide.md"
+                         },
+                         {
+                             "source":  "bundle-optimization.md",
+                             "destination":  "docs/creating-title-more-context/bundle-optimization.md"
+                         },
+                         {
+                             "source":  "Changelog.md",
+                             "destination":  "docs/creating-title-more-context/Changelog.md"
+                         },
+                         {
+                             "source":  "db-optimization-guide.md",
+                             "destination":  "docs/creating-title-more-context/db-optimization-guide.md"
+                         },
+                         {
+                             "source":  "Desktop Application Build Guide.md",
+                             "destination":  "docs/creating-title-more-context/Desktop Application Build Guide.md"
+                         },
+                         {
+                             "source":  "disaster-recovery.md",
+                             "destination":  "docs/creating-title-more-context/disaster-recovery.md"
+                         },
+                         {
+                             "source":  "Environment Templates.md",
+                             "destination":  "docs/creating-title-more-context/Environment Templates.md"
+                         },
+                         {
+                             "source":  "generated-batch-8-gap-report.md",
+                             "destination":  "docs/creating-title-more-context/generated-batch-8-gap-report.md"
+                         },
+                         {
+                             "source":  "generated-batch-9-gap-report.md",
+                             "destination":  "docs/creating-title-more-context/generated-batch-9-gap-report.md"
+                         },
+                         {
+                             "source":  "load-testing-guide.md",
+                             "destination":  "docs/creating-title-more-context/load-testing-guide.md"
+                         },
+                         {
+                             "source":  "performance-monitoring.md",
+                             "destination":  "docs/creating-title-more-context/performance-monitoring.md"
+                         },
+                         {
+                             "source":  "Production Configuration Guide.md",
+                             "destination":  "docs/creating-title-more-context/Production Configuration Guide.md"
+                         },
+                         {
+                             "source":  "README.md",
+                             "destination":  "docs/creating-title-more-context/README.md"
+                         },
+                         {
+                             "source":  "RemoteDesk API Error Catalog.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk API Error Catalog.md"
+                         },
+                         {
+                             "source":  "RemoteDesk API Reference.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk API Reference.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Architecture Overview.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Architecture Overview.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Batch 8 - Implementation Notes.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Batch 8 - Implementation Notes.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Batch 8 File Generation Summary.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Batch 8 File Generation Summary.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Batch 8 Next Steps.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Batch 8 Next Steps.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Batch 8 Risk Register.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Batch 8 Risk Register.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Desktop Application Internals.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Desktop Application Internals.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Developer Onboarding Guide.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Developer Onboarding Guide.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Local Development Setup Guide.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Local Development Setup Guide.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Manual QA Checklist.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Manual QA Checklist.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Next Engineering Roadmap.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Next Engineering Roadmap.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Permission Model.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Permission Model.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Production Runbook.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Production Runbook.md"
+                         },
+                         {
+                             "source":  "RemoteDesk QA Documentation.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk QA Documentation.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Release Checklist.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Release Checklist.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Security Model.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Security Model.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Smoke Test Checklist.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Smoke Test Checklist.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Socket.IO Reference.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Socket.IO Reference.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Troubleshooting Guide.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Troubleshooting Guide.md"
+                         },
+                         {
+                             "source":  "RemoteDesk Versioning Guide.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk Versioning Guide.md"
+                         },
+                         {
+                             "source":  "RemoteDesk.md",
+                             "destination":  "docs/creating-title-more-context/RemoteDesk.md"
+                         },
+                         {
+                             "source":  "resource-optimization.md",
+                             "destination":  "docs/creating-title-more-context/resource-optimization.md"
+                         },
+                         {
+                             "source":  "scaling-backend.md",
+                             "destination":  "docs/creating-title-more-context/scaling-backend.md"
+                         },
+                         {
+                             "source":  "scaling-desktop.md",
+                             "destination":  "docs/creating-title-more-context/scaling-desktop.md"
+                         },
+                         {
+                             "source":  "scaling-web.md",
+                             "destination":  "docs/creating-title-more-context/scaling-web.md"
+                         },
+                         {
+                             "source":  "ssr-enhancements.md",
+                             "destination":  "docs/creating-title-more-context/ssr-enhancements.md"
+                         },
+                         {
+                             "source":  "Test Coverage Documentation.md",
+                             "destination":  "docs/creating-title-more-context/Test Coverage Documentation.md"
+                         },
+                         {
+                             "source":  "TURN Server Deployment Guide.md",
+                             "destination":  "docs/creating-title-more-context/TURN Server Deployment Guide.md"
+                         },
+                         {
+                             "source":  "Web Application Deployment Guide.md",
+                             "destination":  "docs/creating-title-more-context/Web Application Deployment Guide.md"
+                         },
+                         {
+                             "source":  "webrtc-tuning.md",
+                             "destination":  "docs/creating-title-more-context/webrtc-tuning.md"
+                         },
+                         {
+                             "source":  "data-flow.d2",
+                             "destination":  "docs/creating-title-more-context/data-flow.d2"
+                         },
+                         {
+                             "source":  "data-flow.png",
+                             "destination":  "docs/creating-title-more-context/data-flow.png"
+                         }
+                     ],
+    "importedScripts":  [
+                            {
+                                "source":  "api-load-test.js",
+                                "destination":  "scripts/creating-title-more-context/load/api-load-test.js"
+                            },
+                            {
+                                "source":  "socketio-load-test.js",
+                                "destination":  "scripts/creating-title-more-context/load/socketio-load-test.js"
+                            },
+                            {
+                                "source":  "web-load-test.py",
+                                "destination":  "scripts/creating-title-more-context/load/web-load-test.py"
+                            }
+                        ],
+    "manuallyPortedRuntime":  [
+                                  "packages/shared/src/utils/formatters.ts",
+                                  "packages/shared/src/utils/retry.ts",
+                                  "packages/shared/src/utils/index.ts",
+                                  "packages/shared/src/index.ts"
+                              ],
+    "skippedRuntimeOrReviewOnlyCount":  138,
+    "skippedRuntimeOrReviewOnly":  [
+                                       "[id].tsx",
+                                       "_document.tsx",
+                                       "AboutScreen.tsx",
+                                       "apiClient.ts",
+                                       "api-regression.test.ts",
+                                       "Auth.test.tsx",
+                                       "auth.ts",
+                                       "AuthError.tsx",
+                                       "AuthGuard.tsx",
+                                       "AuthLoading.tsx",
+                                       "authService.test.ts",
+                                       "billing.tsx",
+                                       "cache.ts",
+                                       "cacheManager.ts",
+                                       "cacheMiddleware.ts",
+                                       "ci.yml",
+                                       "ClipboardSettings.tsx",
+                                       "contract.test.ts",
+                                       "dashboard.tsx",
+                                       "database.ts",
+                                       "dataPrefetcher.ts",
+                                       "dbConnectionPoolMonitor.ts",
+                                       "dbQueryOptimizer.ts",
+                                       "device.ts",
+                                       "deviceAuditService.ts",
+                                       "DeviceDeleteModal.tsx",
+                                       "DeviceLastSeen.tsx",
+                                       "devicePasswordService.ts",
+                                       "deviceRegistrationService.ts",
+                                       "DeviceRenameModal.tsx",
+                                       "deviceRoutes.ts",
+                                       "devices.ts",
+                                       "devices.tsx",
+                                       "DeviceStatusIndicator.tsx",
+                                       "DeviceTrustToggle.tsx",
+                                       "diagnostics.tsx",
+                                       "diagnosticsExporter.ts",
+                                       "DiagnosticsPanel.tsx",
+                                       "DisconnectModal.tsx",
+                                       "DisplayQualitySettings.tsx",
+                                       "download.tsx",
+                                       "EmailVerification.tsx",
+                                       "enhancements.test.ts",
+                                       "error.ts",
+                                       "ErrorBoundary.tsx",
+                                       "errorHandling.test.ts",
+                                       "FeatureGate.tsx",
+                                       "featureGateHelpers.ts",
+                                       "featureGateMiddleware.ts",
+                                       "FileTransferSettings.tsx",
+                                       "ForgotPasswordForm.tsx",
+                                       "formatSessionDuration.ts",
+                                       "formatStats.ts",
+                                       "GeneralSettings.tsx",
+                                       "generated-batch-8-300-files-manifest.json",
+                                       "generated-batch-9-manifest.json",
+                                       "hardwareAcceleration.ts",
+                                       "healthRoutes.ts",
+                                       "HostSharingIndicator.tsx",
+                                       "index.ts",
+                                       "InputPermissionSettings.tsx",
+                                       "lazyLoad.ts",
+                                       "logger.ts",
+                                       "LoginForm.tsx",
+                                       "LogsViewer.tsx",
+                                       "monitoring.test.ts",
+                                       "NetworkSettings.tsx",
+                                       "next.config.js",
+                                       "optimization.test.ts",
+                                       "OverviewWidgets.test.tsx",
+                                       "OverviewWidgets.tsx",
+                                       "PasswordChangeForm.tsx",
+                                       "pasted_content.txt",
+                                       "performance.test.ts",
+                                       "PerformanceOverlay.tsx",
+                                       "PerformanceSettings.tsx",
+                                       "planLimits.test.ts",
+                                       "planLimits.ts",
+                                       "processManager.ts",
+                                       "ProfileSettingsForm.tsx",
+                                       "QualityBadge.tsx",
+                                       "qualityHistoryStore.ts",
+                                       "queryOptimizer.test.ts",
+                                       "ReconnectBanner.tsx",
+                                       "RecordingSettings.tsx",
+                                       "redisSocketAdapter.ts",
+                                       "remotedesk-id.ts",
+                                       "RemoteVideoStates.tsx",
+                                       "ResetPasswordForm.tsx",
+                                       "resourceMonitor.ts",
+                                       "resourceUsage.test.ts",
+                                       "retryHelper.ts",
+                                       "schema.prisma",
+                                       "security.tsx",
+                                       "SecuritySettings.tsx",
+                                       "session.ts",
+                                       "sessionAuditRoutes.ts",
+                                       "SessionAuditTimeline.tsx",
+                                       "SessionEventLog.tsx",
+                                       "sessionEventService.ts",
+                                       "SessionExportCSV.tsx",
+                                       "SessionFilters.tsx",
+                                       "SessionNotesPanel.tsx",
+                                       "sessions.ts",
+                                       "sessions.tsx",
+                                       "SessionSearch.tsx",
+                                       "sessionService.test.ts",
+                                       "SessionTimer.tsx",
+                                       "SessionToolbar.tsx",
+                                       "settings.tsx",
+                                       "settingsService.ts",
+                                       "Sidebar.tsx",
+                                       "signaling.ts",
+                                       "SignupForm.tsx",
+                                       "socketErrorMapper.ts",
+                                       "socketio.ts",
+                                       "socketScalingService.ts",
+                                       "SocketStatusIndicator.tsx",
+                                       "socketTestHelpers.ts",
+                                       "ssrCache.ts",
+                                       "StateMessages.tsx",
+                                       "ToastNotification.tsx",
+                                       "tokenHelpers.ts",
+                                       "UpgradePrompt.tsx",
+                                       "useDynamicImport.ts",
+                                       "usePerformanceMonitor.ts",
+                                       "userFixtures.ts",
+                                       "userFriendlyMessages.ts",
+                                       "videoEncoderConfig.ts",
+                                       "ViewerConnectedIndicator.tsx",
+                                       "web-regression.test.ts",
+                                       "webrtcConfig.ts",
+                                       "webrtcErrorMapper.ts",
+                                       "webrtcMockHelpers.ts",
+                                       "WebRTCSettingsModal.tsx",
+                                       "webrtcStatsAnalyzer.ts",
+                                       "webrtcStatsCollector.ts",
+                                       "webVitals.ts"
+                                   ],
+    "placeholderOrTodoMatchCount":  95,
+    "buildEstimateAfterMerge":  "26-33%",
+    "decision":  "Docs and load scripts imported. Runtime code is review-only except a small dependency-free shared utils port."
+}

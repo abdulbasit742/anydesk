@@ -1,0 +1,2 @@
+export interface MigrationCheckRecord { id: string; migrationName: string; risk: "low" | "medium" | "high" | "critical"; reviewed: boolean; destructive: boolean; checkedAt: string; }
+export interface MigrationCheckRecordRepository { create(record: MigrationCheckRecord): Promise<MigrationCheckRecord>; update(id: string, patch: Partial<MigrationCheckRecord>): Promise<MigrationCheckRecord | null>; list(filter: Partial<MigrationCheckRecord>, limit: number): Promise<MigrationCheckRecord[]>; }

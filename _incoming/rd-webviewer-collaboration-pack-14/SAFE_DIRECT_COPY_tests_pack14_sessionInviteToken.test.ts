@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { canUseSessionInvite } from "../../packages/shared/src/pack14/sessionInviteToken.js"; assert.equal(canUseSessionInvite({ id: "i", sessionId: "s", expiresAt: "2999-01-01T00:00:00Z", maxUses: 1, used: 0 }), true);

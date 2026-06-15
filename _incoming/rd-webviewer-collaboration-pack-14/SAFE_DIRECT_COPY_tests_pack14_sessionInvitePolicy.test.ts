@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { validateSessionInvite } from "../../REVIEW_REQUIRED/apps/api/src/pack14/sessionInvites/sessionInvitePolicy.js"; assert.deepEqual(validateSessionInvite({ expiresAt: "2999-01-01T00:00:00Z", maxUses: 2 }), []);

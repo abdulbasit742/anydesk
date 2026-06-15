@@ -1,0 +1,13 @@
+groups:
+  - name: remotedesk-automation-pack18
+    rules:
+      - alert: RemoteDeskAutomationFailureRateHigh
+        expr: rate(remotedesk_automation_failures_total[10m]) > 0.1
+        for: 10m
+        labels:
+          severity: warning
+      - alert: RemoteDeskAutomationDeadLettersGrowing
+        expr: remotedesk_automation_dead_letters_total > 100
+        for: 15m
+        labels:
+          severity: warning

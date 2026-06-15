@@ -1,0 +1,3 @@
+export interface QualityBudget { maxCrashRatePercent: number; maxSessionFailurePercent: number; maxApiP95Ms: number; }
+export interface QualitySnapshot { crashRatePercent: number; sessionFailurePercent: number; apiP95Ms: number; }
+export function evaluateQualityBudget(budget: QualityBudget, snapshot: QualitySnapshot): string[] { const failures: string[] = []; if (snapshot.crashRatePercent > budget.maxCrashRatePercent) failures.push("crash-rate"); if (snapshot.sessionFailurePercent > budget.maxSessionFailurePercent) failures.push("session-failure-rate"); if (snapshot.apiP95Ms > budget.maxApiP95Ms) failures.push("api-p95"); return failures; }

@@ -1,0 +1,2 @@
+export interface MobileDeviceRecord { id: string; teamId: string; userId: string; platform: 'ios' | 'android' | 'web_pwa'; appVersion: string; trusted: boolean; lastSeenAt?: string; }
+export interface MobileDeviceRecordRepository { create(record: MobileDeviceRecord): Promise<MobileDeviceRecord>; update(id: string, patch: Partial<MobileDeviceRecord>): Promise<MobileDeviceRecord | null>; list(filter: Partial<MobileDeviceRecord>, limit: number): Promise<MobileDeviceRecord[]>; }

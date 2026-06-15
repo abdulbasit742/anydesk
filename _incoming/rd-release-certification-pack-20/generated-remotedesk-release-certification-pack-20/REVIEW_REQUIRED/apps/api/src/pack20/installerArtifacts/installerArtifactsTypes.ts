@@ -1,0 +1,2 @@
+export interface InstallerArtifactRecord { id:string; releaseId:string; platform:string; objectKey:string; sha256:string; signed:boolean; notarized?:boolean; }
+export interface InstallerArtifactRecordRepository { create(record:InstallerArtifactRecord): Promise<InstallerArtifactRecord>; update(id:string, patch:Partial<InstallerArtifactRecord>): Promise<InstallerArtifactRecord|null>; list(filter:Partial<InstallerArtifactRecord>, limit:number): Promise<InstallerArtifactRecord[]>; }

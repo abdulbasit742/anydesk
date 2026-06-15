@@ -1,0 +1,2 @@
+export interface CertificationGateInput { smokePassed:boolean; securityPassed:boolean; performancePassed:boolean; docsPublished:boolean; supportReady:boolean; }
+export function certificationBlockers(i: CertificationGateInput): string[] { const b:string[]=[]; if(!i.smokePassed)b.push('smoke-tests-failed'); if(!i.securityPassed)b.push('security-checks-failed'); if(!i.performancePassed)b.push('performance-budget-failed'); if(!i.docsPublished)b.push('docs-not-published'); if(!i.supportReady)b.push('support-not-ready'); return b; }

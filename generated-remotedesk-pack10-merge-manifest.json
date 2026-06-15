@@ -1,0 +1,58 @@
+{
+  "name": "remotedesk-pack10-integrations-marketplace-merge",
+  "createdAt": "2026-06-15",
+  "buildEstimateBefore": "52-59%",
+  "buildEstimateAfter": "52-59%",
+  "pack10": {
+    "sourceZip": "C:\\Users\\bsphy2304\\Downloads\\generated-remotedesk-integrations-marketplace-pack-10.zip",
+    "stagedAt": "_incoming/rd-pack-10-integrations-marketplace/",
+    "sha256": "3077F6AB13A1A18E7942105D5664166493FD85059C8813EE7E6BA5B584CEF8D1",
+    "actualEntries": 120,
+    "importedSafeFiles": [
+      "docs/pack10/01-merge-guide.md",
+      "docs/pack10/02-oauth-security.md",
+      "docs/pack10/03-webhook-security.md",
+      "docs/pack10/04-marketplace-governance.md",
+      "docs/pack10/05-storage-connectors.md",
+      "docs/pack10/06-siem-export.md",
+      "docs/pack10/07-qa-checklist.md",
+      "infra/pack10/prometheus-connector-alerts.yml",
+      "scripts/pack10/check-no-connector-secrets.mjs",
+      "packages/shared/src/pack10/connectorAuthState.ts",
+      "packages/shared/src/pack10/connectorDisplayName.ts",
+      "packages/shared/src/pack10/connectorRateLimit.ts",
+      "packages/shared/src/pack10/externalLinkSafety.ts",
+      "packages/shared/src/pack10/index.ts",
+      "packages/shared/src/pack10/marketplaceCategory.ts",
+      "packages/shared/src/pack10/oauthStateToken.ts",
+      "packages/shared/src/pack10/webhookEventFilter.ts",
+      "tests/pack10/connectorAuthState.test.ts",
+      "tests/pack10/externalLinkSafety.test.ts",
+      "tests/pack10/oauthStateToken.test.ts",
+      "tests/pack10/webhookEventFilter.test.ts"
+    ],
+    "modifiedFiles": [
+      "packages/shared/src/index.ts",
+      "IMPLEMENTATION_NOTES.md"
+    ],
+    "reviewOnly": [
+      "REVIEW_REQUIRED/apps/api/src/pack10/**",
+      "REVIEW_REQUIRED/apps/web/src/pack10/**",
+      "REVIEW_REQUIRED/apps/desktop/src/pack10/**",
+      "PATCHES/*.patch.md"
+    ],
+    "notKeptInRuntimeTests": [
+      "tests/pack10/connectorStatusStore.test.ts",
+      "tests/pack10/oauthScopePolicy.test.ts",
+      "tests/pack10/webhookEndpointPolicy.test.ts",
+      "tests/pack10/webhookRetryPolicy.test.ts"
+    ]
+  },
+  "pack9Duplicate": {
+    "sourceZip": "C:\\Users\\bsphy2304\\Downloads\\generated-remotedesk-launch-readiness-pack-9 (1).zip",
+    "stagedAt": "_incoming/rd-pack-9-launch-readiness-duplicate-20260615/",
+    "sha256": "608CCEFE14486DB166C92B8F75F7E88C4089960B19D69612C1DFBF32DACC5748",
+    "actualEntries": 117,
+    "decision": "No runtime or safe artifact import; key safe files were hash-identical to existing pack9 files."
+  }
+}

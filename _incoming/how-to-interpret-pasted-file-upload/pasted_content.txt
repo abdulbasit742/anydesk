@@ -1,0 +1,258 @@
+You are continuing an existing project called RemoteDesk, an AnyDesk-style full-stack SaaS remote desktop app.
+
+PROJECT ROOT:
+remotedesk/
+
+CURRENT STRUCTURE:
+apps/api
+apps/web
+apps/desktop
+packages/shared
+docs/
+
+CURRENT STATE:
+RemoteDesk already has:
+- Backend auth/users/sessions
+- Prisma schema starter
+- Socket.IO signaling
+- RemoteDesk 9-digit IDs
+- Next.js web dashboard starter
+- Electron desktop auth/dashboard
+- Host incoming accept/reject UI
+- Screen source selection
+- Local capture preview
+- MediaStream capture
+- WebRTC offer/answer/ICE flow
+- Remote session video screen
+- Previous batch prompts covering remote input, file transfer, clipboard sync, chat, enterprise SaaS, admin/security, QA/release, production hardening, scale/i18n/integrations, compliance/onboarding, stabilization/certification, commercial maturity
+
+YOUR JOB:
+Create the NEXT 400 production-ready files.
+
+MAIN FOCUS:
+Final enterprise launch layer: managed deployment, compliance evidence, support automation, partner/integration readiness, and post-launch operations.
+
+BUILD THESE 20 AREAS, roughly 20 files each:
+
+1. MANAGED DEPLOYMENT
+- Enterprise deployment guide
+- Self-hosting architecture doc
+- On-prem deployment notes
+- Managed config schema
+- Environment policy docs
+- Deployment validation checklist
+- Tests/docs
+
+2. SSO READINESS
+- SAML config DTOs
+- OIDC config DTOs
+- SSO provider settings UI skeleton
+- Domain verification contract
+- Just-in-time provisioning docs
+- SSO security checklist
+- Tests/docs
+
+3. SCIM READINESS
+- SCIM user contract
+- SCIM group contract
+- Provisioning docs
+- Deprovisioning flow docs
+- SCIM endpoint skeleton docs
+- Tests/docs
+
+4. ENTERPRISE DEVICE ENROLLMENT
+- Enrollment token DTOs
+- Enrollment policy docs
+- Bulk enrollment guide
+- Device approval workflow
+- Enrollment audit events
+- Tests/docs
+
+5. ADVANCED SESSION POLICIES
+- Session reason required policy
+- Session approval workflow docs
+- Session duration enforcement helper
+- Session recording consent contract
+- Unattended access policy draft
+- Tests/docs
+
+6. DATA LOSS PREVENTION
+- Clipboard DLP rules skeleton
+- File transfer DLP rules skeleton
+- Sensitive pattern detector
+- DLP policy docs
+- DLP audit events
+- Tests/docs
+
+7. COMPLIANCE EVIDENCE
+- SOC2 evidence checklist
+- ISO27001 evidence checklist
+- Access review template
+- Change management template
+- Vendor risk template
+- Compliance docs index
+
+8. SUPPORT AUTOMATION
+- Support macro templates
+- Auto-triage rules skeleton
+- Common issue classifier docs
+- Session diagnostics attachment flow
+- Support escalation automation docs
+- Tests/docs
+
+9. CUSTOMER SUCCESS OPERATIONS
+- Health score DTOs
+- Usage summary DTOs
+- Renewal risk signals
+- Customer success dashboard skeleton
+- QBR report template
+- Tests/docs
+
+10. PARTNER AND RESELLER READINESS
+- Partner account DTOs
+- Reseller billing docs
+- Referral tracking skeleton
+- Partner onboarding docs
+- Co-branding policy docs
+- Tests/docs
+
+11. MARKETPLACE INTEGRATIONS
+- Slack app docs
+- Teams integration docs
+- Zapier app docs
+- Webhook marketplace docs
+- Integration listing templates
+- Tests/docs
+
+12. API PRODUCTIZATION
+- API rate limit plans
+- API usage logs DTOs
+- API key scopes
+- API examples
+- SDK publishing docs
+- Developer portal polish
+- Tests/docs
+
+13. MOBILE ROADMAP ARTIFACTS
+- Mobile app architecture doc
+- iOS permission model
+- Android permission model
+- Touch input contract
+- Mobile WebRTC notes
+- QR pairing spec
+- Tests/docs
+
+14. DESKTOP FLEET MANAGEMENT
+- Managed update policy
+- Forced update docs
+- Fleet diagnostics export
+- Device health rollup
+- Fleet settings UI skeleton
+- Tests/docs
+
+15. RESILIENCE AND DR
+- Disaster recovery runbook
+- RTO/RPO docs
+- Backup restore evidence
+- Regional failover drill
+- Incident simulation checklist
+- Tests/docs
+
+16. PRIVACY FINALIZATION
+- Subprocessor list template
+- Data inventory map
+- Retention schedule
+- Privacy request SLA docs
+- Cookie consent docs
+- Tests/docs
+
+17. ADVANCED OBSERVABILITY
+- SLO definitions
+- Error budget policy
+- Alert thresholds
+- Log redaction rules
+- Audit correlation docs
+- Observability tests/docs
+
+18. POST-LAUNCH OPERATIONS
+- Launch day checklist
+- Week 1 monitoring checklist
+- Customer feedback intake
+- Bug triage board template
+- Hotfix SOP
+- Post-launch report template
+
+19. FINAL QA SIGNOFF
+- Enterprise QA checklist
+- Security QA checklist
+- Billing QA checklist
+- Desktop QA checklist
+- Web QA checklist
+- API QA checklist
+- Signoff matrix
+
+20. FINAL ARTIFACTS
+- Batch manifest
+- Gap report
+- Summary
+- Risk register
+- Enterprise launch checklist
+- Partner readiness checklist
+- Post-launch roadmap
+- Implementation notes update
+
+REQUIRED OUTPUT FILES:
+Create/update:
+- generated-batch-15-400-files-manifest.json
+- generated-batch-15-gap-report.md
+- generated-batch-15-summary.md
+- generated-batch-15-risk-register.md
+- generated-batch-15-enterprise-launch-checklist.md
+- generated-batch-15-partner-readiness-checklist.md
+- generated-batch-15-post-launch-roadmap.md
+- IMPLEMENTATION_NOTES.md
+
+MANIFEST FORMAT:
+{
+  "batch": "batch-15-400",
+  "project": "RemoteDesk",
+  "focus": "enterprise-launch-post-launch-operations",
+  "createdFiles": [],
+  "modifiedFiles": [],
+  "skippedFiles": [],
+  "dependenciesAdded": [],
+  "migrationSteps": [],
+  "manualStepsRequired": [],
+  "riskNotes": []
+}
+
+STRICT RULES:
+- Do NOT rewrite the whole project.
+- Do NOT delete existing files.
+- Do NOT create placeholder-only files.
+- Do NOT duplicate modules.
+- Do NOT create conflicting socket event names.
+- Keep files small and modular.
+- Use TypeScript for code.
+- Markdown docs must be concrete and useful.
+- Preserve existing auth/session/WebRTC/capture behavior.
+- Security-sensitive features must be disabled by default.
+- Remote input, clipboard, file transfer, recording, unattended access, and DLP must require explicit permission/policy.
+- Admin/support actions must be audit logged.
+- Prefer tests/docs/contracts over fake runtime code.
+- If Prisma schema changes are needed, document migration steps clearly.
+- If dependencies are added, document exactly why.
+- Every created file must have a real purpose.
+
+FINAL RESPONSE MUST INCLUDE:
+1. Total files created
+2. Total files modified
+3. Exact file list grouped by domain
+4. Dependencies added
+5. Migration steps if any
+6. How to run/typecheck/test
+7. Known risks
+8. What the next batch should focus on
+
+START NOW:
+Scan the repo first, write the gap report, then create the next 400 useful production files.

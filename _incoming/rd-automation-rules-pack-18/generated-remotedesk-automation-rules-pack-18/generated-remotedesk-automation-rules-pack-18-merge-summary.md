@@ -1,0 +1,1 @@
+Pack 18 adds automation rules, conditions, actions, workflow runs, approvals, event inbox, notification routes, rule audit, dead letters, rate limits, templates, metrics, web rule builder, desktop approval prompts, docs/tests/scripts.

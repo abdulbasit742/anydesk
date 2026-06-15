@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { diagnoseConnection } from "../../REVIEW_REQUIRED/apps/desktop/src/pack9/connectionDoctor.js"; assert.ok(diagnoseConnection({ socketConnected: false, iceConnected: true, dataChannelOpen: true }).includes("signaling-socket-disconnected"));

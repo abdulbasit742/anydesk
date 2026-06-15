@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { scimPatchIsAllowed } from "../../packages/shared/src/pack16/scimPatchSafety.js"; assert.equal(scimPatchIsAllowed({ op: "replace", path: "password" }), false);

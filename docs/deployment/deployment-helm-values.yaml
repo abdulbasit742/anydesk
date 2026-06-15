@@ -1,0 +1,46 @@
+# RemoteDesk Helm Values
+replicaCount: 3
+
+image:
+  repository: remotedesk/api
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 4000
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: api.remotedesk.io
+      paths:
+        - path: /
+          pathType: Prefix
+
+resources:
+  limits:
+    cpu: 1000m
+    memory: 2Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi
+
+postgresql:
+  enabled: true
+  auth:
+    database: remotedesk
+  primary:
+    persistence:
+      enabled: true
+      size: 50Gi
+
+redis:
+  enabled: true
+  auth:
+    enabled: false
+  master:
+    persistence:
+      enabled: true
+      size: 10Gi

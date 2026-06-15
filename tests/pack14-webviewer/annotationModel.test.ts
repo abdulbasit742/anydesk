@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { isAnnotationInBounds } from "../../packages/shared/src/pack14Webviewer/annotationModel.js"; assert.equal(isAnnotationInBounds({ id: "a", tool: "pointer", x: .5, y: .5, createdByUserId: "u", createdAt: "x" }), true);

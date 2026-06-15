@@ -1,0 +1,13 @@
+groups:
+  - name: remotedesk-mobile-pack15
+    rules:
+      - alert: RemoteDeskPairingFailuresHigh
+        expr: rate(remotedesk_mobile_pairing_failures_total[10m]) > 0.2
+        for: 10m
+        labels:
+          severity: warning
+      - alert: RemoteDeskPushDeliveryFailures
+        expr: rate(remotedesk_push_delivery_failures_total[10m]) > 0.1
+        for: 15m
+        labels:
+          severity: warning

@@ -1,0 +1,1 @@
+Run Pack 22 shared/API/desktop tests, QA safe-default scanner, then manual QA for test run policies, release blockers, synthetic probes, flaky quarantine, coverage reports, manual checklist completion and evidence uploads.

@@ -1,0 +1,93 @@
+{
+  "generatedAt": "2026-06-15T00:00:00.000Z",
+  "buildEstimateAfterThisMerge": "61-67%",
+  "sourcePacks": [
+    {
+      "name": "generated-remotedesk-mobile-companion-pack-15 (1).zip",
+      "stagedAt": "_incoming/rd-mobile-companion-pack-15-upload2/",
+      "entryCount": 112,
+      "safeDirectCopyCount": 27,
+      "reviewRequiredCount": 74,
+      "patchesCount": 4
+    },
+    {
+      "name": "generated-remotedesk-enterprise-reporting-pack-16 (1).zip",
+      "stagedAt": "_incoming/rd-enterprise-reporting-pack-16-upload2/",
+      "entryCount": 123,
+      "safeDirectCopyCount": 27,
+      "reviewRequiredCount": 85,
+      "patchesCount": 4
+    },
+    {
+      "name": "generated-remotedesk-customer-portal-pack-17 (1).zip",
+      "stagedAt": "_incoming/rd-customer-portal-pack-17-upload2/",
+      "entryCount": 123,
+      "safeDirectCopyCount": 28,
+      "reviewRequiredCount": 84,
+      "patchesCount": 4
+    },
+    {
+      "name": "generated-remotedesk-automation-rules-pack-18 (2).zip",
+      "stagedAt": "_incoming/rd-automation-rules-pack-18-upload2/",
+      "entryCount": 123,
+      "safeDirectCopyCount": 27,
+      "reviewRequiredCount": 85,
+      "patchesCount": 4
+    },
+    {
+      "name": "generated-remotedesk-release-certification-pack-20.zip",
+      "stagedAt": "_incoming/rd-release-certification-pack-20/",
+      "entryCount": 123,
+      "safeDirectCopyCount": 27,
+      "reviewRequiredCount": 85,
+      "patchesCount": 4
+    },
+    {
+      "name": "generated-remotedesk-localization-accessibility-pack-21.zip",
+      "stagedAt": "_incoming/rd-localization-accessibility-pack-21/",
+      "entryCount": 123,
+      "safeDirectCopyCount": 27,
+      "reviewRequiredCount": 85,
+      "patchesCount": 4
+    },
+    {
+      "name": "generated-remotedesk-qa-validation-pack-22.zip",
+      "stagedAt": "_incoming/rd-qa-validation-pack-22/",
+      "entryCount": 123,
+      "safeDirectCopyCount": 27,
+      "reviewRequiredCount": 85,
+      "patchesCount": 4
+    }
+  ],
+  "safeImport": {
+    "copiedFileCount": 190,
+    "included": [
+      "docs/pack15 through docs/pack18",
+      "docs/pack20 through docs/pack22",
+      "infra/pack15 through infra/pack18",
+      "infra/pack20 through infra/pack22",
+      "scripts/pack15 through scripts/pack18",
+      "scripts/pack20 through scripts/pack22",
+      "packages/shared/src/pack15 through packages/shared/src/pack18",
+      "packages/shared/src/pack20 through packages/shared/src/pack22",
+      "tests/pack15 through tests/pack18",
+      "tests/pack20 through tests/pack22"
+    ],
+    "excluded": [
+      "REVIEW_REQUIRED/apps/api/**",
+      "REVIEW_REQUIRED/apps/web/**",
+      "REVIEW_REQUIRED/apps/desktop/**",
+      "PATCHES/** direct application"
+    ]
+  },
+  "manualRuntimePorts": [
+    "Exported pack15, pack16, pack17, pack18, pack20, pack21, and pack22 helper namespaces from packages/shared/src/index.ts",
+    "Wired Pack 20 certification blockers and support readiness into API launch readiness",
+    "Wired Pack 22 coverage gate into API launch readiness"
+  ],
+  "changedRuntimeFiles": [
+    "packages/shared/src/index.ts",
+    "apps/api/src/observability/launchReadiness.ts"
+  ],
+  "runtimeMergeDecision": "Safe helper import plus small launch-readiness integration. Generated app runtime remains review-only."
+}

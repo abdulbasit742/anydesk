@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { validateReportDateRange } from "../../packages/shared/src/pack16/reportDateRange.js"; assert.deepEqual(validateReportDateRange({ startsAt: "2026-01-01T00:00:00Z", endsAt: "2026-01-02T00:00:00Z" }), []);

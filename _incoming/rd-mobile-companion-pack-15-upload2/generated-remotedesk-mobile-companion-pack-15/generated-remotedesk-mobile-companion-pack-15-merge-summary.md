@@ -1,0 +1,1 @@
+Pack 15 adds mobile companion/PWA support: pairing codes, QR payloads, mobile devices, push tokens, mobile approvals, session notifications, diagnostics, trusted networks, PWA prompts, admin pages, desktop QR/approval UI, tests/docs/scripts.

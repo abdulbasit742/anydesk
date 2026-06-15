@@ -1,0 +1,471 @@
+﻿{
+    "sourceZip":  "C:\\Users\\bsphy2304\\Downloads\\Title for Uploaded Content Analysis.zip",
+    "stagedAt":  "_incoming/kimi-title-analysis/",
+    "extraction":  "sanitized Windows-invalid filenames such as colon-containing markdown names",
+    "strategy":  "stage and review build integration plus clipboard/file-transfer packs; import safe docs/scripts; manually port pure shared helpers",
+    "totalFiles":  89,
+    "typeScriptFiles":  32,
+    "markdownFiles":  42,
+    "jsonFiles":  3,
+    "zipFiles":  2,
+    "portedRuntimeFiles":  [
+                               "packages/shared/src/fileTransfer/constants.ts",
+                               "packages/shared/src/fileTransfer/types.ts",
+                               "packages/shared/src/fileTransfer/filenameSanitizer.ts",
+                               "packages/shared/src/fileTransfer/metrics.ts",
+                               "packages/shared/src/fileTransfer/reducer.ts",
+                               "packages/shared/src/fileTransfer/index.ts",
+                               "packages/shared/src/clipboard/constants.ts",
+                               "packages/shared/src/clipboard/types.ts",
+                               "packages/shared/src/clipboard/helpers.ts",
+                               "packages/shared/src/clipboard/index.ts",
+                               "packages/shared/src/index.ts"
+                           ],
+    "stagedFiles":  [
+                        {
+                            "path":  ".env.example.review",
+                            "extension":  ".review",
+                            "bytes":  784
+                        },
+                        {
+                            "path":  "_extraction-map.json",
+                            "extension":  ".json",
+                            "bytes":  13144
+                        },
+                        {
+                            "path":  "001-fix-global-declaration.d.ts",
+                            "extension":  ".ts",
+                            "bytes":  419
+                        },
+                        {
+                            "path":  "abuse-prevention-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  3481
+                        },
+                        {
+                            "path":  "api-auth-smoke-test.sh",
+                            "extension":  ".sh",
+                            "bytes":  2054
+                        },
+                        {
+                            "path":  "api-debug-logging-guide.md",
+                            "extension":  ".md",
+                            "bytes":  5009
+                        },
+                        {
+                            "path":  "api-health-check.sh",
+                            "extension":  ".sh",
+                            "bytes":  396
+                        },
+                        {
+                            "path":  "api-prisma-check.sh",
+                            "extension":  ".sh",
+                            "bytes":  1455
+                        },
+                        {
+                            "path":  "api-redis-check.sh",
+                            "extension":  ".sh",
+                            "bytes":  1963
+                        },
+                        {
+                            "path":  "api-session-smoke-test.sh",
+                            "extension":  ".sh",
+                            "bytes":  2726
+                        },
+                        {
+                            "path":  "api-user-smoke-test.sh",
+                            "extension":  ".sh",
+                            "bytes":  2255
+                        },
+                        {
+                            "path":  "build-fix-guide.md",
+                            "extension":  ".md",
+                            "bytes":  7451
+                        },
+                        {
+                            "path":  "build-readiness-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  3089
+                        },
+                        {
+                            "path":  "clipboard.conflict-resolver.ts",
+                            "extension":  ".ts",
+                            "bytes":  351
+                        },
+                        {
+                            "path":  "clipboard.constants.ts",
+                            "extension":  ".ts",
+                            "bytes":  65
+                        },
+                        {
+                            "path":  "clipboard.debounce.ts",
+                            "extension":  ".ts",
+                            "bytes":  444
+                        },
+                        {
+                            "path":  "clipboard.duplicate-prevention.ts",
+                            "extension":  ".ts",
+                            "bytes":  1004
+                        },
+                        {
+                            "path":  "clipboard.permission-state.ts",
+                            "extension":  ".ts",
+                            "bytes":  703
+                        },
+                        {
+                            "path":  "clipboard.types.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  786
+                        },
+                        {
+                            "path":  "clipboard.types.ts",
+                            "extension":  ".ts",
+                            "bytes":  218
+                        },
+                        {
+                            "path":  "clipboard.validator.ts",
+                            "extension":  ".ts",
+                            "bytes":  456
+                        },
+                        {
+                            "path":  "clipboard-qa-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  2465
+                        },
+                        {
+                            "path":  "ClipboardStatusBadge.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1215
+                        },
+                        {
+                            "path":  "clipboard-sync-security.md",
+                            "extension":  ".md",
+                            "bytes":  4122
+                        },
+                        {
+                            "path":  "ClipboardSyncToggle.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  967
+                        },
+                        {
+                            "path":  "codex-merge-runbook.md",
+                            "extension":  ".md",
+                            "bytes":  6749
+                        },
+                        {
+                            "path":  "common-failure-matrix.md",
+                            "extension":  ".md",
+                            "bytes":  3255
+                        },
+                        {
+                            "path":  "compile-blocker-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  4251
+                        },
+                        {
+                            "path":  "dataChannel.receiver.ts",
+                            "extension":  ".ts",
+                            "bytes":  1375
+                        },
+                        {
+                            "path":  "dataChannel.sender.ts",
+                            "extension":  ".ts",
+                            "bytes":  1197
+                        },
+                        {
+                            "path":  "dataChannel.types.ts",
+                            "extension":  ".ts",
+                            "bytes":  442
+                        },
+                        {
+                            "path":  "desktop-renderer-debug-guide.md",
+                            "extension":  ".md",
+                            "bytes":  4503
+                        },
+                        {
+                            "path":  "desktop-startup-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  3078
+                        },
+                        {
+                            "path":  "docker-compose.env.example.review",
+                            "extension":  ".review",
+                            "bytes":  273
+                        },
+                        {
+                            "path":  "electron-main-debug-guide.md",
+                            "extension":  ".md",
+                            "bytes":  4579
+                        },
+                        {
+                            "path":  "env-vars.md",
+                            "extension":  ".md",
+                            "bytes":  5531
+                        },
+                        {
+                            "path":  "eta.calculator.ts",
+                            "extension":  ".ts",
+                            "bytes":  798
+                        },
+                        {
+                            "path":  "FileDropZone.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1702
+                        },
+                        {
+                            "path":  "filenameSanitizer.test.ts",
+                            "extension":  ".ts",
+                            "bytes":  2369
+                        },
+                        {
+                            "path":  "filenameSanitizer.ts",
+                            "extension":  ".ts",
+                            "bytes":  1937
+                        },
+                        {
+                            "path":  "FilePickerButton.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1323
+                        },
+                        {
+                            "path":  "fileTransfer.constants.ts",
+                            "extension":  ".ts",
+                            "bytes":  169
+                        },
+                        {
+                            "path":  "fileTransfer.types.ts",
+                            "extension":  ".ts",
+                            "bytes":  2104
+                        },
+                        {
+                            "path":  "file-transfer-ipc.md",
+                            "extension":  ".md",
+                            "bytes":  5894
+                        },
+                        {
+                            "path":  "FileTransferPanel.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1321
+                        },
+                        {
+                            "path":  "file-transfer-qa-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  3215
+                        },
+                        {
+                            "path":  "generated-build-integration-750-pack-manifest.json",
+                            "extension":  ".json",
+                            "bytes":  7270
+                        },
+                        {
+                            "path":  "generated-clipboard-filetransfer-500-pack-manifest.json",
+                            "extension":  ".json",
+                            "bytes":  97720
+                        },
+                        {
+                            "path":  "IncomingFileConsentDialog.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  3919
+                        },
+                        {
+                            "path":  "index.ts",
+                            "extension":  ".ts",
+                            "bytes":  1371
+                        },
+                        {
+                            "path":  "integration-blocker-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  4692
+                        },
+                        {
+                            "path":  "large-file-test-plan.md",
+                            "extension":  ".md",
+                            "bytes":  4990
+                        },
+                        {
+                            "path":  "pasted_content.txt",
+                            "extension":  ".txt",
+                            "bytes":  5569
+                        },
+                        {
+                            "path":  "pasted_content_2.txt",
+                            "extension":  ".txt",
+                            "bytes":  5846
+                        },
+                        {
+                            "path":  "permission-denial-test-plan.md",
+                            "extension":  ".md",
+                            "bytes":  4327
+                        },
+                        {
+                            "path":  "preload-api-verification-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  4262
+                        },
+                        {
+                            "path":  "progress.calculator.ts",
+                            "extension":  ".ts",
+                            "bytes":  998
+                        },
+                        {
+                            "path":  "receiver.state.ts",
+                            "extension":  ".ts",
+                            "bytes":  929
+                        },
+                        {
+                            "path":  "receiver-consent-test-plan.md",
+                            "extension":  ".md",
+                            "bytes":  3721
+                        },
+                        {
+                            "path":  "RemoteDesk Build and Integration Feature Pack Merge Guide.md",
+                            "extension":  ".md",
+                            "bytes":  7944
+                        },
+                        {
+                            "path":  "RemoteDesk Build and Integration Feature Pack Risk Register.md",
+                            "extension":  ".md",
+                            "bytes":  7710
+                        },
+                        {
+                            "path":  "RemoteDesk Build and Integration Feature Pack_ Comprehensive QA Checklist.md",
+                            "extension":  ".md",
+                            "bytes":  10447
+                        },
+                        {
+                            "path":  "RemoteDesk Build and Integration Feature Pack_ Review Required Files.md",
+                            "extension":  ".md",
+                            "bytes":  2153
+                        },
+                        {
+                            "path":  "RemoteDesk Clipboard Sync and File Transfer Comprehensive QA Checklist.md",
+                            "extension":  ".md",
+                            "bytes":  16764
+                        },
+                        {
+                            "path":  "RemoteDesk Clipboard Sync and File Transfer Feature Pack Merge Guide.md",
+                            "extension":  ".md",
+                            "bytes":  7857
+                        },
+                        {
+                            "path":  "RemoteDesk Clipboard Sync and File Transfer Risk Register.md",
+                            "extension":  ".md",
+                            "bytes":  6189
+                        },
+                        {
+                            "path":  "RemoteDesk Clipboard Sync and File Transfer_ Review Required Files.md",
+                            "extension":  ".md",
+                            "bytes":  1683
+                        },
+                        {
+                            "path":  "remotedesk-build-integration-pack.zip",
+                            "extension":  ".zip",
+                            "bytes":  93289
+                        },
+                        {
+                            "path":  "remotedesk-clipboard-filetransfer-pack.zip",
+                            "extension":  ".zip",
+                            "bytes":  86792
+                        },
+                        {
+                            "path":  "screen-capture-test-plan.md",
+                            "extension":  ".md",
+                            "bytes":  5296
+                        },
+                        {
+                            "path":  "screen-source-picker-test-plan.md",
+                            "extension":  ".md",
+                            "bytes":  4730
+                        },
+                        {
+                            "path":  "sender.state.ts",
+                            "extension":  ".ts",
+                            "bytes":  846
+                        },
+                        {
+                            "path":  "socketio-debug-guide.md",
+                            "extension":  ".md",
+                            "bytes":  4978
+                        },
+                        {
+                            "path":  "socket-signaling-smoke-test-design.md",
+                            "extension":  ".md",
+                            "bytes":  4431
+                        },
+                        {
+                            "path":  "speed.estimator.ts",
+                            "extension":  ".ts",
+                            "bytes":  1393
+                        },
+                        {
+                            "path":  "support-bundle-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  4006
+                        },
+                        {
+                            "path":  "test-data-seed-design.md",
+                            "extension":  ".md",
+                            "bytes":  5449
+                        },
+                        {
+                            "path":  "testing-strategy.md",
+                            "extension":  ".md",
+                            "bytes":  10671
+                        },
+                        {
+                            "path":  "threat-model.md",
+                            "extension":  ".md",
+                            "bytes":  7867
+                        },
+                        {
+                            "path":  "transfer.reducer.ts",
+                            "extension":  ".ts",
+                            "bytes":  4370
+                        },
+                        {
+                            "path":  "TransferErrorBanner.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  1087
+                        },
+                        {
+                            "path":  "TransferProgressBar.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  401
+                        },
+                        {
+                            "path":  "TransferRow.tsx",
+                            "extension":  ".tsx",
+                            "bytes":  3021
+                        },
+                        {
+                            "path":  "two-client-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  3724
+                        },
+                        {
+                            "path":  "two-client-local-test.md",
+                            "extension":  ".md",
+                            "bytes":  8049
+                        },
+                        {
+                            "path":  "web-dashboard-smoke-checklist.md",
+                            "extension":  ".md",
+                            "bytes":  2387
+                        },
+                        {
+                            "path":  "webrtc-logs-guide.md",
+                            "extension":  ".md",
+                            "bytes":  5339
+                        },
+                        {
+                            "path":  "webrtc-peer-creation-test-plan.md",
+                            "extension":  ".md",
+                            "bytes":  4729
+                        },
+                        {
+                            "path":  "windows-powershell-run-guide.md",
+                            "extension":  ".md",
+                            "bytes":  4382
+                        }
+                    ]
+}

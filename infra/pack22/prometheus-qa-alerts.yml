@@ -1,0 +1,13 @@
+groups:
+  - name: remotedesk-qa-pack22
+    rules:
+      - alert: RemoteDeskSyntheticProbeFailures
+        expr: rate(remotedesk_synthetic_probe_failures_total[10m]) > 0.05
+        for: 10m
+        labels:
+          severity: warning
+      - alert: RemoteDeskReleaseBlockingTests
+        expr: remotedesk_release_blocking_tests_failed_total > 0
+        for: 1m
+        labels:
+          severity: critical

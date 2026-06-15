@@ -1,0 +1,1 @@
+export function mobileApprovalCanTransition(from: string, to: string): boolean { const allowed: Record<string, string[]> = { pending: ['approved', 'rejected', 'expired'], approved: [], rejected: [], expired: [] }; return (allowed[from] ?? []).includes(to); }

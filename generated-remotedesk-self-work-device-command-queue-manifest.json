@@ -1,0 +1,42 @@
+{
+  "name": "self-work-device-command-queue",
+  "createdAt": "2026-06-14",
+  "buildEstimateAfterWork": "44-51%",
+  "filesChanged": [
+    "apps/api/prisma/schema.prisma",
+    "apps/api/prisma/migrations/20260614190000_device_commands_audit/migration.sql",
+    "apps/api/src/lib/deviceCommands.ts",
+    "apps/api/src/routes/device.routes.ts",
+    "apps/api/src/observability/launchReadiness.ts",
+    "apps/desktop/src/renderer/src/services/api.ts",
+    "apps/desktop/src/renderer/src/main.tsx",
+    "apps/web/app/dashboard/devices/[deviceId]/page.tsx",
+    "docs/device-command-queue.md",
+    "generated-remotedesk-self-work-device-command-queue-summary.md",
+    "generated-remotedesk-self-work-device-command-queue-manifest.json",
+    "IMPLEMENTATION_NOTES.md"
+  ],
+  "capabilitiesAdded": [
+    "Device registration API",
+    "Device heartbeat API",
+    "Persistent safe device command queue",
+    "Command polling endpoint",
+    "Command acknowledgement endpoint",
+    "Device audit events",
+    "Web dashboard command queue UI",
+    "Desktop registration, heartbeat, polling, and acknowledgement loop"
+  ],
+  "safetyBoundaries": [
+    "No remote shell",
+    "No arbitrary command execution",
+    "No native input execution",
+    "No unattended access enablement"
+  ],
+  "validation": {
+    "sourceScan": "passed",
+    "fillerScan": "passed",
+    "nodeRuntime": "blocked: node.exe returns Access is denied",
+    "npmRuntime": "blocked: npm is not installed on PATH",
+    "prismaGenerate": "not run because npm/node are unavailable"
+  }
+}

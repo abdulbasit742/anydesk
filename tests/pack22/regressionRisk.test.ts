@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { scoreRegressionRisk } from "../../packages/shared/src/pack22/regressionRisk.js"; assert.equal(scoreRegressionRisk({ changedFiles: 2, touchesAuth: false, touchesSignaling: false, touchesBilling: false, testsFailed: 0 }).band, "low");

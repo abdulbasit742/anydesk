@@ -1,0 +1,2 @@
+export interface CustomerAnnouncementRecord { id: string; title: string; body: string; audience: string; scheduledAt?: string; sentAt?: string; createdByUserId: string; }
+export interface CustomerAnnouncementRecordRepository { create(record: CustomerAnnouncementRecord): Promise<CustomerAnnouncementRecord>; update(id: string, patch: Partial<CustomerAnnouncementRecord>): Promise<CustomerAnnouncementRecord | null>; list(filter: Partial<CustomerAnnouncementRecord>, limit: number): Promise<CustomerAnnouncementRecord[]>; }

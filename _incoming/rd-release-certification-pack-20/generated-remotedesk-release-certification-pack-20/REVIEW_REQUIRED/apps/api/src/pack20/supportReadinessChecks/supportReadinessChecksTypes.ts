@@ -1,0 +1,2 @@
+export interface SupportReadinessCheckRecord { id:string; releaseId:string; runbookPublished:boolean; macrosPublished:boolean; onCallAssigned:boolean; escalationPathTested:boolean; }
+export interface SupportReadinessCheckRecordRepository { create(record:SupportReadinessCheckRecord): Promise<SupportReadinessCheckRecord>; update(id:string, patch:Partial<SupportReadinessCheckRecord>): Promise<SupportReadinessCheckRecord|null>; list(filter:Partial<SupportReadinessCheckRecord>, limit:number): Promise<SupportReadinessCheckRecord[]>; }

@@ -1,0 +1,2 @@
+export interface CertificationCheckRecord { id:string; releaseId:string; checkKey:string; status:string; evidenceId?:string; updatedAt:string; }
+export interface CertificationCheckRecordRepository { create(record:CertificationCheckRecord): Promise<CertificationCheckRecord>; update(id:string, patch:Partial<CertificationCheckRecord>): Promise<CertificationCheckRecord|null>; list(filter:Partial<CertificationCheckRecord>, limit:number): Promise<CertificationCheckRecord[]>; }

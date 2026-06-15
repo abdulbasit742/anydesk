@@ -1,0 +1,36 @@
+{
+  "artifact": "generated-remotedesk-1000-sprint-part2-desktop.zip",
+  "sourcePath": "C:\\Users\\bsphy2304\\Downloads\\generated-remotedesk-1000-sprint-part2-desktop.zip",
+  "stagedPath": "C:\\Users\\bsphy2304\\Documents\\New project\\_incoming\\generated-remotedesk-1000-sprint-part2-desktop",
+  "actualExtractedFileCount": 93,
+  "mergePolicy": "Selective safe merge. Compatible desktop IPC, renderer modules, tests, and docs were imported. Clipboard runtime and patch notes stayed review-only where contracts did not match.",
+  "buildEstimateAfterMerge": "29-36%",
+  "imported": {
+    "desktopRuntimeFiles": 59,
+    "desktopTests": 11,
+    "desktopDocs": 6,
+    "sourceReportsCopied": 5
+  },
+  "wiredExistingFiles": [
+    "apps/desktop/src/main/index.ts",
+    "apps/desktop/src/preload/index.ts"
+  ],
+  "compatibilityFixes": [
+    "Added NodeNext .js extensions to existing desktop renderer relative imports"
+  ],
+  "skippedReviewOnly": [
+    "apps/desktop/src/renderer/src/services/clipboardChannel.ts",
+    "apps/desktop/src/renderer/src/features/clipboard/*",
+    "apps/desktop/test/clipboardChannel.test.ts",
+    "main.part2.integration.patch.md",
+    "preload.part2.integration.patch.md",
+    "RemoteSessionView.part2.integration.patch.md"
+  ],
+  "verification": {
+    "jsonParse": "passed",
+    "nodeNextRelativeImportScan": "passed",
+    "fillerAndPlaceholderScan": "passed",
+    "encodingArtifactScan": "passed",
+    "typescriptTypecheck": "not run because npm/npx/tsc were not available on PATH"
+  }
+}

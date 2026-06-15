@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { mobileApprovalIsFinal, mobileApprovalAllowsSession } from '../../packages/shared/src/pack15/mobileApproval.js'; assert.equal(mobileApprovalIsFinal('approved'), true); assert.equal(mobileApprovalAllowsSession('pending'), false);

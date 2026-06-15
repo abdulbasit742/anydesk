@@ -1,0 +1,2 @@
+export interface ApiHealthSnapshotRecord { id: string; p95Ms: number; errorRate: number; uptimePercent: number; capturedAt: string; }
+export interface ApiHealthSnapshotRecordRepository { create(record: ApiHealthSnapshotRecord): Promise<ApiHealthSnapshotRecord>; update(id: string, patch: Partial<ApiHealthSnapshotRecord>): Promise<ApiHealthSnapshotRecord | null>; list(filter: Partial<ApiHealthSnapshotRecord>, limit: number): Promise<ApiHealthSnapshotRecord[]>; }

@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { nextConnectorWebhookRetry } from "../../REVIEW_REQUIRED/apps/api/src/pack10/webhookAttempts/webhookRetryPolicy.js"; assert.equal(nextConnectorWebhookRetry(8), null); assert.equal(typeof nextConnectorWebhookRetry(1, 0), "number");

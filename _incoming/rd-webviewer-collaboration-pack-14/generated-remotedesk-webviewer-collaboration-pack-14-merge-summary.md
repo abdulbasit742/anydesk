@@ -1,0 +1,1 @@
+Pack 14 adds web viewer collaboration: session invites, viewer roster, permissions, host consent, annotations, notes, support handoff, chat moderation, bookmarks, collaboration audit, web components, desktop host UI, docs/tests/scripts.

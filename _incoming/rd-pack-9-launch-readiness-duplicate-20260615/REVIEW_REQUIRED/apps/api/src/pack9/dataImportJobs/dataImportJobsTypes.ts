@@ -1,0 +1,2 @@
+export interface DataImportJobRecord { id: string; teamId: string; kind: "users" | "devices" | "support_tickets"; status: "queued" | "validating" | "running" | "completed" | "failed"; createdAt: string; completedAt?: string; }
+export interface DataImportJobRecordRepository { create(record: DataImportJobRecord): Promise<DataImportJobRecord>; update(id: string, patch: Partial<DataImportJobRecord>): Promise<DataImportJobRecord | null>; list(filter: Partial<DataImportJobRecord>, limit: number): Promise<DataImportJobRecord[]>; }

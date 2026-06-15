@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { sbomBlocksRelease } from '../../packages/shared/src/pack20/sbomPolicy.js'; assert.equal(sbomBlocksRelease({packageCount:10,unknownLicenses:0,criticalVulnerabilities:1,highVulnerabilities:0}), true);

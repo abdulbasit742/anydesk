@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { validateResidencyPolicy } from "../../REVIEW_REQUIRED/apps/api/src/pack19/dataResidencyPolicies/residencyPolicyValidator.js"; assert.deepEqual(validateResidencyPolicy({ primaryRegion: "eu", backupRegions: ["uk"] }), []);

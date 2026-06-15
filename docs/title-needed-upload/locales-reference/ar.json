@@ -1,0 +1,56 @@
+{
+  "common": {
+    "ok": "موافق",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "delete": "حذف",
+    "confirm": "تأكيد",
+    "loading": "جار التحميل...",
+    "error": "خطأ",
+    "success": "نجاح",
+    "close": "إغلاق",
+    "settings": "الإعدادات",
+    "dashboard": "لوحة التحكم",
+    "connect": "اتصال",
+    "disconnect": "قطع الاتصال",
+    "viewOnly": "عرض فقط",
+    "fullControl": "تحكم كامل"
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول إلى RemoteDesk",
+      "emailLabel": "عنوان البريد الإلكتروني",
+      "passwordLabel": "كلمة المرور",
+      "forgotPassword": "هل نسيت كلمة المرور؟",
+      "loginButton": "تسجيل الدخول",
+      "signupPrompt": "ليس لديك حساب؟ سجل الآن"
+    },
+    "errors": {
+      "invalidCredentials": "بريد إلكتروني أو كلمة مرور غير صحيحة.",
+      "accountLocked": "حسابك مقفل. يرجى الاتصال بالدعم."
+    }
+  },
+  "session": {
+    "remoteId": "معرف الجهاز البعيد",
+    "enterRemoteId": "أدخل معرف الجهاز البعيد",
+    "connectionStatus": {
+      "connecting": "جار الاتصال...",
+      "connected": "متصل",
+      "disconnected": "غير متصل",
+      "failed": "فشل الاتصال"
+    },
+    "toolbar": {
+      "fileTransfer": "نقل الملفات",
+      "clipboard": "الحافظة",
+      "chat": "الدردشة",
+      "remoteInput": "الإدخال عن بعد",
+      "screenSelection": "اختيار الشاشة"
+    }
+  },
+  "notifications": {
+    "fileTransferComplete": "اكتمل نقل الملف: {fileName}",
+    "fileTransferFailed": "فشل نقل الملف: {fileName}",
+    "clipboardSyncEnabled": "تم تمكين مزامنة الحافظة.",
+    "clipboardSyncDisabled": "تم تعطيل مزامنة الحافظة."
+  }
+}

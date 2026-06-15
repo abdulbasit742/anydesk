@@ -1,0 +1,2 @@
+export interface LaunchSignoffRecord { id:string; releaseId:string; team:string; state:string; signedByUserId?:string; }
+export interface LaunchSignoffRecordRepository { create(record:LaunchSignoffRecord): Promise<LaunchSignoffRecord>; update(id:string, patch:Partial<LaunchSignoffRecord>): Promise<LaunchSignoffRecord|null>; list(filter:Partial<LaunchSignoffRecord>, limit:number): Promise<LaunchSignoffRecord[]>; }

@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { canStartSupportHandoff } from "../../packages/shared/src/pack14Webviewer/supportHandoff.js"; assert.equal(canStartSupportHandoff({ sessionActive: true, hostApproved: true, supportUserVerified: true }).ok, true);

@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { validateTrustedNetworkCidr } from '../../REVIEW_REQUIRED/apps/api/src/pack15/trustedNetworks/trustedNetworkPolicy.js'; assert.equal(validateTrustedNetworkCidr('10.0.0.0/8'), true);

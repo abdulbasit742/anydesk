@@ -1,0 +1,38 @@
+{
+  "sourceZip": "C:/Users/bsphy2304/Downloads/remotedesk (1).zip",
+  "stagedAt": "_incoming/remotedesk-1-upload",
+  "buildEstimateAfterTriage": "26-33%",
+  "zipEntryCount": 2062,
+  "zipFileCount": 1749,
+  "stagedFileCount": 1749,
+  "contentTypes": {
+    "typescript": 824,
+    "tsx": 223,
+    "markdown": 566,
+    "yaml": 122,
+    "yml": 2,
+    "json": 5,
+    "terraform": 3,
+    "bicep": 1,
+    "prisma": 1,
+    "shell": 1,
+    "envExample": 1
+  },
+  "pathCounts": {
+    "apps": 1036,
+    "docs": 562,
+    "infrastructureAndCi": 127,
+    "packagesShared": 12
+  },
+  "generatedRiskSignals": {
+    "endpointDocs": 100,
+    "genericHooks": 80,
+    "genericComponents": 50,
+    "numberedJiraStubs": 60,
+    "suspiciousMarkerMatches": 1829
+  },
+  "mergeDecision": "reject-runtime-merge",
+  "runtimeFilesMerged": [],
+  "docsImported": [],
+  "reason": "The pack is a generated alternate full-stack RemoteDesk tree using different frameworks/contracts, with many placeholder-style docs/components/hooks/stubs. Direct merge would overwrite or conflict with current Express/Electron/WebRTC runtime."
+}

@@ -1,0 +1,56 @@
+{
+  "common": {
+    "ok": "ٹھیک ہے",
+    "cancel": "منسوخ کریں",
+    "save": "محفوظ کریں",
+    "delete": "حذف کریں",
+    "confirm": "تصدیق کریں",
+    "loading": "لوڈ ہو رہا ہے...",
+    "error": "خرابی",
+    "success": "کامیابی",
+    "close": "بند کریں",
+    "settings": "ترتیبات",
+    "dashboard": "ڈیش بورڈ",
+    "connect": "منسلک کریں",
+    "disconnect": "منقطع کریں",
+    "viewOnly": "صرف دیکھیں",
+    "fullControl": "مکمل کنٹرول"
+  },
+  "auth": {
+    "login": {
+      "title": "ریموٹ ڈیسک میں لاگ ان کریں",
+      "emailLabel": "ای میل ایڈریس",
+      "passwordLabel": "پاس ورڈ",
+      "forgotPassword": "پاس ورڈ بھول گئے؟",
+      "loginButton": "لاگ ان کریں",
+      "signupPrompt": "اکاؤنٹ نہیں ہے؟ سائن اپ کریں"
+    },
+    "errors": {
+      "invalidCredentials": "غلط ای میل یا پاس ورڈ۔",
+      "accountLocked": "آپ کا اکاؤنٹ لاک ہے۔ براہ کرم سپورٹ سے رابطہ کریں۔"
+    }
+  },
+  "session": {
+    "remoteId": "ریموٹ آئی ڈی",
+    "enterRemoteId": "ریموٹ آئی ڈی درج کریں",
+    "connectionStatus": {
+      "connecting": "منسلک ہو رہا ہے...",
+      "connected": "منسلک",
+      "disconnected": "منقطع",
+      "failed": "کنکشن ناکام"
+    },
+    "toolbar": {
+      "fileTransfer": "فائل کی منتقلی",
+      "clipboard": "کلپ بورڈ",
+      "chat": "چیٹ",
+      "remoteInput": "ریموٹ ان پٹ",
+      "screenSelection": "اسکرین کا انتخاب"
+    }
+  },
+  "notifications": {
+    "fileTransferComplete": "فائل کی منتقلی مکمل: {fileName}",
+    "fileTransferFailed": "فائل کی منتقلی ناکام: {fileName}",
+    "clipboardSyncEnabled": "کلپ بورڈ کی ہم آہنگی فعال ہے۔",
+    "clipboardSyncDisabled": "کلپ بورڈ کی ہم آہنگی غیر فعال ہے۔"
+  }
+}

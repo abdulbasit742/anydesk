@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { canOpenBillingPortal, canModifyBillingPortal } from "../../packages/shared/src/pack17/billingPortalAccess.js"; assert.equal(canOpenBillingPortal("auditor"), true); assert.equal(canModifyBillingPortal("auditor"), false);

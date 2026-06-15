@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict'; import { desktopUpdateReady } from '../../REVIEW_REQUIRED/apps/desktop/src/pack20/updateReadinessStore.js'; assert.equal(desktopUpdateReady({installerSigned:true,channelAllowed:true,rollbackAvailable:true}), true);

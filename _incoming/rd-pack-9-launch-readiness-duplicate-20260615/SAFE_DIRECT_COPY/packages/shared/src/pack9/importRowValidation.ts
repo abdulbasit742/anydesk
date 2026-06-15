@@ -1,0 +1,2 @@
+export interface ImportRowValidationResult { ok: boolean; errors: string[]; }
+export function validateEmailImportRow(row: Record<string, unknown>): ImportRowValidationResult { const errors: string[] = []; if (typeof row.email !== "string" || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(row.email)) errors.push("invalid-email"); if (row.role !== undefined && !["admin", "support", "member", "viewer"].includes(String(row.role))) errors.push("invalid-role"); return { ok: errors.length === 0, errors }; }

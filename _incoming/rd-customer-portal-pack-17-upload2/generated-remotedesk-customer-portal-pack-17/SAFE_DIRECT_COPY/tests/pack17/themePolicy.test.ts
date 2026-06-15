@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { validateAccentColor } from "../../REVIEW_REQUIRED/apps/api/src/pack17/themeSettings/themePolicy.js"; assert.equal(validateAccentColor("#3366ff"), true);

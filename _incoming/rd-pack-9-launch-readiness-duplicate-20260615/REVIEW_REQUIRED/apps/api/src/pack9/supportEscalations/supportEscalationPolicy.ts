@@ -1,0 +1,1 @@
+export function escalationSlaMinutes(target: "tier2" | "engineering" | "security" | "billing"): number { if (target === "security") return 15; if (target === "engineering") return 30; if (target === "billing") return 120; return 60; }

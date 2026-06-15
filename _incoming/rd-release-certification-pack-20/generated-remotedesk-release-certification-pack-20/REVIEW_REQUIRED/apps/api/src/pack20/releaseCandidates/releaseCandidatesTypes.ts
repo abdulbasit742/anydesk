@@ -1,0 +1,2 @@
+export interface ReleaseCandidateRecord { id:string; version:string; gitSha:string; channel:string; status:string; createdAt:string; }
+export interface ReleaseCandidateRecordRepository { create(record:ReleaseCandidateRecord): Promise<ReleaseCandidateRecord>; update(id:string, patch:Partial<ReleaseCandidateRecord>): Promise<ReleaseCandidateRecord|null>; list(filter:Partial<ReleaseCandidateRecord>, limit:number): Promise<ReleaseCandidateRecord[]>; }

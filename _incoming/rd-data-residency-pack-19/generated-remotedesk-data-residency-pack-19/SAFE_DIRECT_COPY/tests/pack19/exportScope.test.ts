@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { exportScopeAllowed } from "../../packages/shared/src/pack19/exportScope.js"; assert.equal(exportScopeAllowed("auditor", "audit"), true); assert.equal(exportScopeAllowed("member", "tenant"), false);

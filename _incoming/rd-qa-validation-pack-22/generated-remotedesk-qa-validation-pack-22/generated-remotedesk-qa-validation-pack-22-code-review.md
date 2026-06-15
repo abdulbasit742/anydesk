@@ -1,0 +1,1 @@
+Review QA admin authorization, release ownership, test result blockers, synthetic probe safety, flaky quarantine policy, coverage gate thresholds, evidence redaction/hash flow and server-side release blocker enforcement.

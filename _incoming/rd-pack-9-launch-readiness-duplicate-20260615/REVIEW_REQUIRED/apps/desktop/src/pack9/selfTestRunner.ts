@@ -1,0 +1,2 @@
+export interface DesktopSelfTest { id: string; label: string; run(): Promise<{ passed: boolean; message: string }>; }
+export async function runDesktopSelfTests(tests: readonly DesktopSelfTest[]): Promise<Array<{ id: string; label: string; passed: boolean; message: string }>> { const results = []; for (const test of tests) { const result = await test.run(); results.push({ id: test.id, label: test.label, ...result }); } return results; }

@@ -1,0 +1,1 @@
+Run Pack 9 tests, launch smoke script, no-release-blockers script, then manual QA for checklist gates, import row validation, migration blocks, rollout approvals, support escalation and desktop self-diagnostics.

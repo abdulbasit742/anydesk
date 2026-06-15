@@ -1,0 +1,14 @@
+# Alert Examples
+
+```yaml
+groups:
+  - name: api
+    rules:
+      - alert: HighErrorRate
+        expr: rate(api_requests_total{status=~'5..'}[5m]) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: 'High error rate detected'
+```

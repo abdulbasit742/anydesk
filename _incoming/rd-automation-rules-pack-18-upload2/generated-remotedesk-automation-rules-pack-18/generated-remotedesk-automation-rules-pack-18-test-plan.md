@@ -1,0 +1,1 @@
+Run Pack 18 shared/API/desktop tests, safe-action scanner, then manual QA for rule creation, condition evaluation, safe action blocking, approval gates, event inbox, dead letters, rate limits and metrics.

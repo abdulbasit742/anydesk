@@ -1,0 +1,74 @@
+{
+  "name": "pdf-code-batches-20260614",
+  "createdAt": "2026-06-14",
+  "stagingRoot": "C:/Users/bsphy2304/Documents/New project/_incoming/pdf-code-batches-20260614",
+  "totalExtractedFiles": 163,
+  "batches": [
+    {
+      "id": "batch4-desktop-webrtc-engine",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Batch 4 — apps-desktop WebRTC Engine (real code)-2026061408535051.pdf",
+      "extractedFiles": 30,
+      "mergeMode": "review-only"
+    },
+    {
+      "id": "batch5-desktop-remote-input",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Batch 5 — apps-desktop Remote Input (real code)-2026061408535492.pdf",
+      "extractedFiles": 18,
+      "mergeMode": "manual-runtime-port"
+    },
+    {
+      "id": "batch6-desktop-remote-session-ui",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Batch 6 — apps-desktop Remote Session UI (real code)-2026061408540378.pdf",
+      "extractedFiles": 24,
+      "mergeMode": "review-only"
+    },
+    {
+      "id": "batch8-tests-docs-shared-contract-tests",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Batch 8 — Tests, Docs & Shared Contract Tests (real code)-2026061408541011.pdf",
+      "extractedFiles": 30,
+      "mergeMode": "docs-imported"
+    },
+    {
+      "id": "phase6-batch1-stripe-billing-seats-usage",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Phase 6 · Batch 1 — Stripe Billing, Seats & Usage Metering (real code)-2026061408554433.pdf",
+      "extractedFiles": 21,
+      "mergeMode": "docs-imported-runtime-review-only"
+    },
+    {
+      "id": "phase6-batch2-admin-rbac-billing-portal",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Phase 6 · Batch 2 — Admin Console, RBAC & Billing Portal (real code)-2026061408555489.pdf",
+      "extractedFiles": 22,
+      "mergeMode": "docs-imported-runtime-review-only"
+    },
+    {
+      "id": "phase6-batch3-audit-compliance-sso-saml",
+      "sourcePdf": "C:/Users/bsphy2304/Downloads/Phase 6 · Batch 3 — Audit-Compliance Export + SSO-SAML (real code)-2026061408560339.pdf",
+      "extractedFiles": 18,
+      "mergeMode": "docs-imported-runtime-review-only"
+    }
+  ],
+  "runtimePorts": [
+    "apps/desktop/src/renderer/src/services/remoteInput.ts",
+    "apps/desktop/src/renderer/src/components/RemoteSessionView.tsx",
+    "apps/desktop/test/remoteInputPolicy.test.ts"
+  ],
+  "docsImported": [
+    "docs/pdf-code-batches-20260614/batch8-tests-docs-shared-contract-tests/desktop-manual-qa-checklist.md",
+    "docs/pdf-code-batches-20260614/batch8-tests-docs-shared-contract-tests/error-codes-reference.md",
+    "docs/pdf-code-batches-20260614/batch8-tests-docs-shared-contract-tests/local-run-guide.md",
+    "docs/pdf-code-batches-20260614/batch8-tests-docs-shared-contract-tests/testing-strategy.md",
+    "docs/pdf-code-batches-20260614/batch8-tests-docs-shared-contract-tests/architecture/session-pipeline.md",
+    "docs/pdf-code-batches-20260614/batch8-tests-docs-shared-contract-tests/architecture/shared-contracts.md",
+    "docs/pdf-code-batches-20260614/phase6-batch1-stripe-billing-seats-usage/billing.md",
+    "docs/pdf-code-batches-20260614/phase6-batch2-admin-rbac-billing-portal/admin-and-rbac.md",
+    "docs/pdf-code-batches-20260614/phase6-batch3-audit-compliance-sso-saml/audit-and-sso.md"
+  ],
+  "blockedRuntimeMerges": [
+    "apps/api/** from Phase 6 PDFs",
+    "apps/web/** from Phase 6 admin PDF",
+    "apps/desktop/src/webrtc/** from Batch 4",
+    "apps/desktop/src/session/** from Batch 6",
+    "packages/shared/src/index.ts replacements from all PDFs"
+  ],
+  "buildEstimateAfterMerge": "35-42%"
+}

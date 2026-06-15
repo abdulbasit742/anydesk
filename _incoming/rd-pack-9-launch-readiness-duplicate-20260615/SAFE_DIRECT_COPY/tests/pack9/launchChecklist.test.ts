@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { isLaunchBlocked } from "../../packages/shared/src/pack9/launchChecklist.js"; assert.equal(isLaunchBlocked([{ id: "x", area: "api", label: "API", status: "fail", required: true }]), true);

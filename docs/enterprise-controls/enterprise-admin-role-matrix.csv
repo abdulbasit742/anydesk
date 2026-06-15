@@ -1,0 +1,5 @@
+Role,Users,Devices,Sessions,Policies,Billing,Audit
+Super Admin,All,All,All,All,All,All
+IT Admin,View/Manage,All,View,Manage,View,View
+Billing Admin,View,None,None,None,All,None
+Help Desk,View,None,View/Join,None,None,None

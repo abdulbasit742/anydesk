@@ -1,0 +1,165 @@
+﻿# RemoteDesk Next 1000 Production Sprint Merge Summary
+
+## Result
+
+Imported the safe parts of generated-remotedesk-next-1000-production-sprint.zip without overwriting active runtime code. The archive contains 135 files, not 1000.
+
+## Build Status
+
+- Before this merge: 31-38%
+- After this merge: 32-39%
+
+This moved the project slightly because it adds production docs, scripts, and shared desktop contracts. It does not close major runtime blockers by itself.
+
+## Imported Files
+
+- `docs/generated-remotedesk-next-1000-production-sprint/api-production-hardening-guide.md`
+- `docs/generated-remotedesk-next-1000-production-sprint/clipboard-sync-safety-model.md`
+- `docs/generated-remotedesk-next-1000-production-sprint/desktop-qa-checklist.md`
+- `docs/generated-remotedesk-next-1000-production-sprint/desktop-session-integration-guide.md`
+- `docs/generated-remotedesk-next-1000-production-sprint/diagnostics-support-bundle-format.md`
+- `docs/generated-remotedesk-next-1000-production-sprint/file-transfer-production-flow.md`
+- `docs/generated-remotedesk-next-1000-production-sprint/merge-checklist.md`
+- `docs/generated-remotedesk-next-1000-production-sprint/reconnect-ice-recovery-model.md`
+- `docs/generated-remotedesk-next-1000-production-sprint/web-dashboard-integration-guide.md`
+- `scripts/generated-remotedesk-next-1000-production-sprint/validate-manifest.mjs`
+- `scripts/generated-remotedesk-next-1000-production-sprint/verify-sprint-pack.mjs`
+- `packages/shared/src/desktop/desktopAuditContract.ts`
+- `packages/shared/src/desktop/desktopDataChannelTypes.ts`
+- `packages/shared/src/desktop/desktopRuntimeSettingsTypes.ts`
+- `packages/shared/src/desktop/index.nextSprintAdapters.ts`
+- `packages/shared/src/desktop/index.ts`
+- `packages/shared/src/desktop/reconnectLifecycleTypes.ts`
+- `packages/shared/src/desktop/supportBundleSchema.ts`
+- `packages/shared/src/desktop/webDashboardTypes.ts`
+- `packages/shared/src/index.ts`
+
+## Runtime Files Kept Review-Only
+
+These files were staged but not merged into active runtime paths because they need manual adaptation to the current Express/Electron/WebRTC contracts:
+
+- `REVIEW_REQUIRED/apps/api/src/modules/audit/auditLogRepository.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/audit/auditLogService.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/audit/auditLogTypes.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/billing/billingWebhookVerifier.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/billing/planLimitService.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/billing/usageAggregator.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/health/healthRoutes.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/middleware/rateLimitPolicy.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/middleware/socketAuth.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/security/securityEventService.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/security/trustedDeviceService.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/sessions/deviceHeartbeatService.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/sessions/sessionLifecycleService.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/support/supportTicketRepository.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/support/supportTicketService.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/support/supportTicketTypes.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/support/supportTicketValidators.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/teams/rolePermissionPolicy.ts`
+- `REVIEW_REQUIRED/apps/api/src/modules/teams/teamInviteService.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/main/clipboardSafeIpc.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/main/diagnosticsExportIpc.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/main/fileTransferDiskIpc.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/main/registerNextSprintIpc.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/preload/clipboardSafeApi.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/preload/diagnosticsExportApi.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/preload/fileTransferDiskApi.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/preload/registerNextSprintPreload.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/clipboard/ClipboardSyncStatus.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/clipboard/ClipboardSyncToggle.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/clipboard/clipboardConflictResolver.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/clipboard/clipboardLoopGuard.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/clipboard/clipboardSyncPolicy.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/clipboard/clipboardSyncReducer.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/clipboard/clipboardTextGuards.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/diagnostics/ConnectionStatsGrid.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/diagnostics/DataChannelStateCard.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/diagnostics/DiagnosticsCopyButton.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/diagnostics/SupportBundleExportMenu.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/FilePickerButton.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/FileTransferDisabledState.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/IncomingFileDecision.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/SaveTargetPrompt.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/checksumVerifier.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/fileTransferChunkPlanner.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/fileTransferCoordinator.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/fileTransferPolicy.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/fileTransferReducer.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/fileTransferRetryController.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/fileTransferTypes.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/transferQueueSelectors.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/fileTransfer/transferSpeedMeter.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/reconnect/ReconnectActionBar.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/reconnect/reconnectBackoff.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/reconnect/reconnectReducer.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/session/SessionCapabilityBadges.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/session/SessionDisabledState.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/session/SessionIntegrationHost.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/session/SessionPanelTabs.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/session/sessionDataChannelCapabilities.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/session/sessionIntegrationReducer.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/session/sessionIntegrationTypes.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/session/useSessionIntegration.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/settings/ClipboardSettingsSection.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/settings/FileTransferSettingsSection.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/settings/ReconnectSettingsSection.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/settings/RemoteInputSafetySection.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/settings/SettingsPersistenceStatus.tsx`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/settings/settingsReducer.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/features/settings/settingsStorage.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/services/auditInMemoryQueue.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/services/clipboardBridge.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/services/desktopAudit.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/services/fileTransferDataChannelBridge.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/services/fileTransferPersistenceClient.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/services/peerConnectionRecovery.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/services/supportBundleRedactor.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/services/webrtcStatsSampler.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/types/desktopRuntime.ts`
+- `REVIEW_REQUIRED/apps/desktop/src/renderer/src/types/windowApi.d.ts`
+- `REVIEW_REQUIRED/apps/web/src/components/common/AsyncState.tsx`
+- `REVIEW_REQUIRED/apps/web/src/components/common/EmptyState.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/admin/AdminMetricsPage.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/audit/AuditLogFilters.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/audit/AuditLogTable.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/audit/auditApi.ts`
+- `REVIEW_REQUIRED/apps/web/src/features/billing/BillingUsageMeters.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/devices/TrustedDevicesPage.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/security/SecurityEventsPage.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/sessions/SessionTimeline.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/support/SupportTicketsPage.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/support/TicketList.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/support/TicketStatusBadge.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/support/supportApi.ts`
+- `REVIEW_REQUIRED/apps/web/src/features/team/TeamInvitePanel.tsx`
+- `REVIEW_REQUIRED/apps/web/src/features/team/roleAwareNavigation.ts`
+
+## Tests Kept Review-Only
+
+These generated tests currently import staged REVIEW_REQUIRED paths, so wiring them directly would fail until those modules are manually ported:
+
+- `SAFE_DIRECT_COPY/tests/api/billingUsageAggregator.test.ts`
+- `SAFE_DIRECT_COPY/tests/api/rateLimitPolicy.test.ts`
+- `SAFE_DIRECT_COPY/tests/api/rolePermissionPolicy.test.ts`
+- `SAFE_DIRECT_COPY/tests/desktop/auditQueue.test.ts`
+- `SAFE_DIRECT_COPY/tests/desktop/clipboardConflict.test.ts`
+- `SAFE_DIRECT_COPY/tests/desktop/clipboardGuards.test.ts`
+- `SAFE_DIRECT_COPY/tests/desktop/fileTransferPolicy.test.ts`
+- `SAFE_DIRECT_COPY/tests/desktop/fileTransferReducer.test.ts`
+- `SAFE_DIRECT_COPY/tests/desktop/fileTransferRetry.test.ts`
+- `SAFE_DIRECT_COPY/tests/desktop/reconnectBackoff.test.ts`
+- `SAFE_DIRECT_COPY/tests/desktop/settingsReducer.test.ts`
+- `SAFE_DIRECT_COPY/tests/web/roleAwareNavigation.test.ts`
+
+## Merge Decision
+
+- Safe direct copy: docs, scripts, shared desktop contracts.
+- Manual patch: root shared barrel now exports ./desktop/index.js.
+- Review only: API modules, web modules, desktop runtime modules, and generated tests.
+
+## Next Best Work
+
+1. Mount existing diagnostics into the desktop session view and support bundle export.
+2. Add API Prisma schema and routes for audit logs and support tickets.
+3. Add two-client desktop QA for file transfer, clipboard sync, and reconnect.
+4. Keep native input execution disabled until a safe, OS-specific executor is implemented behind explicit host permission.

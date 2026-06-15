@@ -1,0 +1,1 @@
+import assert from "node:assert/strict"; import { isSupportedAutomationTrigger } from "../../packages/shared/src/pack18/automationTrigger.js"; assert.equal(isSupportedAutomationTrigger("session.started"), true); assert.equal(isSupportedAutomationTrigger("bad.trigger"), false);

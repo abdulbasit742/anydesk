@@ -1,0 +1,2 @@
+export interface ReleaseApprovalRecord { id:string; releaseId:string; approverUserId:string; state:string; createdAt:string; }
+export interface ReleaseApprovalRecordRepository { create(record:ReleaseApprovalRecord): Promise<ReleaseApprovalRecord>; update(id:string, patch:Partial<ReleaseApprovalRecord>): Promise<ReleaseApprovalRecord|null>; list(filter:Partial<ReleaseApprovalRecord>, limit:number): Promise<ReleaseApprovalRecord[]>; }

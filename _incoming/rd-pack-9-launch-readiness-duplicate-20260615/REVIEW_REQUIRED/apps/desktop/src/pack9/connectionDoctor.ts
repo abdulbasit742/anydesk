@@ -1,0 +1,2 @@
+export interface ConnectionDoctorInput { socketConnected: boolean; iceConnected: boolean; dataChannelOpen: boolean; lastError?: string; }
+export function diagnoseConnection(input: ConnectionDoctorInput): string[] { const issues: string[] = []; if (!input.socketConnected) issues.push("signaling-socket-disconnected"); if (!input.iceConnected) issues.push("ice-not-connected"); if (!input.dataChannelOpen) issues.push("data-channel-not-open"); if (input.lastError) issues.push(input.lastError); return issues; }
