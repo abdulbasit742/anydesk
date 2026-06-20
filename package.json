@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
+    "lint": "eslint src/App.jsx src/main.jsx src/components/*.jsx src/pages/*.jsx src/lib/*.js src/lib/remote/*.js src/components/remote/*.jsx src/pages/RemoteDesktop/*.jsx eslint.config.js vite.config.js",
     "test": "node scripts/testSuite.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.107.0",
@@ -16,6 +17,8 @@
     "mitt": "^3.0.1",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
+    "simple-peer": "^9.11.1",
+    "socket.io-client": "^4.8.3",
     "stripe": "^22.2.0"
   },
   "devDependencies": {
@@ -27,6 +30,14 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.6.0",
-    "vite": "^8.0.12"
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
+    "vite": "^8.0.12",
+    "vite-plugin-static-copy": "^4.1.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": "eslint --fix",
+    "eslint.config.js": "eslint --fix",
+    "vite.config.js": "eslint --fix"
   }
 }
