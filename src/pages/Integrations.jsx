@@ -353,6 +353,358 @@ function PlatformCard({ p, onToggle, onTest, pingState }) {
 }
 
 /* ─────────────────────────────────────────────────────────────────── */
+/*  AI Copilot Tab Sub-component                                       */
+/* ─────────────────────────────────────────────────────────────────── */
+function AICopilotTab({ setToast }) {
+  const [prompt, setPrompt] = useState('');
+  const [skills, setSkills] = useState([]);
+  const [reply, setReply] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const fetchSkills = async () => {
+    try {
+      const res = await fetch('/api/ai/skills');
+      const data = await res.json();
+      if (data.success && Array.isArray(data.skills)) {
+        setSkills(data.skills);
+      }
+    } catch {}
+  };
+
+  useEffect(() => {
+    fetchSkills();
+  }, []);
+
+  const handleRun = async () => {
+    if (!prompt.trim()) return;
+    setLoading(true);
+    setReply('');
+    try {
+      const res = await fetch('/api/ai/run', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setReply(data.reply);
+        setToast({ msg: 'AI Copilot execution complete!', ok: true });
+      } else {
+        setReply(`Error: ${data.error || 'Failed to complete prompt'}`);
+      }
+    } catch (e) {
+      setReply(`Error: ${e.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '1.5rem', animation: 'fadeIn 0.3s ease' }}>
+      <div style={{ background: '#131720', border: '1px solid #1e293b', borderRadius: 16, padding: '1.5rem' }}>
+        <div style={{ fontFamily: 'Syne, sans-serif', fontSize: '1rem', fontWeight: 700, color: '#e2e8f0', marginBottom: '1rem' }}>
+          🤖 AI Copilot Registry
+        </div>
+        <div style={{ fontSize: '0.75rem', color: '#64748b', marginBottom: '1rem' }}>
+          Skills dynamically loaded from the AI agent framework:
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {skills.length === 0 ? (
+            <div style={{ fontSize: '0.72rem', color: '#475569' }}>Loading registered skills...</div>
+          ) : (
+            skills.map((s, i) => (
+              <div key={i} style={{ padding: 10, background: '#0d0f14', border: '1px solid #1e293b', borderRadius: 8 }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#a78bfa' }}>{s.name}</div>
+                <div style={{ fontSize: '0.7rem', color: '#64748b', marginTop: 4 }}>{s.description}</div>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div style={{ background: '#131720', border: '1px solid #1e293b', borderRadius: 16, padding: '1.5rem' }}>
+          <div style={{ fontFamily: 'Syne, sans-serif', fontSize: '1rem', fontWeight: 700, color: '#e2e8f0', marginBottom: '1rem' }}>
+            🔮 Interactive Playground
+          </div>
+          <textarea
+            value={prompt}
+            onChange={e => setPrompt(e.target.value)}
+            placeholder="Ask AI Copilot to score leads, format captions, or analyze security logs..."
+            style={{
+              width: '100%', minHeight: 90, background: '#0d0f14', border: '1px solid #1e293b',
+              borderRadius: 10, padding: 12, color: '#e2e8f0', fontSize: '0.75rem',
+              outline: 'none', resize: 'vertical', fontFamily: 'DM Mono, monospace', boxSizing: 'border-box'
+            }}
+          />
+          <button
+            onClick={handleRun}
+            disabled={loading || !prompt.trim()}
+            style={{
+              marginTop: 12, padding: '8px 20px', borderRadius: 8,
+              background: 'rgba(167, 139, 250, 0.12)', border: '1.5px solid #a78bfa',
+              color: '#a78bfa', fontWeight: 600, fontSize: '0.75rem', cursor: loading ? 'not-allowed' : 'pointer'
+            }}
+          >
+            {loading ? '⏳ Computing...' : '⚡ Run Query'}
+          </button>
+        </div>
+
+        {reply && (
+          <div style={{
+            background: 'rgba(167, 139, 250, 0.04)', border: '1px solid rgba(167, 139, 250, 0.25)',
+            borderRadius: 16, padding: '1.5rem', fontFamily: 'DM Mono, monospace', fontSize: '0.75rem',
+            lineHeight: 1.6, color: '#e2e8f0', animation: 'fadeIn 0.25s ease'
+          }}>
+            <div style={{ color: '#a78bfa', fontWeight: 700, marginBottom: 8, fontSize: '0.78rem' }}>🤖 Agent Response:</div>
+            {reply}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/*  Scraper Tab Sub-component                                          */
+/* ─────────────────────────────────────────────────────────────────── */
+function ScraperTab({ setToast }) {
+  const [url, setUrl] = useState('');
+  const [mode, setMode] = useState('scrape'); // 'scrape' | 'screenshot'
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleRun = async () => {
+    if (!url.trim()) return;
+    setLoading(true);
+    setResult(null);
+    try {
+      const endpoint = mode === 'scrape' ? '/api/scraping/scrape' : '/api/scraping/screenshot';
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url })
+      });
+      const data = await res.json();
+      if (data.success && data.result) {
+        setResult(data.result);
+        setToast({ msg: 'Extraction successful!', ok: true });
+      } else {
+        setResult({ error: data.error || 'Extraction failed' });
+      }
+    } catch (e) {
+      setResult({ error: e.message });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', animation: 'fadeIn 0.3s ease' }}>
+      <div style={{ background: '#131720', border: '1px solid #1e293b', borderRadius: 16, padding: '1.5rem' }}>
+        <div style={{ fontFamily: 'Syne, sans-serif', fontSize: '1rem', fontWeight: 700, color: '#e2e8f0', marginBottom: '1.2rem' }}>
+          📊 Firecrawl Scraper & Browserless Capture Bridge
+        </div>
+        
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: '1.2rem' }}>
+          <input
+            value={url}
+            onChange={e => setUrl(e.target.value)}
+            placeholder="Enter website URL (e.g. google.com)..."
+            style={{
+              flex: 1, minWidth: 260, padding: '10px 14px', background: '#0d0f14',
+              border: '1px solid #1e293b', borderRadius: 8, color: '#e2e8f0',
+              fontFamily: 'DM Mono, monospace', fontSize: '0.8rem', outline: 'none'
+            }}
+          />
+          <div style={{ display: 'flex', gap: 6 }}>
+            <button
+              onClick={() => setMode('scrape')}
+              style={{
+                padding: '10px 16px', borderRadius: 8,
+                background: mode === 'scrape' ? '#2dd4bf15' : 'transparent',
+                border: mode === 'scrape' ? '1.5px solid #2dd4bf' : '1.5px solid #1e293b',
+                color: mode === 'scrape' ? '#2dd4bf' : '#64748b',
+                fontWeight: 600, fontSize: '0.75rem', cursor: 'pointer'
+              }}
+            >
+              📝 Scrape Markdown
+            </button>
+            <button
+              onClick={() => setMode('screenshot')}
+              style={{
+                padding: '10px 16px', borderRadius: 8,
+                background: mode === 'screenshot' ? '#2dd4bf15' : 'transparent',
+                border: mode === 'screenshot' ? '1.5px solid #2dd4bf' : '1.5px solid #1e293b',
+                color: mode === 'screenshot' ? '#2dd4bf' : '#64748b',
+                fontWeight: 600, fontSize: '0.75rem', cursor: 'pointer'
+              }}
+            >
+              📸 Capture Screen
+            </button>
+          </div>
+          <button
+            onClick={handleRun}
+            disabled={loading || !url.trim()}
+            style={{
+              padding: '10px 24px', borderRadius: 8,
+              background: 'rgba(45, 212, 191, 0.12)', border: '1.5px solid #2dd4bf',
+              color: '#2dd4bf', fontWeight: 700, fontSize: '0.78rem', cursor: loading ? 'not-allowed' : 'pointer'
+            }}
+          >
+            {loading ? '⏳ Loading...' : '🚀 Extract'}
+          </button>
+        </div>
+      </div>
+
+      {result && (
+        <div style={{
+          background: '#131720', border: '1px solid #1e293b', borderRadius: 16,
+          padding: '1.5rem', animation: 'fadeIn 0.25s ease'
+        }}>
+          <div style={{ display: 'flex', justifyContext: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#2dd4bf', fontFamily: 'Syne, sans-serif' }}>
+              📦 Extraction Results ({result.provider || 'system'})
+            </span>
+            {result.title && (
+              <span style={{ fontSize: '0.72rem', color: '#64748b', fontFamily: 'DM Mono, monospace' }}>
+                {result.title}
+              </span>
+            )}
+          </div>
+
+          {result.error ? (
+            <div style={{ color: '#f43f5e', fontSize: '0.75rem', fontFamily: 'DM Mono, monospace' }}>
+              ✕ Error: {result.error}
+            </div>
+          ) : mode === 'scrape' ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {result.description && (
+                <div style={{ fontSize: '0.72rem', color: '#64748b', fontStyle: 'italic' }}>
+                  Description: {result.description}
+                </div>
+              )}
+              <pre style={{
+                maxHeight: 200, overflowY: 'auto', background: '#0d0f14', padding: 12,
+                borderRadius: 8, border: '1px solid #1e293b', color: '#94a3b8',
+                fontSize: '0.72rem', fontFamily: 'DM Mono, monospace', whiteSpace: 'pre-wrap'
+              }}>{result.content}</pre>
+            </div>
+          ) : (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+              <div style={{ width: '100%', maxWidth: 500, overflow: 'hidden', borderRadius: 8, border: '1px solid #1e293b', background: '#0d0f14', padding: 4 }}>
+                <img
+                  src={result.image || result.screenshotUrl || 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80'}
+                  alt="Browserless Screenshot"
+                  style={{ width: '100%', height: 'auto', borderRadius: 4 }}
+                />
+              </div>
+              <div style={{ fontSize: '0.7rem', color: '#64748b', fontFamily: 'DM Mono, monospace' }}>
+                Simulated high-resolution screen capture
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
+/*  Telemetry Tab Sub-component                                         */
+/* ─────────────────────────────────────────────────────────────────── */
+function TelemetryTab() {
+  const [traces, setTraces] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const fetchTraces = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/system/traces');
+      const data = await res.json();
+      if (data.success && Array.isArray(data.traces)) {
+        setTraces(data.traces);
+      }
+    } catch {}
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchTraces();
+  }, []);
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', animation: 'fadeIn 0.3s ease' }}>
+      <div style={{ background: '#131720', border: '1px solid #1e293b', borderRadius: 16, padding: '1.5rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', flexWrap: 'wrap', gap: 10 }}>
+          <div>
+            <div style={{ fontFamily: 'Syne, sans-serif', fontSize: '1rem', fontWeight: 700, color: '#e2e8f0' }}>
+              ⚡ OpenTelemetry Request Traces
+            </div>
+            <div style={{ fontSize: '0.72rem', color: '#64748b', marginTop: 4 }}>
+              Active system performance instrumentation tracking latency and transaction IDs
+            </div>
+          </div>
+          <button
+            onClick={fetchTraces}
+            disabled={loading}
+            style={{
+              padding: '6px 14px', borderRadius: 6,
+              background: 'transparent', border: '1px solid #2dd4bf55',
+              color: '#2dd4bf', fontWeight: 700, fontSize: '0.72rem', cursor: 'pointer'
+            }}
+          >
+            {loading ? '⏳ Loading...' : '🔄 Refresh Traces'}
+          </button>
+        </div>
+
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.72rem', fontFamily: 'DM Mono, monospace' }}>
+            <thead>
+              <tr style={{ borderBottom: '1px solid #1e293b', textAlign: 'left', color: '#64748b' }}>
+                <th style={{ padding: '8px 12px' }}>Trace ID</th>
+                <th style={{ padding: '8px 12px' }}>Method</th>
+                <th style={{ padding: '8px 12px' }}>Path</th>
+                <th style={{ padding: '8px 12px' }}>Latency</th>
+                <th style={{ padding: '8px 12px' }}>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {traces.length === 0 ? (
+                <tr>
+                  <td colSpan={5} style={{ padding: '24px 12px', color: '#475569', textAlign: 'center' }}>
+                    No telemetry traces recorded. Refresh after browsing dashboard endpoints.
+                  </td>
+                </tr>
+              ) : (
+                traces.map((t, i) => (
+                  <tr key={i} style={{ borderBottom: '1px solid #1e293b33', color: '#94a3b8' }}>
+                    <td style={{ padding: '8px 12px', color: '#64748b' }}>{t.traceId}</td>
+                    <td style={{ padding: '8px 12px', color: '#2dd4bf', fontWeight: 700 }}>{t.method}</td>
+                    <td style={{ padding: '8px 12px', color: '#e2e8f0' }}>{t.path}</td>
+                    <td style={{ padding: '8px 12px', color: t.duration > 80 ? '#f5b731' : '#2dd4bf' }}>
+                      {t.duration} ms
+                    </td>
+                    <td style={{ padding: '8px 12px' }}>
+                      <span style={{
+                        padding: '1px 6px', borderRadius: 4,
+                        background: t.status < 400 ? 'rgba(16,185,129,0.1)' : 'rgba(244,63,94,0.1)',
+                        color: t.status < 400 ? '#10b981' : '#f43f5e',
+                        fontWeight: 700
+                      }}>{t.status}</span>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────── */
 /*  Main Page                                                           */
 /* ─────────────────────────────────────────────────────────────────── */
 export default function Integrations() {
@@ -484,7 +836,10 @@ export default function Integrations() {
       {/* Tab bar */}
       <div style={s.tabBar}>
         <button style={s.tab(activeTab === 'platforms')} onClick={() => setActiveTab('platforms')}>🔌 Platforms</button>
-        <button style={s.tab(activeTab === 'webhooks')} onClick={() => setActiveTab('webhooks')}>🔗 Webhook Manager</button>
+        <button style={s.tab(activeTab === 'webhooks')} onClick={() => setActiveTab('webhooks')}>🔗 Webhooks</button>
+        <button style={s.tab(activeTab === 'ai-copilot')} onClick={() => setActiveTab('ai-copilot')}>🤖 AI Copilot</button>
+        <button style={s.tab(activeTab === 'scraper')} onClick={() => setActiveTab('scraper')}>📊 Scraper</button>
+        <button style={s.tab(activeTab === 'telemetry')} onClick={() => setActiveTab('telemetry')}>⚡ Telemetry</button>
       </div>
 
       {/* ── Platforms tab ── */}
@@ -494,6 +849,21 @@ export default function Integrations() {
             <PlatformCard key={p.id} p={p} onToggle={toggleConnection} onTest={testConnection} pingState={pingStates[p.id]} />
           ))}
         </div>
+      )}
+
+      {/* ── AI Copilot tab ── */}
+      {activeTab === 'ai-copilot' && (
+        <AICopilotTab setToast={setToast} />
+      )}
+
+      {/* ── Scraper tab ── */}
+      {activeTab === 'scraper' && (
+        <ScraperTab setToast={setToast} />
+      )}
+
+      {/* ── Telemetry tab ── */}
+      {activeTab === 'telemetry' && (
+        <TelemetryTab />
       )}
 
       {/* ── Webhooks tab ── */}
