@@ -543,9 +543,49 @@ const AuditLog = () => {
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('All');
   const [page, setPage] = useState(0);
+  const [logs, setLogs] = useState([]);
+  const [loading, setLoading] = useState(false);
   const PER_PAGE = 5;
 
-  const filtered = INIT_AUDIT.filter(e =>
+  const fetchLogs = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/system/audit-logs');
+      const data = await res.json();
+      if (data.success && Array.isArray(data.logs)) {
+        setLogs(data.logs);
+      } else {
+        setLogs(INIT_AUDIT);
+      }
+    } catch (e) {
+      console.error(e);
+      setLogs(INIT_AUDIT);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchLogs();
+    const interval = setInterval(fetchLogs, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleClearLogs = async () => {
+    if (!window.confirm("Are you sure you want to clear the audit history?")) return;
+    try {
+      const res = await fetch('/api/system/audit-logs/clear', { method: 'POST' });
+      const data = await res.json();
+      if (data.success) {
+        fetchLogs();
+      }
+    } catch (e) {
+      console.error(e);
+      alert("Failed to clear logs");
+    }
+  };
+
+  const filtered = logs.filter(e =>
     (filter==='All'||e.result===filter) &&
     Object.values(e).some(v=>String(v).toLowerCase().includes(search.toLowerCase()))
   );
@@ -553,7 +593,7 @@ const AuditLog = () => {
   const slice = filtered.slice(page*PER_PAGE, page*PER_PAGE+PER_PAGE);
 
   const exportCSV = () => {
-    const rows = [['ID','Timestamp','User','Action','Resource','Result','IP'],...filtered.map(e=>[e.id,e.ts,e.user,e.action,e.resource,e.result,e.ip])];
+    const rows = [['ID','Timestamp','User','Action','Resource','Result','IP'],...filtered.map((e, idx)=>[e.id || idx+1, e.ts, e.user, e.action, e.resource, e.result, e.ip])];
     const csv = rows.map(r=>r.join(',')).join('\n');
     const blob = new Blob([csv],{type:'text/csv'});
     const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='audit_log.csv'; a.click();
@@ -576,6 +616,7 @@ const AuditLog = () => {
             }}>{f}</button>
           ))}
           <Btn small color={C.teal} onClick={exportCSV}>⬇ Export CSV</Btn>
+          <Btn small color={C.red} onClick={handleClearLogs}>🧹 Clear Logs</Btn>
         </div>
       </div>
       <div style={{ overflowX:'auto' }}>
@@ -588,8 +629,8 @@ const AuditLog = () => {
             </tr>
           </thead>
           <tbody>
-            {slice.map(e=>(
-              <tr key={e.id} style={{ borderBottom:`1px solid ${C.border}33` }}>
+            {slice.map((e, idx)=>(
+              <tr key={e.id || idx} style={{ borderBottom:`1px solid ${C.border}33` }}>
                 <td style={{ padding:'9px 12px', color:C.muted, whiteSpace:'nowrap' }}>{e.ts}</td>
                 <td style={{ padding:'9px 12px', color:C.text }}>{e.user}</td>
                 <td style={{ padding:'9px 12px', color:C.teal }}>{e.action}</td>
@@ -604,7 +645,7 @@ const AuditLog = () => {
         </table>
       </div>
       <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginTop:16 }}>
-        <span style={{ fontFamily:'DM Mono', fontSize:11, color:C.muted }}>{filtered.length} entries</span>
+        <span style={{ fontFamily:'DM Mono', fontSize:11, color:C.muted }}>{filtered.length} entries {loading && "(updating...)"}</span>
         <div style={{ display:'flex', gap:8 }}>
           <Btn small disabled={page===0} onClick={()=>setPage(p=>p-1)} color={C.muted}>← Prev</Btn>
           <span style={{ fontFamily:'DM Mono', fontSize:12, color:C.muted, alignSelf:'center' }}>Page {page+1} / {Math.max(1,pages)}</span>
@@ -818,10 +859,126 @@ const SecuritySettings = () => {
 };
 
 /* ─────────────────────────────────────────────────
+   SECTION 10: SYSTEM SECURITY METRICS & DIAGNOSTICS
+───────────────────────────────────────────────── */
+const SecurityMetricsPanel = ({ metrics, loading }) => {
+  if (!metrics) {
+    return (
+      <Card>
+        <SectionTitle icon="📊" color={C.teal}>Security Metrics</SectionTitle>
+        <div style={{ fontFamily:'DM Mono', fontSize:12, color:C.muted }}>Loading security telemetry...</div>
+      </Card>
+    );
+  }
+
+  const lagColor = metrics.eventLoopLagMs > 50 ? C.red : metrics.eventLoopLagMs > 10 ? C.orange : C.green;
+
+  return (
+    <Card>
+      <SectionTitle icon="📊" color={C.teal}>System Security & Diagnostics</SectionTitle>
+      
+      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:20 }}>
+        <div style={{ background:C.surface2, padding:'14px 18px', borderRadius:12, border:`1px solid ${C.border}` }}>
+          <div style={{ fontFamily:'DM Mono', fontSize:11, color:C.muted }}>Event Loop Lag</div>
+          <div style={{ fontFamily:'Syne', fontSize:24, fontWeight:800, color:lagColor, marginTop:4 }}>
+            {metrics.eventLoopLagMs} ms
+          </div>
+          <div style={{ fontFamily:'DM Mono', fontSize:10, color:C.muted, marginTop:4 }}>
+            {metrics.eventLoopLagMs > 50 ? '⚠️ High thread congestion' : '⚡ Server thread healthy'}
+          </div>
+        </div>
+
+        <div style={{ background:C.surface2, padding:'14px 18px', borderRadius:12, border:`1px solid ${C.border}` }}>
+          <div style={{ fontFamily:'DM Mono', fontSize:11, color:C.muted }}>Rate Limiting Traffic</div>
+          <div style={{ fontFamily:'Syne', fontSize:24, fontWeight:800, color:C.teal, marginTop:4 }}>
+            {metrics.rateLimits?.activeClientCount || 0} IPs
+          </div>
+          <div style={{ fontFamily:'DM Mono', fontSize:10, color:C.muted, marginTop:4 }}>
+            Max: {metrics.rateLimits?.maxRequestsPerMin || 100} req/min
+          </div>
+        </div>
+      </div>
+
+      <div style={{ marginBottom:16 }}>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:8 }}>
+          <div style={{ fontFamily:'Syne', fontSize:13, fontWeight:600, color:C.text }}>Blocked IPs ({metrics.totalBlockedIps || 0})</div>
+          <Badge color={metrics.totalBlockedIps > 0 ? C.red : C.green} bg={metrics.totalBlockedIps > 0 ? `${C.red}18` : `${C.green}18`}>
+            {metrics.totalBlockedIps > 0 ? 'ACTIVE BANS' : 'SECURE'}
+          </Badge>
+        </div>
+
+        {metrics.blockedIps && metrics.blockedIps.length > 0 ? (
+          <div style={{ maxHeight:100, overflowY:'auto', background:C.surface3, padding:10, borderRadius:8, border:`1px solid ${C.border}` }}>
+            {metrics.blockedIps.map((ban, i) => (
+              <div key={i} style={{ display:'flex', justifyContent:'space-between', fontFamily:'DM Mono', fontSize:11, color:C.muted, padding:'3px 0' }}>
+                <span style={{ color:C.red }}>🚫 {ban.ip}</span>
+                <span>{new Date(ban.timestamp).toLocaleTimeString()}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div style={{ fontFamily:'DM Mono', fontSize:11, color:C.muted, textAlign:'center', padding:'10px 0', background:C.surface3, borderRadius:8, border:`1px solid ${C.border}` }}>
+            No IPs blocked currently.
+          </div>
+        )}
+      </div>
+
+      <div>
+        <div style={{ fontFamily:'Syne', fontSize:13, fontWeight:600, color:C.text, marginBottom:8 }}>Active IP Traffic Rate</div>
+        {metrics.clientStats && metrics.clientStats.length > 0 ? (
+          <div style={{ maxHeight:100, overflowY:'auto', background:C.surface3, padding:10, borderRadius:8, border:`1px solid ${C.border}` }}>
+            {metrics.clientStats.map((stat, i) => (
+              <div key={i} style={{ display:'flex', justifyContent:'space-between', fontFamily:'DM Mono', fontSize:11, color:C.muted, padding:'3px 0' }}>
+                <span>🌐 {stat.ip}</span>
+                <span style={{ color:stat.count > 80 ? C.orange : C.teal }}>{stat.count} req/min</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div style={{ fontFamily:'DM Mono', fontSize:11, color:C.muted, textAlign:'center', padding:'10px 0', background:C.surface3, borderRadius:8, border:`1px solid ${C.border}` }}>
+            No traffic recorded in the last minute.
+          </div>
+        )}
+      </div>
+    </Card>
+  );
+};
+
+/* ─────────────────────────────────────────────────
    ROOT COMPONENT
 ───────────────────────────────────────────────── */
 export default function SecurityGuards() {
   const [threatLevel, setThreatLevel] = useState(1); // 0=CLEAR, 1=LOW, 2=MEDIUM, 3=HIGH, 4=CRITICAL
+  const [metrics, setMetrics] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const fetchMetrics = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/system/security-metrics');
+      const data = await res.json();
+      if (data.success) {
+        setMetrics(data.metrics);
+        if (data.metrics.totalBlockedIps > 3) {
+          setThreatLevel(3); // HIGH if active blocks are occurring
+        } else if (data.metrics.totalBlockedIps > 0) {
+          setThreatLevel(2); // MEDIUM
+        } else {
+          setThreatLevel(1); // LOW
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchMetrics();
+    const interval = setInterval(fetchMetrics, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div style={{
@@ -843,24 +1000,29 @@ export default function SecurityGuards() {
         <ActiveGuards/>
       </div>
 
-      {/* Row 3: IP Lists + Injection Scanner */}
+      {/* Row 3: Security Metrics + Injection Scanner */}
       <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:20, marginBottom:20, alignItems:'start' }}>
-        <IPLists/>
+        <SecurityMetricsPanel metrics={metrics} loading={loading}/>
         <InjectionScanner/>
       </div>
 
-      {/* Row 4: Audit Log (full width) */}
+      {/* Row 4: IP Lists (full width) */}
+      <div style={{ marginBottom:20 }}>
+        <IPLists/>
+      </div>
+
+      {/* Row 5: Audit Log (full width) */}
       <div style={{ marginBottom:20 }}>
         <AuditLog/>
       </div>
 
-      {/* Row 5: API Scanner + Compliance */}
+      {/* Row 6: API Scanner + Compliance */}
       <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:20, marginBottom:20, alignItems:'start' }}>
         <APIScanner/>
         <ComplianceChecklist/>
       </div>
 
-      {/* Row 6: Security Settings (full width) */}
+      {/* Row 7: Security Settings (full width) */}
       <div style={{ marginBottom:20 }}>
         <SecuritySettings/>
       </div>

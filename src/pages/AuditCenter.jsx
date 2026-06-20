@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const FRAMEWORKS = ['SOC2', 'ISO27001', 'GDPR', 'HIPAA', 'PCI-DSS'];
 const AUDIT_EVENTS = [
@@ -52,9 +52,39 @@ export default function AuditCenter() {
   const [tab, setTab] = useState('events');
   const [generating, setGenerating] = useState(false);
   const [generated, setGenerated] = useState(false);
+  const [events, setEvents] = useState([]);
   const score = 73;
 
-  const filtered = AUDIT_EVENTS.filter(e =>
+  const fetchEvents = async () => {
+    try {
+      const res = await fetch('/api/system/audit-logs');
+      const data = await res.json();
+      if (data.success && Array.isArray(data.logs)) {
+        const mapped = data.logs.map((log, idx) => ({
+          id: log.id || idx + 1,
+          who: log.user,
+          what: log.action + (log.details ? ` (${log.details})` : ''),
+          when: log.ts,
+          where: log.ip,
+          result: log.result === 'Allow' ? 'SUCCESS' : 'FAIL'
+        }));
+        setEvents(mapped);
+      } else {
+        setEvents(AUDIT_EVENTS);
+      }
+    } catch (e) {
+      console.error(e);
+      setEvents(AUDIT_EVENTS);
+    }
+  };
+
+  useEffect(() => {
+    fetchEvents();
+    const interval = setInterval(fetchEvents, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const filtered = events.filter(e =>
     e.who.includes(search) || e.what.toLowerCase().includes(search.toLowerCase()) || e.where.includes(search)
   );
 
