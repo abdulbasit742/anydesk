@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const C = {
   gold: '#f5b731',
@@ -402,7 +402,15 @@ export default function CodeEditor() {
   const [findOpen, setFindOpen] = useState(false);
   const [findQuery, setFindQuery] = useState('');
   const [toolState, setToolState] = useState({});
+  const [historyIndex, setHistoryIndex] = useState(-1);
   const textareaRef = useRef(null);
+  const terminalBottomRef = useRef(null);
+
+  useEffect(() => {
+    if (showTerminal) {
+      terminalBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [terminalHistory, showTerminal]);
 
   const currentCode = files[activeTab] || '';
 
@@ -452,24 +460,122 @@ export default function CodeEditor() {
     setToolState(prev => ({ ...prev, [key]: 'loading' }));
     setTimeout(() => {
       setToolState(prev => ({ ...prev, [key]: 'success' }));
-      if (key === 'save') setUnsaved(prev => prev.filter(u => u !== activeTab));
+      if (key === 'save') {
+        setUnsaved(prev => prev.filter(u => u !== activeTab));
+      } else if (key === 'run') {
+        const timeStr = new Date().toLocaleTimeString();
+        setTerminalHistory(prev => [
+          ...prev,
+          {
+            cmd: `npm run dev -- --file=${activeTab}`,
+            out: [
+              `[${timeStr}] Starting build and execution for ${activeTab}...`,
+              `[${timeStr}] Running static analysis...`,
+              `[${timeStr}] Compiled successfully.`,
+              `[${timeStr}] Output Log:`,
+              `----------------------------------------`,
+              `Hello from ${activeTab}!`,
+              `Database connection initialized.`,
+              `API routes loaded.`,
+              `----------------------------------------`,
+              `Execution completed successfully with exit code 0.`
+            ]
+          }
+        ]);
+        setShowTerminal(true);
+      }
       setTimeout(() => setToolState(prev => ({ ...prev, [key]: '' })), 2000);
     }, 1000);
   };
 
   const handleTerminalSubmit = (e) => {
     e.preventDefault();
-    if (!terminalInput.trim()) return;
-    const fakeOutputs = {
-      'ls': ['App.jsx  index.js  App.css  index.css', 'components/  public/'],
-      'pwd': ['/home/user/project'],
-      'node -v': ['v20.11.0'],
-      'npm -v': ['10.2.4'],
-      'clear': [],
-    };
-    const out = fakeOutputs[terminalInput.trim()] || [`bash: ${terminalInput.trim()}: command not found`];
-    setTerminalHistory(prev => [...prev, { cmd: terminalInput.trim(), out }]);
+    const input = terminalInput.trim();
+    if (!input) return;
+
+    setHistoryIndex(-1);
+
+    if (input === 'clear') {
+      setTerminalHistory([]);
+      setTerminalInput('');
+      return;
+    }
+
+    let out;
+    if (input.startsWith('cat ')) {
+      const fileName = input.slice(4).trim();
+      if (files[fileName] !== undefined) {
+        out = files[fileName].split('\n');
+      } else {
+        out = [`cat: ${fileName}: No such file or directory`];
+      }
+    } else {
+      const fakeOutputs = {
+        'ls': [Object.keys(files).join('  ')],
+        'pwd': ['/home/user/project'],
+        'node -v': ['v20.11.0'],
+        'npm -v': ['10.2.4'],
+        'npm install': ['added 1247 packages in 12s', '✓ Dependencies installed'],
+        'npm start': ['Starting development server...', '✓ Compiled successfully!', '  Local: http://localhost:3000'],
+        'git status': unsaved.length > 0
+          ? ['On branch main', 'Changes not staged for commit:', ...unsaved.map(u => `  modified: ${u}`)]
+          : ['On branch main', 'Your branch is up to date with \'origin/main\'.', 'nothing to commit, working tree clean'],
+        'git add .': [],
+        'git commit -m "feat: add dashboard"': ['[main a3f9c12] feat: add dashboard', '3 files changed, 47 insertions(+)'],
+        'help': [
+          'Available commands:',
+          '  ls          - List files in current project',
+          '  cat <file>  - Display contents of a file',
+          '  pwd         - Print working directory',
+          '  node -v     - Print Node.js version',
+          '  npm -v      - Print npm version',
+          '  clear       - Clear terminal screen',
+          '  git status  - Show working tree status'
+        ]
+      };
+      out = fakeOutputs[input] || [`bash: ${input}: command not found`];
+    }
+
+    setTerminalHistory(prev => [...prev, { cmd: input, out }]);
     setTerminalInput('');
+  };
+
+  const handleTerminalKeyDown = (e) => {
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      const commands = terminalHistory.map(h => h.cmd).filter(Boolean);
+      if (commands.length === 0) return;
+
+      setHistoryIndex(prev => {
+        const nextIndex = prev + 1;
+        if (nextIndex < commands.length) {
+          setTerminalInput(commands[commands.length - 1 - nextIndex]);
+          return nextIndex;
+        }
+        return prev;
+      });
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      const commands = terminalHistory.map(h => h.cmd).filter(Boolean);
+      setHistoryIndex(prev => {
+        const nextIndex = prev - 1;
+        if (nextIndex >= 0 && commands.length > 0) {
+          setTerminalInput(commands[commands.length - 1 - nextIndex]);
+          return nextIndex;
+        }
+        setTerminalInput('');
+        return -1;
+      });
+    } else if (e.key === 'Tab') {
+      e.preventDefault();
+      const input = terminalInput.trim().toLowerCase();
+      if (!input) return;
+      const candidates = ['ls', 'pwd', 'node -v', 'npm -v', 'npm start', 'npm install', 'git status', 'git add .', 'git commit', 'clear', 'cat'];
+      const match = candidates.find(c => c.startsWith(input));
+      if (match) {
+        setTerminalInput(match);
+      }
+    }
   };
 
   const sendAiMessage = async () => {
@@ -646,10 +752,12 @@ export default function CodeEditor() {
                   <input
                     value={terminalInput}
                     onChange={e => setTerminalInput(e.target.value)}
+                    onKeyDown={handleTerminalKeyDown}
                     style={{ flex: 1, background: 'none', border: 'none', outline: 'none', color: C.text, fontSize: 12, fontFamily: "'DM Mono', monospace", caretColor: C.gold }}
                     placeholder="type a command…"
                   />
                 </form>
+                <div ref={terminalBottomRef} />
               </div>
             </div>
           )}

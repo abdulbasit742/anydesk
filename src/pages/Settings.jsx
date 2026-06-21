@@ -464,7 +464,7 @@ export default function Settings() {
         for (let i = 1; i < lines.length; i++) {
           const rowValues = parseCSVRow(lines[i]);
           if (rowValues.length <= Math.max(projNameIdx, taskTitleIdx)) continue;
-          
+
           const projName = rowValues[projNameIdx]?.trim();
           if (!projName) continue;
 
@@ -483,7 +483,7 @@ export default function Settings() {
             const matchAcc = accounts?.find(a => a.email?.trim().toLowerCase() === assignedEmail.toLowerCase());
             const accountId = matchAcc ? matchAcc.id : (accounts?.[0]?.id || '');
 
-            const subtasks = subtasksRaw 
+            const subtasks = subtasksRaw
               ? subtasksRaw.split(';').filter(Boolean).map((title, sIdx) => ({
                   id: `sub-${Math.random().toString(36).slice(2, 6)}-${sIdx}`,
                   title: title.replace(/\\;/g, ';').trim(),
@@ -514,7 +514,7 @@ export default function Settings() {
           projectNames.forEach(pName => {
             const parsedTasks = projectsMap[pName];
             const existingIdx = updatedProjects.findIndex(p => p.name.trim().toLowerCase() === pName.trim().toLowerCase());
-            
+
             if (existingIdx !== -1) {
               const existingProj = updatedProjects[existingIdx];
               updatedProjects[existingIdx] = {
@@ -605,10 +605,10 @@ export default function Settings() {
     if (pingLoading) return;
     setPingLoading(true);
     setConsoleLogs(prev => [...prev, "> INITIALIZING TELEMETRY CONNECTIONS PING..."]);
-    
+
     await new Promise(r => setTimeout(r, 400));
     setConsoleLogs(prev => [...prev, "> [AUTH] Requesting handshake authorization on connected slots..."]);
-    
+
     await new Promise(r => setTimeout(r, 300));
     const activePlats = accounts.map(a => a.platform);
     const uniquePlats = [...new Set(activePlats)];
@@ -1000,7 +1000,7 @@ export default function Settings() {
             </div>
           ))}
         </div>
-        
+
         {/* Browser Quota metrics analyzer */}
         <div style={{ marginBottom: 20 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: 'var(--muted)', marginBottom: 4 }}>
@@ -1077,7 +1077,7 @@ export default function Settings() {
                 Compile and download local database snapshots of your active project workspaces.
               </div>
             </div>
-            
+
             <div style={{ marginTop: 'auto' }}>
               <select
                 id="export-proj-select"
@@ -1088,9 +1088,9 @@ export default function Settings() {
                   <option key={p.id} value={p.id}>{p.name}</option>
                 ))}
               </select>
-              
-              <button 
-                className="btn btn-gold btn-sm" 
+
+              <button
+                className="btn btn-gold btn-sm"
                 style={{ width: '100%', justifyContent: 'center' }}
                 onClick={() => {
                   const sel = document.getElementById('export-proj-select')?.value;
@@ -1099,7 +1099,7 @@ export default function Settings() {
                     toast.error('No projects available for export.');
                     return;
                   }
-                  
+
                   // Construct CSV
                   let csvContent = "Project Name,Task Title,Task Description,Lane,Priority,Assigned Account,Subtask List\n";
                   targets.forEach(p => {
@@ -1111,7 +1111,7 @@ export default function Settings() {
                         const assignedAcc = store.accounts?.find(a => a.id === t.accountId);
                         const assignedEmail = assignedAcc ? assignedAcc.email : '';
                         const subtasksStr = (t.subtasks || []).map(s => s.title.replace(/;/g, '\\;')).join(';');
-                        
+
                         csvContent += `"${p.name.replace(/"/g, '""')}",` +
                                       `"${t.title.replace(/"/g, '""')}",` +
                                       `"${(t.desc || '').replace(/"/g, '""')}",` +
@@ -1122,7 +1122,7 @@ export default function Settings() {
                       });
                     }
                   });
-                  
+
                   const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
                   const url = URL.createObjectURL(blob);
                   const a = document.createElement('a');
@@ -1141,7 +1141,7 @@ export default function Settings() {
           {/* Import card sub-area */}
           <div style={{ background: 'var(--surface2)', padding: 16, borderRadius: 10, border: '1px solid var(--border)', display: 'flex', flexDirection: 'column' }}>
             <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--teal)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Import Loader</div>
-            
+
             {/* Drag & Drop zone */}
             <div
               id="csv-drag-zone"
@@ -1173,7 +1173,7 @@ export default function Settings() {
               <span style={{ fontSize: 18, marginBottom: 4 }}>📄</span>
               <span style={{ fontSize: 10.5, fontWeight: 700, color: '#e4e4ed' }}>Drag CSV here or browse</span>
               <span style={{ fontSize: 8.5, color: 'var(--muted)', marginTop: 2 }}>Supports project tasks & subtasks</span>
-              
+
               <input
                 id="csv-file-picker"
                 type="file"

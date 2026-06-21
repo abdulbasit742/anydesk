@@ -265,7 +265,7 @@ export default function AddAccountModal({ open, onClose, onNav }) {
   return (
     <div className="overlay" onClick={onClose}>
       <div className="modal" onClick={e => e.stopPropagation()} style={{ maxWidth: 500 }}>
-        
+
         {/* Modal Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
           <div className="modal-title" style={{ margin: 0 }}>
@@ -294,7 +294,7 @@ export default function AddAccountModal({ open, onClose, onNav }) {
             <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 14 }}>
               Choose which platform account you want to integrate into Bolt Studio Pro
             </div>
-            
+
             <div className="platform-grid">
               {PLATFORMS.map(pl => (
                 <div
@@ -452,7 +452,7 @@ export default function AddAccountModal({ open, onClose, onNav }) {
                   placeholder={p.credPlaceholder}
                   style={{ fontFamily: 'DM Mono, monospace' }}
                 />
-                
+
                 {/* Visual Monospace Token Helper */}
                 <div style={{ marginTop: 10, padding: 10, background: 'rgba(245,183,49,0.06)', borderRadius: 8, border: '1px solid rgba(245,183,49,0.15)' }}>
                   <div style={{ fontSize: 11.5, fontWeight: 700, color: 'var(--gold)', marginBottom: 4 }}>

@@ -397,7 +397,7 @@ export default function AIInsights() {
               <span style={{ fontSize:15, fontWeight:700, color:V.text }}>📋 Live AI Activity Digest</span>
               <span style={{ fontSize: 10, color: 'var(--teal)', background: 'rgba(34,211,238,0.05)', padding: '2px 8px', borderRadius: 4, fontFamily: 'DM Mono, monospace' }}>Real-time telemetry</span>
             </div>
-            
+
             <div style={{ display:'grid', gridTemplateColumns:'220px 1fr', gap:20, alignItems: 'start' }}>
               {/* Digest KPI grid */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>

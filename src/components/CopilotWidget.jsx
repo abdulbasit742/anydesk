@@ -20,7 +20,7 @@ export default function CopilotWidget({ onNav, currentPage }) {
     if (!trimmed) return;
 
     sound.play('click');
-    
+
     const userMsg = { sender: 'user', text: trimmed, ts: new Date() };
     setMessages(prev => [...prev, userMsg]);
     setInput('');
@@ -68,7 +68,7 @@ export default function CopilotWidget({ onNav, currentPage }) {
 
   return (
     <div style={{ position: 'fixed', bottom: 42, right: 24, zIndex: 9999, fontFamily: '"DM Mono", monospace' }}>
-      
+
       {/* Floating trigger Bubble */}
       <button
         onClick={() => {

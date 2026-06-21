@@ -105,7 +105,7 @@ export default function ContainerManager() {
 
     const target = containers.find(c => c.id === id);
     if (target) {
-      const logMsg = action === 'start' 
+      const logMsg = action === 'start'
         ? `[SYSTEM] Started container ${target.name} [${target.image}]`
         : `[SYSTEM] Stopped container ${target.name} gracefully.`;
       setLogs(prev => [...prev, logMsg]);
@@ -128,7 +128,7 @@ export default function ContainerManager() {
     const target = containers.find(c => c.id === id);
     if (target) {
       setLogs(prev => [
-        ...prev, 
+        ...prev,
         `[SYSTEM] Triggering restart request for ${target.name}...`,
         `[SYSTEM] Sending SIGTERM...`,
         `[SYSTEM] Container rebooted. Upgraded thread mappings.`
@@ -159,7 +159,7 @@ export default function ContainerManager() {
 
   return (
     <div style={{ padding: '0 0 80px', fontFamily: 'Syne, sans-serif', background: V.surface, minHeight: '100vh' }}>
-      
+
       {/* HERO SECTION */}
       <div style={{ background: 'linear-gradient(135deg, #0e0e16 0%, #101824 50%, #150d18 100%)', borderBottom: `1px solid ${V.border}`, padding: '32px 32px 28px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
@@ -198,7 +198,7 @@ export default function ContainerManager() {
       </div>
 
       <div style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: 24 }}>
-        
+
         {/* TABS */}
         <div style={{ display: 'flex', gap: 6, background: V.surface2, borderRadius: 10, padding: 5, border: `1px solid ${V.border}`, width: 'fit-content' }}>
           {[
@@ -212,7 +212,7 @@ export default function ContainerManager() {
         {/* MICROSERVICES DECK */}
         {activeTab === 'services' && (
           <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 24, animation: 'container-fadeup 0.3s ease' }}>
-            
+
             {/* LEFT CONTAINER GRID */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {containers.map(c => (
@@ -228,7 +228,7 @@ export default function ContainerManager() {
                     `[${c.name}] Database handshake confirmed. Connection pool size: 10`,
                   ]);
                 }} className="container-card" style={{ background: V.surface2, border: `1px solid ${selectedId === c.id ? V.gold : V.border}`, borderRadius: 14, padding: '16px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', transition: 'all 0.2s', gap: 16 }}>
-                  
+
                   {/* Icon & Name */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                     <span style={{ fontSize: 22 }}>{c.status === 'running' ? '🟢' : '🔴'}</span>
@@ -288,7 +288,7 @@ export default function ContainerManager() {
 
             {/* RIGHT SIDEBAR INSPECTOR */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-              
+
               {/* DETAILS CARD */}
               <div style={{ background: V.surface2, border: `1px solid ${V.border}`, borderRadius: 16, padding: '20px' }}>
                 <div style={{ fontWeight: 800, color: '#fff', fontSize: 14, marginBottom: 16 }}>Inspect: {selectedContainer.name}</div>
@@ -339,7 +339,7 @@ export default function ContainerManager() {
             {/* SVG Visual Network Bridge */}
             <div style={{ border: `1px solid ${V.border}`, borderRadius: 12, padding: 20, background: 'rgba(0,0,0,0.1)', display: 'flex', justifyContent: 'center' }}>
               <svg viewBox="0 0 500 240" width="100%" height="240">
-                
+
                 {/* WAN Edge Gate */}
                 <rect x="20" y="95" width="80" height="50" rx="8" fill="rgba(34,211,238,0.1)" stroke={V.teal} strokeWidth="1.5" />
                 <text x="60" y="125" fill="#fff" fontSize="11" textAnchor="middle" fontWeight="bold">WAN EDGE</text>

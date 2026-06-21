@@ -164,7 +164,7 @@ export default function Affiliates() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-      
+
       {/* ─── Hero Header ─── */}
       <div style={{
         background: 'linear-gradient(135deg, rgba(34,211,238,0.06) 0%, rgba(167,139,250,0.03) 100%)',
@@ -224,7 +224,7 @@ export default function Affiliates() {
             />
           </div>
         </div>
-        
+
         <div style={{ display: 'flex', gap: 12 }}>
           <input
             type="text"
@@ -276,7 +276,7 @@ export default function Affiliates() {
       {/* Tab 1: Overview */}
       {activeTab === 'overview' && (
         <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 20 }}>
-          
+
           {/* Daily clicks chart */}
           <Card>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
@@ -287,14 +287,14 @@ export default function Affiliates() {
                 </span>
               )}
             </div>
-            
+
             <div style={{ height: 160, background: '#0e0e16', border: `1px solid ${V.border}`, borderRadius: 8, padding: '20px 12px 12px 12px', position: 'relative' }}>
               <svg style={{ width: '100%', height: '100%' }}>
                 {chartData.map((item, idx) => {
                   const x = 50 + idx * 60;
                   const clicksH = (item.clicks / 250) * 100;
                   const convH = (item.conv / 10) * 100;
-                  
+
                   return (
                     <g
                       key={idx}
@@ -313,7 +313,7 @@ export default function Affiliates() {
                 })}
               </svg>
             </div>
-            
+
             <div style={{ display: 'flex', gap: 20, marginTop: 12, fontSize: 11, fontFamily: 'DM Mono, monospace', color: V.muted }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                 <span style={{ width: 8, height: 8, background: V.purple, borderRadius: 2 }} /> Click count
@@ -370,7 +370,7 @@ export default function Affiliates() {
                   <div style={{ fontSize: 24 }}>{asset.icon}</div>
                   <span style={{ fontSize: 12, fontWeight: 700 }}>{asset.title}</span>
                   <span style={{ fontSize: 9.5, color: V.muted, fontFamily: 'DM Mono, monospace' }}>{asset.type}</span>
-                  
+
                   {isDownloading && downloadProgress !== null ? (
                     <div style={{ width: '100%', height: 4, background: V.surface, borderRadius: 2, overflow: 'hidden', marginTop: 10 }}>
                       <div style={{ width: `${downloadProgress}%`, height: '100%', background: V.purple, borderRadius: 2 }} />
@@ -399,7 +399,7 @@ export default function Affiliates() {
           <Card>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14, flexWrap: 'wrap', gap: 10 }}>
               <SectionTitle color="var(--teal)">Email Copy Swipes</SectionTitle>
-              
+
               <div style={{ display: 'flex', gap: 8 }}>
                 <input
                   type="text" placeholder="Recipient First Name"
@@ -456,7 +456,7 @@ export default function Affiliates() {
       {/* Tab 3: Affiliate Payouts & request wizard */}
       {activeTab === 'payouts' && (
         <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 20 }}>
-          
+
           {/* Payout records table */}
           <Card style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             <SectionTitle color="var(--gold)">Affiliate Payout History</SectionTitle>
@@ -498,7 +498,7 @@ export default function Affiliates() {
           <Card>
             <SectionTitle color="var(--teal)">Request Commission Payout</SectionTitle>
             <form onSubmit={handlePayoutRequestSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              
+
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                   <span style={{ fontSize: 11, color: V.muted }}>Method</span>
@@ -510,7 +510,7 @@ export default function Affiliates() {
                     <option value="crypto">Crypto Wallet</option>
                   </select>
                 </div>
-                
+
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                   <span style={{ fontSize: 11, color: V.muted }}>Amount ($)</span>
                   <input

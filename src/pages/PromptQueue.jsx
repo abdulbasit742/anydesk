@@ -281,7 +281,7 @@ export default function PromptQueue() {
 
       {/* Main split grid */}
       <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 20 }}>
-        
+
         {/* Left: Queue Items */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <Card>

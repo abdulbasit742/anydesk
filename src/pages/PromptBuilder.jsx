@@ -576,7 +576,7 @@ export default function PromptBuilder({ onNav }) {
                         </div>
                       );
                     }
-                    
+
                     if (text.includes('auth') || text.includes('login') || text.includes('secure')) {
                       return (
                         <div style={{ width: '100%', maxWidth: 280, background: 'var(--surface2)', borderRadius: 8, padding: 16, border: '1px solid var(--border)', animation: 'fadeIn 0.5s ease', display: 'flex', flexDirection: 'column', gap: 8, textAlign: 'left' }}>

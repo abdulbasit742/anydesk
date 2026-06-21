@@ -27,7 +27,7 @@ function saveScheduledJobs(jobs) {
 /** Create and add a new scheduled job */
 export function scheduleJob({ prompt, targetIds, scheduledAt }) {
   const jobs = getScheduledJobs();
-  
+
   const newJob = {
     id: 'job_' + Math.random().toString(36).slice(2, 10),
     prompt: prompt.trim(),
@@ -37,7 +37,7 @@ export function scheduleJob({ prompt, targetIds, scheduledAt }) {
     createdAt: new Date().toISOString(),
     results: null
   };
-  
+
   jobs.push(newJob);
   saveScheduledJobs(jobs);
   return newJob;
@@ -54,7 +54,7 @@ export function cancelJob(id) {
 /**
  * Initializes the background scheduler loop.
  * Sweeps for pending jobs and fires them if they are due.
- * 
+ *
  * @param {function} onJobTriggered - Optional callback notifying when a job starts
  */
 let schedulerInterval = null;
@@ -79,7 +79,7 @@ export function startScheduler(onJobTriggered) {
         try {
           // Trigger the fleet dispatch
           const result = await sendFleetPrompt(job.prompt, job.targetIds);
-          
+
           job.status = result.success ? 'completed' : 'failed';
           job.results = {
             successCount: result.successCount || 0,

@@ -97,7 +97,7 @@ export default function DbManager() {
     setTimeout(() => {
       setExecuting(false);
       const q = sqlQuery.trim().toLowerCase();
-      
+
       if (q.includes('select * from users')) {
         setQueryResults(TABLES[0].mockData);
         sound.play('success');
@@ -116,7 +116,7 @@ export default function DbManager() {
 
   return (
     <div style={{ padding: '0 0 80px', fontFamily: 'Syne, sans-serif', background: V.surface, minHeight: '100vh' }}>
-      
+
       {/* HERO HEADER */}
       <div style={{ background: 'linear-gradient(135deg, #0e0e16 0%, #101920 50%, #18130d 100%)', borderBottom: `1px solid ${V.border}`, padding: '32px 32px 28px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
@@ -147,7 +147,7 @@ export default function DbManager() {
       </div>
 
       <div style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: 24 }}>
-        
+
         {/* TABS */}
         <div style={{ display: 'flex', gap: 6, background: V.surface2, borderRadius: 10, padding: 5, border: `1px solid ${V.border}`, width: 'fit-content' }}>
           {[
@@ -162,7 +162,7 @@ export default function DbManager() {
         {/* SCHEMA EXPLORER TAB */}
         {activeTab === 'explorer' && (
           <div style={{ display: 'grid', gridTemplateColumns: '240px 1.2fr 1fr', gap: 24, animation: 'db-fadeup 0.3s ease' }}>
-            
+
             {/* TABLES LIST */}
             <div style={{ background: V.surface2, border: `1px solid ${V.border}`, borderRadius: 16, padding: '16px', display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: V.muted, textTransform: 'uppercase', letterSpacing: '0.4px', marginBottom: 6 }}>Tables</div>
@@ -234,7 +234,7 @@ export default function DbManager() {
             {/* ER Diagram Canvas */}
             <div style={{ border: `1px solid ${V.border}`, borderRadius: 12, padding: 20, background: 'rgba(0,0,0,0.1)', display: 'flex', justifyContent: 'center' }}>
               <svg viewBox="0 0 520 220" width="100%" height="220">
-                
+
                 {/* Users Table */}
                 <g>
                   <rect x="20" y="20" width="120" height="90" rx="8" fill="var(--surface3)" stroke={V.gold} strokeWidth="1.5" />
@@ -268,7 +268,7 @@ export default function DbManager() {
                 {/* Relational connectors */}
                 {/* Users to Sessions */}
                 <path d="M 140 60 C 170 60, 170 135, 200 135" fill="none" stroke={V.teal} strokeWidth="1.5" strokeDasharray="3" />
-                
+
                 {/* Users to Broadcasts */}
                 <path d="M 140 80 C 260 80, 260 75, 380 75" fill="none" stroke={V.teal} strokeWidth="1.5" strokeDasharray="3" />
 
@@ -280,7 +280,7 @@ export default function DbManager() {
         {/* SQL QUERY SANDBOX EDITOR */}
         {activeTab === 'sandbox' && (
           <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 24, animation: 'db-fadeup 0.3s ease' }}>
-            
+
             {/* EDITOR */}
             <div style={{ background: V.surface2, border: `1px solid ${V.border}`, borderRadius: 16, padding: '20px', display: 'flex', flexDirection: 'column', gap: 14 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -298,7 +298,7 @@ export default function DbManager() {
               <div style={{ fontWeight: 800, color: '#fff', fontSize: 14 }}>Query Execution Results</div>
               <div style={{ flex: 1, border: `1px solid ${V.border}`, borderRadius: 10, background: '#07070b', padding: 16, fontFamily: 'DM Mono, monospace', fontSize: 11, minHeight: '160px', overflowY: 'auto' }}>
                 {executing && <div style={{ color: V.muted }}>Executing SQL sweep...</div>}
-                
+
                 {!executing && queryError && (
                   <div style={{ color: V.red }}>{queryError}</div>
                 )}

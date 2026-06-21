@@ -347,10 +347,10 @@ export default function AutomationControl() {
     }
     sound.play('click');
     toast.bolt(`⚡ Triggering Credit Relay handoff for ${targetAccount.name}...`);
-    
+
     // Trigger via Central Brain
     brain.triggerAutoRelay(targetAccount);
-    
+
     // Simulate active console logs for real-time visual feedback
     setIsRelayRunning(true);
     setActiveRelayIndex(0);
@@ -360,7 +360,7 @@ export default function AutomationControl() {
       "🔍 Checking credit limits...",
       `🔄 Triggering auto-relay: handoff initiated from ${targetAccount.id.substring(0, 8)}...`
     ]);
-    
+
     let currentIdx = 0;
     const interval = setInterval(() => {
       currentIdx++;
@@ -374,7 +374,7 @@ export default function AutomationControl() {
         clearInterval(interval);
       }
     }, 400);
-    
+
     setTimeout(() => {
       clearInterval(interval);
       setRelayLogs(prev => [
@@ -498,10 +498,10 @@ export default function AutomationControl() {
 
       {/* ─── Preflight & Main Controls Split ─── */}
       <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 20 }}>
-        
+
         {/* Left Side: Preflight check & Credit Relay */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-          
+
           {/* Automation Preflight */}
           <Card>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
@@ -515,7 +515,7 @@ export default function AutomationControl() {
                 {isSyncing ? '⏳ Syncing...' : '⟳ Batch Sync Credentials'}
               </button>
             </div>
-            
+
             <p style={{ fontSize: 12.5, color: 'var(--muted)', margin: '0 0 16px', lineHeight: 1.4 }}>
               Before scheduling runs, verify Google account cookies, OAuth tokens, and credit exhaustion parameters across workspaces.
             </p>
@@ -707,7 +707,7 @@ export default function AutomationControl() {
 
         {/* Right Side: Schedulers & Presets */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-          
+
           {/* Daily Scheduler */}
           <Card>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
@@ -718,7 +718,7 @@ export default function AutomationControl() {
                 color="var(--teal)"
               />
             </div>
-            
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 <span style={{ fontSize: 10, color: 'var(--muted)', fontWeight: 700, textTransform: 'uppercase' }}>

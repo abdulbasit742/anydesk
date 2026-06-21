@@ -1,24 +1,22 @@
+// src/pages/Pricing.jsx
 import { useState } from 'react';
+import { getCheckoutUrl, PRICES, FEATURES } from '../lib/stripe';
 
 export default function Pricing({ onNav }) {
-  const [billingPeriod, setBillingPeriod] = useState('monthly');
-
-  const starterLink = import.meta.env.VITE_STRIPE_STARTER || '#';
-  const proLink = import.meta.env.VITE_STRIPE_PRO || '#';
-
+  const [annual, setAnnual] = useState(false);
 
   const comparisonRows = [
-    { feature: 'AI Accounts Connected', free: '2', starter: '5', pro: '25', agency: 'Unlimited' },
-    { feature: 'AES-256 Client-Side Encryption', free: '✓', starter: '✓', pro: '✓', agency: '✓' },
-    { feature: 'Live Credit Telemetry', free: '✓', starter: '✓', pro: '✓', agency: '✓' },
-    { feature: 'Automatic Credit Relay Switch', free: '—', starter: '✓', pro: '✓', agency: '✓' },
-    { feature: 'Trigger Warning Thresholds', free: '—', starter: '10%-30%', pro: 'Customizable', agency: 'Customizable' },
-    { feature: 'Concurrent Fleet Broadcasts', free: '—', starter: '—', pro: '✓', agency: '✓' },
-    { feature: 'Live Screen Wall Dashboard', free: '—', starter: '—', pro: '12 Screens', agency: 'Unlimited Screens' },
-    { feature: 'Advanced Analytics Logs', free: '—', starter: '—', pro: '✓', agency: '✓' },
-    { feature: 'White Label Telemetry Export', free: '—', starter: '—', pro: '—', agency: '✓' },
-    { feature: 'Dedicated Account Manager', free: '—', starter: '—', pro: '—', agency: '✓' },
-    { feature: 'Response Support SLAs', free: 'Community', starter: 'Email (24h)', pro: 'Priority (4h)', agency: 'Dedicated Slack' }
+    { feature: 'AI Accounts Linked', free: '2', starter: '5', pro: '25', agency: 'Unlimited' },
+    { feature: 'Client-Side Key Encryption (AES-256)', free: '✓', starter: '✓', pro: '✓', agency: '✓' },
+    { feature: 'Manual Credit Refill Alerts', free: '✓', starter: '✓', pro: '✓', agency: '✓' },
+    { feature: 'Automated Credit Relay Pipeline', free: '—', starter: '✓', pro: '✓', agency: '✓' },
+    { feature: 'Relay Warning Thresholds', free: '—', starter: '10%-30%', pro: 'Customizable', agency: 'Customizable' },
+    { feature: 'Concurrent Fleet Prompt Sends', free: '—', starter: '—', pro: '✓', agency: '✓' },
+    { feature: 'Live Screen Wall Dashboard', free: '—', starter: '—', pro: '12 Screens', agency: 'Unlimited' },
+    { feature: 'Advanced Diagnostic Analytics', free: '—', starter: '—', pro: '✓', agency: '✓' },
+    { feature: 'White Label Report Exporting', free: '—', starter: '—', pro: '—', agency: '✓' },
+    { feature: 'Dedicated Support Account Manager', free: '—', starter: '—', pro: '—', agency: '✓' },
+    { feature: 'Response SLA Timeframes', free: 'Community', starter: 'Email (24h)', pro: 'Priority (4h)', agency: 'Dedicated Slack' }
   ];
 
   return (
@@ -38,23 +36,23 @@ export default function Pricing({ onNav }) {
       <section style={styles.heroSection}>
         <h1 style={styles.title}>Flexible Plans for Any Scale</h1>
         <p style={styles.subtitle}>Start with a 7-day free trial. No credit card required. Upgrade when you need more capacity.</p>
-        
+
         {/* Toggle */}
         <div style={styles.pricingToggleContainer}>
-          <button 
-            onClick={() => setBillingPeriod('monthly')} 
+          <button
+            onClick={() => setAnnual(false)}
             style={{
               ...styles.toggleBtn,
-              ...(billingPeriod === 'monthly' ? styles.toggleBtnActive : {})
+              ...(!annual ? styles.toggleBtnActive : {})
             }}
           >
             Monthly
           </button>
-          <button 
-            onClick={() => setBillingPeriod('annual')} 
+          <button
+            onClick={() => setAnnual(true)}
             style={{
               ...styles.toggleBtn,
-              ...(billingPeriod === 'annual' ? styles.toggleBtnActive : {})
+              ...(annual ? styles.toggleBtnActive : {})
             }}
           >
             Annual (Save 33%)
@@ -65,74 +63,80 @@ export default function Pricing({ onNav }) {
       {/* Pricing Cards Grid */}
       <section style={styles.cardsSection}>
         <div style={styles.pricingGrid}>
-          {/* Plan 1 */}
+          {/* Plan 1: Starter */}
           <div style={styles.priceCard}>
             <h3 style={styles.priceCardTitle}>STARTER</h3>
             <div style={styles.priceContainer}>
               <span style={styles.priceVal}>
-                {billingPeriod === 'monthly' ? '$19' : '$12.60'}
+                ${annual ? PRICES.starter.annual : PRICES.starter.monthly}
               </span>
               <span style={styles.pricePeriod}>
-                {billingPeriod === 'monthly' ? '/mo' : '/mo billed annually'}
+                {annual ? '/yr' : '/mo'}
               </span>
             </div>
+            <p style={styles.billingSubtext}>{annual ? 'Billed annually ($190/yr)' : 'Billed monthly'}</p>
             <ul style={styles.priceFeatures}>
-              <li>✓ 5 AI accounts</li>
-              <li>✓ Credit relay system</li>
-              <li>✓ Basic scheduler</li>
-              <li>✓ Email support</li>
+              {FEATURES.starter.map((feat, i) => (
+                <li key={i} style={styles.priceFeaturesLi}>✓ {feat}</li>
+              ))}
             </ul>
-            <button onClick={() => window.open(starterLink, '_blank')} style={styles.priceBtn}>
+            <button
+              onClick={() => window.open(getCheckoutUrl('starter', annual), '_blank')}
+              style={styles.priceBtn}
+            >
               Start Free Trial
             </button>
           </div>
 
-          {/* Plan 2 */}
+          {/* Plan 2: Pro (Featured) */}
           <div style={{...styles.priceCard, ...styles.priceCardFeatured}}>
             <div style={styles.featuredTag}>MOST POPULAR</div>
             <h3 style={styles.priceCardTitle}>PRO</h3>
             <div style={styles.priceContainer}>
               <span style={styles.priceVal}>
-                {billingPeriod === 'monthly' ? '$49' : '$32.60'}
+                ${annual ? PRICES.pro.annual : PRICES.pro.monthly}
               </span>
               <span style={styles.pricePeriod}>
-                {billingPeriod === 'monthly' ? '/mo' : '/mo billed annually'}
+                {annual ? '/yr' : '/mo'}
               </span>
             </div>
+            <p style={styles.billingSubtextFeatured}>{annual ? 'Billed annually ($490/yr)' : 'Billed monthly'}</p>
             <ul style={styles.priceFeatures}>
-              <li>✓ 25 AI accounts</li>
-              <li>✓ Everything in Starter</li>
-              <li>✓ Fleet prompt execution</li>
-              <li>✓ 12-screen agent wall</li>
-              <li>✓ Advanced analytics</li>
-              <li>✓ Priority support</li>
+              {FEATURES.pro.map((feat, i) => (
+                <li key={i} style={styles.priceFeaturesLi}>✓ {feat}</li>
+              ))}
             </ul>
-            <button onClick={() => window.open(proLink, '_blank')} style={styles.priceBtnFeatured}>
+            <button
+              onClick={() => window.open(getCheckoutUrl('pro', annual), '_blank')}
+              style={styles.priceBtnFeatured}
+            >
               Start Free Trial
             </button>
           </div>
 
-          {/* Plan 3 */}
+          {/* Plan 3: Agency */}
           <div style={styles.priceCard}>
             <h3 style={styles.priceCardTitle}>AGENCY</h3>
             <div style={styles.priceContainer}>
               <span style={styles.priceVal}>
-                {billingPeriod === 'monthly' ? '$99' : '$66'}
+                ${annual ? PRICES.agency.annual : PRICES.agency.monthly}
               </span>
               <span style={styles.pricePeriod}>
-                {billingPeriod === 'monthly' ? '/mo' : '/mo billed annually'}
+                {annual ? '/yr' : '/mo'}
               </span>
             </div>
+            <p style={styles.billingSubtext}>{annual ? 'Billed annually ($990/yr)' : 'Billed monthly'}</p>
             <ul style={styles.priceFeatures}>
-              <li>✓ Unlimited accounts</li>
-              <li>✓ Everything in Pro</li>
-              <li>✓ White label dashboards</li>
-              <li>✓ Dedicated support agent</li>
-              <li>✓ Team member profiles</li>
+              {FEATURES.agency.map((feat, i) => (
+                <li key={i} style={styles.priceFeaturesLi}>✓ {feat}</li>
+              ))}
             </ul>
-            <a href="mailto:support@agentflow.ai" style={styles.priceBtnLink}>
-              Contact Us
-            </a>
+            <button
+              onClick={() => window.open(getCheckoutUrl('agency', annual), '_blank')}
+              style={styles.priceBtn}
+            >
+              Get Started
+            </button>
           </div>
         </div>
       </section>
@@ -144,7 +148,7 @@ export default function Pricing({ onNav }) {
           <table style={styles.table}>
             <thead>
               <tr style={styles.trHeader}>
-                <th style={styles.thFirst}>Feature</th>
+                <th style={styles.thFirst}>Feature Capability</th>
                 <th style={styles.th}>Free</th>
                 <th style={styles.th}>Starter</th>
                 <th style={styles.thFeatured}>Pro</th>
@@ -163,23 +167,6 @@ export default function Pricing({ onNav }) {
               ))}
             </tbody>
           </table>
-        </div>
-      </section>
-
-      {/* Questions? Chat with us */}
-      <section style={styles.chatSection}>
-        <div style={styles.chatBox}>
-          <span style={{ fontSize: '36px', marginBottom: '8px', display: 'block' }}>💬</span>
-          <h3 style={{ margin: '0 0 4px 0', fontSize: '18px', color: '#ffffff' }}>Questions? Chat with us</h3>
-          <p style={{ margin: '0 0 16px 0', fontSize: '13px', color: '#8e92b2' }}>
-            We're online and happy to answer any questions about configurations, billing, or platform support.
-          </p>
-          <button 
-            onClick={() => alert('Chat widget activated! (Simulated Crisp chat initialization)')} 
-            style={styles.chatBtn}
-          >
-            Start Live Chat
-          </button>
         </div>
       </section>
     </div>
@@ -334,7 +321,7 @@ const styles = {
   priceContainer: {
     display: 'flex',
     alignItems: 'baseline',
-    marginBottom: '28px',
+    marginBottom: '4px',
   },
   priceVal: {
     fontSize: '40px',
@@ -342,18 +329,35 @@ const styles = {
     color: '#ffffff',
   },
   pricePeriod: {
-    fontSize: '13px',
+    fontSize: '16px',
     color: '#8e92b2',
     marginLeft: '4px',
+  },
+  billingSubtext: {
+    fontSize: '11px',
+    color: '#8e92b2',
+    margin: '0 0 24px 0',
+  },
+  billingSubtextFeatured: {
+    fontSize: '11px',
+    color: '#f5b731',
+    margin: '0 0 24px 0',
+    fontWeight: '600',
   },
   priceFeatures: {
     listStyle: 'none',
     padding: 0,
     margin: '0 0 36px 0',
     flexGrow: 1,
-    fontSize: '13px',
+  },
+  priceFeaturesLi: {
+    fontSize: '13.5px',
     color: '#e2e8f0',
-    lineHeight: 2,
+    marginBottom: '12px',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    lineHeight: 1.4,
   },
   priceBtn: {
     width: '100%',
@@ -378,20 +382,6 @@ const styles = {
     fontSize: '14px',
     cursor: 'pointer',
     textAlign: 'center',
-  },
-  priceBtnLink: {
-    width: '100%',
-    padding: '12px 0',
-    backgroundColor: 'transparent',
-    border: '1px solid rgba(255, 255, 255, 0.15)',
-    color: '#ffffff',
-    borderRadius: '6px',
-    fontWeight: '600',
-    fontSize: '14px',
-    cursor: 'pointer',
-    textAlign: 'center',
-    textDecoration: 'none',
-    display: 'inline-block',
   },
   tableSection: {
     padding: '80px 24px 30px 24px',
@@ -460,29 +450,5 @@ const styles = {
     fontWeight: '600',
     backgroundColor: 'rgba(245, 183, 49, 0.02)',
     borderBottom: '1px solid rgba(255, 255, 255, 0.04)',
-  },
-  chatSection: {
-    padding: '40px 24px',
-    maxWidth: '560px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-  chatBox: {
-    backgroundColor: '#0e0e16',
-    border: '1px solid rgba(255, 255, 255, 0.06)',
-    borderRadius: '12px',
-    padding: '30px',
-    textAlign: 'center',
-  },
-  chatBtn: {
-    padding: '10px 24px',
-    backgroundColor: '#f5b731',
-    color: '#0e0e16',
-    border: 'none',
-    borderRadius: '6px',
-    fontSize: '13px',
-    fontWeight: '600',
-    cursor: 'pointer',
-    transition: 'opacity 0.2s',
   }
 };

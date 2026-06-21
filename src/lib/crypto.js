@@ -10,7 +10,7 @@ async function deriveKey(masterPassword) {
     false,
     ['deriveKey']
   );
-  
+
   return window.crypto.subtle.deriveKey(
     {
       name: 'PBKDF2',
@@ -41,11 +41,11 @@ export async function encrypt(text, passphrase = 'agentflow-default-vault-key') 
       key,
       enc.encode(text)
     );
-    
+
     const combined = new Uint8Array(iv.length + encrypted.byteLength);
     combined.set(iv);
     combined.set(new Uint8Array(encrypted), iv.length);
-    
+
     return btoa(String.fromCharCode(...combined));
   } catch (err) {
     console.error('Encryption wrapper error:', err);
@@ -65,13 +65,13 @@ export async function decrypt(ciphertext, passphrase = 'agentflow-default-vault-
     const combined = Uint8Array.from(atob(ciphertext), c => c.charCodeAt(0));
     const iv = combined.slice(0, 12);
     const data = combined.slice(12);
-    
+
     const decrypted = await window.crypto.subtle.decrypt(
       { name: 'AES-GCM', iv },
       key,
       data
     );
-    
+
     return new TextDecoder().decode(decrypted);
   } catch (err) {
     console.error('Decryption wrapper error:', err);

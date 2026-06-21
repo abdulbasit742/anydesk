@@ -93,7 +93,7 @@ export default function Admin() {
         ];
         const randomEvent = liveEvents[Math.floor(Math.random() * liveEvents.length)];
         setAdminLogs(prev => [...prev.slice(-30), `[${new Date().toLocaleTimeString()}] ${randomEvent}`]);
-        
+
         // MRR fluctuation simulation
         setMrrIncrement(prev => prev + (Math.random() > 0.65 ? 19 : Math.random() > 0.85 ? -49 : 0));
       }
@@ -149,7 +149,7 @@ export default function Admin() {
     const fakeNames = ['Mick Jagger', 'Keith Richards', 'Charlie Watts', 'Ron Wood', 'Brian Jones'];
     const fakeEmails = ['mick@stones.com', 'keith@stones.com', 'charlie@stones.com', 'ronnie@stones.com', 'brian@stones.com'];
     const plansArr = ['trial', 'starter', 'pro', 'agency'];
-    
+
     const newItems = fakeNames.map((name, i) => ({
       name,
       email: fakeEmails[i],
@@ -193,7 +193,7 @@ export default function Admin() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-      
+
       {/* ─── Hero Header ─── */}
       <div style={{
         background: 'linear-gradient(135deg, rgba(245,183,49,0.06) 0%, rgba(34, 211, 238, 0.03) 100%)',
@@ -225,7 +225,7 @@ export default function Admin() {
 
       {/* ─── Revenue Spline Graph & Logger Split ─── */}
       <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 20 }}>
-        
+
         {/* Left Side: SVG line graph */}
         <Card>
           <SectionTitle color="var(--teal)">MRR Growth Spline (Interactive)</SectionTitle>
@@ -269,7 +269,7 @@ export default function Admin() {
                 position: 'absolute', top: 10, left: 10, background: V.surface3,
                 border: `1px solid ${V.border}`, padding: '4px 8px', borderRadius: 4, fontSize: 10.5
               }}>
-                <span style={{ color: V.muted }}>Day:</span> <span style={{ color: '#fff', fontWeight: 700 }}>{mrrSplinePoints[chartHoverDay].day}</span> | 
+                <span style={{ color: V.muted }}>Day:</span> <span style={{ color: '#fff', fontWeight: 700 }}>{mrrSplinePoints[chartHoverDay].day}</span> |
                 <span style={{ color: V.muted, marginLeft: 6 }}>MRR:</span> <span style={{ color: V.gold, fontWeight: 700 }}>${mrrSplinePoints[chartHoverDay].val}</span>
               </div>
             )}
@@ -296,7 +296,7 @@ export default function Admin() {
               </button>
             </div>
           </div>
-          
+
           <input
             type="text" placeholder="Filter console logs..."
             value={consoleLogSearch} onChange={e => setConsoleLogSearch(e.target.value)}
@@ -411,7 +411,7 @@ export default function Admin() {
       <Card>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, flexWrap: 'wrap', gap: 12 }}>
           <SectionTitle color="var(--purple)">Registered SaaS Accounts</SectionTitle>
-          
+
           <div style={{ display: 'flex', gap: 10 }}>
             {/* Database seeder actions */}
             <button

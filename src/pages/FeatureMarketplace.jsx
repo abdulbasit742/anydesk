@@ -55,7 +55,7 @@ function generateFeatures() {
     const size = ((i * 7) % 950) + 12; // KB
     const rating = (4.0 + ((i * 3) % 11) / 10).toFixed(1);
     const downloads = ((i * 149) % 85000) + 120;
-    
+
     let desc = descriptions[(i + i % 3) % descriptions.length];
     if (isCustom) {
       desc += ` Special premium workspace extension requested for customization phase.`;
@@ -101,7 +101,7 @@ export default function FeatureMarketplace() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [activeStatus, setActiveStatus] = useState('all');
   const [sortBy, setSortBy] = useState('id-asc');
-  
+
   // Pagination
   const [page, setPage] = useState(1);
   const [jumpPage, setJumpPage] = useState('');
@@ -136,7 +136,7 @@ export default function FeatureMarketplace() {
     setInstallProgress(0);
 
     addLog(`Initiating installation sequence for ${feature.id} (${feature.title})...`, 'INIT');
-    
+
     let step = 0;
     const interval = setInterval(() => {
       step += 1;
@@ -154,7 +154,7 @@ export default function FeatureMarketplace() {
         clearInterval(interval);
         setInstallingId(null);
         setInstallProgress(0);
-        
+
         // Save installed status
         const next = { ...installed, [feature.id]: 'active' };
         saveInstalled(next);
@@ -221,7 +221,7 @@ export default function FeatureMarketplace() {
     sound.play('click');
     setBulkTesting(true);
     addLog("Starting sequential diagnostic sweep for Categories 1 to 6...", "DIAG");
-    
+
     let currentCatIndex = 0;
     const interval = setInterval(() => {
       if (currentCatIndex >= CATEGORIES.length) {
@@ -273,7 +273,7 @@ export default function FeatureMarketplace() {
     // Filter by Text Search
     if (search.trim()) {
       const q = search.trim().toLowerCase();
-      result = result.filter(f => 
+      result = result.filter(f =>
         f.id.toLowerCase().includes(q) ||
         f.title.toLowerCase().includes(q) ||
         f.description.toLowerCase().includes(q) ||
@@ -336,7 +336,7 @@ export default function FeatureMarketplace() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      
+
       {/* ── Header Row ────────────────────────────────────────────── */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -442,7 +442,7 @@ export default function FeatureMarketplace() {
               </div>
             </div>
           </div>
-          
+
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             <button
               onClick={handleBulkInstall}
@@ -547,7 +547,7 @@ export default function FeatureMarketplace() {
         gap: 14,
       }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
-          
+
           {/* Search Box */}
           <div style={{ position: 'relative', flex: 1, minWidth: 240 }}>
             <span style={{ position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)', fontSize: 12, color: 'var(--muted)', pointerEvents: 'none' }}>🔍</span>
@@ -571,7 +571,7 @@ export default function FeatureMarketplace() {
               onBlur={e => e.target.style.borderColor = 'var(--border)'}
             />
             {search && (
-              <button 
+              <button
                 onClick={() => setSearch('')}
                 style={{
                   position: 'absolute', right: 10, top: '50%', transform: 'translateY(-50%)',
@@ -680,7 +680,7 @@ export default function FeatureMarketplace() {
 
       {/* ── 10,000 Virtual Feature Listings List ───────────────────────── */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        
+
         {paginatedItems.map((feat) => {
           const status = installed[feat.id];
           const isInstalled = !!status;
@@ -704,7 +704,7 @@ export default function FeatureMarketplace() {
               onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'}
               onMouseLeave={e => e.currentTarget.style.borderColor = isInstalling ? 'var(--gold)' : isActive ? 'var(--teal)' : 'var(--border)'}
             >
-              
+
               {/* Left Column: Title & Info */}
               <div style={{ display: 'flex', flex: 1, minWidth: 280, gap: 14, alignItems: 'flex-start' }}>
                 <span style={{
@@ -714,7 +714,7 @@ export default function FeatureMarketplace() {
                 }}>
                   {feat.categoryIcon}
                 </span>
-                
+
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                     <span style={{ fontSize: 13, fontWeight: 800, color: '#fff' }}>
@@ -723,7 +723,7 @@ export default function FeatureMarketplace() {
                     <span style={{ fontSize: 9.5, color: 'var(--muted)', fontFamily: 'DM Mono, monospace' }}>
                       {feat.version}
                     </span>
-                    
+
                     {/* Unique Identifier Badge */}
                     <span style={{
                       fontSize: 8.5,
@@ -806,7 +806,7 @@ export default function FeatureMarketplace() {
 
               {/* Right Column: Actions */}
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                
+
                 {/* Installation / Active state buttons */}
                 {isInstalling ? (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'flex-end', minWidth: 100 }}>
@@ -840,7 +840,7 @@ export default function FeatureMarketplace() {
                   </button>
                 ) : (
                   <div style={{ display: 'flex', gap: 6 }}>
-                    
+
                     {/* Toggle enable / disable */}
                     <button
                       onClick={() => toggleFeatureActive(feat.id)}
@@ -963,7 +963,7 @@ export default function FeatureMarketplace() {
           </div>
 
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
-            
+
             {/* Direct Jump to Page input */}
             <form onSubmit={handleJumpPage} style={{ display: 'flex', alignItems: 'center', gap: 6, marginRight: 8 }}>
               <span style={{ fontSize: 10.5, color: 'var(--muted)' }}>Go to Page:</span>
@@ -1125,7 +1125,7 @@ export default function FeatureMarketplace() {
             if (log.includes('[SUCCESS]') || log.includes('[OK]')) color = 'var(--teal)';
             if (log.includes('[WARN]')) color = '#f87171'; // Red/amber
             if (log.includes('[INIT]') || log.includes('[DIAG]')) color = 'var(--gold)';
-            
+
             return (
               <div key={idx} style={{ color }}>
                 {log}

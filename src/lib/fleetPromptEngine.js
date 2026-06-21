@@ -6,7 +6,7 @@ import { relayBroadcast } from './relayEngine';
 /**
  * Sends a prompt to a fleet of target accounts.
  * Deducts credits and runs connection tests for each account.
- * 
+ *
  * @param {string} prompt - The command or instruction to dispatch
  * @param {string[]} targetIds - List of account IDs in the fleet
  * @param {number} costPerAccount - Credit cost per target account (default 1)
@@ -27,10 +27,10 @@ export async function sendFleetPrompt(prompt, targetIds, costPerAccount = 1) {
   for (const accountId of targetIds) {
     // Add artificial network latency delay (300ms - 600ms) for high-fidelity feel
     await new Promise(resolve => setTimeout(resolve, 200 + Math.random() * 200));
-    
+
     // Deduct credits and update status
     const tx = relayBroadcast(accountId, costPerAccount);
-    
+
     if (tx.success) {
       successCount++;
       results.push({

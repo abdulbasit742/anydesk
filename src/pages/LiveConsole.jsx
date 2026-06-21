@@ -45,7 +45,7 @@ export default function LiveConsole() {
   const [paused, setPaused]   = useState(false);
   const [autoScroll, setAutoScroll] = useState(true);
   const [liveMode, setLiveMode]     = useState(true);
-  
+
   // Custom font size scale (Feature 20)
   const [fontSize, setFontSize]     = useState(11);
   // Line wrapping toggle (Feature 19)
@@ -172,15 +172,15 @@ export default function LiveConsole() {
           <button onClick={() => { sound.play('click'); setLiveMode(l => !l); }} className={`btn btn-xs ${liveMode ? 'btn-teal' : 'btn-ghost'}`} style={{ fontSize: 10 }}>
             {liveMode ? '● Live' : '○ Live'}
           </button>
-          
+
           <button onClick={() => { sound.play('click'); setPaused(p => !p); }} className={`btn btn-xs ${paused ? 'btn-gold' : 'btn-ghost'}`} style={{ fontSize: 10 }}>
             {paused ? '▶ Resume' : '⏸ Pause'}
           </button>
-          
+
           <button onClick={() => { sound.play('click'); setAutoScroll(a => !a); }} className={`btn btn-xs btn-ghost`} style={{ fontSize: 10, color: autoScroll ? 'var(--teal)' : 'var(--muted)' }}>⬇ Auto</button>
-          
+
           <button onClick={() => { sound.play('click'); setLogs([]); }} className="btn btn-xs btn-ghost" style={{ fontSize: 10 }}>🗑 Clear</button>
-          
+
           {/* Feature 22 Exporter */}
           <button onClick={handleExportFiltered} className="btn btn-xs btn-gold" style={{ fontSize: 10 }}>⬇ Export Log</button>
         </div>

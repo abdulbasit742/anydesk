@@ -93,7 +93,7 @@ export default function LoadBalancer() {
 
   return (
     <div style={{ padding: '0 0 80px', fontFamily: 'Syne, sans-serif', background: V.surface, minHeight: '100vh' }}>
-      
+
       {/* HERO HEADER */}
       <div style={{ background: 'linear-gradient(135deg, #0e0e16 0%, #0f1624 50%, #1a0f12 100%)', borderBottom: `1px solid ${V.border}`, padding: '32px 32px 28px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
@@ -124,13 +124,13 @@ export default function LoadBalancer() {
       </div>
 
       <div style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: 24 }}>
-        
+
         {/* MAIN PANEL GRID */}
         <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 24, animation: 'lb-fadeup 0.3s ease' }}>
-          
+
           {/* LEFT: BACKEND MANAGEMENT TABLE */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            
+
             <div style={{ background: V.surface2, border: `1px solid ${V.border}`, borderRadius: 16, padding: '20px' }}>
               <div style={{ fontWeight: 800, color: '#fff', fontSize: 14, marginBottom: 16 }}>Target Servers Registry</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -147,7 +147,7 @@ export default function LoadBalancer() {
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-                      
+
                       {/* Weight slider */}
                       <div style={{ width: 80 }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 9, color: V.muted }}>
@@ -191,7 +191,7 @@ export default function LoadBalancer() {
 
           {/* RIGHT: ROUTING STRATEGY & TOPOLOGY MAP */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            
+
             {/* STRATEGY PICKER */}
             <div style={{ background: V.surface2, border: `1px solid ${V.border}`, borderRadius: 16, padding: '20px' }}>
               <div style={{ fontWeight: 800, color: '#fff', fontSize: 14, marginBottom: 16 }}>Ingress Routing Strategy</div>
@@ -218,7 +218,7 @@ export default function LoadBalancer() {
               <div style={{ fontWeight: 800, color: '#fff', fontSize: 13.5 }}>Dynamic Load Balancing Topology</div>
               <div style={{ border: `1px solid ${V.border}`, borderRadius: 10, padding: 10, background: 'rgba(0,0,0,0.1)', display: 'flex', justifyContent: 'center' }}>
                 <svg viewBox="0 0 300 220" width="100%" height="220">
-                  
+
                   {/* Load Balancer Gateway Node */}
                   <rect x="10" y="85" width="60" height="50" rx="8" fill="rgba(34,211,238,0.1)" stroke={V.teal} strokeWidth="1.5" />
                   <text x="40" y="114" fill="#fff" fontSize="10" textAnchor="middle" fontWeight="bold">LB GATE</text>
@@ -231,7 +231,7 @@ export default function LoadBalancer() {
                       <g key={srv.id}>
                         <rect x="180" y={targetY - 18} width="110" height="36" rx="6" fill={isOffline ? 'rgba(239,68,68,0.05)' : 'rgba(255,255,255,0.03)'} stroke={isOffline ? V.red : V.border} strokeWidth="1" />
                         <text x="190" y={targetY + 4} fill={isOffline ? V.red : '#fff'} fontSize="9" fontWeight="bold">{srv.name.split(' ')[0]}</text>
-                        
+
                         {/* Connecting splines */}
                         <path d={`M 70 110 C 120 110, 130 ${targetY}, 180 ${targetY}`} fill="none" stroke={isOffline ? 'rgba(239,68,68,0.15)' : V.border} strokeWidth="1.5" />
 

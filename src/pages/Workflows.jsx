@@ -356,7 +356,7 @@ export default function Workflows() {
             }
           };
         });
-        
+
         // Wait simulated delay
         await new Promise(r => setTimeout(r, step.delay * 1000));
       }
@@ -620,7 +620,7 @@ export default function Workflows() {
 
         {/* Outer Canvas Workspace Container */}
         <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 300px', gap: 16, minHeight: 0 }}>
-          
+
           {/* Canvas Board Area */}
           <div style={{
             position: 'relative',
@@ -660,7 +660,7 @@ export default function Workflows() {
                         filter: (isLinkActive || isLinkDone) ? `drop-shadow(0 0 6px ${isLinkActive ? 'var(--gold)' : 'var(--teal)'}50)` : 'none'
                       }}
                     />
-                    
+
                     {/* Animated signal particle along cable vector spline */}
                     {isLinkActive && (
                       <circle r="4.5" fill="var(--gold)">
@@ -775,7 +775,7 @@ export default function Workflows() {
 
           {/* Right Column: Mini Interactive Inspector Drawer */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, minHeight: 0 }}>
-            
+
             {/* active step compiler logs console */}
             {isCurrentlyRunning && runningWfId === w.id && (
               <div className="card" style={{ flex: 1.1, padding: 14, background: '#040406', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, display: 'flex', flexDirection: 'column', gap: 8, minHeight: 0 }}>
@@ -798,7 +798,7 @@ export default function Workflows() {
               <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted2)', textTransform: 'uppercase', borderBottom: '1px solid var(--border)', paddingBottom: 6 }}>
                 🛠️ Node Editor Inspector
               </div>
-              
+
               {canvasActiveEditStepIdx !== null && wSteps[canvasActiveEditStepIdx] ? (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12, flex: 1 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -975,7 +975,7 @@ export default function Workflows() {
         {workflows.map(w => {
           const wSteps = w.steps || [];
           const isWfRunning = w.id === runningWfId && isCurrentlyRunning;
-          
+
           return (
             <div
               key={w.id}
@@ -1013,7 +1013,7 @@ export default function Workflows() {
                 <div style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--muted2)', textTransform: 'uppercase', marginBottom: 8 }}>
                   Automation Pipeline ({wSteps.length} nodes)
                 </div>
-                
+
                 <div className="wf-pipeline">
                   {wSteps.map((step, idx) => {
                     const stepAcc = accounts.find(a => a.id === step.accountId);
@@ -1036,7 +1036,7 @@ export default function Workflows() {
                           ) : (
                             <span style={{ fontSize: 10, fontFamily: 'DM Mono, monospace' }}>{idx + 1}</span>
                           )}
-                          
+
                           {/* Top index badge */}
                           <div className="wf-node-index">
                             {idx + 1}
@@ -1290,7 +1290,7 @@ function WorkflowModal({
 
                 {/* Node details */}
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 6 }}>
-                  
+
                   {/* Account Selector dropdown & Order swapping */}
                   <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                     <div style={{ flex: 1 }}>
@@ -1366,7 +1366,7 @@ function WorkflowModal({
                     >
                       ✨ Optimize Step Prompt
                     </button>
-                    
+
                     <button
                       type="button"
                       className="btn btn-danger btn-xs"

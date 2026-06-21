@@ -67,7 +67,7 @@ export default function Referrals() {
     });
   }, []);
 
-  const referralLink = currentUser?.referral_code 
+  const referralLink = currentUser?.referral_code
     ? `https://agentflow.sh/?ref=${currentUser.referral_code}`
     : 'https://agentflow.sh/?ref=pending_auth';
 
@@ -87,14 +87,14 @@ export default function Referrals() {
     // Delay steps for realistic UI experience
     await new Promise(r => setTimeout(r, 600));
     setSimulationLogs(prev => [...prev, 'Navigating to registration portal with referral payload...']);
-    
+
     await new Promise(r => setTimeout(r, 600));
     const randomSuffix = Math.random().toString(36).slice(2, 6);
     const mockEmail = `ref_user_${randomSuffix}@gmail.com`;
     setSimulationLogs(prev => [...prev, `Submitting credentials verification payload for: ${mockEmail}`]);
 
     await new Promise(r => setTimeout(r, 800));
-    
+
     // Register the user under the mock supabase db using referred_by option
     try {
       const { data, error } = await supabase.auth.signUp({
@@ -112,7 +112,7 @@ export default function Referrals() {
 
       setSimulationLogs(prev => [...prev, `✅ Simulated user successfully signed up! ID: ${data?.user?.id}`]);
       sound.play('success');
-      
+
       // Reload referrals
       loadReferredUsers(currentUser.referral_code);
     } catch (err) {

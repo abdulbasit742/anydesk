@@ -179,12 +179,58 @@ export function StoreProvider({ children }) {
     setState(prev => ({ ...prev, settings: { ...prev.settings, ...updates } }));
   }, [setState]);
 
-  const exportData = useCallback(() => {
-    const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+  const exportData = useCallback(async ({
+    selected = { accounts: true, broadcasts: true, workflows: true, prompts: true, settings: true },
+    format = 'json',
+    includeCreds = false,
+    filename = null
+  } = {}) => {
+    // Build data object based on selection
+    const data = {};
+    if (selected?.accounts) data.accounts = state.accounts.map(acc => includeCreds ? acc : { ...acc, apiKey: undefined, secret: undefined });
+    if (selected?.broadcasts) data.broadcasts = state.broadcasts;
+    if (selected?.workflows) data.workflows = state.workflows;
+    if (selected?.prompts) data.prompts = state.prompts;
+    if (selected?.settings) data.settings = state.settings;
+
+    let content;
+    let mime;
+    let ext;
+    switch (format) {
+      case 'csv':
+        // Simple CSV conversion for top‑level arrays (only accounts for demo)
+        if (data.accounts) {
+          const headers = Object.keys(data.accounts[0] || {});
+          const rows = data.accounts.map(acc => headers.map(h => JSON.stringify(acc[h] ?? '')).join(','));
+          content = [headers.join(','), ...rows].join('\n');
+        } else {
+          content = '';
+        }
+        mime = 'text/csv';
+        ext = 'csv';
+        break;
+      case 'markdown':
+        // Generate a simple markdown report
+        content = '# Export Report\n\n';
+        Object.entries(data).forEach(([key, val]) => {
+          content += `## ${key.charAt(0).toUpperCase() + key.slice(1)}\n`;
+          content += '```json\n' + JSON.stringify(val, null, 2) + '\n```\n\n';
+        });
+        mime = 'text/markdown';
+        ext = 'md';
+        break;
+      case 'json':
+      default:
+        content = JSON.stringify(data, null, 2);
+        mime = 'application/json';
+        ext = 'json';
+    }
+
+    const blob = new Blob([content], { type: mime });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `bolt-studio-pro-export-${new Date().toISOString().slice(0,10)}.json`;
+    a.download = filename || `bolt-export-${new Date().toISOString().slice(0,10)}.${ext}`;
     a.click();
     URL.revokeObjectURL(url);
   }, [state]);

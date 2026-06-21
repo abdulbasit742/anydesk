@@ -6,6 +6,8 @@ import { PlatformIcon, StatusBadge } from '../components/PlatformBadge';
 import { useToast } from '../components/Toast';
 import EmptyState from '../components/EmptyState';
 import { sound } from '../lib/soundEngine';
+import * as planGate from '../lib/planGate';
+import UpgradeModal from '../components/UpgradeModal';
 
 function ago(iso) {
   if (!iso) return 'Never';
@@ -19,6 +21,35 @@ function ago(iso) {
 function getNowIso() {
   return new Date().toISOString();
 }
+
+const normalizeAccount = (a) => {
+  const credits = a.credits !== undefined ? Number(a.credits) : (a.creditBalance !== undefined ? Number(a.creditBalance) : 20);
+  const maxCredits = a.maxCredits !== undefined ? Number(a.maxCredits) : (a.creditLimit !== undefined ? Number(a.creditLimit) : 100);
+  
+  let creditThreshold = 2;
+  if (a.creditThreshold !== undefined) {
+    creditThreshold = Number(a.creditThreshold);
+  } else if (a.threshold !== undefined) {
+    const t = Number(a.threshold);
+    if (t <= 1) {
+      creditThreshold = Math.round(t * maxCredits);
+    } else {
+      creditThreshold = t;
+    }
+  }
+  
+  const threshold = a.threshold !== undefined ? Number(a.threshold) : (maxCredits > 0 ? creditThreshold / maxCredits : 0.2);
+
+  return {
+    ...a,
+    credits,
+    maxCredits,
+    threshold,
+    creditBalance: credits,
+    creditLimit: maxCredits,
+    creditThreshold,
+  };
+};
 
 function getSyncCredits(creditLimit, creditBalance) {
   const creditDelta = Math.floor(Math.random() * 5) - 2;
@@ -35,13 +66,24 @@ function getSweepResult() {
   return { isSuccess, latency: isSuccess ? `${pingTime}ms` : 'FAIL' };
 }
 
-export default function Accounts({ onConnect }) {
-  const [accounts, setAccounts] = useState(() => stateManager.getAccounts().filter(a => !a.deletedAt));
+export default function Accounts({ onConnect, onNav }) {
+  const [accounts, setAccounts] = useState(() => {
+    return stateManager.getAccounts().filter(a => !a.deletedAt).map(normalizeAccount);
+  });
   const toast = useToast();
+  const [showUpgrade, setShowUpgrade] = useState(false);
+
+  const handleConnectClick = () => {
+    if (accounts.length >= planGate.getLimit('accounts')) {
+      setShowUpgrade(true);
+    } else {
+      onConnect();
+    }
+  };
 
   useEffect(() => {
     const refresh = () => {
-      setAccounts(stateManager.getAccounts().filter(a => !a.deletedAt));
+      setAccounts(stateManager.getAccounts().filter(a => !a.deletedAt).map(normalizeAccount));
     };
     bus.on(EVENTS.STATE_CHANGED, refresh);
     bus.on(EVENTS.SYSTEM_TICK, refresh);
@@ -52,9 +94,28 @@ export default function Accounts({ onConnect }) {
   }, []);
 
   const updateAccount = (id, patch) => {
-    stateManager.updateAccount(id, patch);
+    const updatedPatch = { ...patch };
+    if (patch.creditBalance !== undefined) {
+      updatedPatch.credits = Number(patch.creditBalance);
+    } else if (patch.credits !== undefined) {
+      updatedPatch.creditBalance = Number(patch.credits);
+    }
+    if (patch.creditLimit !== undefined) {
+      updatedPatch.maxCredits = Number(patch.creditLimit);
+    } else if (patch.maxCredits !== undefined) {
+      updatedPatch.creditLimit = Number(patch.maxCredits);
+    }
+    if (patch.creditThreshold !== undefined) {
+      const limit = updatedPatch.creditLimit ?? 100;
+      updatedPatch.threshold = limit > 0 ? Number(patch.creditThreshold) / limit : 0.2;
+    } else if (patch.threshold !== undefined) {
+      const limit = updatedPatch.creditLimit ?? 100;
+      const t = Number(patch.threshold);
+      updatedPatch.creditThreshold = t <= 1 ? Math.round(t * limit) : t;
+    }
+    stateManager.updateAccount(id, updatedPatch);
   };
-  
+
   // State for view preferences & filters
   const [showPlatformOverview, setShowPlatformOverview] = useState(true);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'list'
@@ -68,7 +129,7 @@ export default function Accounts({ onConnect }) {
     return 'all';
   });
   const [statusFilter, setStatusFilter] = useState('all');
-  
+
   // Modals & Drawer states
   const [confirmDel, setConfirmDel] = useState(null);
   const [editAcc, setEditAcc] = useState(null);
@@ -91,19 +152,20 @@ export default function Accounts({ onConnect }) {
   const filteredAccounts = useMemo(() => {
     return accounts.filter(a => {
       const pl = PLATFORMS.find(p => p.id === a.platform) || PLATFORMS[0];
-      const matchesSearch = 
+      const matchesSearch =
         a.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (a.email && a.email.toLowerCase().includes(searchQuery.toLowerCase())) ||
         pl.name.toLowerCase().includes(searchQuery.toLowerCase());
-      
+
       const matchesPlatform = platformFilter === 'all' || a.platform === platformFilter;
-      
+
       // Fixed status filter safety checks (Feature 25)
       let matchesStatus;
       if (statusFilter === 'all') matchesStatus = true;
       else if (statusFilter === 'low_credits') matchesStatus = (a.creditBalance || 20) < 15;
+      else if (statusFilter === 'inactive') matchesStatus = a.status === 'inactive' || a.status === 'paused';
       else matchesStatus = a.status === statusFilter;
-      
+
       return matchesSearch && matchesPlatform && matchesStatus;
     });
   }, [accounts, searchQuery, platformFilter, statusFilter]);
@@ -111,9 +173,15 @@ export default function Accounts({ onConnect }) {
   const toggleStatus = (id) => {
     sound.play('click');
     const acc = accounts.find(a => a.id === id);
-    const newStatus = acc.status === 'active' ? 'inactive' : 'active';
-    updateAccount(id, { status: newStatus });
-    toast.success(newStatus === 'active' ? `Enabled ${acc.name}` : `Paused ${acc.name}`);
+    if (!acc) return;
+    const isCurrentlyActive = acc.status === 'active';
+    if (isCurrentlyActive) {
+      stateManager.pauseAccount(id);
+      toast.success(`Paused ${acc.name}`);
+    } else {
+      stateManager.resumeAccount(id);
+      toast.success(`Enabled ${acc.name}`);
+    }
   };
 
   const handleSync = async (id) => {
@@ -122,19 +190,19 @@ export default function Accounts({ onConnect }) {
     if (!acc) return;
     setSyncingId(id);
     toast.info(`Connecting to ${acc.name}...`);
-    
+
     // Simulate active sync verification
     await new Promise(r => setTimeout(r, 1200));
-    
+
     // Update random values for demo interactivity
     const newCredits = getSyncCredits(acc.creditLimit, acc.creditBalance);
-    
+
     updateAccount(id, {
       creditBalance: newCredits,
       status: 'active',
       lastSync: getNowIso()
     });
-    
+
     setSyncingId(null);
     sound.play('success');
     toast.bolt(`Synced ${acc.name} — status is Active`);
@@ -147,7 +215,7 @@ export default function Accounts({ onConnect }) {
     toast.success(
       <span>
         Removed account {acc?.name}.{' '}
-        <button 
+        <button
           onClick={() => {
             stateManager.restoreAccount(id);
             toast.success(`Restored account ${acc?.name}`);
@@ -176,20 +244,20 @@ export default function Accounts({ onConnect }) {
     setSweeping(true);
     sound.play('dispatch');
     toast.info("Initializing multi-platform parallel connection ping sweep...");
-    
+
     await Promise.all(filteredAccounts.map(async (a) => {
       // Small artificial offset to make indicators feel sequential but running in parallel
       await new Promise(r => setTimeout(r, getRandomDelay()));
-      
+
       const { isSuccess, latency } = getSweepResult();
-      
+
       setLatencies(prev => ({ ...prev, [a.id]: latency }));
       updateAccount(a.id, {
         status: isSuccess ? 'active' : 'expired_session',
         lastSync: getNowIso()
       });
     }));
-    
+
     setSweeping(false);
     sound.play('success');
     toast.bolt("✓ Parallel connection ping sweep completed successfully!");
@@ -215,7 +283,15 @@ export default function Accounts({ onConnect }) {
   if (!accounts.length) {
     return (
       <EmptyState icon="🔌" title="No accounts connected" subtitle="Connect your AI platform accounts to manage limits, monitor usage, and broadcast prompts.">
-        <button className="btn btn-gold" onClick={onConnect}>⚡ Connect Account</button>
+        <button className="btn btn-gold" onClick={handleConnectClick}>⚡ Connect Account</button>
+        {showUpgrade && (
+          <UpgradeModal
+            feature="accounts"
+            requiredPlan="pro"
+            onClose={() => setShowUpgrade(false)}
+            onNav={onNav}
+          />
+        )}
       </EmptyState>
     );
   }
@@ -228,42 +304,42 @@ export default function Accounts({ onConnect }) {
           <span className="sec-lbl">{accounts.length} Accounts Connected</span>
         </div>
         <div style={{ display: 'flex', gap: 8 }}>
-          <button 
-            className="btn btn-ghost btn-sm" 
+          <button
+            className="btn btn-ghost btn-sm"
             onClick={() => { sound.play('click'); setShowPlatformOverview(!showPlatformOverview); }}
           >
             {showPlatformOverview ? '👁️ Hide Overview' : '👁️ Show Overview'}
           </button>
-          <button 
-            className="btn btn-ghost btn-sm" 
-            onClick={() => { 
+          <button
+            className="btn btn-ghost btn-sm"
+            onClick={() => {
               sound.play('click');
-              accounts.forEach(a => updateAccount(a.id, { status: 'active' })); 
-              toast.success('Enabled all accounts'); 
+              accounts.forEach(a => stateManager.resumeAccount(a.id));
+              toast.success('Enabled all accounts');
             }}
           >
             ▶ Enable All
           </button>
-          <button 
-            className="btn btn-ghost btn-sm" 
-            onClick={() => { 
+          <button
+            className="btn btn-ghost btn-sm"
+            onClick={() => {
               sound.play('click');
-              accounts.forEach(a => updateAccount(a.id, { status: 'inactive' })); 
-              toast.info('Paused all accounts'); 
+              accounts.forEach(a => stateManager.pauseAccount(a.id));
+              toast.info('Paused all accounts');
             }}
           >
             ⏸ Pause All
           </button>
-          
+
           {/* Feature 23 Sweeper Button */}
-          <button 
+          <button
             className={`btn btn-ghost btn-sm ${sweeping ? 'btn-pulse' : ''}`}
             onClick={handleSweepStack}
             disabled={sweeping}
           >
             {sweeping ? '📶 Sweeping...' : '📶 Sweep Ping Stack'}
           </button>
-          <button className="btn btn-gold btn-sm" onClick={onConnect}>⚡ Connect Account</button>
+          <button className="btn btn-gold btn-sm" onClick={handleConnectClick}>⚡ Connect Account</button>
         </div>
       </div>
 
@@ -300,7 +376,7 @@ export default function Accounts({ onConnect }) {
       {/* Filter and Search Bar */}
       <div className="card" style={{ padding: '12px 16px', marginBottom: 16 }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center', justifyContent: 'space-between' }}>
-          
+
           {/* Search Input */}
           <div style={{ flex: 1, minWidth: 200, position: 'relative' }}>
             <input
@@ -345,11 +421,11 @@ export default function Accounts({ onConnect }) {
 
           {/* Grid vs List Toggler */}
           <div style={{ display: 'flex', border: '1px solid var(--border)', borderRadius: 6, overflow: 'hidden' }}>
-            <button 
-              className="btn btn-sm" 
+            <button
+              className="btn btn-sm"
               onClick={() => { sound.play('click'); setViewMode('grid'); }}
-              style={{ 
-                borderRadius: 0, 
+              style={{
+                borderRadius: 0,
                 padding: '6px 12px',
                 background: viewMode === 'grid' ? 'var(--gold)' : 'transparent',
                 color: viewMode === 'grid' ? '#000' : 'var(--muted2)',
@@ -358,11 +434,11 @@ export default function Accounts({ onConnect }) {
             >
               田 Grid
             </button>
-            <button 
-              className="btn btn-sm" 
+            <button
+              className="btn btn-sm"
               onClick={() => { sound.play('click'); setViewMode('list'); }}
-              style={{ 
-                borderRadius: 0, 
+              style={{
+                borderRadius: 0,
                 padding: '6px 12px',
                 background: viewMode === 'list' ? 'var(--gold)' : 'transparent',
                 color: viewMode === 'list' ? '#000' : 'var(--muted2)',
@@ -382,9 +458,9 @@ export default function Accounts({ onConnect }) {
           <div style={{ fontSize: 36, marginBottom: 8 }}>🔍</div>
           <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>No accounts match the filters</div>
           <div style={{ fontSize: 12, color: 'var(--muted)' }}>Try resetting the search query or status filters.</div>
-          <button 
-            className="btn btn-ghost btn-sm" 
-            style={{ marginTop: 12 }} 
+          <button
+            className="btn btn-ghost btn-sm"
+            style={{ marginTop: 12 }}
             onClick={() => { sound.play('click'); setSearchQuery(''); setPlatformFilter('all'); setStatusFilter('all'); }}
           >
             Clear Filters
@@ -396,7 +472,7 @@ export default function Accounts({ onConnect }) {
             const pl = PLATFORMS.find(p => p.id === a.platform) || PLATFORMS[0];
             const creditPct = a.creditLimit > 0 ? Math.min(100, Math.round((a.creditBalance / a.creditLimit) * 100)) : 0;
             const isSyncing = syncingId === a.id;
-            
+
             return (
               <div key={a.id} className="acc-card">
                 <div className="acc-top">
@@ -408,12 +484,12 @@ export default function Accounts({ onConnect }) {
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4 }}>
                     <StatusBadge status={a.status} />
                     {latencies[a.id] && (
-                      <span 
-                        className="mono" 
-                        style={{ 
-                          fontSize: 8.5, 
-                          padding: '1px 5px', 
-                          borderRadius: 4, 
+                      <span
+                        className="mono"
+                        style={{
+                          fontSize: 8.5,
+                          padding: '1px 5px',
+                          borderRadius: 4,
                           background: latencies[a.id] === 'FAIL' ? 'rgba(255,95,95,0.1)' : 'rgba(0,212,170,0.1)',
                           color: latencies[a.id] === 'FAIL' ? 'var(--red)' : 'var(--teal)',
                           border: `1px solid ${latencies[a.id] === 'FAIL' ? 'rgba(255,95,95,0.2)' : 'rgba(0,212,170,0.2)'}`,
@@ -425,7 +501,7 @@ export default function Accounts({ onConnect }) {
                     )}
                   </div>
                 </div>
-                
+
                 {a.creditLimit > 0 && (
                   <div style={{ marginBottom: 12 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: 'var(--muted)', marginBottom: 4 }}>
@@ -433,17 +509,17 @@ export default function Accounts({ onConnect }) {
                       <span style={{ fontWeight: 600, color: pl.color }}>{a.creditBalance} / {a.creditLimit} ({creditPct}%)</span>
                     </div>
                     <div className="progress">
-                      <div 
-                        className="progress-fill" 
-                        style={{ 
-                          width: `${creditPct}%`, 
-                          background: creditPct < 20 ? 'var(--red)' : creditPct < 50 ? 'var(--gold)' : `linear-gradient(90deg, var(--gold), var(--teal))` 
-                        }} 
+                      <div
+                        className="progress-fill"
+                        style={{
+                          width: `${creditPct}%`,
+                          background: creditPct < 20 ? 'var(--red)' : creditPct < 50 ? 'var(--gold)' : `linear-gradient(90deg, var(--gold), var(--teal))`
+                        }}
                       />
                     </div>
                   </div>
                 )}
-                
+
                 <div style={{ fontSize: 11, color: 'var(--muted)', display: 'flex', flexDirection: 'column', gap: 2, marginBottom: 12 }}>
                   <div>📅 Connected: <strong>{ago(a.createdAt)}</strong></div>
                   <div>📡 Broadcasts sent: <strong>{a.broadcastCount || 0}</strong></div>
@@ -451,14 +527,14 @@ export default function Accounts({ onConnect }) {
                 </div>
 
                 <div className="acc-actions" style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-                  <button 
-                    className="btn btn-ghost btn-xs" 
+                  <button
+                    className="btn btn-ghost btn-xs"
                     onClick={() => toggleStatus(a.id)}
                     style={{ flex: 1 }}
                   >
                     {a.status === 'active' ? '⏸️ Pause' : '▶️ Resume'}
                   </button>
-                  <button 
+                  <button
                     className={`btn btn-ghost btn-xs ${isSyncing ? 'btn-pulse' : ''}`}
                     onClick={() => handleSync(a.id)}
                     disabled={isSyncing}
@@ -466,20 +542,20 @@ export default function Accounts({ onConnect }) {
                   >
                     {isSyncing ? '⏳ Syncing' : '🔄 Sync'}
                   </button>
-                  <button 
-                    className="btn btn-ghost btn-xs" 
+                  <button
+                    className="btn btn-ghost btn-xs"
                     onClick={() => { sound.play('click'); setDrawerAcc(a.id); }}
                   >
                     📊 Details
                   </button>
-                  <button 
-                    className="btn btn-ghost btn-xs" 
+                  <button
+                    className="btn btn-ghost btn-xs"
                     onClick={() => { sound.play('click'); setEditAcc({ ...a }); }}
                   >
                     ✏️ Edit
                   </button>
-                  <button 
-                    className="btn btn-danger btn-xs" 
+                  <button
+                    className="btn btn-danger btn-xs"
                     onClick={() => { sound.play('click'); setConfirmDel(a.id); }}
                   >
                     🗑️ Remove
@@ -496,23 +572,23 @@ export default function Accounts({ onConnect }) {
             const pl = PLATFORMS.find(p => p.id === a.platform) || PLATFORMS[0];
             const creditPct = a.creditLimit > 0 ? Math.min(100, Math.round((a.creditBalance / a.creditLimit) * 100)) : 0;
             const isSyncing = syncingId === a.id;
-            
+
             return (
-              <div 
-                key={a.id} 
-                className="card" 
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  gap: 16, 
-                  padding: '10px 14px', 
+              <div
+                key={a.id}
+                className="card"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 16,
+                  padding: '10px 14px',
                   flexWrap: 'wrap',
                   borderLeft: `3px solid ${a.status === 'active' ? 'var(--teal)' : 'var(--muted)'}`
                 }}
               >
                 {/* Platform Avatar */}
                 <PlatformIcon platformId={a.platform} size={28} />
-                
+
                 {/* Account Name and details */}
                 <div style={{ flex: '1 1 200px', minWidth: 150 }}>
                   <div style={{ fontWeight: 700, fontSize: 13, color: '#e2e2ec' }}>{a.name}</div>
@@ -523,12 +599,12 @@ export default function Accounts({ onConnect }) {
                 <div style={{ flex: '0 0 100px', display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'flex-start' }}>
                   <StatusBadge status={a.status} />
                   {latencies[a.id] && (
-                    <span 
-                      className="mono" 
-                      style={{ 
-                        fontSize: 8.5, 
-                        padding: '1px 5px', 
-                        borderRadius: 4, 
+                    <span
+                      className="mono"
+                      style={{
+                        fontSize: 8.5,
+                        padding: '1px 5px',
+                        borderRadius: 4,
                         background: latencies[a.id] === 'FAIL' ? 'rgba(255,95,95,0.1)' : 'rgba(0,212,170,0.1)',
                         color: latencies[a.id] === 'FAIL' ? 'var(--red)' : 'var(--teal)',
                         border: `1px solid ${latencies[a.id] === 'FAIL' ? 'rgba(255,95,95,0.2)' : 'rgba(0,212,170,0.2)'}`,
@@ -548,12 +624,12 @@ export default function Accounts({ onConnect }) {
                       <span>{a.creditBalance}/{a.creditLimit} ({creditPct}%)</span>
                     </div>
                     <div className="progress" style={{ height: 6 }}>
-                      <div 
-                        className="progress-fill" 
-                        style={{ 
-                          width: `${creditPct}%`, 
-                          background: creditPct < 20 ? 'var(--red)' : creditPct < 50 ? 'var(--gold)' : 'var(--teal)' 
-                        }} 
+                      <div
+                        className="progress-fill"
+                        style={{
+                          width: `${creditPct}%`,
+                          background: creditPct < 20 ? 'var(--red)' : creditPct < 50 ? 'var(--gold)' : 'var(--teal)'
+                        }}
                       />
                     </div>
                   </div>
@@ -569,33 +645,33 @@ export default function Accounts({ onConnect }) {
 
                 {/* Action buttons */}
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                  <button 
-                    className="btn btn-ghost btn-xs" 
+                  <button
+                    className="btn btn-ghost btn-xs"
                     onClick={() => toggleStatus(a.id)}
                   >
                     {a.status === 'active' ? '⏸️' : '▶️'}
                   </button>
-                  <button 
+                  <button
                     className={`btn btn-ghost btn-xs ${isSyncing ? 'btn-pulse' : ''}`}
                     onClick={() => handleSync(a.id)}
                     disabled={isSyncing}
                   >
                     {isSyncing ? '⏳' : '🔄'}
                   </button>
-                  <button 
-                    className="btn btn-ghost btn-xs" 
+                  <button
+                    className="btn btn-ghost btn-xs"
                     onClick={() => { sound.play('click'); setDrawerAcc(a.id); }}
                   >
                     📊 Details
                   </button>
-                  <button 
-                    className="btn btn-ghost btn-xs" 
+                  <button
+                    className="btn btn-ghost btn-xs"
                     onClick={() => { sound.play('click'); setEditAcc({ ...a }); }}
                   >
                     ✏️ Edit
                   </button>
-                  <button 
-                    className="btn btn-danger btn-xs" 
+                  <button
+                    className="btn btn-danger btn-xs"
                     onClick={() => { sound.play('click'); setConfirmDel(a.id); }}
                   >
                     🗑️
@@ -612,13 +688,13 @@ export default function Accounts({ onConnect }) {
         <div className="overlay" onClick={() => setEditAcc(null)}>
           <div className="modal" onClick={e => e.stopPropagation()} style={{ maxWidth: 440 }}>
             <div className="modal-title">✏️ Edit Account Settings</div>
-            
+
             <form onSubmit={handleSaveEdit}>
               <div className="form-row">
                 <label>Account Label / Name</label>
-                <input 
-                  type="text" 
-                  value={editAcc.name} 
+                <input
+                  type="text"
+                  value={editAcc.name}
                   onChange={e => setEditAcc({ ...editAcc, name: e.target.value })}
                   placeholder="e.g. My Workspace Account"
                   required
@@ -627,9 +703,9 @@ export default function Accounts({ onConnect }) {
 
               <div className="form-row">
                 <label>Email Address</label>
-                <input 
-                  type="email" 
-                  value={editAcc.email || ''} 
+                <input
+                  type="email"
+                  value={editAcc.email || ''}
                   onChange={e => setEditAcc({ ...editAcc, email: e.target.value })}
                   placeholder="yourname@gmail.com"
                 />
@@ -638,7 +714,7 @@ export default function Accounts({ onConnect }) {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
                 <div className="form-row">
                   <label>Plan Type</label>
-                  <select 
+                  <select
                     value={editAcc.planType || 'free'}
                     onChange={e => setEditAcc({ ...editAcc, planType: e.target.value })}
                   >
@@ -649,18 +725,18 @@ export default function Accounts({ onConnect }) {
                 </div>
                 <div className="form-row">
                   <label>Credits Bal</label>
-                  <input 
-                    type="number" 
-                    value={editAcc.creditBalance || 0} 
+                  <input
+                    type="number"
+                    value={editAcc.creditBalance || 0}
                     onChange={e => setEditAcc({ ...editAcc, creditBalance: e.target.value })}
                     min="0"
                   />
                 </div>
                 <div className="form-row">
                   <label>Credit Limit</label>
-                  <input 
-                    type="number" 
-                    value={editAcc.creditLimit || 0} 
+                  <input
+                    type="number"
+                    value={editAcc.creditLimit || 0}
                     onChange={e => setEditAcc({ ...editAcc, creditLimit: e.target.value })}
                     min="0"
                   />
@@ -670,16 +746,16 @@ export default function Accounts({ onConnect }) {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginTop: 10 }}>
                 <div className="form-row">
                   <label>Handoff Threshold (cr)</label>
-                  <input 
-                    type="number" 
-                    value={editAcc.creditThreshold || 2} 
+                  <input
+                    type="number"
+                    value={editAcc.creditThreshold || 2}
                     onChange={e => setEditAcc({ ...editAcc, creditThreshold: e.target.value })}
                     min="0"
                   />
                 </div>
                 <div className="form-row">
                   <label>Account Status</label>
-                  <select 
+                  <select
                     value={editAcc.status || 'active'}
                     onChange={e => setEditAcc({ ...editAcc, status: e.target.value })}
                   >
@@ -726,7 +802,7 @@ export default function Accounts({ onConnect }) {
         const usedPct = acc.creditLimit > 0 ? Math.min(100, Math.round(((acc.creditLimit - (acc.creditBalance || 0)) / acc.creditLimit) * 100)) : 0;
         const sparkData = Array.from({ length: 10 }, (_, i) => Math.max(0, Math.round(Math.sin(i + 2) * (acc.broadcastCount || 5))));
         const sparkMax = Math.max(1, ...sparkData);
-        
+
         // Feature 24: credential reveal toggler
         const isCredRevealed = !!showDrawerCredMap[acc.id];
         const displayCred = isCredRevealed ? (acc.token || 'd93b4a...api_key_session') : '••••••••••••••••••••';
@@ -857,7 +933,7 @@ export default function Accounts({ onConnect }) {
                 {/* Metadata with credential reveal (Feature 24) */}
                 <div style={{ background: 'var(--surface2)', borderRadius: 10, padding: '14px 16px', border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: 8 }}>
                   <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted2)', textTransform: 'uppercase', letterSpacing: '.04em', marginBottom: 2 }}>Account Details</div>
-                  
+
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, alignItems: 'center' }}>
                     <span style={{ color: 'var(--muted)' }}>Platform</span>
                     <span style={{ color: '#d0d0e0', fontWeight: 600 }}>{pl.name}</span>
@@ -919,6 +995,14 @@ export default function Accounts({ onConnect }) {
         );
       })()}
 
+      {showUpgrade && (
+        <UpgradeModal
+          feature="accounts"
+          requiredPlan="pro"
+          onClose={() => setShowUpgrade(false)}
+          onNav={onNav}
+        />
+      )}
     </>
   );
 }

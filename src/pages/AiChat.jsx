@@ -1,62 +1,43 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react'
+import { store } from '../lib/store'
+import { bus, E } from '../lib/eventBus'
+import { callPlatform } from '../lib/apis'
 
 const MODELS = [
-  { id: 'gpt4', label: 'GPT-4 Turbo', color: '#10b981', ctx: '128K' },
-  { id: 'gpt35', label: 'GPT-3.5', color: '#6ee7b7', ctx: '16K' },
-  { id: 'claude3opus', label: 'Claude 3 Opus', color: '#a78bfa', ctx: '200K' },
-  { id: 'claude3sonnet', label: 'Claude 3 Sonnet', color: '#c4b5fd', ctx: '200K' },
-  { id: 'geminipro', label: 'Gemini Pro', color: '#22d3ee', ctx: '1M' },
-  { id: 'geminiultra', label: 'Gemini Ultra', color: '#67e8f9', ctx: '1M' },
-  { id: 'llama3', label: 'Llama 3', color: '#f5b731', ctx: '8K' },
-  { id: 'mistral', label: 'Mistral', color: '#f97316', ctx: '32K' },
-];
-
-const MOCK_CONVERSATIONS = [
-  { id: 1, title: 'Build a React dashboard', model: 'gpt4', ts: '2m ago', tokens: 3420, group: 'Today' },
-  { id: 2, title: 'Explain transformer architecture', model: 'claude3opus', ts: '1h ago', tokens: 8100, group: 'Today' },
-  { id: 3, title: 'Write unit tests for auth module', model: 'gpt4', ts: '3h ago', tokens: 2200, group: 'Today' },
-  { id: 4, title: 'Refactor Python ETL pipeline', model: 'geminipro', ts: 'Yesterday', tokens: 5300, group: 'Yesterday' },
-  { id: 5, title: 'Design system color tokens', model: 'claude3sonnet', ts: 'Yesterday', tokens: 1800, group: 'Yesterday' },
-  { id: 6, title: 'SQL query optimization tips', model: 'gpt35', ts: '3 days ago', tokens: 920, group: 'This Week' },
-  { id: 7, title: 'Kubernetes deployment config', model: 'llama3', ts: '4 days ago', tokens: 4200, group: 'This Week' },
-  { id: 8, title: 'Marketing copy for launch', model: 'gpt4', ts: '5 days ago', tokens: 1600, group: 'This Week' },
-];
-
-const INIT_MESSAGES = [
-  { id: 1, role: 'user', content: 'Help me build a real-time dashboard with React and WebSockets.', ts: '10:02 AM' },
-  { id: 2, role: 'assistant', content: "Great idea! Here's a solid architecture for a real-time React dashboard:\n\n```jsx\n// useWebSocket hook\nimport { useState, useEffect, useRef } from 'react';\n\nexport function useWebSocket(url) {\n  const [data, setData] = useState(null);\n  const ws = useRef(null);\n\n  useEffect(() => {\n    ws.current = new WebSocket(url);\n    ws.current.onmessage = (e) => setData(JSON.parse(e.data));\n    return () => ws.current?.close();\n  }, [url]);\n\n  return data;\n}\n```\n\n**Key components you'll need:**\n- `WebSocketProvider` — context provider wrapping the app\n- `MetricCard` — displays a single live metric\n- `LiveChart` — SVG chart that animates on data updates\n- `AlertBanner` — appears when threshold is exceeded\n\nWant me to build out any of these in detail?", ts: '10:02 AM' },
-  { id: 3, role: 'user', content: 'Yes, show me the LiveChart component with smooth animation.', ts: '10:04 AM' },
-  { id: 4, role: 'assistant', content: "Here's a production-ready `LiveChart` with smooth CSS transitions:\n\n```jsx\nfunction LiveChart({ data, color = '#f5b731', height = 80 }) {\n  const max = Math.max(...data, 1);\n  const pts = data.map((v, i) => [\n    (i / (data.length - 1)) * 300,\n    height - (v / max) * (height - 10)\n  ]);\n  const path = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p[0]},${p[1]}`).join(' ');\n  return (\n    <svg width=\"300\" height={height} style={{ overflow: 'visible' }}>\n      <polyline points={pts.map(p => p.join(',')).join(' ')}\n        fill=\"none\" stroke={color} strokeWidth={2}\n        style={{ transition: 'all 0.3s ease' }} />\n    </svg>\n  );\n}\n```\n\nThe `transition: 'all 0.3s ease'` on the polyline gives that smooth animation as data updates.", ts: '10:04 AM' },
-];
+  { id: 'claude', label: 'Claude 3.5 Haiku', color: '#a78bfa', ctx: '200K' },
+  { id: 'chatgpt', label: 'GPT-4o Mini', color: '#10b981', ctx: '128K' },
+  { id: 'gemini', label: 'Gemini 1.5 Flash', color: '#22d3ee', ctx: '1M' },
+  { id: 'mistral', label: 'Mistral Small', color: '#f97316', ctx: '32K' },
+]
 
 const SUGGESTED = [
   'Explain the difference between REST and GraphQL',
   'Write a Python script to scrape and parse HTML',
   'How do I optimize React re-renders?',
   'Generate a Tailwind CSS landing page',
-];
+]
 
-const COMMANDS = ['/clear', '/export', '/summarize', '/translate', '/explain', '/retry', '/help'];
+const COMMANDS = ['/clear', '/export', '/summarize', '/translate', '/explain', '/retry', '/help']
 
 const V = {
   gold: '#f5b731', teal: '#22d3ee', purple: '#a78bfa',
   surface: '#0e0e16', surface2: '#16161e', surface3: '#1d1d28',
   border: 'rgba(255,255,255,0.07)', muted: '#6e7191',
   text: '#e4e4ed', red: '#ef4444', green: '#22c55e',
-};
+}
 
 function Avatar({ role }) {
   if (role === 'user') return (
     <div style={{ width: 32, height: 32, borderRadius: '50%', background: `linear-gradient(135deg, ${V.gold}, #e0a020)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, color: '#000', flexShrink: 0 }}>U</div>
-  );
+  )
   return (
     <div style={{ width: 32, height: 32, borderRadius: '50%', background: `linear-gradient(135deg, ${V.teal}, ${V.purple})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, flexShrink: 0 }}>✨</div>
-  );
+  )
 }
 
 function CodeBlock({ code, lang }) {
-  const [copied, setCopied] = useState(false);
-  const copy = () => { navigator.clipboard.writeText(code); setCopied(true); setTimeout(() => setCopied(false), 2000); };
+  const [copied, setCopied] = useState(false)
+  const copy = () => { navigator.clipboard.writeText(code); setCopied(true); setTimeout(() => setCopied(false), 2000) }
   return (
     <div style={{ margin: '10px 0', borderRadius: 10, overflow: 'hidden', border: `1px solid ${V.border}` }}>
       <div style={{ background: V.surface3, padding: '6px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: `1px solid ${V.border}` }}>
@@ -65,19 +46,19 @@ function CodeBlock({ code, lang }) {
       </div>
       <pre style={{ background: V.surface, margin: 0, padding: '14px 16px', fontSize: 12.5, fontFamily: 'DM Mono, monospace', overflowX: 'auto', lineHeight: 1.65, color: V.teal }}>{code}</pre>
     </div>
-  );
+  )
 }
 
 function MessageContent({ content }) {
-  const parts = content.split(/(```[\s\S]*?```)/g);
+  const parts = content.split(/(```[\s\S]*?```)/g)
   return (
     <div style={{ fontSize: 13.5, lineHeight: 1.7, color: V.text }}>
       {parts.map((part, i) => {
         if (part.startsWith('```')) {
-          const lines = part.slice(3, -3).split('\n');
-          const lang = lines[0];
-          const code = lines.slice(1).join('\n');
-          return <CodeBlock key={i} code={code} lang={lang} />;
+          const lines = part.slice(3, -3).split('\n')
+          const lang = lines[0]
+          const code = lines.slice(1).join('\n')
+          return <CodeBlock key={i} code={code} lang={lang} />
         }
         return (
           <span key={i} dangerouslySetInnerHTML={{ __html: part
@@ -85,96 +66,148 @@ function MessageContent({ content }) {
             .replace(/`(.*?)`/g, `<code style="font-family:DM Mono,monospace;background:rgba(255,255,255,0.07);padding:1px 6px;border-radius:4px;font-size:12px;color:${V.teal}">$1</code>`)
             .replace(/\n/g, '<br/>')
           }} />
-        );
+        )
       })}
     </div>
-  );
+  )
 }
 
 export default function AiChat() {
-  const [conversations] = useState(MOCK_CONVERSATIONS);
-  const [activeConv, setActiveConv] = useState(1);
-  const [messages, setMessages] = useState(INIT_MESSAGES);
-  const [input, setInput] = useState('');
-  const [model, setModel] = useState(MODELS[0]);
-  const [showModelMenu, setShowModelMenu] = useState(false);
-  const [thinking, setThinking] = useState(false);
-  const [showContext, setShowContext] = useState(true);
-  const [convSearch, setConvSearch] = useState('');
-  const [temperature, setTemperature] = useState(0.7);
-  const [maxTokens, setMaxTokens] = useState(2048);
-  const [topP, setTopP] = useState(0.9);
-  const [systemPrompt, setSystemPrompt] = useState('You are a helpful, expert AI assistant specialized in software development, UI/UX design, and modern web technologies. Be concise, precise, and provide working code examples when relevant.');
-  const [cmdSuggestions, setCmdSuggestions] = useState([]);
+  const [sessions, setSessions] = useState(() => store.getSessions())
+  const [activeSessionId, setActiveSessionId] = useState(() => {
+    const list = store.getSessions()
+    return list.length > 0 ? list[0].id : null
+  })
+  const [input, setInput] = useState('')
+  const [model, setModel] = useState(MODELS[0])
+  const [showModelMenu, setShowModelMenu] = useState(false)
+  const [thinking, setThinking] = useState(false)
+  const [showContext, setShowContext] = useState(true)
+  const [convSearch, setConvSearch] = useState('')
+  const [temperature, setTemperature] = useState(0.7)
+  const [maxTokens, setMaxTokens] = useState(2048)
+  const [topP, setTopP] = useState(0.9)
+  const [systemPrompt, setSystemPrompt] = useState('You are a helpful, expert AI assistant specialized in software development, UI/UX design, and modern web technologies.')
+  const [cmdSuggestions, setCmdSuggestions] = useState([])
+  const [toast, setToast] = useState('')
 
-  const [toast, setToast] = useState('');
-  const messagesEndRef = useRef(null);
-  const textareaRef = useRef(null);
+  const messagesEndRef = useRef(null)
+  const textareaRef = useRef(null)
 
-  useEffect(() => { messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages, thinking]);
+  const activeSession = sessions.find(s => s.id === activeSessionId)
+  const messages = activeSession ? activeSession.messages : []
 
-  const showToast = (msg) => { setToast(msg); setTimeout(() => setToast(''), 2200); };
+  useEffect(() => {
+    const refresh = () => {
+      const list = store.getSessions()
+      setSessions(list)
+      if (list.length > 0 && !activeSessionId) {
+        setActiveSessionId(list[0].id)
+      }
+    }
+    bus.on(E.STATE, refresh)
+    return () => bus.off(E.STATE, refresh)
+  }, [activeSessionId])
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages, thinking])
+
+  const showToast = (msg) => { setToast(msg); setTimeout(() => setToast(''), 2200) }
 
   const handleInputChange = (e) => {
-    const val = e.target.value;
-    setInput(val);
+    const val = e.target.value
+    setInput(val)
     if (val.startsWith('/')) {
-      const q = val.toLowerCase();
-      setCmdSuggestions(COMMANDS.filter(c => c.startsWith(q)));
+      const q = val.toLowerCase()
+      setCmdSuggestions(COMMANDS.filter(c => c.startsWith(q)))
     } else {
-      setCmdSuggestions([]);
+      setCmdSuggestions([])
     }
-  };
+  }
 
   const handleCommand = (cmd) => {
-    setInput('');
-    setCmdSuggestions([]);
-    if (cmd === '/clear') { setMessages([]); showToast('Conversation cleared'); }
-    else if (cmd === '/export') {
-      const text = messages.map(m => `[${m.role.toUpperCase()}] ${m.content}`).join('\n\n');
-      const blob = new Blob([text], { type: 'text/markdown' });
-      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'chat.md'; a.click();
-      showToast('Exported as Markdown');
+    setInput('')
+    setCmdSuggestions([])
+    if (cmd === '/clear') {
+      if (activeSessionId) {
+        store.clearSessionMessages(activeSessionId)
+        setSessions(store.getSessions())
+        showToast('Conversation cleared')
+      }
+    } else if (cmd === '/export') {
+      const text = messages.map(m => `[${m.role.toUpperCase()}] ${m.content}`).join('\n\n')
+      const blob = new Blob([text], { type: 'text/markdown' })
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'chat.md'; a.click()
+      showToast('Exported as Markdown')
+    } else {
+      showToast(`Command ${cmd} executed`)
     }
-    else showToast(`Command ${cmd} executed`);
-  };
+  }
 
-  const AI_RESPONSES = [
-    "That's a great question! Let me break it down:\n\n**Key considerations:**\n- Performance and scalability are paramount\n- Use `useMemo` and `useCallback` strategically\n- Consider code splitting with `React.lazy()`\n\nHere's a practical example:\n\n```javascript\nconst optimized = useMemo(() => {\n  return heavyComputation(data);\n}, [data]);\n```\n\nThis ensures the computation only runs when `data` changes.",
-    "Absolutely! Here's the most efficient approach:\n\n```bash\nnpm create vite@latest my-app -- --template react\ncd my-app && npm install\nnpm run dev\n```\n\nFor production optimization, add these to `vite.config.js`:\n\n```js\nexport default {\n  build: { chunkSizeWarningLimit: 600,\n    rollupOptions: { output: { manualChunks: { vendor: ['react','react-dom'] } } } }\n}\n```",
-    "Great insight! The architecture you're describing follows the **CQRS pattern** — separating read and write operations.\n\n**Benefits:**\n- Independent scaling of reads vs writes\n- Better cache strategies per operation type\n- Cleaner domain model separation\n\nWant me to sketch out the full implementation with event sourcing?",
-  ];
+  const handleNewChat = () => {
+    const fresh = store.createSession('New Conversation', model.id)
+    setActiveSessionId(fresh.id)
+    showToast('New chat started')
+  }
 
-  const sendMessage = () => {
-    if (!input.trim() || thinking) return;
-    if (input.startsWith('/')) { handleCommand(input.trim()); return; }
+  const sendMessage = async () => {
+    if (!input.trim() || thinking) return
+    if (input.startsWith('/')) { handleCommand(input.trim()); return }
 
-    const userMsg = { id: Date.now(), role: 'user', content: input.trim(), ts: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) };
-    setMessages(prev => [...prev, userMsg]);
-    setInput('');
-    setCmdSuggestions([]);
-    setThinking(true);
+    let currentSessionId = activeSessionId
+    if (!currentSessionId) {
+      const fresh = store.createSession('New Conversation', model.id)
+      currentSessionId = fresh.id
+      setActiveSessionId(fresh.id)
+    }
 
-    setTimeout(() => {
-      setThinking(false);
-      const response = AI_RESPONSES[Math.floor(Math.random() * AI_RESPONSES.length)];
-      const aiMsg = { id: Date.now() + 1, role: 'assistant', content: response, ts: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) };
-      setMessages(prev => [...prev, aiMsg]);
-    }, 1400 + Math.random() * 800);
-  };
+    const textInput = input.trim()
+    setInput('')
+    setCmdSuggestions([])
+
+    // Write user message to the store session
+    store.addMessage(currentSessionId, { role: 'user', content: textInput })
+    setSessions(store.getSessions())
+    setThinking(true)
+
+    try {
+      // Find an active account matching the platform if configured
+      const activeAccount = store.getActiveAccounts().find(a => a.platform === model.id) || { platform: model.id }
+
+      const res = await callPlatform(textInput, activeAccount)
+
+      // Write assistant response
+      store.addMessage(currentSessionId, { role: 'assistant', content: res.text })
+
+      // Deduct credits if it's a real API call
+      if (!res.manual && activeAccount.id) {
+        const tokens = Math.ceil((textInput.length + (res.text || '').length) / 4)
+        const newCredits = Math.max(0, (activeAccount.credits || 100) - (tokens * 0.0001))
+        store.updateCredits(activeAccount.id, parseFloat(newCredits.toFixed(4)))
+      }
+    } catch (e) {
+      store.addMessage(currentSessionId, { role: 'assistant', content: `[Error: ${e.message}]` })
+    } finally {
+      setThinking(false)
+      setSessions(store.getSessions())
+    }
+  }
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-  };
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage() }
+  }
 
-  const filteredConvs = conversations.filter(c => c.title.toLowerCase().includes(convSearch.toLowerCase()));
-  const groups = [...new Set(filteredConvs.map(c => c.group))];
-  const activeModel = MODELS.find(m => m.id === model.id) || MODELS[0];
+  const filteredSessions = sessions.filter(s =>
+    s.title.toLowerCase().includes(convSearch.toLowerCase()) ||
+    s.messages.some(m => m.content?.toLowerCase().includes(convSearch.toLowerCase()))
+  )
 
-  const totalTokens = messages.reduce((acc, m) => acc + Math.floor(m.content.length / 4), 0);
+  const activeModel = MODELS.find(m => m.id === model.id) || MODELS[0]
+  const totalTokens = messages.reduce((acc, m) => acc + Math.floor((m.content?.length || 0) / 4), 0)
 
   return (
-    <div style={{ display: 'flex', height: 'calc(100vh - 60px)', background: V.surface, overflow: 'hidden', fontFamily: 'Syne, sans-serif' }}>
+    <div style={{ display: 'flex', height: 'calc(100vh - 100px)', background: V.surface, overflow: 'hidden', fontFamily: 'Syne, sans-serif' }}>
       <style>{`
         @keyframes fadeIn { from { opacity:0; transform:translateY(8px)} to { opacity:1; transform:translateY(0)} }
         @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
@@ -183,7 +216,7 @@ export default function AiChat() {
         .msg-anim { animation: fadeIn 0.25s ease; }
       `}</style>
 
-      {/* Toast */}
+      {/* Toast popup */}
       {toast && (
         <div style={{ position:'fixed', bottom:50, left:'50%', transform:'translateX(-50%)', background:'rgba(22,22,30,0.97)', border:`1px solid ${V.gold}44`, borderRadius:10, padding:'9px 20px', color:V.gold, fontSize:13, zIndex:9999, animation:'toastIn 0.25s ease', whiteSpace:'nowrap', boxShadow:'0 8px 32px rgba(0,0,0,0.5)' }}>
           {toast}
@@ -193,7 +226,7 @@ export default function AiChat() {
       {/* LEFT: Conversation Sidebar */}
       <div style={{ width: 240, background: V.surface2, borderRight: `1px solid ${V.border}`, display: 'flex', flexDirection: 'column', flexShrink: 0 }}>
         <div style={{ padding: '14px 12px 10px' }}>
-          <button onClick={() => { setMessages([]); setActiveConv(null); showToast('New chat started'); }} style={{ width: '100%', padding: '9px 0', borderRadius: 9, border: `1px solid ${V.gold}44`, background: `linear-gradient(135deg, ${V.gold}18, ${V.gold}08)`, color: V.gold, cursor: 'pointer', fontSize: 13, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7, transition: 'all 0.15s' }}
+          <button onClick={handleNewChat} style={{ width: '100%', padding: '9px 0', borderRadius: 9, border: `1px solid ${V.gold}44`, background: `linear-gradient(135deg, ${V.gold}18, ${V.gold}08)`, color: V.gold, cursor: 'pointer', fontSize: 13, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 7, transition: 'all 0.15s' }}
             onMouseEnter={e => e.currentTarget.style.background = `linear-gradient(135deg, ${V.gold}30, ${V.gold}15)`}
             onMouseLeave={e => e.currentTarget.style.background = `linear-gradient(135deg, ${V.gold}18, ${V.gold}08)`}>
             <span style={{ fontSize: 16 }}>+</span> New Chat
@@ -203,26 +236,22 @@ export default function AiChat() {
         </div>
 
         <div style={{ flex: 1, overflowY: 'auto', padding: '0 6px 10px' }}>
-          {groups.map(group => (
-            <div key={group}>
-              <div style={{ fontSize: 10, color: V.muted, textTransform: 'uppercase', letterSpacing: 1, padding: '8px 8px 4px', fontWeight: 700 }}>{group}</div>
-              {filteredConvs.filter(c => c.group === group).map(conv => {
-                const m = MODELS.find(x => x.id === conv.model) || MODELS[0];
-                return (
-                  <div key={conv.id} onClick={() => setActiveConv(conv.id)}
-                    style={{ padding: '9px 10px', borderRadius: 8, cursor: 'pointer', marginBottom: 2, background: activeConv === conv.id ? `${V.gold}12` : 'transparent', border: `1px solid ${activeConv === conv.id ? V.gold + '30' : 'transparent'}`, transition: 'all 0.15s', position: 'relative' }}
-                    onMouseEnter={e => { if (activeConv !== conv.id) e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
-                    onMouseLeave={e => { if (activeConv !== conv.id) e.currentTarget.style.background = 'transparent'; }}>
-                    <div style={{ fontSize: 12.5, color: activeConv === conv.id ? V.text : '#b0b0c8', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginBottom: 4 }}>{conv.title}</div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                      <span style={{ fontSize: 9.5, color: m.color, background: `${m.color}18`, padding: '1px 6px', borderRadius: 4, border: `1px solid ${m.color}33` }}>{m.label.split(' ')[0]}</span>
-                      <span style={{ fontSize: 10, color: V.muted }}>{conv.ts}</span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          ))}
+          <div style={{ fontSize: 10, color: V.muted, textTransform: 'uppercase', letterSpacing: 1, padding: '8px 8px 4px', fontWeight: 700 }}>Chats History</div>
+          {filteredSessions.map(conv => {
+            const m = MODELS.find(x => x.id === conv.currentPlatform) || MODELS[0]
+            return (
+              <div key={conv.id} onClick={() => setActiveSessionId(conv.id)}
+                style={{ padding: '9px 10px', borderRadius: 8, cursor: 'pointer', marginBottom: 2, background: activeSessionId === conv.id ? `${V.gold}12` : 'transparent', border: `1px solid ${activeSessionId === conv.id ? V.gold + '30' : 'transparent'}`, transition: 'all 0.15s', position: 'relative' }}
+                onMouseEnter={e => { if (activeSessionId !== conv.id) e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
+                onMouseLeave={e => { if (activeSessionId !== conv.id) e.currentTarget.style.background = 'transparent'; }}>
+                <div style={{ fontSize: 12.5, color: activeSessionId === conv.id ? V.text : '#b0b0c8', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginBottom: 4 }}>{conv.title}</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: 9.5, color: m.color, background: `${m.color}18`, padding: '1px 6px', borderRadius: 4, border: `1px solid ${m.color}33` }}>{m.label.split(' ')[0]}</span>
+                  <span style={{ fontSize: 10, color: V.muted }}>{new Date(conv.updatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
 
@@ -231,7 +260,7 @@ export default function AiChat() {
         {/* Chat Topbar */}
         <div style={{ height: 52, borderBottom: `1px solid ${V.border}`, display: 'flex', alignItems: 'center', padding: '0 18px', gap: 12, background: V.surface2, flexShrink: 0 }}>
           <div style={{ flex: 1, fontSize: 14, fontWeight: 700, color: V.text }}>
-            {activeConv ? conversations.find(c => c.id === activeConv)?.title || 'New Chat' : 'New Chat'}
+            {activeSession ? activeSession.title : 'New Chat'}
           </div>
 
           {/* Model selector */}
@@ -293,7 +322,7 @@ export default function AiChat() {
                   <div style={{ padding: '12px 16px', borderRadius: msg.role === 'user' ? '18px 4px 18px 18px' : '4px 18px 18px 18px', background: msg.role === 'user' ? `linear-gradient(135deg, ${V.gold}20, ${V.gold}10)` : V.surface3, border: `1px solid ${msg.role === 'user' ? V.gold + '30' : V.border}` }}>
                     <MessageContent content={msg.content} />
                   </div>
-                  <div style={{ fontSize: 10.5, color: V.muted, marginTop: 4, textAlign: msg.role === 'user' ? 'right' : 'left', fontFamily: 'DM Mono, monospace' }}>{msg.ts}</div>
+                  <div style={{ fontSize: 10.5, color: V.muted, marginTop: 4, textAlign: msg.role === 'user' ? 'right' : 'left', fontFamily: 'DM Mono, monospace' }}>{new Date(msg.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
                 </div>
               </div>
             ))
@@ -399,5 +428,5 @@ export default function AiChat() {
         </div>
       )}
     </div>
-  );
+  )
 }

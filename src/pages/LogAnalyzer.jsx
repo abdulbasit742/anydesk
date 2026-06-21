@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { sound } from '../lib/soundEngine';
+import { store } from '../lib/store';
 
 const injectStyles = () => {
   if (document.getElementById('log-styles')) return;
@@ -30,19 +31,31 @@ const V = {
 };
 
 const INITIAL_LOGS = [
-  { id: 1, ts: '19:04:12', level: 'info', service: 'api-gateway', msg: 'Successfully parsed JWT claims for user session 1a2b' },
-  { id: 2, ts: '19:04:15', level: 'warn', service: 'database-engine', msg: 'Connection pool approaching threshold limit (12/15 connections active)' },
-  { id: 3, ts: '19:04:18', level: 'error', service: 'background-worker', msg: 'Cheerio parsing failed on URL https://store.demo/missing-product' },
-  { id: 4, ts: '19:04:22', level: 'info', service: 'api-gateway', msg: 'GET /api/v2/metrics resolved 200 OK in 14ms' },
-  { id: 5, ts: '19:04:25', level: 'info', service: 'authentication-flow', msg: 'Rotating credential access tokens sweep completed' }
+  { id: 'init-1', at: Date.now() - 50000, ts: '19:04:12', level: 'info', service: 'api-gateway', msg: 'Successfully parsed JWT claims for user session 1a2b' },
+  { id: 'init-2', at: Date.now() - 40000, ts: '19:04:15', level: 'warn', service: 'database-engine', msg: 'Connection pool approaching threshold limit (12/15 connections active)' },
+  { id: 'init-3', at: Date.now() - 30000, ts: '19:04:18', level: 'error', service: 'background-worker', msg: 'Cheerio parsing failed on URL https://store.demo/missing-product' },
+  { id: 'init-4', at: Date.now() - 20000, ts: '19:04:22', level: 'info', service: 'api-gateway', msg: 'GET /api/v2/metrics resolved 200 OK in 14ms' },
+  { id: 'init-5', at: Date.now() - 10000, ts: '19:04:25', level: 'info', service: 'authentication-flow', msg: 'Rotating credential access tokens sweep completed' }
 ];
+
+const mapStoreEventToLog = (e) => ({
+  id: e.id,
+  at: e.at || Date.now(),
+  ts: new Date(e.at || Date.now()).toTimeString().split(' ')[0],
+  level: e.severity === 'error' ? 'error' : (e.severity === 'warning' ? 'warn' : 'info'),
+  service: e.type.split(':')[0] || 'system',
+  msg: e.data ? `${e.type.replace(':', ' ')} - ${Object.entries(e.data).map(([k, v]) => `${k}: ${v}`).join(', ')}` : e.type
+});
 
 export default function LogAnalyzer() {
   useEffect(() => {
     injectStyles();
   }, []);
 
-  const [logs, setLogs] = useState(INITIAL_LOGS);
+  const [logs, setLogs] = useState(() => {
+    const storeLogs = store.getEvents(50).map(mapStoreEventToLog);
+    return [...INITIAL_LOGS, ...storeLogs].sort((a, b) => a.at - b.at).slice(-50);
+  });
   const [levelFilter, setLevelFilter] = useState('all');
   const [serviceFilter, setServiceFilter] = useState('all');
   const [search, setSearch] = useState('');
@@ -69,21 +82,40 @@ export default function LogAnalyzer() {
         'SSL Handshake validation payload confirmed',
         'Database replicas database query timed out'
       ];
-      
+
       const randomIdx = Math.floor(Math.random() * messages.length);
       const newLog = {
-        id: Date.now(),
+        id: 'stream-' + Date.now(),
+        at: Date.now(),
         ts: new Date().toTimeString().split(' ')[0],
         level: levels[Math.floor(Math.random() * levels.length)],
         service: services[Math.floor(Math.random() * services.length)],
         msg: messages[randomIdx]
       };
 
-      setLogs(prev => [...prev.slice(-30), newLog]); // Keep last 30 logs
+      setLogs(prev => {
+        const next = [...prev, newLog];
+        return next.slice(-50);
+      });
     }, 3500);
 
     return () => clearInterval(interval);
   }, [paused]);
+
+  // Pull new events from store periodically
+  useEffect(() => {
+    const checkStoreEvents = () => {
+      const storeLogs = store.getEvents(50).map(mapStoreEventToLog);
+      setLogs(prev => {
+        const existingIds = new Set(prev.map(l => l.id));
+        const newStoreLogs = storeLogs.filter(l => !existingIds.has(l.id));
+        if (newStoreLogs.length === 0) return prev;
+        return [...prev, ...newStoreLogs].sort((a, b) => a.at - b.at).slice(-50);
+      });
+    };
+    const interval = setInterval(checkStoreEvents, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const filteredLogs = logs.filter(l => {
     if (levelFilter !== 'all' && l.level !== levelFilter) return false;
@@ -109,9 +141,18 @@ export default function LogAnalyzer() {
     sound.play('success');
   };
 
+  // Metrics calculations
+  const totalLogs = logs.length;
+  const errorLogs = logs.filter(l => l.level === 'error').length;
+  const warnLogs = logs.filter(l => l.level === 'warn').length;
+
+  const errorRate = totalLogs > 0 ? ((errorLogs / totalLogs) * 100).toFixed(2) + '%' : '0.00%';
+  const warnRate = totalLogs > 0 ? ((warnLogs / totalLogs) * 100).toFixed(2) + '%' : '0.00%';
+  const activeSources = new Set(logs.map(l => l.service)).size;
+
   return (
     <div style={{ padding: '0 0 80px', fontFamily: 'Syne, sans-serif', background: V.surface, minHeight: '100vh' }}>
-      
+
       {/* HERO HEADER */}
       <div style={{ background: 'linear-gradient(135deg, #0e0e16 0%, #0c1524 50%, #151020 100%)', borderBottom: `1px solid ${V.border}`, padding: '32px 32px 28px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
@@ -133,10 +174,10 @@ export default function LogAnalyzer() {
         {/* TELEMETRIES ROW */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12, marginTop: 12 }}>
           {[
-            { title: 'Total Logs Indexed', value: '14,845 records', icon: '📄', color: V.teal },
-            { title: 'Errors rate (24h)', value: '0.04%', icon: '⚠️', color: V.red },
-            { title: 'Cluster Warning rate', value: '1.2%', icon: '🔔', color: V.gold },
-            { title: 'Active Log Sources', value: '4 channels', icon: '🌐', color: V.purple }
+            { title: 'Indexed Logs Count', value: `${totalLogs} records`, icon: '📄', color: V.teal },
+            { title: 'Errors rate', value: errorRate, icon: '⚠️', color: V.red },
+            { title: 'Cluster Warning rate', value: warnRate, icon: '🔔', color: V.gold },
+            { title: 'Active Log Sources', value: `${activeSources} channels`, icon: '🌐', color: V.purple }
           ].map((m, mi) => (
             <div key={mi} style={{ background: 'rgba(0,0,0,0.2)', border: `1px solid ${V.border}`, borderRadius: 10, padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 12 }}>
               <span style={{ fontSize: 20 }}>{m.icon}</span>
@@ -150,32 +191,32 @@ export default function LogAnalyzer() {
       </div>
 
       <div style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: 24 }}>
-        
+
         {/* LOG ANOMALY PLOTS & CONTROLS GRID */}
         <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 24, animation: 'log-fadeup 0.3s ease' }}>
-          
+
           {/* STREAM VIEW LOG PANEL */}
           <div style={{ background: V.surface2, border: `1px solid ${V.border}`, borderRadius: 16, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-            
+
             {/* Header + Filter tools */}
             <div style={{ padding: '16px 20px', borderBottom: `1px solid ${V.border}`, background: V.surface3, display: 'flex', flexDirection: 'column', gap: 12 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontSize: 13, fontWeight: 800, color: '#fff' }}>Streaming Live Logs Viewer</span>
-                <input type="text" placeholder="Search logs payload..." value={search} onChange={e => setSearch(e.target.value)} style={{ padding: '6px 12px', background: V.surface, border: `1px solid ${V.border}`, borderRadius: 8, color: '#fff', fontSize: 11.5 }} />
+                <input type="text" placeholder="Search logs payload..." value={search} onChange={e => setSearch(e.target.value)} style={{ padding: '6px 12px', background: V.surface, border: `1px solid ${V.border}`, borderRadius: 8, color: '#fff', fontSize: 11.5, outline: 'none' }} />
               </div>
 
               {/* Filter pills */}
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {/* Level pills */}
                 {['all', 'info', 'warn', 'error'].map(lvl => (
-                  <button key={lvl} onClick={() => setLevelFilter(lvl)} style={{ border: `1px solid ${levelFilter === lvl ? V.teal : V.border}`, background: levelFilter === lvl ? 'rgba(34,211,238,0.1)' : 'transparent', color: levelFilter === lvl ? V.teal : V.muted, padding: '4px 10px', borderRadius: 6, fontSize: 10.5, textTransform: 'capitalize', cursor: 'pointer' }}>
+                  <button key={lvl} onClick={() => setLevelFilter(lvl)} style={{ border: `1px solid ${levelFilter === lvl ? V.teal : V.border}`, background: levelFilter === lvl ? 'rgba(34,211,238,0.1)' : 'transparent', color: levelFilter === lvl ? V.teal : V.muted, padding: '4px 10px', borderRadius: 6, fontSize: 10.5, textTransform: 'capitalize', cursor: 'pointer', outline: 'none' }}>
                     {lvl}
                   </button>
                 ))}
                 <span style={{ color: 'rgba(255,255,255,0.12)' }}>|</span>
                 {/* Service pills */}
-                {['all', 'api-gateway', 'database-engine', 'background-worker', 'authentication-flow'].map(srv => (
-                  <button key={srv} onClick={() => setServiceFilter(srv)} style={{ border: `1px solid ${serviceFilter === srv ? V.purple : V.border}`, background: serviceFilter === srv ? 'rgba(167,139,250,0.1)' : 'transparent', color: serviceFilter === srv ? V.purple : V.muted, padding: '4px 10px', borderRadius: 6, fontSize: 10.5, cursor: 'pointer' }}>
+                {['all', 'api-gateway', 'database-engine', 'background-worker', 'authentication-flow', 'account', 'config', 'env'].map(srv => (
+                  <button key={srv} onClick={() => setServiceFilter(srv)} style={{ border: `1px solid ${serviceFilter === srv ? V.purple : V.border}`, background: serviceFilter === srv ? 'rgba(167,139,250,0.1)' : 'transparent', color: serviceFilter === srv ? V.purple : V.muted, padding: '4px 10px', borderRadius: 6, fontSize: 10.5, cursor: 'pointer', outline: 'none' }}>
                     {srv}
                   </button>
                 ))}
@@ -184,17 +225,21 @@ export default function LogAnalyzer() {
 
             {/* Console list output */}
             <div ref={logFeedRef} style={{ height: '360px', overflowY: 'auto', padding: '16px', background: '#07070b', fontFamily: 'DM Mono, monospace', fontSize: 11, display: 'flex', flexDirection: 'column', gap: 6 }}>
-              {filteredLogs.map(l => {
-                const color = l.level === 'error' ? V.red : l.level === 'warn' ? V.gold : V.teal;
-                return (
-                  <div key={l.id} style={{ display: 'flex', gap: 10, borderBottom: `1px solid rgba(255,255,255,0.02)`, paddingBottom: 4 }}>
-                    <span style={{ color: V.muted }}>[{l.ts}]</span>
-                    <span style={{ color, fontWeight: 700, width: 50, textTransform: 'uppercase' }}>{l.level}</span>
-                    <span style={{ color: V.purple, width: 140, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{l.service}</span>
-                    <span style={{ color: '#dde0f0', flex: 1 }}>{l.msg}</span>
-                  </div>
-                );
-              })}
+              {filteredLogs.length === 0 ? (
+                <div style={{ color: V.muted, textAlign: 'center', marginTop: 120, fontSize: 12 }}>No logs match current filter criteria.</div>
+              ) : (
+                filteredLogs.map(l => {
+                  const color = l.level === 'error' ? V.red : l.level === 'warn' ? V.gold : V.teal;
+                  return (
+                    <div key={l.id} style={{ display: 'flex', gap: 10, borderBottom: `1px solid rgba(255,255,255,0.02)`, paddingBottom: 4 }}>
+                      <span style={{ color: V.muted }}>[{l.ts}]</span>
+                      <span style={{ color, fontWeight: 700, width: 50, textTransform: 'uppercase' }}>{l.level}</span>
+                      <span style={{ color: V.purple, width: 140, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{l.service}</span>
+                      <span style={{ color: '#dde0f0', flex: 1, wordBreak: 'break-all' }}>{l.msg}</span>
+                    </div>
+                  );
+                })
+              )}
             </div>
 
           </div>
@@ -202,7 +247,7 @@ export default function LogAnalyzer() {
           {/* RIGHT: ERROR/WARNINGS FREQUENCY CHART */}
           <div style={{ background: V.surface2, border: `1px solid ${V.border}`, borderRadius: 16, padding: '20px', display: 'flex', flexDirection: 'column', gap: 16 }}>
             <div style={{ fontWeight: 800, color: '#fff', fontSize: 14 }}>Event Distribution Frequency</div>
-            
+
             {/* SVG area chart for logs analytics */}
             <div style={{ border: `1px solid ${V.border}`, borderRadius: 12, padding: 10, background: 'rgba(0,0,0,0.1)' }}>
               <svg viewBox="0 0 300 180" width="100%" height="180">
@@ -220,7 +265,7 @@ export default function LogAnalyzer() {
 
                 {/* Area path for warnings */}
                 <path d="M 30 140 L 70 120 L 110 130 L 150 90 L 190 70 L 230 40 L 270 50 L 280 40 L 280 140 Z" fill="url(#logAreaGrad)" />
-                
+
                 {/* Line path warnings */}
                 <path d="M 30 140 L 70 120 L 110 130 L 150 90 L 190 70 L 230 40 L 270 50 L 280 40" fill="none" stroke={V.gold} strokeWidth="2" />
 

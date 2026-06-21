@@ -1,104 +1,67 @@
-import { useEffect } from 'react';
+// src/components/UpgradeModal.jsx
+import { useState } from 'react';
+import { getCheckoutUrl, PRICES, FEATURES } from '../lib/stripe';
+import { auth } from '../lib/supabase';
 
-export default function UpgradeModal({ feature, onClose }) {
-  // Prevent body scroll when open
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, []);
+export default function UpgradeModal({ feature, requiredPlan = 'pro', onClose, onNav }) {
+  // Initialize current plan synchronously
+  const initialPlan = auth.getPlan() || 'free';
+  const [currentPlan] = useState(initialPlan);
 
-  const handleCardClick = (url) => {
+  const handleUpgradeClick = () => {
+    const url = getCheckoutUrl(requiredPlan, false);
     window.open(url, '_blank');
   };
 
-  const plansList = [
-    {
-      id: 'starter',
-      name: 'Starter',
-      price: '$19',
-      billing: '/mo',
-      desc: 'Ideal for getting started with multi-account routing.',
-      features: ['5 AI accounts', 'Credit relay system', 'Basic scheduler', 'Email support'],
-      link: import.meta.env.VITE_STRIPE_STARTER || '#'
-    },
-    {
-      id: 'pro',
-      name: 'Pro',
-      price: '$49',
-      billing: '/mo',
-      desc: 'Our most popular plan for power users and developers.',
-      features: ['25 AI accounts', 'Credit relay system', 'Fleet prompt capability', '12-screen agent wall', 'Advanced analytics', 'Priority support'],
-      link: import.meta.env.VITE_STRIPE_PRO || '#',
-      featured: true
-    },
-    {
-      id: 'agency',
-      name: 'Agency',
-      price: '$99',
-      billing: '/mo',
-      desc: 'Designed for production workloads and team operation.',
-      features: ['Unlimited accounts', 'Everything in Pro', 'White label reports', 'Team management', 'Dedicated support', 'Unlimited relays'],
-      link: import.meta.env.VITE_STRIPE_AGENCY || '#'
+  const handleSeeAllPlans = () => {
+    if (onClose) onClose();
+    if (onNav) {
+      onNav('pricing');
+    } else {
+      window.location.href = '/pricing';
     }
-  ];
+  };
+
+  const planPrice = PRICES[requiredPlan]?.monthly || 49;
+  const currentPlanFeatures = FEATURES[currentPlan] || [];
+  const requiredPlanFeatures = FEATURES[requiredPlan] || [];
 
   return (
-    <div className="upgrade-modal-overlay" style={styles.overlay}>
-      <div className="upgrade-modal-content" style={styles.content}>
-        <button className="upgrade-modal-close" onClick={onClose} style={styles.closeBtn}>×</button>
-        
+    <div style={styles.overlay}>
+      <div style={styles.content}>
+        <button onClick={onClose} style={styles.closeBtn}>×</button>
         <div style={styles.header}>
-          <div style={styles.badge}>PRO FEATURE</div>
-          <h2 style={styles.title}>Unlock {feature ? feature.toUpperCase() : 'Premium Features'}</h2>
+          <div style={styles.badge}>PLAN LIMIT REACHED</div>
+          <h2 style={styles.title}>Unlock {feature ? feature.toUpperCase() : 'PREMIUM FEATURE'}</h2>
           <p style={styles.subtitle}>
-            Your current plan doesn't include access to this feature. Upgrade to continue building without limits.
+            Your current <strong style={{ color: '#ffffff' }}>{currentPlan.toUpperCase()}</strong> plan doesn't include access to this feature. Upgrade to <strong style={{ color: '#f5b731' }}>{requiredPlan.toUpperCase()}</strong> to continue without limits.
           </p>
         </div>
-
-        <div className="upgrade-plans-grid" style={styles.grid}>
-          {plansList.map(plan => (
-            <div 
-              key={plan.id} 
-              style={{
-                ...styles.card,
-                ...(plan.featured ? styles.featuredCard : {})
-              }}
-            >
-              {plan.featured && (
-                <div style={styles.featuredBadge}>MOST POPULAR</div>
-              )}
-              <h3 style={styles.planName}>{plan.name}</h3>
-              <div style={styles.priceContainer}>
-                <span style={styles.price}>{plan.price}</span>
-                <span style={styles.billing}>{plan.billing}</span>
-              </div>
-              <p style={styles.planDesc}>{plan.desc}</p>
-              
-              <ul style={styles.featuresList}>
-                {plan.features.map((feat, i) => (
-                  <li key={i} style={styles.featureItem}>
-                    <span style={styles.checkIcon}>✓</span> {feat}
-                  </li>
-                ))}
-              </ul>
-
-              <button 
-                onClick={() => handleCardClick(plan.link)} 
-                style={{
-                  ...styles.planBtn,
-                  ...(plan.featured ? styles.featuredBtn : {})
-                }}
-              >
-                Get Started
-              </button>
-            </div>
-          ))}
+        <div style={styles.comparisonBox}>
+          <div style={styles.planCol}>
+            <h4 style={styles.colTitle}>Current: {currentPlan.toUpperCase()}</h4>
+            <ul style={styles.list}>
+              {currentPlanFeatures.map((feat, i) => (
+                <li key={i} style={styles.itemMuted}>✓ {feat}</li>
+              ))}
+            </ul>
+          </div>
+          <div style={styles.planColActive}>
+            <h4 style={styles.colTitleActive}>Required: {requiredPlan.toUpperCase()}</h4>
+            <ul style={styles.list}>
+              {requiredPlanFeatures.map((feat, i) => (
+                <li key={i} style={styles.itemActive}>✓ {feat}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-
-        <div style={styles.footer}>
-          <button onClick={onClose} style={styles.backBtn}>Maybe Later</button>
+        <div style={styles.actionArea}>
+          <button onClick={handleUpgradeClick} style={styles.primaryBtn}>
+            Upgrade to {requiredPlan.toUpperCase()} — ${planPrice}/mo ⚡
+          </button>
+          <button onClick={handleSeeAllPlans} style={styles.secondaryBtn}>
+            See all plans &amp; comparisons
+          </button>
         </div>
       </div>
     </div>
@@ -119,18 +82,18 @@ const styles = {
     justifyContent: 'center',
     zIndex: 9999,
     padding: '20px',
+    fontFamily: 'system-ui, sans-serif',
   },
   content: {
     backgroundColor: '#0e0e16',
     border: '1px solid rgba(255, 255, 255, 0.08)',
     borderRadius: '12px',
-    maxWidth: '1000px',
+    maxWidth: '560px',
     width: '100%',
-    maxHeight: '90vh',
-    overflowY: 'auto',
     position: 'relative',
     padding: '40px 32px 32px 32px',
     boxShadow: '0 24px 48px -12px rgba(0, 0, 0, 0.5)',
+    textAlign: 'center',
   },
   closeBtn: {
     position: 'absolute',
@@ -143,12 +106,10 @@ const styles = {
     cursor: 'pointer',
     padding: '4px',
     lineHeight: 1,
-    transition: 'color 0.2s',
     outline: 'none',
   },
   header: {
-    textAlign: 'center',
-    marginBottom: '36px',
+    marginBottom: '28px',
   },
   badge: {
     display: 'inline-block',
@@ -163,128 +124,92 @@ const styles = {
     marginBottom: '12px',
   },
   title: {
-    fontSize: '28px',
+    fontSize: '24px',
     fontWeight: 'bold',
     color: '#ffffff',
     margin: '0 0 10px 0',
     letterSpacing: '-0.5px',
   },
   subtitle: {
-    fontSize: '14px',
+    fontSize: '13.5px',
     color: '#8e92b2',
     margin: 0,
-    maxWidth: '540px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
     lineHeight: 1.5,
   },
-  grid: {
+  comparisonBox: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    gap: '24px',
-    marginBottom: '32px',
+    gridTemplateColumns: '1fr 1fr',
+    gap: '16px',
+    marginBottom: '28px',
+    textAlign: 'left',
   },
-  card: {
+  planCol: {
     backgroundColor: '#16161e',
-    border: '1px solid rgba(255, 255, 255, 0.06)',
+    border: '1px solid rgba(255, 255, 255, 0.04)',
     borderRadius: '8px',
-    padding: '30px 24px',
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'relative',
-    transition: 'transform 0.2s, border-color 0.2s',
+    padding: '16px',
   },
-  featuredCard: {
-    border: '1px solid #f5b731',
-    boxShadow: '0 0 20px rgba(245, 183, 49, 0.1)',
-    transform: 'scale(1.02)',
-  },
-  featuredBadge: {
-    position: 'absolute',
-    top: '-12px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    backgroundColor: '#f5b731',
-    color: '#000000',
-    fontSize: '10px',
-    fontWeight: 'bold',
-    padding: '3px 12px',
-    borderRadius: '12px',
-    letterSpacing: '0.5px',
-  },
-  planName: {
-    fontSize: '20px',
-    fontWeight: 'bold',
-    color: '#ffffff',
-    margin: '0 0 12px 0',
-  },
-  priceContainer: {
-    display: 'flex',
-    alignItems: 'baseline',
-    marginBottom: '16px',
-  },
-  price: {
-    fontSize: '36px',
-    fontWeight: 'bold',
-    color: '#ffffff',
-  },
-  billing: {
-    fontSize: '14px',
-    color: '#8e92b2',
-    marginLeft: '4px',
-  },
-  planDesc: {
+  colTitle: {
     fontSize: '13px',
+    fontWeight: 'bold',
     color: '#8e92b2',
-    margin: '0 0 24px 0',
-    lineHeight: 1.5,
-    minHeight: '40px',
+    margin: '0 0 12px 0',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.04)',
+    paddingBottom: '8px',
   },
-  featuresList: {
+  planColActive: {
+    backgroundColor: 'rgba(245, 183, 49, 0.02)',
+    border: '1px solid rgba(245, 183, 49, 0.2)',
+    borderRadius: '8px',
+    padding: '16px',
+  },
+  colTitleActive: {
+    fontSize: '13px',
+    fontWeight: 'bold',
+    color: '#f5b731',
+    margin: '0 0 12px 0',
+    borderBottom: '1px solid rgba(245, 183, 49, 0.2)',
+    paddingBottom: '8px',
+  },
+  list: {
     listStyle: 'none',
     padding: 0,
-    margin: '0 0 32px 0',
-    flexGrow: 1,
-  },
-  featureItem: {
-    fontSize: '13px',
-    color: '#e2e8f0',
-    marginBottom: '12px',
+    margin: 0,
     display: 'flex',
-    alignItems: 'center',
+    flexDirection: 'column',
     gap: '8px',
-    lineHeight: 1.4,
   },
-  checkIcon: {
-    color: '#22d3ee',
-    fontWeight: 'bold',
+  itemMuted: {
+    fontSize: '12px',
+    color: '#6e7191',
   },
-  planBtn: {
+  itemActive: {
+    fontSize: '12px',
+    color: '#e2e8f0',
+  },
+  actionArea: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '12px',
+  },
+  primaryBtn: {
     width: '100%',
-    padding: '12px',
-    borderRadius: '6px',
-    border: '1px solid rgba(255, 255, 255, 0.15)',
-    backgroundColor: 'transparent',
-    color: '#ffffff',
-    fontWeight: '600',
-    cursor: 'pointer',
-    transition: 'background-color 0.2s, border-color 0.2s',
-  },
-  featuredBtn: {
+    padding: '14px',
     backgroundColor: '#f5b731',
-    border: 'none',
     color: '#0e0e16',
+    border: 'none',
+    borderRadius: '6px',
+    fontSize: '14px',
+    fontWeight: '700',
+    cursor: 'pointer',
+    boxShadow: '0 4px 12px rgba(245, 183, 49, 0.2)',
   },
-  footer: {
-    textAlign: 'center',
-    marginTop: '12px',
-  },
-  backBtn: {
+  secondaryBtn: {
     background: 'none',
     border: 'none',
     color: '#8e92b2',
     cursor: 'pointer',
     fontSize: '13px',
     textDecoration: 'underline',
-  }
+  },
 };

@@ -1,24 +1,24 @@
-import { useState } from 'react';
-import { getPlan } from '../lib/planGate';
+// src/pages/Billing.jsx
+import { useState, useEffect } from 'react';
+import { auth } from '../lib/supabase';
+import { FEATURES } from '../lib/stripe';
+import PlanBadge from '../components/PlanBadge';
 
 export default function Billing({ onNav }) {
-  const [plan] = useState(() => getPlan());
+  const [plan, setPlan] = useState('free');
+  const [showCancelConfirm, setShowCancelConfirm] = useState(false);
 
-  const planLabels = {
-    free: 'Free Trial Plan',
-    starter: 'Starter Plan',
-    pro: 'Professional Pro Plan',
-    agency: 'Enterprise Agency Plan'
+  useEffect(() => {
+    setPlan(auth.getPlan());
+  }, []);
+
+  const handleCancelSubscription = () => {
+    alert('Subscription successfully set to cancel at the end of the current billing cycle. (Mock handler completed)');
+    setShowCancelConfirm(false);
   };
 
-  const planPrices = {
-    free: '$0 / mo',
-    starter: '$19 / mo',
-    pro: '$49 / mo',
-    agency: '$99 / mo'
-  };
-
-  const invoiceHistory = []; // Empty state for now
+  const portalUrl = import.meta.env.VITE_STRIPE_PORTAL || '#';
+  const planFeatures = FEATURES[plan] || FEATURES.free;
 
   return (
     <div style={styles.container}>
@@ -32,26 +32,42 @@ export default function Billing({ onNav }) {
         <div style={styles.mainCard}>
           <div style={styles.planHeader}>
             <div>
-              <span style={styles.badge}>CURRENT PLAN</span>
-              <h3 style={styles.planTitle}>{planLabels[plan] || 'Unknown Plan'}</h3>
+              <span style={{ display: 'block', fontSize: '10px', fontWeight: 'bold', color: '#8e92b2', marginBottom: '4px' }}>CURRENT PLAN</span>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <h3 style={styles.planTitle}>{plan.toUpperCase()}</h3>
+                <PlanBadge plan={plan} />
+              </div>
             </div>
-            <div style={styles.price}>{planPrices[plan] || '—'}</div>
+            <div style={styles.price}>
+              {plan === 'free' ? '$0' : plan === 'starter' ? '$19' : plan === 'pro' ? '$49' : '$99'}
+              <span style={{ fontSize: '12px', color: '#8e92b2', fontWeight: 'normal' }}>/mo</span>
+            </div>
           </div>
-          
-          <p style={styles.cardText}>
-            Your plan allows you to add up to {plan === 'free' ? '2' : plan === 'starter' ? '5' : plan === 'pro' ? '25' : '999'} accounts, 
-            {plan === 'free' ? ' with no relay or fleet broadcasting capabilities.' : ' with active credit relay and custom thresholds.'}
-          </p>
+
+          <div style={{ margin: '16px 0 24px 0' }}>
+            <h4 style={{ fontSize: '12px', color: '#ffffff', margin: '0 0 8px 0' }}>Features in your current tier:</h4>
+            <ul style={styles.featureList}>
+              {planFeatures.map((feat, i) => (
+                <li key={i} style={styles.featureItem}>✓ {feat}</li>
+              ))}
+            </ul>
+          </div>
 
           <div style={styles.actions}>
             <button onClick={() => onNav('pricing')} style={styles.upgradeBtn}>
-              Upgrade Plan ⚡
+              Upgrade Tier ⚡
             </button>
-            <button 
-              onClick={() => alert('Redirecting to Stripe Billing Portal... (Simulated link)')} 
+            <button
+              onClick={() => {
+                if (portalUrl !== '#') {
+                  window.open(portalUrl, '_blank');
+                } else {
+                  alert('Redirecting to Stripe Billing Portal... (VITE_STRIPE_PORTAL is not configured, running simulated portal fallback)');
+                }
+              }}
               style={styles.manageBtn}
             >
-              Manage Subscription
+              Manage Stripe Billing
             </button>
           </div>
         </div>
@@ -59,31 +75,35 @@ export default function Billing({ onNav }) {
         {/* Invoice history */}
         <div style={styles.historyCard}>
           <h4 style={styles.historyTitle}>Invoice History</h4>
-          {invoiceHistory.length > 0 ? (
-            <div style={styles.tableWrapper}>
-              <table style={styles.table}>
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Invoice ID</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                    <th>Download</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {/* Rows would go here */}
-                </tbody>
-              </table>
-            </div>
-          ) : (
-            <div style={styles.emptyState}>
-              <span style={{ fontSize: '32px', marginBottom: '8px', display: 'block' }}>🧾</span>
-              <p style={{ margin: '0 0 4px 0', fontWeight: 'bold' }}>No invoices found</p>
-              <p style={{ margin: 0, fontSize: '12px', color: '#8e92b2' }}>You haven't been billed yet.</p>
-            </div>
-          )}
+          <div style={styles.emptyState}>
+            <span style={{ fontSize: '32px', marginBottom: '8px', display: 'block' }}>🧾</span>
+            <p style={{ margin: '0 0 4px 0', fontWeight: 'bold', color: '#ffffff' }}>No invoices found</p>
+            <p style={{ margin: 0, fontSize: '12px', color: '#8e92b2' }}>Invoices appear here after first payment.</p>
+          </div>
         </div>
+
+        {/* Cancel Subscription */}
+        {plan !== 'free' && (
+          <div style={styles.cancelCard}>
+            <h4 style={styles.cancelTitle}>Danger Zone</h4>
+            <p style={styles.cancelText}>
+              Cancel your AgentFlow premium tier and revert your workspace back to the Free plan limits.
+            </p>
+            {!showCancelConfirm ? (
+              <button onClick={() => setShowCancelConfirm(true)} style={styles.cancelBtn}>
+                Cancel Subscription
+              </button>
+            ) : (
+              <div style={styles.cancelConfirmBlock}>
+                <span style={{ color: '#ef4444', fontSize: '13px', fontWeight: 'bold' }}>Are you absolutely sure?</span>
+                <div style={styles.cancelActions}>
+                  <button onClick={handleCancelSubscription} style={styles.cancelConfirmBtn}>Yes, Cancel</button>
+                  <button onClick={() => setShowCancelConfirm(false)} style={styles.cancelDismissBtn}>Keep Subscription</button>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -115,7 +135,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '24px',
-    maxWidth: '800px',
+    maxWidth: '640px',
   },
   mainCard: {
     backgroundColor: '#0e0e16',
@@ -131,16 +151,6 @@ const styles = {
     borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
     paddingBottom: '16px',
   },
-  badge: {
-    display: 'inline-block',
-    fontSize: '10px',
-    fontWeight: 'bold',
-    color: '#f5b731',
-    backgroundColor: 'rgba(245, 183, 49, 0.08)',
-    padding: '2px 8px',
-    borderRadius: '4px',
-    marginBottom: '8px',
-  },
   planTitle: {
     fontSize: '20px',
     fontWeight: 'bold',
@@ -152,11 +162,17 @@ const styles = {
     fontWeight: 'bold',
     color: '#ffffff',
   },
-  cardText: {
-    fontSize: '13.5px',
+  featureList: {
+    listStyle: 'none',
+    padding: 0,
+    margin: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8px',
+  },
+  featureItem: {
+    fontSize: '13px',
     color: '#8e92b2',
-    lineHeight: 1.5,
-    margin: '0 0 24px 0',
   },
   actions: {
     display: 'flex',
@@ -198,19 +214,72 @@ const styles = {
     margin: '0 0 16px 0',
   },
   emptyState: {
-    textAlign: 'center',
-    padding: '40px 20px',
+    textAlignment: 'center',
+    padding: '30px 20px',
     backgroundColor: '#16161e',
     borderRadius: '8px',
     border: '1px dashed rgba(255, 255, 255, 0.05)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
-  tableWrapper: {
-    overflowX: 'auto',
+  cancelCard: {
+    backgroundColor: '#0e0e16',
+    border: '1px solid rgba(239, 68, 68, 0.15)',
+    borderRadius: '10px',
+    padding: '24px',
   },
-  table: {
-    width: '100%',
-    borderCollapse: 'collapse',
+  cancelTitle: {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    color: '#ef4444',
+    margin: '0 0 8px 0',
+  },
+  cancelText: {
     fontSize: '13px',
-    textAlign: 'left',
+    color: '#8e92b2',
+    margin: '0 0 16px 0',
+    lineHeight: 1.4,
+  },
+  cancelBtn: {
+    padding: '8px 16px',
+    backgroundColor: 'transparent',
+    border: '1px solid rgba(239, 68, 68, 0.3)',
+    color: '#ef4444',
+    borderRadius: '6px',
+    fontSize: '12px',
+    fontWeight: '600',
+    cursor: 'pointer',
+    transition: 'background-color 0.2s',
+  },
+  cancelConfirmBlock: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
+    alignItems: 'flex-start',
+  },
+  cancelActions: {
+    display: 'flex',
+    gap: '8px',
+  },
+  cancelConfirmBtn: {
+    padding: '8px 16px',
+    backgroundColor: '#ef4444',
+    border: 'none',
+    color: '#ffffff',
+    borderRadius: '6px',
+    fontSize: '12px',
+    fontWeight: '600',
+    cursor: 'pointer',
+  },
+  cancelDismissBtn: {
+    padding: '8px 16px',
+    backgroundColor: '#16161e',
+    border: '1px solid rgba(255, 255, 255, 0.1)',
+    color: '#ffffff',
+    borderRadius: '6px',
+    fontSize: '12px',
+    fontWeight: '600',
+    cursor: 'pointer',
   }
 };

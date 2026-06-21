@@ -81,14 +81,14 @@ export default function Optimizer({ onNav }) {
   // Dynamic 4-Dimension Diagnostics calculations
   const diagnostics = useMemo(() => {
     if (!input.trim()) return { clarity: 0, structure: 0, precision: 0, directive: 0, overall: 0 };
-    
+
     let clarity = 20;
     let structure = 15;
     let precision = 10;
     let directive = 15;
 
     const words = input.split(/\s+/).filter(Boolean).length;
-    
+
     // Clarity check
     if (words > 10) clarity += 30;
     if (words > 30) clarity += 30;
@@ -141,39 +141,39 @@ export default function Optimizer({ onNav }) {
   const dynamicTips = useMemo(() => {
     const tips = [];
     if (!input.trim()) return [];
-    
+
     const text = input.toLowerCase();
-    
+
     if (text.split(/\s+/).filter(Boolean).length < 25) {
       tips.push({ ok: false, text: 'Extend instructions past 25 words for richer details' });
     } else {
       tips.push({ ok: true, text: 'Ideal length requirement satisfied' });
     }
-    
+
     if (!text.includes('#') && !text.includes('-') && !text.includes('*')) {
       tips.push({ ok: false, text: 'Add markdown headers (#) or bullets (-) for layout structure' });
     } else {
       tips.push({ ok: true, text: 'Good structural segmentation detected' });
     }
-    
+
     if (!/role|act as|you are|expert|persona/i.test(text)) {
       tips.push({ ok: false, text: 'Define a custom agent persona (e.g. "Act as a lead programmer")' });
     } else {
       tips.push({ ok: true, text: 'Custom agent identity/persona declared' });
     }
-    
+
     if (!/mobile|responsive|breakpoint|width/i.test(text)) {
       tips.push({ ok: false, text: 'Inject mobile layout limits (breakpoints, sizing constraints)' });
     } else {
       tips.push({ ok: true, text: 'Mobile responsive specifications found' });
     }
-    
+
     if (!/error|grace|degrad|loading|exception/i.test(text)) {
       tips.push({ ok: false, text: 'Outline failure/error handling or fallback loading screens' });
     } else {
       tips.push({ ok: true, text: 'Error handling guidelines integrated' });
     }
-    
+
     return tips;
   }, [input]);
 
@@ -223,7 +223,7 @@ export default function Optimizer({ onNav }) {
       setOptimized(result);
       setLoading(false);
       startTypewriter(result);
-      
+
       const newRevId = Math.random().toString(36).slice(2, 10);
       setActiveRevisionId(newRevId);
 
@@ -303,7 +303,7 @@ export default function Optimizer({ onNav }) {
 
       {/* ── LEFT: Interactive Diagnostics & Inputs ── */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-        
+
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div>
@@ -327,14 +327,14 @@ export default function Optimizer({ onNav }) {
         {/* Dynamic 4-Dimension Diagnostics gauges */}
         {input.trim() && (
           <div className="card" style={{ padding: '16px 20px', display: 'grid', gridTemplateColumns: '120px 1fr', gap: 20, alignItems: 'center', background: 'rgba(20,20,31,0.2)' }}>
-            
+
             {/* Left: SVG Scoring Dial */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
               <div style={{ position: 'relative', width: 110, height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="110" height="110">
                   {/* Background Track Ring */}
                   <circle cx="55" cy="55" r="42" stroke="rgba(255,255,255,0.04)" strokeWidth="8" fill="none" />
-                  
+
                   {/* Glowing Active Score Ring */}
                   <circle
                     cx="55" cy="55" r="42"
@@ -518,7 +518,7 @@ export default function Optimizer({ onNav }) {
                     <div style={{ fontSize: 13, fontWeight: 700 }}>Telemetry Metrics Dashboard</div>
                     <span style={{ fontSize: 9, background: 'var(--teal-glow)', color: 'var(--teal)', padding: '1px 5px', borderRadius: 3, border: '1px solid rgba(0,212,170,0.2)' }}>Live Stream</span>
                   </div>
-                  
+
                   {/* Dashboard Slider Control */}
                   <div className="lab-widget" style={{ background: isSandboxDark ? 'var(--surface2)' : '#ffffff', border: isSandboxDark ? '1px solid var(--border)' : '1px solid rgba(0,0,0,0.08)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10, color: isSandboxDark ? 'var(--muted)' : '#6b6b82', marginBottom: 6 }}>
@@ -550,7 +550,7 @@ export default function Optimizer({ onNav }) {
               {activeSandboxTemplate === 'todo' && (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10, color: isSandboxDark ? '#fff' : '#000' }}>
                   <div style={{ fontSize: 13, fontWeight: 700 }}>Interactive Task board Checklist</div>
-                  
+
                   <div className="lab-widget" style={{ display: 'flex', flexDirection: 'column', gap: 6, background: isSandboxDark ? 'var(--surface2)' : '#ffffff', border: isSandboxDark ? '1px solid var(--border)' : '1px solid rgba(0,0,0,0.08)' }}>
                     {todoTasks.map(t => (
                       <label key={t.id} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 11, cursor: 'pointer', color: t.checked ? 'var(--muted)' : (isSandboxDark ? '#fff' : '#000') }} onClick={() => handleToggleTodo(t.id)}>

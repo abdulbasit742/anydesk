@@ -100,7 +100,7 @@ export default function SystemStatusBar({ onNav }) {
       fontFamily: 'DM Mono, monospace',
       color: '#e2e8f0',
     }}>
-      <div 
+      <div
         onClick={() => {
           sound.play('click');
           onNav('analytics');
@@ -130,7 +130,7 @@ export default function SystemStatusBar({ onNav }) {
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <div 
+        <div
           onClick={() => {
             sound.play('click');
             onNav('accounts');
@@ -152,7 +152,7 @@ export default function SystemStatusBar({ onNav }) {
         </div>
 
         {health.low > 0 && (
-          <div 
+          <div
             onClick={() => {
               sound.play('click');
               onNav('accounts');
@@ -176,7 +176,7 @@ export default function SystemStatusBar({ onNav }) {
         )}
 
         {health.exhausted > 0 && (
-          <div 
+          <div
             onClick={() => {
               sound.play('click');
               onNav('accounts');
@@ -199,7 +199,7 @@ export default function SystemStatusBar({ onNav }) {
           </div>
         )}
 
-        <div 
+        <div
           onClick={() => {
             sound.play('click');
             onNav('promptqueue');

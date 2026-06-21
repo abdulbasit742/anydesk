@@ -5,7 +5,7 @@ export function buildDailyDigest(state) {
 
   const todayStr = new Date().toISOString().slice(0, 10);
   const todayBroadcasts = broadcasts.filter(b => b.createdAt && b.createdAt.startsWith(todayStr));
-  
+
   const totalCount = todayBroadcasts.length;
   let successCount = 0;
   let totalTargets = 0;
@@ -47,7 +47,7 @@ export function buildDailyDigest(state) {
   });
 
   const optimizations = state.optimizations || [];
-  const optimizedCount = todayBroadcasts.filter(b => 
+  const optimizedCount = todayBroadcasts.filter(b =>
     optimizations.some(o => o.original === b.prompt || o.enhanced === b.prompt)
   ).length;
   const optimizationRate = totalCount > 0 ? Math.round((optimizedCount / totalCount) * 100) : 0;

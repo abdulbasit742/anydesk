@@ -48,12 +48,12 @@ ${prompt.toLowerCase().includes('react') || prompt.toLowerCase().includes('hook'
 
 export function useCustomHook(value, delay = 300) {
   const [state, setState] = useState(value);
-  
+
   useEffect(() => {
     const timer = setTimeout(() => setState(value), delay);
     return () => clearTimeout(timer);
   }, [value, delay]);
-  
+
   return state;
 }` : prompt.toLowerCase().includes('css') || prompt.toLowerCase().includes('spinner') ? `.spinner {
   width: 40px;

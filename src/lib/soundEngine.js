@@ -5,7 +5,7 @@ class SoundEngine {
   constructor() {
     this.ctx = null;
     this.muted = false;
-    
+
     // Check if muted in localStorage
     const saved = localStorage.getItem('bsp_sound_muted');
     if (saved !== null) {
@@ -66,17 +66,17 @@ class SoundEngine {
   playHover() {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
-    
+
     osc.type = 'sine';
     osc.frequency.setValueAtTime(1200, this.ctx.currentTime);
     osc.frequency.exponentialRampToValueAtTime(1800, this.ctx.currentTime + 0.04);
-    
+
     gain.gain.setValueAtTime(0.015, this.ctx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.04);
-    
+
     osc.connect(gain);
     gain.connect(this.ctx.destination);
-    
+
     osc.start();
     osc.stop(this.ctx.currentTime + 0.04);
   }
@@ -84,39 +84,39 @@ class SoundEngine {
   playClick() {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
-    
+
     osc.type = 'sine';
     osc.frequency.setValueAtTime(600, this.ctx.currentTime);
     osc.frequency.exponentialRampToValueAtTime(300, this.ctx.currentTime + 0.08);
-    
+
     gain.gain.setValueAtTime(0.05, this.ctx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.08);
-    
+
     osc.connect(gain);
     gain.connect(this.ctx.destination);
-    
+
     osc.start();
     osc.stop(this.ctx.currentTime + 0.08);
   }
 
   playSuccess() {
     const now = this.ctx.currentTime;
-    
+
     // Play a C5-E5-G5 triad chime
     const playNote = (freq, delay, duration) => {
       const osc = this.ctx.createOscillator();
       const gain = this.ctx.createGain();
-      
+
       osc.type = 'triangle';
       osc.frequency.setValueAtTime(freq, now + delay);
-      
+
       gain.gain.setValueAtTime(0.0, now + delay);
       gain.gain.linearRampToValueAtTime(0.04, now + delay + 0.03);
       gain.gain.exponentialRampToValueAtTime(0.0001, now + delay + duration);
-      
+
       osc.connect(gain);
       gain.connect(this.ctx.destination);
-      
+
       osc.start(now + delay);
       osc.stop(now + delay + duration);
     };
@@ -129,17 +129,17 @@ class SoundEngine {
   playWarning() {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
-    
+
     osc.type = 'sawtooth';
     osc.frequency.setValueAtTime(140, this.ctx.currentTime);
     osc.frequency.linearRampToValueAtTime(100, this.ctx.currentTime + 0.25);
-    
+
     gain.gain.setValueAtTime(0.06, this.ctx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.25);
-    
+
     osc.connect(gain);
     gain.connect(this.ctx.destination);
-    
+
     osc.start();
     osc.stop(this.ctx.currentTime + 0.25);
   }
@@ -147,18 +147,18 @@ class SoundEngine {
   playDispatch() {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
-    
+
     osc.type = 'sine';
     osc.frequency.setValueAtTime(150, this.ctx.currentTime);
     osc.frequency.exponentialRampToValueAtTime(1200, this.ctx.currentTime + 0.45);
-    
+
     gain.gain.setValueAtTime(0.0, this.ctx.currentTime);
     gain.gain.linearRampToValueAtTime(0.06, this.ctx.currentTime + 0.15);
     gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.45);
-    
+
     osc.connect(gain);
     gain.connect(this.ctx.destination);
-    
+
     osc.start();
     osc.stop(this.ctx.currentTime + 0.45);
   }
@@ -166,17 +166,17 @@ class SoundEngine {
   playPin() {
     const osc = this.ctx.createOscillator();
     const gain = this.ctx.createGain();
-    
+
     osc.type = 'sine';
     osc.frequency.setValueAtTime(900, this.ctx.currentTime);
     osc.frequency.setValueAtTime(1400, this.ctx.currentTime + 0.05);
-    
+
     gain.gain.setValueAtTime(0.03, this.ctx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.15);
-    
+
     osc.connect(gain);
     gain.connect(this.ctx.destination);
-    
+
     osc.start();
     osc.stop(this.ctx.currentTime + 0.15);
   }

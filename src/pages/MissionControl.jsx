@@ -333,7 +333,7 @@ function DependencyOrchestrator({ onPushEvent }) {
     const interval = setInterval(() => {
       setSequenceStep(s => {
         const nextStep = (s + 1) % 6;
-        
+
         const nextStates = {
           auth: 'queued', ping: 'queued', index: 'queued',
           optimize: 'queued', dispatch: 'queued', verify: 'queued', report: 'queued'
@@ -371,7 +371,7 @@ function DependencyOrchestrator({ onPushEvent }) {
         }
 
         setNodeStates(nextStates);
-        
+
         const activeIds = Object.keys(nextStates).filter(k => nextStates[k] === 'running');
         if (activeIds.length > 0) setActiveNodeId(activeIds[0]);
         else setActiveNodeId(Object.keys(nextStates).find(k => nextStates[k] === 'done') || 'auth');
@@ -505,10 +505,10 @@ function DependencyOrchestrator({ onPushEvent }) {
 
             const fromState = nodeStates[edge.from];
             const toState = nodeStates[edge.to];
-            
+
             const isActiveFlow = fromState === 'done' && toState === 'running';
             const isDoneFlow = fromState === 'done' && toState === 'done';
-            
+
             let strokeColor = '#27273a';
             let strokeDash = 'none';
             let animationClass = 'none';
@@ -538,7 +538,7 @@ function DependencyOrchestrator({ onPushEvent }) {
           {ORCH_NODES.map(node => {
             const state = nodeStates[node.id];
             const isFocused = activeNodeId === node.id;
-            
+
             let color = '#475569';
             let stroke = 'rgba(255,255,255,0.06)';
             let filter = 'none';

@@ -8,7 +8,7 @@ class CentralBrain {
     this.lastSnapshotTick = 0;
     this.lastHandoffTick = 0;
   }
-  
+
   start(ms = 60000) {
     if (this.interval) {
       clearInterval(this.interval);
@@ -17,28 +17,28 @@ class CentralBrain {
     // Run initial tick asynchronously to let standard initialization complete
     setTimeout(() => this.tick(), 100);
   }
-  
+
   stop() {
     if (this.interval) {
       clearInterval(this.interval);
       this.interval = null;
     }
   }
-  
+
   tick() {
     this.tickCount++;
     try { this.checkCredits(); } catch (e) { console.error('credit check failed', e); }
     try { this.checkAgents(); } catch (e) { console.error('agent check failed', e); }
     try { this.checkSchedules(); } catch (e) { console.error('schedule check failed', e); }
     try { this.updateHealth(); } catch (e) { console.error('health check failed', e); }
-    
+
     if (this.tickCount - this.lastSnapshotTick >= 30) {
       stateManager.snapshotCredits();
       this.lastSnapshotTick = this.tickCount;
     }
     bus.emit(EVENTS.SYSTEM_TICK, { tick: this.tickCount, time: Date.now() });
   }
-  
+
   checkCredits() {
     const accounts = stateManager.getAccounts().filter(a => !a.deletedAt);
     accounts.forEach(account => {
@@ -53,7 +53,7 @@ class CentralBrain {
       }
     });
   }
-  
+
   triggerAutoRelay(exhaustedAccount) {
     const accounts = stateManager.getAccounts().filter(a => !a.deletedAt);
     const next = accounts
@@ -68,11 +68,11 @@ class CentralBrain {
     };
     stateManager.addRelayEntry(entry);
   }
-  
+
   checkAgents() {
     const tasks = stateManager.getTasks();
     const activeTask = tasks.find(t => t.status === 'running');
-    
+
     if (activeTask) {
       const progress = (activeTask.progress || 0) + Math.floor(Math.random() * 20) + 10;
       if (progress >= 100) {
@@ -87,7 +87,7 @@ class CentralBrain {
       }
     }
   }
-  
+
   checkSchedules() {
     let schedulesRaw = localStorage.getItem('agp_schedules');
     if (!schedulesRaw) {
@@ -113,7 +113,7 @@ class CentralBrain {
       localStorage.setItem('agp_schedules', JSON.stringify(schedules));
     }
   }
-  
+
   updateHealth() {
     const accounts = stateManager.getAccounts().filter(a => !a.deletedAt);
     const exhausted = accounts.filter(a => a.status === 'exhausted').length;

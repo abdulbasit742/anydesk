@@ -855,7 +855,7 @@ export default function AutonomousAgent() {
         '[SCHEDULING] Deploying parallel computational routines for execution...'
       ];
       let currentIdx = 0;
-      
+
       timerId = setInterval(() => {
         if (currentIdx < thinkingPhrases.length) {
           setAutopilotThinking(prev => [...prev, thinkingPhrases[currentIdx]]);
@@ -870,7 +870,7 @@ export default function AutonomousAgent() {
     } else if (autopilotStep === 2) {
       sound.play('dispatch');
       const finalPrompt = `You are Basit Auto, the autonomous engineering agent specialized in the Anti-Gravity Project.\n\nMission Directive:\n- Execute task: "${autopilotGoal}"\n- Reconstruct project variables and resolve gravity-differential constraints\n- Follow state-resilient execution standards and prepare clean handoff summary.`;
-      
+
       let charIdx = 0;
       timerId = setInterval(() => {
         if (charIdx < finalPrompt.length) {
@@ -1521,7 +1521,7 @@ export default function AutonomousAgent() {
               {directivesExpanded ? 'Hide Directives' : 'Show Directives'}
             </button>
           </div>
-          
+
           <p style={{ margin: '0 0 16px', color: '#6e7191', fontSize: 13, fontFamily: "'Syne', sans-serif" }}>
             The active cognitive layer is executing under stateless-resilient handoff boundaries. The following system directives are hardcoded into Basit Auto's execution core.
           </p>
@@ -2285,6 +2285,275 @@ export default function AutonomousAgent() {
               </table>
             </div>
           </Card>
+        </div>
+
+        {/* ═══════════════════════════════════════════════════════════ */}
+        {/* LIVE AGENT CHAT — Real backend at localhost:3001            */}
+        {/* ═══════════════════════════════════════════════════════════ */}
+        <LiveAgentChat />
+
+      </div>
+    </div>
+  );
+}
+
+/* ─── Live Agent Chat Component ──────────────────────────────────── */
+function LiveAgentChat() {
+  const [messages, setMessages]   = useState([
+    { role: 'agent', text: '⚡ Live Agent online. Type "help" to see all commands.\n\nExamples:\n• create component NavBar\n• create page Dashboard\n• create hook useAuth\n• list components\n• status', ts: new Date().toLocaleTimeString() },
+  ]);
+  const [input, setInput]         = useState('');
+  const [loading, setLoading]     = useState(false);
+  const [agentOnline, setAgentOnline] = useState(false);
+  const [taskLog, setTaskLog]     = useState([]);
+  const endRef                    = useRef(null);
+  const inputRef                  = useRef(null);
+
+  /* Check health on mount */
+  useEffect(() => {
+    fetch('/api/health')
+      .then(r => r.json())
+      .then(() => setAgentOnline(true))
+      .catch(() => setAgentOnline(false));
+  }, []);
+
+  /* Auto-scroll */
+  useEffect(() => {
+    if (endRef.current) endRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  /* Fetch task log periodically */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch('/api/tasks').then(r => r.json()).then(data => setTaskLog(data.slice(0, 6))).catch(() => {});
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const sendPrompt = async (promptText) => {
+    const text = (promptText || input).trim();
+    if (!text) return;
+    setInput('');
+    setMessages(prev => [...prev, { role: 'user', text, ts: new Date().toLocaleTimeString() }]);
+    setLoading(true);
+    try {
+      const res = await fetch('/api/prompt', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: text }),
+      });
+      const data = await res.json();
+      if (data.error) throw new Error(data.error);
+      setMessages(prev => [...prev, { role: 'agent', text: data.message, ts: new Date().toLocaleTimeString() }]);
+      /* refresh task log */
+      fetch('/api/tasks').then(r => r.json()).then(d => setTaskLog(d.slice(0, 6))).catch(() => {});
+    } catch (err) {
+      setMessages(prev => [...prev, { role: 'error', text: '❌ ' + err.message, ts: new Date().toLocaleTimeString() }]);
+    } finally {
+      setLoading(false);
+      if (inputRef.current) inputRef.current.focus();
+    }
+  };
+
+  const CHIPS = ['help', 'create component Button', 'create page Home', 'list components', 'status'];
+
+  const bubbleColor = (role) => {
+    if (role === 'user')  return { bg: 'rgba(245,183,49,0.08)', border: 'rgba(245,183,49,0.25)', color: '#fff' };
+    if (role === 'error') return { bg: 'rgba(239,68,68,0.08)',  border: 'rgba(239,68,68,0.25)',  color: '#ef4444' };
+    return { bg: '#16161e', border: 'rgba(255,255,255,0.07)', color: '#c4c7de' };
+  };
+
+  return (
+    <div style={{
+      background: 'linear-gradient(135deg, rgba(34,211,238,0.03) 0%, rgba(167,139,250,0.03) 100%)',
+      border: '1px solid rgba(34,211,238,0.15)',
+      borderRadius: 16,
+      overflow: 'hidden',
+    }}>
+      {/* Header */}
+      <div style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        padding: '16px 24px',
+        background: 'rgba(34,211,238,0.05)',
+        borderBottom: '1px solid rgba(34,211,238,0.12)',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <span style={{ fontSize: 22 }}>🤖</span>
+          <div>
+            <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 16, color: '#22d3ee' }}>
+              Live Antigravity Agent
+            </div>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: '#6e7191', marginTop: 2 }}>
+              Real backend · Creates files on disk · Port 3001
+            </div>
+          </div>
+          <div style={{
+            display: 'flex', alignItems: 'center', gap: 6,
+            background: agentOnline ? 'rgba(34,197,94,0.1)' : 'rgba(239,68,68,0.1)',
+            border: `1px solid ${agentOnline ? 'rgba(34,197,94,0.3)' : 'rgba(239,68,68,0.3)'}`,
+            borderRadius: 20, padding: '3px 10px',
+          }}>
+            <span style={{
+              width: 7, height: 7, borderRadius: '50%', display: 'inline-block',
+              background: agentOnline ? '#22c55e' : '#ef4444',
+              boxShadow: agentOnline ? '0 0 6px #22c55e' : 'none',
+              animation: agentOnline ? 'pulse-ring 1.6s ease-in-out infinite' : 'none',
+            }} />
+            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, fontWeight: 700,
+              color: agentOnline ? '#22c55e' : '#ef4444', letterSpacing: 0.5 }}>
+              {agentOnline ? 'ONLINE' : 'OFFLINE'}
+            </span>
+          </div>
+        </div>
+
+        {/* Mini task log */}
+        {taskLog.length > 0 && (
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', maxWidth: 400, justifyContent: 'flex-end' }}>
+            {taskLog.map((t, i) => (
+              <span key={i} style={{
+                fontFamily: "'DM Mono', monospace", fontSize: 9, fontWeight: 600,
+                padding: '2px 7px', borderRadius: 4,
+                background: t.status === 'done' ? 'rgba(34,197,94,0.1)' : 'rgba(239,68,68,0.1)',
+                color: t.status === 'done' ? '#22c55e' : '#ef4444',
+                border: `1px solid ${t.status === 'done' ? 'rgba(34,197,94,0.3)' : 'rgba(239,68,68,0.3)'}`,
+                maxWidth: 120, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+              }}>
+                {t.status === 'done' ? '✓' : '✗'} {t.label}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Main: sidebar + chat */}
+      <div style={{ display: 'flex', minHeight: 420 }}>
+
+        {/* Chat area */}
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+          {/* Messages */}
+          <div style={{
+            flex: 1, overflowY: 'auto', padding: '20px 24px',
+            display: 'flex', flexDirection: 'column', gap: 12,
+            maxHeight: 340,
+          }}>
+            {messages.map((m, i) => {
+              const style = bubbleColor(m.role);
+              return (
+                <div key={i} style={{
+                  display: 'flex',
+                  flexDirection: m.role === 'user' ? 'row-reverse' : 'row',
+                  gap: 10, alignItems: 'flex-start',
+                  animation: 'fade-in 0.25s ease forwards',
+                }}>
+                  {/* Avatar */}
+                  <div style={{
+                    width: 32, height: 32, borderRadius: '50%', flexShrink: 0,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontSize: 14,
+                    background: m.role === 'user' ? 'rgba(245,183,49,0.15)' : 'rgba(34,211,238,0.1)',
+                    border: `1px solid ${m.role === 'user' ? 'rgba(245,183,49,0.3)' : 'rgba(34,211,238,0.2)'}`,
+                  }}>
+                    {m.role === 'user' ? '👤' : '🤖'}
+                  </div>
+                  {/* Bubble */}
+                  <div style={{ maxWidth: '70%' }}>
+                    <div style={{
+                      fontSize: 8, fontFamily: "'DM Mono', monospace", color: '#6e7191',
+                      marginBottom: 3, textAlign: m.role === 'user' ? 'right' : 'left',
+                    }}>
+                      {m.role === 'user' ? 'YOU' : 'AGENT'} · {m.ts}
+                    </div>
+                    <div style={{
+                      background: style.bg, border: `1px solid ${style.border}`,
+                      borderRadius: 10, padding: '10px 14px',
+                      fontFamily: "'DM Mono', monospace", fontSize: 12.5,
+                      color: style.color, lineHeight: 1.65, whiteSpace: 'pre-wrap', wordBreak: 'break-word',
+                    }}>
+                      {m.text}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Thinking indicator */}
+            {loading && (
+              <div style={{ display: 'flex', gap: 10, alignItems: 'center', animation: 'fade-in 0.25s ease forwards' }}>
+                <div style={{
+                  width: 32, height: 32, borderRadius: '50%', flexShrink: 0,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14,
+                  background: 'rgba(34,211,238,0.1)', border: '1px solid rgba(34,211,238,0.2)',
+                }}>🤖</div>
+                <div style={{ display: 'flex', gap: 5, padding: '8px 14px', background: '#16161e', borderRadius: 10, border: '1px solid rgba(255,255,255,0.07)' }}>
+                  {[0,1,2].map(i => (
+                    <span key={i} style={{
+                      width: 7, height: 7, borderRadius: '50%', display: 'inline-block',
+                      background: i === 0 ? '#f5b731' : i === 1 ? '#22d3ee' : '#a78bfa',
+                      animation: `node-pulse ${1.2 + i * 0.2}s ease-in-out ${i * 0.2}s infinite`,
+                    }} />
+                  ))}
+                </div>
+              </div>
+            )}
+            <div ref={endRef} />
+          </div>
+
+          {/* Suggestion chips */}
+          <div style={{ padding: '0 24px 8px', display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+            {CHIPS.map(c => (
+              <button key={c} onClick={() => sendPrompt(c)} style={{
+                fontFamily: "'DM Mono', monospace", fontSize: 10, fontWeight: 600,
+                padding: '3px 10px', borderRadius: 20, cursor: 'pointer',
+                background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
+                color: '#8892b0', transition: 'all 0.15s',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = '#22d3ee'; e.currentTarget.style.color = '#22d3ee'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = '#8892b0'; }}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+
+          {/* Input row */}
+          <div style={{
+            display: 'flex', gap: 10, padding: '12px 24px 20px',
+            borderTop: '1px solid rgba(255,255,255,0.06)',
+          }}>
+            <input
+              ref={inputRef}
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              onKeyDown={e => e.key === 'Enter' && !e.shiftKey && sendPrompt()}
+              disabled={loading || !agentOnline}
+              placeholder={agentOnline ? 'Type a command… e.g. "create component NavBar"' : '⚠ Backend offline — run npm run server in agent_ui/'}
+              style={{
+                flex: 1, background: '#07070f', border: '1px solid rgba(255,255,255,0.08)',
+                borderRadius: 10, padding: '11px 16px', color: '#fff',
+                fontFamily: "'DM Mono', monospace", fontSize: 13, outline: 'none',
+                transition: 'border-color 0.2s',
+                opacity: agentOnline ? 1 : 0.5,
+              }}
+              onFocus={e => e.target.style.borderColor = '#22d3ee'}
+              onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.08)'}
+            />
+            <button
+              onClick={() => sendPrompt()}
+              disabled={loading || !input.trim() || !agentOnline}
+              style={{
+                padding: '11px 20px', borderRadius: 10, cursor: 'pointer',
+                background: 'linear-gradient(135deg, #22d3ee, #a78bfa)',
+                border: 'none', color: '#0e0e16',
+                fontFamily: "'DM Mono', monospace", fontSize: 12, fontWeight: 800,
+                letterSpacing: 0.5, transition: 'opacity 0.2s, transform 0.15s',
+                opacity: (!input.trim() || loading || !agentOnline) ? 0.4 : 1,
+              }}
+              onMouseEnter={e => { if (!loading) e.currentTarget.style.transform = 'scale(1.05)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; }}
+            >
+              {loading ? '⏳' : '⚡ RUN'}
+            </button>
+          </div>
         </div>
       </div>
     </div>

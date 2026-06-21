@@ -4,7 +4,7 @@
 
 const monitorCredits = () => {
   const host = window.location.hostname;
-  
+
   if (host.includes('claude.ai')) {
     // Claude limits monitor
     const indicator = document.querySelector('[class*="credit"], [class*="quota"], [class*="usage"]');

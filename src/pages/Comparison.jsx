@@ -31,7 +31,7 @@ function highlightWords(lineA, lineB, type) {
   if (!lineA || !lineB) return type === 'removed' ? lineA : lineB;
   const wordsA = lineA.split(/(\s+)/);
   const wordsB = lineB.split(/(\s+)/);
-  
+
   if (type === 'removed') {
     return wordsA.map((w, i) => {
       const exists = wordsB.includes(w);
@@ -55,7 +55,7 @@ function highlightChars(lineA, lineB, type) {
   if (!lineA || !lineB) return type === 'removed' ? lineA : lineB;
   const charsA = lineA.split('');
   const charsB = lineB.split('');
-  
+
   if (type === 'removed') {
     return charsA.map((c, i) => {
       const exists = charsB.includes(c);

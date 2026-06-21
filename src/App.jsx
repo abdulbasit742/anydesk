@@ -11,9 +11,11 @@ import Scratchpad from './components/Scratchpad';
 import CopilotWidget from './components/CopilotWidget';
 import ErrorBoundary from './components/ErrorBoundary';
 import { ToastProvider } from './components/ToastSystem';
+import AgentFloatPanel from './components/AgentFloatPanel';
 import { sound } from './lib/soundEngine';
 import { brain } from './lib/brain';
 import SystemStatusBar from './components/SystemStatusBar';
+import StatusBar from './components/StatusBar';
 import { AuthGuard } from './components/AuthGuard';
 
 
@@ -28,7 +30,7 @@ const Workflows           = lazy(() => import('./pages/Workflows'));
 const Library             = lazy(() => import('./pages/Library'));
 const Optimizer           = lazy(() => import('./pages/Optimizer'));
 const History             = lazy(() => import('./pages/History'));
-const ScreenWall          = lazy(() => import('./pages/ScreenWall'));
+const ScreenWall          = lazy(() => import('./pages/ScreenControl'));
 const Settings            = lazy(() => import('./pages/Settings'));
 const AutomationControl   = lazy(() => import('./pages/AutomationControl'));
 const PromptQueue         = lazy(() => import('./pages/PromptQueue'));
@@ -84,6 +86,7 @@ const EventStreamHub      = lazy(() => import('./pages/EventStreamHub'));
 const PromptDNA           = lazy(() => import('./pages/PromptDNA'));
 const AIModels            = lazy(() => import('./pages/AIModels'));
 const Onboarding          = lazy(() => import('./pages/Onboarding'));
+const InnovativeFeatures  = lazy(() => import('./pages/InnovativeFeatures'));
 const GeoAnalytics        = lazy(() => import('./pages/GeoAnalytics'));
 const ABTestManager       = lazy(() => import('./pages/ABTestManager'));
 const AutonomousAgent     = lazy(() => import('./pages/AutonomousAgent'));
@@ -147,6 +150,15 @@ const Privacy             = lazy(() => import('./pages/Privacy'));
 const Terms               = lazy(() => import('./pages/Terms'));
 const Docs                = lazy(() => import('./pages/Docs'));
 const SystemStatus        = lazy(() => import('./pages/SystemStatus'));
+const RemoteHome          = lazy(() => import('./pages/RemoteDesktop/RemoteHome'));
+const RemoteSession       = lazy(() => import('./pages/RemoteDesktop/RemoteSession'));
+const Platforms           = lazy(() => import('./pages/Platforms'));
+const Handoff             = lazy(() => import('./pages/Handoff'));
+const Credits             = lazy(() => import('./pages/Credits'));
+const Digest              = lazy(() => import('./pages/Digest'));
+const ScholarshipAgent    = lazy(() => import('./pages/ScholarshipAgent'));
+const ApparelAgent        = lazy(() => import('./pages/ApparelAgent'));
+const QuantumExploration  = lazy(() => import('./pages/QuantumExploration'));
 
 /* ── Page loading skeleton ──────────────────────────────────────── */
 function PageLoader() {
@@ -316,6 +328,8 @@ const PAGES = [
   { id: 'geoanalytics',    label: 'Geo Analytics',    emoji: '🗺️' },
   { id: 'abtestmanager',   label: 'A/B Testing',      emoji: '🧪' },
   { id: 'autonomousagent', label: 'Basit Auto Agent',  emoji: '🤖' },
+  { id: 'scholarshipagent', label: 'Scholarship Agent',  emoji: '🎓' },
+  { id: 'apparelagent',    label: 'Apparel Agent',      emoji: '👕' },
   { id: 'physicssimulation', label: 'Anti-Gravity Lab', emoji: '🌌' },
   { id: 'sprintplanner',   label: 'Sprint Planner',   emoji: '📋' },
   { id: 'roadmapbuilder',  label: 'Roadmap Builder',  emoji: '🗺️' },
@@ -364,6 +378,7 @@ const PAGES = [
   { id: 'testrunner',              label: 'Test Runner',              emoji: '🧪' },
   { id: 'updatecenter',            label: 'Update Center',            emoji: '🔃' },
   { id: 'uptimemonitor',           label: 'Uptime Monitor',           emoji: '⏱️' },
+  { id: 'quantumexploration',      label: 'Quantum Discovery',        emoji: '⚛️' },
 ];
 
 /* ── Premium Topbar ─────────────────────────────────────────────── */
@@ -565,7 +580,7 @@ function Topbar({ title, onNav, onConnect, onExport, accounts, broadcasts, theme
               </div>
             ) : (pagesResults.length > 0 || accountsResults.length > 0) ? (
               <div style={{ padding: '8px 0', maxHeight: 300, overflowY: 'auto' }}>
-                
+
                 {/* Feature 6 Pages results category */}
                 {pagesResults.length > 0 && (
                   <div>
@@ -866,6 +881,14 @@ export default function App() {
     if (path === '/onboarding') return 'onboarding';
     if (path === '/pricing') return 'pricing';
     if (path === '/billing') return 'billing';
+    if (path === '/remote') return 'remote';
+    if (path.startsWith('/remote/session/')) return 'remote-session';
+    if (path === '/platforms') return 'platforms';
+    if (path === '/handoff') return 'handoff';
+    if (path === '/credits') return 'credits';
+    if (path === '/digest') return 'digest';
+    if (path === '/chat') return 'aichat';
+    if (path === '/compare') return 'comparison';
     const p = path.slice(1);
     return p || 'landing';
   };
@@ -992,9 +1015,10 @@ export default function App() {
   const renderPage = () => {
     switch (page) {
       case 'dashboard':      return <Dashboard       onNav={onNav} onConnect={onConnect} />;
+      case 'innovativefeatures': return <InnovativeFeatures onNav={onNav} />;
       case 'missioncontrol': return <MissionControl  onNav={onNav} />;
       case 'analytics':      return <Analytics       onNav={onNav} />;
-      case 'accounts':       return <Accounts        onConnect={onConnect} />;
+      case 'accounts':       return <Accounts        onConnect={onConnect} onNav={onNav} />;
       case 'creditmonitor':  return <CreditMonitor   onNav={onNav} />;
       case 'broadcast':      return <Broadcast       onNav={onNav} />;
       case 'projects':       return <Projects        onNav={onNav} />;
@@ -1016,7 +1040,7 @@ export default function App() {
       case 'teamhub':        return <TeamHub         onNav={onNav} />;
       case 'knowledgebase':  return <KnowledgeBase   onNav={onNav} />;
       case 'changelog':      return <ChangeLog       onNav={onNav} />;
-      case 'screenwall':     return <ScreenWall      onConnect={onConnect} />;
+      case 'screenwall':     return <ScreenWall      onConnect={onConnect} onNav={onNav} />;
       case 'vault':          return <Vault />;
       case 'terminal':       return <Terminal        onNav={onNav} />;
       case 'costtracker':    return <CostTracker     onNav={onNav} />;
@@ -1058,6 +1082,9 @@ export default function App() {
       case 'geoanalytics':        return <GeoAnalytics      onNav={onNav} />;
       case 'abtestmanager':       return <ABTestManager     onNav={onNav} />;
       case 'autonomousagent':     return <AutonomousAgent   onNav={onNav} />;
+      case 'scholarshipagent':    return <ScholarshipAgent  onNav={onNav} />;
+      case 'apparelagent':       return <ApparelAgent      onNav={onNav} />;
+      case 'quantumexploration':  return <QuantumExploration onNav={onNav} />;
       case 'physicssimulation':   return <PhysicsSimulation onNav={onNav} />;
       case 'sprintplanner':       return <SprintPlanner     onNav={onNav} />;
       case 'roadmapbuilder':      return <RoadmapBuilder    onNav={onNav} />;
@@ -1120,6 +1147,12 @@ export default function App() {
       case 'referrals':      return <Referrals       onNav={onNav} />;
       case 'privacy':        return <Privacy         onNav={onNav} />;
       case 'terms':          return <Terms           onNav={onNav} />;
+      case 'remote':         return <RemoteHome      onNav={onNav} />;
+      case 'remote-session': return <RemoteSession   onNav={onNav} />;
+      case 'platforms':      return <Platforms       onNav={onNav} />;
+      case 'handoff':        return <Handoff         onNav={onNav} />;
+      case 'credits':        return <Credits         onNav={onNav} />;
+      case 'digest':         return <Digest          onNav={onNav} />;
       default:               return <Dashboard       onNav={onNav} onConnect={onConnect} />;
     }
   };
@@ -1195,8 +1228,10 @@ export default function App() {
           <ShortcutsModal open={showShortcuts} onClose={() => setShowShortcuts(false)} />
           <Scratchpad open={showScratchpad} onClose={() => setShowScratchpad(false)} />
           <SystemStatusBar onNav={onNav} />
+          <StatusBar onNav={onNav} />
           <LiveActivityTicker accounts={accounts} broadcasts={broadcasts} />
           <CopilotWidget onNav={onNav} currentPage={page} />
+          <AgentFloatPanel />
         </div>
       </AuthGuard>
     </ToastProvider>

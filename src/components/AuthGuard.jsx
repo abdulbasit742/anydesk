@@ -1,22 +1,18 @@
-import { useEffect, useState } from 'react';
-import { getSession } from '../lib/auth';
+// src/components/AuthGuard.jsx
+import { useState } from 'react';
+import { auth } from '../lib/supabase';
 
 export function AuthGuard({ children }) {
-  const [loading, setLoading] = useState(true);
-  const [authed, setAuthed] = useState(false);
+  // Determine auth state synchronously
+  const isAuthed = auth.isAuthed();
+  const [authed] = useState(isAuthed);
+  const [loading] = useState(false);
 
-  useEffect(() => {
-    getSession().then(({ data }) => {
-      setAuthed(!!data.session);
-      setLoading(false);
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!loading && !authed) {
-      window.location.href = '/login';
-    }
-  }, [loading, authed]);
+  // If not authenticated, redirect immediately
+  if (!isAuthed) {
+    window.location.href = '/login';
+    return null;
+  }
 
   if (loading) {
     return (
@@ -25,12 +21,12 @@ export function AuthGuard({ children }) {
         alignItems: 'center',
         justifyContent: 'center',
         height: '100vh',
-        backgroundColor: '#0e0e16',
+        backgroundColor: '#0a0a0f',
         color: '#8e92b2',
         fontSize: '14px',
         fontFamily: 'system-ui, sans-serif'
       }}>
-        Loading session...
+        Verifying security credentials...
       </div>
     );
   }

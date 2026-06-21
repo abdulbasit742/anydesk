@@ -75,7 +75,7 @@ export function classifyPrompt(promptText) {
     const rawScore = scores[id] || 0;
     // Logarithmic scale normalization to map to 10-100%
     const score = Math.min(100, Math.max(10, Math.round((rawScore / (2 + rawScore)) * 90 + 10)));
-    
+
     const matchedKeywords = meta.keywords.filter(kw => text.includes(kw));
     const reason = matchedKeywords.length > 0
       ? `Matches: ${matchedKeywords.slice(0, 3).join(', ')}.`

@@ -81,16 +81,16 @@ export default function Onboarding({ onNav }) {
         {/* Stepper Progress Header */}
         <div style={styles.stepperContainer}>
           <div style={styles.progressLineBg}>
-            <div 
+            <div
               style={{
                 ...styles.progressLineActive,
                 width: `${((currentStep - 1) / 3) * 100}%`
-              }} 
+              }}
             />
           </div>
           {steps.map(s => (
             <div key={s.num} style={styles.stepIndicator}>
-              <div 
+              <div
                 style={{
                   ...styles.stepCircle,
                   ...(currentStep === s.num ? styles.stepCircleActive : {}),
@@ -99,7 +99,7 @@ export default function Onboarding({ onNav }) {
               >
                 {currentStep > s.num ? '✓' : s.num}
               </div>
-              <div 
+              <div
                 style={{
                   ...styles.stepLabel,
                   ...(currentStep === s.num ? styles.stepLabelActive : {})
@@ -119,7 +119,7 @@ export default function Onboarding({ onNav }) {
             <p style={styles.stepDesc}>
               Let's link your AI workspaces (such as Anthropic Claude or OpenAI). We will encrypt and store your credentials securely.
             </p>
-            
+
             <div style={styles.actionContainer}>
               {hasAddedAccount ? (
                 <div style={styles.successBox}>
@@ -191,8 +191,8 @@ export default function Onboarding({ onNav }) {
                 </div>
               )}
 
-              <button 
-                onClick={triggerTestRelay} 
+              <button
+                onClick={triggerTestRelay}
                 disabled={isTesting}
                 style={{
                   ...styles.primaryBtn,
@@ -227,7 +227,7 @@ export default function Onboarding({ onNav }) {
                 <span style={styles.badgeLabel}>Relay Test</span>
               </div>
             </div>
-            
+
             <button onClick={handleFinish} style={styles.finishBtn}>
               Go to Dashboard
             </button>
@@ -237,8 +237,8 @@ export default function Onboarding({ onNav }) {
         {/* Step Footer Navigation */}
         {currentStep < 4 && (
           <div style={styles.footer}>
-            <button 
-              onClick={prevStep} 
+            <button
+              onClick={prevStep}
               disabled={currentStep === 1}
               style={{
                 ...styles.navBtn,
@@ -247,8 +247,8 @@ export default function Onboarding({ onNav }) {
             >
               Previous
             </button>
-            <button 
-              onClick={nextStep} 
+            <button
+              onClick={nextStep}
               style={styles.navBtnPrimary}
             >
               Continue
@@ -257,9 +257,9 @@ export default function Onboarding({ onNav }) {
         )}
       </div>
 
-      <AddAccountModal 
-        open={showAddModal} 
-        onClose={handleCloseAddModal} 
+      <AddAccountModal
+        open={showAddModal}
+        onClose={handleCloseAddModal}
       />
     </div>
   );

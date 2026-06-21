@@ -125,19 +125,19 @@ export default function Landing({ onNav }) {
         <h2 style={styles.sectionTitle}>How It Works</h2>
         <div style={styles.stepsContainer}>
           <div style={styles.stepsConnectorLine} />
-          
+
           <div style={styles.stepBlock}>
             <div style={styles.stepBadge}>1</div>
             <h4 style={styles.stepBlockTitle}>Add your AI accounts</h4>
             <p style={styles.stepBlockText}>Paste credentials or tokens. They are locally encrypted with AES-256 before leaving your client sandbox.</p>
           </div>
-          
+
           <div style={styles.stepBlock}>
             <div style={styles.stepBadge}>2</div>
             <h4 style={styles.stepBlockTitle}>Set your preferences</h4>
             <p style={styles.stepBlockText}>Configure warning thresholds, execution schedules, event notifications, and relay auto-routing rules.</p>
           </div>
-          
+
           <div style={styles.stepBlock}>
             <div style={styles.stepBadge}>3</div>
             <h4 style={styles.stepBlockTitle}>Let it run</h4>
@@ -149,11 +149,11 @@ export default function Landing({ onNav }) {
       {/* SECTION 5 - PRICING */}
       <section id="pricing" style={styles.sectionAlt}>
         <h2 style={styles.sectionTitle}>Simple, Transparent Pricing</h2>
-        
+
         {/* Toggle */}
         <div style={styles.pricingToggleContainer}>
-          <button 
-            onClick={() => setBillingPeriod('monthly')} 
+          <button
+            onClick={() => setBillingPeriod('monthly')}
             style={{
               ...styles.toggleBtn,
               ...(billingPeriod === 'monthly' ? styles.toggleBtnActive : {})
@@ -161,8 +161,8 @@ export default function Landing({ onNav }) {
           >
             Monthly
           </button>
-          <button 
-            onClick={() => setBillingPeriod('annual')} 
+          <button
+            onClick={() => setBillingPeriod('annual')}
             style={{
               ...styles.toggleBtn,
               ...(billingPeriod === 'annual' ? styles.toggleBtnActive : {})

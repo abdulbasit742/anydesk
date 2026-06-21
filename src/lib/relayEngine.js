@@ -6,28 +6,28 @@ import { getAccount, updateAccount, getAccounts } from './accountStore';
 /**
  * Executes a simulated credit relay / consumption transaction.
  * Deducts credit cost from the account and updates its status accordingly.
- * 
+ *
  * @param {string} accountId - ID of the target platform account
  * @param {number} baseCost - Base cost in credits per prompt run (default 1)
  * @returns {object} Result of the relay run
  */
 export function relayBroadcast(accountId, baseCost = 1) {
   const account = getAccount(accountId);
-  
+
   if (!account) {
     return { success: false, error: `Account with ID ${accountId} not found.` };
   }
-  
+
   if (account.status === 'expired_session') {
     return { success: false, error: `Account session expired. Reconnect required.`, account };
   }
-  
+
   if (account.status === 'inactive' || account.status === 'paused') {
     return { success: false, error: `Account is currently inactive or paused.`, account };
   }
 
   const currentBalance = account.creditBalance !== undefined ? account.creditBalance : account.credits;
-  
+
   if (currentBalance <= 0) {
     updateAccount(accountId, { status: 'exhausted', creditBalance: 0 });
     return { success: false, error: `Relay failed: Account has exhausted all credits.`, account: { ...account, status: 'exhausted', creditBalance: 0 } };
@@ -36,7 +36,7 @@ export function relayBroadcast(accountId, baseCost = 1) {
   // Deduct credits
   const finalCost = Math.min(currentBalance, baseCost);
   const nextBalance = currentBalance - finalCost;
-  
+
   // Determine new health/status based on threshold rules
   let nextStatus = 'active';
   const limit = account.creditLimit || 30;
@@ -55,7 +55,7 @@ export function relayBroadcast(accountId, baseCost = 1) {
   };
 
   const updatedAccount = updateAccount(accountId, updatedFields);
-  
+
   return {
     success: true,
     cost: finalCost,
@@ -68,21 +68,21 @@ export function relayBroadcast(accountId, baseCost = 1) {
 /**
  * Finds the best active account with the highest credit balance.
  * Optionally excludes a specific account ID (e.g. the one that was just exhausted).
- * 
+ *
  * @param {object} options
  * @param {string} options.excludeId
  * @returns {object|null} The chosen account or null
  */
 export function selectBestAccount({ excludeId } = {}) {
   const accounts = getAccounts();
-  const candidates = accounts.filter(a => 
-    a.status === 'active' && 
-    a.id !== excludeId && 
+  const candidates = accounts.filter(a =>
+    a.status === 'active' &&
+    a.id !== excludeId &&
     (a.creditBalance !== undefined ? a.creditBalance : a.credits) > 0
   );
-  
+
   if (candidates.length === 0) return null;
-  
+
   return candidates.sort((a, b) => {
     const balA = a.creditBalance !== undefined ? a.creditBalance : a.credits;
     const balB = b.creditBalance !== undefined ? b.creditBalance : b.credits;
@@ -108,9 +108,9 @@ export async function runCreditRelay(options = {}) {
 
   onLog("[SYS-START] Initiating Credit Relay Handoff Chain...");
   await new Promise(r => setTimeout(r, 500));
-  
+
   const activeAccs = accounts.filter(a => a.status === 'active' && (a.creditBalance !== undefined ? a.creditBalance : a.credits) > buffer);
-  
+
   if (activeAccs.length === 0) {
     throw new Error("No active accounts found with credits above the buffer threshold.");
   }
@@ -136,7 +136,7 @@ export async function runCreditRelay(options = {}) {
 
     const startingBalance = acc.creditBalance !== undefined ? acc.creditBalance : acc.credits;
     const remainingCredits = Math.max(0, startingBalance - creditsUsed);
-    
+
     let nextStatus = 'active';
     const limit = acc.creditLimit || 30;
     if (remainingCredits <= 0) {
@@ -181,7 +181,7 @@ export async function runCreditRelay(options = {}) {
       estimatedRemainingCredits: remainingCredits,
       success: true
     };
-    
+
     steps.push(stepResult);
     onProgress(i, steps);
     onLog(`[RELAY] Context shift successful. ${acc.name} final balance: ${remainingCredits} cr.`);

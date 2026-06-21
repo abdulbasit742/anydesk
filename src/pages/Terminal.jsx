@@ -114,8 +114,8 @@ This sends to all **active** accounts instantly. Switch to the Broadcast Studio 
 
 \`\`\`
 ❌ Vague: "Build a button"
-✅ Clear: "Create a primary CTA button with hover state, 
-   border-radius 8px, gradient background from #6366f1 
+✅ Clear: "Create a primary CTA button with hover state,
+   border-radius 8px, gradient background from #6366f1
    to #8b5cf6, and a subtle box-shadow on hover"
 \`\`\`
 
@@ -161,7 +161,7 @@ All credentials live in your browser's localStorage, encrypted. Nothing is sent 
   // Default helpful response
   return `## Bolt Studio Pro AI Assistant
 
-I'm your intelligent companion for the Bolt Studio Pro workspace! 
+I'm your intelligent companion for the Bolt Studio Pro workspace!
 
 **Quick things you can ask me:**
 - *"How does broadcasting work?"*
@@ -172,7 +172,7 @@ I'm your intelligent companion for the Bolt Studio Pro workspace!
 **Or use terminal commands below:**
 \`\`\`
 status    → Platform health overview
-ping      → Latency check all accounts  
+ping      → Latency check all accounts
 broadcast → Send a prompt to all active accounts
 health    → Full system diagnostics
 \`\`\`
@@ -752,7 +752,7 @@ export default function Terminal() {
       else if (verb === 'health') {
         const checks = [
           ['Checking LocalStorage vault...', true],
-          ['Verifying account credential integrity...', accounts.every(a => a.credential)],
+          ['Verifying account credential integrity...', accounts.every(a => a.apiKey || a.credential)],
           ['Testing platform API reachability...', true],
           ['Validating workflow pipeline state...', true],
           ['Scanning broadcast history...', true],
@@ -1154,7 +1154,10 @@ export default function Terminal() {
               <input
                 ref={termInputRef}
                 value={termInput}
-                onChange={e => setTermInput(e.target.value)}
+                onChange={e => {
+                  setTermInput(e.target.value);
+                  setHistIdx(-1);
+                }}
                 onKeyDown={handleTermKeyDown}
                 disabled={running}
                 autoFocus

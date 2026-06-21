@@ -7,6 +7,8 @@ import EmptyState from '../components/EmptyState';
 import { sound } from '../lib/soundEngine';
 import { PromptOptimizer } from '../components/library/PromptOptimizer';
 import { classifyPrompt } from '../lib/smartRouter';
+import * as planGate from '../lib/planGate';
+import UpgradeModal from '../components/UpgradeModal';
 
 // --- Preset Templates ---
 const TEMPLATES = [
@@ -40,9 +42,10 @@ function getStrengthLabel(wordCount) {
   return { label: 'Optimal Strength', color: 'var(--teal)' };
 }
 
-export default function Broadcast() {
+export default function Broadcast({ onNav }) {
   const { accounts, addBroadcast, updateAccount } = useStore();
   const toast = useToast();
+  const [showUpgrade, setShowUpgrade] = useState(!planGate.canDo('fleet'));
 
   const activeAccounts = accounts.filter(a => a.status === 'active');
 
@@ -308,7 +311,7 @@ export default function Broadcast() {
 
   return (
     <div style={{ animation: 'fadeIn 0.35s ease' }}>
-      
+
       {/* HEADER */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, flexWrap: 'wrap', gap: 10 }}>
         <div>
@@ -331,10 +334,10 @@ export default function Broadcast() {
 
       {/* SPLIT LAYOUT */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 16, alignItems: 'start' }}>
-        
+
         {/* LEFT Compose area */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-          
+
           {/* Preset chips */}
           <div style={{ background: 'var(--surface2)', padding: 12, borderRadius: 12, border: '1px solid var(--border)' }}>
             <div style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--muted2)', textTransform: 'uppercase', marginBottom: 8 }}>
@@ -520,7 +523,7 @@ export default function Broadcast() {
 
         {/* RIGHT TRANSMISSION NODE MAP SLIDER */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-          
+
           {/* Active node graph maps */}
           <div className="bc-transmission-map">
             <div style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--muted2)', textTransform: 'uppercase', marginBottom: 12 }}>
@@ -540,7 +543,7 @@ export default function Broadcast() {
                 {selectedIds.map(accId => {
                   const acc = accounts.find(a => a.id === accId);
                   const res = results.find(r => r.id === accId);
-                  
+
                   const isSendingAcc = res?.status === 'sending';
                   const isSuccessAcc = res?.status === 'success';
                   const isErrorAcc = res?.status === 'error';
@@ -559,7 +562,7 @@ export default function Broadcast() {
                           <div style={{ fontSize: 11, fontWeight: 700, color: '#e4e4ed', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {acc?.name}
                           </div>
-                          
+
                           {/* Live credit deduction subtraction */}
                           <div className="bc-target-credit-num">
                             {isSuccessAcc ? (
@@ -764,7 +767,7 @@ export default function Broadcast() {
                           localhost:3000 / {res.name.toLowerCase().replace(' ', '-')}
                         </span>
                       </div>
-                      
+
                       <div className="layout-mockup-body">
                         {/* Render visual blueprints based on prompt keywords */}
                         {(res.promptUsed.toLowerCase().includes('dashboard') || res.promptUsed.toLowerCase().includes('crm')) ? (
@@ -811,6 +814,14 @@ export default function Broadcast() {
             })}
           </div>
         </div>
+      )}
+      {showUpgrade && (
+        <UpgradeModal
+          feature="fleet"
+          requiredPlan="pro"
+          onClose={() => onNav('dashboard')}
+          onNav={onNav}
+        />
       )}
     </div>
   );

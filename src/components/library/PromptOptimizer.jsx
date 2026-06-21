@@ -5,28 +5,28 @@ import ScoreDial from '../telemetry/ScoreDial.jsx';
 
 function generateOptimizedText(text) {
   if (!text || !text.trim()) return '';
-  
+
   const hasRole = /role|you are|act as|persona/i.test(text);
   const hasContext = /context|project is|system configuration/i.test(text);
   const hasConstraints = /constraints|rules|do not|avoid/i.test(text);
   const hasFormat = /format|respond with|output format/i.test(text);
 
   let result = '';
-  
+
   if (!hasRole) {
     result += `## Role\nYou are a lead AI systems engineer specializing in React, state management, and high-performance frontend interfaces.\n\n`;
   }
-  
+
   if (!hasContext) {
     result += `## Context\nThis feature is part of the AgentFlow SaaS dashboard, using a premium dark-themed CSS variable design token system.\n\n`;
   }
-  
+
   result += `## Task\n${text}\n\n`;
-  
+
   if (!hasConstraints) {
     result += `## Constraints\n- Write 100% complete files without placeholders or TODO markers.\n- Avoid duplicate declarations or style keys.\n- Strictly adhere to responsive design guidelines (min 320px layout support).\n- Zero ESLint errors or warnings are acceptable.\n\n`;
   }
-  
+
   if (!hasFormat) {
     result += `## Format\nProvide modular code snippets enclosed in markdown blocks. Avoid verbose explanations.`;
   }
@@ -37,7 +37,7 @@ function generateOptimizedText(text) {
 function computeLineDiff(originalText, optimizedText) {
   const oLines = originalText.split('\n');
   const nLines = optimizedText.split('\n');
-  
+
   // Standard DP LCS diff
   const dp = Array(oLines.length + 1).fill(null).map(() => Array(nLines.length + 1).fill(0));
   for (let i = 1; i <= oLines.length; i++) {
@@ -112,17 +112,17 @@ export function PromptOptimizer({ prompt, onApply }) {
               <div style={{ color: '#ccc', fontSize: 18, fontWeight: 'bold', marginBottom: 2 }}>Grade {audit.grade}</div>
               <div style={{ color: '#6e7191', fontSize: 11 }}>{audit.passed}/{audit.total} semantic checks passed</div>
             </div>
-            
+
             {/* View Mode Toggle */}
             <div style={{ display: 'flex', gap: 4, background: '#080c14', padding: 2, borderRadius: 6, border: '1px solid #161a35' }}>
-              <button 
-                onClick={() => setViewMode('suggestions')} 
+              <button
+                onClick={() => setViewMode('suggestions')}
                 style={{ background: viewMode === 'suggestions' ? '#1e2340' : 'transparent', border: 'none', color: viewMode === 'suggestions' ? '#fff' : '#6e7191', fontSize: 10, padding: '4px 8px', borderRadius: 4, cursor: 'pointer' }}
               >
                 Tips
               </button>
-              <button 
-                onClick={() => setViewMode('diff')} 
+              <button
+                onClick={() => setViewMode('diff')}
                 style={{ background: viewMode === 'diff' ? '#1e2340' : 'transparent', border: 'none', color: viewMode === 'diff' ? '#fff' : '#6e7191', fontSize: 10, padding: '4px 8px', borderRadius: 4, cursor: 'pointer' }}
               >
                 Diff View
@@ -158,8 +158,8 @@ export function PromptOptimizer({ prompt, onApply }) {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
                 <span style={{ color: '#22d3ee', fontSize: 11, fontWeight: 'bold' }}>PROPOSED STRUCTURAL DIFF:</span>
                 {onApply && (
-                  <button 
-                    onClick={handleApply} 
+                  <button
+                    onClick={handleApply}
                     style={{ background: '#22d3ee22', border: '1px solid #22d3ee44', borderRadius: 6, color: '#22d3ee', fontSize: 10.5, padding: '4px 10px', cursor: 'pointer', fontWeight: 'bold' }}
                   >
                     Apply Optimization
@@ -171,7 +171,7 @@ export function PromptOptimizer({ prompt, onApply }) {
                   let bgColor = 'transparent';
                   let color = '#a7a9be';
                   let prefix = ' ';
-                  
+
                   if (d.type === 'addition') {
                     bgColor = 'rgba(34,211,238,0.08)';
                     color = '#22d3ee';
@@ -181,7 +181,7 @@ export function PromptOptimizer({ prompt, onApply }) {
                     color = '#ef4444';
                     prefix = '-';
                   }
-                  
+
                   return (
                     <div key={idx} style={{ background: bgColor, color: color, whiteSpace: 'pre-wrap', padding: '2px 6px', borderRadius: 4, display: 'flex', gap: 8 }}>
                       <span style={{ opacity: 0.5, userSelect: 'none', width: 12 }}>{prefix}</span>

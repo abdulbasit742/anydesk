@@ -1,6 +1,6 @@
+// src/pages/Signup.jsx
 import { useState } from 'react';
-import { signUp } from '../lib/auth';
-import { setPlan } from '../lib/planGate';
+import { auth } from '../lib/supabase';
 
 export default function Signup({ onNav }) {
   const [email, setEmail] = useState('');
@@ -15,6 +15,22 @@ export default function Signup({ onNav }) {
     setLoading(true);
     setError(null);
 
+    // Strict Email Format Validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email address');
+      setLoading(false);
+      return;
+    }
+
+    // Password Length Check
+    if (password.length < 8) {
+      setError('Password must be at least 8 characters long');
+      setLoading(false);
+      return;
+    }
+
+    // Password Matching Check
     if (password !== confirmPassword) {
       setError('Passwords do not match');
       setLoading(false);
@@ -22,33 +38,51 @@ export default function Signup({ onNav }) {
     }
 
     try {
-      const { error: signUpError } = await signUp(email, password);
-      if (signUpError) {
-        setError(signUpError.message);
+      await auth.signUp(email, password, selectedPlan);
+      if (onNav) {
+        onNav('onboarding');
       } else {
-        // Save selected plan
-        setPlan(selectedPlan);
-        
-        // Go to onboarding
-        if (onNav) {
-          onNav('onboarding');
-        } else {
-          window.location.href = '/onboarding';
-        }
+        window.location.href = '/onboarding';
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An unexpected error occurred.');
+      setError(err instanceof Error ? err.message : 'Signup failed. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
   const planOptions = [
-    { id: 'free', name: 'Free', desc: '2 AI accounts', price: '$0' },
-    { id: 'starter', name: 'Starter', desc: '5 AI accounts, relay', price: '$19/mo' },
-    { id: 'pro', name: 'Pro', desc: '25 accounts, fleet, wall', price: '$49/mo' },
-    { id: 'agency', name: 'Agency', desc: 'Unlimited accounts, dedicated', price: '$99/mo' }
+    {
+      id: 'free',
+      name: 'Free',
+      desc: '2 AI accounts',
+      price: '$0',
+      benefits: ['2 Active AI Accounts', 'Manual Relay', 'Standard Latency']
+    },
+    {
+      id: 'starter',
+      name: 'Starter',
+      desc: '5 accounts, relay',
+      price: '$19/mo',
+      benefits: ['5 Active AI Accounts', 'Automated Credit Relay', 'Email Notification Alerts', 'Standard Scheduler']
+    },
+    {
+      id: 'pro',
+      name: 'Pro',
+      desc: '25 accounts, fleet, wall',
+      price: '$49/mo',
+      benefits: ['25 Active AI Accounts', 'Fleet Prompts (Parallel Sends)', '12-Screen Wall Monitoring', 'Priority 4h SLAs']
+    },
+    {
+      id: 'agency',
+      name: 'Agency',
+      desc: 'Unlimited accounts',
+      price: '$99/mo',
+      benefits: ['Unlimited AI Accounts', 'White-Label Branding Option', 'Dedicated Support Manager', 'Slack Integration API']
+    }
   ];
+
+  const currentPlanMeta = planOptions.find(p => p.id === selectedPlan);
 
   return (
     <div style={styles.container}>
@@ -83,7 +117,7 @@ export default function Signup({ onNav }) {
           </div>
 
           <div style={styles.inputGroup}>
-            <label htmlFor="password" style={styles.label}>Password</label>
+            <label htmlFor="password" style={styles.label}>Password (min 8 chars)</label>
             <input
               id="password"
               type="password"
@@ -109,7 +143,7 @@ export default function Signup({ onNav }) {
           </div>
 
           <div style={styles.inputGroup}>
-            <label style={styles.label}>Choose a plan</label>
+            <label style={styles.label}>Choose your SaaS Tier</label>
             <div style={styles.planSelectorGrid}>
               {planOptions.map(plan => (
                 <div
@@ -130,8 +164,23 @@ export default function Signup({ onNav }) {
             </div>
           </div>
 
+          {currentPlanMeta && (
+            <div style={styles.benefitsContainer}>
+              <h4 style={styles.benefitsTitle}>{currentPlanMeta.name} Plan Benefits Include:</h4>
+              <ul style={styles.benefitsList}>
+                {currentPlanMeta.benefits.map((benefit, i) => (
+                  <li key={i} style={styles.benefitItem}>✓ {benefit}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <button type="submit" disabled={loading} style={styles.button}>
-            {loading ? 'Creating Account...' : 'Start Free Trial'}
+            {loading ? (
+              <span style={styles.spinnerContainer}>
+                <span style={styles.spinner}></span> Creating Account...
+              </span>
+            ) : 'Start Free Trial'}
           </button>
         </form>
 
@@ -163,7 +212,7 @@ const styles = {
     border: '1px solid rgba(255, 255, 255, 0.07)',
     borderRadius: '12px',
     padding: '40px',
-    maxWidth: '460px',
+    maxWidth: '480px',
     width: '100%',
     boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4)',
     textAlign: 'center',
@@ -274,6 +323,32 @@ const styles = {
     color: '#8e92b2',
     lineHeight: 1.3,
   },
+  benefitsContainer: {
+    backgroundColor: '#16161e',
+    border: '1px solid rgba(255, 255, 255, 0.04)',
+    borderRadius: '6px',
+    padding: '16px',
+    marginBottom: '20px',
+  },
+  benefitsTitle: {
+    fontSize: '12px',
+    fontWeight: 'bold',
+    color: '#ffffff',
+    margin: '0 0 10px 0',
+  },
+  benefitsList: {
+    listStyle: 'none',
+    padding: 0,
+    margin: 0,
+  },
+  benefitItem: {
+    fontSize: '12px',
+    color: '#8e92b2',
+    marginBottom: '6px',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '6px',
+  },
   button: {
     width: '100%',
     padding: '12px',
@@ -286,6 +361,20 @@ const styles = {
     cursor: 'pointer',
     marginTop: '8px',
     transition: 'opacity 0.2s',
+  },
+  spinnerContainer: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '8px',
+  },
+  spinner: {
+    width: '14px',
+    height: '14px',
+    border: '2px solid rgba(14, 14, 22, 0.2)',
+    borderTopColor: '#0e0e16',
+    borderRadius: '50%',
+    animation: 'agp-spin 0.6s linear infinite',
   },
   trialText: {
     fontSize: '11px',

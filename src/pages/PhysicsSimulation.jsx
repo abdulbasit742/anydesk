@@ -137,10 +137,10 @@ export default function PhysicsSimulation() {
         const dy = 200 - y;
         const dist = Math.sqrt(dx * dx + dy * dy) || 1;
         const shFactor = (shielding / 100) * 15;
-        
+
         const vx = (dx / dist) * shFactor;
         const vy = (dy / dist) * shFactor + (gravity * 1.5);
-        
+
         lines.push({ x, y, vx, vy });
       }
     }
@@ -149,7 +149,7 @@ export default function PhysicsSimulation() {
 
   return (
     <div style={{ padding: '24px 40px', background: '#0e0e16', minHeight: 'calc(100vh - var(--topbar-h))', boxSizing: 'border-box' }} className="aa-root">
-      
+
       {/* ─── Hero Header ─── */}
       <div style={{
         background: 'linear-gradient(135deg, rgba(167,139,250,0.08) 0%, rgba(34,211,238,0.03) 100%)',
@@ -189,23 +189,23 @@ export default function PhysicsSimulation() {
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 28 }}>
-        
+
         {/* ─── Left Side: Telemetry Field and Particle Grid ─── */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-          
+
           <Card>
             <SectionTitle color="#22d3ee">Gravitational Particle Grid Simulator</SectionTitle>
             <p style={{ margin: '0 0 18px', color: '#dde0f0', fontSize: 13.5 }}>
               Manipulate spatial parameters to observe geodesic warp and space-time displacement particles in real-time.
             </p>
-            
+
             <div style={{ display: 'flex', gap: 28 }}>
               {/* Animation Iframe / Canvas container */}
               <div style={{
                 position: 'relative', width: '500px', height: '400px', background: '#07070f',
                 border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, overflow: 'hidden'
               }} ref={canvasRef}>
-                
+
                 {/* Visual SVG Space-time warp lines */}
                 <svg style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
                   {vectorGrid.map((v, i) => (
@@ -324,7 +324,7 @@ export default function PhysicsSimulation() {
 
         {/* ─── Right Side: Stateless Handoff Summaries (System Prompt Requirement) ─── */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-          
+
           <Card style={{ border: '1px solid rgba(34,197,94,0.3)', background: 'linear-gradient(135deg, rgba(34,197,94,0.03) 0%, rgba(0,0,0,0) 100%)' }}>
             <SectionTitle color="#22c55e">Stateless Handoff Summarizer</SectionTitle>
             <p style={{ margin: '0 0 16px', color: '#dde0f0', fontSize: 13.5 }}>
@@ -388,7 +388,7 @@ export default function PhysicsSimulation() {
               </button>
             </div>
           </Card>
-          
+
         </div>
 
       </div>

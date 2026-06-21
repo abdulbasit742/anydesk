@@ -124,14 +124,14 @@ export default function TokenAnalyzer() {
               <span style={{ fontSize: 10.5, fontWeight: 700, color: 'var(--muted2)' }}>📝 Input Text</span>
               <button onClick={() => { sound.play('click'); setText(''); }} className="btn btn-ghost btn-xs" style={{ fontSize: 9 }}>Clear</button>
             </div>
-            
+
             {/* Show injected indicator if active */}
             {includeSystemPrompt && (
               <div style={{ padding: '8px 12px', background: 'rgba(245,183,49,0.06)', borderBottom: '1px solid rgba(245,183,49,0.1)', fontSize: 10.5, color: 'var(--gold)', fontFamily: 'DM Mono, monospace', lineHeight: 1.4 }}>
                 <strong>System instructions prepended:</strong> {STANDARD_SYSTEM_PROMPT}
               </div>
             )}
-            
+
             <textarea value={text} onChange={e => setText(e.target.value)}
               placeholder="Paste your prompt, context, or code here…"
               style={{ width: '100%', boxSizing: 'border-box', background: 'transparent', border: 'none', outline: 'none', color: '#dde0f0', fontSize: 12, fontFamily: 'DM Mono,monospace', lineHeight: 1.7, resize: 'none', padding: '12px 14px', minHeight: 220 }}
@@ -194,7 +194,7 @@ export default function TokenAnalyzer() {
             {MODEL_LIMITS.map((m, i) => {
               const p = Math.min(100, Math.round((tokens / m.limit) * 100));
               const currentModelSafe = p < 80;
-              
+
               // Projected Costs for this model
               const projInCost = (tokens / 1000000) * m.costIn;
               const projOutCost = (outputEst / 1000000) * m.costOut;
@@ -233,7 +233,7 @@ export default function TokenAnalyzer() {
           {/* Feature 15: Dual Ring Gauges (Input Character count & Token limit) */}
           <div style={{ background: 'var(--surface2)', border: `1px solid ${safe ? 'var(--border)' : pct < 100 ? 'rgba(245,183,49,0.3)' : 'rgba(255,95,95,0.3)'}`, borderRadius: 14, padding: '20px', textAlign: 'center' }}>
             <div style={{ display: 'flex', justifyContent: 'center', gap: 20, marginBottom: 12 }}>
-              
+
               {/* Token Gauge */}
               <div style={{ position: 'relative', display: 'inline-block' }}>
                 <RingGauge pct={pct} color={safe ? model.color : pct < 100 ? 'var(--gold)' : 'var(--red)'} size={90} stroke={8} />
@@ -242,7 +242,7 @@ export default function TokenAnalyzer() {
                   <div style={{ fontSize: 7, color: 'var(--muted)', textTransform: 'uppercase' }}>Tokens</div>
                 </div>
               </div>
-              
+
               {/* Character Limit Gauge (100k char benchmark) */}
               <div style={{ position: 'relative', display: 'inline-block' }}>
                 {/* Benchmark limit 150k characters */}
@@ -254,7 +254,7 @@ export default function TokenAnalyzer() {
               </div>
 
             </div>
-            
+
             <div style={{ fontSize: 24, fontWeight: 900, color: model.color, fontFamily: 'DM Mono,monospace', marginBottom: 2 }}>
               {tokens.toLocaleString()}
             </div>

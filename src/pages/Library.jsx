@@ -78,7 +78,7 @@ function computeDiff(oldText, newText) {
 // Highly sophisticated local prompt optimizer generator
 function getToneRewrittenPrompt(promptText, tone, enhancements) {
   let baseText = promptText;
-  
+
   // Strip previous enhancements/tech blocks if any
   baseText = baseText.replace(/\n\n--- Tech Stack Requirements ---\n[\s\S]*/, "");
   baseText = baseText.replace(/^Act as[\s\S]*?\n\nOriginal Request:\n/, "");
@@ -153,7 +153,7 @@ export default function Library() {
   // Typewriter stream state
   const [typedPrompt, setTypedPrompt] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  
+
   // Selection targets for deployment
   const [selectedDeployType, setSelectedDeployType] = useState('account'); // 'account' | 'project'
   const [targetDeployId, setTargetDeployId] = useState('');
@@ -361,10 +361,10 @@ export default function Library() {
     setIsTyping(true);
     let index = 0;
     setTypedPrompt('');
-    
+
     const textLen = targetText.length;
-    const intervalTime = 12; 
-    
+    const intervalTime = 12;
+
     const interval = setInterval(() => {
       if (index < textLen) {
         const chunkSize = Math.max(4, Math.ceil(textLen / 35));
@@ -404,7 +404,7 @@ export default function Library() {
   // Deployment action
   const handleDeployPrompt = () => {
     if (!activePrompt) return;
-    
+
     updatePrompt(activePrompt.id, { useCount: (activePrompt.useCount || 0) + 1 });
     navigator.clipboard.writeText(typedPrompt);
 

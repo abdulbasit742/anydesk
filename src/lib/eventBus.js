@@ -1,6 +1,5 @@
-import mitt from 'mitt';
-
-export const bus = mitt();
+import mitt from 'mitt'
+export const bus = mitt()
 
 export const EVENTS = {
   STATE_CHANGED: 'state:changed',
@@ -14,7 +13,7 @@ export const EVENTS = {
   SCHEDULE_RAN: 'schedule:ran',
   ACCOUNT_EXHAUSTED: 'account:exhausted',
   ACCOUNT_LOW: 'account:low'
-};
+}
 
 export const E = {
   STATE: 'state:changed',
@@ -23,5 +22,6 @@ export const E = {
   FLEET: 'fleet:sent',
   HEALTH: 'health:updated',
   ACCOUNT: 'account:updated',
-};
-
+  TASK: 'task:updated',
+  SCHEDULE: 'schedule:ran'
+}

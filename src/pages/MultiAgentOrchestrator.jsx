@@ -387,7 +387,7 @@ export default function MultiAgentOrchestrator() {
     setWorkPackages([]);
     setAssemblyComplete(false);
     setAssembleLogs([]);
-    
+
     const steps = [
       'Decompiling monolithic system design into 12 decoupled microservice layers...',
       'Mapping functional components to active developer agent contexts...',
@@ -406,7 +406,7 @@ export default function MultiAgentOrchestrator() {
       if (step >= 4) {
         clearInterval(t);
         sound.play('success');
-        
+
         const planStr = projectPlan;
         const packages = [
           { id: 1,  title: 'Landing Page & Visual Grids',   agent: 'ContentWriter', emoji: '✍️',  platform: 'Lovable',  status: 'Ready', progress: 0,  prompt: `Design and compile a high-converting, premium landing page for: "${planStr}". Features include a glassmorphic hero section, custom grid widgets, sliding testimonial cards, sound triggers, and visual HSL status indicators.` },
@@ -435,7 +435,7 @@ export default function MultiAgentOrchestrator() {
       if (p.id !== id) return p;
       return { ...p, status: 'Running', progress: 0 };
     }));
-    
+
     const target = workPackages.find(p => p.id === id);
     setDispatchLogs(prev => [`[Dispatcher] Dispatched package #${id} (${target.title}) to agent ${target.agent} on ${target.platform}`, ...prev]);
 
@@ -459,7 +459,7 @@ export default function MultiAgentOrchestrator() {
     sound.play('click');
     setIsDispatchingAll(true);
     setDispatchLogs(['[System] Initiating parallel broadcast transmission for all 12 work packages...']);
-    
+
     workPackages.forEach(pkg => {
       setWorkPackages(prev => prev.map(p => {
         if (p.id !== pkg.id) return p;
@@ -474,7 +474,7 @@ export default function MultiAgentOrchestrator() {
           progress = 100;
           clearInterval(t);
         }
-        
+
         setWorkPackages(prev => prev.map(p => {
           if (p.id !== pkg.id) return p;
           const newStatus = progress === 100 ? 'Completed' : 'Running';
@@ -509,7 +509,7 @@ export default function MultiAgentOrchestrator() {
     setAssembleProgress(0);
     setAssemblyComplete(false);
     setAssembleLogs(['[Assembler] Scanning local agent workspaces... 12 codebases verified.']);
-    
+
     const steps = [
       'Resolving file directory mapping boundaries and modules import structure...',
       'Merging static design assets, stylesheets, and custom color variables...',
@@ -1135,7 +1135,7 @@ export default function MultiAgentOrchestrator() {
             <p style={{ margin: '0 0 20px 0', color: V.muted, fontSize: 12 }}>
               Input your custom SaaS project idea. Our system will automatically decompile the architecture into 12 distinct work packages, assign them to your connected agent accounts, and merge them into a unified project download.
             </p>
-            
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               <div>
                 <label style={{ color: V.muted, fontSize: 10, fontWeight: 700, letterSpacing: '0.05em' }}>ENTER PROJECT PLAN / IDEA</label>
@@ -1234,7 +1234,7 @@ export default function MultiAgentOrchestrator() {
                     Click dispatch on individual cards or trigger parallel execution for all accounts
                   </p>
                 </div>
-                
+
                 <button
                   onClick={handleDispatchAll}
                   disabled={isDispatchingAll || workPackages.every(p => p.status === 'Completed')}

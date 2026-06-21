@@ -5,6 +5,8 @@ import { PlatformIcon, StatusBadge } from '../components/PlatformBadge';
 import { useToast } from '../components/Toast';
 import { getSavedClientId, launchGoogleOAuth } from '../lib/googleAuth';
 import GoogleClientIdSetup from '../modals/GoogleClientIdSetup';
+import * as planGate from '../lib/planGate';
+import UpgradeModal from '../components/UpgradeModal';
 
 const LAYOUTS = [
   { label: 'Auto Grid', cols: null },
@@ -57,7 +59,7 @@ function ScreenCard({ account, index, isSending, sendStatus, prompt, onGoogleCon
 
   useEffect(() => {
     if (isSending && sendStatus === 'sending' && logIndex < LOG_TEMPLATES.length && !workflowLogs) {
-      const delay = 300 + Math.random() * 200; 
+      const delay = 300 + Math.random() * 200;
       const timer = setTimeout(() => {
         setTerminalLogs(prev => [...prev, `> ${LOG_TEMPLATES[logIndex]}`]);
         setLogIndex(prev => prev + 1);
@@ -293,12 +295,12 @@ function ScreenCard({ account, index, isSending, sendStatus, prompt, onGoogleCon
       {sendStatus === 'error' && <div className="sonar-wave error" />}
 
       <div className={`card-3d ${isFlipped ? 'flipped' : ''}`}>
-        
+
         {/* ── FRONT FACE (MONOSPACE TERMINAL) ── */}
         <div className="card-front" style={{
           background: 'var(--surface2)',
           border: `1px solid ${statusBorderColor}`,
-          boxShadow: sendStatus === 'sending' ? '0 0 20px rgba(245, 183, 49, 0.12)' 
+          boxShadow: sendStatus === 'sending' ? '0 0 20px rgba(245, 183, 49, 0.12)'
                    : sendStatus === 'success' ? '0 0 20px rgba(0, 212, 170, 0.12)'
                    : 'none',
         }}>
@@ -307,14 +309,14 @@ function ScreenCard({ account, index, isSending, sendStatus, prompt, onGoogleCon
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#ff5f5f' }} />
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#f5b731' }} />
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#00d4aa' }} />
-            
+
             <div style={{
               flex: 1, background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255, 255, 255, 0.04)', borderRadius: 4, fontSize: 9,
               padding: '2px 10px', color: 'rgba(255,255,255,0.6)', fontFamily: 'DM Mono, monospace', marginLeft: 12, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'
             }}>
               <span style={{ color: 'var(--teal)', fontSize: 7 }}>🔒</span> https://{account.platform}.dev/terminal
             </div>
-            
+
             {/* View Output flip button */}
             {sendStatus === 'success' && (
               <button
@@ -371,7 +373,7 @@ function ScreenCard({ account, index, isSending, sendStatus, prompt, onGoogleCon
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#ff5f5f' }} />
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#f5b731' }} />
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#00d4aa' }} />
-            
+
             <div style={{
               flex: 1, background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255, 255, 255, 0.04)', borderRadius: 4, fontSize: 9,
               padding: '2px 10px', color: pl.color, fontFamily: 'DM Mono, monospace', marginLeft: 12, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'
@@ -489,15 +491,16 @@ function ScreenCard({ account, index, isSending, sendStatus, prompt, onGoogleCon
   );
 }
 
-export default function ScreenWall() {
+export default function ScreenWall({ onNav }) {
   const { accounts, addAccount, addBroadcast, updateAccount, setState, activeWorkflowRun, workflows, updateWorkflow } = useStore();
   const toast = useToast();
+  const showUpgrade = !planGate.canDo('wall');
 
   const [layout, setLayout] = useState('Auto Grid');
   const [prompt, setPrompt] = useState('');
   const [isSending, setIsSending] = useState(false);
   const [sendProgress, setSendProgress] = useState(0);
-  const [sendStatuses, setSendStatuses] = useState({}); 
+  const [sendStatuses, setSendStatuses] = useState({});
   const promptRef = useRef(null);
 
   // Google OAuth specific setups
@@ -1011,6 +1014,14 @@ export default function ScreenWall() {
           );
         })}
       </div>
+      {showUpgrade && (
+        <UpgradeModal
+          feature="screenwall"
+          requiredPlan="pro"
+          onClose={() => onNav('dashboard')}
+          onNav={onNav}
+        />
+      )}
     </div>
   );
 }

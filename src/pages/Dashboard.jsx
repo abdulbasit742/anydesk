@@ -674,7 +674,7 @@ function MissionTopologyMap({ accounts }) {
     <div className="card" style={{ padding: '16px 20px', marginBottom: 14, overflow: 'hidden', animation: 'fadeIn 0.4s ease both' }}>
       <div className="card-hdr" style={{ marginBottom: 12 }}>
         <span className="card-title">📡 Active Workspace Telemetry Topology</span>
-        <button 
+        <button
           className={`btn btn-ghost btn-xs ${probing ? 'btn-pulse' : ''}`}
           onClick={handleProbe}
           disabled={probing}
@@ -686,7 +686,7 @@ function MissionTopologyMap({ accounts }) {
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap', justifyContent: 'space-around', background: 'var(--surface)', padding: '16px 24px', borderRadius: 10, border: '1px solid var(--border)' }}>
-          
+
           {/* Core Hub */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
             <div style={{
@@ -708,14 +708,14 @@ function MissionTopologyMap({ accounts }) {
               const isActive = pl.status === 'active';
               const isNodeProbed = activeProbeNode === pl.id;
               const statusColor = isActive ? 'var(--teal)' : pl.status === 'expired_session' ? 'var(--red)' : 'var(--muted)';
-              
+
               return (
-                <div 
-                  key={pl.id} 
-                  style={{ 
-                    display: 'flex', alignItems: 'center', gap: 8, position: 'relative', 
-                    background: 'var(--surface2)', padding: '8px 12px', borderRadius: 8, 
-                    border: `1px solid ${isNodeProbed ? pl.color : pl.color + '25'}`, 
+                <div
+                  key={pl.id}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 8, position: 'relative',
+                    background: 'var(--surface2)', padding: '8px 12px', borderRadius: 8,
+                    border: `1px solid ${isNodeProbed ? pl.color : pl.color + '25'}`,
                     boxShadow: isNodeProbed ? `0 0 14px ${pl.color}35` : 'none',
                     transition: 'all 0.2s ease',
                     transform: isNodeProbed ? 'scale(1.03) translateY(-1px)' : 'none'
@@ -1598,7 +1598,7 @@ export default function Dashboard({ onNav, onConnect }) {
                 {autoPilotCount}
               </div>
             </div>
-            
+
             <button
               onClick={() => {
                 sound.play('click');
@@ -1645,7 +1645,7 @@ export default function Dashboard({ onNav, onConnect }) {
             let color = 'rgba(200,200,220,0.65)';
             if (log.includes('[START]') || log.includes('[OK]')) color = 'rgba(167, 139, 250, 0.85)';
             if (log.includes('[WARN]')) color = '#f87171';
-            
+
             return (
               <div key={idx} style={{ color }}>
                 {log}
@@ -1894,8 +1894,8 @@ export default function Dashboard({ onNav, onConnect }) {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {platformStats.map(pl => (
-              <div 
-                key={pl.id} 
+              <div
+                key={pl.id}
                 onClick={() => handlePlatformCardClick(pl.id)}
                 style={{
                   display: 'flex', alignItems: 'center', gap: 10,
@@ -2002,7 +2002,7 @@ export default function Dashboard({ onNav, onConnect }) {
               const totalCredits = accounts.reduce((s, a) => s + (a.credits || 0), 0);
               const avgDailyUse = accounts.reduce((s, a) => s + ((a.broadcastCount || 0) / 30), 0) || 1.5;
               const daysLeft = totalCredits > 0 ? Math.ceil(totalCredits / avgDailyUse) : 0;
-              
+
               let color = 'var(--teal)';
               let statusText = 'Optimal Balance';
               if (daysLeft < 10) {
@@ -2036,7 +2036,7 @@ export default function Dashboard({ onNav, onConnect }) {
                       {statusText}
                     </div>
                   </div>
-                  
+
                   <div style={{ background: 'var(--surface3)', padding: 12, borderRadius: 8, marginTop: 4 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10.5, color: 'var(--muted)', marginBottom: 6 }}>
                       <span>Simulated Daily Activity multiplier</span>
@@ -2184,11 +2184,11 @@ export default function Dashboard({ onNav, onConnect }) {
 
           {/* Main HUD Layout */}
           <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '320px 1fr 300px', gap: 20, minHeight: 0 }}>
-            
+
             {/* Left Column: Monospace log logger */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, minHeight: 0 }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>📡 Telemetry Event Log</div>
-              
+
               <div style={{
                 flex: 1, background: '#040408', border: '1px solid rgba(255,255,255,0.06)',
                 borderRadius: 10, padding: 14, overflowY: 'auto',
@@ -2221,7 +2221,7 @@ export default function Dashboard({ onNav, onConnect }) {
 
             {/* Center Column: Scanned Radar Map Grid */}
             <div className="card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20, background: 'rgba(20,20,31,0.3)', border: '1px solid rgba(255,255,255,0.05)', position: 'relative' }}>
-              
+
               {/* Sci-fi overlay grids */}
               <div style={{ position: 'absolute', inset: 10, border: '1px dashed rgba(255,255,255,0.03)', pointerEvents: 'none', borderRadius: 8 }} />
               <div style={{ position: 'absolute', inset: '50% 0 0 0', height: 1, background: 'rgba(245,183,49,0.04)', pointerEvents: 'none' }} />
@@ -2232,7 +2232,7 @@ export default function Dashboard({ onNav, onConnect }) {
                 <div style={{ position: 'absolute', width: 340, height: 340, borderRadius: '50%', border: '1px solid rgba(245,183,49,0.06)' }} />
                 <div style={{ position: 'absolute', width: 250, height: 250, borderRadius: '50%', border: '1px dashed rgba(0,212,170,0.06)' }} />
                 <div style={{ position: 'absolute', width: 160, height: 160, borderRadius: '50%', border: '1px solid rgba(79,142,247,0.06)' }} />
-                
+
                 {/* Rotating scanner beam */}
                 <div style={{
                   position: 'absolute', width: 340, height: 340, borderRadius: '50%',
@@ -2334,7 +2334,7 @@ export default function Dashboard({ onNav, onConnect }) {
             {/* Right Column: Telemetry KPI stats HUD */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>📈 Core Metrics HUD</div>
-              
+
               {[
                 { label: 'Network Bandwidth', value: mcMetrics.bandwidth, desc: 'Real-time secure JSON relays', color: 'var(--blue)', icon: '📶' },
                 { label: 'Relay WebSocket Latency', value: mcMetrics.latency, desc: 'Direct browser API socket', color: 'var(--teal)', icon: '⚡' },

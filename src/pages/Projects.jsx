@@ -226,14 +226,14 @@ export default function Projects({ onNav }) {
     const updatedSubtasks = currentSubtasks.map(sub =>
       sub.id === subtaskId ? { ...sub, done: !sub.done } : sub
     );
-    
+
     const updatedTasks = activeProjTasks.map(tk => {
       if (tk.id === task.id) {
         return { ...tk, subtasks: updatedSubtasks };
       }
       return tk;
     });
-    
+
     updateProject(activeProjectId, { tasks: updatedTasks });
     toast.success('Task subtask state synchronized!');
     sound.play('success');
@@ -327,14 +327,14 @@ export default function Projects({ onNav }) {
                     toast.error('No tasks available on this board to export.');
                     return;
                   }
-                  
+
                   // Construct CSV
                   let csvContent = "Project Name,Task Title,Task Description,Lane,Priority,Assigned Account,Subtask List\n";
                   activeProjTasks.forEach(t => {
                     const assignedAcc = accounts?.find(a => a.id === t.accountId);
                     const assignedEmail = assignedAcc ? assignedAcc.email : '';
                     const subtasksStr = (t.subtasks || []).map(s => s.title.replace(/;/g, '\\;')).join(';');
-                    
+
                     csvContent += `"${activeProject.name.replace(/"/g, '""')}",` +
                                   `"${t.title.replace(/"/g, '""')}",` +
                                   `"${(t.desc || '').replace(/"/g, '""')}",` +
@@ -343,7 +343,7 @@ export default function Projects({ onNav }) {
                                   `"${assignedEmail}",` +
                                   `"${subtasksStr.replace(/"/g, '""')}"\n`;
                   });
-                  
+
                   // Download CSV trigger
                   const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
                   const url = URL.createObjectURL(blob);
@@ -479,7 +479,7 @@ export default function Projects({ onNav }) {
                           {/* Task Title / Details */}
                           <div className="task-header">
                             <span className="task-title">{t.title}</span>
-                            
+
                             {/* Shift actions on Hover */}
                             <div className="task-actions">
                               <button
@@ -597,7 +597,7 @@ export default function Projects({ onNav }) {
                   const currentSub = getTaskSubtasks(t);
                   const completedSub = currentSub.filter(s => s.done).length;
                   const totalSub = currentSub.length;
-                  
+
                   return (
                     <div key={t.id} className="gantt-task-row">
                       <div className="gantt-task-info">
@@ -791,7 +791,7 @@ export default function Projects({ onNav }) {
                   taskDue.setHours(0,0,0,0);
 
                   const diffDays = Math.round((taskDue - todayDate) / (1000 * 60 * 60 * 24));
-                  
+
                   // Compute span
                   let leftPercent;
                   let widthPercent;
@@ -1057,7 +1057,7 @@ export default function Projects({ onNav }) {
 
           return (
             <div key={p.id} className="proj-card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-              
+
               {/* Card top details */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                 <div>

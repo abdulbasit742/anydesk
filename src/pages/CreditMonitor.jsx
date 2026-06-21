@@ -321,7 +321,7 @@ export default function CreditMonitor({ onNav }) {
 
       {/* Features 26 & 27: Credit exhaustion timeline display and webhook simulator */}
       <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 14, alignItems: 'start' }}>
-        
+
         {/* ── Per-Account Table ────────────────────────────────── */}
         <div style={{ background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 14, overflow: 'hidden' }}>
           {/* Table header */}
@@ -471,7 +471,7 @@ export default function CreditMonitor({ onNav }) {
                 setWebhookStatus('idle');
               }}>✕</button>
             </div>
-            
+
             <div style={{ fontSize: 12, color: 'var(--muted)', lineHeight: 1.5 }}>
               Simulates sending a real-time `account.credits.low` webhook event trigger payload to your configured webhook endpoint.
             </div>

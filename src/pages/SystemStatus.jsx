@@ -32,7 +32,7 @@ export default function SystemStatus() {
 
   const [brainRunning, setBrainRunning] = useState(() => brain.interval !== null);
   const [tickCount, setTickCount] = useState(() => brain.tickCount);
-  
+
   // Toggles for automated systems
   const [autoRelay, setAutoRelay] = useState(() => stateManager.get('auto_relay_enabled', true));
   const [autoScheduler, setAutoScheduler] = useState(() => stateManager.get('auto_scheduler_enabled', true));
@@ -41,7 +41,7 @@ export default function SystemStatus() {
 
   // Filter state for event stream
   const [eventFilter, setEventFilter] = useState('all'); // 'all' | 'relay' | 'schedule' | 'task' | 'error'
-  
+
   // Expand details drawer/modal for selected account
   const [selectedAccount, setSelectedAccount] = useState(null);
 
@@ -167,7 +167,7 @@ export default function SystemStatus() {
               {brainRunning ? '● RUNNING' : '○ STOPPED'}
             </span>
           </div>
-          <button 
+          <button
             onClick={handleToggleBrain}
             className={`btn btn-xs ${brainRunning ? 'btn-danger' : 'btn-gold'}`}
             style={{ padding: '6px 12px', fontSize: 10 }}
@@ -179,15 +179,15 @@ export default function SystemStatus() {
 
       {/* SECTION A & D Grid: Health & Automation Status */}
       <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 16 }}>
-        
+
         {/* SECTION A — Health Overview */}
         <div className="card" style={{ display: 'flex', gap: 24, padding: '24px 28px', alignItems: 'center' }}>
           {/* Big Score Ring */}
           <div style={{ position: 'relative', width: 120, height: 120, flexShrink: 0 }}>
             <svg viewBox="0 0 120 120" width="120" height="120">
               <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="10" />
-              <circle 
-                cx="60" cy="60" r="48" fill="none" 
+              <circle
+                cx="60" cy="60" r="48" fill="none"
                 stroke={currentHealthColor} strokeWidth="10" strokeLinecap="round"
                 strokeDasharray={2 * Math.PI * 48}
                 strokeDashoffset={2 * Math.PI * 48 * (1 - health.score / 100)}
@@ -208,12 +208,12 @@ export default function SystemStatus() {
             <h2 style={{ fontSize: 13, fontWeight: 700, margin: 0, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '.05em' }}>
               Overall Vital Health
             </h2>
-            
+
             {/* Health Trend sparkline */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <div style={{ flex: 1, height: 24 }}>
                 <svg viewBox="0 0 120 24" style={{ width: '100%', height: '100%', overflow: 'visible' }}>
-                  <path 
+                  <path
                     d={healthTrendData.map((val, i) => `${i === 0 ? 'M' : 'L'} ${(i / (healthTrendData.length - 1)) * 120} ${24 - (val - 50) * 0.4}`).join(' ')}
                     fill="none" stroke="var(--gold)" strokeWidth="1.8" strokeLinecap="round"
                   />
@@ -268,7 +268,7 @@ export default function SystemStatus() {
                 <span style={{ fontSize: 11.5, fontWeight: 700 }}>Auto Credit Relay</span>
                 <span style={{ fontSize: 9, color: 'var(--muted)', marginTop: 2 }}>Triggers under 5% balance</span>
               </div>
-              <div 
+              <div
                 onClick={() => handleToggleConfig('auto_relay_enabled', autoRelay, setAutoRelay)}
                 style={{ width: 34, height: 18, borderRadius: 9, background: autoRelay ? 'var(--teal)' : 'rgba(255,255,255,0.1)', cursor: 'pointer', position: 'relative', transition: 'all 0.2s' }}
               >
@@ -285,7 +285,7 @@ export default function SystemStatus() {
                 <span style={{ fontSize: 11.5, fontWeight: 700 }}>Cron Scheduler</span>
                 <span style={{ fontSize: 9, color: 'var(--muted)', marginTop: 2 }}>Executes pending prompts</span>
               </div>
-              <div 
+              <div
                 onClick={() => handleToggleConfig('auto_scheduler_enabled', autoScheduler, setAutoScheduler)}
                 style={{ width: 34, height: 18, borderRadius: 9, background: autoScheduler ? 'var(--teal)' : 'rgba(255,255,255,0.1)', cursor: 'pointer', position: 'relative', transition: 'all 0.2s' }}
               >
@@ -302,7 +302,7 @@ export default function SystemStatus() {
                 <span style={{ fontSize: 11.5, fontWeight: 700 }}>Credit Snapshots</span>
                 <span style={{ fontSize: 9, color: 'var(--muted)', marginTop: 2 }}>Records daily burn averages</span>
               </div>
-              <div 
+              <div
                 onClick={() => handleToggleConfig('credit_snapshots_enabled', creditSnapshots, setCreditSnapshots)}
                 style={{ width: 34, height: 18, borderRadius: 9, background: creditSnapshots ? 'var(--teal)' : 'rgba(255,255,255,0.1)', cursor: 'pointer', position: 'relative', transition: 'all 0.2s' }}
               >
@@ -319,7 +319,7 @@ export default function SystemStatus() {
                 <span style={{ fontSize: 11.5, fontWeight: 700 }}>Health Monitor</span>
                 <span style={{ fontSize: 9, color: 'var(--muted)', marginTop: 2 }}>Recalculates sys vitals index</span>
               </div>
-              <div 
+              <div
                 onClick={() => handleToggleConfig('health_monitor_enabled', healthMonitor, setHealthMonitor)}
                 style={{ width: 34, height: 18, borderRadius: 9, background: healthMonitor ? 'var(--teal)' : 'rgba(255,255,255,0.1)', cursor: 'pointer', position: 'relative', transition: 'all 0.2s' }}
               >
@@ -342,14 +342,14 @@ export default function SystemStatus() {
           {accounts.map(acc => {
             const pl = PLATFORMS.find(p => p.id === acc.platform) || PLATFORMS[0];
             const usagePct = acc.maxCredits > 0 ? Math.round((acc.credits / acc.maxCredits) * 100) : 0;
-            
+
             // Color based on balance
             let stateColor = 'var(--teal)';
             if (usagePct <= 20) stateColor = 'var(--gold)';
             if (usagePct <= 5) stateColor = 'var(--red)';
 
             return (
-              <div 
+              <div
                 key={acc.id}
                 onClick={() => { sound.play('click'); setSelectedAccount(acc); }}
                 style={{
@@ -404,7 +404,7 @@ export default function SystemStatus() {
           <h2 style={{ fontSize: 13, fontWeight: 700, margin: 0, color: '#fff', textTransform: 'uppercase', letterSpacing: '.05em' }}>
             🛰️ Live Event Stream Telemetry
           </h2>
-          
+
           {/* Filters */}
           <div style={{ display: 'flex', gap: 6 }}>
             {['all', 'relay', 'schedule', 'task', 'error'].map(f => (
@@ -432,7 +432,7 @@ export default function SystemStatus() {
         }}>
           {filteredEvents.length > 0 ? (
             filteredEvents.map(e => (
-              <div 
+              <div
                 key={e.id}
                 style={{
                   display: 'grid', gridTemplateColumns: '24px 120px 1fr 80px',
@@ -472,14 +472,14 @@ export default function SystemStatus() {
         const pl = PLATFORMS.find(p => p.id === acc.platform) || PLATFORMS[0];
         const burnRate = stateManager.getBurnRate(acc.id);
         const daysLeft = burnRate > 0 ? Math.ceil(acc.credits / burnRate) : '—';
-        
+
         // Find relay logs involving this account
         const accountRelays = relayLog.filter(r => r.from === acc.id || r.to === acc.id);
 
         return (
           <>
             {/* Backdrop */}
-            <div 
+            <div
               onClick={() => setSelectedAccount(null)}
               style={{
                 position: 'fixed', inset: 0, zIndex: 9000,
@@ -504,7 +504,7 @@ export default function SystemStatus() {
                       <span style={{ fontSize: 10.5, color: pl.color }}>{pl.name} Gateway</span>
                     </div>
                   </div>
-                  <button 
+                  <button
                     onClick={() => setSelectedAccount(null)}
                     style={{ background: 'rgba(255,255,255,0.05)', border: 'none', color: 'var(--muted)', cursor: 'pointer', borderRadius: 4, width: 24, height: 24 }}
                   >

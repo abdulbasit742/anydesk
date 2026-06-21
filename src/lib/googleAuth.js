@@ -58,7 +58,7 @@ export function launchGoogleOAuth(clientId) {
   return new Promise((resolve, reject) => {
     // ── Interactive Sandbox Mode Bypass (No Client ID required) ──
     if (clientId === 'sandbox-demo-mode') {
-      
+
       // Set up global callbacks in parent window for the popup
       window.onGoogleAuthSuccess = (profile) => {
         cleanupCallbacks();
@@ -79,7 +79,7 @@ export function launchGoogleOAuth(clientId) {
       const popupHeight = 620;
       const left = window.screen.width / 2 - popupWidth / 2;
       const top = window.screen.height / 2 - popupHeight / 2;
-      
+
       let popup = null;
       try {
         popup = window.open(
@@ -216,7 +216,7 @@ export function launchGoogleOAuth(clientId) {
             }
             .divider:not(:empty)::before { margin-right: .5em; }
             .divider:not(:empty)::after { margin-left: .5em; }
-            
+
             .input-group {
               margin-bottom: 16px;
               text-align: left;
@@ -280,7 +280,7 @@ export function launchGoogleOAuth(clientId) {
               background: #0842a0;
               box-shadow: 0 1px 3px rgba(0,0,0,0.2);
             }
-            
+
             /* Loader style */
             .loader-container {
               display: none;
@@ -356,14 +356,14 @@ export function launchGoogleOAuth(clientId) {
             function finishLogin(name, email) {
               document.getElementById('main-card').style.display = 'none';
               document.getElementById('loader-card').style.display = 'block';
-              
+
               setTimeout(() => {
                 try {
                   if (window.opener && !window.opener.closed) {
                     const finalEmail = email.trim() || 'lmk701870@gmail.com';
                     const finalName = name.trim() || 'LMK Developer';
                     const seed = finalName.replace(/\\s+/g, '');
-                    
+
                     window.opener.onGoogleAuthSuccess({
                       accessToken: "mock-access-token-" + Math.random().toString(36).slice(2, 9),
                       email: finalEmail,
@@ -411,7 +411,7 @@ export function launchGoogleOAuth(clientId) {
       if (popup) {
         popup.document.write(htmlContent);
         popup.document.close();
-        
+
         // Listen if window is closed without selecting an account
         const checkClosed = setInterval(() => {
           if (popup.closed) {
@@ -462,7 +462,7 @@ export function launchGoogleOAuth(clientId) {
             <h2 style="font-size: 22px; font-weight: 400; margin: 0 0 8px 0; color: #1f1f1f;">Sign in with Google</h2>
             <p style="font-size: 13.5px; color: #444746; margin: 0; line-height: 1.4;">Select LMK Developer profile to instantly sync your account workspaces</p>
           </div>
-          
+
           <button type="button" class="quick-prof-btn" style="width: 100%; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid #c4c7c5; border-radius: 12px; background: #ffffff; font-size: 14px; cursor: pointer; text-align: left; transition: all 0.15s; outline: none; margin-bottom: 20px; box-sizing: border-box;">
             <div style="width: 32px; height: 32px; border-radius: 50%; background: #0b57d0; color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;">L</div>
             <div style="flex: 1; min-width: 0;">

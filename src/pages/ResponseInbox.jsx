@@ -129,12 +129,12 @@ export default function ResponseInbox() {
     sound.play('click');
     let md = `# Response Dispatch comparison: Thread #${thread.id}\n\n`;
     md += `**Prompt:**\n> ${thread.prompt}\n\n`;
-    
+
     const summary = summaries[thread.id] || AI_SUMMARIES[thread.id];
     if (summary) {
       md += `### 🤖 AI Core Analysis & Summary\n${summary}\n\n`;
     }
-    
+
     md += `### 📊 Analytical Metrics Comparison\n`;
     thread.responses.forEach(r => {
       const metrics = getSentimentMetrics(r.text);
@@ -146,7 +146,7 @@ export default function ResponseInbox() {
     thread.responses.forEach(r => {
       md += `#### ${r.platform} Response\n\`\`\`javascript\n${r.text}\n\`\`\`\n\n`;
     });
-    
+
     const blob = new Blob([md], { type: 'text/markdown' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { store } from '../lib/store';
 
 const NAMESPACES = ['app', 'db', 'cache', 'auth', 'features', 'integrations'];
 const CONFIG_DATA = {
@@ -37,22 +38,31 @@ const CONFIG_DATA = {
     { key: 'sentry_dsn', value: 'https://sentry.io/…', type: 'string', valid: true },
   ],
 };
-const CHANGE_LOG = [
+
+const INITIAL_CHANGE_LOG = [
   { ts: '2026-06-02 07:42', user: 'admin', ns: 'auth', key: 'mfa_required', from: 'true', to: 'false' },
   { ts: '2026-06-01 15:30', user: 'system', ns: 'app', key: 'version', from: '2.4.0', to: '2.4.1' },
   { ts: '2026-06-01 10:00', user: 'alice', ns: 'cache', key: 'ttl_seconds', from: '1800', to: '3600' },
 ];
+
 const TYPE_COLORS = { string: '#22d3ee', number: '#f5b731', bool: '#a78bfa', json: '#60a5fa' };
 
 export default function ConfigManager() {
   const [activeNs, setActiveNs] = useState('app');
-  const [configs, setConfigs] = useState(CONFIG_DATA);
+  const [configs, setConfigs] = useState(() => store.get('configs', CONFIG_DATA));
+  const [changelog, setChangelog] = useState(() => store.get('config_changelog', INITIAL_CHANGE_LOG));
   const [tab, setTab] = useState('editor');
   const [envOverride, setEnvOverride] = useState('production');
   const [editingKey, setEditingKey] = useState(null);
   const [editValue, setEditValue] = useState('');
+  const [statusMsg, setStatusMsg] = useState('');
 
   const currentConfigs = configs[activeNs] || [];
+
+  const showStatus = (msg) => {
+    setStatusMsg(msg);
+    setTimeout(() => setStatusMsg(''), 4000);
+  };
 
   const startEdit = (cfg) => {
     setEditingKey(cfg.key);
@@ -60,16 +70,64 @@ export default function ConfigManager() {
   };
 
   const saveEdit = (key) => {
-    setConfigs(prev => ({
-      ...prev,
-      [activeNs]: prev[activeNs].map(c => c.key === key ? { ...c, value: c.type === 'number' ? +editValue : c.type === 'bool' ? editValue === 'true' : editValue } : c)
-    }));
+    const originalValue = configs[activeNs].find(c => c.key === key)?.value;
+    const finalVal = configs[activeNs].find(c => c.key === key)?.type === 'number' ? +editValue :
+                     configs[activeNs].find(c => c.key === key)?.type === 'bool' ? editValue === 'true' : editValue;
+
+    const updated = {
+      ...configs,
+      [activeNs]: configs[activeNs].map(c => c.key === key ? { ...c, value: finalVal } : c)
+    };
+
+    setConfigs(updated);
+    store.set('configs', updated);
+
+    // Add changelog entry
+    const newLog = {
+      ts: new Date().toISOString().replace('T', ' ').slice(0, 16),
+      user: 'admin',
+      ns: activeNs,
+      key,
+      from: String(originalValue),
+      to: String(finalVal)
+    };
+    const updatedLogs = [newLog, ...changelog];
+    setChangelog(updatedLogs);
+    store.set('config_changelog', updatedLogs);
+
+    store.addEvent('config:updated', { namespace: activeNs, key, value: finalVal });
     setEditingKey(null);
+    showStatus(`Successfully updated "${key}" in namespace "${activeNs}".`);
+  };
+
+  const rollbackConfig = () => {
+    const updated = {
+      ...configs,
+      [activeNs]: CONFIG_DATA[activeNs]
+    };
+    setConfigs(updated);
+    store.set('configs', updated);
+
+    const newLog = {
+      ts: new Date().toISOString().replace('T', ' ').slice(0, 16),
+      user: 'system',
+      ns: activeNs,
+      key: 'all',
+      from: 'custom',
+      to: 'default_rollback'
+    };
+    const updatedLogs = [newLog, ...changelog];
+    setChangelog(updatedLogs);
+    store.set('config_changelog', updatedLogs);
+
+    store.addEvent('config:rollback', { namespace: activeNs });
+    showStatus(`Rolled back namespace "${activeNs}" to default configurations.`);
   };
 
   const exportJSON = () => {
     const out = Object.fromEntries(currentConfigs.map(c => [c.key, c.value]));
     navigator.clipboard.writeText(JSON.stringify(out, null, 2));
+    showStatus(`Copied namespace "${activeNs}" configurations to clipboard as JSON.`);
   };
 
   const s = {
@@ -100,7 +158,7 @@ export default function ConfigManager() {
             </select>
           </div>
           <button style={s.btn('#22d3ee')} onClick={exportJSON}>📋 Copy as JSON</button>
-          <button style={s.btn('#ef4444')}>↩ Rollback Config</button>
+          <button style={s.btn('#ef4444')} onClick={rollbackConfig}>↩ Rollback Config</button>
           <div style={{ marginLeft: 'auto', display: 'flex', gap: 8 }}>
             {['editor', 'diff', 'changelog'].map(t => <button key={t} style={s.tabBtn(tab === t)} onClick={() => setTab(t)}>{t.charAt(0).toUpperCase() + t.slice(1)}</button>)}
           </div>
@@ -124,6 +182,13 @@ export default function ConfigManager() {
         </div>
 
         <div>
+          {statusMsg && (
+            <div style={{ background: '#1d1d28', border: '1px solid rgba(96,165,250,0.3)', color: '#60a5fa', borderRadius: 10, padding: '12px 16px', marginBottom: 20, fontSize: 13, display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span>ℹ️</span>
+              <span>{statusMsg}</span>
+            </div>
+          )}
+
           {tab === 'editor' && (
             <div style={s.card}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
@@ -174,7 +239,7 @@ export default function ConfigManager() {
           {tab === 'changelog' && (
             <div style={s.card}>
               <div style={{ fontSize: 14, fontWeight: 700, color: '#6e7191', marginBottom: 16 }}>Config Change Log</div>
-              {CHANGE_LOG.map((cl, i) => (
+              {changelog.map((cl, i) => (
                 <div key={i} style={{ display: 'flex', gap: 14, padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', fontSize: 13 }}>
                   <span style={{ color: '#6e7191', fontFamily: 'monospace', fontSize: 12, minWidth: 140 }}>{cl.ts}</span>
                   <span style={{ color: '#a78bfa', fontWeight: 600 }}>{cl.user}</span>

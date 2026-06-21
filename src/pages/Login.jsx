@@ -1,5 +1,6 @@
+// src/pages/Login.jsx
 import { useState } from 'react';
-import { signIn } from '../lib/auth';
+import { auth } from '../lib/supabase';
 
 export default function Login({ onNav }) {
   const [email, setEmail] = useState('');
@@ -12,18 +13,14 @@ export default function Login({ onNav }) {
     setLoading(true);
     setError(null);
     try {
-      const { data, error: signInError } = await signIn(email, password);
-      if (signInError) {
-        setError(signInError.message);
-      } else if (data?.session) {
-        if (onNav) {
-          onNav('dashboard');
-        } else {
-          window.location.href = '/dashboard';
-        }
+      await auth.signIn(email, password);
+      if (onNav) {
+        onNav('dashboard');
+      } else {
+        window.location.href = '/dashboard';
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An unexpected error occurred.');
+      setError(err instanceof Error ? err.message : 'Login failed. Please check your credentials.');
     } finally {
       setLoading(false);
     }
@@ -36,7 +33,7 @@ export default function Login({ onNav }) {
           <span style={styles.logoIcon}>⚡</span>
           <span style={styles.logoText}>AgentFlow</span>
         </div>
-        
+
         <h2 style={styles.title}>Welcome Back</h2>
         <p style={styles.subtitle}>Sign in to manage your AI account relays</p>
 
@@ -80,7 +77,11 @@ export default function Login({ onNav }) {
           </div>
 
           <button type="submit" disabled={loading} style={styles.button}>
-            {loading ? 'Signing In...' : 'Sign In'}
+            {loading ? (
+              <span style={styles.spinnerContainer}>
+                <span style={styles.spinner}></span> Signing In...
+              </span>
+            ) : 'Sign In'}
           </button>
         </form>
 
@@ -209,6 +210,20 @@ const styles = {
     marginTop: '8px',
     transition: 'opacity 0.2s',
   },
+  spinnerContainer: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '8px',
+  },
+  spinner: {
+    width: '14px',
+    height: '14px',
+    border: '2px solid rgba(14, 14, 22, 0.2)',
+    borderTopColor: '#0e0e16',
+    borderRadius: '50%',
+    animation: 'agp-spin 0.6s linear infinite',
+  },
   footer: {
     marginTop: '28px',
     fontSize: '13px',
@@ -225,3 +240,14 @@ const styles = {
     textDecoration: 'underline',
   }
 };
+
+// Add standard keyframe spinner CSS rules if needed dynamically
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes agp-spin {
+      to { transform: rotate(360deg); }
+    }
+  `;
+  document.head.appendChild(style);
+}

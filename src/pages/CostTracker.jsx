@@ -8,11 +8,11 @@ function Sparkline({ data, color, showArea = false }) {
   if (!data?.length) return null;
   const max = Math.max(1, ...data);
   const h = 28, w = 80;
-  
+
   // Safe divisor check to avoid division-by-zero (yielding NaN)
   const divisor = data.length > 1 ? data.length - 1 : 1;
   const pts = data.map((v, i) => `${(i / divisor) * w},${h - (v / max) * h}`).join(' ');
-  
+
   const lastX = w;
   const lastY = h - (data[data.length - 1] / max) * h;
 
@@ -114,7 +114,7 @@ export default function CostTracker({ onNav }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      
+
       {/* Spend Limit Warning Alert Banner (Feature 11) */}
       {isLimitExceeded && (
         <div style={{
@@ -145,10 +145,10 @@ export default function CostTracker({ onNav }) {
             <div style={{ fontSize: 9.5, color: 'var(--muted)', fontFamily: 'DM Mono,monospace' }}>Spending analytics across all platforms</div>
           </div>
         </div>
-        
+
         {/* Toggle switches and selectors */}
         <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap' }}>
-          
+
           {/* Sparkline style toggle (Feature 13) */}
           <button
             onClick={() => { sound.play('click'); setShowArea(!showArea); }}
