@@ -22,5 +22,8 @@
   },
   "devDependencies": {
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "tsx": "^4.22.4"
   }
 }
