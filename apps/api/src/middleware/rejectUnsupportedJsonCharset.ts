@@ -4,6 +4,7 @@ import type { RequestWithId } from "./requestId.js";
 import { JSON_BODY_METHODS, hasRequestBody, isApiPath, isJsonContentType } from "./requireJsonContentType.js";
 
 export const SUPPORTED_JSON_CHARSETS = new Set(["utf-8", "utf8"]);
+export const UNSUPPORTED_JSON_CHARSET_MESSAGE = "Request body charset is not supported";
 
 export function normalizeJsonCharset(contentType: string | undefined): string | null {
   const match = contentType?.match(/(?:^|;)\s*charset\s*=\s*([^;]+)/i);
@@ -30,7 +31,7 @@ export function rejectUnsupportedJsonCharset(req: RequestWithId, res: Response, 
     success: false,
     error: {
       code: "unsupported_charset",
-      message: "Request body charset is not supported",
+      message: UNSUPPORTED_JSON_CHARSET_MESSAGE,
       requestId: req.requestId
     }
   });
