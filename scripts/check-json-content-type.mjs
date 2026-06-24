@@ -39,6 +39,8 @@ const checks = {
   returnsRequestId: middlewareSource.includes("requestId: req.requestId"),
   encodingGuardFileExists: existsSync(encodingGuardPath),
   exportsEncodingGuard: encodingGuardSource.includes("export function rejectUnsupportedContentEncoding"),
+  encodingGuardImportsSharedRequestScope: encodingGuardSource.includes('import { JSON_BODY_METHODS, hasRequestBody, isApiPath } from "./requireJsonContentType.js"'),
+  encodingGuardLimitsToJsonBody: encodingGuardSource.includes("hasRequestBody(req)") && encodingGuardSource.includes("JSON_BODY_METHODS.has(req.method)") && encodingGuardSource.includes("isApiPath(req.path)"),
   normalizesContentEncoding: encodingGuardSource.includes("normalizeContentEncoding") && encodingGuardSource.includes('req.get("content-encoding")'),
   allowsIdentityEncoding: encodingGuardSource.includes("SUPPORTED_CONTENT_ENCODINGS") && encodingGuardSource.includes('"identity"'),
   rejectsUnsupportedEncoding: encodingGuardSource.includes("unsupported_content_encoding") && encodingGuardSource.includes("Compressed request bodies are not supported"),
