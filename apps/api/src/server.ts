@@ -12,6 +12,7 @@ import sessionRoutes from "./routes/session.routes.js";
 import subscriptionRoutes from "./routes/subscription.routes.js";
 import launchRoutes from "./routes/launch.routes.js";
 import connectorRoutes from "./routes/connector.routes.js";
+import betaRoutes from "./routes/beta.routes.js";
 import { initSocketServer } from "./socket/index.js";
 import { health } from "./observability/health.js";
 import { logger } from "./observability/safeLogger.js";
@@ -56,6 +57,7 @@ app.use("/api/sessions", sessionRoutes);
 app.use("/api/subscription", subscriptionRoutes);
 app.use("/api/launch", launchRoutes);
 app.use("/api/connectors", connectorRoutes);
+app.use("/api/beta", betaRoutes);
 
 initSocketServer(server);
 health.markReady();
