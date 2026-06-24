@@ -58,7 +58,8 @@ const checks = {
   guardBeforeJsonParser: guardIndex >= 0 && parserIndex >= 0 && guardIndex < parserIndex,
   parserSupportsStandardJson: serverSource.includes('type: ["application/json", "application/*+json"]'),
   parserSupportsJsonSuffix: serverSource.includes('"application/*+json"'),
-  parserKeepsBodyLimit: serverSource.includes('limit: "1mb"'),
+  definesJsonBodyLimit: serverSource.includes("JSON_BODY_LIMIT") && serverSource.includes('const JSON_BODY_LIMIT = "1mb"'),
+  parserKeepsBodyLimit: serverSource.includes("limit: JSON_BODY_LIMIT"),
   parserDisablesInflation: serverSource.includes("inflate: false"),
   parserUsesStrictMode: serverSource.includes("strict: true"),
 };
