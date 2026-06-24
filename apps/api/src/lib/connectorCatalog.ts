@@ -30,6 +30,7 @@ const connectorSelect = {
 
 const CONNECTOR_AUDIT_DEFAULT_LIMIT = 50;
 const CONNECTOR_AUDIT_MAX_LIMIT = 100;
+let connectorCatalogSeedPromise: Promise<void> | null = null;
 
 function toCapabilities(value: Prisma.JsonValue): string[] {
   if (!Array.isArray(value)) return [];
@@ -41,20 +42,8 @@ function clampConnectorAuditLimit(limit?: number): number {
   return Math.min(Math.max(Math.floor(limit ?? CONNECTOR_AUDIT_DEFAULT_LIMIT), 1), CONNECTOR_AUDIT_MAX_LIMIT);
 }
 
-function toConnectorDefinitionDto(definition: PersistedConnectorDefinition): ConnectorDefinitionDto {
-  return {
-    key: definition.key,
-    name: definition.name,
-    category: definition.category as ConnectorDefinitionDto["category"],
-    availability: definition.availability as ConnectorDefinitionDto["availability"],
-    description: definition.description,
-    capabilities: toCapabilities(definition.capabilities),
-    docsUrl: definition.docsUrl ?? undefined
-  };
-}
-
-export async function ensureDefaultConnectorCatalog() {
-  await Promise.all(
+function seedDefaultConnectorCatalog(): Promise<void> {
+  return Promise.all(
     defaultConnectorCatalog.map((connector) =>
       prisma.connectorDefinition.upsert({
         where: { key: connector.key },
@@ -77,7 +66,28 @@ export async function ensureDefaultConnectorCatalog() {
         }
       })
     )
-  );
+  ).then(() => undefined);
+}
+
+function toConnectorDefinitionDto(definition: PersistedConnectorDefinition): ConnectorDefinitionDto {
+  return {
+    key: definition.key,
+    name: definition.name,
+    category: definition.category as ConnectorDefinitionDto["category"],
+    availability: definition.availability as ConnectorDefinitionDto["availability"],
+    description: definition.description,
+    capabilities: toCapabilities(definition.capabilities),
+    docsUrl: definition.docsUrl ?? undefined
+  };
+}
+
+export async function ensureDefaultConnectorCatalog() {
+  connectorCatalogSeedPromise ??= seedDefaultConnectorCatalog().catch((error) => {
+    connectorCatalogSeedPromise = null;
+    throw error;
+  });
+
+  await connectorCatalogSeedPromise;
 }
 
 export async function getConnectorCatalogForUser(userId: string): Promise<ConnectorCatalogItem[]> {
