@@ -11,6 +11,7 @@ import { env } from "../config/env.js";
 import { prisma } from "../lib/prisma.js";
 import { verifyPassword } from "../lib/password.js";
 import { verifyAccessToken } from "../lib/tokens.js";
+import { registerWebRtcSignaling } from "./webrtcSignaling.js";
 
 interface AuthedSocket extends Socket {
   data: {
@@ -48,7 +49,11 @@ export function initSocketServer(httpServer: HttpServer) {
       where: { id: socket.data.userId },
       data: { isOnline: true, socketId: socket.id, lastSeenAt: new Date() }
     });
+    socket.join(`user:${socket.data.userId}`);
     socket.join(`user:${socket.data.remoteDeskId}`);
+    socket.join(`remoteDesk:${socket.data.remoteDeskId}`);
+
+    registerWebRtcSignaling(io, socket);
 
     socket.on(ClientEvents.ConnectRequest, async (payload: ConnectRequestPayload) => {
       const targetId = payload.targetRemoteDeskId.replace(/\s/g, "");
