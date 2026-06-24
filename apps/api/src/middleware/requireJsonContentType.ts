@@ -4,11 +4,11 @@ import type { RequestWithId } from "./requestId.js";
 export const JSON_BODY_TYPES = ["application/json", "application/*+json"] as const;
 export const JSON_BODY_METHODS = new Set(["POST", "PUT", "PATCH"]);
 
-function isApiPath(path: string): boolean {
+export function isApiPath(path: string): boolean {
   return path === "/api" || path.startsWith("/api/");
 }
 
-function hasRequestBody(req: RequestWithId): boolean {
+export function hasRequestBody(req: RequestWithId): boolean {
   const contentLength = req.get("content-length");
   if (contentLength && Number(contentLength) > 0) return true;
   return Boolean(req.get("transfer-encoding"));
