@@ -6,6 +6,7 @@ import { installGracefulShutdown } from "./lifecycle/gracefulShutdown.js";
 import { createRateLimit } from "./middleware/rateLimit.js";
 import { requestId } from "./middleware/requestId.js";
 import { securityHeaders } from "./middleware/securityHeaders.js";
+import { noStore } from "./middleware/noStore.js";
 import { notFound, errorHandler } from "./middleware/errorHandler.js";
 import { asyncHandler } from "./middleware/asyncHandler.js";
 import authRoutes from "./routes/auth.routes.js";
@@ -69,7 +70,7 @@ app.get("/readyz", asyncHandler(async (_req, res) => {
 
 app.use(createRateLimit({ windowMs: 60_000, max: 240, name: "global-api" }));
 
-app.use("/api/auth", authRoutes);
+app.use("/api/auth", noStore, authRoutes);
 app.use("/api/devices", deviceRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/sessions", sessionRoutes);
