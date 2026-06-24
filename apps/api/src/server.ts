@@ -23,8 +23,16 @@ import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
 import { health } from "./observability/health.js";
 import { logger } from "./observability/safeLogger.js";
 
+const HTTP_REQUEST_TIMEOUT_MS = 120_000;
+const HTTP_HEADERS_TIMEOUT_MS = 30_000;
+const HTTP_KEEP_ALIVE_TIMEOUT_MS = 5_000;
+
 const app = express();
 const server = http.createServer(app);
+server.requestTimeout = HTTP_REQUEST_TIMEOUT_MS;
+server.headersTimeout = HTTP_HEADERS_TIMEOUT_MS;
+server.keepAliveTimeout = HTTP_KEEP_ALIVE_TIMEOUT_MS;
+server.timeout = HTTP_REQUEST_TIMEOUT_MS;
 
 async function readinessBody() {
   const body = health.readiness();
