@@ -1,6 +1,7 @@
 import type { RequestHandler } from "express";
 import type { RequestWithId } from "./requestId.js";
 
+export const JSON_BODY_TYPES = ["application/json", "application/*+json"] as const;
 const JSON_BODY_METHODS = new Set(["POST", "PUT", "PATCH"]);
 
 function isApiPath(path: string): boolean {
@@ -14,7 +15,7 @@ function hasRequestBody(req: RequestWithId): boolean {
 }
 
 function acceptsJson(req: RequestWithId): boolean {
-  return Boolean(req.is("application/json") || req.is("application/*+json"));
+  return JSON_BODY_TYPES.some((type) => Boolean(req.is(type)));
 }
 
 export const requireJsonContentType: RequestHandler = (req: RequestWithId, res, next) => {
