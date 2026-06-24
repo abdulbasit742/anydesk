@@ -16,6 +16,10 @@ const connectorKeyParams = z.object({
   key: z.string().min(2).max(50)
 });
 
+const auditQuerySchema = z.object({
+  limit: z.coerce.number().int().min(1).max(100).optional()
+});
+
 router.get("/catalog", asyncHandler<AuthedRequest>(async (req, res) => {
   const data = await getConnectorCatalogForUser(req.user!.id);
   res.json({ success: true, data });
@@ -50,8 +54,11 @@ router.delete("/:key/install", asyncHandler<AuthedRequest>(async (req, res) => {
 }));
 
 router.get("/audit", asyncHandler<AuthedRequest>(async (req, res) => {
-  const data = await listConnectorAuditEvents(req.user!.id);
-  res.json({ success: true, data });
+  const input = auditQuerySchema.safeParse(req.query);
+  if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
+
+  const data = await listConnectorAuditEvents(req.user!.id, { limit: input.data.limit });
+  res.json({ success: true, data, meta: { limit: input.data.limit ?? 50 } });
 }));
 
 export default router;
