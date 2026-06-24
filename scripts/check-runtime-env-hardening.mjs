@@ -5,6 +5,7 @@ import { join } from "node:path";
 const root = process.cwd();
 const envPath = join(root, "apps", "api", "src", "config", "env.ts");
 const validatePath = join(root, "scripts", "validate-env.mjs");
+const serverPath = join(root, "apps", "api", "src", "server.ts");
 
 function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
@@ -12,16 +13,24 @@ function read(path) {
 
 const envSource = read(envPath);
 const validateSource = read(validatePath);
+const serverSource = read(serverPath);
 
 const checks = {
   envFileExists: existsSync(envPath),
   validateScriptExists: existsSync(validatePath),
+  serverFileExists: existsSync(serverPath),
   detectsProductionMode: envSource.includes('nodeEnv === "production"') || envSource.includes("nodeEnv === 'production'"),
   blocksDevJwtAccessSecret: envSource.includes("dev-access-secret") && envSource.includes("forbiddenProductionValues"),
   blocksDevJwtRefreshSecret: envSource.includes("dev-refresh-secret") && envSource.includes("forbiddenProductionValues"),
   enforcesSecretLength: envSource.includes("DEFAULT_SECRET_MIN_LENGTH") && envSource.includes("must be at least"),
   requiresCorsOriginInProduction: envSource.includes("Missing environment variable: CORS_ORIGIN"),
-  blocksWildcardCorsInProduction: envSource.includes('origins.includes("*")') || envSource.includes("origins.includes('*')"),
+  normalizesCorsOrigins: envSource.includes("function normalizeCorsOrigin"),
+  blocksWildcardCorsWithCredentials: envSource.includes('origin === "*"') && envSource.includes("credentialed CORS"),
+  validatesCorsUrl: envSource.includes("new URL(origin)"),
+  restrictsCorsToHttpProtocols: envSource.includes('"http:"') && envSource.includes('"https:"'),
+  blocksCorsPathQueryHash: envSource.includes("parsed.pathname") && envSource.includes("parsed.search") && envSource.includes("parsed.hash"),
+  deduplicatesCorsOrigins: envSource.includes("new Set(origins)"),
+  serverUsesCorsWithCredentials: serverSource.includes("cors({ origin: env.corsOrigin, credentials: true })"),
   exposesRuntimeFlags: envSource.includes("isProduction") && envSource.includes("isDevelopment") && envSource.includes("isTest"),
   validateRequiresDatabaseUrl: validateSource.includes("DATABASE_URL") && validateSource.includes("required: true"),
   validateRequiresJwtSecrets: validateSource.includes("JWT_SECRET") && validateSource.includes("JWT_REFRESH_SECRET"),
@@ -52,7 +61,7 @@ writeFileSync(
     "",
     "| Check | Passed |",
     "|---|---:|",
-    ...Object.entries(checks).map(([name, ok]) => `| ${name} | ${ok ? "yes" : "no"} |`),
+    ...Object.entries(checks).map(([name, ok]) => `| ${name} | ${ok ? "yes" : "no"}` + " |"),
     "",
     failures.length ? "## Failures" : "",
     ...failures.map((name) => `- ${name}`),
