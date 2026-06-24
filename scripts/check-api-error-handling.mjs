@@ -21,6 +21,8 @@ const checks = {
   handlesZodErrors: handlerSource.includes("ZodError") && handlerSource.includes("validation_error"),
   detectsJsonSyntaxError: handlerSource.includes("function isJsonSyntaxError") && handlerSource.includes("error instanceof SyntaxError"),
   returnsInvalidJsonCode: handlerSource.includes("invalid_json") && handlerSource.includes("Request body contains invalid JSON"),
+  detectsUnsupportedContentEncoding: handlerSource.includes("function isUnsupportedContentEncodingError") && handlerSource.includes("encoding.unsupported"),
+  returnsUnsupportedContentEncodingCode: handlerSource.includes("unsupported_content_encoding") && handlerSource.includes("Compressed request bodies are not supported"),
   detectsPayloadTooLarge: handlerSource.includes("function isPayloadTooLargeError") && handlerSource.includes("entity.too.large"),
   maps413ToPayloadTooLarge: handlerSource.includes("status === 413") && handlerSource.includes("payload_too_large"),
   returnsPayloadTooLargeMessage: handlerSource.includes("Request body exceeds the maximum allowed size"),
