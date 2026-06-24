@@ -1,26 +1,40 @@
 import { Router } from "express";
+import type { Request } from "express";
 import { z } from "zod";
 import { prisma } from "../lib/prisma.js";
 import { generateRemoteDeskId } from "../lib/remoteDeskId.js";
 import { hashPassword, verifyPassword } from "../lib/password.js";
 import { issueTokenPair, verifyRefreshToken } from "../lib/tokens.js";
 import { requireAuth, type AuthedRequest } from "../middleware/auth.js";
+import { createRateLimit } from "../middleware/rateLimit.js";
 
 const router = Router();
 
+const authRateLimit = createRateLimit({
+  windowMs: 10 * 60_000,
+  max: 25,
+  keyOf: (req: Request) => {
+    const email = typeof req.body?.email === "string" ? req.body.email.trim().toLowerCase() : "no-email";
+    const ip = req.ip ?? req.socket.remoteAddress ?? "unknown";
+    return `${req.path}:${ip}:${email}`;
+  }
+});
+
+const emailSchema = z.string().trim().email().transform((email) => email.toLowerCase());
+
 const signupSchema = z.object({
-  email: z.string().email().transform((email) => email.toLowerCase().trim()),
+  email: emailSchema,
   password: z.string().min(8),
-  fullName: z.string().min(2)
+  fullName: z.string().trim().min(2)
 });
 
 const loginSchema = z.object({
-  email: z.string().email().transform((email) => email.toLowerCase().trim()),
+  email: emailSchema,
   password: z.string().min(1)
 });
 
 const refreshSchema = z.object({
-  refreshToken: z.string().min(20)
+  refreshToken: z.string().trim().min(20)
 });
 
 function publicUser(user: { id: string; email: string; fullName: string; remoteDeskId: string; plan: string }) {
@@ -33,7 +47,7 @@ function publicUser(user: { id: string; email: string; fullName: string; remoteD
   };
 }
 
-router.post("/signup", async (req, res) => {
+router.post("/signup", authRateLimit, async (req, res) => {
   const input = signupSchema.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -60,7 +74,7 @@ router.post("/signup", async (req, res) => {
   });
 });
 
-router.post("/login", async (req, res) => {
+router.post("/login", authRateLimit, async (req, res) => {
   const input = loginSchema.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -78,7 +92,7 @@ router.post("/login", async (req, res) => {
   });
 });
 
-router.post("/refresh", async (req, res) => {
+router.post("/refresh", authRateLimit, async (req, res) => {
   const input = refreshSchema.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
