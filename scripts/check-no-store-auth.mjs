@@ -37,6 +37,8 @@ const checks = {
   setsPragmaNoCache: noStoreSource.includes("Pragma") && noStoreSource.includes("no-cache"),
   setsExpiresZero: noStoreSource.includes("Expires") && noStoreSource.includes('"0"'),
   setsSurrogateControlNoStore: noStoreSource.includes("Surrogate-Control") && noStoreSource.includes("no-store"),
+  variesAuthorization: noStoreSource.includes('res.vary("Authorization")'),
+  variesCookie: noStoreSource.includes('res.vary("Cookie")'),
   callsNext: noStoreSource.includes("next()"),
   serverImportsNoStore: serverSource.includes("./middleware/noStore.js"),
   serverDisablesEtags: etagDisableIndex >= 0,
