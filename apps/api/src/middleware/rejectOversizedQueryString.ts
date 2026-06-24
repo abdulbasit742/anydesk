@@ -7,8 +7,19 @@ export const MAX_PATH_LENGTH = 2048;
 export const MAX_PATH_SEGMENTS = 64;
 export const MAX_QUERY_STRING_LENGTH = 2048;
 
+const PERCENT_ENCODING_PATTERN = /%(?![0-9a-fA-F]{2})/;
+const ENCODED_CONTROL_CHARACTER_PATTERN = /%(?:0[0-9a-fA-F]|1[0-9a-fA-F]|7f)/i;
+
 function getRequestTarget(req: RequestWithId): string {
   return req.originalUrl || req.url || "";
+}
+
+export function hasMalformedPercentEncoding(value: string): boolean {
+  return PERCENT_ENCODING_PATTERN.test(value);
+}
+
+export function hasEncodedControlCharacter(value: string): boolean {
+  return ENCODED_CONTROL_CHARACTER_PATTERN.test(value);
 }
 
 export function getPathFromRequestTarget(requestTarget: string | undefined): string {
@@ -29,6 +40,28 @@ export function getQueryStringLength(originalUrl: string | undefined): number {
 
 export function rejectOversizedQueryString(req: RequestWithId, res: Response, next: NextFunction) {
   const requestTarget = getRequestTarget(req);
+
+  if (hasMalformedPercentEncoding(requestTarget)) {
+    return res.status(400).json({
+      success: false,
+      error: {
+        code: "malformed_request_target_encoding",
+        message: "Request target contains malformed percent-encoding",
+        requestId: req.requestId
+      }
+    });
+  }
+
+  if (hasEncodedControlCharacter(requestTarget)) {
+    return res.status(400).json({
+      success: false,
+      error: {
+        code: "invalid_request_target_character",
+        message: "Request target contains an encoded control character",
+        requestId: req.requestId
+      }
+    });
+  }
 
   if (requestTarget.length > MAX_REQUEST_TARGET_LENGTH) {
     return res.status(414).json({
