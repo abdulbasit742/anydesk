@@ -7,6 +7,7 @@ import { createRateLimit } from "./middleware/rateLimit.js";
 import { requestId } from "./middleware/requestId.js";
 import { securityHeaders } from "./middleware/securityHeaders.js";
 import { notFound, errorHandler } from "./middleware/errorHandler.js";
+import { asyncHandler } from "./middleware/asyncHandler.js";
 import authRoutes from "./routes/auth.routes.js";
 import deviceRoutes from "./routes/device.routes.js";
 import userRoutes from "./routes/user.routes.js";
@@ -16,11 +17,27 @@ import launchRoutes from "./routes/launch.routes.js";
 import connectorRoutes from "./routes/connector.routes.js";
 import betaRoutes from "./routes/beta.routes.js";
 import { initSocketServer } from "./socket/index.js";
+import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
 import { health } from "./observability/health.js";
 import { logger } from "./observability/safeLogger.js";
 
 const app = express();
 const server = http.createServer(app);
+
+async function readinessBody() {
+  const body = health.readiness();
+  const database = await checkDatabaseHealth();
+  const ready = body.ready && database.status === "ok";
+
+  return {
+    ...body,
+    ready,
+    status: ready ? ("ready" as const) : ("not_ready" as const),
+    dependencies: {
+      database
+    }
+  };
+}
 
 app.disable("x-powered-by");
 app.use(requestId);
@@ -40,15 +57,15 @@ app.get("/healthz", (_req, res) => {
   res.json(health.liveness());
 });
 
-app.get("/health/ready", (_req, res) => {
-  const body = health.readiness();
+app.get("/health/ready", asyncHandler(async (_req, res) => {
+  const body = await readinessBody();
   res.status(body.ready ? 200 : 503).json(body);
-});
+}));
 
-app.get("/readyz", (_req, res) => {
-  const body = health.readiness();
+app.get("/readyz", asyncHandler(async (_req, res) => {
+  const body = await readinessBody();
   res.status(body.ready ? 200 : 503).json(body);
-});
+}));
 
 app.use(createRateLimit({ windowMs: 60_000, max: 240, name: "global-api" }));
 
