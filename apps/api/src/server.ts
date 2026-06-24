@@ -2,6 +2,7 @@ import http from "node:http";
 import cors from "cors";
 import express from "express";
 import { env } from "./config/env.js";
+import { installGracefulShutdown } from "./lifecycle/gracefulShutdown.js";
 import { createRateLimit } from "./middleware/rateLimit.js";
 import { requestId } from "./middleware/requestId.js";
 import { securityHeaders } from "./middleware/securityHeaders.js";
@@ -63,8 +64,9 @@ app.use("/api/beta", betaRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-initSocketServer(server);
+const io = initSocketServer(server);
 health.markReady();
+installGracefulShutdown({ server, io });
 
 server.listen(env.port, () => {
   logger.info("RemoteDesk API listening", {
