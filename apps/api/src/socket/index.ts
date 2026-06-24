@@ -11,6 +11,8 @@ import { env } from "../config/env.js";
 import { prisma } from "../lib/prisma.js";
 import { verifyPassword } from "../lib/password.js";
 import { verifyAccessToken } from "../lib/tokens.js";
+import { isBetaApiFeatureEnabled } from "../middleware/betaFeatureGate.js";
+import { logger } from "../observability/safeLogger.js";
 
 interface AuthedSocket extends Socket {
   data: {
@@ -20,6 +22,14 @@ interface AuthedSocket extends Socket {
   };
 }
 
+function emitFeatureDisabled(socket: Socket, feature: string) {
+  socket.emit(ServerEvents.Error, {
+    error: "feature_disabled",
+    feature,
+    message: "This RemoteDesk beta capability is currently disabled by server policy."
+  });
+}
+
 export function initSocketServer(httpServer: HttpServer) {
   const io = new Server(httpServer, {
     cors: { origin: env.corsOrigin, credentials: true }
@@ -27,6 +37,15 @@ export function initSocketServer(httpServer: HttpServer) {
 
   io.use(async (socket: Socket, next) => {
     try {
+      if (!isBetaApiFeatureEnabled("socket_access")) {
+        logger.warn("Socket connection rejected by beta feature gate", {
+          event: "socket.feature_disabled",
+          status: "rejected",
+          feature: "socket_access"
+        });
+        return next(new Error("feature_disabled:socket_access"));
+      }
+
       const token = socket.handshake.auth.token as string | undefined;
       if (!token) return next(new Error("Missing token"));
       const payload = verifyAccessToken(token);
@@ -37,7 +56,8 @@ export function initSocketServer(httpServer: HttpServer) {
       if (!user) return next(new Error("User not found"));
       socket.data = { userId: user.id, email: user.email, remoteDeskId: user.remoteDeskId };
       next();
-    } catch {
+    } catch (error) {
+      if (error instanceof Error && error.message.startsWith("feature_disabled:")) return next(error);
       next(new Error("Invalid token"));
     }
   });
@@ -49,6 +69,13 @@ export function initSocketServer(httpServer: HttpServer) {
       data: { isOnline: true, socketId: socket.id, lastSeenAt: new Date() }
     });
     socket.join(`user:${socket.data.remoteDeskId}`);
+
+    logger.info("Socket connected", {
+      event: "socket.connected",
+      status: "connected",
+      userId: socket.data.userId,
+      remoteDeskId: socket.data.remoteDeskId
+    });
 
     socket.on(ClientEvents.ConnectRequest, async (payload: ConnectRequestPayload) => {
       const targetId = payload.targetRemoteDeskId.replace(/\s/g, "");
@@ -81,6 +108,16 @@ export function initSocketServer(httpServer: HttpServer) {
     });
 
     const relay = (event: string, payload: SignalPayload) => {
+      if (!isBetaApiFeatureEnabled("signaling_access")) {
+        logger.warn("WebRTC signaling blocked by beta feature gate", {
+          event: "socket.signaling_disabled",
+          status: "blocked",
+          sessionId: payload.sessionId,
+          feature: "signaling_access"
+        });
+        return emitFeatureDisabled(socket, "signaling_access");
+      }
+
       io.to(payload.targetSocketId).emit(event, {
         sessionId: payload.sessionId,
         signal: payload.signal,
@@ -111,6 +148,12 @@ export function initSocketServer(httpServer: HttpServer) {
         data: { isOnline: false, socketId: null, lastSeenAt: new Date() }
       });
       socket.broadcast.emit(ServerEvents.PeerDisconnected, { remoteDeskId: socket.data.remoteDeskId });
+      logger.info("Socket disconnected", {
+        event: "socket.disconnected",
+        status: "disconnected",
+        userId: socket.data.userId,
+        remoteDeskId: socket.data.remoteDeskId
+      });
     });
   });
 
