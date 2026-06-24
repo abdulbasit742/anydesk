@@ -60,6 +60,7 @@ const checks = {
   parserSupportsJsonSuffix: serverSource.includes('"application/*+json"'),
   parserKeepsBodyLimit: serverSource.includes('limit: "1mb"'),
   parserDisablesInflation: serverSource.includes("inflate: false"),
+  parserUsesStrictMode: serverSource.includes("strict: true"),
 };
 
 const failures = Object.entries(checks)
