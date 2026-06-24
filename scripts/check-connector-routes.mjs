@@ -31,6 +31,10 @@ const checks = {
   libDefinesMaxLimit: libSource.includes("CONNECTOR_AUDIT_MAX_LIMIT") && libSource.includes("100"),
   libClampsLimit: libSource.includes("function clampConnectorAuditLimit") && libSource.includes("Math.min") && libSource.includes("Math.max"),
   libUsesClampedTake: libSource.includes("take: clampConnectorAuditLimit(options.limit)"),
+  libHasSeedPromiseCache: libSource.includes("connectorCatalogSeedPromise") && libSource.includes("Promise<void> | null"),
+  libHasDedicatedSeedFunction: libSource.includes("function seedDefaultConnectorCatalog"),
+  libUsesNullishAssignmentForSeed: libSource.includes("connectorCatalogSeedPromise ??="),
+  libResetsSeedPromiseOnFailure: libSource.includes("connectorCatalogSeedPromise = null") && libSource.includes("throw error"),
   asyncCheckerCoversConnectors: asyncCheckSource.includes("connector.routes.ts") && asyncCheckSource.includes("connectorAuditWrapped"),
 };
 
