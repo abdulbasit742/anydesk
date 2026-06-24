@@ -22,7 +22,8 @@
     "security:scan": "node scripts/security-scan.mjs",
     "safety:scan": "node scripts/safety-scan.mjs",
     "socket-gates:check": "node scripts/check-socket-gates.mjs",
-    "ci:local": "npm run env:validate && npm run security:scan && npm run safety:scan && npm run socket-gates:check && npm run typecheck && npm run build",
+    "runtime-env:check": "node scripts/check-runtime-env-hardening.mjs",
+    "ci:local": "npm run env:validate && npm run security:scan && npm run safety:scan && npm run socket-gates:check && npm run runtime-env:check && npm run typecheck && npm run build",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down"
   },
