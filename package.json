@@ -28,7 +28,8 @@
     "async-routes:check": "node scripts/check-async-route-handlers.mjs",
     "rate-limit:check": "node scripts/check-rate-limit-hardening.mjs",
     "trace:check": "node scripts/check-request-id-hardening.mjs",
-    "ci:local": "npm run env:validate && npm run security:scan && npm run safety:scan && npm run socket-gates:check && npm run runtime-env:check && npm run auth:check && npm run api-errors:check && npm run async-routes:check && npm run rate-limit:check && npm run trace:check && npm run typecheck && npm run build",
+    "security-headers:check": "node scripts/check-security-headers.mjs",
+    "ci:local": "npm run env:validate && npm run security:scan && npm run safety:scan && npm run socket-gates:check && npm run runtime-env:check && npm run auth:check && npm run api-errors:check && npm run async-routes:check && npm run rate-limit:check && npm run trace:check && npm run security-headers:check && npm run typecheck && npm run build",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down"
   },
