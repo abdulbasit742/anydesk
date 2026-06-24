@@ -22,6 +22,7 @@
     "security:scan": "node scripts/security-scan.mjs",
     "safety:scan": "node scripts/safety-scan.mjs",
     "socket-gates:check": "node scripts/check-socket-gates.mjs",
+    "socket-async:check": "node scripts/check-socket-async-handlers.mjs",
     "runtime-env:check": "node scripts/check-runtime-env-hardening.mjs",
     "auth:check": "node scripts/check-auth-hardening.mjs",
     "api-errors:check": "node scripts/check-api-error-handling.mjs",
@@ -30,7 +31,7 @@
     "trace:check": "node scripts/check-request-id-hardening.mjs",
     "security-headers:check": "node scripts/check-security-headers.mjs",
     "shutdown:check": "node scripts/check-graceful-shutdown.mjs",
-    "ci:local": "npm run env:validate && npm run security:scan && npm run safety:scan && npm run socket-gates:check && npm run runtime-env:check && npm run auth:check && npm run api-errors:check && npm run async-routes:check && npm run rate-limit:check && npm run trace:check && npm run security-headers:check && npm run shutdown:check && npm run typecheck && npm run build",
+    "ci:local": "npm run env:validate && npm run security:scan && npm run safety:scan && npm run socket-gates:check && npm run socket-async:check && npm run runtime-env:check && npm run auth:check && npm run api-errors:check && npm run async-routes:check && npm run rate-limit:check && npm run trace:check && npm run security-headers:check && npm run shutdown:check && npm run typecheck && npm run build",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down"
   },
