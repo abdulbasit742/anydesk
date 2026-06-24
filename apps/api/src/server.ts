@@ -79,8 +79,9 @@ app.get("/readyz", asyncHandler(async (_req, res) => {
 }));
 
 app.use(createRateLimit({ windowMs: 60_000, max: 240, name: "global-api" }));
+app.use("/api", noStore);
 
-app.use("/api/auth", noStore, authRoutes);
+app.use("/api/auth", authRoutes);
 app.use("/api/devices", deviceRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/sessions", sessionRoutes);
