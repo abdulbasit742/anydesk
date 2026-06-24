@@ -14,8 +14,18 @@ export function hasRequestBody(req: RequestWithId): boolean {
   return Boolean(req.get("transfer-encoding"));
 }
 
-function acceptsJson(req: RequestWithId): boolean {
-  return JSON_BODY_TYPES.some((type) => Boolean(req.is(type)));
+function getMediaType(contentType: string | undefined): string | null {
+  return contentType?.split(";")[0]?.trim().toLowerCase() || null;
+}
+
+export function isJsonContentType(contentType: string | undefined): boolean {
+  const mediaType = getMediaType(contentType);
+  if (!mediaType) return false;
+
+  return JSON_BODY_TYPES.some((type) => {
+    if (type === "application/*+json") return mediaType.startsWith("application/") && mediaType.endsWith("+json");
+    return mediaType === type;
+  });
 }
 
 export const requireJsonContentType: RequestHandler = (req: RequestWithId, res, next) => {
@@ -23,7 +33,7 @@ export const requireJsonContentType: RequestHandler = (req: RequestWithId, res, 
     return next();
   }
 
-  if (acceptsJson(req)) {
+  if (isJsonContentType(req.get("content-type"))) {
     return next();
   }
 
