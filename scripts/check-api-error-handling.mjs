@@ -5,6 +5,7 @@ import { join } from "node:path";
 const root = process.cwd();
 const handlerPath = join(root, "apps", "api", "src", "middleware", "errorHandler.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
+const packagePath = join(root, "package.json");
 
 function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
@@ -12,10 +13,14 @@ function read(path) {
 
 const handlerSource = read(handlerPath);
 const serverSource = read(serverPath);
+const packageSource = read(packagePath);
 
 const checks = {
   handlerFileExists: existsSync(handlerPath),
   serverFileExists: existsSync(serverPath),
+  packageFileExists: existsSync(packagePath),
+  packageHasApiErrorsCheckScript: packageSource.includes('"api-errors:check"') && packageSource.includes("node scripts/check-api-error-handling.mjs"),
+  ciRunsApiErrorsCheck: packageSource.includes("npm run api-errors:check"),
   exportsNotFound: handlerSource.includes("export function notFound"),
   exportsErrorHandler: handlerSource.includes("export function errorHandler"),
   handlesZodErrors: handlerSource.includes("ZodError") && handlerSource.includes("validation_error"),
