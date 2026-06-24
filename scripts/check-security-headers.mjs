@@ -4,6 +4,7 @@ import { join } from "node:path";
 
 const root = process.cwd();
 const headersPath = join(root, "apps", "api", "src", "middleware", "securityHeaders.ts");
+const queryGuardPath = join(root, "apps", "api", "src", "middleware", "rejectOversizedQueryString.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
 
 function read(path) {
@@ -11,9 +12,13 @@ function read(path) {
 }
 
 const headersSource = read(headersPath);
+const queryGuardSource = read(queryGuardPath);
 const serverSource = read(serverPath);
 const simpleQueryParserIndex = serverSource.indexOf('app.set("query parser", "simple")');
 const requestIdIndex = serverSource.indexOf("app.use(requestId)");
+const securityHeadersIndex = serverSource.indexOf("app.use(securityHeaders)");
+const queryGuardIndex = serverSource.indexOf("app.use(rejectOversizedQueryString)");
+const corsIndex = serverSource.indexOf("app.use(cors");
 
 const checks = {
   headersFileExists: existsSync(headersPath),
@@ -38,7 +43,17 @@ const checks = {
   removesPoweredBy: headersSource.includes("res.removeHeader") && headersSource.includes("X-Powered-By"),
   serverUsesSimpleQueryParser: simpleQueryParserIndex >= 0,
   simpleQueryParserBeforeMiddleware: simpleQueryParserIndex >= 0 && requestIdIndex >= 0 && simpleQueryParserIndex < requestIdIndex,
-  serverUsesSecurityHeadersEarly: serverSource.includes("app.use(securityHeaders)") && serverSource.indexOf("app.use(requestId)") < serverSource.indexOf("app.use(securityHeaders)") && serverSource.indexOf("app.use(securityHeaders)") < serverSource.indexOf("app.use(cors"),
+  queryGuardFileExists: existsSync(queryGuardPath),
+  exportsQueryGuard: queryGuardSource.includes("export function rejectOversizedQueryString"),
+  queryGuardHasLimit: queryGuardSource.includes("MAX_QUERY_STRING_LENGTH") && queryGuardSource.includes("2048"),
+  queryGuardUsesOriginalUrl: queryGuardSource.includes("getQueryStringLength") && queryGuardSource.includes("originalUrl"),
+  queryGuardRejectsWith414: queryGuardSource.includes("res.status(414)") && queryGuardSource.includes("query_string_too_long"),
+  queryGuardReturnsRequestId: queryGuardSource.includes("requestId: req.requestId"),
+  serverImportsQueryGuard: serverSource.includes("./middleware/rejectOversizedQueryString.js"),
+  serverUsesQueryGuard: queryGuardIndex >= 0,
+  queryGuardAfterSecurityHeaders: securityHeadersIndex >= 0 && queryGuardIndex >= 0 && securityHeadersIndex < queryGuardIndex,
+  queryGuardBeforeCors: queryGuardIndex >= 0 && corsIndex >= 0 && queryGuardIndex < corsIndex,
+  serverUsesSecurityHeadersEarly: serverSource.includes("app.use(securityHeaders)") && requestIdIndex < securityHeadersIndex && securityHeadersIndex < corsIndex,
 };
 
 const failures = Object.entries(checks)
