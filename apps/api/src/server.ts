@@ -26,6 +26,7 @@ import { logger } from "./observability/safeLogger.js";
 const HTTP_REQUEST_TIMEOUT_MS = 120_000;
 const HTTP_HEADERS_TIMEOUT_MS = 30_000;
 const HTTP_KEEP_ALIVE_TIMEOUT_MS = 5_000;
+const CORS_PREFLIGHT_MAX_AGE_SECONDS = 600;
 const ALLOWED_CORS_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"];
 const ALLOWED_REQUEST_HEADERS = ["authorization", "content-type", "x-request-id"];
 const EXPOSED_RESPONSE_HEADERS = ["x-request-id"];
@@ -56,7 +57,7 @@ app.disable("x-powered-by");
 app.disable("etag");
 app.use(requestId);
 app.use(securityHeaders);
-app.use(cors({ origin: env.corsOrigin, credentials: true, methods: ALLOWED_CORS_METHODS, allowedHeaders: ALLOWED_REQUEST_HEADERS, exposedHeaders: EXPOSED_RESPONSE_HEADERS }));
+app.use(cors({ origin: env.corsOrigin, credentials: true, methods: ALLOWED_CORS_METHODS, allowedHeaders: ALLOWED_REQUEST_HEADERS, exposedHeaders: EXPOSED_RESPONSE_HEADERS, maxAge: CORS_PREFLIGHT_MAX_AGE_SECONDS, optionsSuccessStatus: 204 }));
 app.use(requireJsonContentType);
 app.use(express.json({ limit: "1mb", type: ["application/json", "application/*+json"] }));
 
