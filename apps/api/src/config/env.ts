@@ -65,6 +65,29 @@ function readNumber(key: string, fallback: number): number {
   return value;
 }
 
+function normalizeCorsOrigin(origin: string): string {
+  if (origin === "*") {
+    throw new Error("CORS_ORIGIN cannot use * because credentialed CORS is enabled");
+  }
+
+  let parsed: URL;
+  try {
+    parsed = new URL(origin);
+  } catch {
+    throw new Error(`CORS_ORIGIN contains an invalid origin: ${origin}`);
+  }
+
+  if (!["http:", "https:"].includes(parsed.protocol)) {
+    throw new Error(`CORS_ORIGIN must use http or https: ${origin}`);
+  }
+
+  if (parsed.pathname !== "/" || parsed.search || parsed.hash) {
+    throw new Error(`CORS_ORIGIN must be an origin only, without path/query/hash: ${origin}`);
+  }
+
+  return parsed.origin;
+}
+
 function readCorsOrigins(): string[] {
   const rawValue = process.env.CORS_ORIGIN ?? (!isProduction ? DEV_CORS_ORIGIN : undefined);
   if (!rawValue) throw new Error("Missing environment variable: CORS_ORIGIN");
@@ -72,11 +95,12 @@ function readCorsOrigins(): string[] {
   const origins = rawValue
     .split(",")
     .map((origin) => origin.trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    .map(normalizeCorsOrigin);
 
-  if (origins.length === 0) throw new Error("CORS_ORIGIN must include at least one origin");
-  if (isProduction && origins.includes("*")) throw new Error("CORS_ORIGIN cannot use * in production");
-  return origins;
+  const uniqueOrigins = [...new Set(origins)];
+  if (uniqueOrigins.length === 0) throw new Error("CORS_ORIGIN must include at least one origin");
+  return uniqueOrigins;
 }
 
 export const env = {
