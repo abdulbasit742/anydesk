@@ -31,7 +31,7 @@ export function installGracefulShutdown({ server, io, timeoutMs = 10_000 }: Grac
   async function shutdown(signal: NodeJS.Signals) {
     if (shuttingDown) return;
     shuttingDown = true;
-    health.markNotReady();
+    health.markNotReady("shutting_down");
 
     logger.info("RemoteDesk API shutdown started", {
       event: "api.shutdown.start",
