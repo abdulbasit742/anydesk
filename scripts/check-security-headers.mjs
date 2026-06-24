@@ -12,6 +12,8 @@ function read(path) {
 
 const headersSource = read(headersPath);
 const serverSource = read(serverPath);
+const simpleQueryParserIndex = serverSource.indexOf('app.set("query parser", "simple")');
+const requestIdIndex = serverSource.indexOf("app.use(requestId)");
 
 const checks = {
   headersFileExists: existsSync(headersPath),
@@ -34,6 +36,8 @@ const checks = {
   hstsProductionOnly: headersSource.includes("env.isProduction") && headersSource.includes("Strict-Transport-Security"),
   hstsIncludesPreload: headersSource.includes("includeSubDomains; preload"),
   removesPoweredBy: headersSource.includes("res.removeHeader") && headersSource.includes("X-Powered-By"),
+  serverUsesSimpleQueryParser: simpleQueryParserIndex >= 0,
+  simpleQueryParserBeforeMiddleware: simpleQueryParserIndex >= 0 && requestIdIndex >= 0 && simpleQueryParserIndex < requestIdIndex,
   serverUsesSecurityHeadersEarly: serverSource.includes("app.use(securityHeaders)") && serverSource.indexOf("app.use(requestId)") < serverSource.indexOf("app.use(securityHeaders)") && serverSource.indexOf("app.use(securityHeaders)") < serverSource.indexOf("app.use(cors"),
 };
 
