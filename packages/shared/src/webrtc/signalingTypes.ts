@@ -32,21 +32,35 @@ export type SessionDecisionSocketPayload = {
   reason?: string;
 };
 
+export type WebRtcDescriptionLike = {
+  type?: string;
+  sdp?: string;
+  [key: string]: unknown;
+};
+
+export type WebRtcIceCandidateLike = {
+  candidate?: string;
+  sdpMid?: string | null;
+  sdpMLineIndex?: number | null;
+  usernameFragment?: string | null;
+  [key: string]: unknown;
+};
+
 export type WebRtcOfferPayload = {
   sessionId: string;
-  sdp: RTCSessionDescriptionInit | Record<string, unknown>;
+  sdp: WebRtcDescriptionLike;
   targetSocketId?: string;
 };
 
 export type WebRtcAnswerPayload = {
   sessionId: string;
-  sdp: RTCSessionDescriptionInit | Record<string, unknown>;
+  sdp: WebRtcDescriptionLike;
   targetSocketId?: string;
 };
 
 export type WebRtcIceCandidatePayload = {
   sessionId: string;
-  candidate: RTCIceCandidateInit | Record<string, unknown>;
+  candidate: WebRtcIceCandidateLike;
   targetSocketId?: string;
 };
 
