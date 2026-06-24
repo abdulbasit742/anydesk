@@ -18,6 +18,8 @@ const authRoutesIndex = serverSource.indexOf('app.use("/api/auth", authRoutes)')
 const usersRoutesIndex = serverSource.indexOf('app.use("/api/users", userRoutes)');
 const sessionsRoutesIndex = serverSource.indexOf('app.use("/api/sessions", sessionRoutes)');
 const connectorsRoutesIndex = serverSource.indexOf('app.use("/api/connectors", connectorRoutes)');
+const etagDisableIndex = serverSource.indexOf('app.disable("etag")');
+const requestIdIndex = serverSource.indexOf("app.use(requestId)");
 
 const checks = {
   noStoreFileExists: existsSync(noStorePath),
@@ -32,6 +34,8 @@ const checks = {
   setsSurrogateControlNoStore: noStoreSource.includes("Surrogate-Control") && noStoreSource.includes("no-store"),
   callsNext: noStoreSource.includes("next()"),
   serverImportsNoStore: serverSource.includes("./middleware/noStore.js"),
+  serverDisablesEtags: etagDisableIndex >= 0,
+  etagDisabledBeforeMiddleware: etagDisableIndex >= 0 && requestIdIndex >= 0 && etagDisableIndex < requestIdIndex,
   serverAppliesNoStoreToAllApi: noStoreApiIndex >= 0,
   noStoreBeforeAuthRoutes: noStoreApiIndex >= 0 && authRoutesIndex >= 0 && noStoreApiIndex < authRoutesIndex,
   noStoreBeforeUsersRoutes: noStoreApiIndex >= 0 && usersRoutesIndex >= 0 && noStoreApiIndex < usersRoutesIndex,
