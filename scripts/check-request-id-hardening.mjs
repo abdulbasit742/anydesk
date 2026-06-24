@@ -25,6 +25,8 @@ const checks = {
   rejectsPatternMismatch: requestIdSource.includes("!REQUEST_ID_PATTERN.test(trimmed)"),
   fallsBackToRandomUuid: requestIdSource.includes("incoming ?? randomUUID()"),
   setsResponseHeader: requestIdSource.includes('res.setHeader("x-request-id", id)'),
+  serverDefinesAllowedRequestHeaders: serverSource.includes("ALLOWED_REQUEST_HEADERS") && serverSource.includes('"authorization"') && serverSource.includes('"content-type"'),
+  allowedHeadersIncludeRequestId: serverSource.includes('"x-request-id"') && serverSource.includes("allowedHeaders: ALLOWED_REQUEST_HEADERS"),
   serverDefinesExposedResponseHeaders: serverSource.includes("EXPOSED_RESPONSE_HEADERS") && serverSource.includes('"x-request-id"'),
   corsExposesRequestIdHeader: serverSource.includes("exposedHeaders: EXPOSED_RESPONSE_HEADERS"),
   serverUsesRequestIdEarly: serverSource.includes("app.use(requestId)") && serverSource.indexOf("app.use(requestId)") < serverSource.indexOf("app.use(securityHeaders)"),
