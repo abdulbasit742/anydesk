@@ -7,6 +7,7 @@ import { createRateLimit } from "./middleware/rateLimit.js";
 import { requestId } from "./middleware/requestId.js";
 import { securityHeaders } from "./middleware/securityHeaders.js";
 import { noStore } from "./middleware/noStore.js";
+import { requireJsonContentType } from "./middleware/requireJsonContentType.js";
 import { notFound, errorHandler } from "./middleware/errorHandler.js";
 import { asyncHandler } from "./middleware/asyncHandler.js";
 import authRoutes from "./routes/auth.routes.js";
@@ -44,6 +45,7 @@ app.disable("x-powered-by");
 app.use(requestId);
 app.use(securityHeaders);
 app.use(cors({ origin: env.corsOrigin, credentials: true }));
+app.use(requireJsonContentType);
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/health", (_req, res) => {
