@@ -37,16 +37,28 @@ router.post("/signup", async (req, res) => {
     select: { id: true, email: true, fullName: true, remoteDeskId: true, plan: true }
   });
 
+  const accessToken = signAccessToken({ userId: user.id, email: user.email });
+  const refreshToken = signRefreshToken({ userId: user.id, email: user.email });
+
   res.status(201).json({
     success: true,
     data: {
       user,
-      tokens: {
-        accessToken: signAccessToken({ userId: user.id, email: user.email }),
-        refreshToken: signRefreshToken({ userId: user.id, email: user.email })
-      }
-    }
+      tokens: { accessToken, refreshToken },
+      accessToken,
+      token: accessToken,
+      refreshToken
+    },
+    user,
+    accessToken,
+    token: accessToken,
+    refreshToken
   });
+});
+
+router.post("/register", async (req, res, next) => {
+  req.url = "/signup";
+  return router.handle(req, res, next);
 });
 
 router.post("/login", async (req, res) => {
@@ -58,21 +70,29 @@ router.post("/login", async (req, res) => {
     return res.status(401).json({ success: false, message: "Invalid email or password" });
   }
 
+  const safeUser = {
+    id: user.id,
+    email: user.email,
+    fullName: user.fullName,
+    remoteDeskId: user.remoteDeskId,
+    plan: user.plan
+  };
+  const accessToken = signAccessToken({ userId: user.id, email: user.email });
+  const refreshToken = signRefreshToken({ userId: user.id, email: user.email });
+
   res.json({
     success: true,
     data: {
-      user: {
-        id: user.id,
-        email: user.email,
-        fullName: user.fullName,
-        remoteDeskId: user.remoteDeskId,
-        plan: user.plan
-      },
-      tokens: {
-        accessToken: signAccessToken({ userId: user.id, email: user.email }),
-        refreshToken: signRefreshToken({ userId: user.id, email: user.email })
-      }
-    }
+      user: safeUser,
+      tokens: { accessToken, refreshToken },
+      accessToken,
+      token: accessToken,
+      refreshToken
+    },
+    user: safeUser,
+    accessToken,
+    token: accessToken,
+    refreshToken
   });
 });
 
@@ -81,7 +101,11 @@ router.get("/me", requireAuth, async (req: AuthedRequest, res) => {
     where: { id: req.user!.id },
     select: { id: true, email: true, fullName: true, remoteDeskId: true, plan: true, isOnline: true }
   });
-  res.json({ success: true, data: user });
+  res.json({ success: true, data: user, user });
+});
+
+router.post("/logout", requireAuth, async (_req: AuthedRequest, res) => {
+  res.json({ success: true, ok: true });
 });
 
 export default router;
