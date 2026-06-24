@@ -31,6 +31,8 @@ const checks = {
   serverImportsGuard: serverSource.includes("./middleware/requireJsonContentType.js"),
   serverUsesGuard: guardIndex >= 0,
   guardBeforeJsonParser: guardIndex >= 0 && parserIndex >= 0 && guardIndex < parserIndex,
+  parserSupportsStandardJson: serverSource.includes('type: ["application/json", "application/*+json"]'),
+  parserSupportsJsonSuffix: serverSource.includes('"application/*+json"'),
 };
 
 const failures = Object.entries(checks)
