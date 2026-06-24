@@ -4,6 +4,7 @@ import { join } from "node:path";
 
 const root = process.cwd();
 const headersPath = join(root, "apps", "api", "src", "middleware", "securityHeaders.ts");
+const methodGuardPath = join(root, "apps", "api", "src", "middleware", "rejectUnsupportedHttpMethod.ts");
 const queryGuardPath = join(root, "apps", "api", "src", "middleware", "rejectOversizedQueryString.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
 
@@ -12,11 +13,13 @@ function read(path) {
 }
 
 const headersSource = read(headersPath);
+const methodGuardSource = read(methodGuardPath);
 const queryGuardSource = read(queryGuardPath);
 const serverSource = read(serverPath);
 const simpleQueryParserIndex = serverSource.indexOf('app.set("query parser", "simple")');
 const requestIdIndex = serverSource.indexOf("app.use(requestId)");
 const securityHeadersIndex = serverSource.indexOf("app.use(securityHeaders)");
+const methodGuardIndex = serverSource.indexOf("app.use(rejectUnsupportedHttpMethod)");
 const queryGuardIndex = serverSource.indexOf("app.use(rejectOversizedQueryString)");
 const corsIndex = serverSource.indexOf("app.use(cors");
 
@@ -43,6 +46,17 @@ const checks = {
   removesPoweredBy: headersSource.includes("res.removeHeader") && headersSource.includes("X-Powered-By"),
   serverUsesSimpleQueryParser: simpleQueryParserIndex >= 0,
   simpleQueryParserBeforeMiddleware: simpleQueryParserIndex >= 0 && requestIdIndex >= 0 && simpleQueryParserIndex < requestIdIndex,
+  methodGuardFileExists: existsSync(methodGuardPath),
+  exportsMethodGuard: methodGuardSource.includes("export function rejectUnsupportedHttpMethod"),
+  methodGuardHasAllowlist: methodGuardSource.includes("ALLOWED_HTTP_METHODS") && methodGuardSource.includes('"GET"') && methodGuardSource.includes('"HEAD"') && methodGuardSource.includes('"OPTIONS"'),
+  methodGuardChecksMethod: methodGuardSource.includes("isAllowedHttpMethod") && methodGuardSource.includes("toUpperCase"),
+  methodGuardSetsAllowHeader: methodGuardSource.includes('res.setHeader("Allow"') && methodGuardSource.includes("ALLOW_HEADER_VALUE"),
+  methodGuardRejectsWith405: methodGuardSource.includes("res.status(405)") && methodGuardSource.includes("method_not_allowed"),
+  methodGuardReturnsRequestId: methodGuardSource.includes("requestId: req.requestId"),
+  serverImportsMethodGuard: serverSource.includes("./middleware/rejectUnsupportedHttpMethod.js"),
+  serverUsesMethodGuard: methodGuardIndex >= 0,
+  methodGuardAfterSecurityHeaders: securityHeadersIndex >= 0 && methodGuardIndex >= 0 && securityHeadersIndex < methodGuardIndex,
+  methodGuardBeforeQueryGuard: methodGuardIndex >= 0 && queryGuardIndex >= 0 && methodGuardIndex < queryGuardIndex,
   queryGuardFileExists: existsSync(queryGuardPath),
   exportsQueryGuard: queryGuardSource.includes("export function rejectOversizedQueryString"),
   queryGuardHasTargetLimit: queryGuardSource.includes("MAX_REQUEST_TARGET_LENGTH") && queryGuardSource.includes("4096"),
@@ -73,6 +87,7 @@ const checks = {
   queryGuardReturnsRequestId: queryGuardSource.includes("requestId: req.requestId"),
   serverImportsQueryGuard: serverSource.includes("./middleware/rejectOversizedQueryString.js"),
   serverUsesQueryGuard: queryGuardIndex >= 0,
+  queryGuardAfterMethodGuard: methodGuardIndex >= 0 && queryGuardIndex >= 0 && methodGuardIndex < queryGuardIndex,
   queryGuardAfterSecurityHeaders: securityHeadersIndex >= 0 && queryGuardIndex >= 0 && securityHeadersIndex < queryGuardIndex,
   queryGuardBeforeCors: queryGuardIndex >= 0 && corsIndex >= 0 && queryGuardIndex < corsIndex,
   serverUsesSecurityHeadersEarly: serverSource.includes("app.use(securityHeaders)") && requestIdIndex < securityHeadersIndex && securityHeadersIndex < corsIndex,
