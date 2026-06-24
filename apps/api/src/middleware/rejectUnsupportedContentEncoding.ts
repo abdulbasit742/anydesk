@@ -1,6 +1,7 @@
 import type { Response } from "express";
 import type { NextFunction } from "express";
 import type { RequestWithId } from "./requestId.js";
+import { JSON_BODY_METHODS, hasRequestBody, isApiPath } from "./requireJsonContentType.js";
 
 const SUPPORTED_CONTENT_ENCODINGS = new Set(["identity"]);
 
@@ -10,6 +11,10 @@ export function normalizeContentEncoding(value: string | undefined): string | nu
 }
 
 export function rejectUnsupportedContentEncoding(req: RequestWithId, res: Response, next: NextFunction) {
+  if (!JSON_BODY_METHODS.has(req.method) || !isApiPath(req.path) || !hasRequestBody(req)) {
+    return next();
+  }
+
   const encoding = normalizeContentEncoding(req.get("content-encoding"));
 
   if (!encoding || SUPPORTED_CONTENT_ENCODINGS.has(encoding)) {
