@@ -7,7 +7,7 @@ import { createRateLimit } from "./middleware/rateLimit.js";
 import { requestId } from "./middleware/requestId.js";
 import { securityHeaders } from "./middleware/securityHeaders.js";
 import { noStore } from "./middleware/noStore.js";
-import { rejectUnsupportedHttpMethod } from "./middleware/rejectUnsupportedHttpMethod.js";
+import { ALLOWED_HTTP_METHODS, rejectUnsupportedHttpMethod } from "./middleware/rejectUnsupportedHttpMethod.js";
 import { rejectOversizedQueryString } from "./middleware/rejectOversizedQueryString.js";
 import { rejectUnsupportedContentEncoding } from "./middleware/rejectUnsupportedContentEncoding.js";
 import { rejectUnsupportedJsonCharset } from "./middleware/rejectUnsupportedJsonCharset.js";
@@ -33,7 +33,7 @@ const HTTP_KEEP_ALIVE_TIMEOUT_MS = 5_000;
 const JSON_BODY_LIMIT = "1mb";
 const JSON_BODY_TYPES = ["application/json", "application/*+json"];
 const CORS_PREFLIGHT_MAX_AGE_SECONDS = 600;
-const ALLOWED_CORS_METHODS = ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"];
+const ALLOWED_CORS_METHODS = [...ALLOWED_HTTP_METHODS];
 const ALLOWED_REQUEST_HEADERS = ["authorization", "content-type", "x-request-id"];
 const EXPOSED_RESPONSE_HEADERS = ["x-request-id"];
 
