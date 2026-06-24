@@ -33,6 +33,8 @@ const checks = {
   guardBeforeJsonParser: guardIndex >= 0 && parserIndex >= 0 && guardIndex < parserIndex,
   parserSupportsStandardJson: serverSource.includes('type: ["application/json", "application/*+json"]'),
   parserSupportsJsonSuffix: serverSource.includes('"application/*+json"'),
+  parserKeepsBodyLimit: serverSource.includes('limit: "1mb"'),
+  parserDisablesInflation: serverSource.includes("inflate: false"),
 };
 
 const failures = Object.entries(checks)
