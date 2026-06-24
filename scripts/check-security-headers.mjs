@@ -88,7 +88,7 @@ writeFileSync(
     "",
     "| Check | Passed |",
     "|---|---:|",
-    ...Object.entries(checks).map(([name, ok]) => `| ${name} | ${ok ? "yes" : "no"}`),
+    ...Object.entries(checks).map(([name, ok]) => `| ${name} | ${ok ? "yes" : "no"} |`),
     "",
     failures.length ? "## Failures" : "",
     ...failures.map((name) => `- ${name}`),
