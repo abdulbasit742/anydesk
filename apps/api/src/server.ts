@@ -50,6 +50,7 @@ async function readinessBody() {
 }
 
 app.disable("x-powered-by");
+app.disable("etag");
 app.use(requestId);
 app.use(securityHeaders);
 app.use(cors({ origin: env.corsOrigin, credentials: true }));
