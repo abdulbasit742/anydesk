@@ -12,7 +12,8 @@ const routeFiles = {
   subscriptions: join(root, "apps", "api", "src", "routes", "subscription.routes.ts"),
   beta: join(root, "apps", "api", "src", "routes", "beta.routes.ts"),
   launch: join(root, "apps", "api", "src", "routes", "launch.routes.ts"),
-  devices: join(root, "apps", "api", "src", "routes", "device.routes.ts")
+  devices: join(root, "apps", "api", "src", "routes", "device.routes.ts"),
+  connectors: join(root, "apps", "api", "src", "routes", "connector.routes.ts")
 };
 
 function read(path) {
@@ -82,7 +83,14 @@ const checks = {
   deviceCommandsWrapped: routes.devices.includes('router.get("/:deviceId/commands", asyncHandler'),
   devicePendingCommandsWrapped: routes.devices.includes('router.get("/:deviceId/commands/pending", asyncHandler'),
   deviceCommandCreateWrapped: routes.devices.includes('router.post("/:deviceId/commands", asyncHandler'),
-  deviceCommandAckWrapped: routes.devices.includes('router.patch("/:deviceId/commands/:commandId", asyncHandler')
+  deviceCommandAckWrapped: routes.devices.includes('router.patch("/:deviceId/commands/:commandId", asyncHandler'),
+
+  connectorRoutesFileExists: existsSync(routeFiles.connectors),
+  connectorsImportAsyncHandler: routes.connectors.includes("../middleware/asyncHandler.js"),
+  connectorCatalogWrapped: routes.connectors.includes('router.get("/catalog", asyncHandler'),
+  connectorInstallWrapped: routes.connectors.includes('router.post("/:key/install", asyncHandler'),
+  connectorUninstallWrapped: routes.connectors.includes('router.delete("/:key/install", asyncHandler'),
+  connectorAuditWrapped: routes.connectors.includes('router.get("/audit", asyncHandler')
 };
 
 const failures = Object.entries(checks)
