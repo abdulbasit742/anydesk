@@ -1,0 +1,17 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+allowBuilds:
+  '@prisma/client': false
+  '@prisma/engines': false
+  electron: false
+  esbuild: false
+  prisma: false
+
+onlyBuiltDependencies:
+  - esbuild
+  - "@prisma/client"
+  - "@prisma/engines"
+  - prisma
+  - electron

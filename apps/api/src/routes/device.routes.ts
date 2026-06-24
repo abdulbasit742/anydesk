@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {
   type SafeDeviceCommandType
-} from "@remotedesk/shared/pack7/index.js";
+} from "@remotedesk/shared/pack7";
 import type { Prisma } from "@prisma/client";
 import { z } from "zod";
 import {

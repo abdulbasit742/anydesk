@@ -9,7 +9,7 @@ import {
   type LaunchCheckStatus,
   type MigrationRiskInput,
   type ReleaseCandidate
-} from "@remotedesk/shared/pack9/index.js";
+} from "@remotedesk/shared/pack9";
 import { prisma } from "./prisma.js";
 
 export type LaunchCheckArea = LaunchCheck["area"];

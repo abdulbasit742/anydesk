@@ -2,12 +2,12 @@ import {
   isLaunchBlocked,
   summarizeLaunchChecks,
   type LaunchCheck
-} from "@remotedesk/shared/pack9/index.js";
+} from "@remotedesk/shared/pack9";
 import {
   certificationBlockers,
   supportReadinessMissing
-} from "@remotedesk/shared/pack20/index.js";
-import { coverageGatePassed } from "@remotedesk/shared/pack22/index.js";
+} from "@remotedesk/shared/pack20";
+import { coverageGatePassed } from "@remotedesk/shared/pack22";
 
 const supportReadiness = {
   runbookPublished: true,

@@ -25,6 +25,7 @@ export function initSocketServer(httpServer: HttpServer) {
     cors: { origin: env.corsOrigin, credentials: true }
   });
 
+  // JWT authentication middleware
   io.use(async (socket: Socket, next) => {
     try {
       const token = socket.handshake.auth.token as string | undefined;
@@ -44,12 +45,33 @@ export function initSocketServer(httpServer: HttpServer) {
 
   io.on("connection", async (rawSocket) => {
     const socket = rawSocket as AuthedSocket;
+    const { userId, remoteDeskId } = socket.data;
+
+    // Mark user online in DB
     await prisma.user.update({
-      where: { id: socket.data.userId },
+      where: { id: userId },
       data: { isOnline: true, socketId: socket.id, lastSeenAt: new Date() }
     });
-    socket.join(`user:${socket.data.remoteDeskId}`);
 
+    // Also mark all user's devices as online
+    await prisma.device.updateMany({
+      where: { userId },
+      data: { isOnline: true, lastSeenAt: new Date() }
+    });
+
+    // Join personal room for targeted messages
+    socket.join(`user:${remoteDeskId}`);
+
+    // Broadcast presence to all connected clients
+    socket.broadcast.emit("device:online", {
+      remoteDeskId,
+      userId,
+      timestamp: new Date().toISOString()
+    });
+
+    console.log(`[Socket] User ${remoteDeskId} connected (socket: ${socket.id})`);
+
+    // ─── Session Request Flow ───────────────────────────────────────────
     socket.on(ClientEvents.ConnectRequest, async (payload: ConnectRequestPayload) => {
       const targetId = payload.targetRemoteDeskId.replace(/\s/g, "");
       const target = await prisma.user.findUnique({ where: { remoteDeskId: targetId } });
@@ -60,15 +82,17 @@ export function initSocketServer(httpServer: HttpServer) {
         return socket.emit(ServerEvents.Error, { message: "Invalid device password" });
       }
       const session = await prisma.session.create({
-        data: { hostId: target.id, clientId: socket.data.userId, status: "PENDING" }
+        data: { hostId: target.id, clientId: userId, status: "PENDING" }
       });
       io.to(target.socketId).emit(ServerEvents.IncomingRequest, {
         sessionId: session.id,
-        requesterRemoteDeskId: socket.data.remoteDeskId,
+        requesterRemoteDeskId: remoteDeskId,
         requesterSocketId: socket.id
       });
+      console.log(`[Socket] Session ${session.id}: ${remoteDeskId} → ${targetId}`);
     });
 
+    // ─── Session Response (Accept/Deny) ─────────────────────────────────
     socket.on(ClientEvents.ConnectResponse, async (payload: SessionResponsePayload) => {
       await prisma.session.update({
         where: { id: payload.sessionId },
@@ -78,8 +102,10 @@ export function initSocketServer(httpServer: HttpServer) {
         payload.accepted ? ServerEvents.RequestAccepted : ServerEvents.RequestRejected,
         { sessionId: payload.sessionId, hostSocketId: socket.id }
       );
+      console.log(`[Socket] Session ${payload.sessionId}: ${payload.accepted ? "ACCEPTED" : "REJECTED"}`);
     });
 
+    // ─── WebRTC Signaling Relay ─────────────────────────────────────────
     const relay = (event: string, payload: SignalPayload) => {
       io.to(payload.targetSocketId).emit(event, {
         sessionId: payload.sessionId,
@@ -92,6 +118,7 @@ export function initSocketServer(httpServer: HttpServer) {
     socket.on(ClientEvents.WebrtcAnswer, (payload: SignalPayload) => relay(ServerEvents.WebrtcAnswer, payload));
     socket.on(ClientEvents.WebrtcIce, (payload: SignalPayload) => relay(ServerEvents.WebrtcIce, payload));
 
+    // ─── Session End (Emergency Stop) ───────────────────────────────────
     socket.on(ClientEvents.SessionEnd, async ({ sessionId, peerSocketId }: { sessionId: string; peerSocketId?: string }) => {
       const session = await prisma.session.findUnique({ where: { id: sessionId } });
       await prisma.session.update({
@@ -103,14 +130,30 @@ export function initSocketServer(httpServer: HttpServer) {
         }
       });
       if (peerSocketId) io.to(peerSocketId).emit(ServerEvents.PeerDisconnected, { sessionId });
+      console.log(`[Socket] Session ${sessionId}: ENDED`);
     });
 
+    // ─── Disconnect (Offline) ───────────────────────────────────────────
     socket.on("disconnect", async () => {
       await prisma.user.update({
-        where: { id: socket.data.userId },
+        where: { id: userId },
         data: { isOnline: false, socketId: null, lastSeenAt: new Date() }
       });
-      socket.broadcast.emit(ServerEvents.PeerDisconnected, { remoteDeskId: socket.data.remoteDeskId });
+
+      // Mark all user's devices as offline
+      await prisma.device.updateMany({
+        where: { userId },
+        data: { isOnline: false, lastSeenAt: new Date() }
+      });
+
+      // Broadcast offline status
+      socket.broadcast.emit("device:offline", {
+        remoteDeskId,
+        userId,
+        timestamp: new Date().toISOString()
+      });
+
+      console.log(`[Socket] User ${remoteDeskId} disconnected`);
     });
   });
 

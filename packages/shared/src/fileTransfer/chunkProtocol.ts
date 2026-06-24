@@ -1,4 +1,4 @@
-import { FILE_TRANSFER_CHUNK_SIZE_BYTES } from "./constants.js";
+import { FILE_CHUNK_SIZE_BYTES } from "./constants.js";
 
 export interface FileTransferChunk {
   transferId: string;
@@ -17,7 +17,7 @@ function checksumBytes(data: Uint8Array) {
   return (hash >>> 0).toString(16).padStart(8, "0");
 }
 
-export function calculateTotalFileChunks(totalBytes: number, chunkSize = FILE_TRANSFER_CHUNK_SIZE_BYTES) {
+export function calculateTotalFileChunks(totalBytes: number, chunkSize = FILE_CHUNK_SIZE_BYTES) {
   if (totalBytes <= 0) return 0;
   if (chunkSize <= 0) throw new RangeError("chunkSize must be greater than 0");
   return Math.ceil(totalBytes / chunkSize);

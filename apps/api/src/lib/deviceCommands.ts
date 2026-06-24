@@ -2,7 +2,7 @@ import {
   isSafeDeviceCommand,
   type SafeDeviceCommand,
   type SafeDeviceCommandType
-} from "@remotedesk/shared/pack7/index.js";
+} from "@remotedesk/shared/pack7";
 import type { Prisma } from "@prisma/client";
 import { prisma } from "./prisma.js";
 

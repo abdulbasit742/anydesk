@@ -4,7 +4,7 @@ import {
   isSafeConnectorKey,
   type ConnectorCatalogItem,
   type ConnectorDefinitionDto
-} from "@remotedesk/shared/connectors/index.js";
+} from "@remotedesk/shared/connectors";
 import type { Prisma } from "@prisma/client";
 import { prisma } from "./prisma.js";
 
