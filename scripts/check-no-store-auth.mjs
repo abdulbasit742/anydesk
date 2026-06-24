@@ -13,6 +13,11 @@ function read(path) {
 const noStoreSource = read(noStorePath);
 const serverSource = read(serverPath);
 
+const healthRouteIndex = serverSource.indexOf('app.get("/health", noStore');
+const liveHealthRouteIndex = serverSource.indexOf('app.get("/health/live", noStore');
+const healthzRouteIndex = serverSource.indexOf('app.get("/healthz", noStore');
+const readyRouteIndex = serverSource.indexOf('app.get("/health/ready", noStore');
+const readyzRouteIndex = serverSource.indexOf('app.get("/readyz", noStore');
 const noStoreApiIndex = serverSource.indexOf('app.use("/api", noStore)');
 const authRoutesIndex = serverSource.indexOf('app.use("/api/auth", authRoutes)');
 const usersRoutesIndex = serverSource.indexOf('app.use("/api/users", userRoutes)');
@@ -36,6 +41,13 @@ const checks = {
   serverImportsNoStore: serverSource.includes("./middleware/noStore.js"),
   serverDisablesEtags: etagDisableIndex >= 0,
   etagDisabledBeforeMiddleware: etagDisableIndex >= 0 && requestIdIndex >= 0 && etagDisableIndex < requestIdIndex,
+  healthUsesNoStore: healthRouteIndex >= 0,
+  liveHealthUsesNoStore: liveHealthRouteIndex >= 0,
+  healthzUsesNoStore: healthzRouteIndex >= 0,
+  readyHealthUsesNoStore: readyRouteIndex >= 0,
+  readyzUsesNoStore: readyzRouteIndex >= 0,
+  healthNoStoreBeforeApiRoutes: healthRouteIndex >= 0 && noStoreApiIndex >= 0 && healthRouteIndex < noStoreApiIndex,
+  readyNoStoreBeforeApiRoutes: readyRouteIndex >= 0 && noStoreApiIndex >= 0 && readyRouteIndex < noStoreApiIndex,
   serverAppliesNoStoreToAllApi: noStoreApiIndex >= 0,
   noStoreBeforeAuthRoutes: noStoreApiIndex >= 0 && authRoutesIndex >= 0 && noStoreApiIndex < authRoutesIndex,
   noStoreBeforeUsersRoutes: noStoreApiIndex >= 0 && usersRoutesIndex >= 0 && noStoreApiIndex < usersRoutesIndex,
