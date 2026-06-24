@@ -49,7 +49,7 @@ app.get("/readyz", (_req, res) => {
   res.status(body.ready ? 200 : 503).json(body);
 });
 
-app.use(createRateLimit({ windowMs: 60_000, max: 240 }));
+app.use(createRateLimit({ windowMs: 60_000, max: 240, name: "global-api" }));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/devices", deviceRoutes);
