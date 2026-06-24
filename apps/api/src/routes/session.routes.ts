@@ -1,11 +1,12 @@
 import { Router } from "express";
 import { prisma } from "../lib/prisma.js";
 import { requireAuth, type AuthedRequest } from "../middleware/auth.js";
+import { asyncHandler } from "../middleware/asyncHandler.js";
 
 const router = Router();
 router.use(requireAuth);
 
-router.get("/history", async (req: AuthedRequest, res) => {
+router.get("/history", asyncHandler<AuthedRequest>(async (req, res) => {
   const sessions = await prisma.session.findMany({
     where: {
       OR: [{ hostId: req.user!.id }, { clientId: req.user!.id }]
@@ -18,6 +19,6 @@ router.get("/history", async (req: AuthedRequest, res) => {
     take: 50
   });
   res.json({ success: true, data: sessions });
-});
+}));
 
 export default router;
