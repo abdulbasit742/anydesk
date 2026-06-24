@@ -5,6 +5,7 @@ import { env } from "./config/env.js";
 import { createRateLimit } from "./middleware/rateLimit.js";
 import { requestId } from "./middleware/requestId.js";
 import { securityHeaders } from "./middleware/securityHeaders.js";
+import { notFound, errorHandler } from "./middleware/errorHandler.js";
 import authRoutes from "./routes/auth.routes.js";
 import deviceRoutes from "./routes/device.routes.js";
 import userRoutes from "./routes/user.routes.js";
@@ -58,6 +59,9 @@ app.use("/api/subscription", subscriptionRoutes);
 app.use("/api/launch", launchRoutes);
 app.use("/api/connectors", connectorRoutes);
 app.use("/api/beta", betaRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 initSocketServer(server);
 health.markReady();
