@@ -1,6 +1,7 @@
 import type { Response } from "express";
 import type { NextFunction } from "express";
 import type { RequestWithId } from "./requestId.js";
+import { JSON_BODY_TYPES } from "./requireJsonContentType.js";
 
 const JSON_BODY_METHODS = new Set(["POST", "PUT", "PATCH"]);
 const SUPPORTED_JSON_CHARSETS = new Set(["utf-8", "utf8"]);
@@ -15,9 +16,18 @@ function hasRequestBody(req: RequestWithId): boolean {
   return Boolean(req.get("transfer-encoding"));
 }
 
+function getMediaType(contentType: string | undefined): string | null {
+  return contentType?.split(";")[0]?.trim().toLowerCase() || null;
+}
+
 function isJsonContentType(contentType: string | undefined): boolean {
-  const mediaType = contentType?.split(";")[0]?.trim().toLowerCase();
-  return mediaType === "application/json" || Boolean(mediaType?.endsWith("+json"));
+  const mediaType = getMediaType(contentType);
+  if (!mediaType) return false;
+
+  return JSON_BODY_TYPES.some((type) => {
+    if (type === "application/*+json") return mediaType.startsWith("application/") && mediaType.endsWith("+json");
+    return mediaType === type;
+  });
 }
 
 export function normalizeJsonCharset(contentType: string | undefined): string | null {
