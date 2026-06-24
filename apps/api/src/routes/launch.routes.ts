@@ -9,6 +9,7 @@ import {
 } from "../lib/launchOperations.js";
 import { prisma } from "../lib/prisma.js";
 import { requireAuth, type AuthedRequest } from "../middleware/auth.js";
+import { asyncHandler } from "../middleware/asyncHandler.js";
 
 const router = Router();
 router.use(requireAuth);
@@ -76,7 +77,7 @@ const supportEscalationPatch = z.object({
   description: z.string().max(4000).optional()
 });
 
-router.get("/readiness", async (req: AuthedRequest, res) => {
+router.get("/readiness", asyncHandler<AuthedRequest>(async (req, res) => {
   await ensureDefaultLaunchChecks(req.user!.id);
 
   const [checks, releaseCandidates, rolloutApprovals, migrationChecks, supportEscalations] = await Promise.all([
@@ -127,9 +128,9 @@ router.get("/readiness", async (req: AuthedRequest, res) => {
       supportEscalations
     }
   });
-});
+}));
 
-router.patch("/checks/:key", async (req, res) => {
+router.patch("/checks/:key", asyncHandler<AuthedRequest>(async (req, res) => {
   const input = launchCheckPatch.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -139,9 +140,9 @@ router.patch("/checks/:key", async (req, res) => {
   });
 
   res.json({ success: true, data: check });
-});
+}));
 
-router.post("/release-candidates", async (req: AuthedRequest, res) => {
+router.post("/release-candidates", asyncHandler<AuthedRequest>(async (req, res) => {
   const input = releaseCandidateInput.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -155,9 +156,9 @@ router.post("/release-candidates", async (req: AuthedRequest, res) => {
   });
 
   res.status(201).json({ success: true, data: candidate });
-});
+}));
 
-router.patch("/release-candidates/:id", async (req, res) => {
+router.patch("/release-candidates/:id", asyncHandler<AuthedRequest>(async (req, res) => {
   const input = releaseCandidatePatch.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -183,9 +184,9 @@ router.patch("/release-candidates/:id", async (req, res) => {
   });
 
   res.json({ success: true, data: updated });
-});
+}));
 
-router.post("/rollout-approvals", async (req: AuthedRequest, res) => {
+router.post("/rollout-approvals", asyncHandler<AuthedRequest>(async (req, res) => {
   const input = rolloutApprovalInput.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -198,9 +199,9 @@ router.post("/rollout-approvals", async (req: AuthedRequest, res) => {
   });
 
   res.status(201).json({ success: true, data: approval });
-});
+}));
 
-router.patch("/rollout-approvals/:id", async (req, res) => {
+router.patch("/rollout-approvals/:id", asyncHandler<AuthedRequest>(async (req, res) => {
   const input = rolloutApprovalPatch.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -213,9 +214,9 @@ router.patch("/rollout-approvals/:id", async (req, res) => {
   });
 
   res.json({ success: true, data: approval });
-});
+}));
 
-router.post("/migration-checks", async (req: AuthedRequest, res) => {
+router.post("/migration-checks", asyncHandler<AuthedRequest>(async (req, res) => {
   const input = migrationCheckInput.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -229,9 +230,9 @@ router.post("/migration-checks", async (req: AuthedRequest, res) => {
   });
 
   res.status(201).json({ success: true, data: check });
-});
+}));
 
-router.patch("/migration-checks/:id", async (req, res) => {
+router.patch("/migration-checks/:id", asyncHandler<AuthedRequest>(async (req, res) => {
   const input = migrationCheckPatch.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -254,9 +255,9 @@ router.patch("/migration-checks/:id", async (req, res) => {
   });
 
   res.json({ success: true, data: check });
-});
+}));
 
-router.post("/support-escalations", async (req: AuthedRequest, res) => {
+router.post("/support-escalations", asyncHandler<AuthedRequest>(async (req, res) => {
   const input = supportEscalationInput.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -270,9 +271,9 @@ router.post("/support-escalations", async (req: AuthedRequest, res) => {
   });
 
   res.status(201).json({ success: true, data: escalation });
-});
+}));
 
-router.patch("/support-escalations/:id", async (req, res) => {
+router.patch("/support-escalations/:id", asyncHandler<AuthedRequest>(async (req, res) => {
   const input = supportEscalationPatch.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -296,6 +297,6 @@ router.patch("/support-escalations/:id", async (req, res) => {
   });
 
   res.json({ success: true, data: escalation });
-});
+}));
 
 export default router;
