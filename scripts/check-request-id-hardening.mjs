@@ -6,6 +6,7 @@ const root = process.cwd();
 const requestIdPath = join(root, "apps", "api", "src", "middleware", "requestId.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
 const errorHandlerPath = join(root, "apps", "api", "src", "middleware", "errorHandler.ts");
+const packagePath = join(root, "package.json");
 
 function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
@@ -14,9 +15,13 @@ function read(path) {
 const requestIdSource = read(requestIdPath);
 const serverSource = read(serverPath);
 const errorSource = read(errorHandlerPath);
+const packageSource = read(packagePath);
 
 const checks = {
   requestIdFileExists: existsSync(requestIdPath),
+  packageFileExists: existsSync(packagePath),
+  packageHasTraceCheckScript: packageSource.includes('"trace:check"') && packageSource.includes("node scripts/check-request-id-hardening.mjs"),
+  ciRunsTraceCheck: packageSource.includes("npm run trace:check"),
   exportsRequestWithId: requestIdSource.includes("export interface RequestWithId"),
   exportsNormalizeRequestId: requestIdSource.includes("export function normalizeRequestId"),
   exportsRequestIdHeader: requestIdSource.includes("export const REQUEST_ID_HEADER") && requestIdSource.includes('"x-request-id"'),
