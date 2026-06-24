@@ -24,6 +24,7 @@ function codeFromStatus(status: number): string {
   if (status === 403) return "forbidden";
   if (status === 404) return "not_found";
   if (status === 413) return "payload_too_large";
+  if (status === 415) return "unsupported_media_type";
   if (status === 429) return "rate_limited";
   return status >= 500 ? "internal_error" : "request_error";
 }
@@ -34,6 +35,10 @@ function isJsonSyntaxError(error: HttpError): boolean {
 
 function isPayloadTooLargeError(error: HttpError): boolean {
   return error.status === 413 || error.type === "entity.too.large";
+}
+
+function isUnsupportedContentEncodingError(error: HttpError): boolean {
+  return error.status === 415 && error.type === "encoding.unsupported";
 }
 
 export function notFound(req: RequestWithId, res: Response) {
@@ -57,6 +62,17 @@ export function errorHandler(error: HttpError, req: RequestWithId, res: Response
       error: {
         code: "invalid_json",
         message: "Request body contains invalid JSON",
+        requestId: req.requestId
+      }
+    });
+  }
+
+  if (isUnsupportedContentEncodingError(error)) {
+    return res.status(415).json({
+      success: false,
+      error: {
+        code: "unsupported_content_encoding",
+        message: "Compressed request bodies are not supported",
         requestId: req.requestId
       }
     });
