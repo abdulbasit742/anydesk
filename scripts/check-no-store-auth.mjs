@@ -13,6 +13,12 @@ function read(path) {
 const noStoreSource = read(noStorePath);
 const serverSource = read(serverPath);
 
+const noStoreApiIndex = serverSource.indexOf('app.use("/api", noStore)');
+const authRoutesIndex = serverSource.indexOf('app.use("/api/auth", authRoutes)');
+const usersRoutesIndex = serverSource.indexOf('app.use("/api/users", userRoutes)');
+const sessionsRoutesIndex = serverSource.indexOf('app.use("/api/sessions", sessionRoutes)');
+const connectorsRoutesIndex = serverSource.indexOf('app.use("/api/connectors", connectorRoutes)');
+
 const checks = {
   noStoreFileExists: existsSync(noStorePath),
   exportsNoStore: noStoreSource.includes("export const noStore"),
@@ -21,8 +27,12 @@ const checks = {
   setsExpiresZero: noStoreSource.includes("Expires") && noStoreSource.includes('"0"'),
   callsNext: noStoreSource.includes("next()"),
   serverImportsNoStore: serverSource.includes("./middleware/noStore.js"),
-  serverAppliesNoStoreToAuth: serverSource.includes('app.use("/api/auth", noStore, authRoutes)'),
-  noStoreBeforeAuthRoutes: serverSource.indexOf("noStore") < serverSource.indexOf("authRoutes"),
+  serverAppliesNoStoreToAllApi: noStoreApiIndex >= 0,
+  noStoreBeforeAuthRoutes: noStoreApiIndex >= 0 && authRoutesIndex >= 0 && noStoreApiIndex < authRoutesIndex,
+  noStoreBeforeUsersRoutes: noStoreApiIndex >= 0 && usersRoutesIndex >= 0 && noStoreApiIndex < usersRoutesIndex,
+  noStoreBeforeSessionsRoutes: noStoreApiIndex >= 0 && sessionsRoutesIndex >= 0 && noStoreApiIndex < sessionsRoutesIndex,
+  noStoreBeforeConnectorsRoutes: noStoreApiIndex >= 0 && connectorsRoutesIndex >= 0 && noStoreApiIndex < connectorsRoutesIndex,
+  authUsesInheritedNoStore: serverSource.includes('app.use("/api/auth", authRoutes)') && !serverSource.includes('app.use("/api/auth", noStore, authRoutes)'),
 };
 
 const failures = Object.entries(checks)
@@ -43,7 +53,7 @@ writeFileSync("reports/no-store-auth-check.json", JSON.stringify(report, null, 2
 writeFileSync(
   "reports/no-store-auth-check.md",
   [
-    "# No-store Auth Check",
+    "# No-store API Check",
     "",
     `Status: **${status}**`,
     `Failures: **${failures.length}**`,
@@ -57,5 +67,5 @@ writeFileSync(
   ].filter(Boolean).join("\n")
 );
 
-console.log(`[no-store-auth:check] ${status} - ${failures.length} failures`);
+console.log(`[no-store:check] ${status} - ${failures.length} failures`);
 if (failures.length > 0) process.exit(1);
