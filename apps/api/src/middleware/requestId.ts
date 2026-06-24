@@ -5,6 +5,7 @@ export interface RequestWithId extends Request {
   requestId?: string;
 }
 
+export const REQUEST_ID_HEADER = "x-request-id";
 export const REQUEST_ID_MIN_LENGTH = 8;
 export const REQUEST_ID_MAX_LENGTH = 96;
 export const REQUEST_ID_PATTERN = /^[a-zA-Z0-9._:-]+$/;
@@ -19,10 +20,10 @@ export function normalizeRequestId(value: string | undefined): string | null {
 }
 
 export function requestId(req: RequestWithId, res: Response, next: NextFunction) {
-  const incoming = normalizeRequestId(req.header("x-request-id"));
+  const incoming = normalizeRequestId(req.header(REQUEST_ID_HEADER));
   const id = incoming ?? randomUUID();
 
   req.requestId = id;
-  res.setHeader("x-request-id", id);
+  res.setHeader(REQUEST_ID_HEADER, id);
   next();
 }
