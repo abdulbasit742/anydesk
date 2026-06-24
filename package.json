@@ -17,6 +17,9 @@
     "build:client-sdk": "npm run build --workspace=@remotedesk/client-sdk",
     "build": "npm run build --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
+    "env:validate": "node scripts/validate-env.mjs",
+    "env:validate:strict": "node scripts/validate-env.mjs --strict",
+    "security:scan": "node scripts/security-scan.mjs",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down"
   },
