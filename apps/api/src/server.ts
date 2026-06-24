@@ -57,6 +57,7 @@ async function readinessBody() {
 
 app.disable("x-powered-by");
 app.disable("etag");
+app.set("query parser", "simple");
 app.use(requestId);
 app.use(securityHeaders);
 app.use(cors({ origin: env.corsOrigin, credentials: true, methods: ALLOWED_CORS_METHODS, allowedHeaders: ALLOWED_REQUEST_HEADERS, exposedHeaders: EXPOSED_RESPONSE_HEADERS, maxAge: CORS_PREFLIGHT_MAX_AGE_SECONDS, optionsSuccessStatus: 204 }));
