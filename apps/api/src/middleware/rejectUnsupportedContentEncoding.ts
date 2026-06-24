@@ -3,7 +3,7 @@ import type { NextFunction } from "express";
 import type { RequestWithId } from "./requestId.js";
 import { JSON_BODY_METHODS, hasRequestBody, isApiPath } from "./requireJsonContentType.js";
 
-const SUPPORTED_CONTENT_ENCODINGS = new Set(["identity"]);
+export const SUPPORTED_CONTENT_ENCODINGS = new Set(["identity"]);
 
 export function normalizeContentEncoding(value: string | undefined): string | null {
   const normalized = value?.trim().toLowerCase();
