@@ -20,7 +20,7 @@ const checks = {
   serverFileExists: existsSync(serverPath),
   healthFileExists: existsSync(healthPath),
   exportsInstaller: shutdownSource.includes("export function installGracefulShutdown"),
-  marksNotReady: shutdownSource.includes("health.markNotReady()"),
+  marksNotReadyWithReason: shutdownSource.includes('health.markNotReady("shutting_down")'),
   closesSocketServer: shutdownSource.includes("io.close"),
   closesHttpServer: shutdownSource.includes("server.close"),
   disconnectsPrisma: shutdownSource.includes("prisma.$disconnect()"),
@@ -32,7 +32,10 @@ const checks = {
   serverImportsInstaller: serverSource.includes("./lifecycle/gracefulShutdown.js"),
   serverCapturesSocketInstance: serverSource.includes("const io = initSocketServer(server)"),
   serverInstallsShutdown: serverSource.includes("installGracefulShutdown({ server, io })"),
-  healthCanMarkNotReady: healthSource.includes("markNotReady()"),
+  healthCanMarkNotReady: healthSource.includes("markNotReady(reason = \"not_ready\")"),
+  healthTracksReadinessReason: healthSource.includes('readinessReason = "starting"') && healthSource.includes("reason: readinessReason"),
+  healthTracksReadinessChangedAt: healthSource.includes("readinessChangedAt") && healthSource.includes("setReadiness"),
+  healthReadinessIncludesUptime: healthSource.includes("uptimeSec")
 };
 
 const failures = Object.entries(checks)
