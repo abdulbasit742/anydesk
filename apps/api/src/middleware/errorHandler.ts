@@ -41,6 +41,10 @@ function isUnsupportedContentEncodingError(error: HttpError): boolean {
   return error.status === 415 && error.type === "encoding.unsupported";
 }
 
+function isUnsupportedCharsetError(error: HttpError): boolean {
+  return error.status === 415 && error.type === "charset.unsupported";
+}
+
 export function notFound(req: RequestWithId, res: Response) {
   res.status(404).json({
     success: false,
@@ -73,6 +77,17 @@ export function errorHandler(error: HttpError, req: RequestWithId, res: Response
       error: {
         code: "unsupported_content_encoding",
         message: "Compressed request bodies are not supported",
+        requestId: req.requestId
+      }
+    });
+  }
+
+  if (isUnsupportedCharsetError(error)) {
+    return res.status(415).json({
+      success: false,
+      error: {
+        code: "unsupported_charset",
+        message: "Request body charset is not supported",
         requestId: req.requestId
       }
     });
