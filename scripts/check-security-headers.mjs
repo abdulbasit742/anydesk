@@ -46,6 +46,7 @@ const checks = {
   removesPoweredBy: headersSource.includes("res.removeHeader") && headersSource.includes("X-Powered-By"),
   serverUsesSimpleQueryParser: simpleQueryParserIndex >= 0,
   simpleQueryParserBeforeMiddleware: simpleQueryParserIndex >= 0 && requestIdIndex >= 0 && simpleQueryParserIndex < requestIdIndex,
+  serverCorsIncludesHead: serverSource.includes("ALLOWED_CORS_METHODS") && serverSource.includes('"HEAD"') && serverSource.includes("methods: ALLOWED_CORS_METHODS"),
   methodGuardFileExists: existsSync(methodGuardPath),
   exportsMethodGuard: methodGuardSource.includes("export function rejectUnsupportedHttpMethod"),
   methodGuardHasAllowlist: methodGuardSource.includes("ALLOWED_HTTP_METHODS") && methodGuardSource.includes('"GET"') && methodGuardSource.includes('"HEAD"') && methodGuardSource.includes('"OPTIONS"'),
