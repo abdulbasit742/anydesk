@@ -31,7 +31,7 @@ const HTTP_REQUEST_TIMEOUT_MS = 120_000;
 const HTTP_HEADERS_TIMEOUT_MS = 30_000;
 const HTTP_KEEP_ALIVE_TIMEOUT_MS = 5_000;
 const CORS_PREFLIGHT_MAX_AGE_SECONDS = 600;
-const ALLOWED_CORS_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"];
+const ALLOWED_CORS_METHODS = ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"];
 const ALLOWED_REQUEST_HEADERS = ["authorization", "content-type", "x-request-id"];
 const EXPOSED_RESPONSE_HEADERS = ["x-request-id"];
 
