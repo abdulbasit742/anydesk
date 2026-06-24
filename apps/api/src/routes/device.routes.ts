@@ -22,6 +22,7 @@ import { listDeviceAdminAudit, serializeDeviceAuditEvent } from "../lib/deviceAd
 import { prisma } from "../lib/prisma.js";
 import { formatRemoteDeskId } from "../lib/remoteDeskId.js";
 import { requireAuth, type AuthedRequest } from "../middleware/auth.js";
+import { asyncHandler } from "../middleware/asyncHandler.js";
 
 const router = Router();
 router.use(requireAuth);
@@ -67,7 +68,7 @@ async function getOwnedDevice(deviceId: string, userId: string) {
   });
 }
 
-router.get("/", async (req: AuthedRequest, res) => {
+router.get("/", asyncHandler<AuthedRequest>(async (req, res) => {
   const devices = await prisma.device.findMany({
     where: { userId: req.user!.id },
     orderBy: [{ isOnline: "desc" }, { lastSeenAt: "desc" }, { createdAt: "desc" }]
@@ -80,9 +81,9 @@ router.get("/", async (req: AuthedRequest, res) => {
       remoteDeskIdFormatted: formatRemoteDeskId(device.remoteDeskId)
     }))
   });
-});
+}));
 
-router.post("/register", async (req: AuthedRequest, res) => {
+router.post("/register", asyncHandler<AuthedRequest>(async (req, res) => {
   const input = registerDeviceInput.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -130,9 +131,9 @@ router.post("/register", async (req: AuthedRequest, res) => {
       remoteDeskIdFormatted: formatRemoteDeskId(device.remoteDeskId)
     }
   });
-});
+}));
 
-router.get("/:deviceId", async (req: AuthedRequest, res) => {
+router.get("/:deviceId", asyncHandler<AuthedRequest>(async (req, res) => {
   const device = await getOwnedDevice(req.params.deviceId, req.user!.id);
 
   if (!device) {
@@ -228,9 +229,9 @@ router.get("/:deviceId", async (req: AuthedRequest, res) => {
       }
     }
   });
-});
+}));
 
-router.get("/:deviceId/audit", async (req: AuthedRequest, res) => {
+router.get("/:deviceId/audit", asyncHandler<AuthedRequest>(async (req, res) => {
   const device = await getOwnedDevice(req.params.deviceId, req.user!.id);
   if (!device) return res.status(404).json({ success: false, message: "Device not found" });
 
@@ -242,9 +243,9 @@ router.get("/:deviceId/audit", async (req: AuthedRequest, res) => {
     success: true,
     data: events.map(serializeDeviceAuditEvent)
   });
-});
+}));
 
-router.patch("/:deviceId/heartbeat", async (req: AuthedRequest, res) => {
+router.patch("/:deviceId/heartbeat", asyncHandler<AuthedRequest>(async (req, res) => {
   const device = await getOwnedDevice(req.params.deviceId, req.user!.id);
   if (!device) return res.status(404).json({ success: false, message: "Device not found" });
 
@@ -263,9 +264,9 @@ router.patch("/:deviceId/heartbeat", async (req: AuthedRequest, res) => {
       remoteDeskIdFormatted: formatRemoteDeskId(updated.remoteDeskId)
     }
   });
-});
+}));
 
-router.patch("/:deviceId/trust", async (req: AuthedRequest, res) => {
+router.patch("/:deviceId/trust", asyncHandler<AuthedRequest>(async (req, res) => {
   const device = await getOwnedDevice(req.params.deviceId, req.user!.id);
   if (!device) return res.status(404).json({ success: false, message: "Device not found" });
 
@@ -281,9 +282,9 @@ router.patch("/:deviceId/trust", async (req: AuthedRequest, res) => {
 
   const settings = await getDeviceSecuritySettings(device.id, req.user!.id);
   res.json({ success: true, data: settings });
-});
+}));
 
-router.patch("/:deviceId/access-policy", async (req: AuthedRequest, res) => {
+router.patch("/:deviceId/access-policy", asyncHandler<AuthedRequest>(async (req, res) => {
   const device = await getOwnedDevice(req.params.deviceId, req.user!.id);
   if (!device) return res.status(404).json({ success: false, message: "Device not found" });
 
@@ -304,9 +305,9 @@ router.patch("/:deviceId/access-policy", async (req: AuthedRequest, res) => {
       message: error instanceof Error ? error.message : "Unable to update access policy"
     });
   }
-});
+}));
 
-router.get("/:deviceId/commands", async (req: AuthedRequest, res) => {
+router.get("/:deviceId/commands", asyncHandler<AuthedRequest>(async (req, res) => {
   const device = await getOwnedDevice(req.params.deviceId, req.user!.id);
   if (!device) return res.status(404).json({ success: false, message: "Device not found" });
 
@@ -319,9 +320,9 @@ router.get("/:deviceId/commands", async (req: AuthedRequest, res) => {
   });
 
   res.json({ success: true, data: commands.map(serializeDeviceCommand) });
-});
+}));
 
-router.get("/:deviceId/commands/pending", async (req: AuthedRequest, res) => {
+router.get("/:deviceId/commands/pending", asyncHandler<AuthedRequest>(async (req, res) => {
   const device = await getOwnedDevice(req.params.deviceId, req.user!.id);
   if (!device) return res.status(404).json({ success: false, message: "Device not found" });
 
@@ -338,9 +339,9 @@ router.get("/:deviceId/commands/pending", async (req: AuthedRequest, res) => {
   });
 
   res.json({ success: true, data: commands.map(serializeDeviceCommand) });
-});
+}));
 
-router.post("/:deviceId/commands", async (req: AuthedRequest, res) => {
+router.post("/:deviceId/commands", asyncHandler<AuthedRequest>(async (req, res) => {
   const device = await getOwnedDevice(req.params.deviceId, req.user!.id);
   if (!device) return res.status(404).json({ success: false, message: "Device not found" });
 
@@ -374,9 +375,9 @@ router.post("/:deviceId/commands", async (req: AuthedRequest, res) => {
   });
 
   res.status(201).json({ success: true, data: serializeDeviceCommand(command) });
-});
+}));
 
-router.patch("/:deviceId/commands/:commandId", async (req: AuthedRequest, res) => {
+router.patch("/:deviceId/commands/:commandId", asyncHandler<AuthedRequest>(async (req, res) => {
   const device = await getOwnedDevice(req.params.deviceId, req.user!.id);
   if (!device) return res.status(404).json({ success: false, message: "Device not found" });
 
@@ -414,6 +415,6 @@ router.patch("/:deviceId/commands/:commandId", async (req: AuthedRequest, res) =
   });
 
   res.json({ success: true, data: serializeDeviceCommand(updated) });
-});
+}));
 
 export default router;
