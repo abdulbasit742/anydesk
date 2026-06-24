@@ -114,3 +114,4 @@ export * from "./socket/index.js";
 export * from "./support/index.js";
 export * from "./team/index.js";
 export * from "./webrtc/index.js";
+export * from "./remoteInput/index.js";
