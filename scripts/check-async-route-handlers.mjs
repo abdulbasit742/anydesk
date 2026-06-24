@@ -10,7 +10,8 @@ const routeFiles = {
   users: join(root, "apps", "api", "src", "routes", "user.routes.ts"),
   sessions: join(root, "apps", "api", "src", "routes", "session.routes.ts"),
   subscriptions: join(root, "apps", "api", "src", "routes", "subscription.routes.ts"),
-  beta: join(root, "apps", "api", "src", "routes", "beta.routes.ts")
+  beta: join(root, "apps", "api", "src", "routes", "beta.routes.ts"),
+  launch: join(root, "apps", "api", "src", "routes", "launch.routes.ts")
 };
 
 function read(path) {
@@ -53,7 +54,20 @@ const checks = {
 
   betaRoutesFileExists: existsSync(routeFiles.beta),
   betaImportsAsyncHandler: routes.beta.includes("../middleware/asyncHandler.js"),
-  betaFeaturesWrapped: routes.beta.includes('router.get("/features", asyncHandler')
+  betaFeaturesWrapped: routes.beta.includes('router.get("/features", asyncHandler'),
+
+  launchRoutesFileExists: existsSync(routeFiles.launch),
+  launchImportsAsyncHandler: routes.launch.includes("../middleware/asyncHandler.js"),
+  launchReadinessWrapped: routes.launch.includes('router.get("/readiness", asyncHandler'),
+  launchChecksPatchWrapped: routes.launch.includes('router.patch("/checks/:key", asyncHandler'),
+  launchReleaseCandidateCreateWrapped: routes.launch.includes('router.post("/release-candidates", asyncHandler'),
+  launchReleaseCandidatePatchWrapped: routes.launch.includes('router.patch("/release-candidates/:id", asyncHandler'),
+  launchRolloutApprovalCreateWrapped: routes.launch.includes('router.post("/rollout-approvals", asyncHandler'),
+  launchRolloutApprovalPatchWrapped: routes.launch.includes('router.patch("/rollout-approvals/:id", asyncHandler'),
+  launchMigrationCreateWrapped: routes.launch.includes('router.post("/migration-checks", asyncHandler'),
+  launchMigrationPatchWrapped: routes.launch.includes('router.patch("/migration-checks/:id", asyncHandler'),
+  launchSupportCreateWrapped: routes.launch.includes('router.post("/support-escalations", asyncHandler'),
+  launchSupportPatchWrapped: routes.launch.includes('router.patch("/support-escalations/:id", asyncHandler')
 };
 
 const failures = Object.entries(checks)
