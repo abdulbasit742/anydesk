@@ -28,9 +28,17 @@ const connectorSelect = {
   docsUrl: true
 } satisfies Prisma.ConnectorDefinitionSelect;
 
+const CONNECTOR_AUDIT_DEFAULT_LIMIT = 50;
+const CONNECTOR_AUDIT_MAX_LIMIT = 100;
+
 function toCapabilities(value: Prisma.JsonValue): string[] {
   if (!Array.isArray(value)) return [];
   return value.filter((item): item is string => typeof item === "string");
+}
+
+function clampConnectorAuditLimit(limit?: number): number {
+  if (!Number.isFinite(limit)) return CONNECTOR_AUDIT_DEFAULT_LIMIT;
+  return Math.min(Math.max(Math.floor(limit ?? CONNECTOR_AUDIT_DEFAULT_LIMIT), 1), CONNECTOR_AUDIT_MAX_LIMIT);
 }
 
 function toConnectorDefinitionDto(definition: PersistedConnectorDefinition): ConnectorDefinitionDto {
@@ -214,7 +222,7 @@ export async function uninstallConnector(userId: string, connectorKey: string): 
   };
 }
 
-export async function listConnectorAuditEvents(userId: string) {
+export async function listConnectorAuditEvents(userId: string, options: { limit?: number } = {}) {
   return prisma.connectorAuditEvent.findMany({
     where: { userId },
     include: {
@@ -227,7 +235,7 @@ export async function listConnectorAuditEvents(userId: string) {
       }
     },
     orderBy: { createdAt: "desc" },
-    take: 50
+    take: clampConnectorAuditLimit(options.limit)
   });
 }
 
