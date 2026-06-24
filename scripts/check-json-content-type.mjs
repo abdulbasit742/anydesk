@@ -5,6 +5,7 @@ import { join } from "node:path";
 const root = process.cwd();
 const middlewarePath = join(root, "apps", "api", "src", "middleware", "requireJsonContentType.ts");
 const encodingGuardPath = join(root, "apps", "api", "src", "middleware", "rejectUnsupportedContentEncoding.ts");
+const charsetGuardPath = join(root, "apps", "api", "src", "middleware", "rejectUnsupportedJsonCharset.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
 
 function read(path) {
@@ -13,10 +14,12 @@ function read(path) {
 
 const middlewareSource = read(middlewarePath);
 const encodingGuardSource = read(encodingGuardPath);
+const charsetGuardSource = read(charsetGuardPath);
 const serverSource = read(serverPath);
 
 const encodingGuardIndex = serverSource.indexOf("app.use(rejectUnsupportedContentEncoding)");
 const guardIndex = serverSource.indexOf("app.use(requireJsonContentType)");
+const charsetGuardIndex = serverSource.indexOf("app.use(rejectUnsupportedJsonCharset)");
 const parserIndex = serverSource.indexOf("app.use(express.json");
 
 const checks = {
@@ -40,6 +43,16 @@ const checks = {
   serverUsesEncodingGuard: encodingGuardIndex >= 0,
   encodingGuardBeforeContentTypeGuard: encodingGuardIndex >= 0 && guardIndex >= 0 && encodingGuardIndex < guardIndex,
   encodingGuardBeforeJsonParser: encodingGuardIndex >= 0 && parserIndex >= 0 && encodingGuardIndex < parserIndex,
+  charsetGuardFileExists: existsSync(charsetGuardPath),
+  exportsCharsetGuard: charsetGuardSource.includes("export function rejectUnsupportedJsonCharset"),
+  normalizesJsonCharset: charsetGuardSource.includes("normalizeJsonCharset") && charsetGuardSource.includes("charset"),
+  allowsUtf8Charsets: charsetGuardSource.includes("SUPPORTED_JSON_CHARSETS") && charsetGuardSource.includes('"utf-8"') && charsetGuardSource.includes('"utf8"'),
+  rejectsUnsupportedCharset: charsetGuardSource.includes("unsupported_charset") && charsetGuardSource.includes("Request body charset is not supported"),
+  charsetGuardLimitsToJsonBody: charsetGuardSource.includes("isJsonContentType") && charsetGuardSource.includes("hasRequestBody"),
+  serverImportsCharsetGuard: serverSource.includes("./middleware/rejectUnsupportedJsonCharset.js"),
+  serverUsesCharsetGuard: charsetGuardIndex >= 0,
+  charsetGuardAfterContentTypeGuard: guardIndex >= 0 && charsetGuardIndex >= 0 && guardIndex < charsetGuardIndex,
+  charsetGuardBeforeJsonParser: charsetGuardIndex >= 0 && parserIndex >= 0 && charsetGuardIndex < parserIndex,
   serverImportsGuard: serverSource.includes("./middleware/requireJsonContentType.js"),
   serverUsesGuard: guardIndex >= 0,
   guardBeforeJsonParser: guardIndex >= 0 && parserIndex >= 0 && guardIndex < parserIndex,
