@@ -70,24 +70,24 @@ app.use(requireJsonContentType);
 app.use(rejectUnsupportedJsonCharset);
 app.use(express.json({ limit: "1mb", type: ["application/json", "application/*+json"], inflate: false, strict: true }));
 
-app.get("/health", (_req, res) => {
+app.get("/health", noStore, (_req, res) => {
   res.json(health.liveness());
 });
 
-app.get("/health/live", (_req, res) => {
+app.get("/health/live", noStore, (_req, res) => {
   res.json(health.liveness());
 });
 
-app.get("/healthz", (_req, res) => {
+app.get("/healthz", noStore, (_req, res) => {
   res.json(health.liveness());
 });
 
-app.get("/health/ready", asyncHandler(async (_req, res) => {
+app.get("/health/ready", noStore, asyncHandler(async (_req, res) => {
   const body = await readinessBody();
   res.status(body.ready ? 200 : 503).json(body);
 }));
 
-app.get("/readyz", asyncHandler(async (_req, res) => {
+app.get("/readyz", noStore, asyncHandler(async (_req, res) => {
   const body = await readinessBody();
   res.status(body.ready ? 200 : 503).json(body);
 }));
