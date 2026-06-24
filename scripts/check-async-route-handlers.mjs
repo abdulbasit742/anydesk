@@ -11,7 +11,8 @@ const routeFiles = {
   sessions: join(root, "apps", "api", "src", "routes", "session.routes.ts"),
   subscriptions: join(root, "apps", "api", "src", "routes", "subscription.routes.ts"),
   beta: join(root, "apps", "api", "src", "routes", "beta.routes.ts"),
-  launch: join(root, "apps", "api", "src", "routes", "launch.routes.ts")
+  launch: join(root, "apps", "api", "src", "routes", "launch.routes.ts"),
+  devices: join(root, "apps", "api", "src", "routes", "device.routes.ts")
 };
 
 function read(path) {
@@ -67,7 +68,21 @@ const checks = {
   launchMigrationCreateWrapped: routes.launch.includes('router.post("/migration-checks", asyncHandler'),
   launchMigrationPatchWrapped: routes.launch.includes('router.patch("/migration-checks/:id", asyncHandler'),
   launchSupportCreateWrapped: routes.launch.includes('router.post("/support-escalations", asyncHandler'),
-  launchSupportPatchWrapped: routes.launch.includes('router.patch("/support-escalations/:id", asyncHandler')
+  launchSupportPatchWrapped: routes.launch.includes('router.patch("/support-escalations/:id", asyncHandler'),
+
+  deviceRoutesFileExists: existsSync(routeFiles.devices),
+  devicesImportAsyncHandler: routes.devices.includes("../middleware/asyncHandler.js"),
+  deviceListWrapped: routes.devices.includes('router.get("/", asyncHandler'),
+  deviceRegisterWrapped: routes.devices.includes('router.post("/register", asyncHandler'),
+  deviceDetailWrapped: routes.devices.includes('router.get("/:deviceId", asyncHandler'),
+  deviceAuditWrapped: routes.devices.includes('router.get("/:deviceId/audit", asyncHandler'),
+  deviceHeartbeatWrapped: routes.devices.includes('router.patch("/:deviceId/heartbeat", asyncHandler'),
+  deviceTrustWrapped: routes.devices.includes('router.patch("/:deviceId/trust", asyncHandler'),
+  deviceAccessPolicyWrapped: routes.devices.includes('router.patch("/:deviceId/access-policy", asyncHandler'),
+  deviceCommandsWrapped: routes.devices.includes('router.get("/:deviceId/commands", asyncHandler'),
+  devicePendingCommandsWrapped: routes.devices.includes('router.get("/:deviceId/commands/pending", asyncHandler'),
+  deviceCommandCreateWrapped: routes.devices.includes('router.post("/:deviceId/commands", asyncHandler'),
+  deviceCommandAckWrapped: routes.devices.includes('router.patch("/:deviceId/commands/:commandId", asyncHandler')
 };
 
 const failures = Object.entries(checks)
