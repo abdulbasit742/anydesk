@@ -4,6 +4,7 @@ import type { RequestWithId } from "./requestId.js";
 import { JSON_BODY_METHODS, hasRequestBody, isApiPath } from "./requireJsonContentType.js";
 
 export const SUPPORTED_CONTENT_ENCODINGS = new Set(["identity"]);
+export const UNSUPPORTED_CONTENT_ENCODING_MESSAGE = "Compressed request bodies are not supported";
 
 export function normalizeContentEncoding(value: string | undefined): string | null {
   const normalized = value?.trim().toLowerCase();
@@ -25,7 +26,7 @@ export function rejectUnsupportedContentEncoding(req: RequestWithId, res: Respon
     success: false,
     error: {
       code: "unsupported_content_encoding",
-      message: "Compressed request bodies are not supported",
+      message: UNSUPPORTED_CONTENT_ENCODING_MESSAGE,
       requestId: req.requestId
     }
   });
