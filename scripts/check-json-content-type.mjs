@@ -7,6 +7,7 @@ const middlewarePath = join(root, "apps", "api", "src", "middleware", "requireJs
 const encodingGuardPath = join(root, "apps", "api", "src", "middleware", "rejectUnsupportedContentEncoding.ts");
 const charsetGuardPath = join(root, "apps", "api", "src", "middleware", "rejectUnsupportedJsonCharset.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
+const packagePath = join(root, "package.json");
 
 function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
@@ -16,6 +17,7 @@ const middlewareSource = read(middlewarePath);
 const encodingGuardSource = read(encodingGuardPath);
 const charsetGuardSource = read(charsetGuardPath);
 const serverSource = read(serverPath);
+const packageSource = read(packagePath);
 
 const encodingGuardIndex = serverSource.indexOf("app.use(rejectUnsupportedContentEncoding)");
 const guardIndex = serverSource.indexOf("app.use(requireJsonContentType)");
@@ -24,6 +26,11 @@ const parserIndex = serverSource.indexOf("app.use(express.json");
 
 const checks = {
   middlewareFileExists: existsSync(middlewarePath),
+  encodingGuardFileExists: existsSync(encodingGuardPath),
+  charsetGuardFileExists: existsSync(charsetGuardPath),
+  packageFileExists: existsSync(packagePath),
+  packageHasContentTypeCheckScript: packageSource.includes('"content-type:check"') && packageSource.includes("node scripts/check-json-content-type.mjs"),
+  ciRunsContentTypeCheck: packageSource.includes("npm run content-type:check"),
   exportsGuard: middlewareSource.includes("export const requireJsonContentType"),
   exportsJsonBodyTypes: middlewareSource.includes("export const JSON_BODY_TYPES") && middlewareSource.includes('"application/json"') && middlewareSource.includes('"application/*+json"'),
   exportsJsonBodyMethods: middlewareSource.includes("export const JSON_BODY_METHODS") && middlewareSource.includes('"POST"') && middlewareSource.includes('"PUT"') && middlewareSource.includes('"PATCH"'),
@@ -39,7 +46,6 @@ const checks = {
   returnsUnsupportedMediaType: middlewareSource.includes("415") && middlewareSource.includes("unsupported_media_type"),
   returnsAllowlistAlignedMessage: middlewareSource.includes("message: UNSUPPORTED_JSON_MEDIA_TYPE_MESSAGE"),
   returnsRequestId: middlewareSource.includes("requestId: req.requestId"),
-  encodingGuardFileExists: existsSync(encodingGuardPath),
   exportsEncodingGuard: encodingGuardSource.includes("export function rejectUnsupportedContentEncoding"),
   exportsSupportedContentEncodings: encodingGuardSource.includes("export const SUPPORTED_CONTENT_ENCODINGS") && encodingGuardSource.includes('"identity"'),
   exportsUnsupportedEncodingMessage: encodingGuardSource.includes("export const UNSUPPORTED_CONTENT_ENCODING_MESSAGE") && encodingGuardSource.includes("Compressed request bodies are not supported"),
@@ -52,7 +58,6 @@ const checks = {
   serverUsesEncodingGuard: encodingGuardIndex >= 0,
   encodingGuardBeforeContentTypeGuard: encodingGuardIndex >= 0 && guardIndex >= 0 && encodingGuardIndex < guardIndex,
   encodingGuardBeforeJsonParser: encodingGuardIndex >= 0 && parserIndex >= 0 && encodingGuardIndex < parserIndex,
-  charsetGuardFileExists: existsSync(charsetGuardPath),
   exportsCharsetGuard: charsetGuardSource.includes("export function rejectUnsupportedJsonCharset"),
   exportsSupportedJsonCharsets: charsetGuardSource.includes("export const SUPPORTED_JSON_CHARSETS") && charsetGuardSource.includes('"utf-8"') && charsetGuardSource.includes('"utf8"'),
   exportsUnsupportedCharsetMessage: charsetGuardSource.includes("export const UNSUPPORTED_JSON_CHARSET_MESSAGE") && charsetGuardSource.includes("Request body charset is not supported"),
