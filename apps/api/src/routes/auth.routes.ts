@@ -6,6 +6,7 @@ import { generateRemoteDeskId } from "../lib/remoteDeskId.js";
 import { hashPassword, verifyPassword } from "../lib/password.js";
 import { issueTokenPair, verifyRefreshToken } from "../lib/tokens.js";
 import { requireAuth, type AuthedRequest } from "../middleware/auth.js";
+import { asyncHandler } from "../middleware/asyncHandler.js";
 import { createRateLimit } from "../middleware/rateLimit.js";
 
 const router = Router();
@@ -47,7 +48,7 @@ function publicUser(user: { id: string; email: string; fullName: string; remoteD
   };
 }
 
-router.post("/signup", authRateLimit, async (req, res) => {
+router.post("/signup", authRateLimit, asyncHandler(async (req, res) => {
   const input = signupSchema.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -72,9 +73,9 @@ router.post("/signup", authRateLimit, async (req, res) => {
       tokens: issueTokenPair({ userId: user.id, email: user.email })
     }
   });
-});
+}));
 
-router.post("/login", authRateLimit, async (req, res) => {
+router.post("/login", authRateLimit, asyncHandler(async (req, res) => {
   const input = loginSchema.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -90,9 +91,9 @@ router.post("/login", authRateLimit, async (req, res) => {
       tokens: issueTokenPair({ userId: user.id, email: user.email })
     }
   });
-});
+}));
 
-router.post("/refresh", authRateLimit, async (req, res) => {
+router.post("/refresh", authRateLimit, asyncHandler(async (req, res) => {
   const input = refreshSchema.safeParse(req.body);
   if (!input.success) return res.status(400).json({ success: false, errors: input.error.flatten() });
 
@@ -117,14 +118,14 @@ router.post("/refresh", authRateLimit, async (req, res) => {
   } catch {
     return res.status(401).json({ success: false, message: "Invalid refresh token" });
   }
-});
+}));
 
-router.get("/me", requireAuth, async (req: AuthedRequest, res) => {
+router.get("/me", requireAuth, asyncHandler<AuthedRequest>(async (req, res) => {
   const user = await prisma.user.findUnique({
     where: { id: req.user!.id },
     select: { id: true, email: true, fullName: true, remoteDeskId: true, plan: true, isOnline: true }
   });
   res.json({ success: true, data: user });
-});
+}));
 
 export default router;
