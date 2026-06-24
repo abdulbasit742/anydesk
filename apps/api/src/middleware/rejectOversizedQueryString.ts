@@ -6,11 +6,20 @@ export const MAX_REQUEST_TARGET_LENGTH = 4096;
 export const MAX_PATH_LENGTH = 2048;
 export const MAX_PATH_SEGMENTS = 64;
 export const MAX_QUERY_STRING_LENGTH = 2048;
+export const MAX_QUERY_PARAMETER_COUNT = 64;
+export const MAX_QUERY_PARAMETER_KEY_LENGTH = 128;
+export const MAX_QUERY_PARAMETER_VALUE_LENGTH = 1024;
 
 const PERCENT_ENCODING_PATTERN = /%(?![0-9a-fA-F]{2})/;
 const ENCODED_CONTROL_CHARACTER_PATTERN = /%(?:0[0-9a-fA-F]|1[0-9a-fA-F]|7f)/i;
 const ENCODED_BACKSLASH_PATTERN = /%5c/i;
 const ENCODED_PARENT_SEGMENT_PATTERN = /(?:^|\/)%2e%2e(?:\/|$)/i;
+
+interface QueryParameterStats {
+  count: number;
+  maxKeyLength: number;
+  maxValueLength: number;
+}
 
 function getRequestTarget(req: RequestWithId): string {
   return req.originalUrl || req.url || "";
@@ -43,10 +52,30 @@ export function hasParentDirectorySegment(path: string | undefined): boolean {
   return target.split("/").some((segment) => segment === "..") || ENCODED_PARENT_SEGMENT_PATTERN.test(target);
 }
 
+export function getQueryString(requestTarget: string | undefined): string {
+  const queryStart = requestTarget?.indexOf("?") ?? -1;
+  if (queryStart < 0 || !requestTarget) return "";
+  return requestTarget.slice(queryStart + 1);
+}
+
 export function getQueryStringLength(originalUrl: string | undefined): number {
-  const queryStart = originalUrl?.indexOf("?") ?? -1;
-  if (queryStart < 0 || !originalUrl) return 0;
-  return originalUrl.length - queryStart - 1;
+  return getQueryString(originalUrl).length;
+}
+
+export function getQueryParameterStats(queryString: string): QueryParameterStats {
+  if (!queryString) return { count: 0, maxKeyLength: 0, maxValueLength: 0 };
+
+  return queryString.split("&").filter(Boolean).reduce<QueryParameterStats>((stats, pair) => {
+    const separatorIndex = pair.indexOf("=");
+    const key = separatorIndex < 0 ? pair : pair.slice(0, separatorIndex);
+    const value = separatorIndex < 0 ? "" : pair.slice(separatorIndex + 1);
+
+    return {
+      count: stats.count + 1,
+      maxKeyLength: Math.max(stats.maxKeyLength, key.length),
+      maxValueLength: Math.max(stats.maxValueLength, value.length)
+    };
+  }, { count: 0, maxKeyLength: 0, maxValueLength: 0 });
 }
 
 export function rejectOversizedQueryString(req: RequestWithId, res: Response, next: NextFunction) {
@@ -131,18 +160,53 @@ export function rejectOversizedQueryString(req: RequestWithId, res: Response, ne
     });
   }
 
-  const queryLength = getQueryStringLength(requestTarget);
+  const queryString = getQueryString(requestTarget);
 
-  if (queryLength <= MAX_QUERY_STRING_LENGTH) {
-    return next();
+  if (queryString.length > MAX_QUERY_STRING_LENGTH) {
+    return res.status(414).json({
+      success: false,
+      error: {
+        code: "query_string_too_long",
+        message: "Query string exceeds the maximum allowed length",
+        requestId: req.requestId
+      }
+    });
   }
 
-  return res.status(414).json({
-    success: false,
-    error: {
-      code: "query_string_too_long",
-      message: "Query string exceeds the maximum allowed length",
-      requestId: req.requestId
-    }
-  });
+  const queryStats = getQueryParameterStats(queryString);
+
+  if (queryStats.count > MAX_QUERY_PARAMETER_COUNT) {
+    return res.status(414).json({
+      success: false,
+      error: {
+        code: "too_many_query_parameters",
+        message: "Query string contains too many parameters",
+        requestId: req.requestId
+      }
+    });
+  }
+
+  if (queryStats.maxKeyLength > MAX_QUERY_PARAMETER_KEY_LENGTH) {
+    return res.status(414).json({
+      success: false,
+      error: {
+        code: "query_parameter_key_too_long",
+        message: "Query parameter key exceeds the maximum allowed length",
+        requestId: req.requestId
+      }
+    });
+  }
+
+  if (queryStats.maxValueLength > MAX_QUERY_PARAMETER_VALUE_LENGTH) {
+    return res.status(414).json({
+      success: false,
+      error: {
+        code: "query_parameter_value_too_long",
+        message: "Query parameter value exceeds the maximum allowed length",
+        requestId: req.requestId
+      }
+    });
+  }
+
+  return next();
 }
