@@ -23,12 +23,17 @@ function codeFromStatus(status: number): string {
   if (status === 401) return "unauthorized";
   if (status === 403) return "forbidden";
   if (status === 404) return "not_found";
+  if (status === 413) return "payload_too_large";
   if (status === 429) return "rate_limited";
   return status >= 500 ? "internal_error" : "request_error";
 }
 
 function isJsonSyntaxError(error: HttpError): boolean {
   return error instanceof SyntaxError && error.status === 400 && "body" in error;
+}
+
+function isPayloadTooLargeError(error: HttpError): boolean {
+  return error.status === 413 || error.type === "entity.too.large";
 }
 
 export function notFound(req: RequestWithId, res: Response) {
@@ -52,6 +57,17 @@ export function errorHandler(error: HttpError, req: RequestWithId, res: Response
       error: {
         code: "invalid_json",
         message: "Request body contains invalid JSON",
+        requestId: req.requestId
+      }
+    });
+  }
+
+  if (isPayloadTooLargeError(error)) {
+    return res.status(413).json({
+      success: false,
+      error: {
+        code: "payload_too_large",
+        message: "Request body exceeds the maximum allowed size",
         requestId: req.requestId
       }
     });
