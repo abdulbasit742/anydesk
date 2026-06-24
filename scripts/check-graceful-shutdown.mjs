@@ -6,6 +6,7 @@ const root = process.cwd();
 const shutdownPath = join(root, "apps", "api", "src", "lifecycle", "gracefulShutdown.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
 const healthPath = join(root, "apps", "api", "src", "observability", "health.ts");
+const dependencyPath = join(root, "apps", "api", "src", "observability", "dependencyHealth.ts");
 
 function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
@@ -14,6 +15,7 @@ function read(path) {
 const shutdownSource = read(shutdownPath);
 const serverSource = read(serverPath);
 const healthSource = read(healthPath);
+const dependencySource = read(dependencyPath);
 
 const checks = {
   shutdownFileExists: existsSync(shutdownPath),
@@ -35,7 +37,16 @@ const checks = {
   healthCanMarkNotReady: healthSource.includes("markNotReady(reason = \"not_ready\")"),
   healthTracksReadinessReason: healthSource.includes('readinessReason = "starting"') && healthSource.includes("reason: readinessReason"),
   healthTracksReadinessChangedAt: healthSource.includes("readinessChangedAt") && healthSource.includes("setReadiness"),
-  healthReadinessIncludesUptime: healthSource.includes("uptimeSec")
+  healthReadinessIncludesUptime: healthSource.includes("uptimeSec"),
+  dependencyFileExists: existsSync(dependencyPath),
+  dependencyExportsDatabaseCheck: dependencySource.includes("export async function checkDatabaseHealth"),
+  dependencyUsesPrismaQuery: dependencySource.includes("prisma.$queryRaw") && dependencySource.includes("SELECT 1"),
+  dependencyReportsDegraded: dependencySource.includes('status: "degraded"'),
+  serverImportsDependencyCheck: serverSource.includes("./observability/dependencyHealth.js"),
+  serverHasReadinessBodyHelper: serverSource.includes("async function readinessBody"),
+  serverReadinessIncludesDependencies: serverSource.includes("dependencies") && serverSource.includes("database"),
+  serverReadyRequiresDatabaseOk: serverSource.includes('database.status === "ok"'),
+  readyRoutesReturn503WhenNotReady: serverSource.includes("res.status(body.ready ? 200 : 503)")
 };
 
 const failures = Object.entries(checks)
