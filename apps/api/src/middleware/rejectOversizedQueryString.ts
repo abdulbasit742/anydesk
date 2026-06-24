@@ -9,6 +9,8 @@ export const MAX_QUERY_STRING_LENGTH = 2048;
 
 const PERCENT_ENCODING_PATTERN = /%(?![0-9a-fA-F]{2})/;
 const ENCODED_CONTROL_CHARACTER_PATTERN = /%(?:0[0-9a-fA-F]|1[0-9a-fA-F]|7f)/i;
+const ENCODED_BACKSLASH_PATTERN = /%5c/i;
+const ENCODED_PARENT_SEGMENT_PATTERN = /(?:^|\/)%2e%2e(?:\/|$)/i;
 
 function getRequestTarget(req: RequestWithId): string {
   return req.originalUrl || req.url || "";
@@ -22,6 +24,10 @@ export function hasEncodedControlCharacter(value: string): boolean {
   return ENCODED_CONTROL_CHARACTER_PATTERN.test(value);
 }
 
+export function hasEncodedBackslash(value: string): boolean {
+  return ENCODED_BACKSLASH_PATTERN.test(value);
+}
+
 export function getPathFromRequestTarget(requestTarget: string | undefined): string {
   const target = requestTarget || "";
   const queryStart = target.indexOf("?");
@@ -30,6 +36,11 @@ export function getPathFromRequestTarget(requestTarget: string | undefined): str
 
 export function getPathSegmentCount(path: string | undefined): number {
   return (path || "").split("/").filter(Boolean).length;
+}
+
+export function hasParentDirectorySegment(path: string | undefined): boolean {
+  const target = path || "";
+  return target.split("/").some((segment) => segment === "..") || ENCODED_PARENT_SEGMENT_PATTERN.test(target);
 }
 
 export function getQueryStringLength(originalUrl: string | undefined): number {
@@ -63,6 +74,17 @@ export function rejectOversizedQueryString(req: RequestWithId, res: Response, ne
     });
   }
 
+  if (hasEncodedBackslash(requestTarget)) {
+    return res.status(400).json({
+      success: false,
+      error: {
+        code: "invalid_path_separator",
+        message: "Request target contains an encoded path separator",
+        requestId: req.requestId
+      }
+    });
+  }
+
   if (requestTarget.length > MAX_REQUEST_TARGET_LENGTH) {
     return res.status(414).json({
       success: false,
@@ -75,6 +97,17 @@ export function rejectOversizedQueryString(req: RequestWithId, res: Response, ne
   }
 
   const path = getPathFromRequestTarget(requestTarget);
+
+  if (hasParentDirectorySegment(path)) {
+    return res.status(400).json({
+      success: false,
+      error: {
+        code: "parent_path_segment_not_allowed",
+        message: "Request path contains a parent directory segment",
+        requestId: req.requestId
+      }
+    });
+  }
 
   if (path.length > MAX_PATH_LENGTH) {
     return res.status(414).json({
