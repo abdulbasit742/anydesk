@@ -2,7 +2,7 @@ import type { RequestHandler } from "express";
 import type { RequestWithId } from "./requestId.js";
 
 export const JSON_BODY_TYPES = ["application/json", "application/*+json"] as const;
-const JSON_BODY_METHODS = new Set(["POST", "PUT", "PATCH"]);
+export const JSON_BODY_METHODS = new Set(["POST", "PUT", "PATCH"]);
 
 function isApiPath(path: string): boolean {
   return path === "/api" || path.startsWith("/api/");
