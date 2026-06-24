@@ -8,6 +8,7 @@ import { requestId } from "./middleware/requestId.js";
 import { securityHeaders } from "./middleware/securityHeaders.js";
 import { noStore } from "./middleware/noStore.js";
 import { rejectUnsupportedContentEncoding } from "./middleware/rejectUnsupportedContentEncoding.js";
+import { rejectUnsupportedJsonCharset } from "./middleware/rejectUnsupportedJsonCharset.js";
 import { requireJsonContentType } from "./middleware/requireJsonContentType.js";
 import { notFound, errorHandler } from "./middleware/errorHandler.js";
 import { asyncHandler } from "./middleware/asyncHandler.js";
@@ -61,6 +62,7 @@ app.use(securityHeaders);
 app.use(cors({ origin: env.corsOrigin, credentials: true, methods: ALLOWED_CORS_METHODS, allowedHeaders: ALLOWED_REQUEST_HEADERS, exposedHeaders: EXPOSED_RESPONSE_HEADERS, maxAge: CORS_PREFLIGHT_MAX_AGE_SECONDS, optionsSuccessStatus: 204 }));
 app.use(rejectUnsupportedContentEncoding);
 app.use(requireJsonContentType);
+app.use(rejectUnsupportedJsonCharset);
 app.use(express.json({ limit: "1mb", type: ["application/json", "application/*+json"], inflate: false }));
 
 app.get("/health", (_req, res) => {
