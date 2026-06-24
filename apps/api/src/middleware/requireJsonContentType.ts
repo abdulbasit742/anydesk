@@ -7,12 +7,18 @@ function isApiPath(path: string): boolean {
   return path === "/api" || path.startsWith("/api/");
 }
 
+function hasRequestBody(req: RequestWithId): boolean {
+  const contentLength = req.get("content-length");
+  if (contentLength && Number(contentLength) > 0) return true;
+  return Boolean(req.get("transfer-encoding"));
+}
+
 function acceptsJson(req: RequestWithId): boolean {
   return Boolean(req.is("application/json") || req.is("application/*+json"));
 }
 
 export const requireJsonContentType: RequestHandler = (req: RequestWithId, res, next) => {
-  if (!JSON_BODY_METHODS.has(req.method) || !isApiPath(req.path)) {
+  if (!JSON_BODY_METHODS.has(req.method) || !isApiPath(req.path) || !hasRequestBody(req)) {
     return next();
   }
 
@@ -24,7 +30,7 @@ export const requireJsonContentType: RequestHandler = (req: RequestWithId, res, 
     success: false,
     error: {
       code: "unsupported_media_type",
-      message: "Content-Type must be application/json",
+      message: "Content-Type must be application/json when a request body is sent",
       requestId: req.requestId
     }
   });
