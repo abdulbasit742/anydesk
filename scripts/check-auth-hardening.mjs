@@ -24,7 +24,13 @@ const checks = {
   authRouteHasRefreshEndpoint: authSource.includes('router.post("/refresh"') || authSource.includes("router.post('/refresh'"),
   refreshEndpointVerifiesRefreshToken: authSource.includes("verifyRefreshToken"),
   authResponsesUseIssueTokenPair: authSource.includes("issueTokenPair"),
-  emailIsNormalized: authSource.includes("toLowerCase().trim()"),
+  importsRateLimit: authSource.includes("../middleware/rateLimit.js") && authSource.includes("createRateLimit"),
+  definesAuthRateLimit: authSource.includes("authRateLimit") && authSource.includes("windowMs: 10 * 60_000") && authSource.includes("max: 25"),
+  appliesSignupRateLimit: authSource.includes('router.post("/signup", authRateLimit'),
+  appliesLoginRateLimit: authSource.includes('router.post("/login", authRateLimit'),
+  appliesRefreshRateLimit: authSource.includes('router.post("/refresh", authRateLimit'),
+  emailTrimsBeforeValidation: authSource.includes("z.string().trim().email()"),
+  emailIsLowercased: authSource.includes("email.toLowerCase()"),
   doesNotReturnPasswordHash: !authSource.includes("passwordHash,") && !authSource.includes("passwordHash: true"),
 };
 
