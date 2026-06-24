@@ -3,7 +3,7 @@ import type { NextFunction } from "express";
 import type { RequestWithId } from "./requestId.js";
 import { JSON_BODY_METHODS, hasRequestBody, isApiPath, isJsonContentType } from "./requireJsonContentType.js";
 
-const SUPPORTED_JSON_CHARSETS = new Set(["utf-8", "utf8"]);
+export const SUPPORTED_JSON_CHARSETS = new Set(["utf-8", "utf8"]);
 
 export function normalizeJsonCharset(contentType: string | undefined): string | null {
   const match = contentType?.match(/(?:^|;)\s*charset\s*=\s*([^;]+)/i);
