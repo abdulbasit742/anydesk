@@ -1,9 +1,8 @@
 import type { Response } from "express";
 import type { NextFunction } from "express";
 import type { RequestWithId } from "./requestId.js";
-import { JSON_BODY_TYPES } from "./requireJsonContentType.js";
+import { JSON_BODY_METHODS, JSON_BODY_TYPES } from "./requireJsonContentType.js";
 
-const JSON_BODY_METHODS = new Set(["POST", "PUT", "PATCH"]);
 const SUPPORTED_JSON_CHARSETS = new Set(["utf-8", "utf8"]);
 
 function isApiPath(path: string): boolean {
