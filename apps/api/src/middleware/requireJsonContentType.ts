@@ -3,6 +3,7 @@ import type { RequestWithId } from "./requestId.js";
 
 export const JSON_BODY_TYPES = ["application/json", "application/*+json"] as const;
 export const JSON_BODY_METHODS = new Set(["POST", "PUT", "PATCH"]);
+export const UNSUPPORTED_JSON_MEDIA_TYPE_MESSAGE = "Content-Type must be application/json or application/*+json when a request body is sent";
 
 export function isApiPath(path: string): boolean {
   return path === "/api" || path.startsWith("/api/");
@@ -41,7 +42,7 @@ export const requireJsonContentType: RequestHandler = (req: RequestWithId, res, 
     success: false,
     error: {
       code: "unsupported_media_type",
-      message: "Content-Type must be application/json when a request body is sent",
+      message: UNSUPPORTED_JSON_MEDIA_TYPE_MESSAGE,
       requestId: req.requestId
     }
   });
