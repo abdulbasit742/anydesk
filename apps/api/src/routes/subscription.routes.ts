@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { requireAuth, type AuthedRequest } from "../middleware/auth.js";
+import { asyncHandler } from "../middleware/asyncHandler.js";
 import { prisma } from "../lib/prisma.js";
 
 const router = Router();
@@ -12,13 +13,13 @@ const limits = {
   ENTERPRISE: { maxDevices: null, maxSessionSeconds: null, fileTransfer: true }
 };
 
-router.get("/current", async (req: AuthedRequest, res) => {
+router.get("/current", asyncHandler<AuthedRequest>(async (req, res) => {
   const user = await prisma.user.findUnique({ where: { id: req.user!.id }, select: { plan: true } });
   const plan = user?.plan ?? "FREE";
   res.json({ success: true, data: { plan, limits: limits[plan] } });
-});
+}));
 
-router.post("/checkout", async (req, res) => {
+router.post("/checkout", asyncHandler(async (_req, res) => {
   res.json({
     success: true,
     data: {
@@ -26,6 +27,6 @@ router.post("/checkout", async (req, res) => {
       note: "Wire Stripe checkout here after adding live price IDs."
     }
   });
-});
+}));
 
 export default router;
