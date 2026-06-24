@@ -14,6 +14,7 @@ import launchRoutes from "./routes/launch.routes.js";
 import connectorRoutes from "./routes/connector.routes.js";
 import { initSocketServer } from "./socket/index.js";
 import { health } from "./observability/health.js";
+import { logger } from "./observability/safeLogger.js";
 
 const app = express();
 const server = http.createServer(app);
@@ -60,5 +61,9 @@ initSocketServer(server);
 health.markReady();
 
 server.listen(env.port, () => {
-  console.log(`RemoteDesk API listening on http://localhost:${env.port}`);
+  logger.info("RemoteDesk API listening", {
+    event: "api.startup",
+    status: "ready",
+    port: env.port
+  });
 });
