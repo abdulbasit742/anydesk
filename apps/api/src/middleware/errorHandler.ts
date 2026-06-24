@@ -8,6 +8,8 @@ interface HttpError extends Error {
   status?: number;
   statusCode?: number;
   code?: string;
+  body?: unknown;
+  type?: string;
 }
 
 function statusFromError(error: HttpError): number {
@@ -25,6 +27,10 @@ function codeFromStatus(status: number): string {
   return status >= 500 ? "internal_error" : "request_error";
 }
 
+function isJsonSyntaxError(error: HttpError): boolean {
+  return error instanceof SyntaxError && error.status === 400 && "body" in error;
+}
+
 export function notFound(req: RequestWithId, res: Response) {
   res.status(404).json({
     success: false,
@@ -37,8 +43,19 @@ export function notFound(req: RequestWithId, res: Response) {
   });
 }
 
-export function errorHandler(error: HttpError, req: RequestWithId, res: Response, _next: NextFunction) {
-  if (res.headersSent) return;
+export function errorHandler(error: HttpError, req: RequestWithId, res: Response, next: NextFunction) {
+  if (res.headersSent) return next(error);
+
+  if (isJsonSyntaxError(error)) {
+    return res.status(400).json({
+      success: false,
+      error: {
+        code: "invalid_json",
+        message: "Request body contains invalid JSON",
+        requestId: req.requestId
+      }
+    });
+  }
 
   if (error instanceof ZodError) {
     return res.status(400).json({
