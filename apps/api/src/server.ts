@@ -46,7 +46,7 @@ app.use(requestId);
 app.use(securityHeaders);
 app.use(cors({ origin: env.corsOrigin, credentials: true }));
 app.use(requireJsonContentType);
-app.use(express.json({ limit: "1mb" }));
+app.use(express.json({ limit: "1mb", type: ["application/json", "application/*+json"] }));
 
 app.get("/health", (_req, res) => {
   res.json(health.liveness());
