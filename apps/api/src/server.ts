@@ -6,6 +6,7 @@ import { createRateLimit } from "./middleware/rateLimit.js";
 import { requestId } from "./middleware/requestId.js";
 import { securityHeaders } from "./middleware/securityHeaders.js";
 import authRoutes from "./routes/auth.routes.js";
+import deviceCompatRoutes from "./routes/device.compat.routes.js";
 import deviceRoutes from "./routes/device.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import sessionRoutes from "./routes/session.routes.js";
@@ -49,6 +50,8 @@ app.get("/readyz", (_req, res) => {
 app.use(createRateLimit({ windowMs: 60_000, max: 240 }));
 
 app.use("/api/auth", authRoutes);
+// Compatibility layer for dashboard/device MVP endpoints used by the web PWA.
+app.use("/api/devices", deviceCompatRoutes);
 app.use("/api/devices", deviceRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/sessions", sessionRoutes);
