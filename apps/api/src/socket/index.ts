@@ -30,6 +30,29 @@ function emitFeatureDisabled(socket: Socket, feature: string) {
   });
 }
 
+function bindSafeSocketHandler<TPayload = unknown>(
+  socket: Socket,
+  socketEvent: string,
+  handler: (payload: TPayload) => Promise<unknown> | unknown
+) {
+  socket.on(socketEvent, (payload: TPayload) => {
+    void Promise.resolve(handler(payload)).catch((error) => {
+      logger.error("Socket event handler failed", {
+        event: "socket.event.error",
+        status: "failed",
+        socketEvent,
+        socketId: socket.id,
+        errorName: error instanceof Error ? error.name : "UnknownError",
+        errorMessage: error instanceof Error ? error.message : "Unknown socket event error"
+      });
+      socket.emit(ServerEvents.Error, {
+        message: "Socket event failed",
+        code: "SOCKET_EVENT_FAILED"
+      });
+    });
+  });
+}
+
 export function initSocketServer(httpServer: HttpServer) {
   const io = new Server(httpServer, {
     cors: { origin: env.corsOrigin, credentials: true }
@@ -77,7 +100,7 @@ export function initSocketServer(httpServer: HttpServer) {
       remoteDeskId: socket.data.remoteDeskId
     });
 
-    socket.on(ClientEvents.ConnectRequest, async (payload: ConnectRequestPayload) => {
+    bindSafeSocketHandler<ConnectRequestPayload>(socket, ClientEvents.ConnectRequest, async (payload) => {
       const targetId = payload.targetRemoteDeskId.replace(/\s/g, "");
       const target = await prisma.user.findUnique({ where: { remoteDeskId: targetId } });
       if (!target?.socketId || !target.isOnline) {
@@ -96,7 +119,7 @@ export function initSocketServer(httpServer: HttpServer) {
       });
     });
 
-    socket.on(ClientEvents.ConnectResponse, async (payload: SessionResponsePayload) => {
+    bindSafeSocketHandler<SessionResponsePayload>(socket, ClientEvents.ConnectResponse, async (payload) => {
       await prisma.session.update({
         where: { id: payload.sessionId },
         data: { status: payload.accepted ? "ACTIVE" : "REJECTED", startedAt: payload.accepted ? new Date() : undefined }
@@ -125,11 +148,11 @@ export function initSocketServer(httpServer: HttpServer) {
       });
     };
 
-    socket.on(ClientEvents.WebrtcOffer, (payload: SignalPayload) => relay(ServerEvents.WebrtcOffer, payload));
-    socket.on(ClientEvents.WebrtcAnswer, (payload: SignalPayload) => relay(ServerEvents.WebrtcAnswer, payload));
-    socket.on(ClientEvents.WebrtcIce, (payload: SignalPayload) => relay(ServerEvents.WebrtcIce, payload));
+    bindSafeSocketHandler<SignalPayload>(socket, ClientEvents.WebrtcOffer, (payload) => relay(ServerEvents.WebrtcOffer, payload));
+    bindSafeSocketHandler<SignalPayload>(socket, ClientEvents.WebrtcAnswer, (payload) => relay(ServerEvents.WebrtcAnswer, payload));
+    bindSafeSocketHandler<SignalPayload>(socket, ClientEvents.WebrtcIce, (payload) => relay(ServerEvents.WebrtcIce, payload));
 
-    socket.on(ClientEvents.SessionEnd, async ({ sessionId, peerSocketId }: { sessionId: string; peerSocketId?: string }) => {
+    bindSafeSocketHandler<{ sessionId: string; peerSocketId?: string }>(socket, ClientEvents.SessionEnd, async ({ sessionId, peerSocketId }) => {
       const session = await prisma.session.findUnique({ where: { id: sessionId } });
       await prisma.session.update({
         where: { id: sessionId },
@@ -142,7 +165,7 @@ export function initSocketServer(httpServer: HttpServer) {
       if (peerSocketId) io.to(peerSocketId).emit(ServerEvents.PeerDisconnected, { sessionId });
     });
 
-    socket.on("disconnect", async () => {
+    bindSafeSocketHandler(socket, "disconnect", async () => {
       await prisma.user.update({
         where: { id: socket.data.userId },
         data: { isOnline: false, socketId: null, lastSeenAt: new Date() }
