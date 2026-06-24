@@ -23,6 +23,8 @@ const checks = {
   returnsInvalidJsonCode: handlerSource.includes("invalid_json") && handlerSource.includes("Request body contains invalid JSON"),
   detectsUnsupportedContentEncoding: handlerSource.includes("function isUnsupportedContentEncodingError") && handlerSource.includes("encoding.unsupported"),
   returnsUnsupportedContentEncodingCode: handlerSource.includes("unsupported_content_encoding") && handlerSource.includes("Compressed request bodies are not supported"),
+  detectsUnsupportedCharset: handlerSource.includes("function isUnsupportedCharsetError") && handlerSource.includes("charset.unsupported"),
+  returnsUnsupportedCharsetCode: handlerSource.includes("unsupported_charset") && handlerSource.includes("Request body charset is not supported"),
   detectsPayloadTooLarge: handlerSource.includes("function isPayloadTooLargeError") && handlerSource.includes("entity.too.large"),
   maps413ToPayloadTooLarge: handlerSource.includes("status === 413") && handlerSource.includes("payload_too_large"),
   returnsPayloadTooLargeMessage: handlerSource.includes("Request body exceeds the maximum allowed size"),
