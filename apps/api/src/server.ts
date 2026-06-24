@@ -11,7 +11,7 @@ import { ALLOWED_HTTP_METHODS, rejectUnsupportedHttpMethod } from "./middleware/
 import { rejectOversizedQueryString } from "./middleware/rejectOversizedQueryString.js";
 import { rejectUnsupportedContentEncoding } from "./middleware/rejectUnsupportedContentEncoding.js";
 import { rejectUnsupportedJsonCharset } from "./middleware/rejectUnsupportedJsonCharset.js";
-import { requireJsonContentType } from "./middleware/requireJsonContentType.js";
+import { JSON_BODY_TYPES, requireJsonContentType } from "./middleware/requireJsonContentType.js";
 import { notFound, errorHandler } from "./middleware/errorHandler.js";
 import { asyncHandler } from "./middleware/asyncHandler.js";
 import authRoutes from "./routes/auth.routes.js";
@@ -31,7 +31,6 @@ const HTTP_REQUEST_TIMEOUT_MS = 120_000;
 const HTTP_HEADERS_TIMEOUT_MS = 30_000;
 const HTTP_KEEP_ALIVE_TIMEOUT_MS = 5_000;
 const JSON_BODY_LIMIT = "1mb";
-const JSON_BODY_TYPES = ["application/json", "application/*+json"];
 const CORS_PREFLIGHT_MAX_AGE_SECONDS = 600;
 const ALLOWED_CORS_METHODS = [...ALLOWED_HTTP_METHODS];
 const ALLOWED_REQUEST_HEADERS = ["authorization", "content-type", REQUEST_ID_HEADER];
