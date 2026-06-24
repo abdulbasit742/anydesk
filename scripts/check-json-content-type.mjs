@@ -4,6 +4,7 @@ import { join } from "node:path";
 
 const root = process.cwd();
 const middlewarePath = join(root, "apps", "api", "src", "middleware", "requireJsonContentType.ts");
+const encodingGuardPath = join(root, "apps", "api", "src", "middleware", "rejectUnsupportedContentEncoding.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
 
 function read(path) {
@@ -11,8 +12,10 @@ function read(path) {
 }
 
 const middlewareSource = read(middlewarePath);
+const encodingGuardSource = read(encodingGuardPath);
 const serverSource = read(serverPath);
 
+const encodingGuardIndex = serverSource.indexOf("app.use(rejectUnsupportedContentEncoding)");
 const guardIndex = serverSource.indexOf("app.use(requireJsonContentType)");
 const parserIndex = serverSource.indexOf("app.use(express.json");
 
@@ -28,6 +31,15 @@ const checks = {
   acceptsJsonSuffix: middlewareSource.includes('req.is("application/*+json")'),
   returnsUnsupportedMediaType: middlewareSource.includes("415") && middlewareSource.includes("unsupported_media_type"),
   returnsRequestId: middlewareSource.includes("requestId: req.requestId"),
+  encodingGuardFileExists: existsSync(encodingGuardPath),
+  exportsEncodingGuard: encodingGuardSource.includes("export function rejectUnsupportedContentEncoding"),
+  normalizesContentEncoding: encodingGuardSource.includes("normalizeContentEncoding") && encodingGuardSource.includes('req.get("content-encoding")'),
+  allowsIdentityEncoding: encodingGuardSource.includes("SUPPORTED_CONTENT_ENCODINGS") && encodingGuardSource.includes('"identity"'),
+  rejectsUnsupportedEncoding: encodingGuardSource.includes("unsupported_content_encoding") && encodingGuardSource.includes("Compressed request bodies are not supported"),
+  serverImportsEncodingGuard: serverSource.includes("./middleware/rejectUnsupportedContentEncoding.js"),
+  serverUsesEncodingGuard: encodingGuardIndex >= 0,
+  encodingGuardBeforeContentTypeGuard: encodingGuardIndex >= 0 && guardIndex >= 0 && encodingGuardIndex < guardIndex,
+  encodingGuardBeforeJsonParser: encodingGuardIndex >= 0 && parserIndex >= 0 && encodingGuardIndex < parserIndex,
   serverImportsGuard: serverSource.includes("./middleware/requireJsonContentType.js"),
   serverUsesGuard: guardIndex >= 0,
   guardBeforeJsonParser: guardIndex >= 0 && parserIndex >= 0 && guardIndex < parserIndex,
