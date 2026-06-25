@@ -45,7 +45,7 @@ const KEYS_SEED = [
   { id:1, service:'OpenAI',    key:'sk-proj-●●●●●●●●●●●●●●●●●●●●●●●●●●●●6Xab', full:'sk-proj-abc123xyz456def789ghi012jkl345mno6Xab', added:'2025-12-01', expires:'2026-12-01', status:'Active'  },
   { id:2, service:'Anthropic', key:'sk-ant-●●●●●●●●●●●●●●●●●●●●●●●●●●●●9Ycd', full:'sk-ant-api03-abc123xyz456def789ghi012jkl34569Ycd', added:'2026-01-10', expires:'2027-01-10', status:'Active'  },
   { id:3, service:'GitHub',    key:'ghp_●●●●●●●●●●●●●●●●●●●●●●●●●●●●3Zef',    full:'ghp_abc123xyz456def789ghi012jkl3456mno3Zef',     added:'2026-02-14', expires:'Never',      status:'Active'  },
-  { id:4, service:'Stripe',    key:'sk_live_●●●●●●●●●●●●●●●●●●●●●●●●●●●●7Wgh',full:'sk_live_abc123xyz456def789ghi012jkl34567Wgh',    added:'2025-11-20', expires:'2026-11-20', status:'Expiring'},
+  { id:4, service:'Stripe',    key:'sk_test_●●●●●●●●●●●●●●●●●●●●●●●●●●●●7Wgh',full:'sk_test_abc123xyz456def789ghi012jkl34567Wgh',    added:'2025-11-20', expires:'2026-11-20', status:'Expiring'},
   { id:5, service:'Vercel',    key:'vercel_●●●●●●●●●●●●●●●●●●●●●●●●●●●●2Qij', full:'vercel_abc123xyz456def789ghi012jkl34562Qij',     added:'2026-03-01', expires:'Never',      status:'Active'  },
 ];
 

@@ -492,7 +492,7 @@ const TAG_COLOR = { prod: C.green, staging: C.gold, dev: C.purple };
 const DEFAULT_ENVS = [
   { key: "DATABASE_URL", value: "postgresql://user:pass@host:5432/db", tag: "prod", shown: false },
   { key: "JWT_SECRET", value: "super-secret-jwt-key-32chars", tag: "prod", shown: false },
-  { key: "STRIPE_KEY", value: "sk_live_AbCdEfGhIjKlMnOpQrStUv", tag: "prod", shown: false },
+  { key: "STRIPE_KEY", value: "sk_test_AbCdEfGhIjKlMnOpQrStUv", tag: "prod", shown: false },
   { key: "OPENAI_API_KEY", value: "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", tag: "staging", shown: false },
   { key: "REDIS_URL", value: "redis://localhost:6379", tag: "staging", shown: false },
   { key: "S3_BUCKET", value: "my-app-assets-bucket", tag: "prod", shown: false },
