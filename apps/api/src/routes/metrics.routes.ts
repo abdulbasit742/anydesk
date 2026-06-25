@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { asyncHandler } from "../middleware/asyncHandler.js";
-import { producer } from "../server.js"; // Assuming producer is exported from server.ts
+import { producer } from "../server.js";
+import { optimizeNetwork } from "../lib/networkOptimization.js";
 
 const router = Router();
 
@@ -16,6 +17,11 @@ router.post("/device-metrics", asyncHandler(async (req, res) => {
       { value: JSON.stringify({ deviceId, timestamp: Date.now(), metrics }) },
     ],
   });
+
+  // Apply network optimization if network metrics are present
+  if (metrics.network) {
+    await optimizeNetwork(deviceId, metrics.network);
+  }
 
   res.json({ success: true, message: "Metrics received" });
 }));
