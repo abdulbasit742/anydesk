@@ -5,6 +5,7 @@ import { join } from "node:path";
 const root = process.cwd();
 const dependencyPath = join(root, "apps", "api", "src", "observability", "dependencyHealth.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
+const packagePath = join(root, "package.json");
 
 function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
@@ -12,9 +13,14 @@ function read(path) {
 
 const dependencySource = read(dependencyPath);
 const serverSource = read(serverPath);
+const packageSource = read(packagePath);
 
 const checks = {
   dependencyFileExists: existsSync(dependencyPath),
+  serverFileExists: existsSync(serverPath),
+  packageFileExists: existsSync(packagePath),
+  packageHasDependencyReadinessCheckScript: packageSource.includes('"dependency-readiness:check"') && packageSource.includes("node scripts/check-dependency-readiness.mjs"),
+  ciRunsDependencyReadinessCheck: packageSource.includes("npm run dependency-readiness:check"),
   exportsDependencyHealth: dependencySource.includes("export interface DependencyHealth"),
   exportsDatabaseHealthCheck: dependencySource.includes("export async function checkDatabaseHealth"),
   databaseUsesPrismaQuery: dependencySource.includes("prisma.$queryRaw") && dependencySource.includes("SELECT 1"),
