@@ -5,6 +5,7 @@ import { join } from "node:path";
 const root = process.cwd();
 const asyncHandlerPath = join(root, "apps", "api", "src", "middleware", "asyncHandler.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
+const packagePath = join(root, "package.json");
 const routeFiles = {
   auth: join(root, "apps", "api", "src", "routes", "auth.routes.ts"),
   users: join(root, "apps", "api", "src", "routes", "user.routes.ts"),
@@ -22,11 +23,15 @@ function read(path) {
 
 const asyncSource = read(asyncHandlerPath);
 const serverSource = read(serverPath);
+const packageSource = read(packagePath);
 const routes = Object.fromEntries(Object.entries(routeFiles).map(([name, path]) => [name, read(path)]));
 
 const checks = {
   asyncHandlerFileExists: existsSync(asyncHandlerPath),
   serverFileExists: existsSync(serverPath),
+  packageFileExists: existsSync(packagePath),
+  packageHasAsyncRoutesCheckScript: packageSource.includes('"async-routes:check"') && packageSource.includes("node scripts/check-async-route-handlers.mjs"),
+  ciRunsAsyncRoutesCheck: packageSource.includes("npm run async-routes:check"),
   asyncHandlerExportsHelper: asyncSource.includes("export function asyncHandler"),
   asyncHandlerCatchesNext: asyncSource.includes(".catch(next)"),
   serverMountsErrorHandler: serverSource.includes("app.use(errorHandler)"),
