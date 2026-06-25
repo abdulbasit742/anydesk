@@ -32,9 +32,28 @@ model User {
   supportEscalationsAssigned SupportEscalation[] @relation("SupportEscalationAssignees")
   connectorInstallations ConnectorInstallation[] @relation("ConnectorInstallationUsers")
   connectorAuditEvents ConnectorAuditEvent[] @relation("ConnectorAuditActors")
+  twoFactorSecret  String?
+  twoFactorEnabled Boolean        @default(false)
+  twoFactorBackupCodes String?
   subscriptions    Subscription[]
   hostSessions     Session[]      @relation("HostSessions")
   clientSessions   Session[]      @relation("ClientSessions")
+  accessControlEntries AccessControlEntry[]
+}
+
+model AccessControlEntry {
+  id           String   @id @default(uuid())
+  userId       String
+  remoteDeskId String
+  action       String   @default("block")
+  label        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, remoteDeskId])
+  @@index([userId, action])
 }
 
 model Device {

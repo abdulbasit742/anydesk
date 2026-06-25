@@ -4,6 +4,8 @@ import { registerClipboardIpc } from "./clipboardIpc.js";
 import { registerFileTransferIpc } from "./fileTransferIpc.js";
 import { registerInputIpc } from "./input/index.js";
 import { registerSupportBundleIpc } from "./supportBundleIpc.js";
+import { registerRemoteControlIpc } from "./remoteControlIpc.js";
+import { registerTcpTunnelIpc, cleanupAllTunnels } from "./tcpTunnelIpc.js";
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -129,6 +131,8 @@ registerClipboardIpc();
 registerFileTransferIpc();
 registerInputIpc();
 registerSupportBundleIpc();
+registerRemoteControlIpc();
+registerTcpTunnelIpc(() => mainWindow);
 
 app.whenReady().then(createWindow);
 
@@ -137,5 +141,6 @@ app.on("activate", () => {
 });
 
 app.on("window-all-closed", () => {
+  cleanupAllTunnels();
   if (process.platform !== "darwin") app.quit();
 });
