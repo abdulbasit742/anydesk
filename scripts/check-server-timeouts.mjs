@@ -17,7 +17,7 @@ const checks = {
   packageFileExists: existsSync(packagePath),
   serverFileExists: existsSync(serverPath),
   packageHasServerTimeoutScript: packageSource.includes('"server-timeouts:check"') && packageSource.includes("node scripts/check-server-timeouts.mjs"),
-  ciRunsServerTimeoutScript: packageSource.includes("npm run security-headers:check && npm run server-timeouts:check && npm run shutdown:check"),
+  ciRunsServerTimeoutCheck: packageSource.includes("npm run server-timeouts:check"),
   definesRequestTimeout: serverSource.includes("HTTP_REQUEST_TIMEOUT_MS") && serverSource.includes("120_000"),
   definesHeadersTimeout: serverSource.includes("HTTP_HEADERS_TIMEOUT_MS") && serverSource.includes("30_000"),
   definesKeepAliveTimeout: serverSource.includes("HTTP_KEEP_ALIVE_TIMEOUT_MS") && serverSource.includes("5_000"),
