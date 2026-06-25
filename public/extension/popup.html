@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentFlow Helper</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 280px;
+      min-height: 160px;
+      background: #0a0a12;
+      color: #e2e8f0;
+      font-family: -apple-system, 'Segoe UI', sans-serif;
+      font-size: 13px;
+    }
+    .header {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-icon { font-size: 20px; }
+    .header-title { font-weight: 700; font-size: 14px; }
+    .header-sub { font-size: 10px; opacity: 0.8; }
+    .body { padding: 14px 16px; }
+    .status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .status-label { font-size: 11px; color: rgba(255,255,255,0.6); }
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 6px #10b981;
+      animation: pulse 2s infinite;
+    }
+    .status-dot.offline { background: #ef4444; box-shadow: 0 0 6px #ef4444; }
+    .platforms { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+    .platform-pill {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(99,102,241,0.15);
+      color: #6366f1;
+      border: 1px solid rgba(99,102,241,0.3);
+    }
+    .btn {
+      width: 100%;
+      padding: 9px;
+      border-radius: 6px;
+      border: none;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .footer {
+      padding: 8px 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 9px;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-icon">⚡</div>
+    <div>
+      <div class="header-title">AgentFlow Helper</div>
+      <div class="header-sub">Connected & Monitoring</div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="status-row">
+      <span class="status-label">Dashboard Connection</span>
+      <div class="status-dot" id="connDot"></div>
+    </div>
+    <div class="status-row">
+      <span class="status-label">Active Platforms</span>
+      <span style="font-size:11px;color:#6366f1;font-weight:700;" id="platformCount">0</span>
+    </div>
+    <div class="platforms" id="platformPills">
+      <span class="platform-pill">Claude</span>
+      <span class="platform-pill">GPT-4</span>
+      <span class="platform-pill">Bolt.new</span>
+    </div>
+    <button class="btn" onclick="openDashboard()">Open Dashboard</button>
+  </div>
+  <div class="footer">AgentFlow v1.0 · Real-time AI coordination</div>
+  <script>
+    function openDashboard() {
+      chrome.tabs.create({ url: 'http://localhost:5173' });
+    }
+    // Get status
+    chrome.runtime.sendMessage({ type: 'GET_STATUS' }, response => {
+      if (response) {
+        const count = (response.activePlatforms || []).length;
+        document.getElementById('platformCount').textContent = count;
+        if (!response.connected) {
+          document.getElementById('connDot').classList.add('offline');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
