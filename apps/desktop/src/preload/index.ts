@@ -3,6 +3,7 @@ import { exposeClipboardApi } from "./clipboardApi.js";
 import { exposeDiagnosticsApi } from "./diagnosticsApi.js";
 import { exposeFileTransferApi } from "./fileTransferApi.js";
 import { exposeInputApi } from "./inputApi.js";
+import { exposeAiSupportApi } from "./aiSupportApi.js";
 
 const api = {
   platform: () => ipcRenderer.invoke("app:platform") as Promise<NodeJS.Platform>,
@@ -21,5 +22,6 @@ exposeClipboardApi();
 exposeDiagnosticsApi();
 exposeFileTransferApi();
 exposeInputApi();
+exposeAiSupportApi();
 
 export type RemoteDeskApi = typeof api;

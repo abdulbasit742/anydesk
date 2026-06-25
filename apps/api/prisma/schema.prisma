@@ -39,6 +39,7 @@ model User {
   hostSessions     Session[]      @relation("HostSessions")
   clientSessions   Session[]      @relation("ClientSessions")
   accessControlEntries AccessControlEntry[]
+  supportTickets   SupportTicket[]
 }
 
 model AccessControlEntry {
@@ -70,6 +71,9 @@ model Device {
   auditEvents  DeviceAuditEvent[]
   trustRecord  DeviceTrust?
   accessPolicy DeviceAccessPolicy?
+  supportTickets SupportTicket[]
+  diagnosticReports DiagnosticReport[]
+  predictiveAlerts PredictiveAlert[]
 }
 
 model DeviceTrust {
@@ -319,6 +323,7 @@ model Session {
   createdAt DateTime      @default(now())
   host      User          @relation("HostSessions", fields: [hostId], references: [id])
   client    User          @relation("ClientSessions", fields: [clientId], references: [id])
+  sessionReplay SessionReplay?
 }
 
 model Subscription {
@@ -356,4 +361,70 @@ enum SubscriptionStatus {
   CANCELED
   TRIALING
   INCOMPLETE
+}
+
+model SupportTicket {
+  id           String   @id @default(uuid())
+  title        String
+  description  String?
+  status       String   @default("open")
+  priority     String   @default("medium")
+  deviceId     String
+  userId       String
+  aiSummary    String?
+  aiResolution String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  device       Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  diagnostics  DiagnosticReport[]
+
+  @@index([deviceId])
+  @@index([userId])
+}
+
+model DiagnosticReport {
+  id                 String   @id @default(uuid())
+  deviceId           String
+  ticketId           String?
+  cpuStatus          String
+  memoryStatus       String
+  diskStatus         String
+  networkStatus      String
+  securityStatus     String
+  aiAnalysis         String
+  recommendedActions String
+  createdAt          DateTime @default(now())
+
+  device             Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  ticket             SupportTicket? @relation(fields: [ticketId], references: [id], onDelete: SetNull)
+
+  @@index([deviceId])
+  @@index([ticketId])
+}
+
+model SessionReplay {
+  id         String   @id @default(uuid())
+  sessionId  String   @unique
+  eventsJson String
+  aiSummary  String?
+  createdAt  DateTime @default(now())
+
+  session    Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+}
+
+model PredictiveAlert {
+  id                   String   @id @default(uuid())
+  deviceId             String
+  component            String
+  predictedFailureDate DateTime?
+  confidenceScore      Float
+  reasoning            String
+  isResolved           Boolean  @default(false)
+  createdAt            DateTime @default(now())
+
+  device               Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@index([deviceId])
 }
