@@ -51,6 +51,7 @@ import {
   type DeviceCommand
 } from "./services/api.js";
 import type { CaptureState, ScreenSource } from "./types/screen.js";
+import CloudGamingPanel from "./features/cloudGaming/CloudGamingPanel.js";
 import "./styles.css";
 
 declare global {
@@ -917,6 +918,11 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
         />
       </section>
 
+      <section className="grid" style={{ marginTop: 16 }}>
+        <div style={{ gridColumn: "1 / -1", background: "#0f172a", borderRadius: 12, border: "1px solid #1e293b", overflow: "hidden", minHeight: 520 }}>
+          <CloudGamingPanel />
+        </div>
+      </section>
       {activeSession ? (
         <RemoteSessionView
           sessionId={activeSession.sessionId}
