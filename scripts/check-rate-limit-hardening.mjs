@@ -6,6 +6,7 @@ const root = process.cwd();
 const rateLimitPath = join(root, "apps", "api", "src", "middleware", "rateLimit.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
 const authRoutesPath = join(root, "apps", "api", "src", "routes", "auth.routes.ts");
+const packagePath = join(root, "package.json");
 
 function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
@@ -14,9 +15,15 @@ function read(path) {
 const rateLimitSource = read(rateLimitPath);
 const serverSource = read(serverPath);
 const authSource = read(authRoutesPath);
+const packageSource = read(packagePath);
 
 const checks = {
   rateLimitFileExists: existsSync(rateLimitPath),
+  serverFileExists: existsSync(serverPath),
+  authRoutesFileExists: existsSync(authRoutesPath),
+  packageFileExists: existsSync(packagePath),
+  packageHasRateLimitCheckScript: packageSource.includes('"rate-limit:check"') && packageSource.includes("node scripts/check-rate-limit-hardening.mjs"),
+  ciRunsRateLimitCheck: packageSource.includes("npm run rate-limit:check"),
   exportsCreateRateLimit: rateLimitSource.includes("export function createRateLimit"),
   hasNamedPolicies: rateLimitSource.includes("name?: string") && rateLimitSource.includes("limiterName"),
   hasCleanupInterval: rateLimitSource.includes("cleanupIntervalMs") && rateLimitSource.includes("nextCleanupAt"),
