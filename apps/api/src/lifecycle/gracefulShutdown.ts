@@ -4,9 +4,15 @@ import { prisma } from "../lib/prisma.js";
 import { health } from "../observability/health.js";
 import { logger } from "../observability/safeLogger.js";
 
+import type { Producer } from "kafkajs";
+import type Redis from "ioredis";
+
 interface GracefulShutdownOptions {
   server: HttpServer;
   io: SocketIoServer;
+  kafkaProducer?: Producer;
+  redisClient?: Redis;
+  kafkaConsumer?: Consumer;
   timeoutMs?: number;
 }
 
@@ -25,7 +31,7 @@ function closeSocketServer(io: SocketIoServer): Promise<void> {
   });
 }
 
-export function installGracefulShutdown({ server, io, timeoutMs = 10_000 }: GracefulShutdownOptions) {
+export function installGracefulShutdown({ server, io, kafkaProducer, redisClient, kafkaConsumer, timeoutMs = 10_000 }: GracefulShutdownOptions) {
   let shuttingDown = false;
 
   async function shutdown(signal: NodeJS.Signals) {
@@ -51,7 +57,28 @@ export function installGracefulShutdown({ server, io, timeoutMs = 10_000 }: Grac
     forceTimer.unref();
 
     try {
-      await Promise.allSettled([closeSocketServer(io), closeHttpServer(server)]);
+      const closePromises: Promise<void>[] = [
+        closeSocketServer(io),
+        closeHttpServer(server),
+      ];
+
+      if (kafkaProducer) {
+        closePromises.push(kafkaProducer.disconnect().then(() => logger.info("Kafka producer disconnected")).catch(e => logger.error("Kafka producer disconnect error", { error: e })));
+      }
+      if (redisClient) {
+        closePromises.push(new Promise<void>((resolve) => {
+          redisClient.quit(() => {
+            logger.info("Redis client disconnected");
+            resolve();
+          });
+        }).catch(e => logger.error("Redis client disconnect error", { error: e })));
+      }
+
+      if (kafkaConsumer) {
+        closePromises.push(kafkaConsumer.disconnect().then(() => logger.info("Kafka consumer disconnected")).catch(e => logger.error("Kafka consumer disconnect error", { error: e })));
+      }
+
+      await Promise.allSettled(closePromises);
       await prisma.$disconnect();
       clearTimeout(forceTimer);
       logger.info("RemoteDesk API shutdown completed", {

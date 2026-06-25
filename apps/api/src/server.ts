@@ -24,10 +24,15 @@ import connectorRoutes from "./routes/connector.routes.js";
 import betaRoutes from "./routes/beta.routes.js";
 import twoFactorRoutes from "./routes/twoFactor.routes.js";
 import aclRoutes from "./routes/acl.routes.js";
+import metricsRoutes from "./routes/metrics.routes.js";
 import blockchainRoutes from "./routes/blockchain.routes.js";
+import digitalTwinRoutes from "./routes/digitalTwin.routes.js";
 import { initSocketServer } from "./socket/index.js";
 import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
 import { health } from "./observability/health.js";
+import { startKafkaConsumer, stopKafkaConsumer } from "./lib/kafkaConsumer.js";
+import { Kafka } from "kafkajs";
+import Redis from "ioredis";
 import { logger } from "./observability/safeLogger.js";
 
 const HTTP_REQUEST_TIMEOUT_MS = 120_000;
@@ -109,14 +114,38 @@ app.use("/api/connectors", connectorRoutes);
 app.use("/api/beta", betaRoutes);
 app.use("/api/2fa", twoFactorRoutes);
 app.use("/api/acl", aclRoutes);
+app.use("/api/metrics", metricsRoutes);
 app.use("/api/blockchain", blockchainRoutes);
+app.use("/api/digital-twin", digitalTwinRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
 
 const io = initSocketServer(server);
+
+// Initialize Kafka and Redis clients
+const kafka = new Kafka({
+  clientId: "remotedesk-api",
+  brokers: [process.env.KAFKA_BROKER || "localhost:9092"],
+});
+export const producer = kafka.producer();
+export const redis = new Redis(process.env.REDIS_URL || "redis://localhost:6379");
+
+// Connect Kafka producer and Redis
+producer.connect().then(() => {
+  logger.info("Kafka producer connected");
+  startKafkaConsumer();
+}).catch(e => logger.error("Kafka producer connection error", { error: e }));
+
+redis.on("connect", () => {
+  logger.info("Redis client connected");
+});
+redis.on("error", e => logger.error("Redis client error", { error: e }));
+
+// Add these to graceful shutdown
+installGracefulShutdown({ server, io, kafkaProducer: producer, redisClient: redis, kafkaConsumer: consumer });
 health.markReady();
-installGracefulShutdown({ server, io });
+
 
 server.listen(env.port, () => {
   logger.info("RemoteDesk API listening", {
