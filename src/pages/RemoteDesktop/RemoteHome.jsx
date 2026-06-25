@@ -17,7 +17,7 @@ const STATUS_COLORS = {
   error: '#ef4444',
 };
 
-export default function RemoteHome() {
+export default function RemoteHome({ onNav }) {
   const [selected, setSelected] = useState(null);
   const [search, setSearch] = useState('');
 
@@ -112,17 +112,20 @@ export default function RemoteHome() {
 
             {selected === platform.id && (
               <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
-                <button style={{
-                  flex: 1,
-                  padding: '7px',
-                  borderRadius: 6,
-                  border: 'none',
-                  background: 'rgba(99,102,241,0.2)',
-                  color: '#6366f1',
-                  cursor: 'pointer',
-                  fontSize: 11,
-                  fontWeight: 600,
-                }}>
+                <button 
+                  onClick={() => onNav && onNav('remote-session')}
+                  style={{
+                    flex: 1,
+                    padding: '7px',
+                    borderRadius: 6,
+                    border: 'none',
+                    background: 'rgba(99,102,241,0.2)',
+                    color: '#6366f1',
+                    cursor: 'pointer',
+                    fontSize: 11,
+                    fontWeight: 600,
+                  }}
+                >
                   Connect
                 </button>
                 <button style={{

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 const SESSION_ID = 'RD-' + Date.now().toString(36).toUpperCase().slice(-8);
 
-export default function RemoteSession() {
+export default function RemoteSession({ onNav }) {
   const [connected, setConnected] = useState(false);
   const [connecting, setConnecting] = useState(false);
   const [sessionId] = useState(SESSION_ID);
@@ -35,12 +35,32 @@ export default function RemoteSession() {
     <div style={{ padding: 24, color: '#e2e8f0', minHeight: '100vh', background: 'var(--bg)' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24 }}>
         <div>
-          <h1 style={{ fontSize: 22, fontWeight: 700, marginBottom: 6 }}>🔗 Remote Session</h1>
-          <p style={{ color: 'var(--muted)', fontSize: 13 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
+            <button 
+              onClick={() => onNav && onNav('remote')}
+              style={{
+                background: 'rgba(255,255,255,0.06)',
+                border: 'none',
+                color: '#fff',
+                padding: '6px 10px',
+                borderRadius: 6,
+                cursor: 'pointer',
+                fontSize: 12,
+                fontWeight: 600,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 4
+              }}
+            >
+              ← Back
+            </button>
+            <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0 }}>🔗 Remote Session</h1>
+          </div>
+          <p style={{ color: 'var(--muted)', fontSize: 13, margin: 0 }}>
             Session ID: <span style={{ color: '#6366f1', fontFamily: 'DM Mono, monospace' }}>{sessionId}</span>
           </p>
         </div>
-        <div style={{ display: 'flex', gap: 10 }}>
+        <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
           {!connected ? (
             <button
               onClick={connect}
