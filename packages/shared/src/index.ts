@@ -109,6 +109,7 @@ export * as productionHardening from "./production-hardening/index.js";
 export * as readiness from "./readiness/index.js";
 export * as readinessSdk from "./readiness-sdk/index.js";
 export * from "./retry/index.js";
+export * from "./screenShare/index.js";
 export * from "./security/index.js";
 export * from "./socket/index.js";
 export * from "./support/index.js";
