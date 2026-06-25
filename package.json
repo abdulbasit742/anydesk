@@ -36,7 +36,8 @@
     "security-headers:check": "node scripts/check-security-headers.mjs",
     "server-timeouts:check": "node scripts/check-server-timeouts.mjs",
     "shutdown:check": "node scripts/check-graceful-shutdown.mjs",
-    "ci:local": "npm run env:validate && npm run security:scan && npm run safety:scan && npm run socket-gates:check && npm run socket-async:check && npm run runtime-env:check && npm run cors:check && npm run auth:check && npm run api-errors:check && npm run content-type:check && npm run async-routes:check && npm run connectors:check && npm run no-store:check && npm run rate-limit:check && npm run trace:check && npm run security-headers:check && npm run server-timeouts:check && npm run shutdown:check && npm run typecheck && npm run build",
+    "dependency-readiness:check": "node scripts/check-dependency-readiness.mjs",
+    "ci:local": "npm run env:validate && npm run security:scan && npm run safety:scan && npm run socket-gates:check && npm run socket-async:check && npm run runtime-env:check && npm run cors:check && npm run auth:check && npm run api-errors:check && npm run content-type:check && npm run async-routes:check && npm run connectors:check && npm run no-store:check && npm run rate-limit:check && npm run trace:check && npm run security-headers:check && npm run server-timeouts:check && npm run shutdown:check && npm run dependency-readiness:check && npm run typecheck && npm run build",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down"
   },
