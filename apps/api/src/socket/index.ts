@@ -179,7 +179,39 @@ export function initSocketServer(httpServer: HttpServer) {
       if (ticket) {
         const targetId = socket.data.userId === ticket.customerId ? ticket.assignedToId : ticket.customerId;
         if (targetId) {
-          io.to(`user:${targetId}`).emit('chat:typing', { ticketId: payload.ticketId, userId: socket.data.userId, isTyping: payload.isTyping });
+          io.to(`user:${targetId}`).emit("chat:typing", { ticketId: payload.ticketId, userId: socket.data.userId, isTyping: payload.isTyping });
+        }
+      }
+    });
+
+    // --- Agent Collision Detection ---
+    bindSafeSocketHandler<{ ticketId: string; agentId: string }>(socket, "ticket:viewing", async (payload) => {
+      const ticket = await prisma.ticket.findUnique({ where: { id: payload.ticketId } });
+      if (ticket && ticket.viewingAgentId && ticket.viewingAgentId !== payload.agentId) {
+        // Notify the current viewing agent that another agent is also viewing
+        io.to(`user:${ticket.viewingAgentId}`).emit("ticket:collision", { ticketId: payload.ticketId, collidingAgentId: payload.agentId });
+      }
+      await prisma.ticket.update({
+        where: { id: payload.ticketId },
+        data: { viewingAgentId: payload.agentId },
+      });
+    });
+
+    bindSafeSocketHandler<{ ticketId: string }>(socket, "ticket:unviewing", async (payload) => {
+      await prisma.ticket.update({
+        where: { id: payload.ticketId },
+        data: { viewingAgentId: null },
+      });
+    });
+
+    // --- Internal Team Channels ---
+    bindSafeSocketHandler<{ channelId: string; message: string }>(socket, "team:message", async (payload) => {
+      const channel = await prisma.teamChannel.findUnique({ where: { id: payload.channelId }, include: { members: true } });
+      if (channel) {
+        for (const member of channel.members) {
+          if (member.userId !== socket.data.userId) {
+            io.to(`user:${member.userId}`).emit("team:message", { channelId: payload.channelId, senderId: socket.data.userId, message: payload.message });
+          }
         }
       }
     });

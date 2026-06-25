@@ -25,6 +25,7 @@ import betaRoutes from "./routes/beta.routes.js";
 import twoFactorRoutes from "./routes/twoFactor.routes.js";
 import aclRoutes from "./routes/acl.routes.js";
 import unifiedCommunicationsRoutes from "./routes/unified-communications/index.js";
+import advancedFeaturesRoutes from "./routes/advanced-features.js";
 import { initSocketServer } from "./socket/index.js";
 import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
 import { health } from "./observability/health.js";
@@ -110,6 +111,7 @@ app.use("/api/beta", betaRoutes);
 app.use("/api/2fa", twoFactorRoutes);
 app.use("/api/acl", aclRoutes);
 app.use("/api/unified-communications", unifiedCommunicationsRoutes);
+app.use("/api/advanced-features", advancedFeaturesRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

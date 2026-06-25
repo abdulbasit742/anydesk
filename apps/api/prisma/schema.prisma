@@ -46,8 +46,10 @@ model User {
   messages         Message[]
   kbArticles       KBArticle[]
   automationRules  AutomationRule[]
-  teamChannels     TeamChannel[]  @relation("ChannelMembers")
-  createdChannels  TeamChannel[]  @relation("ChannelCreator")
+  teamChannels     TeamChannel[]  @relation("ChannelCreator")
+  channelMemberships TeamChannelMember[]
+  cannedResponses  CannedResponse[]
+  ivrFlows         IVRFlow[]
 }
 
 model AccessControlEntry {
@@ -79,6 +81,7 @@ model Device {
   auditEvents  DeviceAuditEvent[]
   trustRecord  DeviceTrust?
   accessPolicy DeviceAccessPolicy?
+  sessions     Session[] @relation("DeviceSessions")
 }
 
 model DeviceTrust {
@@ -321,13 +324,17 @@ model Session {
   id        String        @id @default(uuid())
   hostId    String
   clientId  String
+  deviceId  String?
   status    SessionStatus @default(PENDING)
   startedAt DateTime?
   endedAt   DateTime?
   duration  Int?
   createdAt DateTime      @default(now())
+  recordingUrl String?
+
   host      User          @relation("HostSessions", fields: [hostId], references: [id])
   client    User          @relation("ClientSessions", fields: [clientId], references: [id])
+  device    Device?       @relation("DeviceSessions", fields: [deviceId], references: [id])
 }
 
 model Subscription {
@@ -360,6 +367,8 @@ model Ticket {
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
   resolvedAt    DateTime?
+  sentiment     String? // positive, neutral, negative
+  viewingAgentId String?
 
   customer      User      @relation("TicketCustomer", fields: [customerId], references: [id])
   assignee      User?     @relation("TicketAssignee", fields: [assignedToId], references: [id])
@@ -376,6 +385,8 @@ model Message {
   channel     String?
   metadata    Json?
   createdAt   DateTime  @default(now())
+  translatedBody String?
+  sentiment   String? // positive, neutral, negative
 
   ticket      Ticket    @relation(fields: [ticketId], references: [id], onDelete: Cascade)
   sender      User      @relation(fields: [senderId], references: [id])
@@ -426,6 +437,30 @@ model AutomationRule {
   user        User      @relation(fields: [userId], references: [id])
 }
 
+model CannedResponse {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  content   String
+  macros    Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model IVRFlow {
+  id        String   @id @default(uuid())
+  userId    String
+  name      String
+  flowConfig Json
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User     @relation(fields: [userId], references: [id])
+}
+
 model TeamChannel {
   id          String    @id @default(uuid())
   name        String
@@ -435,7 +470,19 @@ model TeamChannel {
   updatedAt   DateTime  @updatedAt
 
   creator     User      @relation("ChannelCreator", fields: [creatorId], references: [id])
-  members     User[]    @relation("ChannelMembers")
+  members     TeamChannelMember[]
+}
+
+model TeamChannelMember {
+  id          String   @id @default(uuid())
+  channelId   String
+  userId      String
+  joinedAt    DateTime @default(now())
+
+  channel     TeamChannel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([channelId, userId])
 }
 
 enum Plan {
