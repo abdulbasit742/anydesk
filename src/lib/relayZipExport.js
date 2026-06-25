@@ -1,0 +1,298 @@
+/**
+ * relayZipExport.js — Build a complete handoff package and download as ZIP
+ * Uses JSZip (dynamically imported) to create a structured bundle.
+ * The ZIP contains: summary JSON, relay log, accounts snapshot, prompt file,
+ * instructions markdown, and a ready-to-paste handoff script.
+ */
+
+import { getAccounts, getStats } from './accountStore';
+import { getRelayLog, getRelayStats, selectBestAccount } from './relayEngine';
+import { getCreditHistory, getBurnRate } from './creditHistory';
+import { getFleetHistory } from './fleetPromptEngine';
+import { logError, logInfo } from './errorLogger';
+
+/* ── Load JSZip ────────────────────────────────────────────────── */
+async function _loadJSZip() {
+  // Try dynamic import first (if installed)
+  try {
+    const mod = await import('jszip');
+    return mod.default;
+  } catch {
+    // Fallback: load from CDN
+    await _loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js');
+    return window.JSZip;
+  }
+}
+
+function _loadScript(src) {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = resolve;
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
+
+/* ── Core Export ───────────────────────────────────────────────── */
+/**
+ * buildRelayHandoffPackage
+ * @param {object} options
+ *   prompt: string         — the prompt/task to hand off
+ *   fromAccountId: string  — source (exhausted) account
+ *   label: string          — human-readable label for the package
+ *   includeHistory: bool   — include relay/fleet history (default true)
+ * @returns {Blob} ZIP blob
+ */
+export async function buildRelayHandoffPackage(options = {}) {
+  const {
+    prompt = 'No prompt specified',
+    fromAccountId = null,
+    label = 'AgentFlow Handoff',
+    includeHistory = true,
+  } = options;
+
+  const JSZip = await _loadJSZip();
+  const zip = new JSZip();
+
+  const now = new Date();
+  const dateStr = now.toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  const rootFolder = zip.folder(`agentflow-handoff-${dateStr}`);
+
+  // 1. Summary JSON
+  const accounts = getAccounts();
+  const stats = getStats();
+  const { dailyBurn, trend, daysUntilEmpty } = getBurnRate(7);
+  const bestAccount = selectBestAccount({ excludeId: fromAccountId });
+
+  const summary = {
+    label,
+    generatedAt: now.toISOString(),
+    fromAccountId,
+    recommendedTargetAccount: bestAccount
+      ? { id: bestAccount.id, name: bestAccount.name, platform: bestAccount.platform, credits: bestAccount.credits }
+      : null,
+    fleetStats: stats,
+    burnRate: { dailyBurn, trend, daysUntilEmpty },
+    accountCount: accounts.length,
+    prompt: prompt.slice(0, 500),
+  };
+  rootFolder.file('summary.json', JSON.stringify(summary, null, 2));
+
+  // 2. Accounts snapshot
+  const accountsData = accounts.map((a) => ({
+    id: a.id,
+    name: a.name,
+    platform: a.platform,
+    credits: a.credits,
+    maxCredits: a.maxCredits,
+    status: a.status,
+    tasksCompleted: a.tasksCompleted,
+    relayCount: a.relayCount,
+  }));
+  rootFolder.file('accounts.json', JSON.stringify(accountsData, null, 2));
+
+  // 3. The prompt file
+  rootFolder.file('prompt.txt', prompt);
+
+  // 4. History (optional)
+  if (includeHistory) {
+    const histFolder = rootFolder.folder('history');
+    histFolder.file('relay-log.json', JSON.stringify(getRelayLog().slice(0, 50), null, 2));
+    histFolder.file('relay-stats.json', JSON.stringify(getRelayStats(), null, 2));
+    histFolder.file('fleet-history.json', JSON.stringify(getFleetHistory().slice(0, 20), null, 2));
+    histFolder.file('credit-history.json', JSON.stringify(getCreditHistory(7), null, 2));
+  }
+
+  // 5. Instructions markdown
+  const target = bestAccount;
+  const instructions = [
+    `# AgentFlow Handoff Package`,
+    `Generated: ${now.toLocaleString()}`,
+    `Label: ${label}`,
+    '',
+    `## Task`,
+    '```',
+    prompt,
+    '```',
+    '',
+    '## Recommended Target',
+    target
+      ? `**${target.name}** on ${target.platform} — ${target.credits} credits available`
+      : '_No available accounts with sufficient credits. Please top up._',
+    '',
+    '## Steps to Complete Handoff',
+    `1. Open **${target?.platform || 'your AI platform'}**`,
+    `2. Log in as **${target?.name || 'target account'}**`,
+    '3. Paste the contents of `prompt.txt`',
+    '4. Run the task',
+    '5. Mark complete in AgentFlow relay log',
+    '',
+    '## Account Status at Export',
+    ...accountsData.map(
+      (a) => `- **${a.name}** (${a.platform}): ${a.credits}/${a.maxCredits} credits [${a.status}]`
+    ),
+    '',
+    '## Credit Burn Rate',
+    `- Daily burn: ${dailyBurn} credits/day`,
+    `- Trend: ${trend}`,
+    `- Estimated empty in: ${daysUntilEmpty === Infinity ? 'N/A' : daysUntilEmpty + ' days'}`,
+    '',
+    `---`,
+    `_Generated by AgentFlow v1.0 — ${window.location.origin}_`,
+  ].join('\n');
+
+  rootFolder.file('INSTRUCTIONS.md', instructions);
+
+  // 6. Paste-ready handoff script
+  const script = [
+    `#!/bin/bash`,
+    `# AgentFlow Handoff Script — ${dateStr}`,
+    `# Copy and paste this into your terminal or CI pipeline`,
+    '',
+    `PROMPT="${prompt.replace(/"/g, '\\"').replace(/\n/g, ' ').slice(0, 200)}"`,
+    `TARGET_PLATFORM="${target?.platform || 'unknown'}"`,
+    `TARGET_ACCOUNT="${target?.name || 'unknown'}"`,
+    '',
+    `echo "Handoff: $TARGET_ACCOUNT on $TARGET_PLATFORM"`,
+    `echo "Prompt: $PROMPT"`,
+    `echo "Credits available: ${target?.credits || 0}"`,
+    '',
+    `# Add your platform-specific automation here`,
+    `# e.g.: curl -X POST https://api.bolt.new/prompt -d "$PROMPT"`,
+  ].join('\n');
+
+  rootFolder.file('handoff.sh', script);
+
+  logInfo('relayZipExport', `Handoff package built: ${label}`);
+  return zip;
+}
+
+/* ── Download ──────────────────────────────────────────────────── */
+/**
+ * downloadHandoffPackage
+ * High-level: build + download in one call.
+ */
+export async function downloadHandoffPackage(options = {}) {
+  try {
+    const zip = await buildRelayHandoffPackage(options);
+    const now = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+    const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `agentflow-handoff-${now}.zip`;
+    a.click();
+    URL.revokeObjectURL(url);
+    return { success: true, filename: `agentflow-handoff-${now}.zip` };
+  } catch (err) {
+    logError('relayZipExport', `Failed to build handoff package: ${err.message}`);
+    return { success: false, error: err.message };
+  }
+}
+
+/* ── Quick Export (accounts only) ──────────────────────────────── */
+export async function downloadAccountsZip() {
+  return downloadHandoffPackage({
+    prompt: 'Account export snapshot',
+    label: 'Accounts Export',
+    includeHistory: false,
+  });
+}
+
+/* ── Export Relay ZIP (for Automation Control) ─────────────────── */
+/**
+ * exportRelayZip
+ * Accepts detailed relay results and builds a ZIP archive containing
+ * instructions, JSON metadata, txt prompts, and steps.
+ */
+export async function exportRelayZip(options = {}) {
+  const {
+    goal = 'N/A',
+    buffer = 2,
+    steps = [],
+    summary = 'N/A',
+    nextPrompt = 'N/A',
+    accounts = []
+  } = options;
+
+  const JSZip = await _loadJSZip();
+  const zip = new JSZip();
+
+  const now = new Date();
+  const dateStr = now.toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  const rootFolder = zip.folder(`agentflow-relay-handoff-${dateStr}`);
+
+  // 1. README.md
+  const readme = [
+    `# AgentFlow Credit Relay Handoff Package`,
+    `Generated: ${now.toLocaleString()}`,
+    ``,
+    `## Execution Summary`,
+    `- **Goal**: ${goal}`,
+    `- **Steps Executed**: ${steps.length}`,
+    `- **Total Credits Consumed**: ${steps.reduce((sum, s) => sum + s.creditsUsed, 0)} cr`,
+    `- **Keep-Buffer Threshold**: ${buffer} cr`,
+    ``,
+    `## Files in this Package`,
+    `- README.md: This summary file`,
+    `- handoff.json: Handoff state payload metadata`,
+    `- handoff.md: Structured markdown instructions for the next workspace`,
+    `- next-prompt.txt: The prompt text to paste into the next workspace`,
+    `- steps.json: Log of completed steps in this run`,
+  ].join('\n');
+  rootFolder.file('README.md', readme);
+
+  // 2. handoff.json
+  const handoffJson = {
+    goal,
+    generatedAt: now.toISOString(),
+    minCreditsToKeep: buffer,
+    summary,
+    stepsCount: steps.length,
+    nextPrompt,
+    accountsSnapshot: accounts.map(a => ({
+      id: a.id,
+      name: a.name,
+      platform: a.platform,
+      credits: a.creditBalance ?? a.credits,
+      status: a.status
+    }))
+  };
+  rootFolder.file('handoff.json', JSON.stringify(handoffJson, null, 2));
+
+  // 3. handoff.md
+  const handoffMd = [
+    `# Handoff Report — ${summary}`,
+    `Generated at: ${now.toLocaleString()}`,
+    ``,
+    `## Original Goal`,
+    `> ${goal}`,
+    ``,
+    `## Relay Steps Completed`,
+    ...steps.map(s => `- **Step ${s.step}**: Account **${s.accountNickname}** (${s.platform}) consumed **${s.creditsUsed} cr** (Remaining balance: **${s.estimatedRemainingCredits} cr**)`),
+    ``,
+    `## Next Step Instructions`,
+    `Paste the contents of \`next-prompt.txt\` into your next workspace prompt composer.`,
+  ].join('\n');
+  rootFolder.file('handoff.md', handoffMd);
+
+  // 4. next-prompt.txt
+  rootFolder.file('next-prompt.txt', nextPrompt);
+
+  // 5. steps.json
+  rootFolder.file('steps.json', JSON.stringify(steps, null, 2));
+
+  // Generate and download
+  const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `agentflow-relay-handoff-${dateStr}.zip`;
+  a.click();
+  URL.revokeObjectURL(url);
+
+  return { success: true };
+}
+

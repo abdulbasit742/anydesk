@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Repositories Integration Dashboard</title>
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          },
+          colors: {
+            glass: 'rgba(22, 22, 30, 0.65)',
+            borderGlass: 'rgba(255, 255, 255, 0.08)',
+            neonTeal: '#22d3ee',
+            neonPurple: '#a78bfa',
+            neonGold: '#f5b731',
+            neonRed: '#ef4444',
+            darkBg: '#0e0e16',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0e0e16;
+      background-image: 
+        radial-gradient(at 10% 20%, rgba(167, 139, 250, 0.05) 0px, transparent 50%),
+        radial-gradient(at 90% 80%, rgba(34, 211, 238, 0.05) 0px, transparent 50%);
+    }
+    .glass-card {
+      background: rgba(22, 22, 30, 0.65);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .neon-shadow-teal:hover {
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+  </style>
+</head>
+<body class="text-[#e2e8f0] font-sans antialiased min-h-screen">
+
+  <div class="max-w-7xl mx-auto px-6 py-8">
+    
+    <!-- Hero Header -->
+    <header class="relative mb-10 p-8 rounded-3xl glass-card overflow-hidden border border-borderGlass">
+      <div class="absolute -top-10 -right-10 w-60 h-60 rounded-full bg-radial from-neonTeal/10 to-transparent blur-2xl"></div>
+      <div class="absolute -bottom-10 -left-10 w-60 h-60 rounded-full bg-radial from-neonPurple/10 to-transparent blur-2xl"></div>
+      
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-3xl">🔗</span>
+            <h1 class="font-display text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-neonTeal via-neonPurple to-neonGold bg-clip-text text-transparent">
+              Public Repositories Integration Matrix
+            </h1>
+          </div>
+          <p class="text-gray-400 font-mono text-xs md:text-sm ml-11">
+            Core repository dependencies, license compatibility matrices, and active integration checklists.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 font-mono text-xs text-gray-500">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+          <span>Last sweep: Just now</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+      <div class="glass-card p-6 rounded-2xl border border-borderGlass flex flex-col justify-between">
+        <span class="text-xs font-mono text-gray-500 uppercase tracking-widest">Total Repositories</span>
+        <span class="font-display text-4xl font-bold text-white my-2">20</span>
+        <span class="text-xs text-neonTeal">100% cataloged and tracked</span>
+      </div>
+      <div class="glass-card p-6 rounded-2xl border border-borderGlass flex flex-col justify-between">
+        <span class="text-xs font-mono text-gray-500 uppercase tracking-widest font-bold">High Priority</span>
+        <span class="font-display text-4xl font-bold text-neonGold my-2">8</span>
+        <span class="text-xs text-gray-400">Ready for instant pipeline use</span>
+      </div>
+      <div class="glass-card p-6 rounded-2xl border border-borderGlass flex flex-col justify-between">
+        <span class="text-xs font-mono text-gray-500 uppercase tracking-widest font-bold">Completed Integrations</span>
+        <span class="font-display text-4xl font-bold text-[#10b981] my-2">7</span>
+        <span class="text-xs text-emerald-400">⚡ Live session, scraper, audit APIs</span>
+      </div>
+      <div class="glass-card p-6 rounded-2xl border border-borderGlass flex flex-col justify-between">
+        <span class="text-xs font-mono text-gray-500 uppercase tracking-widest">License Compliance</span>
+        <span class="font-display text-4xl font-bold text-neonPurple my-2">100%</span>
+        <span class="text-xs text-[#a78bfa]">Zero AGPL code copies (view‑only only)</span>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+      <!-- Priority Distribution -->
+      <div class="glass-card p-6 rounded-2xl border border-borderGlass">
+        <h2 class="font-display text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <span>📊</span> Priority & Implementation Status
+        </h2>
+        <div class="h-64 relative">
+          <canvas id="priorityChart"></canvas>
+        </div>
+      </div>
+      <!-- License Distribution -->
+      <div class="glass-card p-6 rounded-2xl border border-borderGlass">
+        <h2 class="font-display text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <span>🛡️</span> Open-Source Licenses Distribution
+        </h2>
+        <div class="h-64 relative">
+          <canvas id="licenseChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter & Table Card -->
+    <div class="glass-card rounded-2xl border border-borderGlass overflow-hidden mb-8">
+      <div class="p-6 border-b border-borderGlass flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <h2 class="font-display text-xl font-bold text-white flex items-center gap-2">
+          <span>📋</span> Integration Directory
+        </h2>
+        
+        <!-- Tab Filters -->
+        <div class="flex flex-wrap gap-2">
+          <button onclick="filterTable('All')" id="btn-All" class="px-4 py-1.5 rounded-full text-xs font-mono border border-neonTeal bg-neonTeal/10 text-neonTeal transition-all">All</button>
+          <button onclick="filterTable('High')" id="btn-High" class="px-4 py-1.5 rounded-full text-xs font-mono border border-transparent text-gray-400 hover:border-borderGlass transition-all">High</button>
+          <button onclick="filterTable('Medium')" id="btn-Medium" class="px-4 py-1.5 rounded-full text-xs font-mono border border-transparent text-gray-400 hover:border-borderGlass transition-all">Medium</button>
+          <button onclick="filterTable('Low')" id="btn-Low" class="px-4 py-1.5 rounded-full text-xs font-mono border border-transparent text-gray-400 hover:border-borderGlass transition-all">Low</button>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto custom-scrollbar">
+        <table class="w-full text-left border-collapse text-xs md:text-sm">
+          <thead>
+            <tr class="border-b border-borderGlass text-gray-500 font-mono uppercase tracking-wider text-xs">
+              <th class="py-4 px-6">#</th>
+              <th class="py-4 px-6">Repository</th>
+              <th class="py-4 px-6">Module</th>
+              <th class="py-4 px-6">License</th>
+              <th class="py-4 px-6">Priority</th>
+              <th class="py-4 px-6">First Implementation Task</th>
+              <th class="py-4 px-6">Status</th>
+            </tr>
+          </thead>
+          <tbody id="repo-table-body">
+            <!-- Dynamic rows loaded below -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const repos = [
+      { id: 1, name: 'WhiskeySockets/Baileys', module: 'WhatsApp engine', license: 'MIT', priority: 'High', task: 'Update getBaileys() to use useMultiFileAuthState & reconnect logic', status: 'Completed' },
+      { id: 2, name: 'pedroslopez/whatsapp-web.js', module: 'WA engine fallback', license: 'MIT', priority: 'Medium', task: 'Add optional wrapper loadWebJS() in waEngine.js', status: 'Pending' },
+      { id: 3, name: 'n8n-io/n8n', module: 'Workflow automation', license: 'Apache-2.0', priority: 'Medium', task: 'Create /api/project/run-workflow connecting local instance', status: 'Pending' },
+      { id: 4, name: 'gitroomhq/postiz-app', module: 'Social posting', license: 'MIT', priority: 'Low', task: 'Add postScheduler.js to schedule posts in database', status: 'Pending' },
+      { id: 5, name: 'chatwoot/chatwoot', module: 'Unified inbox UI', license: 'AGPL-3.0', priority: 'Medium', task: 'Implement read-only ticket view via Chatwoot API', status: 'Pending' },
+      { id: 6, name: 'flowiseai/flowise', module: 'Visual AI builder', license: 'GPL-3.0', priority: 'Medium', task: 'Expose Flowise OpenAPI spec via /api/flowise/spec', status: 'Pending' },
+      { id: 7, name: 'botpress/botpress', module: 'Conversational engine', license: 'AGPL-3.0', priority: 'Medium', task: 'Map !repomap command to Botpress intent list', status: 'Pending' },
+      { id: 8, name: 'firecrawl/firecrawl', module: 'Scraper / Ingestion', license: 'MIT', priority: 'High', task: 'Implement scrapeWebsite(url) using Firecrawl key', status: 'Completed' },
+      { id: 9, name: 'apify/crawlee', module: 'Scraping pipelines', license: 'Apache-2.0', priority: 'Low', task: 'Create runCrawleeJob(jobId) wrapper', status: 'Pending' },
+      { id: 10, name: 'browserless/browserless', module: 'Media verification', license: 'MIT', priority: 'High', task: 'Add captureScreenshot(url) helper using Browserless URL', status: 'Completed' },
+      { id: 11, name: 'taskforcesh/bullmq', module: 'Async queues', license: 'MIT', priority: 'High', task: 'Install BullMQ, create queue for WhatsApp message jobs', status: 'Completed' },
+      { id: 12, name: 'louislam/uptime-kuma', module: 'Health monitoring', license: 'GPL-3.0', priority: 'Low', task: 'Add /health endpoint for Uptime-Kuma polling', status: 'Completed' },
+      { id: 13, name: 'open-telemetry/opentelemetry-js', module: 'Tracing & metrics', license: 'Apache-2.0', priority: 'Low', task: 'Add basic tracing middleware to Express app', status: 'Completed' },
+      { id: 14, name: 'grafana/loki', module: 'Log aggregation', license: 'Apache-2.0', priority: 'Low', task: 'Configure pino-loki logger transport', status: 'Pending' },
+      { id: 15, name: 'prisma/prisma', module: 'Database ORM', license: 'Apache-2.0', priority: 'High', task: 'Configure schema.prisma SQLite client config', status: 'Pending' },
+      { id: 16, name: 'colinhacks/zod', module: 'Input validation', license: 'MIT', priority: 'High', task: 'Write validation schemas for Express API routes', status: 'Pending' },
+      { id: 17, name: 'shadcn-ui/ui', module: 'Premium UI components', license: 'MIT', priority: 'Medium', task: 'Scaffold React App under /admin-ui', status: 'Pending' },
+      { id: 18, name: 'recharts/recharts', module: 'Visual charts', license: 'MIT', priority: 'High', task: 'Create /public/repo-integrations.html page', status: 'Completed' },
+      { id: 19, name: 'linkedin-developers/linkedin-api-js-client', module: 'LinkedIn posting', license: 'MIT', priority: 'Medium', task: 'Add postLinkedIn service and !linkedin command', status: 'Pending' },
+      { id: 20, name: 'facebook/facebook-nodejs-business-sdk', module: 'FB posting', license: 'MIT', priority: 'Medium', task: 'Add postFacebook service and !fb command', status: 'Pending' },
+    ];
+
+    function renderTable(filter = 'All') {
+      const tbody = document.getElementById('repo-table-body');
+      tbody.innerHTML = '';
+      
+      const filtered = filter === 'All' ? repos : repos.filter(r => r.priority === filter);
+      
+      filtered.forEach((r, idx) => {
+        const priorityColor = r.priority === 'High' ? 'text-amber-400' : r.priority === 'Medium' ? 'text-cyan-400' : 'text-purple-400';
+        const licenseColor = r.license.includes('AGPL') || r.license.includes('GPL') ? 'bg-red-950/40 text-red-400 border-red-800/30' : 'bg-slate-800/40 text-slate-300 border-slate-700/30';
+        const statusColor = r.status === 'Completed' ? 'bg-emerald-950/40 text-emerald-400 border-emerald-800/30' : 'bg-amber-950/40 text-amber-400 border-amber-800/30';
+
+        tbody.innerHTML += `
+          <tr class="border-b border-borderGlass/50 hover:bg-white/[0.02] transition-colors">
+            <td class="py-4 px-6 font-mono text-gray-500">${r.id}</td>
+            <td class="py-4 px-6 font-display font-semibold text-white">${r.name}</td>
+            <td class="py-4 px-6 text-gray-400 font-mono text-xs">${r.module}</td>
+            <td class="py-4 px-6">
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono border ${licenseColor}">${r.license}</span>
+            </td>
+            <td class="py-4 px-6 font-semibold ${priorityColor}">${r.priority}</td>
+            <td class="py-4 px-6 text-gray-300 max-w-sm overflow-hidden text-ellipsis">${r.task}</td>
+            <td class="py-4 px-6">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold border ${statusColor}">${r.status}</span>
+            </td>
+          </tr>
+        `;
+      });
+    }
+
+    function filterTable(tab) {
+      ['All', 'High', 'Medium', 'Low'].forEach(t => {
+        const btn = document.getElementById(`btn-${t}`);
+        if (t === tab) {
+          btn.className = "px-4 py-1.5 rounded-full text-xs font-mono border border-neonTeal bg-neonTeal/10 text-neonTeal transition-all";
+        } else {
+          btn.className = "px-4 py-1.5 rounded-full text-xs font-mono border border-transparent text-gray-400 hover:border-borderGlass transition-all";
+        }
+      });
+      renderTable(tab);
+    }
+
+    // Initial render
+    renderTable();
+
+    // Chart.js Setup
+    const ctxPriority = document.getElementById('priorityChart').getContext('2d');
+    const ctxLicense = document.getElementById('licenseChart').getContext('2d');
+
+    // Chart.js Defaults
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.font.family = 'Inter';
+
+    new Chart(ctxPriority, {
+      type: 'bar',
+      data: {
+        labels: ['High Priority', 'Medium Priority', 'Low Priority'],
+        datasets: [{
+          label: 'Completed',
+          data: [5, 0, 2],
+          backgroundColor: '#10b981',
+          borderRadius: 8
+        }, {
+          label: 'Pending',
+          data: [3, 8, 2],
+          backgroundColor: '#f59e0b',
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: { stacked: true, grid: { display: false } },
+          y: { stacked: true, grid: { color: 'rgba(255,255,255,0.04)' } }
+        },
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    new Chart(ctxLicense, {
+      type: 'doughnut',
+      data: {
+        labels: ['MIT', 'Apache-2.0', 'GPL-3.0', 'AGPL-3.0'],
+        datasets: [{
+          data: [11, 5, 2, 2],
+          backgroundColor: ['#22d3ee', '#a78bfa', '#f5b731', '#ef4444'],
+          borderWidth: 0,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
