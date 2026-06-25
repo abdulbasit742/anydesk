@@ -12,6 +12,7 @@ import { IncomingRequestModal } from "./components/IncomingRequestModal.js";
 import { RemoteSessionView } from "./components/RemoteSessionView.js";
 import { ScreenPreview } from "./components/ScreenPreview.js";
 import { ScreenSourcePicker } from "./components/ScreenSourcePicker.js";
+import IoTManagementPanel from "./features/iotManagement/IoTManagementPanel.js";
 import { createSocketClient } from "./services/socket.js";
 import { createScreenCaptureStream, loadScreenSources, stopScreenCaptureStream } from "./services/screenCapture.js";
 import {
@@ -917,6 +918,9 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
         />
       </section>
 
+      <section className="grid" style={{ gridColumn: "1 / -1" }}>
+        <IoTManagementPanel />
+      </section>
       {activeSession ? (
         <RemoteSessionView
           sessionId={activeSession.sessionId}
