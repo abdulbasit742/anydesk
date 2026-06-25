@@ -38,6 +38,7 @@ model User {
   subscriptions    Subscription[]
   hostSessions     Session[]      @relation("HostSessions")
   clientSessions   Session[]      @relation("ClientSessions")
+  visionAlertConfigs VisionAlertConfig[] @relation("VisionAlertConfigs")
   accessControlEntries AccessControlEntry[]
 }
 
@@ -319,6 +320,66 @@ model Session {
   createdAt DateTime      @default(now())
   host      User          @relation("HostSessions", fields: [hostId], references: [id])
   client    User          @relation("ClientSessions", fields: [clientId], references: [id])
+  visionEvents VisionEvent[]
+  visionAnalytics VisionAnalytics?
+}
+
+model VisionEvent {
+  id           String   @id @default(uuid())
+  sessionId    String
+  session      Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  eventType    String   // "ocr", "error_detected", "bsod", "app_change", "idle", "face_detected", "object_detected", "anomaly"
+  confidence   Float    @default(0.0) // 0-1 confidence score
+  metadata     Json     // Stores OCR text, detected objects, face info, etc.
+  timestamp    DateTime @default(now())
+  createdAt    DateTime @default(now())
+  
+  @@index([sessionId, timestamp])
+  @@index([eventType, createdAt])
+}
+
+model VisionAlertConfig {
+  id           String   @id @default(uuid())
+  userId       String
+  user         User     @relation("VisionAlertConfigs", fields: [userId], references: [id], onDelete: Cascade)
+  name         String
+  description  String?
+  enabled      Boolean  @default(true)
+  triggerType  String   // "text_contains", "text_matches", "error_detected", "bsod", "idle_duration", "app_change", "face_detected"
+  triggerValue String?  // e.g., "Error", "E-4502", "5000" (for idle duration in ms)
+  action       String   // "notification", "email", "webhook"
+  actionTarget String?  // e.g., email address or webhook URL
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  
+  @@index([userId, enabled])
+}
+
+model VisionAnalytics {
+  id           String   @id @default(uuid())
+  sessionId    String   @unique
+  session      Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  totalScreenTime Int    @default(0) // in seconds
+  appCategories Json    // {"VS Code": 1200, "Chrome": 800, ...}
+  websiteCategories Json // {"github.com": 600, "stackoverflow.com": 400, ...}
+  idleTime     Int      @default(0) // in seconds
+  productivityScore Float @default(0.0) // 0-100
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  
+  @@index([sessionId])
+}
+
+model VisionFrameHistory {
+  id           String   @id @default(uuid())
+  sessionId    String
+  frameData    String   // Base64-encoded frame or S3 URL
+  ocrText      String?
+  detectedObjects Json?
+  timestamp    DateTime @default(now())
+  createdAt    DateTime @default(now())
+  
+  @@index([sessionId, timestamp])
 }
 
 model Subscription {
@@ -348,6 +409,20 @@ enum SessionStatus {
   ENDED
   REJECTED
   FAILED
+}
+
+enum VisionEventType {
+  OCR
+  ERROR_DETECTED
+  BSOD
+  APP_CHANGE
+  IDLE
+  FACE_DETECTED
+  OBJECT_DETECTED
+  ANOMALY
+  UNAUTHORIZED_FACE
+  DOWNLOAD_COMPLETE
+  INSTALLATION_COMPLETE
 }
 
 enum SubscriptionStatus {
