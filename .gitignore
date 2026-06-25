@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.gradle/
+build/
+jdk/
+openjdk17/
+*.zip
+*.apk
+*.log
+local.properties
+.env
