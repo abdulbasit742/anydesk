@@ -151,6 +151,38 @@ export function initSocketServer(httpServer: HttpServer) {
     bindSafeSocketHandler<SignalPayload>(socket, ClientEvents.WebrtcOffer, (payload) => relay(ServerEvents.WebrtcOffer, payload));
     bindSafeSocketHandler<SignalPayload>(socket, ClientEvents.WebrtcAnswer, (payload) => relay(ServerEvents.WebrtcAnswer, payload));
     bindSafeSocketHandler<SignalPayload>(socket, ClientEvents.WebrtcIce, (payload) => relay(ServerEvents.WebrtcIce, payload));
+    
+    // --- Unified Communications Real-time Chat ---
+    bindSafeSocketHandler<{ ticketId: string; body: string; isInternal?: boolean }>(socket, 'chat:message', async (payload) => {
+      const message = await prisma.message.create({
+        data: {
+          ticketId: payload.ticketId,
+          senderId: socket.data.userId,
+          body: payload.body,
+          isInternal: payload.isInternal || false,
+        },
+        include: { sender: { select: { fullName: true } } }
+      });
+      
+      const ticket = await prisma.ticket.findUnique({ where: { id: payload.ticketId } });
+      if (ticket) {
+        // Notify both customer and assignee if they are online
+        io.to(`user:${ticket.customerId}`).emit('chat:message', message);
+        if (ticket.assignedToId) {
+          io.to(`user:${ticket.assignedToId}`).emit('chat:message', message);
+        }
+      }
+    });
+
+    bindSafeSocketHandler<{ ticketId: string; isTyping: boolean }>(socket, 'chat:typing', async (payload) => {
+      const ticket = await prisma.ticket.findUnique({ where: { id: payload.ticketId } });
+      if (ticket) {
+        const targetId = socket.data.userId === ticket.customerId ? ticket.assignedToId : ticket.customerId;
+        if (targetId) {
+          io.to(`user:${targetId}`).emit('chat:typing', { ticketId: payload.ticketId, userId: socket.data.userId, isTyping: payload.isTyping });
+        }
+      }
+    });
 
     bindSafeSocketHandler<{ sessionId: string; peerSocketId?: string }>(socket, ClientEvents.SessionEnd, async ({ sessionId, peerSocketId }) => {
       const session = await prisma.session.findUnique({ where: { id: sessionId } });
