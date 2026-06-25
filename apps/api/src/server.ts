@@ -27,6 +27,7 @@ import aclRoutes from "./routes/acl.routes.js";
 import metricsRoutes from "./routes/metrics.routes.js";
 import blockchainRoutes from "./routes/blockchain.routes.js";
 import digitalTwinRoutes from "./routes/digitalTwin.routes.js";
+import remediationRoutes from "./routes/remediation.routes.js";
 import { initSocketServer } from "./socket/index.js";
 import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
 import { health } from "./observability/health.js";
@@ -117,6 +118,7 @@ app.use("/api/acl", aclRoutes);
 app.use("/api/metrics", metricsRoutes);
 app.use("/api/blockchain", blockchainRoutes);
 app.use("/api/digital-twin", digitalTwinRoutes);
+app.use("/api/remediation", remediationRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

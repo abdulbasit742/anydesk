@@ -1,6 +1,7 @@
 import { Kafka } from "kafkajs";
 import { logger } from "../observability/safeLogger.js";
-import { redis } from "../server.js"; // Import redis client
+import { redis } from "../server.js";
+import { analyzeAndRemediate } from "./aiRemediation.js";
 
 const kafka = new Kafka({
   clientId: "remotedesk-consumer",
@@ -26,6 +27,9 @@ export async function startKafkaConsumer() {
         if (prediction) {
           logger.info("Predicted issue", { prediction });
           await redis.lpush(`device:${data.deviceId}:predictions`, JSON.stringify(prediction));
+          
+          // Trigger AI remediation analysis
+          await analyzeAndRemediate(data.deviceId, data.metrics);
         }
       }
     },
