@@ -4,7 +4,7 @@ import {
   shouldEmitClipboardSnapshot,
   type ClipboardDebounceState,
   type ClipboardSnapshot,
-} from '@remotedesk/shared/clipboard/index.js';
+} from '@remotedesk/shared/clipboard';
 import type { RemoteDeskDataChannelLike } from '../types/desktopPart2.js';
 
 export type ClipboardChannelMessage =

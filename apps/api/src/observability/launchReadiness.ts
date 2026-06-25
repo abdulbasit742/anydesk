@@ -2,7 +2,7 @@ import {
   isLaunchBlocked,
   summarizeLaunchChecks,
   type LaunchCheck
-} from "@remotedesk/shared/pack9/index.js";
+} from "@remotedesk/shared/pack9";
 import {
   certificationBlockers,
   supportReadinessMissing

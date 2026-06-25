@@ -12,3 +12,4 @@ coverage/
 *.log
 remotedesk-db.sql
 *.zip
+apps/api/.env
