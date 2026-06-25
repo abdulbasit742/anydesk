@@ -6,6 +6,7 @@ const root = process.cwd();
 const routePath = join(root, "apps", "api", "src", "routes", "connector.routes.ts");
 const libPath = join(root, "apps", "api", "src", "lib", "connectorCatalog.ts");
 const asyncCheckPath = join(root, "scripts", "check-async-route-handlers.mjs");
+const packagePath = join(root, "package.json");
 
 function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
@@ -14,10 +15,15 @@ function read(path) {
 const routeSource = read(routePath);
 const libSource = read(libPath);
 const asyncCheckSource = read(asyncCheckPath);
+const packageSource = read(packagePath);
 
 const checks = {
   routeFileExists: existsSync(routePath),
   libFileExists: existsSync(libPath),
+  asyncCheckFileExists: existsSync(asyncCheckPath),
+  packageFileExists: existsSync(packagePath),
+  packageHasConnectorsCheckScript: packageSource.includes('"connectors:check"') && packageSource.includes("node scripts/check-connector-routes.mjs"),
+  ciRunsConnectorsCheck: packageSource.includes("npm run connectors:check"),
   routeUsesAuth: routeSource.includes("router.use(requireAuth)"),
   routeUsesAsyncHandler: routeSource.includes("../middleware/asyncHandler.js"),
   connectorKeyParamsBounded: routeSource.includes("key: z.string().min(2).max(50)"),
