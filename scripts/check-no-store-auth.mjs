@@ -5,6 +5,7 @@ import { join } from "node:path";
 const root = process.cwd();
 const noStorePath = join(root, "apps", "api", "src", "middleware", "noStore.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
+const packagePath = join(root, "package.json");
 
 function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
@@ -12,6 +13,7 @@ function read(path) {
 
 const noStoreSource = read(noStorePath);
 const serverSource = read(serverPath);
+const packageSource = read(packagePath);
 
 const healthRouteIndex = serverSource.indexOf('app.get("/health", noStore');
 const liveHealthRouteIndex = serverSource.indexOf('app.get("/health/live", noStore');
@@ -28,6 +30,10 @@ const requestIdIndex = serverSource.indexOf("app.use(requestId)");
 
 const checks = {
   noStoreFileExists: existsSync(noStorePath),
+  serverFileExists: existsSync(serverPath),
+  packageFileExists: existsSync(packagePath),
+  packageHasNoStoreCheckScript: packageSource.includes('"no-store:check"') && packageSource.includes("node scripts/check-no-store-auth.mjs"),
+  ciRunsNoStoreCheck: packageSource.includes("npm run no-store:check"),
   exportsNoStore: noStoreSource.includes("export const noStore"),
   definesCacheControlConstant: noStoreSource.includes("NO_STORE_CACHE_CONTROL"),
   setsCacheControlNoStore: noStoreSource.includes("Cache-Control") && noStoreSource.includes("no-store"),
