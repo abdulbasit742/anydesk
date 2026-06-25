@@ -13,6 +13,8 @@ import { verifyPassword } from "../lib/password.js";
 import { verifyAccessToken } from "../lib/tokens.js";
 import { isBetaApiFeatureEnabled } from "../middleware/betaFeatureGate.js";
 import { logger } from "../observability/safeLogger.js";
+import { E2EESignaling } from "../lib/e2ee.js";
+import { ZeroTrustEngine } from "../lib/zeroTrustEngine.js";
 
 interface AuthedSocket extends Socket {
   data: {
@@ -100,9 +102,26 @@ export function initSocketServer(httpServer: HttpServer) {
       remoteDeskId: socket.data.remoteDeskId
     });
 
-    bindSafeSocketHandler<ConnectRequestPayload>(socket, ClientEvents.ConnectRequest, async (payload) => {
+    bindSafeSocketHandler<ConnectRequestPayload & { deviceId?: string, clientPublicKey?: string }>(socket, ClientEvents.ConnectRequest, async (payload) => {
       const targetId = payload.targetRemoteDeskId.replace(/\s/g, "");
       const target = await prisma.user.findUnique({ where: { remoteDeskId: targetId } });
+
+      // Zero-Trust verification before allowing connection request
+      if (payload.deviceId) {
+        const accessCheck = await ZeroTrustEngine.evaluateAccess({
+          userId: socket.data.userId,
+          deviceId: payload.deviceId,
+          ipAddress: socket.handshake.address,
+          action: "SOCKET_CONNECT_REQUEST"
+        });
+
+        if (!accessCheck.allowed) {
+          await ZeroTrustEngine.logSecurityEvent({
+            userId: socket.data.userId, deviceId: payload.deviceId, ipAddress: socket.handshake.address, action: "SOCKET_CONNECT_DENIED", details: { reason: accessCheck.reason }
+          }, accessCheck.riskScore);
+          return socket.emit(ServerEvents.Error, { message: `Zero-Trust Policy Blocked Connection: ${accessCheck.reason}` });
+        }
+      }
       if (!target?.socketId || !target.isOnline) {
         return socket.emit(ServerEvents.Error, { message: "Target is offline or not found" });
       }
@@ -112,21 +131,45 @@ export function initSocketServer(httpServer: HttpServer) {
       const session = await prisma.session.create({
         data: { hostId: target.id, clientId: socket.data.userId, status: "PENDING" }
       });
+      // E2EE Key Exchange Preparation
+      const serverKeys = E2EESignaling.generateServerKeys();
+      let signedClientKey: string | undefined;
+      
+      if (payload.clientPublicKey) {
+        signedClientKey = E2EESignaling.signClientKey(payload.clientPublicKey, serverKeys.privateKey);
+      }
+
       io.to(target.socketId).emit(ServerEvents.IncomingRequest, {
         sessionId: session.id,
         requesterRemoteDeskId: socket.data.remoteDeskId,
-        requesterSocketId: socket.id
+        requesterSocketId: socket.id,
+        e2ee: {
+          serverPublicKey: serverKeys.publicKey,
+          requesterPublicKey: payload.clientPublicKey,
+          requesterKeySignature: signedClientKey
+        }
       });
     });
 
-    bindSafeSocketHandler<SessionResponsePayload>(socket, ClientEvents.ConnectResponse, async (payload) => {
+    bindSafeSocketHandler<SessionResponsePayload & { hostPublicKey?: string }>(socket, ClientEvents.ConnectResponse, async (payload) => {
       await prisma.session.update({
         where: { id: payload.sessionId },
         data: { status: payload.accepted ? "ACTIVE" : "REJECTED", startedAt: payload.accepted ? new Date() : undefined }
       });
+      
+      const responsePayload: any = { sessionId: payload.sessionId, hostSocketId: socket.id };
+      
+      if (payload.accepted && payload.hostPublicKey) {
+        const serverKeys = E2EESignaling.generateServerKeys();
+        responsePayload.e2ee = {
+          hostPublicKey: payload.hostPublicKey,
+          hostKeySignature: E2EESignaling.signClientKey(payload.hostPublicKey, serverKeys.privateKey)
+        };
+      }
+
       io.to(payload.requesterSocketId).emit(
         payload.accepted ? ServerEvents.RequestAccepted : ServerEvents.RequestRejected,
-        { sessionId: payload.sessionId, hostSocketId: socket.id }
+        responsePayload
       );
     });
 
