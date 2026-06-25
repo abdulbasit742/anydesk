@@ -7,6 +7,7 @@ const headersPath = join(root, "apps", "api", "src", "middleware", "securityHead
 const methodGuardPath = join(root, "apps", "api", "src", "middleware", "rejectUnsupportedHttpMethod.ts");
 const queryGuardPath = join(root, "apps", "api", "src", "middleware", "rejectOversizedQueryString.ts");
 const serverPath = join(root, "apps", "api", "src", "server.ts");
+const packagePath = join(root, "package.json");
 
 function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
@@ -16,6 +17,7 @@ const headersSource = read(headersPath);
 const methodGuardSource = read(methodGuardPath);
 const queryGuardSource = read(queryGuardPath);
 const serverSource = read(serverPath);
+const packageSource = read(packagePath);
 const simpleQueryParserIndex = serverSource.indexOf('app.set("query parser", "simple")');
 const requestIdIndex = serverSource.indexOf("app.use(requestId)");
 const securityHeadersIndex = serverSource.indexOf("app.use(securityHeaders)");
@@ -25,6 +27,12 @@ const corsIndex = serverSource.indexOf("app.use(cors");
 
 const checks = {
   headersFileExists: existsSync(headersPath),
+  methodGuardFileExists: existsSync(methodGuardPath),
+  queryGuardFileExists: existsSync(queryGuardPath),
+  serverFileExists: existsSync(serverPath),
+  packageFileExists: existsSync(packagePath),
+  packageHasSecurityHeadersCheckScript: packageSource.includes('"security-headers:check"') && packageSource.includes("node scripts/check-security-headers.mjs"),
+  ciRunsSecurityHeadersCheck: packageSource.includes("npm run security-headers:check"),
   importsRuntimeEnv: headersSource.includes('../config/env.js') || headersSource.includes("../config/env.js"),
   hasContentSecurityPolicy: headersSource.includes("Content-Security-Policy") && headersSource.includes("default-src 'none'"),
   blocksFrameAncestors: headersSource.includes("frame-ancestors 'none'"),
@@ -49,7 +57,6 @@ const checks = {
   serverImportsAllowedMethods: serverSource.includes("ALLOWED_HTTP_METHODS, rejectUnsupportedHttpMethod"),
   serverCorsDerivesFromMethodGuard: serverSource.includes("ALLOWED_CORS_METHODS = [...ALLOWED_HTTP_METHODS]") && serverSource.includes("methods: ALLOWED_CORS_METHODS"),
   serverCorsIncludesHead: serverSource.includes("ALLOWED_CORS_METHODS") && methodGuardSource.includes('"HEAD"') && serverSource.includes("methods: ALLOWED_CORS_METHODS"),
-  methodGuardFileExists: existsSync(methodGuardPath),
   exportsMethodGuard: methodGuardSource.includes("export function rejectUnsupportedHttpMethod"),
   methodGuardHasAllowlist: methodGuardSource.includes("ALLOWED_HTTP_METHODS") && methodGuardSource.includes('"GET"') && methodGuardSource.includes('"HEAD"') && methodGuardSource.includes('"OPTIONS"'),
   methodGuardChecksMethod: methodGuardSource.includes("isAllowedHttpMethod") && methodGuardSource.includes("toUpperCase"),
@@ -60,7 +67,6 @@ const checks = {
   serverUsesMethodGuard: methodGuardIndex >= 0,
   methodGuardAfterSecurityHeaders: securityHeadersIndex >= 0 && methodGuardIndex >= 0 && securityHeadersIndex < methodGuardIndex,
   methodGuardBeforeQueryGuard: methodGuardIndex >= 0 && queryGuardIndex >= 0 && methodGuardIndex < queryGuardIndex,
-  queryGuardFileExists: existsSync(queryGuardPath),
   exportsQueryGuard: queryGuardSource.includes("export function rejectOversizedQueryString"),
   queryGuardHasTargetLimit: queryGuardSource.includes("MAX_REQUEST_TARGET_LENGTH") && queryGuardSource.includes("4096"),
   queryGuardHasPathLimit: queryGuardSource.includes("MAX_PATH_LENGTH") && queryGuardSource.includes("2048"),
