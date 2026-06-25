@@ -13,3 +13,4 @@ coverage/
 remotedesk-db.sql
 *.zip
 apps/api/.env
+apps/desktop/out/
