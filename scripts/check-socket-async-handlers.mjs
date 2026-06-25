@@ -5,6 +5,7 @@ import { join } from "node:path";
 const root = process.cwd();
 const socketPath = join(root, "apps", "api", "src", "socket", "index.ts");
 const shutdownPath = join(root, "apps", "api", "src", "lifecycle", "gracefulShutdown.ts");
+const packagePath = join(root, "package.json");
 
 function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
@@ -12,9 +13,14 @@ function read(path) {
 
 const socketSource = read(socketPath);
 const shutdownSource = read(shutdownPath);
+const packageSource = read(packagePath);
 
 const checks = {
   socketFileExists: existsSync(socketPath),
+  shutdownFileExists: existsSync(shutdownPath),
+  packageFileExists: existsSync(packagePath),
+  packageHasSocketAsyncCheckScript: packageSource.includes('"socket-async:check"') && packageSource.includes("node scripts/check-socket-async-handlers.mjs"),
+  ciRunsSocketAsyncCheck: packageSource.includes("npm run socket-async:check"),
   exportsSocketServer: socketSource.includes("export function initSocketServer"),
   returnsSocketInstance: socketSource.includes("return io"),
   hasSafeHandlerHelper: socketSource.includes("function bindSafeSocketHandler"),
