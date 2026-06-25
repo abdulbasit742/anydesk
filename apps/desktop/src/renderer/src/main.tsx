@@ -1,6 +1,7 @@
 import React, { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import ReactDOM from "react-dom/client";
-import { Copy, KeyRound, LogOut, Monitor, PhoneCall, PlugZap, Search, ShieldCheck } from "lucide-react";
+import { Copy, KeyRound, LogOut, Monitor, PhoneCall, PlugZap, Search, ShieldCheck, Server } from "lucide-react";
+import { ResourcePoolPanel } from "./features/resourcePool/ResourcePoolPanel.js";
 import type { IncomingRequestPayload } from "@shared/index";
 import {
   canEnableRemoteInput,
@@ -946,6 +947,20 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
           onDisconnect={() => endCurrentSession(true)}
         />
       ) : null}
+      {/* ── Distributed Computing / Resource Pool ── */}
+      <section className="grid" style={{ marginTop: 24 }}>
+        <article className="panel" style={{ gridColumn: "1 / -1", padding: 0, overflow: "hidden" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 16px", borderBottom: "1px solid #1e293b" }}>
+            <Server size={16} />
+            <h2 style={{ margin: 0, fontSize: 15 }}>Distributed Computing</h2>
+          </div>
+          <ResourcePoolPanel
+            apiBase={import.meta.env.VITE_API_BASE ?? "http://localhost:4000"}
+            token={token}
+            userId={user.id}
+          />
+        </article>
+      </section>
     </main>
   );
 }

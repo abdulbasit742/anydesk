@@ -39,6 +39,9 @@ model User {
   hostSessions     Session[]      @relation("HostSessions")
   clientSessions   Session[]      @relation("ClientSessions")
   accessControlEntries AccessControlEntry[]
+  ownedClusters        Cluster[]       @relation("OwnedClusters")
+  clusterNodes         ClusterNode[]   @relation("UserClusterNodes")
+  submittedTasks       DistributedTask[] @relation("SubmittedTasks")
 }
 
 model AccessControlEntry {
@@ -70,6 +73,7 @@ model Device {
   auditEvents  DeviceAuditEvent[]
   trustRecord  DeviceTrust?
   accessPolicy DeviceAccessPolicy?
+  clusterNodes ClusterNode[] @relation("DeviceClusterNodes")
 }
 
 model DeviceTrust {
@@ -356,4 +360,132 @@ enum SubscriptionStatus {
   CANCELED
   TRIALING
   INCOMPLETE
+}
+
+// ─── Distributed Computing / Resource Pooling ────────────────────────────────
+
+enum ClusterStatus {
+  active
+  inactive
+  degraded
+}
+
+enum NodeStatus {
+  online
+  offline
+  busy
+  idle
+  draining
+}
+
+enum TaskStatus {
+  pending
+  queued
+  running
+  completed
+  failed
+  canceled
+}
+
+enum TaskType {
+  video_render
+  ai_inference
+  compilation
+  game_stream
+  scientific_compute
+  custom
+}
+
+model Cluster {
+  id          String        @id @default(uuid())
+  name        String
+  description String?
+  ownerId     String
+  status      ClusterStatus @default(active)
+  inviteCode  String        @unique @default(uuid())
+  maxNodes    Int           @default(5)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  owner       User              @relation("OwnedClusters", fields: [ownerId], references: [id], onDelete: Cascade)
+  nodes       ClusterNode[]
+  tasks       DistributedTask[]
+
+  @@index([ownerId])
+}
+
+model ClusterNode {
+  id               String     @id @default(uuid())
+  clusterId        String
+  deviceId         String
+  userId           String
+  nickname         String?
+  status           NodeStatus @default(offline)
+  cpuShareLimit    Float      @default(0.8)
+  ramShareLimit    Float      @default(0.8)
+  gpuShareLimit    Float      @default(0.8)
+  priorityLevel    Int        @default(5)
+  lastHeartbeatAt  DateTime?
+  joinedAt         DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  cluster          Cluster          @relation(fields: [clusterId], references: [id], onDelete: Cascade)
+  device           Device           @relation("DeviceClusterNodes", fields: [deviceId], references: [id], onDelete: Cascade)
+  user             User             @relation("UserClusterNodes", fields: [userId], references: [id], onDelete: Cascade)
+  telemetry        NodeTelemetry[]
+  assignedTasks    DistributedTask[] @relation("AssignedNodeTasks")
+
+  @@unique([clusterId, deviceId])
+  @@index([clusterId])
+  @@index([deviceId])
+}
+
+model NodeTelemetry {
+  id              String   @id @default(uuid())
+  nodeId          String
+  cpuPercent      Float    @default(0)
+  ramPercent      Float    @default(0)
+  ramUsedMb       Float    @default(0)
+  ramTotalMb      Float    @default(0)
+  gpuPercent      Float?
+  gpuVramUsedMb   Float?
+  gpuVramTotalMb  Float?
+  gpuTempC        Float?
+  cpuTempC        Float?
+  networkUpKbps   Float    @default(0)
+  networkDownKbps Float    @default(0)
+  activeTaskCount Int      @default(0)
+  recordedAt      DateTime @default(now())
+
+  node            ClusterNode @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+
+  @@index([nodeId, recordedAt])
+}
+
+model DistributedTask {
+  id                 String     @id @default(uuid())
+  clusterId          String
+  submittedByUserId  String
+  assignedNodeId     String?
+  type               TaskType   @default(custom)
+  status             TaskStatus @default(pending)
+  priority           Int        @default(5)
+  name               String
+  description        String?
+  payload            Json?
+  result             Json?
+  errorMessage       String?
+  progressPercent    Float      @default(0)
+  estimatedSeconds   Int?
+  startedAt          DateTime?
+  completedAt        DateTime?
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+
+  cluster            Cluster     @relation(fields: [clusterId], references: [id], onDelete: Cascade)
+  submittedBy        User        @relation("SubmittedTasks", fields: [submittedByUserId], references: [id], onDelete: Cascade)
+  assignedNode       ClusterNode? @relation("AssignedNodeTasks", fields: [assignedNodeId], references: [id], onDelete: SetNull)
+
+  @@index([clusterId, status])
+  @@index([assignedNodeId])
 }
