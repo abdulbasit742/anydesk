@@ -6,6 +6,7 @@ import { registerInputIpc } from "./input/index.js";
 import { registerSupportBundleIpc } from "./supportBundleIpc.js";
 import { registerRemoteControlIpc } from "./remoteControlIpc.js";
 import { registerTcpTunnelIpc, cleanupAllTunnels } from "./tcpTunnelIpc.js";
+import { registerBlockchainIpc } from "./blockchainIpc.js";
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -133,6 +134,7 @@ registerInputIpc();
 registerSupportBundleIpc();
 registerRemoteControlIpc();
 registerTcpTunnelIpc(() => mainWindow);
+registerBlockchainIpc();
 
 app.whenReady().then(createWindow);
 
