@@ -24,6 +24,7 @@ import connectorRoutes from "./routes/connector.routes.js";
 import betaRoutes from "./routes/beta.routes.js";
 import twoFactorRoutes from "./routes/twoFactor.routes.js";
 import aclRoutes from "./routes/acl.routes.js";
+import meshRoutes from "./routes/mesh.routes.js";
 import { initSocketServer } from "./socket/index.js";
 import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
 import { health } from "./observability/health.js";
@@ -108,6 +109,7 @@ app.use("/api/connectors", connectorRoutes);
 app.use("/api/beta", betaRoutes);
 app.use("/api/2fa", twoFactorRoutes);
 app.use("/api/acl", aclRoutes);
+app.use("/api/mesh", meshRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
