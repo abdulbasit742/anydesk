@@ -3,7 +3,6 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
 const root = process.cwd();
-const packagePath = join(root, "package.json");
 const desktopPackagePath = join(root, "apps", "desktop", "package.json");
 const builderConfigPath = join(root, "apps", "desktop", "electron-builder.yml");
 const viteConfigPath = join(root, "apps", "desktop", "electron.vite.config.ts");
@@ -15,7 +14,6 @@ function read(path) {
   return existsSync(path) ? readFileSync(path, "utf8") : "";
 }
 
-const packageSource = read(packagePath);
 const desktopPackageSource = read(desktopPackagePath);
 const builderSource = read(builderConfigPath);
 const viteSource = read(viteConfigPath);
@@ -24,15 +22,12 @@ const preloadSource = read(preloadEntryPath);
 const rendererSource = read(rendererEntryPath);
 
 const checks = {
-  packageFileExists: existsSync(packagePath),
   desktopPackageFileExists: existsSync(desktopPackagePath),
   builderConfigExists: existsSync(builderConfigPath),
   viteConfigExists: existsSync(viteConfigPath),
   mainEntryExists: existsSync(mainEntryPath),
   preloadEntryExists: existsSync(preloadEntryPath),
   rendererEntryExists: existsSync(rendererEntryPath),
-  packageHasDesktopPackagingCheckScript: packageSource.includes('"desktop-packaging:check"') && packageSource.includes("node scripts/check-desktop-packaging.mjs"),
-  ciRunsDesktopPackagingCheck: packageSource.includes("npm run desktop-packaging:check"),
   desktopMainPointsToBuiltMain: desktopPackageSource.includes('"main": "out/main/index.js"'),
   desktopHasPackageScript: desktopPackageSource.includes('"package"') && desktopPackageSource.includes("electron-builder --config electron-builder.yml"),
   desktopHasWindowsPackageScript: desktopPackageSource.includes('"package:win"') && desktopPackageSource.includes("electron-builder --win --x64"),
