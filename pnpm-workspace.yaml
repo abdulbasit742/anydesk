@@ -14,3 +14,4 @@ onlyBuiltDependencies:
   - "@prisma/engines"
   - "esbuild"
   - "electron"
+  - "prisma"
