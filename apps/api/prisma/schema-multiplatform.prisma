@@ -1,0 +1,219 @@
+// Multi-Platform Device Support Extensions
+
+// Device Type Enumeration
+enum DeviceTypeEnum {
+  RASPBERRY_PI
+  LINUX_SERVER
+  DOCKER_HOST
+  ANDROID_TV
+  POS_TERMINAL
+  DIGITAL_SIGNAGE
+  EMBEDDED_SYSTEM
+  HEADLESS_SERVER
+  WINDOWS_SERVER
+  MACOS_DEVICE
+}
+
+// Device Groups - Organize devices by location, type, department
+model DeviceGroup {
+  id           String   @id @default(uuid())
+  userId       String
+  name         String
+  description  String?
+  location     String?
+  icon         String?
+  color        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  devices      Device[] @relation("DeviceGroupRelation")
+  
+  @@unique([userId, name])
+  @@index([userId, createdAt])
+}
+
+// Device Tags - Flexible tagging system
+model DeviceTag {
+  id           String   @id @default(uuid())
+  deviceId     String
+  tag          String
+  createdAt    DateTime @default(now())
+  
+  device       Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  
+  @@unique([deviceId, tag])
+  @@index([deviceId])
+  @@index([tag])
+}
+
+// Hardware Inventory - Auto-detected hardware specifications
+model HardwareInventory {
+  id                    String   @id @default(uuid())
+  deviceId              String   @unique
+  cpuModel              String?
+  cpuCores              Int?
+  cpuFrequencyGhz       Decimal? @db.Decimal(5, 2)
+  ramGb                 Int?
+  ramType               String?
+  diskType              String?
+  diskCapacityGb        Int?
+  gpuModel              String?
+  networkInterfaces     Json?
+  osVersion             String?
+  osKernel              String?
+  installedSoftware     Json?
+  peripherals           Json?
+  lastUpdated           DateTime @default(now())
+  
+  device                Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  
+  @@index([deviceId])
+}
+
+// Device Metrics - CPU, RAM, Disk, Network monitoring
+model DeviceMetrics {
+  id                    String   @id @default(uuid())
+  deviceId              String
+  timestamp             DateTime @default(now())
+  cpuUsage              Decimal? @db.Decimal(5, 2)
+  memoryUsage           Decimal? @db.Decimal(5, 2)
+  diskUsage             Decimal? @db.Decimal(5, 2)
+  networkBandwidth      Json?
+  temperature           Decimal? @db.Decimal(5, 2)
+  uptime                Int?
+  
+  device                Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  
+  @@index([deviceId, timestamp])
+}
+
+// Remote Shell Sessions - PTY-based terminal sessions
+model RemoteShellSession {
+  id                    String   @id @default(uuid())
+  deviceId              String
+  userId                String
+  sessionToken          String   @unique
+  status                String   @default("active")
+  shell                 String   @default("bash")
+  startedAt             DateTime @default(now())
+  endedAt               DateTime?
+  commandHistory        Json?
+  outputBuffer          String?
+  
+  device                Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([deviceId, status])
+  @@index([userId, startedAt])
+}
+
+// Docker Container Tracking
+model DockerContainer {
+  id                    String   @id @default(uuid())
+  deviceId              String
+  containerId           String
+  containerName         String?
+  image                 String?
+  status                String?
+  cpuUsage              Decimal? @db.Decimal(5, 2)
+  memoryUsage           Int?
+  ports                 Json?
+  volumes               Json?
+  environment           Json?
+  lastUpdated           DateTime @default(now())
+  
+  device                Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  
+  @@unique([deviceId, containerId])
+  @@index([deviceId, status])
+}
+
+// Kiosk Configuration
+model KioskConfig {
+  id                    String   @id @default(uuid())
+  deviceId              String   @unique
+  enabled               Boolean  @default(false)
+  lockedApp             String?
+  disableSystemUI       Boolean  @default(true)
+  disableNavigation     Boolean  @default(true)
+  allowedApps           Json?
+  emergencyUnlockCode   String?
+  scheduledModeChanges  Json?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  
+  device                Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+}
+
+// Digital Signage Playlists
+model DigitalSignagePlaylist {
+  id                    String   @id @default(uuid())
+  deviceId              String
+  name                  String
+  content               Json?
+  schedule              Json?
+  displayHealth         Json?
+  bandwidth             Int?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  
+  device                Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  
+  @@index([deviceId, createdAt])
+}
+
+// System Image Deployment
+model SystemImageDeployment {
+  id                    String   @id @default(uuid())
+  userId                String
+  sourceDeviceId        String?
+  targetDeviceIds       String[]
+  imageUrl              String?
+  imageHash             String?
+  imageSize             Int?
+  status                String   @default("pending")
+  progress              Int      @default(0)
+  startedAt             DateTime?
+  completedAt           DateTime?
+  createdAt             DateTime @default(now())
+  
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, status])
+}
+
+// Fleet Operations - Bulk actions across devices
+model FleetOperation {
+  id                    String   @id @default(uuid())
+  userId                String
+  operationType         String
+  targetDeviceIds       String[]
+  targetGroups          String[]
+  targetTags            String[]
+  parameters            Json?
+  status                String   @default("pending")
+  progress              Int      @default(0)
+  results               Json?
+  startedAt             DateTime?
+  completedAt           DateTime?
+  createdAt             DateTime @default(now())
+  
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, status])
+  @@index([operationType, createdAt])
+}
+
+// Update Device model to include new relationships
+model DeviceExtended {
+  id                    String   @id @default(uuid())
+  deviceId              String   @unique
+  deviceType            DeviceTypeEnum
+  agentVersion          String?
+  capabilities          Json?
+  groupId               String?
+  
+  device                Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  group                 DeviceGroup? @relation("DeviceGroupRelation", fields: [groupId], references: [id], onDelete: SetNull)
+}
