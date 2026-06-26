@@ -1,0 +1,162 @@
+// ============================================================================
+// TIME MACHINE & SYSTEM SNAPSHOTS - Database Schema
+// ============================================================================
+
+model SystemSnapshot {
+  id                 String   @id @default(uuid())
+  userId             String
+  deviceId           String
+  name               String?
+  type               String   @default("automatic") // automatic, manual, compliance, pre-update
+  status             String   @default("in_progress") // in_progress, completed, failed, expired
+  sizeBytes          BigInt   @default(0)
+  compressedSize     BigInt   @default(0)
+  deduplicatedSize   BigInt   @default(0)
+  hashChain          String?  // SHA-256 hash for tamper-proof verification
+  previousHash       String?  // Link to previous snapshot hash
+  metadata           Json?    // System info at time of snapshot
+  retentionDays      Int      @default(30)
+  isEncrypted        Boolean  @default(true)
+  storageLocation    String   @default("local") // local, cloud, hybrid
+  createdAt          DateTime @default(now())
+  completedAt        DateTime?
+  expiresAt          DateTime?
+
+  user               User     @relation("UserSnapshots", fields: [userId], references: [id], onDelete: Cascade)
+  components         SnapshotComponent[]
+  restorePoints      RestorePoint[]
+  changes            SystemChange[]
+
+  @@index([userId, deviceId, createdAt])
+  @@index([deviceId, status, createdAt])
+  @@index([type, createdAt])
+  @@index([expiresAt])
+}
+
+model SnapshotComponent {
+  id                 String   @id @default(uuid())
+  snapshotId         String
+  componentType      String   // "files", "registry", "services", "software", "network", "users", "env_vars", "scheduled_tasks", "browser", "desktop_layout"
+  dataPath           String   // Path to stored component data
+  sizeBytes          BigInt   @default(0)
+  checksum           String   // SHA-256 of component data
+  metadata           Json?    // Component-specific metadata
+  createdAt          DateTime @default(now())
+
+  snapshot           SystemSnapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+
+  @@index([snapshotId, componentType])
+  @@index([componentType, createdAt])
+}
+
+model SystemChange {
+  id                 String   @id @default(uuid())
+  snapshotId         String
+  userId             String
+  deviceId           String
+  changeType         String   // "file_created", "file_modified", "file_deleted", "software_installed", "software_removed", "registry_modified", "service_added", "service_removed", "network_changed", "user_added", "user_removed", "startup_added", "firewall_changed"
+  category           String   // "filesystem", "software", "registry", "services", "network", "users", "security"
+  severity           String   @default("info") // "info", "warning", "critical"
+  path               String?  // File path or registry key
+  oldValue           String?  // Previous value (for modifications)
+  newValue           String?  // New value
+  description        String
+  isSuspicious       Boolean  @default(false)
+  aiAnalysis         String?  // AI assessment of the change
+  detectedAt         DateTime @default(now())
+
+  snapshot           SystemSnapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+  user               User     @relation("UserSystemChanges", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([snapshotId, changeType])
+  @@index([userId, deviceId, detectedAt])
+  @@index([severity, isSuspicious, detectedAt])
+  @@index([category, detectedAt])
+}
+
+model RestorePoint {
+  id                 String   @id @default(uuid())
+  snapshotId         String
+  userId             String
+  deviceId           String
+  restoreType        String   // "full", "selective", "cross_device", "bare_metal"
+  status             String   @default("pending") // pending, approved, in_progress, completed, failed, rolled_back
+  targetComponents   String[] @default([]) // Which components to restore
+  targetPaths        String[] @default([]) // Specific paths for selective restore
+  targetDeviceId     String?  // For cross-device clone
+  approvedBy         String?
+  approvedAt         DateTime?
+  startedAt          DateTime?
+  completedAt        DateTime?
+  errorMessage       String?
+  rollbackAvailable  Boolean  @default(true)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  snapshot           SystemSnapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+  user               User     @relation("UserRestorePoints", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, deviceId, createdAt])
+  @@index([status, createdAt])
+  @@index([snapshotId])
+}
+
+model SnapshotSchedule {
+  id                 String   @id @default(uuid())
+  userId             String
+  deviceId           String
+  name               String
+  cronExpression     String   // e.g., "0 * * * *" for hourly
+  snapshotType       String   @default("automatic") // automatic, compliance
+  components         String[] @default([]) // Which components to snapshot
+  retentionDays      Int      @default(30)
+  maxSnapshots       Int      @default(100)
+  isActive           Boolean  @default(true)
+  lastRunAt          DateTime?
+  nextRunAt          DateTime?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  user               User     @relation("UserSnapshotSchedules", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, deviceId, isActive])
+  @@index([nextRunAt, isActive])
+}
+
+model SnapshotStorage {
+  id                 String   @id @default(uuid())
+  userId             String
+  deviceId           String
+  totalSizeBytes     BigInt   @default(0)
+  usedSizeBytes      BigInt   @default(0)
+  deduplicationRatio Float    @default(1.0) // How much space saved by dedup
+  compressionRatio   Float    @default(1.0) // How much space saved by compression
+  snapshotCount      Int      @default(0)
+  oldestSnapshot     DateTime?
+  newestSnapshot     DateTime?
+  storageQuotaBytes  BigInt?  // null = unlimited
+  updatedAt          DateTime @updatedAt
+
+  user               User     @relation("UserSnapshotStorage", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, deviceId])
+  @@index([userId])
+}
+
+model ComplianceReport {
+  id                 String   @id @default(uuid())
+  userId             String
+  deviceId           String
+  snapshotId         String
+  reportType         String   // "weekly", "monthly", "quarterly", "annual"
+  title              String
+  findings           Json     // Array of compliance findings
+  score              Float    // 0-100 compliance score
+  generatedAt        DateTime @default(now())
+  pdfUrl             String?
+
+  user               User     @relation("UserComplianceReports", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, deviceId, generatedAt])
+  @@index([reportType, generatedAt])
+}
