@@ -1,0 +1,511 @@
+// ============================================================================
+// FEATURE 1: SaaS MONETIZATION & BILLING ENGINE
+// ============================================================================
+
+model StripeInvoice {
+  id                 String   @id @default(uuid())
+  userId             String
+  stripeInvoiceId    String   @unique
+  amount             Int      // in cents
+  currency           String   @default("usd")
+  status             String   @default("draft") // draft, open, paid, uncollectible, void
+  pdfUrl             String?
+  description        String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  user               User     @relation("UserInvoices", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, createdAt])
+  @@index([status, createdAt])
+}
+
+model UsageRecord {
+  id                 String   @id @default(uuid())
+  userId             String
+  type               String   // "connection_minutes", "data_transferred_gb", "devices_registered"
+  quantity           Float
+  recordedAt         DateTime @default(now())
+  billingPeriodStart DateTime
+  billingPeriodEnd   DateTime
+  
+  user               User     @relation("UserUsageRecords", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, recordedAt])
+  @@index([userId, type, billingPeriodStart])
+}
+
+model LicenseKey {
+  id                 String   @id @default(uuid())
+  key                String   @unique
+  userId             String
+  deviceId           String?
+  activatedAt        DateTime?
+  expiresAt          DateTime?
+  isActive           Boolean  @default(true)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  user               User     @relation("UserLicenseKeys", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, isActive])
+  @@index([key, isActive])
+}
+
+model PromoCode {
+  id                 String   @id @default(uuid())
+  code               String   @unique
+  discountPercent    Int
+  maxUses            Int?
+  usedCount          Int      @default(0)
+  expiresAt          DateTime?
+  isActive           Boolean  @default(true)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  @@index([code, isActive])
+  @@index([expiresAt])
+}
+
+model Referral {
+  id                 String   @id @default(uuid())
+  referrerId         String
+  referredId         String
+  commissionAmount   Float    @default(0)
+  commissionPercent  Int      @default(20)
+  paidAt             DateTime?
+  status             String   @default("pending") // pending, paid, forfeited
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  referrer           User     @relation("ReferrerReferrals", fields: [referrerId], references: [id], onDelete: Cascade)
+  referred           User     @relation("ReferredReferrals", fields: [referredId], references: [id], onDelete: Cascade)
+  
+  @@unique([referrerId, referredId])
+  @@index([referrerId, status])
+  @@index([referredId, status])
+}
+
+// ============================================================================
+// FEATURE 2: AI-POWERED REMOTE IT SUPPORT
+// ============================================================================
+
+model AIInteraction {
+  id                 String   @id @default(uuid())
+  userId             String
+  deviceId           String
+  type               String   // "diagnosis", "fix_execution", "chat"
+  systemInfo         Json?    // CPU, RAM, disk, processes, services
+  aiResponse         String
+  suggestedFixes     Json?    // Array of fix suggestions
+  executedFixes      Json?    // Array of executed fixes
+  successRate        Float?   // 0-100
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  user               User     @relation("UserAIInteractions", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, createdAt])
+  @@index([deviceId, createdAt])
+}
+
+model AIKnowledgeBase {
+  id                 String   @id @default(uuid())
+  userId             String
+  title              String
+  description        String
+  issue              String   // Problem description
+  solution           String   // Solution/fix
+  scriptContent      String?  // Bash/PowerShell script
+  tags               String[] @default([])
+  isCustom           Boolean  @default(true)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  user               User     @relation("UserKnowledgeBase", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, createdAt])
+  @@index([tags])
+}
+
+model AIConfiguration {
+  id                 String   @id @default(uuid())
+  userId             String   @unique
+  aggressivenessLevel String  @default("medium") // low, medium, high
+  autoFixEnabled     Boolean  @default(false)
+  requireApproval    Boolean  @default(true)
+  voiceCommandsEnabled Boolean @default(false)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  user               User     @relation("UserAIConfig", fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ============================================================================
+// FEATURE 3: CYBERSECURITY & ENDPOINT PROTECTION
+// ============================================================================
+
+model SecurityEvent {
+  id                 String   @id @default(uuid())
+  deviceId           String
+  userId             String
+  eventType          String   // "suspicious_process", "file_change", "network_anomaly", "login_attempt"
+  severity           String   // "low", "medium", "high", "critical"
+  details            Json
+  detectedAt         DateTime @default(now())
+  resolvedAt         DateTime?
+  createdAt          DateTime @default(now())
+  
+  user               User     @relation("UserSecurityEvents", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([deviceId, severity, detectedAt])
+  @@index([userId, severity, detectedAt])
+}
+
+model Vulnerability {
+  id                 String   @id @default(uuid())
+  deviceId           String
+  userId             String
+  cveId              String
+  severity           String   // "low", "medium", "high", "critical"
+  description        String
+  affectedSoftware   String
+  status             String   @default("open") // open, in_progress, fixed, ignored
+  foundAt            DateTime @default(now())
+  fixedAt            DateTime?
+  createdAt          DateTime @default(now())
+  
+  user               User     @relation("UserVulnerabilities", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([deviceId, severity, status])
+  @@index([userId, status])
+}
+
+model SecurityIncident {
+  id                 String   @id @default(uuid())
+  userId             String
+  title              String
+  severity           String   // "low", "medium", "high", "critical"
+  status             String   @default("open") // open, investigating, resolved, closed
+  affectedDevices    String[] @default([])
+  timeline           Json     // Array of timeline events
+  resolution         String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  resolvedAt         DateTime?
+  
+  user               User     @relation("UserSecurityIncidents", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, status, severity])
+  @@index([createdAt])
+}
+
+model SecurityPolicy {
+  id                 String   @id @default(uuid())
+  userId             String
+  name               String
+  description        String?
+  rulesJson          Json     // Security rules
+  assignedGroups     String[] @default([])
+  enabled            Boolean  @default(true)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  user               User     @relation("UserSecurityPolicies", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, enabled])
+}
+
+model ThreatIntel {
+  id                 String   @id @default(uuid())
+  indicatorType      String   // "ip", "domain", "hash", "url"
+  value              String
+  threatLevel        String   // "low", "medium", "high", "critical"
+  source             String
+  lastSeen           DateTime @default(now())
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  @@unique([indicatorType, value])
+  @@index([threatLevel, lastSeen])
+}
+
+// ============================================================================
+// FEATURE 4: CLOUD GAMING & HIGH-PERFORMANCE STREAMING
+// ============================================================================
+
+model GamingSession {
+  id                 String   @id @default(uuid())
+  userId             String
+  deviceId           String
+  gameTitle          String
+  startedAt          DateTime @default(now())
+  endedAt            DateTime?
+  duration           Int?     // in seconds
+  averageLatency     Float?   // in ms
+  averageFps         Float?
+  averageBitrate     Float?   // in Mbps
+  maxBitrate         Float?
+  encodeTime         Float?   // in ms
+  createdAt          DateTime @default(now())
+  
+  user               User     @relation("UserGamingSessions", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, createdAt])
+  @@index([deviceId, createdAt])
+}
+
+model GameLibrary {
+  id                 String   @id @default(uuid())
+  deviceId           String
+  userId             String
+  gameName           String
+  installPath        String
+  lastPlayedAt       DateTime?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  user               User     @relation("UserGameLibraries", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, createdAt])
+  @@index([deviceId])
+}
+
+model StreamingQualityMetric {
+  id                 String   @id @default(uuid())
+  sessionId          String
+  userId             String
+  latency            Float    // in ms
+  fps                Float
+  bitrate            Float    // in Mbps
+  packetLoss         Float    // percentage
+  recordedAt         DateTime @default(now())
+  
+  user               User     @relation("UserStreamingMetrics", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([sessionId, recordedAt])
+  @@index([userId, recordedAt])
+}
+
+// ============================================================================
+// FEATURE 5: UNIFIED COMMUNICATIONS & CONTACT CENTER
+// ============================================================================
+
+model SupportTicket {
+  id                 String   @id @default(uuid())
+  userId             String
+  subject            String
+  status             String   @default("open") // open, in_progress, waiting, resolved, closed
+  priority           String   @default("medium") // low, medium, high, urgent
+  assigneeId         String?
+  channel            String   @default("email") // email, chat, phone, in_app
+  slaDueAt           DateTime?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  resolvedAt         DateTime?
+  
+  requester          User     @relation("TicketRequesters", fields: [userId], references: [id], onDelete: Cascade)
+  assignee           User?    @relation("TicketAssignees", fields: [assigneeId], references: [id], onDelete: SetNull)
+  messages           TicketMessage[]
+  
+  @@index([userId, status])
+  @@index([assigneeId, status])
+  @@index([status, slaDueAt])
+}
+
+model TicketMessage {
+  id                 String   @id @default(uuid())
+  ticketId           String
+  senderId           String
+  body               String
+  attachments        String[] @default([])
+  isInternal         Boolean  @default(false)
+  createdAt          DateTime @default(now())
+  
+  ticket             SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  sender             User     @relation("TicketMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  
+  @@index([ticketId, createdAt])
+  @@index([senderId, createdAt])
+}
+
+model ChatSession {
+  id                 String   @id @default(uuid())
+  visitorId          String
+  agentId            String?
+  status             String   @default("active") // active, waiting, closed
+  channel            String   @default("web") // web, mobile, whatsapp
+  startedAt          DateTime @default(now())
+  endedAt            DateTime?
+  duration           Int?     // in seconds
+  createdAt          DateTime @default(now())
+  
+  visitor            User     @relation("ChatVisitors", fields: [visitorId], references: [id], onDelete: Cascade)
+  agent              User?    @relation("ChatAgents", fields: [agentId], references: [id], onDelete: SetNull)
+  
+  @@index([visitorId, createdAt])
+  @@index([agentId, status])
+}
+
+model KnowledgeBaseArticle {
+  id                 String   @id @default(uuid())
+  userId             String
+  title              String
+  body               String
+  category           String
+  tags               String[] @default([])
+  views              Int      @default(0)
+  helpfulCount       Int      @default(0)
+  unhelpfulCount     Int      @default(0)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  user               User     @relation("UserKBArticles", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, category])
+  @@index([tags])
+}
+
+model AutomationRule {
+  id                 String   @id @default(uuid())
+  userId             String
+  name               String
+  trigger            String   // Event that triggers the rule
+  conditionsJson     Json     // Conditions to evaluate
+  actionsJson        Json     // Actions to execute
+  enabled            Boolean  @default(true)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  user               User     @relation("UserAutomationRules", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, enabled])
+}
+
+model CSATResponse {
+  id                 String   @id @default(uuid())
+  ticketId           String
+  userId             String
+  score              Int      // 1-5
+  comment            String?
+  createdAt          DateTime @default(now())
+  
+  user               User     @relation("UserCSATResponses", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([ticketId])
+  @@index([userId, createdAt])
+}
+
+// ============================================================================
+// FEATURE 6: MESH VPN & NETWORK INTELLIGENCE
+// ============================================================================
+
+model MeshNode {
+  id                 String   @id @default(uuid())
+  deviceId           String
+  userId             String
+  publicKey          String   @unique
+  endpoint           String?
+  allowedIps         String[] @default([])
+  lastHandshake      DateTime?
+  isOnline           Boolean  @default(false)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  user               User     @relation("UserMeshNodes", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, isOnline])
+  @@index([deviceId])
+}
+
+model MeshNetwork {
+  id                 String   @id @default(uuid())
+  userId             String
+  name               String
+  description        String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  user               User     @relation("UserMeshNetworks", fields: [userId], references: [id], onDelete: Cascade)
+  acls               MeshACL[]
+  dnsRecords         DNSRecord[]
+  
+  @@index([userId])
+}
+
+model MeshACL {
+  id                 String   @id @default(uuid())
+  networkId          String
+  sourceNode         String
+  destNode           String
+  allowedPorts       Int[]    @default([])
+  schedule           String?  // Cron expression
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  network            MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  
+  @@unique([networkId, sourceNode, destNode])
+  @@index([networkId])
+}
+
+model DNSRecord {
+  id                 String   @id @default(uuid())
+  networkId          String
+  hostname           String
+  targetNodeId       String
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  
+  network            MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  
+  @@unique([networkId, hostname])
+  @@index([networkId])
+}
+
+model NetworkMetric {
+  id                 String   @id @default(uuid())
+  nodeId             String
+  userId             String
+  latencyMs          Float
+  bandwidthMbps      Float
+  packetLoss         Float    // percentage
+  recordedAt         DateTime @default(now())
+  
+  user               User     @relation("UserNetworkMetrics", fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([nodeId, recordedAt])
+  @@index([userId, recordedAt])
+}
+
+// ============================================================================
+// Update User model to include new relationships
+// ============================================================================
+
+// Add these to the User model:
+// invoices              StripeInvoice[]
+// usageRecords          UsageRecord[]
+// licenseKeys           LicenseKey[]
+// aiInteractions        AIInteraction[]
+// aiKnowledgeBase       AIKnowledgeBase[]
+// aiConfig              AIConfiguration?
+// securityEvents        SecurityEvent[]
+// vulnerabilities       Vulnerability[]
+// securityIncidents     SecurityIncident[]
+// securityPolicies      SecurityPolicy[]
+// gamingSessions        GamingSession[]
+// gameLibraries         GameLibrary[]
+// streamingMetrics      StreamingQualityMetric[]
+// ticketsRequested      SupportTicket[]
+// ticketsAssigned       SupportTicket[]
+// ticketMessages        TicketMessage[]
+// chatVisits            ChatSession[]
+// chatAgentSessions     ChatSession[]
+// kbArticles            KnowledgeBaseArticle[]
+// automationRules       AutomationRule[]
+// csatResponses         CSATResponse[]
+// meshNodes             MeshNode[]
+// meshNetworks          MeshNetwork[]
+// networkMetrics        NetworkMetric[]
+// referrals             Referral[]
+// referredBy            Referral[]
