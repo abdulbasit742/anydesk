@@ -9,7 +9,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@remotedesk/shared": "workspace:*"
+    "@remotedesk/shared": "file:../shared"
   },
   "devDependencies": {
     "typescript": "^5.4.0",

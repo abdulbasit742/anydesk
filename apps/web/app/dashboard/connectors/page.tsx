@@ -5,6 +5,7 @@ import { ArrowLeft, CheckCircle2, ExternalLink, Plug, RefreshCw, ShieldCheck } f
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "../../../components/Button";
 import { api } from "../../../lib/api";
+import { useAuthGuard } from "../../../lib/useAuthGuard";
 
 type ConnectorInstallStatus = "available" | "installed" | "coming_soon";
 
@@ -34,6 +35,7 @@ interface ConnectorAuditEvent {
 }
 
 export default function ConnectorsPage() {
+  useAuthGuard();
   const [catalog, setCatalog] = useState<ConnectorCatalogItem[]>([]);
   const [auditEvents, setAuditEvents] = useState<ConnectorAuditEvent[]>([]);
   const [loading, setLoading] = useState(true);

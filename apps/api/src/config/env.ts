@@ -108,6 +108,8 @@ export const env = {
   isProduction,
   isDevelopment: nodeEnv === "development",
   isTest: nodeEnv === "test",
+  // When true: all /api routes are served from in-memory state (no DB). Dev only.
+  devInMemoryFallback: process.env.DEV_IN_MEMORY_FALLBACK === "true" && !isProduction,
   port: readNumber("PORT", 5000),
   databaseUrl: readRequired("DATABASE_URL", { devFallback: DEV_DATABASE_URL }),
   jwtSecret: readRequired("JWT_SECRET", { devFallback: DEV_JWT_SECRET, secret: true }),

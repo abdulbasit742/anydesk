@@ -37,32 +37,18 @@ services:
     environment:
       DATABASE_URL: postgresql://remotedesk:remotedesk@postgres:5432/remotedesk
       REDIS_URL: redis://redis:6379
-      JWT_SECRET: ${JWT_SECRET:-change-me-in-production-32chars}
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production-min-32-chars}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-change-me-refresh-in-production-32}
       PORT: 5000
       NODE_ENV: production
-      TURN_SERVER: turn:coturn:3478
-      TURN_USER: remotedesk
-      TURN_PASS: remotedesk
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:5173}
+      BETA_SOCKET_ENABLED: "true"
+      BETA_WEBRTC_SIGNALING_ENABLED: "true"
+      TURN_SERVER: ${TURN_SERVER:-turn:coturn:3478}
+      TURN_USER: ${TURN_USER:-remotedesk}
+      TURN_PASS: ${TURN_PASS:-remotedesk}
     ports:
       - "5000:5000"
-    restart: unless-stopped
-
-  signaling:
-    build:
-      context: .
-      dockerfile: apps/api/Dockerfile
-    container_name: remotedesk-signaling
-    depends_on:
-      - redis
-    environment:
-      DATABASE_URL: postgresql://remotedesk:remotedesk@postgres:5432/remotedesk
-      REDIS_URL: redis://redis:6379
-      JWT_SECRET: ${JWT_SECRET:-change-me-in-production-32chars}
-      PORT: 5001
-      NODE_ENV: production
-    ports:
-      - "5001:5001"
-    command: ["node", "apps/api/dist/signaling.js"]
     restart: unless-stopped
 
   coturn:

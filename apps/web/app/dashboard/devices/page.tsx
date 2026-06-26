@@ -5,6 +5,7 @@ import { Monitor, RefreshCw } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "../../../components/Button";
 import { api } from "../../../lib/api";
+import { useAuthGuard } from "../../../lib/useAuthGuard";
 
 interface DeviceRow {
   id: string;
@@ -17,6 +18,7 @@ interface DeviceRow {
 }
 
 export default function DevicesPage() {
+  const { initialized } = useAuthGuard();
   const [devices, setDevices] = useState<DeviceRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");

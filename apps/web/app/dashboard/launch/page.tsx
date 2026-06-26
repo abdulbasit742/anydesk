@@ -7,6 +7,7 @@ import { FormEvent, useEffect, useMemo, useState } from "react";
 import { Button } from "../../../components/Button";
 import { Input } from "../../../components/Input";
 import { api } from "../../../lib/api";
+import { useAuthGuard } from "../../../lib/useAuthGuard";
 
 type CheckStatus = "pass" | "warn" | "fail" | "not_applicable";
 
@@ -65,6 +66,7 @@ interface LaunchSnapshot {
 const checkStatuses: CheckStatus[] = ["pass", "warn", "fail", "not_applicable"];
 
 export default function LaunchReadinessPage() {
+  useAuthGuard();
   const [snapshot, setSnapshot] = useState<LaunchSnapshot | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState("");

@@ -25,6 +25,7 @@ import betaRoutes from "./routes/beta.routes.js";
 import twoFactorRoutes from "./routes/twoFactor.routes.js";
 import aclRoutes from "./routes/acl.routes.js";
 import integrationsRoutes from "./routes/integrations.routes.js";
+import { devFallbackRouter } from "./routes/devFallback.routes.js";
 import { initSocketServer } from "./socket/index.js";
 import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
 import { health } from "./observability/health.js";
@@ -98,6 +99,14 @@ app.get("/readyz", noStore, asyncHandler(async (_req, res) => {
 
 app.use(createRateLimit({ windowMs: 60_000, max: 240, name: "global-api" }));
 app.use("/api", noStore);
+
+// In-memory fallback for local dev without PostgreSQL — only active when flag is set
+if (env.devInMemoryFallback) {
+  logger.info("DEV_IN_MEMORY_FALLBACK is ON — mounting in-memory API routes (no DB required)", {
+    event: "api.fallback.mounted"
+  });
+  app.use("/api", devFallbackRouter);
+}
 
 app.use("/api/auth", authRoutes);
 app.use("/api/devices", deviceRoutes);

@@ -2,10 +2,11 @@
 
 import { Copy, KeyRound, Monitor, Plug, Rocket, Send } from "lucide-react";
 import Link from "next/link";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { api } from "../../lib/api";
+import { useAuthGuard } from "../../lib/useAuthGuard";
 import { useAuthStore } from "../../lib/auth-store";
 
 function formatId(id?: string) {
@@ -13,13 +14,14 @@ function formatId(id?: string) {
 }
 
 export default function DashboardPage() {
-  const { user, loadMe, logout } = useAuthStore();
+  const { user, initialized } = useAuthGuard();
+  const logout = useAuthStore((s) => s.logout);
   const [lookup, setLookup] = useState<any>(null);
   const [passwordSaved, setPasswordSaved] = useState(false);
 
-  useEffect(() => {
-    loadMe().catch(() => undefined);
-  }, [loadMe]);
+  if (!initialized) {
+    return <main className="flex min-h-screen items-center justify-center"><p className="text-slate-500">Loading...</p></main>;
+  }
 
   async function lookupDevice(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

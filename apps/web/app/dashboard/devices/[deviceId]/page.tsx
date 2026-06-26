@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { Button } from "../../../../components/Button";
 import { api } from "../../../../lib/api";
+import { useAuthGuard } from "../../../../lib/useAuthGuard";
 
 interface DeviceDetailResponse {
   device: {
@@ -73,6 +74,7 @@ interface DeviceDetailResponse {
 }
 
 export default function DeviceDetailPage({ params }: { params: { deviceId: string } }) {
+  useAuthGuard();
   const [detail, setDetail] = useState<DeviceDetailResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
