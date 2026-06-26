@@ -9,6 +9,8 @@ import {
   type SessionPermissionSet
 } from "@shared/index";
 import { IncomingRequestModal } from "./components/IncomingRequestModal.js";
+import { AiSupportPanel } from "./features/aiSupport/AiSupportPanel.js";
+import { ScreenAnnotationOverlay } from "./features/aiSupport/ScreenAnnotationOverlay.js";
 import { RemoteSessionView } from "./components/RemoteSessionView.js";
 import { ScreenPreview } from "./components/ScreenPreview.js";
 import { ScreenSourcePicker } from "./components/ScreenSourcePicker.js";
@@ -920,6 +922,12 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
 
       <section className="grid" style={{ gridColumn: "1 / -1" }}>
         <ZeroTrustPanel />
+      </section>
+
+      <section className="grid" style={{ marginTop: 24 }}>
+        <div style={{ gridColumn: '1 / -1', minHeight: 480 }}>
+          <AiSupportPanel token={token} deviceId={device?.id} />
+        </div>
       </section>
       {activeSession ? (
         <RemoteSessionView

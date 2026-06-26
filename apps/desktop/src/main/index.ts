@@ -10,6 +10,7 @@ import { registerBlockchainIpc } from "./blockchainIpc.js";
 import { registerMetricsIpc } from "./metricsIpc.js";
 import { startMetricsSender } from "./metricsSender.js";
 import { registerZeroTrustIpc } from "./zeroTrustIpc.js";
+import { registerAiSupportIpc } from "./aiSupportIpc.js";
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -141,6 +142,7 @@ registerBlockchainIpc();
 registerMetricsIpc();
 startMetricsSender(() => mainWindow);
 registerZeroTrustIpc();
+registerAiSupportIpc();
 
 app.whenReady().then(createWindow);
 

@@ -29,6 +29,7 @@ import blockchainRoutes from "./routes/blockchain.routes.js";
 import digitalTwinRoutes from "./routes/digitalTwin.routes.js";
 import remediationRoutes from "./routes/remediation.routes.js";
 import zeroTrustRoutes from "./routes/zeroTrust.routes.js";
+import aiSupportRoutes from "./routes/aiSupport.routes.js";
 import { initSocketServer } from "./socket/index.js";
 import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
 import { health } from "./observability/health.js";
@@ -121,6 +122,7 @@ app.use("/api/blockchain", blockchainRoutes);
 app.use("/api/digital-twin", digitalTwinRoutes);
 app.use("/api/remediation", remediationRoutes);
 app.use("/api/zero-trust", zeroTrustRoutes);
+app.use("/api/ai-support", aiSupportRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
