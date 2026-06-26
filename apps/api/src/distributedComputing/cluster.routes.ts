@@ -121,7 +121,7 @@ router.post(
       data: {
         name: body.name,
         description: body.description,
-        ownerId: req.user!.userId,
+        ownerId: req.user!.id,
         maxNodes: body.maxNodes ?? 5,
         inviteCode: crypto.randomUUID(),
       },
@@ -137,8 +137,8 @@ router.get(
     const clusters = await prisma.cluster.findMany({
       where: {
         OR: [
-          { ownerId: req.user!.userId },
-          { nodes: { some: { userId: req.user!.userId } } },
+          { ownerId: req.user!.id },
+          { nodes: { some: { userId: req.user!.id } } },
         ],
       },
       include: {
@@ -159,8 +159,8 @@ router.get(
       where: {
         id: clusterId,
         OR: [
-          { ownerId: req.user!.userId },
-          { nodes: { some: { userId: req.user!.userId } } },
+          { ownerId: req.user!.id },
+          { nodes: { some: { userId: req.user!.id } } },
         ],
       },
       include: {
@@ -186,7 +186,7 @@ router.patch(
     const { clusterId } = req.params;
     const body = updateClusterInput.parse(req.body);
     const existing = await prisma.cluster.findFirst({
-      where: { id: clusterId, ownerId: req.user!.userId },
+      where: { id: clusterId, ownerId: req.user!.id },
     });
     if (!existing) return res.status(404).json({ error: "Cluster not found or not owner" });
     const updated = await prisma.cluster.update({
@@ -208,7 +208,7 @@ router.delete(
   asyncHandler(async (req: AuthedRequest, res) => {
     const { clusterId } = req.params;
     const existing = await prisma.cluster.findFirst({
-      where: { id: clusterId, ownerId: req.user!.userId },
+      where: { id: clusterId, ownerId: req.user!.id },
     });
     if (!existing) return res.status(404).json({ error: "Cluster not found or not owner" });
     await prisma.cluster.delete({ where: { id: clusterId } });
@@ -233,7 +233,7 @@ router.post(
 
     // Verify device belongs to user
     const device = await prisma.device.findFirst({
-      where: { id: body.deviceId, userId: req.user!.userId },
+      where: { id: body.deviceId, userId: req.user!.id },
     });
     if (!device) return res.status(404).json({ error: "Device not found" });
 
@@ -247,7 +247,7 @@ router.post(
       data: {
         clusterId: cluster.id,
         deviceId: body.deviceId,
-        userId: req.user!.userId,
+        userId: req.user!.id,
         nickname: body.nickname,
       },
     });
@@ -267,8 +267,8 @@ router.delete(
 
     // Allow if user owns the node or owns the cluster
     const cluster = await prisma.cluster.findUnique({ where: { id: clusterId } });
-    const isOwner = cluster?.ownerId === req.user!.userId;
-    const isNodeUser = node.userId === req.user!.userId;
+    const isOwner = cluster?.ownerId === req.user!.id;
+    const isNodeUser = node.userId === req.user!.id;
     if (!isOwner && !isNodeUser) return res.status(403).json({ error: "Forbidden" });
 
     await prisma.clusterNode.delete({ where: { id: nodeId } });
@@ -283,7 +283,7 @@ router.patch(
     const { clusterId, nodeId } = req.params;
     const body = updateNodeLimitsInput.parse(req.body);
     const node = await prisma.clusterNode.findFirst({
-      where: { id: nodeId, clusterId, userId: req.user!.userId },
+      where: { id: nodeId, clusterId, userId: req.user!.id },
     });
     if (!node) return res.status(404).json({ error: "Node not found" });
     const updated = await prisma.clusterNode.update({
@@ -311,7 +311,7 @@ router.post(
 
     // Verify node belongs to user and cluster
     const node = await prisma.clusterNode.findFirst({
-      where: { id: body.nodeId, clusterId, userId: req.user!.userId },
+      where: { id: body.nodeId, clusterId, userId: req.user!.id },
     });
     if (!node) return res.status(404).json({ error: "Node not found" });
 
@@ -358,8 +358,8 @@ router.get(
       where: {
         id: clusterId,
         OR: [
-          { ownerId: req.user!.userId },
-          { nodes: { some: { userId: req.user!.userId } } },
+          { ownerId: req.user!.id },
+          { nodes: { some: { userId: req.user!.id } } },
         ],
       },
     });
@@ -388,8 +388,8 @@ router.post(
       where: {
         id: clusterId,
         OR: [
-          { ownerId: req.user!.userId },
-          { nodes: { some: { userId: req.user!.userId } } },
+          { ownerId: req.user!.id },
+          { nodes: { some: { userId: req.user!.id } } },
         ],
       },
     });
@@ -398,12 +398,12 @@ router.post(
     const task = await prisma.distributedTask.create({
       data: {
         clusterId,
-        submittedByUserId: req.user!.userId,
+        submittedByUserId: req.user!.id,
         name: body.name,
         description: body.description,
         type: body.type,
         priority: body.priority ?? 5,
-        payload: body.payload ?? {},
+        payload: (body.payload ?? {}) as any,
         estimatedSeconds: body.estimatedSeconds,
       },
     });
@@ -427,8 +427,8 @@ router.get(
       where: {
         id: clusterId,
         OR: [
-          { ownerId: req.user!.userId },
-          { nodes: { some: { userId: req.user!.userId } } },
+          { ownerId: req.user!.id },
+          { nodes: { some: { userId: req.user!.id } } },
         ],
       },
     });
@@ -437,7 +437,7 @@ router.get(
     const tasks = await prisma.distributedTask.findMany({
       where: {
         clusterId,
-        ...(status && { status }),
+        ...(status && { status: status as any }),
       },
       orderBy: [{ priority: "desc" }, { createdAt: "desc" }],
       take: limit,
@@ -462,9 +462,9 @@ router.patch(
     const updated = await prisma.distributedTask.update({
       where: { id: taskId },
       data: {
-        status: body.status,
+        status: body.status as any,
         ...(body.progressPercent !== undefined && { progressPercent: body.progressPercent }),
-        ...(body.result && { result: body.result }),
+        ...(body.result && { result: body.result as any }),
         ...(body.errorMessage && { errorMessage: body.errorMessage }),
         ...(isTerminal && { completedAt: new Date() }),
       },

@@ -1,1 +1,310 @@
-import { Router } from \"express\";\nimport { requireAuth, type AuthedRequest } from \"../middleware/auth.js\";\nimport { asyncHandler } from \"../middleware/asyncHandler.js\";\nimport { prisma } from \"../lib/prisma.js\";\n\nconst router = Router();\nrouter.use(requireAuth);\n\n/**\n * Get all devices for user\n */\nrouter.get(\n  \"/\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const devices = await prisma.universalDevice.findMany({\n      where: { userId: req.user.id },\n    });\n\n    res.json({\n      success: true,\n      data: devices,\n    });\n  })\n);\n\n/**\n * Get devices by type\n */\nrouter.get(\n  \"/type/:deviceType\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const { deviceType } = req.params;\n\n    const devices = await prisma.universalDevice.findMany({\n      where: {\n        userId: req.user.id,\n        deviceType,\n      },\n    });\n\n    res.json({\n      success: true,\n      data: devices,\n    });\n  })\n);\n\n/**\n * Get device details\n */\nrouter.get(\n  \"/:deviceId\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const { deviceId } = req.params;\n\n    const device = await prisma.universalDevice.findUnique({\n      where: { deviceId },\n    });\n\n    if (!device || device.userId !== req.user.id) {\n      return res.status(404).json({ success: false, error: \"Device not found\" });\n    }\n\n    res.json({\n      success: true,\n      data: device,\n    });\n  })\n);\n\n/**\n * Get device state\n */\nrouter.get(\n  \"/:deviceId/state\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const { deviceId } = req.params;\n\n    const device = await prisma.universalDevice.findUnique({\n      where: { deviceId },\n    });\n\n    if (!device || device.userId !== req.user.id) {\n      return res.status(404).json({ success: false, error: \"Device not found\" });\n    }\n\n    res.json({\n      success: true,\n      data: {\n        deviceId,\n        status: device.status,\n        lastSeen: device.lastSeen,\n        metrics: device.metrics,\n      },\n    });\n  })\n);\n\n/**\n * Send command to device\n */\nrouter.post(\n  \"/:deviceId/command\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const { deviceId } = req.params;\n    const { command, params } = req.body;\n\n    if (!command) {\n      return res.status(400).json({ success: false, error: \"Command required\" });\n    }\n\n    const device = await prisma.universalDevice.findUnique({\n      where: { deviceId },\n    });\n\n    if (!device || device.userId !== req.user.id) {\n      return res.status(404).json({ success: false, error: \"Device not found\" });\n    }\n\n    // Store command in database\n    const deviceCommand = await prisma.deviceCommand.create({\n      data: {\n        deviceId,\n        commandName: command,\n        params,\n        status: \"pending\",\n      },\n    });\n\n    res.json({\n      success: true,\n      data: deviceCommand,\n    });\n  })\n);\n\n/**\n * Get device statistics\n */\nrouter.get(\n  \"/stats/overview\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const devices = await prisma.universalDevice.findMany({\n      where: { userId: req.user.id },\n    });\n\n    const stats = {\n      total: devices.length,\n      online: devices.filter((d) => d.status === \"online\").length,\n      offline: devices.filter((d) => d.status === \"offline\").length,\n      byType: {} as Record<string, number>,\n    };\n\n    for (const device of devices) {\n      stats.byType[device.deviceType] = (stats.byType[device.deviceType] || 0) + 1;\n    }\n\n    res.json({\n      success: true,\n      data: stats,\n    });\n  })\n);\n\n/**\n * Create automation rule\n */\nrouter.post(\n  \"/automations\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const { name, description, trigger, conditions, actions, enabled } = req.body;\n\n    const rule = await prisma.automationRule.create({\n      data: {\n        userId: req.user.id,\n        name,\n        description,\n        trigger,\n        conditions,\n        actions,\n        enabled: enabled !== false,\n      },\n    });\n\n    res.json({\n      success: true,\n      data: rule,\n    });\n  })\n);\n\n/**\n * Get automation rules\n */\nrouter.get(\n  \"/automations\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const rules = await prisma.automationRule.findMany({\n      where: { userId: req.user.id },\n    });\n\n    res.json({\n      success: true,\n      data: rules,\n    });\n  })\n);\n\n/**\n * Get notifications\n */\nrouter.get(\n  \"/notifications\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const limit = parseInt(req.query.limit as string) || 50;\n    const unreadOnly = req.query.unreadOnly === \"true\";\n\n    const where: any = { userId: req.user.id };\n\n    if (unreadOnly) {\n      where.read = false;\n    }\n\n    const notifications = await prisma.unifiedNotification.findMany({\n      where,\n      orderBy: { timestamp: \"desc\" },\n      take: limit,\n    });\n\n    res.json({\n      success: true,\n      data: notifications,\n    });\n  })\n);\n\n/**\n * Mark notification as read\n */\nrouter.post(\n  \"/notifications/:notificationId/read\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const { notificationId } = req.params;\n\n    await prisma.unifiedNotification.update({\n      where: { id: notificationId },\n      data: { read: true },\n    });\n\n    res.json({\n      success: true,\n      message: \"Notification marked as read\",\n    });\n  })\n);\n\n/**\n * Get screen time analytics\n */\nrouter.get(\n  \"/analytics/screentime\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const screenTimeLogs = await prisma.screenTimeLog.findMany({\n      where: { userId: req.user.id },\n      orderBy: { date: \"desc\" },\n      take: 30,\n    });\n\n    res.json({\n      success: true,\n      data: screenTimeLogs,\n    });\n  })\n);\n\n/**\n * Get device health overview\n */\nrouter.get(\n  \"/health/overview\",\n  asyncHandler<AuthedRequest>(async (req, res) => {\n    const devices = await prisma.universalDevice.findMany({\n      where: { userId: req.user.id },\n    });\n\n    const health = {\n      devices: devices.map((d) => ({\n        deviceId: d.deviceId,\n        deviceName: d.deviceName,\n        battery: d.metrics?.battery,\n        storage: d.metrics?.storage,\n        temperature: d.metrics?.temperature,\n        status: d.status,\n      })),\n    };\n\n    res.json({\n      success: true,\n      data: health,\n    });\n  })\n);\n\nexport default router;\n
+import { Router } from "express";
+import { requireAuth, type AuthedRequest } from "../middleware/auth.js";
+import { asyncHandler } from "../middleware/asyncHandler.js";
+import { prisma } from "../lib/prisma.js";
+
+const router = Router();
+router.use(requireAuth);
+
+/**
+ * Get all devices for user
+ */
+router.get(
+  "/",
+  asyncHandler<AuthedRequest>(async (req, res) => {
+    const devices = await prisma.universalDevice.findMany({
+      where: { userId: req.user.id },
+    });
+
+    res.json({
+      success: true,
+      data: devices,
+    });
+  })
+);
+
+/**
+ * Get devices by type
+ */
+router.get(
+  "/type/:deviceType",
+  asyncHandler<AuthedRequest>(async (req, res) => {
+    const { deviceType } = req.params;
+
+    const devices = await prisma.universalDevice.findMany({
+      where: {
+        userId: req.user.id,
+        deviceType,
+      },
+    });
+
+    res.json({
+      success: true,
+      data: devices,
+    });
+  })
+);
+
+/**
+ * Get device details
+ */
+router.get(
+  "/:deviceId",
+  asyncHandler<AuthedRequest>(async (req, res) => {
+    const { deviceId } = req.params;
+
+    const device = await prisma.universalDevice.findUnique({
+      where: { deviceId },
+    });
+
+    if (!device || device.userId !== req.user.id) {
+      return res.status(404).json({ success: false, error: "Device not found" });
+    }
+
+    res.json({
+      success: true,
+      data: device,
+    });
+  })
+);
+
+/**
+ * Get device state
+ */
+router.get(
+  "/:deviceId/state",
+  asyncHandler<AuthedRequest>(async (req, res) => {
+    const { deviceId } = req.params;
+
+    const device = await prisma.universalDevice.findUnique({
+      where: { deviceId },
+    });
+
+    if (!device || device.userId !== req.user.id) {
+      return res.status(404).json({ success: false, error: "Device not found" });
+    }
+
+    res.json({
+      success: true,
+      data: {
+        deviceId,
+        status: device.status,
+        lastSeen: device.lastSeen,
+        metrics: device.metrics,
+      },
+    });
+  })
+);
+
+/**
+ * Send command to device
+ */
+router.post(
+  "/:deviceId/command",
+  asyncHandler<AuthedRequest>(async (req, res) => {
+    const { deviceId } = req.params;
+    const { command, params } = req.body;
+
+    if (!command) {
+      return res.status(400).json({ success: false, error: "Command required" });
+    }
+
+    const device = await prisma.universalDevice.findUnique({
+      where: { deviceId },
+    });
+
+    if (!device || device.userId !== req.user.id) {
+      return res.status(404).json({ success: false, error: "Device not found" });
+    }
+
+    // Store command in database
+    const deviceCommand = await prisma.deviceCommand.create({
+      data: {
+        deviceId,
+        commandName: command,
+        params,
+        status: "pending",
+      },
+    });
+
+    res.json({
+      success: true,
+      data: deviceCommand,
+    });
+  })
+);
+
+/**
+ * Get device statistics
+ */
+router.get(
+  "/stats/overview",
+  asyncHandler<AuthedRequest>(async (req, res) => {
+    const devices = await prisma.universalDevice.findMany({
+      where: { userId: req.user.id },
+    });
+
+    const stats = {
+      total: devices.length,
+      online: devices.filter((d) => d.status === "online").length,
+      offline: devices.filter((d) => d.status === "offline").length,
+      byType: {} as Record<string, number>,
+    };
+
+    for (const device of devices) {
+      stats.byType[device.deviceType] = (stats.byType[device.deviceType] || 0) + 1;
+    }
+
+    res.json({
+      success: true,
+      data: stats,
+    });
+  })
+);
+
+/**
+ * Create automation rule
+ */
+router.post(
+  "/automations",
+  asyncHandler<AuthedRequest>(async (req, res) => {
+    const { name, description, trigger, conditions, actions, enabled } = req.body;
+
+    const rule = await prisma.automationRule.create({
+      data: {
+        userId: req.user.id,
+        name,
+        description,
+        trigger,
+        conditions,
+        actions,
+        enabled: enabled !== false,
+      },
+    });
+
+    res.json({
+      success: true,
+      data: rule,
+    });
+  })
+);
+
+/**
+ * Get automation rules
+ */
+router.get(
+  "/automations",
+  asyncHandler<AuthedRequest>(async (req, res) => {
+    const rules = await prisma.automationRule.findMany({
+      where: { userId: req.user.id },
+    });
+
+    res.json({
+      success: true,
+      data: rules,
+    });
+  })
+);
+
+/**
+ * Get notifications
+ */
+router.get(
+  "/notifications",
+  asyncHandler<AuthedRequest>(async (req, res) => {
+    const limit = parseInt(req.query.limit as string) || 50;
+    const unreadOnly = req.query.unreadOnly === "true";
+
+    const where: any = { userId: req.user.id };
+
+    if (unreadOnly) {
+      where.read = false;
+    }
+
+    const notifications = await prisma.unifiedNotification.findMany({
+      where,
+      orderBy: { timestamp: "desc" },
+      take: limit,
+    });
+
+    res.json({
+      success: true,
+      data: notifications,
+    });
+  })
+);
+
+/**
+ * Mark notification as read
+ */
+router.post(
+  "/notifications/:notificationId/read",
+  asyncHandler<AuthedRequest>(async (req, res) => {
+    const { notificationId } = req.params;
+
+    await prisma.unifiedNotification.update({
+      where: { id: notificationId },
+      data: { read: true },
+    });
+
+    res.json({
+      success: true,
+      message: "Notification marked as read",
+    });
+  })
+);
+
+/**
+ * Get screen time analytics
+ */
+router.get(
+  "/analytics/screentime",
+  asyncHandler<AuthedRequest>(async (req, res) => {
+    const screenTimeLogs = await prisma.screenTimeLog.findMany({
+      where: { userId: req.user.id },
+      orderBy: { date: "desc" },
+      take: 30,
+    });
+
+    res.json({
+      success: true,
+      data: screenTimeLogs,
+    });
+  })
+);
+
+/**
+ * Get device health overview
+ */
+router.get(
+  "/health/overview",
+  asyncHandler<AuthedRequest>(async (req: any, res) => {
+    const userId = req.user?.id;
+    if (!userId) {
+      res.status(401).json({ error: "Unauthorized" });
+      return;
+    }
+    const devices = await prisma.universalDevice.findMany({
+      where: { userId },
+    });
+
+    const health = {
+      devices: devices.map((d: any) => ({
+        deviceId: d.deviceId,
+        deviceName: d.deviceName,
+        battery: (d.metrics as any)?.battery,
+        storage: d.metrics?.storage,
+        temperature: d.metrics?.temperature,
+        status: d.status,
+      })),
+    };
+
+    res.json({
+      success: true,
+      data: health,
+    });
+  })
+);
+
+export default router;
+

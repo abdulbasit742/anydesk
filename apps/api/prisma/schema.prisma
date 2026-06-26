@@ -35,7 +35,8 @@ model User {
   twoFactorSecret  String?
   twoFactorEnabled Boolean        @default(false)
   twoFactorBackupCodes String?
-  subscriptions    Subscription[]
+  isAdmin          Boolean        @default(false)
+  subscription     Subscription?
   hostSessions     Session[]      @relation("HostSessions")
   clientSessions   Session[]      @relation("ClientSessions")
   accessControlEntries AccessControlEntry[]
@@ -70,6 +71,20 @@ model User {
   channelMemberships TeamChannelMember[]
   cannedResponses  CannedResponse[]
   ivrFlows         IVRFlow[]
+  billingUsage     BillingUsage[]   @relation("UserBillingUsage")
+  invoices         Invoice[]        @relation("UserInvoices")
+  licenseKeys      LicenseKey[]     @relation("UserLicenseKeys")
+  ownedOrganizations Organization[] @relation("OrganizationOwner")
+  organizationMembers OrganizationMember[] @relation("UserOrganizationMembers")
+  remoteShellSessions RemoteShellSession[] @relation("UserRemoteShellSessions")
+  dunningRecords   DunningRecord[]  @relation("UserDunningRecords")
+  fleetOperations  FleetOperation[] @relation("UserFleetOperations")
+  affiliateProfile AffiliateProfile? @relation("UserAffiliateProfile")
+  affiliateReferral AffiliateReferral? @relation("ReferredUser")
+  deviceGroups     DeviceGroup[]    @relation("UserDeviceGroups")
+  universalDevices UniversalDevice[] @relation("UserUniversalDevices")
+  unifiedNotifications UnifiedNotification[] @relation("UserUnifiedNotifications")
+  screenTimeLogs   ScreenTimeLog[]  @relation("UserScreenTimeLogs")
 }
 
 model AccessControlEntry {
@@ -112,6 +127,14 @@ model Device {
   clusterNodes ClusterNode[] @relation("DeviceClusterNodes")
   meshNode     MeshNode?
   sessions     Session[] @relation("DeviceSessions")
+  remoteShellSessions RemoteShellSession[] @relation("DeviceRemoteShellSessions")
+  tags DeviceTag[] @relation("DeviceTags")
+  hardwareInventory HardwareInventory? @relation("DeviceHardwareInventory")
+  dockerContainers DockerContainer[] @relation("DeviceDockerContainers")
+  groupId      String?
+  group        DeviceGroup? @relation("GroupDevices", fields: [groupId], references: [id], onDelete: SetNull)
+  metrics      DeviceMetrics[] @relation("DeviceMetrics")
+  incidents    Incident[]   @relation("DeviceIncidents")
 }
 
 model DeviceTrust {
@@ -154,22 +177,24 @@ model DeviceAccessPolicy {
 model DeviceCommand {
   id             String   @id @default(uuid())
   deviceId       String
-  issuedByUserId String
-  type           String
+  issuedByUserId String?
+  type           String   @default("command")
   status         String   @default("pending")
   payload        Json?
   result         Json?
   issuedAt       DateTime @default(now())
-  expiresAt      DateTime
+  expiresAt      DateTime @default(now())
   deliveredAt    DateTime?
   completedAt    DateTime?
   failedAt       DateTime?
   failureReason  String?
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
+  commandName    String?
+  params         Json?
 
   device         Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
-  issuedBy       User     @relation("IssuedDeviceCommands", fields: [issuedByUserId], references: [id], onDelete: Cascade)
+  issuedBy       User?    @relation("IssuedDeviceCommands", fields: [issuedByUserId], references: [id], onDelete: Cascade)
 
   @@index([deviceId, status, expiresAt])
   @@index([issuedByUserId, createdAt])
@@ -372,7 +397,7 @@ model Session {
 
 model Subscription {
   id                   String             @id @default(uuid())
-  userId               String
+  userId               String             @unique
   plan                 Plan               @default(FREE)
   status               SubscriptionStatus @default(ACTIVE)
   stripeSubscriptionId String?            @unique
@@ -460,10 +485,12 @@ model AutomationRule {
   id          String    @id @default(uuid())
   userId      String
   name        String
+  description String?
   trigger     String
   conditions  Json
   actions     Json
   isActive    Boolean   @default(true)
+  enabled     Boolean   @default(true)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 
@@ -540,9 +567,6 @@ enum SubscriptionStatus {
   TRIALING
   INCOMPLETE
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 model DeviceFingerprint {
   id                String    @id @default(uuid())
   deviceId          String    @unique
@@ -566,7 +590,9 @@ model GeoFencePolicy {
   action    String   @default("block") // "block" | "alert"
   countries Json     // Array of country codes
   enabled   Boolean  @default(true)
-=======
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
 
 // ─── IoT & Smart Device Remote Management ────────────────────────────────────
 
@@ -589,12 +615,10 @@ model IoTSite {
   entities SmartHomeEntity[]
   tasks    IoTScheduledTask[]
 
->>>>>>> origin/manus/iot-management
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
-<<<<<<< HEAD
 model ZeroTrustPolicy {
   id                    String   @id @default(uuid())
   name                  String
@@ -643,6 +667,7 @@ model ThreatAlert {
 
   @@index([createdAt])
   @@index([resolved])
+}
 
 model SupportTicket {
   id           String   @id @default(uuid())
@@ -807,6 +832,7 @@ model PerformanceSnapshot {
   decodeTimeMs  Float    @default(0)
   rttMs         Float    @default(0)
   jitterMs      Float    @default(0)
+  session       Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
 }
 
 // ─── Distributed Computing / Resource Pooling ────────────────────────────────
@@ -1261,3 +1287,405 @@ model MeshPortForward {
   updatedAt     DateTime @updatedAt
   @@index([networkId, enabled])
 }
+
+model BillingUsage {
+  id             String   @id @default(uuid())
+  userId         String
+  organizationId String?
+  metric         String   // e.g., "connection_minutes", "data_transfer_mb", "api_calls"
+  quantity       Float
+  periodStart    DateTime
+  periodEnd      DateTime
+  createdAt      DateTime @default(now())
+
+  user           User     @relation("UserBillingUsage", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([periodStart, periodEnd])
+}
+
+model Organization {
+  id               String            @id @default(uuid())
+  name             String
+  slug             String            @unique
+  ownerId          String
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  whiteLabelConfig WhiteLabelConfig?
+  owner            User              @relation("OrganizationOwner", fields: [ownerId], references: [id])
+  members          OrganizationMember[]
+  invitations      OrganizationInvitation[]
+  invoices         Invoice[]         @relation("OrganizationInvoices")
+
+  @@index([ownerId])
+}
+
+model WhiteLabelConfig {
+  id             String       @id @default(uuid())
+  organizationId String       @unique
+  appName        String       @default("RemoteDesk")
+  primaryColor   String       @default("#0066cc")
+  customDomain   String?      @unique
+  logoUrl        String?
+  supportEmail   String?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+}
+
+model Invoice {
+  id              String   @id @default(uuid())
+  userId          String
+  organizationId  String?
+  stripeInvoiceId String   @unique
+  amount          Float
+  currency        String
+  status          String
+  pdfUrl          String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user            User     @relation("UserInvoices", fields: [userId], references: [id], onDelete: Cascade)
+  organization    Organization? @relation("OrganizationInvoices", fields: [organizationId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([organizationId])
+}
+
+model LicenseKey {
+  id          String   @id @default(uuid())
+  key         String   @unique
+  userId      String
+  plan        Plan     @default(FREE)
+  maxDevices  Int
+  expiresAt   DateTime?
+  status      String   @default("active")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation("UserLicenseKeys", fields: [userId], references: [id], onDelete: Cascade)
+  activations LicenseActivation[]
+
+  @@index([userId])
+}
+
+model LicenseActivation {
+  id           String   @id @default(uuid())
+  licenseKeyId String
+  deviceId     String
+  hardwareId   String
+  createdAt    DateTime @default(now())
+  licenseKey   LicenseKey @relation(fields: [licenseKeyId], references: [id], onDelete: Cascade)
+
+  @@unique([licenseKeyId, hardwareId])
+  @@index([licenseKeyId])
+}
+
+model OrganizationMember {
+  id             String       @id @default(uuid())
+  organizationId String
+  userId         String
+  role           String       @default("MEMBER")
+  joinedAt       DateTime     @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user           User         @relation("UserOrganizationMembers", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, userId])
+  @@index([organizationId])
+  @@index([userId])
+}
+
+model OrganizationInvitation {
+  id             String       @id @default(uuid())
+  organizationId String
+  email          String
+  role           String       @default("MEMBER")
+  createdAt      DateTime     @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, email])
+  @@index([organizationId])
+}
+
+model RemoteShellSession {
+  id           String    @id @default(uuid())
+  deviceId     String
+  userId       String
+  sessionToken String    @unique
+  shell        String
+  status       String
+  createdAt    DateTime  @default(now())
+  startedAt    DateTime  @default(now())
+  endedAt      DateTime?
+  user         User      @relation("UserRemoteShellSessions", fields: [userId], references: [id], onDelete: Cascade)
+  device       Device    @relation("DeviceRemoteShellSessions", fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@index([deviceId])
+  @@index([userId])
+}
+
+model DunningRecord {
+  id           String   @id @default(uuid())
+  userId       String
+  invoiceId    String
+  attemptCount Int
+  status       String
+  nextRetryAt  DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation("UserDunningRecords", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model FleetOperation {
+  id              String    @id @default(uuid())
+  userId          String
+  operationType   String
+  targetDeviceIds String[]
+  targetGroups    String[]
+  targetTags      String[]
+  parameters      Json
+  status          String
+  progress        Int       @default(0)
+  startedAt       DateTime?
+  completedAt     DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  results         Json?
+  user            User      @relation("UserFleetOperations", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model DeviceTag {
+  id        String   @id @default(uuid())
+  deviceId  String
+  tag       String
+  device    Device   @relation("DeviceTags", fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@unique([deviceId, tag])
+  @@index([tag])
+}
+
+model HardwareInventory {
+  id                String   @id @default(uuid())
+  deviceId          String   @unique
+  cpuModel          String?
+  cpuCores          Int?
+  cpuFrequencyGhz   Float?
+  ramGb             Int?
+  ramType           String?
+  diskType          String?
+  diskCapacityGb    Int?
+  gpuModel          String?
+  networkInterfaces Json?
+  osVersion         String?
+  osKernel          String?
+  installedSoftware Json?
+  peripherals       Json?
+  lastUpdated       DateTime @default(now())
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  device            Device   @relation("DeviceHardwareInventory", fields: [deviceId], references: [id], onDelete: Cascade)
+}
+
+model AffiliateProfile {
+  id             String   @id @default(uuid())
+  userId         String   @unique
+  referralCode   String   @unique
+  commissionRate Float    @default(0.2)
+  pendingPayout  Int      @default(0)
+  totalEarned    Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  user           User     @relation("UserAffiliateProfile", fields: [userId], references: [id], onDelete: Cascade)
+  referrals      AffiliateReferral[] @relation("AffiliateReferrals")
+}
+
+model AffiliateReferral {
+  id             String   @id @default(uuid())
+  affiliateId    String
+  referredUserId String   @unique
+  status         String   @default("trialing")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  affiliate      AffiliateProfile @relation("AffiliateReferrals", fields: [affiliateId], references: [id], onDelete: Cascade)
+  referredUser   User     @relation("ReferredUser", fields: [referredUserId], references: [id], onDelete: Cascade)
+
+  @@index([affiliateId])
+}
+
+model DockerContainer {
+  id            String   @id @default(uuid())
+  deviceId      String
+  containerId   String
+  containerName String?
+  image         String?
+  status        String
+  ports         Json?
+  lastUpdated   DateTime @default(now())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  device        Device   @relation("DeviceDockerContainers", fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@unique([deviceId, containerId])
+  @@index([deviceId])
+}
+
+model DeviceGroup {
+  id          String   @id @default(uuid())
+  userId      String
+  name        String
+  description String?
+  location    String?
+  icon        String?
+  color       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation("UserDeviceGroups", fields: [userId], references: [id], onDelete: Cascade)
+  devices     Device[] @relation("GroupDevices")
+
+  @@unique([userId, name])
+  @@index([userId])
+}
+
+model DeviceMetrics {
+  id             String   @id @default(uuid())
+  deviceId       String
+  timestamp      DateTime @default(now())
+  cpuPercent     Float    @default(0)
+  ramPercent     Float    @default(0)
+  ramUsedMb      Float    @default(0)
+  diskPercent    Float    @default(0)
+  networkUpKbps  Float    @default(0)
+  networkDownKbps Float    @default(0)
+  temperature    Float?
+  device         Device   @relation("DeviceMetrics", fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@index([deviceId, timestamp])
+}
+
+model UniversalDevice {
+  id         String   @id @default(uuid())
+  deviceId   String   @unique
+  userId     String
+  deviceName String
+  deviceType String
+  status     String
+  lastSeen   DateTime @default(now())
+  metrics    Json
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User     @relation("UserUniversalDevices", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model UnifiedNotification {
+  id         String   @id @default(uuid())
+  userId     String
+  deviceId   String?
+  deviceType String?
+  deviceName String?
+  title      String
+  message    String
+  priority   String   @default("info")
+  category   String   @default("general")
+  actionable Boolean  @default(false)
+  read       Boolean  @default(false)
+  timestamp  DateTime @default(now())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User     @relation("UserUnifiedNotifications", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model ScreenTimeLog {
+  id              String   @id @default(uuid())
+  userId          String
+  date            DateTime @default(now())
+  durationMinutes Int
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user            User     @relation("UserScreenTimeLogs", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Incident {
+  id            String    @id @default(uuid())
+  deviceId      String
+  issueType     String
+  description   String?
+  status        String    @default("open")
+  priority      String?
+  detectedBy    String?
+  resolvedBy    String?
+  resolution    String?
+  resolvedAt    DateTime?
+  failureReason String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  device        Device    @relation("DeviceIncidents", fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@index([deviceId])
+}
+
+model SecurityIncident {
+  id          String    @id @default(uuid())
+  deviceId    String?
+  title       String    @default("Security Alert")
+  threatType  String?
+  severity    String?
+  source      String?
+  status      String    @default("open")
+  description String?
+  mitigatedBy String?
+  mitigatedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model DeviceQuarantine {
+  id            String   @id @default(uuid())
+  deviceId      String
+  reason        String
+  status        String   @default("active")
+  quarantinedAt DateTime @default(now())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model KnowledgeBaseEntry {
+  id        String   @id @default(uuid())
+  issueType String
+  metadata  Json
+  solution  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AutomationPolicy {
+  id          String   @id @default(uuid())
+  actionType  String   @unique
+  autoApprove Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Notification {
+  id             String   @id @default(uuid())
+  type           String
+  title          String
+  message        String
+  priority       String
+  requiresAction Boolean  @default(false)
+  read           Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+
+
+
+

@@ -47,12 +47,12 @@ export class AgentSwarmManager {
     ]);
 
     // Register agents with orchestrator
-    this.orchestrator.registerAgent("healer", healer);
-    this.orchestrator.registerAgent("guardian", guardian);
-    this.orchestrator.registerAgent("optimizer", optimizer);
-    this.orchestrator.registerAgent("updater", updater);
-    this.orchestrator.registerAgent("backup", backup);
-    this.orchestrator.registerAgent("communication", communication);
+    this.orchestrator.registerAgent("healer" as any, healer);
+    this.orchestrator.registerAgent("guardian" as any, guardian);
+    this.orchestrator.registerAgent("optimizer" as any, optimizer);
+    this.orchestrator.registerAgent("updater" as any, updater);
+    this.orchestrator.registerAgent("backup" as any, backup);
+    this.orchestrator.registerAgent("communication" as any, communication);
 
     // Store agents
     this.agents.set("healer", healer);

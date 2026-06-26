@@ -3,14 +3,14 @@ import { prisma } from "../lib/prisma.js";
 import { verifyAccessToken } from "../lib/tokens.js";
 
 export interface AuthedRequest extends Request {
-  user?: {
+  user: {
     id: string;
     email: string;
     remoteDeskId: string;
   };
 }
 
-export async function requireAuth(req: AuthedRequest, res: Response, next: NextFunction) {
+export async function requireAuth(req: any, res: Response, next: NextFunction) {
   const header = req.headers.authorization;
   if (!header?.startsWith("Bearer ")) {
     return res.status(401).json({ success: false, message: "Missing token" });

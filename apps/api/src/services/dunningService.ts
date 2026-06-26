@@ -118,13 +118,13 @@ export class DunningService {
   private async sendDunningEmail(userId: string, attemptCount: number): Promise<void> {
     const user = await prisma.user.findUnique({
       where: { id: userId },
-      select: { email: true, name: true },
+      select: { email: true, fullName: true },
     });
 
     if (!user) return;
 
     const subject = this.getDunningEmailSubject(attemptCount);
-    const body = this.getDunningEmailBody(attemptCount, user.name || "");
+    const body = this.getDunningEmailBody(attemptCount, user.fullName || "");
 
     // TODO: Send email via SendGrid, AWS SES, etc.
     console.log(`Sending dunning email to ${user.email}: ${subject}`);
@@ -136,13 +136,13 @@ export class DunningService {
   private async sendDowngradeEmail(userId: string): Promise<void> {
     const user = await prisma.user.findUnique({
       where: { id: userId },
-      select: { email: true, name: true },
+      select: { email: true, fullName: true },
     });
 
     if (!user) return;
 
     const subject = "Your RemoteDesk subscription has been downgraded";
-    const body = `Hi ${user.name},\n\nYour subscription has been downgraded to the Free plan due to failed payment attempts.\n\nPlease update your payment method to restore access to premium features.`;
+    const body = `Hi ${user.fullName},\n\nYour subscription has been downgraded to the Free plan due to failed payment attempts.\n\nPlease update your payment method to restore access to premium features.`;
 
     // TODO: Send email
     console.log(`Sending downgrade email to ${user.email}: ${subject}`);

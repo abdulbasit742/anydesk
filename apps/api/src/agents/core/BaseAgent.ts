@@ -135,12 +135,7 @@ export abstract class BaseAgent extends EventEmitter {
   /**
    * Get agent status
    */
-  getStatus(): {
-    agentId: string;
-    agentType: AgentType;
-    isActive: boolean;
-    actionCount: number;
-  } {
+  getStatus(): any {
     return {
       agentId: this.agentId,
       agentType: this.agentType,

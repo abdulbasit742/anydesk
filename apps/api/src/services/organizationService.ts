@@ -39,7 +39,7 @@ export class OrganizationService {
       where: { id: organizationId },
       include: {
         members: {
-          include: { user: { select: { id: true, email: true, name: true } } },
+          include: { user: { select: { id: true, email: true, fullName: true } } },
         },
       },
     });
@@ -160,7 +160,7 @@ export class OrganizationService {
       where: { organizationId_userId: { organizationId, userId } },
     });
 
-    return member?.role || null;
+    return (member?.role as OrganizationRole) || null;
   }
 
   /**

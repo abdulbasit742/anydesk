@@ -21,8 +21,8 @@ router.get(
       where: {
         id: clusterId,
         OR: [
-          { ownerId: req.user!.userId },
-          { nodes: { some: { userId: req.user!.userId } } },
+          { ownerId: req.user.id },
+          { nodes: { some: { userId: req.user.id } } },
         ],
       },
     });

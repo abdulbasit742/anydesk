@@ -103,7 +103,10 @@ router.get(
 
     const sessions = await prisma.session.findMany({
       where: {
-        userId: req.user!.id,
+        OR: [
+          { hostId: req.user!.id },
+          { clientId: req.user!.id },
+        ],
         createdAt: { gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) },
       },
       select: {
@@ -114,7 +117,7 @@ router.get(
 
     let totalDuration = 0;
     for (const session of sessions) {
-      if (session.endedAt) {
+      if (session.endedAt && session.startedAt) {
         totalDuration += session.endedAt.getTime() - session.startedAt.getTime();
       }
     }

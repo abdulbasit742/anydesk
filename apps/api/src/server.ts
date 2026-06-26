@@ -39,9 +39,9 @@ import advancedFeaturesRoutes from "./routes/advanced-features.js";
 import { initSocketServer } from "./socket/index.js";
 import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
 import { health } from "./observability/health.js";
-import { startKafkaConsumer, stopKafkaConsumer } from "./lib/kafkaConsumer.js";
+import { startKafkaConsumer, stopKafkaConsumer, consumer } from "./lib/kafkaConsumer.js";
 import { Kafka } from "kafkajs";
-import Redis from "ioredis";
+import { Redis } from "ioredis";
 import { logger } from "./observability/safeLogger.js";
 
 const HTTP_REQUEST_TIMEOUT_MS = 120_000;
@@ -86,7 +86,7 @@ app.use(cors({ origin: env.corsOrigin, credentials: true, methods: ALLOWED_CORS_
 app.use(rejectUnsupportedContentEncoding);
 app.use(requireJsonContentType);
 app.use(rejectUnsupportedJsonCharset);
-app.use(express.json({ limit: JSON_BODY_LIMIT, type: JSON_BODY_TYPES, inflate: false, strict: true }));
+app.use(express.json({ limit: JSON_BODY_LIMIT, type: JSON_BODY_TYPES as any, inflate: false, strict: true }));
 
 app.get("/health", noStore, (_req, res) => {
   res.json(health.liveness());
@@ -159,7 +159,7 @@ producer.connect().then(() => {
 redis.on("connect", () => {
   logger.info("Redis client connected");
 });
-redis.on("error", e => logger.error("Redis client error", { error: e }));
+redis.on("error", (e: any) => logger.error("Redis client error", { error: e }));
 
 // Add these to graceful shutdown
 installGracefulShutdown({ server, io, kafkaProducer: producer, redisClient: redis, kafkaConsumer: consumer });

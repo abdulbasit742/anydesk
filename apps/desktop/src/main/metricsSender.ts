@@ -13,8 +13,7 @@ export function startMetricsSender(mainWindow: () => BrowserWindow | null) {
     if (window) {
       try {
         const metrics = await window.webContents.ipcRenderer.invoke("metrics:get-device-metrics");
-        // Send metrics to the API
-        await axios.post(\'http://localhost:3000/api/metrics/device-metrics\', { deviceId: os.hostname(), metrics });
+        await axios.post('http://localhost:3000/api/metrics/device-metrics', { deviceId: os.hostname(), metrics });
       } catch (error) {
         console.error("Failed to get or send metrics:", error);
       }

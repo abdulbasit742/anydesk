@@ -99,13 +99,13 @@ export class FleetOperationsManager extends EventEmitter {
 
     // Add devices by tag
     if (options.targetTags && options.targetTags.length > 0) {
-      const taggedDevices = await prisma.deviceTag.findMany({
+      const taggedDevices: any = await prisma.deviceTag.findMany({
         where: {
           tag: { in: options.targetTags }
         },
         select: { deviceId: true }
       });
-      taggedDevices.forEach(d => devices.add(d.deviceId));
+      taggedDevices.forEach((d: any) => devices.add(d.deviceId));
     }
 
     return Array.from(devices);
@@ -236,6 +236,7 @@ interface FleetOperation {
   results: OperationResult[];
   startedAt: Date | null;
   completedAt: Date | null;
+  parameters?: Record<string, any>;
 }
 
 export const fleetOperationsManager = new FleetOperationsManager();

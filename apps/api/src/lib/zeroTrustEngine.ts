@@ -118,7 +118,7 @@ export class ZeroTrustEngine {
         ipAddress: context.ipAddress,
         location: context.location,
         riskScore,
-        details: context.details || {},
+        details: (context.details || {}) as any,
         previousHash,
         hash
       }

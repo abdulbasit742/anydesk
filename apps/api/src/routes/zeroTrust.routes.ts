@@ -8,7 +8,7 @@ import { ZeroTrustEngine } from "../lib/zeroTrustEngine.js";
 const router = Router();
 
 // Device Fingerprinting Routes
-router.post("/fingerprint/register", requireAuth, asyncHandler(async (req, res) => {
+router.post("/fingerprint/register", requireAuth, asyncHandler(async (req: any, res) => {
   const schema = z.object({
     deviceId: z.string(),
     hardwareId: z.string(),
@@ -45,7 +45,7 @@ router.post("/fingerprint/register", requireAuth, asyncHandler(async (req, res) 
   res.json({ success: true, data: fingerprint });
 }));
 
-router.post("/fingerprint/:id/approve", requireAuth, asyncHandler(async (req, res) => {
+router.post("/fingerprint/:id/approve", requireAuth, asyncHandler(async (req: any, res) => {
   const { id } = req.params;
 
   const fingerprint = await prisma.deviceFingerprint.update({
@@ -67,7 +67,7 @@ router.post("/fingerprint/:id/approve", requireAuth, asyncHandler(async (req, re
   res.json({ success: true, data: fingerprint });
 }));
 
-router.get("/fingerprints", requireAuth, asyncHandler(async (req, res) => {
+router.get("/fingerprints", requireAuth, asyncHandler(async (req: any, res) => {
   const fingerprints = await prisma.deviceFingerprint.findMany({
     include: { device: true, approvedBy: { select: { email: true } } },
     orderBy: { createdAt: "desc" }
@@ -76,12 +76,12 @@ router.get("/fingerprints", requireAuth, asyncHandler(async (req, res) => {
 }));
 
 // Geo-Fence Policies
-router.get("/geo-fence", requireAuth, asyncHandler(async (req, res) => {
+router.get("/geo-fence", requireAuth, asyncHandler(async (req: any, res) => {
   const policies = await prisma.geoFencePolicy.findMany({ orderBy: { createdAt: "desc" } });
   res.json({ success: true, data: policies });
 }));
 
-router.post("/geo-fence", requireAuth, asyncHandler(async (req, res) => {
+router.post("/geo-fence", requireAuth, asyncHandler(async (req: any, res) => {
   const schema = z.object({
     name: z.string(),
     action: z.enum(["block", "alert"]),
@@ -103,7 +103,7 @@ router.post("/geo-fence", requireAuth, asyncHandler(async (req, res) => {
 }));
 
 // Threat Alerts
-router.get("/threats", requireAuth, asyncHandler(async (req, res) => {
+router.get("/threats", requireAuth, asyncHandler(async (req: any, res) => {
   const threats = await prisma.threatAlert.findMany({
     include: { device: true, user: { select: { email: true } } },
     orderBy: { createdAt: "desc" },
@@ -112,7 +112,7 @@ router.get("/threats", requireAuth, asyncHandler(async (req, res) => {
   res.json({ success: true, data: threats });
 }));
 
-router.post("/threats/:id/resolve", requireAuth, asyncHandler(async (req, res) => {
+router.post("/threats/:id/resolve", requireAuth, asyncHandler(async (req: any, res) => {
   const { id } = req.params;
   const threat = await prisma.threatAlert.update({
     where: { id },
@@ -130,7 +130,7 @@ router.post("/threats/:id/resolve", requireAuth, asyncHandler(async (req, res) =
 }));
 
 // Audit Logs
-router.get("/audit-logs", requireAuth, asyncHandler(async (req, res) => {
+router.get("/audit-logs", requireAuth, asyncHandler(async (req: any, res) => {
   const logs = await prisma.securityAuditLog.findMany({
     include: { user: { select: { email: true } }, device: { select: { name: true } } },
     orderBy: { timestamp: "desc" },
@@ -140,7 +140,7 @@ router.get("/audit-logs", requireAuth, asyncHandler(async (req, res) => {
 }));
 
 // Zero Trust Engine Verification Endpoint (Called by clients before connecting)
-router.post("/verify-access", requireAuth, asyncHandler(async (req, res) => {
+router.post("/verify-access", requireAuth, asyncHandler(async (req: any, res) => {
   const schema = z.object({
     deviceId: z.string(),
     countryCode: z.string().optional()

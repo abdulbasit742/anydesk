@@ -61,7 +61,7 @@ router.post("/signup", authRateLimit, asyncHandler(async (req, res) => {
       fullName: input.data.fullName,
       passwordHash: await hashPassword(input.data.password),
       remoteDeskId: await generateRemoteDeskId(),
-      subscriptions: { create: { plan: "FREE", status: "ACTIVE" } }
+      subscription: { create: { plan: "FREE", status: "ACTIVE" } }
     },
     select: { id: true, email: true, fullName: true, remoteDeskId: true, plan: true }
   });

@@ -43,7 +43,7 @@ export class HardwareInventoryManager {
 
       // Detect GPU info
       const gpuInfo = await this.detectGPU();
-      info.gpuModel = gpuInfo;
+      info.gpuModel = gpuInfo || undefined;
 
       // Detect Network interfaces
       const networkInterfaces = await this.detectNetworkInterfaces();

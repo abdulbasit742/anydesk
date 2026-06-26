@@ -11,8 +11,8 @@ interface GracefulShutdownOptions {
   server: HttpServer;
   io: SocketIoServer;
   kafkaProducer?: Producer;
-  redisClient?: Redis;
-  kafkaConsumer?: Consumer;
+  redisClient?: any;
+  kafkaConsumer?: any;
   timeoutMs?: number;
 }
 
@@ -75,7 +75,7 @@ export function installGracefulShutdown({ server, io, kafkaProducer, redisClient
       }
 
       if (kafkaConsumer) {
-        closePromises.push(kafkaConsumer.disconnect().then(() => logger.info("Kafka consumer disconnected")).catch(e => logger.error("Kafka consumer disconnect error", { error: e })));
+        closePromises.push(kafkaConsumer.disconnect().then(() => logger.info("Kafka consumer disconnected")).catch((e: any) => logger.error("Kafka consumer disconnect error", { error: e })));
       }
 
       await Promise.allSettled(closePromises);

@@ -312,8 +312,8 @@ export class BackupAgent extends BaseAgent {
    * Get backup history
    */
   async getBackupHistory(deviceId: string, limit: number = 50): Promise<any[]> {
-    return prisma.backup.findMany({
-      where: { deviceId },
+    return prisma.deviceAuditEvent.findMany({
+      where: { deviceId, type: "BACKUP" },
       orderBy: { createdAt: "desc" },
       take: limit,
     });

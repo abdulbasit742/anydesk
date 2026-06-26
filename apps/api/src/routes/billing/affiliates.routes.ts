@@ -83,7 +83,7 @@ router.get(
       data: {
         ...commissions,
         referralCount: profile.referrals.length,
-        activeReferrals: profile.referrals.filter((r) => r.status === "active").length,
+        activeReferrals: profile.referrals.filter((r: any) => r.status === "active").length,
       },
     });
   })

@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { prisma } from '../../lib/prisma.js';
-import { asyncHandler } from '../../middleware/asyncHandler.js';
-import { auth } from '../../middleware/auth.js';
+import { prisma } from '../lib/prisma.js';
+import { asyncHandler } from '../middleware/asyncHandler.js';
+import { requireAuth as auth } from '../middleware/auth.js';
 
 const router = Router();
 
 // --- AI Sentiment Analysis & Auto-Translation (mocked) ---
-router.post('/messages/:id/analyze-sentiment', auth, asyncHandler(async (req: any, res) => {
+router.post('/messages/:id/analyze-sentiment', auth, asyncHandler(async (req: any, res: any) => {
   const message = await prisma.message.findUnique({ where: { id: req.params.id } });
   if (!message) return res.status(404).json({ error: 'Message not found' });
 
@@ -19,7 +19,7 @@ router.post('/messages/:id/analyze-sentiment', auth, asyncHandler(async (req: an
   res.json(updatedMessage);
 }));
 
-router.post('/messages/:id/translate', auth, asyncHandler(async (req: any, res) => {
+router.post('/messages/:id/translate', auth, asyncHandler(async (req: any, res: any) => {
   const { targetLanguage } = req.body;
   const message = await prisma.message.findUnique({ where: { id: req.params.id } });
   if (!message) return res.status(404).json({ error: 'Message not found' });
@@ -34,7 +34,7 @@ router.post('/messages/:id/translate', auth, asyncHandler(async (req: any, res) 
 }));
 
 // --- Canned Responses with Macros ---
-router.post('/canned-responses', auth, asyncHandler(async (req: any, res) => {
+router.post('/canned-responses', auth, asyncHandler(async (req: any, res: any) => {
   const { title, content, macros } = req.body;
   const cannedResponse = await prisma.cannedResponse.create({
     data: {
@@ -47,13 +47,13 @@ router.post('/canned-responses', auth, asyncHandler(async (req: any, res) => {
   res.status(201).json(cannedResponse);
 }));
 
-router.get('/canned-responses', auth, asyncHandler(async (req: any, res) => {
+router.get('/canned-responses', auth, asyncHandler(async (req: any, res: any) => {
   const cannedResponses = await prisma.cannedResponse.findMany({ where: { userId: req.user.id } });
   res.json(cannedResponses);
 }));
 
 // --- SLA Management (mocked updates) ---
-router.put('/tickets/:id/sla', auth, asyncHandler(async (req: any, res) => {
+router.put('/tickets/:id/sla', auth, asyncHandler(async (req: any, res: any) => {
   const { slaResponseAt, slaResolveAt } = req.body;
   const ticket = await prisma.ticket.update({
     where: { id: req.params.id },
@@ -63,7 +63,7 @@ router.put('/tickets/:id/sla', auth, asyncHandler(async (req: any, res) => {
 }));
 
 // --- Internal Team Channels ---
-router.post('/team-channels', auth, asyncHandler(async (req: any, res) => {
+router.post('/team-channels', auth, asyncHandler(async (req: any, res: any) => {
   const { name, description } = req.body;
   const channel = await prisma.teamChannel.create({
     data: {
@@ -76,7 +76,7 @@ router.post('/team-channels', auth, asyncHandler(async (req: any, res) => {
   res.status(201).json(channel);
 }));
 
-router.get('/team-channels', auth, asyncHandler(async (req: any, res) => {
+router.get('/team-channels', auth, asyncHandler(async (req: any, res: any) => {
   const channels = await prisma.teamChannel.findMany({
     where: { members: { some: { userId: req.user.id } } },
     include: { members: { include: { user: { select: { fullName: true } } } } },
@@ -84,7 +84,7 @@ router.get('/team-channels', auth, asyncHandler(async (req: any, res) => {
   res.json(channels);
 }));
 
-router.post('/team-channels/:id/join', auth, asyncHandler(async (req: any, res) => {
+router.post('/team-channels/:id/join', auth, asyncHandler(async (req: any, res: any) => {
   const { userId } = req.body;
   const channelMember = await prisma.teamChannelMember.create({
     data: { channelId: req.params.id, userId },
@@ -93,9 +93,9 @@ router.post('/team-channels/:id/join', auth, asyncHandler(async (req: any, res) 
 }));
 
 // --- IVR Visual Designer (mocked) ---
-router.post('/ivr-flows', auth, asyncHandler(async (req: any, res) => {
+router.post('/ivr-flows', auth, asyncHandler(async (req: any, res: any) => {
   const { name, flowConfig } = req.body;
-  const ivrFlow = await prisma.ivrFlow.create({
+  const ivrFlow = await prisma.iVRFlow.create({
     data: {
       userId: req.user.id,
       name,
@@ -105,13 +105,13 @@ router.post('/ivr-flows', auth, asyncHandler(async (req: any, res) => {
   res.status(201).json(ivrFlow);
 }));
 
-router.get('/ivr-flows', auth, asyncHandler(async (req: any, res) => {
-  const ivrFlows = await prisma.ivrFlow.findMany({ where: { userId: req.user.id } });
+router.get('/ivr-flows', auth, asyncHandler(async (req: any, res: any) => {
+  const ivrFlows = await prisma.iVRFlow.findMany({ where: { userId: req.user.id } });
   res.json(ivrFlows);
 }));
 
 // --- Screen Recording (mocked URL) ---
-router.put('/sessions/:id/recording', auth, asyncHandler(async (req: any, res) => {
+router.put('/sessions/:id/recording', auth, asyncHandler(async (req: any, res: any) => {
   const { recordingUrl } = req.body;
   const session = await prisma.session.update({
     where: { id: req.params.id },
@@ -121,7 +121,7 @@ router.put('/sessions/:id/recording', auth, asyncHandler(async (req: any, res) =
 }));
 
 // --- Agent Collision Detection (mocked) ---
-router.post('/tickets/:id/viewing-agent', auth, asyncHandler(async (req: any, res) => {
+router.post('/tickets/:id/viewing-agent', auth, asyncHandler(async (req: any, res: any) => {
   const { agentId } = req.body;
   // In a real scenario, this would involve a real-time presence system (e.g., Redis)
   // For now, we'll just update a field.

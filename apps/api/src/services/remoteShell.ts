@@ -22,11 +22,9 @@ export class RemoteShellManager extends EventEmitter {
     const shell = options.shell || "bash";
 
     // Create PTY session
-    const ptyProcess = spawn(shell, [], {
-      cols: options.cols || 120,
-      rows: options.rows || 40,
+    const ptyProcess: any = spawn(shell, [], {
       stdio: ["pipe", "pipe", "pipe"]
-    });
+    } as any);
 
     const session: PTYSession = {
       token: sessionToken,
@@ -53,12 +51,12 @@ export class RemoteShellManager extends EventEmitter {
     });
 
     // Setup event handlers
-    ptyProcess.stdout?.on("data", (data) => {
+    ptyProcess.stdout?.on("data", (data: any) => {
       session.outputBuffer += data.toString();
       this.emit("output", { token: sessionToken, data: data.toString() });
     });
 
-    ptyProcess.stderr?.on("data", (data) => {
+    ptyProcess.stderr?.on("data", (data: any) => {
       this.emit("error", { token: sessionToken, data: data.toString() });
     });
 

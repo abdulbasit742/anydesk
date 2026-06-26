@@ -154,7 +154,7 @@ router.get(
       where: { organizationId },
       include: {
         user: {
-          select: { id: true, email: true, name: true },
+          select: { id: true, email: true, fullName: true },
         },
       },
     });

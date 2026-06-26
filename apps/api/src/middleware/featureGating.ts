@@ -76,7 +76,7 @@ export const rateLimitByPlan = () => {
     const plan = user.plan || "FREE";
 
     // Define rate limits by plan (requests per hour)
-    const rateLimits: Record<string, number> = {
+    const rateLimits: Record<string, number | null> = {
       FREE: 100,
       PRO: 1000,
       BUSINESS: 10000,

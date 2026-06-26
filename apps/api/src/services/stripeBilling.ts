@@ -2,7 +2,7 @@ import Stripe from "stripe";
 import { prisma } from "../lib/prisma.js";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-  apiVersion: "2023-10-16",
+  apiVersion: "2023-10-16" as any,
 });
 
 export interface SubscriptionPlan {
@@ -112,7 +112,7 @@ export class StripeBillingService {
   /**
    * Handle subscription created webhook
    */
-  async handleSubscriptionCreated(subscription: Stripe.Subscription): Promise<void> {
+  async handleSubscriptionCreated(subscription: any): Promise<void> {
     const userId = subscription.metadata?.userId;
     if (!userId) return;
 
@@ -152,7 +152,7 @@ export class StripeBillingService {
   /**
    * Handle subscription updated webhook
    */
-  async handleSubscriptionUpdated(subscription: Stripe.Subscription): Promise<void> {
+  async handleSubscriptionUpdated(subscription: any): Promise<void> {
     const userId = subscription.metadata?.userId;
     if (!userId) return;
 
@@ -189,7 +189,7 @@ export class StripeBillingService {
   /**
    * Handle subscription deleted webhook
    */
-  async handleSubscriptionDeleted(subscription: Stripe.Subscription): Promise<void> {
+  async handleSubscriptionDeleted(subscription: any): Promise<void> {
     const userId = subscription.metadata?.userId;
     if (!userId) return;
 
@@ -210,7 +210,7 @@ export class StripeBillingService {
   /**
    * Handle invoice payment succeeded
    */
-  async handleInvoicePaid(invoice: Stripe.Invoice): Promise<void> {
+  async handleInvoicePaid(invoice: any): Promise<void> {
     const userId = invoice.metadata?.userId;
     if (!userId) return;
 
@@ -222,7 +222,7 @@ export class StripeBillingService {
         amount: invoice.amount_paid || 0,
         currency: invoice.currency || "usd",
         status: "paid",
-        pdfUrl: invoice.pdf || undefined,
+        pdfUrl: invoice.invoice_pdf || undefined,
       },
     });
   }
@@ -230,7 +230,7 @@ export class StripeBillingService {
   /**
    * Handle invoice payment failed
    */
-  async handleInvoicePaymentFailed(invoice: Stripe.Invoice): Promise<void> {
+  async handleInvoicePaymentFailed(invoice: any): Promise<void> {
     const userId = invoice.metadata?.userId;
     if (!userId) return;
 
@@ -345,7 +345,7 @@ export class StripeBillingService {
     metricId: string,
     quantity: number
   ): Promise<void> {
-    const subscription = await prisma.subscription.findUnique({
+    const subscription = await prisma.subscription.findFirst({
       where: { userId: subscriptionId },
       select: { stripeSubscriptionId: true },
     });
@@ -357,12 +357,12 @@ export class StripeBillingService {
     );
 
     const subscriptionItem = stripeSubscription.items.data.find(
-      (item) => item.billing_details?.usage_type === metricId
+      (item: any) => item.billing_details?.usage_type === metricId
     );
 
     if (!subscriptionItem) return;
 
-    await stripe.subscriptionItems.createUsageRecord(subscriptionItem.id, {
+    await (stripe.subscriptionItems as any).createUsageRecord(subscriptionItem.id, {
       quantity,
       timestamp: Math.floor(Date.now() / 1000),
     });

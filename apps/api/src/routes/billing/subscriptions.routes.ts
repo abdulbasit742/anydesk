@@ -33,10 +33,14 @@ router.get(
 router.get(
   "/plans",
   asyncHandler<AuthedRequest>(async (req, res) => {
-    const plans = Object.entries(SUBSCRIPTION_PLANS).map(([key, plan]) => ({
-      id: key,
-      ...plan,
-    }));
+    const plans = Object.entries(SUBSCRIPTION_PLANS).map(([key, plan]) => {
+      const { id, ...rest } = plan;
+      return {
+        id,
+        planKey: key,
+        ...rest,
+      };
+    });
 
     res.json({
       success: true,

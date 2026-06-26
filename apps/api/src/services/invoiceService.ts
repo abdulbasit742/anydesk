@@ -10,7 +10,7 @@ export class InvoiceService {
       where: { id: invoiceId },
       include: {
         user: {
-          select: { email: true, name: true },
+          select: { email: true, fullName: true },
         },
       },
     });
@@ -58,7 +58,7 @@ export class InvoiceService {
       color: rgb(0, 0, 0),
     });
 
-    page.drawText(invoice.user?.name || "Customer", {
+    page.drawText(invoice.user?.fullName || "Customer", {
       x: 50,
       y: height - 200,
       size: 11,

@@ -791,12 +791,12 @@ export default function CloudGamingPanel() {
                 <div>
                   <label style={labelStyle}>Width</label>
                   <input type="number" style={inputStyle} value={virtualDisplaySettings.width}
-                    onChange={e => setVirtualDisplaySettings(prev => ({ ...prev, width: parseInt(e.target.value) || 1920 })} />
+                    onChange={e => setVirtualDisplaySettings(prev => ({ ...prev, width: parseInt(e.target.value) || 1920 }))} />
                 </div>
                 <div>
                   <label style={labelStyle}>Height</label>
                   <input type="number" style={inputStyle} value={virtualDisplaySettings.height}
-                    onChange={e => setVirtualDisplaySettings(prev => ({ ...prev, height: parseInt(e.target.value) || 1080 })} />
+                    onChange={e => setVirtualDisplaySettings(prev => ({ ...prev, height: parseInt(e.target.value) || 1080 }))} />
                 </div>
                 <div>
                   <label style={labelStyle}>Refresh Rate</label>

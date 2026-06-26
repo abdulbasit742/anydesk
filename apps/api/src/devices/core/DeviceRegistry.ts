@@ -4,10 +4,10 @@ import Redis from "ioredis";
 
 export class DeviceRegistry {
   private devices: Map<string, DeviceBase> = new Map();
-  private redis: Redis;
+  private redis: any;
   private stateCache: Map<string, any> = new Map();
 
-  constructor(redis: Redis) {
+  constructor(redis: any) {
     this.redis = redis;
   }
 
@@ -26,10 +26,12 @@ export class DeviceRegistry {
         userId,
         deviceType: info.deviceType,
         deviceName: info.deviceName,
-        manufacturer: info.manufacturer,
-        model: info.model,
         status: info.status,
-        capabilities: info.capabilities,
+        metrics: {
+          manufacturer: info.manufacturer,
+          model: info.model,
+          capabilities: info.capabilities,
+        } as any,
       },
     });
 
@@ -144,7 +146,7 @@ export class DeviceRegistry {
       total: devices.length,
       online: devices.filter((d) => d.status === DeviceStatus.ONLINE).length,
       offline: devices.filter((d) => d.status === DeviceStatus.OFFLINE).length,
-      byType: {} as Record<DeviceType, number>,
+      byType: {} as Record<string, number>,
     };
 
     for (const device of devices) {
@@ -189,7 +191,7 @@ export class DeviceRegistry {
         params: command.params,
         status: command.status,
         result: command.result,
-        error: command.error,
+        failureReason: command.error,
       },
     });
   }

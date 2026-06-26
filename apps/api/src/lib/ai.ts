@@ -3,7 +3,7 @@ import { env } from "../config/env.js";
 
 // Use environment variables for OpenAI configuration
 const openai = new OpenAI({
-  apiKey: env.openaiApiKey || process.env.OPENAI_API_KEY || "dummy-key-for-build",
+  apiKey: (env as any).openaiApiKey || process.env.OPENAI_API_KEY || "dummy-key-for-build",
   baseURL: process.env.OPENAI_API_BASE || undefined,
 });
 

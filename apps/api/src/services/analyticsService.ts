@@ -105,7 +105,7 @@ export class AnalyticsService {
 
     let totalDuration = 0;
     for (const session of sessions) {
-      if (session.endedAt) {
+      if (session.endedAt && session.startedAt) {
         totalDuration += session.endedAt.getTime() - session.startedAt.getTime();
       }
     }
@@ -182,7 +182,9 @@ export class AnalyticsService {
     const deviceCounts: Record<string, number> = {};
 
     for (const session of sessions) {
-      deviceCounts[session.deviceId] = (deviceCounts[session.deviceId] || 0) + 1;
+      if (session.deviceId) {
+        deviceCounts[session.deviceId] = (deviceCounts[session.deviceId] || 0) + 1;
+      }
     }
 
     return Object.entries(deviceCounts)

@@ -195,7 +195,7 @@ router.get(
   asyncHandler<AuthedRequest>(async (req, res) => {
     const limit = parseInt(req.query.limit as string) || 50;
 
-    const notifications = await prisma.notification.findMany({
+    const notifications = await prisma.unifiedNotification.findMany({
       orderBy: { createdAt: "desc" },
       take: limit,
     });
@@ -215,7 +215,7 @@ router.post(
   asyncHandler<AuthedRequest>(async (req, res) => {
     const { notificationId } = req.params;
 
-    await prisma.notification.update({
+    await prisma.unifiedNotification.update({
       where: { id: notificationId },
       data: { read: true },
     });

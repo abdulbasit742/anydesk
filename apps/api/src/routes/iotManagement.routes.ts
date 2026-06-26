@@ -6,7 +6,7 @@
 
 import { Router, Request, Response, NextFunction } from "express";
 import { PrismaClient } from "@prisma/client";
-import { authenticate } from "../middleware/auth";
+import { requireAuth as authenticate } from "../middleware/auth.js";
 import * as crypto from "crypto";
 import * as dgram from "dgram";
 import * as net from "net";
