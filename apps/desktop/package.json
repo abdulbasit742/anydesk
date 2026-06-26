@@ -16,10 +16,12 @@
     "@remotedesk/shared": "file:../../packages/shared",
     "axios": "^1.7.4",
     "electron-store": "^8.2.0",
+    "ethers": "^6.17.0",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "socket.io-client": "^4.7.5",
+    "systeminformation": "^5.31.10",
     "zustand": "^4.5.4"
   },
   "devDependencies": {

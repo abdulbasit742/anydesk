@@ -45,6 +45,7 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "ethers": "^6.17.0",
     "tsx": "^4.22.4"
   }
 }

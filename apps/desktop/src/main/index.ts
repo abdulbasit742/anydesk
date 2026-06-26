@@ -6,6 +6,9 @@ import { registerInputIpc } from "./input/index.js";
 import { registerSupportBundleIpc } from "./supportBundleIpc.js";
 import { registerRemoteControlIpc } from "./remoteControlIpc.js";
 import { registerTcpTunnelIpc, cleanupAllTunnels } from "./tcpTunnelIpc.js";
+import { registerBlockchainIpc } from "./blockchainIpc.js";
+import { registerMetricsIpc } from "./metricsIpc.js";
+import { startMetricsSender } from "./metricsSender.js";
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -133,6 +136,9 @@ registerInputIpc();
 registerSupportBundleIpc();
 registerRemoteControlIpc();
 registerTcpTunnelIpc(() => mainWindow);
+registerBlockchainIpc();
+registerMetricsIpc();
+startMetricsSender(() => mainWindow);
 
 app.whenReady().then(createWindow);
 
