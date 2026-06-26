@@ -52,6 +52,7 @@ import {
 } from "./services/api.js";
 import type { CaptureState, ScreenSource } from "./types/screen.js";
 import "./styles.css";
+import { ZeroTrustPanel } from "./features/zeroTrust/ZeroTrustPanel.js";
 
 declare global {
   interface Window {
@@ -917,6 +918,9 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
         />
       </section>
 
+      <section className="grid" style={{ gridColumn: "1 / -1" }}>
+        <ZeroTrustPanel />
+      </section>
       {activeSession ? (
         <RemoteSessionView
           sessionId={activeSession.sessionId}

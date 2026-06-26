@@ -39,6 +39,9 @@ model User {
   hostSessions     Session[]      @relation("HostSessions")
   clientSessions   Session[]      @relation("ClientSessions")
   accessControlEntries AccessControlEntry[]
+  deviceApprovals      DeviceFingerprint[] @relation("DeviceApprovals")
+  securityAuditLogs    SecurityAuditLog[] @relation("UserAuditLogs")
+  threatAlerts         ThreatAlert[] @relation("UserThreatAlerts")
 }
 
 model AccessControlEntry {
@@ -70,6 +73,9 @@ model Device {
   auditEvents  DeviceAuditEvent[]
   trustRecord  DeviceTrust?
   accessPolicy DeviceAccessPolicy?
+  fingerprint  DeviceFingerprint?
+  securityAuditLogs SecurityAuditLog[] @relation("DeviceAuditLogs")
+  threatAlerts ThreatAlert[] @relation("DeviceThreatAlerts")
 }
 
 model DeviceTrust {
@@ -356,4 +362,81 @@ enum SubscriptionStatus {
   CANCELED
   TRIALING
   INCOMPLETE
+}
+
+model DeviceFingerprint {
+  id                String    @id @default(uuid())
+  deviceId          String    @unique
+  hardwareId        String    @unique
+  tpmHash           String?
+  secureBootEnabled Boolean   @default(false)
+  osVersion         String
+  macAddress        String?
+  approved          Boolean   @default(false)
+  approvedByUserId  String?
+  approvedAt        DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  device            Device    @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  approvedBy        User?     @relation("DeviceApprovals", fields: [approvedByUserId], references: [id], onDelete: SetNull)
+}
+
+model GeoFencePolicy {
+  id        String   @id @default(uuid())
+  name      String
+  action    String   @default("block") // "block" | "alert"
+  countries Json     // Array of country codes
+  enabled   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ZeroTrustPolicy {
+  id                    String   @id @default(uuid())
+  name                  String
+  requireMfa            Boolean  @default(true)
+  requireApprovedDevice Boolean  @default(true)
+  maxRiskScore          Int      @default(50)
+  allowedHoursStart     String?  // e.g. "09:00"
+  allowedHoursEnd       String?  // e.g. "17:00"
+  dlpEnabled            Boolean  @default(true)
+  watermarkEnabled      Boolean  @default(true)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+
+model SecurityAuditLog {
+  id           String   @id @default(uuid())
+  timestamp    DateTime @default(now())
+  action       String
+  userId       String?
+  deviceId     String?
+  ipAddress    String?
+  location     String?
+  riskScore    Int      @default(0)
+  details      Json?
+  previousHash String?
+  hash         String
+  user         User?    @relation("UserAuditLogs", fields: [userId], references: [id], onDelete: SetNull)
+  device       Device?  @relation("DeviceAuditLogs", fields: [deviceId], references: [id], onDelete: SetNull)
+
+  @@index([timestamp])
+}
+
+model ThreatAlert {
+  id          String    @id @default(uuid())
+  type        String    // "login_anomaly", "dlp_violation", "geo_fence_violation", "tpm_mismatch"
+  severity    String    // "low", "medium", "high", "critical"
+  description String
+  userId      String?
+  deviceId    String?
+  ipAddress   String?
+  resolved    Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  resolvedAt  DateTime?
+  user        User?     @relation("UserThreatAlerts", fields: [userId], references: [id], onDelete: SetNull)
+  device      Device?   @relation("DeviceThreatAlerts", fields: [deviceId], references: [id], onDelete: SetNull)
+
+  @@index([createdAt])
+  @@index([resolved])
 }

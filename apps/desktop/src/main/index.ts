@@ -9,6 +9,7 @@ import { registerTcpTunnelIpc, cleanupAllTunnels } from "./tcpTunnelIpc.js";
 import { registerBlockchainIpc } from "./blockchainIpc.js";
 import { registerMetricsIpc } from "./metricsIpc.js";
 import { startMetricsSender } from "./metricsSender.js";
+import { registerZeroTrustIpc } from "./zeroTrustIpc.js";
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -139,6 +140,7 @@ registerTcpTunnelIpc(() => mainWindow);
 registerBlockchainIpc();
 registerMetricsIpc();
 startMetricsSender(() => mainWindow);
+registerZeroTrustIpc();
 
 app.whenReady().then(createWindow);
 
