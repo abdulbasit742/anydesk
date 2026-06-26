@@ -14,6 +14,7 @@ import { registerAiSupportIpc } from "./aiSupportIpc.js";
 import { registerCloudGamingIpc } from "./cloudGamingIpc.js";
 import { registerResourceMonitorIpc } from "./resourceMonitorIpc.js";
 import { registerWorkerAgentIpc } from "./workerAgentIpc.js";
+import { registerIoTManagementIpc } from "./iotManagementIpc.js";
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -149,6 +150,7 @@ registerAiSupportIpc();
 registerCloudGamingIpc();
 registerResourceMonitorIpc();
 registerWorkerAgentIpc();
+registerIoTManagementIpc();
 
 app.whenReady().then(createWindow);
 

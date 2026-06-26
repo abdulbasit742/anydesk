@@ -41,6 +41,7 @@ model User {
   accessControlEntries AccessControlEntry[]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   deviceApprovals      DeviceFingerprint[] @relation("DeviceApprovals")
   securityAuditLogs    SecurityAuditLog[] @relation("UserAuditLogs")
   threatAlerts         ThreatAlert[] @relation("UserThreatAlerts")
@@ -54,6 +55,16 @@ model User {
   clusterNodes         ClusterNode[]   @relation("UserClusterNodes")
   submittedTasks       DistributedTask[] @relation("SubmittedTasks")
 >>>>>>> origin/manus/distributed-computing
+=======
+  // IoT relations
+  iotSites         IoTSite[]
+  iotDevices       IoTDevice[]
+  iotAlerts        IoTAlert[]
+  iotAlertRules    IoTAlertRule[]
+  iotTasks         IoTScheduledTask[]
+  iotTunnels       IoTTunnel[]
+  smartHomeEntities SmartHomeEntity[]
+>>>>>>> origin/manus/iot-management
 }
 
 model AccessControlEntry {
@@ -394,6 +405,7 @@ enum SubscriptionStatus {
   INCOMPLETE
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 model DeviceFingerprint {
   id                String    @id @default(uuid())
   deviceId          String    @unique
@@ -417,10 +429,35 @@ model GeoFencePolicy {
   action    String   @default("block") // "block" | "alert"
   countries Json     // Array of country codes
   enabled   Boolean  @default(true)
+=======
+
+// ─── IoT & Smart Device Remote Management ────────────────────────────────────
+
+model IoTSite {
+  id            String   @id @default(cuid())
+  userId        String
+  name          String
+  description   String?
+  location      String?
+  timezone      String   @default("UTC")
+  latitude      Float?
+  longitude     Float?
+  isDefault     Boolean  @default(false)
+  agentDeviceId String?
+
+  user     User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  devices  IoTDevice[]
+  alerts   IoTAlert[]
+  tunnels  IoTTunnel[]
+  entities SmartHomeEntity[]
+  tasks    IoTScheduledTask[]
+
+>>>>>>> origin/manus/iot-management
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
+<<<<<<< HEAD
 model ZeroTrustPolicy {
   id                    String   @id @default(uuid())
   name                  String
@@ -760,5 +797,183 @@ model DistributedTask {
   assignedNode       ClusterNode? @relation("AssignedNodeTasks", fields: [assignedNodeId], references: [id], onDelete: SetNull)
 
   @@index([clusterId, status])
-  @@index([assignedNodeId])
 }
+
+model IoTDevice {
+  id              String    @id @default(cuid())
+  siteId          String
+  userId          String
+  name            String
+  type            String
+  vendor          String?
+  model           String?
+  ipAddress       String?
+  macAddress      String?
+  hostname        String?
+  port            Int?
+  protocol        String?
+  credentials     String?
+  status          String    @default("unknown")
+  lastSeen        DateTime?
+  lastPing        Float?
+  firmwareVersion String?
+  tags            String[]  @default([])
+  metadata        String?
+  discoveryMethod String?
+  isManaged       Boolean   @default(true)
+  alertsEnabled   Boolean   @default(true)
+
+  site      IoTSite      @relation(fields: [siteId], references: [id], onDelete: Cascade)
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  telemetry IoTTelemetry[]
+  alerts    IoTAlert[]
+  nasFiles  NasFileEntry[]
+  tunnels   IoTTunnel[]
+  tasks     IoTScheduledTask[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([siteId])
+  @@index([userId])
+  @@index([status])
+}
+
+model IoTTelemetry {
+  id             String   @id @default(cuid())
+  deviceId       String
+  cpuPercent     Float?
+  ramPercent     Float?
+  diskPercent    Float?
+  temperature    Float?
+  networkRxKbps  Float?
+  networkTxKbps  Float?
+  uptime         Int?
+  customMetrics  String?
+
+  device     IoTDevice @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  recordedAt DateTime  @default(now())
+
+  @@index([deviceId])
+  @@index([recordedAt])
+}
+
+model IoTAlert {
+  id             String    @id @default(cuid())
+  siteId         String?
+  deviceId       String?
+  userId         String
+  type           String
+  severity       String    @default("info")
+  title          String
+  message        String
+  metadata       String?
+  acknowledged   Boolean   @default(false)
+  acknowledgedAt DateTime?
+  resolvedAt     DateTime?
+
+  site   IoTSite?   @relation(fields: [siteId], references: [id])
+  device IoTDevice? @relation(fields: [deviceId], references: [id])
+  user   User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([acknowledged])
+}
+
+model IoTAlertRule {
+  id               String  @id @default(cuid())
+  userId           String
+  siteId           String?
+  deviceId         String?
+  name             String
+  condition        String
+  severity         String  @default("warning")
+  notifyEmail      Boolean @default(true)
+  notifyPush       Boolean @default(true)
+  cooldownMinutes  Int     @default(15)
+  isEnabled        Boolean @default(true)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+model IoTScheduledTask {
+  id             String    @id @default(cuid())
+  userId         String
+  siteId         String?
+  deviceId       String?
+  name           String
+  type           String
+  schedule       String
+  payload        String?
+  lastRunAt      DateTime?
+  lastRunStatus  String?
+  nextRunAt      DateTime?
+  isEnabled      Boolean   @default(true)
+
+  user   User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  site   IoTSite?   @relation(fields: [siteId], references: [id])
+  device IoTDevice? @relation(fields: [deviceId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model IoTTunnel {
+  id         String @id @default(cuid())
+  userId     String
+  siteId     String
+  deviceId   String?
+  name       String
+  localPort  Int
+  remoteHost String
+  remotePort Int
+  protocol   String @default("tcp")
+  status     String @default("stopped")
+  bytesIn    BigInt @default(0)
+  bytesOut   BigInt @default(0)
+
+  user   User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  site   IoTSite    @relation(fields: [siteId], references: [id], onDelete: Cascade)
+  device IoTDevice? @relation(fields: [deviceId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SmartHomeEntity {
+  id             String    @id @default(cuid())
+  siteId         String
+  userId         String
+  entityId       String
+  name           String
+  domain         String
+  platform       String    @default("home_assistant")
+  state          String?
+  attributes     String?
+  lastUpdated    DateTime?
+  isControllable Boolean   @default(true)
+
+  site IoTSite @relation(fields: [siteId], references: [id], onDelete: Cascade)
+  user User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([siteId])
+}
+
+model NasFileEntry {
+  id          String    @id @default(cuid())
+  deviceId    String
+  path        String
+  name        String
+  isDirectory Boolean   @default(false)
+  size        BigInt?
+  mimeType    String?
+  modifiedAt  DateTime?
+  cachedAt    DateTime  @default(now())
+  device IoTDevice @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+}
+

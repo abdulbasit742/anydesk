@@ -7,6 +7,7 @@ import { exposeZeroTrustApi } from "./zeroTrustApi.js";
 import { exposeAiSupportApi } from "./aiSupportApi.js";
 import { exposeCloudGamingApi } from "./cloudGamingApi.js";
 import { exposeResourcePoolApi } from "./resourcePoolApi.js";
+import { iotManagementApi } from "./iotManagementApi.js";
 
 const api = {
   platform: () => ipcRenderer.invoke("app:platform") as Promise<NodeJS.Platform>,
@@ -29,5 +30,6 @@ exposeZeroTrustApi();
 exposeAiSupportApi();
 exposeCloudGamingApi();
 exposeResourcePoolApi();
+contextBridge.exposeInMainWorld("iotManagement", iotManagementApi);
 
 export type RemoteDeskApi = typeof api;

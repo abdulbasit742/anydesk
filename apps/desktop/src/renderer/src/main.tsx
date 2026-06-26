@@ -15,6 +15,7 @@ import { ScreenAnnotationOverlay } from "./features/aiSupport/ScreenAnnotationOv
 import { RemoteSessionView } from "./components/RemoteSessionView.js";
 import { ScreenPreview } from "./components/ScreenPreview.js";
 import { ScreenSourcePicker } from "./components/ScreenSourcePicker.js";
+import IoTManagementPanel from "./features/iotManagement/IoTManagementPanel.js";
 import { createSocketClient } from "./services/socket.js";
 import { createScreenCaptureStream, loadScreenSources, stopScreenCaptureStream } from "./services/screenCapture.js";
 import {
@@ -921,7 +922,6 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
           disabled={!capture.source}
         />
       </section>
-
       <section className="grid" style={{ gridColumn: "1 / -1" }}>
         <ZeroTrustPanel />
       </section>
@@ -936,6 +936,11 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
         <div style={{ gridColumn: "1 / -1", background: "#0f172a", borderRadius: 12, border: "1px solid #1e293b", overflow: "hidden", minHeight: 520 }}>
           <CloudGamingPanel />
         </div>
+      </section>
+
+      <section className="grid" style={{ gridColumn: "1 / -1" }}>
+        <IoTManagementPanel />
+      </section>
       {activeSession ? (
         <RemoteSessionView
           sessionId={activeSession.sessionId}
