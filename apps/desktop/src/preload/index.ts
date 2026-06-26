@@ -6,6 +6,7 @@ import { exposeInputApi } from "./inputApi.js";
 import { exposeZeroTrustApi } from "./zeroTrustApi.js";
 import { exposeAiSupportApi } from "./aiSupportApi.js";
 import { exposeCloudGamingApi } from "./cloudGamingApi.js";
+import { exposeResourcePoolApi } from "./resourcePoolApi.js";
 
 const api = {
   platform: () => ipcRenderer.invoke("app:platform") as Promise<NodeJS.Platform>,
@@ -27,5 +28,6 @@ exposeInputApi();
 exposeZeroTrustApi();
 exposeAiSupportApi();
 exposeCloudGamingApi();
+exposeResourcePoolApi();
 
 export type RemoteDeskApi = typeof api;

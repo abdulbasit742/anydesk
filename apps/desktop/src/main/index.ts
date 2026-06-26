@@ -12,6 +12,8 @@ import { startMetricsSender } from "./metricsSender.js";
 import { registerZeroTrustIpc } from "./zeroTrustIpc.js";
 import { registerAiSupportIpc } from "./aiSupportIpc.js";
 import { registerCloudGamingIpc } from "./cloudGamingIpc.js";
+import { registerResourceMonitorIpc } from "./resourceMonitorIpc.js";
+import { registerWorkerAgentIpc } from "./workerAgentIpc.js";
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -145,6 +147,8 @@ startMetricsSender(() => mainWindow);
 registerZeroTrustIpc();
 registerAiSupportIpc();
 registerCloudGamingIpc();
+registerResourceMonitorIpc();
+registerWorkerAgentIpc();
 
 app.whenReady().then(createWindow);
 

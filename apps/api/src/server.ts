@@ -31,6 +31,7 @@ import remediationRoutes from "./routes/remediation.routes.js";
 import zeroTrustRoutes from "./routes/zeroTrust.routes.js";
 import aiSupportRoutes from "./routes/aiSupport.routes.js";
 import cloudGamingRoutes from "./routes/cloudGaming.routes.js";
+import { clusterRoutes, clusterStatsRoutes } from "./distributedComputing/index.js";
 import { initSocketServer } from "./socket/index.js";
 import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
 import { health } from "./observability/health.js";
@@ -125,6 +126,8 @@ app.use("/api/remediation", remediationRoutes);
 app.use("/api/zero-trust", zeroTrustRoutes);
 app.use("/api/ai-support", aiSupportRoutes);
 app.use("/api/cloud-gaming", cloudGamingRoutes);
+app.use("/api/clusters", clusterRoutes);
+app.use("/api/clusters", clusterStatsRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
