@@ -42,6 +42,7 @@ model User {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   deviceApprovals      DeviceFingerprint[] @relation("DeviceApprovals")
   securityAuditLogs    SecurityAuditLog[] @relation("UserAuditLogs")
   threatAlerts         ThreatAlert[] @relation("UserThreatAlerts")
@@ -65,6 +66,9 @@ model User {
   iotTunnels       IoTTunnel[]
   smartHomeEntities SmartHomeEntity[]
 >>>>>>> origin/manus/iot-management
+=======
+  meshNetworks     MeshNetwork[]
+>>>>>>> origin/manus/mesh-vpn
 }
 
 model AccessControlEntry {
@@ -98,6 +102,7 @@ model Device {
   accessPolicy DeviceAccessPolicy?
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fingerprint  DeviceFingerprint?
   securityAuditLogs SecurityAuditLog[] @relation("DeviceAuditLogs")
   threatAlerts ThreatAlert[] @relation("DeviceThreatAlerts")
@@ -111,6 +116,9 @@ model Device {
 =======
   clusterNodes ClusterNode[] @relation("DeviceClusterNodes")
 >>>>>>> origin/manus/distributed-computing
+=======
+  meshNode     MeshNode?
+>>>>>>> origin/manus/mesh-vpn
 }
 
 model DeviceTrust {
@@ -404,6 +412,7 @@ enum SubscriptionStatus {
   TRIALING
   INCOMPLETE
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 model DeviceFingerprint {
@@ -977,3 +986,150 @@ model NasFileEntry {
   device IoTDevice @relation(fields: [deviceId], references: [id], onDelete: Cascade)
 }
 
+// ============================================================
+// Built-in VPN & Mesh Networking models
+// ============================================================
+
+model MeshNetwork {
+  id              String        @id @default(uuid())
+  userId          String
+  name            String        @default("My Network")
+  // CIDR ranges allocated to this mesh (CGNAT range like Tailscale 100.64.0.0/10)
+  ipv4Cidr        String        @default("100.64.0.0/10")
+  ipv6Cidr        String        @default("fd7a:115c:a1e0::/48")
+  magicDnsDomain  String        @default("remotedesk.net")
+  magicDnsEnabled Boolean       @default(true)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nodes           MeshNode[]
+  acls            MeshAcl[]
+  routes          MeshRoute[]
+  dnsRecords      MeshDnsRecord[]
+  speedTests      MeshSpeedTest[]
+  @@index([userId])
+}
+
+model MeshNode {
+  id               String        @id @default(uuid())
+  networkId        String
+  deviceId         String        @unique
+  name             String
+  // WireGuard public key (base64), private key never leaves the device
+  publicKey        String        @unique
+  // Assigned overlay addresses
+  virtualIpV4      String        @unique
+  virtualIpV6      String        @unique
+  magicDnsName     String        @unique
+  // Candidate endpoints discovered via STUN (host:port list, JSON)
+  endpoints        String[]      @default([])
+  // Last known DERP/relay region for fallback
+  relayRegion      String?
+  os               String        @default("unknown")
+  clientVersion    String?
+  // Role flags
+  isExitNode       Boolean       @default(false)
+  exitNodeEnabled  Boolean       @default(false)
+  // Subnets this node advertises (e.g., 192.168.1.0/24), JSON array
+  advertisedRoutes String[]      @default([])
+  // Tags for ACL targeting (e.g., ["tag:server","tag:home"])
+  tags             String[]      @default([])
+  // Connection state
+  online           Boolean       @default(false)
+  lastHandshakeAt  DateTime?
+  lastSeenAt       DateTime      @default(now())
+  // Always-on / keepalive preference
+  alwaysOn         Boolean       @default(true)
+  keepaliveSeconds Int           @default(25)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  network          MeshNetwork   @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  device           Device        @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  approvedRoutes   MeshRoute[]   @relation("RouteAdvertiser")
+  @@index([networkId, online])
+  @@index([networkId, isExitNode])
+}
+
+// Subnet routes and exit-node advertisements awaiting/holding admin approval
+model MeshRoute {
+  id            String      @id @default(uuid())
+  networkId     String
+  advertiserId  String
+  cidr          String      // "0.0.0.0/0" for exit node, or subnet CIDR
+  kind          String      @default("subnet") // "subnet" | "exit"
+  approved      Boolean     @default(false)
+  approvedAt    DateTime?
+  createdAt     DateTime    @default(now())
+  network       MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  advertiser    MeshNode    @relation("RouteAdvertiser", fields: [advertiserId], references: [id], onDelete: Cascade)
+  @@unique([advertiserId, cidr])
+  @@index([networkId, approved])
+}
+
+// Fine-grained access control list (Tailscale-style policy)
+model MeshAcl {
+  id          String      @id @default(uuid())
+  networkId   String
+  action      String      @default("accept") // "accept" | "drop"
+  // src/dst can be a node id, tag, virtual IP, CIDR, or "*"
+  src         String
+  dst         String
+  // Allowed destination ports, e.g. "22,3389,443" or "*"
+  ports       String      @default("*")
+  // Optional time-window enforcement (cron-like or HH:MM-HH:MM ranges, JSON)
+  schedule    String?
+  priority    Int         @default(100)
+  enabled     Boolean     @default(true)
+  description String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  network     MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  @@index([networkId, enabled, priority])
+}
+
+// Magic DNS records (auto + custom CNAME/A entries)
+model MeshDnsRecord {
+  id        String      @id @default(uuid())
+  networkId String
+  name      String      // e.g. "nas" -> nas.remotedesk.net
+  type      String      @default("A") // "A" | "AAAA" | "CNAME"
+  value     String      // virtual IP or target name
+  auto      Boolean     @default(true) // auto-generated from node name
+  createdAt DateTime    @default(now())
+  network   MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  @@unique([networkId, name, type])
+  @@index([networkId])
+}
+
+// Recorded speed-test results between two mesh nodes
+model MeshSpeedTest {
+  id            String      @id @default(uuid())
+  networkId     String
+  fromNodeId    String
+  toNodeId      String
+  downMbps      Float
+  upMbps        Float
+  latencyMs     Float
+  jitterMs      Float       @default(0)
+  packetLoss    Float       @default(0)
+  via           String      @default("direct") // "direct" | "relay" | "multihop"
+  createdAt     DateTime    @default(now())
+  network       MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  @@index([networkId, createdAt])
+}
+
+// Secure port-forwarding rules (expose remote port without router config)
+model MeshPortForward {
+  id            String   @id @default(uuid())
+  networkId     String
+  targetNodeId  String
+  targetPort    Int
+  protocol      String   @default("tcp") // "tcp" | "udp"
+  // Public ingress hostname assigned (dynamic DNS), e.g. abc123.ingress.remotedesk.net
+  ingressHost   String   @unique
+  ingressPort   Int
+  enabled       Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  @@index([networkId, enabled])
+}

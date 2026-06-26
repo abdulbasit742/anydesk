@@ -33,6 +33,7 @@ import aiSupportRoutes from "./routes/aiSupport.routes.js";
 import cloudGamingRoutes from "./routes/cloudGaming.routes.js";
 import { clusterRoutes, clusterStatsRoutes } from "./distributedComputing/index.js";
 import iotManagementRoutes from "./routes/iotManagement.routes.js";
+import meshRoutes from "./routes/mesh.routes.js";
 import { initSocketServer } from "./socket/index.js";
 import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
 import { health } from "./observability/health.js";
@@ -130,6 +131,7 @@ app.use("/api/cloud-gaming", cloudGamingRoutes);
 app.use("/api/clusters", clusterRoutes);
 app.use("/api/clusters", clusterStatsRoutes);
 app.use("/api/iot", iotManagementRoutes);
+app.use("/api/mesh", meshRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
