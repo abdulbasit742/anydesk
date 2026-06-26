@@ -39,24 +39,16 @@ model User {
   hostSessions     Session[]      @relation("HostSessions")
   clientSessions   Session[]      @relation("ClientSessions")
   accessControlEntries AccessControlEntry[]
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   deviceApprovals      DeviceFingerprint[] @relation("DeviceApprovals")
   securityAuditLogs    SecurityAuditLog[] @relation("UserAuditLogs")
   threatAlerts         ThreatAlert[] @relation("UserThreatAlerts")
   supportTickets   SupportTicket[]
-=======
   streamingProfiles StreamingProfile[]
   wakeOnLanTargets  WakeOnLanTarget[]
->>>>>>> origin/manus/cloud-gaming
-=======
   ownedClusters        Cluster[]       @relation("OwnedClusters")
   clusterNodes         ClusterNode[]   @relation("UserClusterNodes")
   submittedTasks       DistributedTask[] @relation("SubmittedTasks")
->>>>>>> origin/manus/distributed-computing
-=======
+
   // IoT relations
   iotSites         IoTSite[]
   iotDevices       IoTDevice[]
@@ -65,10 +57,19 @@ model User {
   iotTasks         IoTScheduledTask[]
   iotTunnels       IoTTunnel[]
   smartHomeEntities SmartHomeEntity[]
->>>>>>> origin/manus/iot-management
-=======
+
   meshNetworks     MeshNetwork[]
->>>>>>> origin/manus/mesh-vpn
+
+  // Unified Communications
+  tickets          Ticket[]       @relation("TicketCustomer")
+  assignedTickets  Ticket[]       @relation("TicketAssignee")
+  messages         Message[]
+  kbArticles       KBArticle[]
+  automationRules  AutomationRule[]
+  teamChannels     TeamChannel[]  @relation("ChannelCreator")
+  channelMemberships TeamChannelMember[]
+  cannedResponses  CannedResponse[]
+  ivrFlows         IVRFlow[]
 }
 
 model AccessControlEntry {
@@ -100,25 +101,17 @@ model Device {
   auditEvents  DeviceAuditEvent[]
   trustRecord  DeviceTrust?
   accessPolicy DeviceAccessPolicy?
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   fingerprint  DeviceFingerprint?
   securityAuditLogs SecurityAuditLog[] @relation("DeviceAuditLogs")
   threatAlerts ThreatAlert[] @relation("DeviceThreatAlerts")
   supportTickets SupportTicket[]
   diagnosticReports DiagnosticReport[]
   predictiveAlerts PredictiveAlert[]
-=======
   hardwareEncoders HardwareEncoder[]
   detectedGames    DetectedGame[]
->>>>>>> origin/manus/cloud-gaming
-=======
   clusterNodes ClusterNode[] @relation("DeviceClusterNodes")
->>>>>>> origin/manus/distributed-computing
-=======
   meshNode     MeshNode?
->>>>>>> origin/manus/mesh-vpn
+  sessions     Session[] @relation("DeviceSessions")
 }
 
 model DeviceTrust {
@@ -361,19 +354,20 @@ model Session {
   id        String        @id @default(uuid())
   hostId    String
   clientId  String
+  deviceId  String?
   status    SessionStatus @default(PENDING)
   startedAt DateTime?
   endedAt   DateTime?
   duration  Int?
   createdAt DateTime      @default(now())
+  recordingUrl String?
+
   host      User          @relation("HostSessions", fields: [hostId], references: [id])
   client    User          @relation("ClientSessions", fields: [clientId], references: [id])
-<<<<<<< HEAD
   sessionReplay SessionReplay?
-=======
   gamingSession     GamingSession?
   performanceSnaps  PerformanceSnapshot[]
->>>>>>> origin/manus/cloud-gaming
+  device    Device?       @relation("DeviceSessions", fields: [deviceId], references: [id])
 }
 
 model Subscription {
@@ -388,6 +382,140 @@ model Subscription {
   createdAt            DateTime           @default(now())
   updatedAt            DateTime           @updatedAt
   user                 User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Unified Communications Models
+
+model Ticket {
+  id            String    @id @default(uuid())
+  customerId    String
+  assignedToId  String?
+  subject       String
+  status        String    @default("open") // open, pending, resolved, closed
+  priority      String    @default("medium") // critical, high, medium, low
+  channel       String    @default("chat") // chat, email, whatsapp, telegram, sms, messenger, instagram, twitter, voip
+  slaResponseAt DateTime?
+  slaResolveAt  DateTime?
+  metadata      Json?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  resolvedAt    DateTime?
+  sentiment     String? // positive, neutral, negative
+  viewingAgentId String?
+
+  customer      User      @relation("TicketCustomer", fields: [customerId], references: [id])
+  assignee      User?     @relation("TicketAssignee", fields: [assignedToId], references: [id])
+  messages      Message[]
+  attachments   Attachment[]
+}
+
+model Message {
+  id          String    @id @default(uuid())
+  ticketId    String
+  senderId    String
+  body        String
+  isInternal  Boolean   @default(false)
+  channel     String?
+  metadata    Json?
+  createdAt   DateTime  @default(now())
+  translatedBody String?
+  sentiment   String? // positive, neutral, negative
+
+  ticket      Ticket    @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  sender      User      @relation(fields: [senderId], references: [id])
+  attachments Attachment[]
+}
+
+model Attachment {
+  id          String    @id @default(uuid())
+  ticketId    String?
+  messageId   String?
+  fileName    String
+  fileSize    Int
+  mimeType    String
+  storagePath String
+  createdAt   DateTime  @default(now())
+
+  ticket      Ticket?   @relation(fields: [ticketId], references: [id])
+  message     Message?  @relation(fields: [messageId], references: [id])
+}
+
+model KBArticle {
+  id          String    @id @default(uuid())
+  authorId    String
+  title       String
+  content     String
+  category    String
+  language    String    @default("en")
+  status      String    @default("draft") // draft, published
+  views       Int       @default(0)
+  helpfulness Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  author      User      @relation(fields: [authorId], references: [id])
+}
+
+model AutomationRule {
+  id          String    @id @default(uuid())
+  userId      String
+  name        String
+  trigger     String
+  conditions  Json
+  actions     Json
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user        User      @relation(fields: [userId], references: [id])
+}
+
+model CannedResponse {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  content   String
+  macros    Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model IVRFlow {
+  id        String   @id @default(uuid())
+  userId    String
+  name      String
+  flowConfig Json
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model TeamChannel {
+  id          String    @id @default(uuid())
+  name        String
+  description String?
+  creatorId   String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  creator     User      @relation("ChannelCreator", fields: [creatorId], references: [id])
+  members     TeamChannelMember[]
+}
+
+model TeamChannelMember {
+  id          String   @id @default(uuid())
+  channelId   String
+  userId      String
+  joinedAt    DateTime @default(now())
+
+  channel     TeamChannel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([channelId, userId])
 }
 
 enum Plan {
