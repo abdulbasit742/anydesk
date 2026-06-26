@@ -1,0 +1,202 @@
+// ============================================================================
+// INTELLIGENT BANDWIDTH & CONNECTION OPTIMIZER - Database Schema
+// ============================================================================
+
+model ConnectionSession {
+  id                  String   @id @default(uuid())
+  userId              String
+  deviceId            String
+  remoteDeviceId      String
+  protocol            String   @default("custom_udp") // custom_udp, quic, websocket, http_longpoll
+  status              String   @default("active") // active, paused, reconnecting, ended
+  startedAt           DateTime @default(now())
+  endedAt             DateTime?
+  totalDuration       Int?     // seconds
+  totalDataSent       BigInt   @default(0) // bytes
+  totalDataReceived   BigInt   @default(0) // bytes
+  avgLatency          Float?   // ms
+  avgFps              Float?
+  avgBitrate          Float?   // Mbps
+  packetLoss          Float?   // percentage
+  reconnectCount      Int      @default(0)
+  qualityProfile      String   @default("auto") // auto, 4k, 1080p, 720p, 480p, text_only
+  multiPathEnabled    Boolean  @default(false)
+  predictiveEnabled   Boolean  @default(false)
+
+  user                User     @relation("UserConnectionSessions", fields: [userId], references: [id], onDelete: Cascade)
+  metrics             ConnectionMetric[]
+  qualityEvents       QualityAdaptationEvent[]
+  pathMetrics         NetworkPathMetric[]
+
+  @@index([userId, startedAt])
+  @@index([deviceId, remoteDeviceId, startedAt])
+  @@index([status])
+}
+
+model ConnectionMetric {
+  id                  String   @id @default(uuid())
+  sessionId           String
+  timestamp           DateTime @default(now())
+  latency             Float    // ms
+  jitter              Float    // ms
+  packetLoss          Float    // percentage
+  bandwidth           Float    // Mbps (available)
+  usedBandwidth       Float    // Mbps (actually used)
+  fps                 Float
+  bitrate             Float    // Mbps
+  resolution          String   // e.g., "1920x1080"
+  encodeTime          Float    // ms
+  decodeTime          Float    // ms
+  frameDrops          Int      @default(0)
+  cpuUsage            Float?   // percentage on remote
+  gpuUsage            Float?   // percentage on remote
+
+  session             ConnectionSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId, timestamp])
+  @@index([timestamp])
+}
+
+model QualityAdaptationEvent {
+  id                  String   @id @default(uuid())
+  sessionId           String
+  timestamp           DateTime @default(now())
+  reason              String   // bandwidth_drop, latency_spike, packet_loss, user_request, ai_prediction
+  previousProfile     String   // Quality profile before change
+  newProfile          String   // Quality profile after change
+  previousBitrate     Float
+  newBitrate          Float
+  previousResolution  String
+  newResolution       String
+  previousFps         Float
+  newFps              Float
+  aiConfidence        Float?   // 0-1, how confident AI was in the decision
+  userOverride        Boolean  @default(false)
+
+  session             ConnectionSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId, timestamp])
+}
+
+model NetworkPathMetric {
+  id                  String   @id @default(uuid())
+  sessionId           String
+  pathType            String   // wifi, ethernet, mobile, vpn
+  interfaceName       String   // e.g., "wlan0", "eth0", "rmnet0"
+  latency             Float    // ms
+  bandwidth           Float    // Mbps
+  packetLoss          Float    // percentage
+  isActive            Boolean  @default(true)
+  isPrimary           Boolean  @default(false)
+  trafficType         String?  // input, video, all
+  timestamp           DateTime @default(now())
+
+  session             ConnectionSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId, timestamp])
+  @@index([pathType, timestamp])
+}
+
+model BandwidthSchedule {
+  id                  String   @id @default(uuid())
+  userId              String
+  deviceId            String?  // null = applies to all devices
+  name                String
+  maxBandwidthMbps    Float
+  priority            Int      @default(5) // 1-10, higher = more important
+  startTime           String   // HH:MM format
+  endTime             String   // HH:MM format
+  daysOfWeek          Int[]    @default([1,2,3,4,5,6,7]) // 1=Mon, 7=Sun
+  isActive            Boolean  @default(true)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  user                User     @relation("UserBandwidthSchedules", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, isActive])
+  @@index([deviceId, isActive])
+}
+
+model RelayNode {
+  id                  String   @id @default(uuid())
+  name                String
+  region              String   // e.g., "us-east-1", "eu-west-1"
+  ipAddress           String
+  port                Int
+  status              String   @default("active") // active, maintenance, offline
+  capacity            Int      // max concurrent connections
+  currentLoad         Int      @default(0)
+  avgLatency          Float?   // ms from measurement
+  bandwidth           Float?   // Gbps capacity
+  isContributed       Boolean  @default(false) // user-contributed node
+  contributorId       String?  // user who contributed
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([region, status])
+  @@index([status, currentLoad])
+}
+
+model SpeedTestResult {
+  id                  String   @id @default(uuid())
+  userId              String
+  deviceId            String
+  remoteDeviceId      String?
+  testType            String   // internet, remote_device, relay
+  downloadMbps        Float
+  uploadMbps          Float
+  latency             Float    // ms
+  jitter              Float    // ms
+  packetLoss          Float    // percentage
+  serverLocation      String?
+  isp                 String?
+  testedAt            DateTime @default(now())
+
+  user                User     @relation("UserSpeedTests", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, testedAt])
+  @@index([deviceId, testedAt])
+}
+
+model NetworkDiagnostic {
+  id                  String   @id @default(uuid())
+  userId              String
+  deviceId            String
+  remoteDeviceId      String?
+  diagnosticType      String   // traceroute, dns, ping, full_analysis
+  status              String   @default("running") // running, completed, failed
+  results             Json?    // Diagnostic results
+  aiAnalysis          String?  // AI interpretation
+  recommendations     String[] @default([])
+  hops                Json?    // Traceroute hops
+  bottleneckHop       Int?     // Which hop is the problem
+  bottleneckReason    String?  // Why it's slow
+  createdAt           DateTime @default(now())
+  completedAt         DateTime?
+
+  user                User     @relation("UserNetworkDiagnostics", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([deviceId, createdAt])
+}
+
+model ConnectionQualityHistory {
+  id                  String   @id @default(uuid())
+  userId              String
+  deviceId            String
+  date                DateTime @db.Date
+  avgLatency          Float
+  avgBandwidth        Float
+  avgPacketLoss       Float
+  avgFps              Float
+  totalDataTransferred BigInt  @default(0)
+  totalSessionTime    Int      @default(0) // seconds
+  qualityScore        Float    // 0-100
+  issues              String[] @default([])
+
+  user                User     @relation("UserConnectionHistory", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, deviceId, date])
+  @@index([userId, date])
+  @@index([deviceId, date])
+}
