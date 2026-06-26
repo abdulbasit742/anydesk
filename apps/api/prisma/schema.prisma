@@ -39,10 +39,15 @@ model User {
   hostSessions     Session[]      @relation("HostSessions")
   clientSessions   Session[]      @relation("ClientSessions")
   accessControlEntries AccessControlEntry[]
+<<<<<<< HEAD
   deviceApprovals      DeviceFingerprint[] @relation("DeviceApprovals")
   securityAuditLogs    SecurityAuditLog[] @relation("UserAuditLogs")
   threatAlerts         ThreatAlert[] @relation("UserThreatAlerts")
   supportTickets   SupportTicket[]
+=======
+  streamingProfiles StreamingProfile[]
+  wakeOnLanTargets  WakeOnLanTarget[]
+>>>>>>> origin/manus/cloud-gaming
 }
 
 model AccessControlEntry {
@@ -74,12 +79,17 @@ model Device {
   auditEvents  DeviceAuditEvent[]
   trustRecord  DeviceTrust?
   accessPolicy DeviceAccessPolicy?
+<<<<<<< HEAD
   fingerprint  DeviceFingerprint?
   securityAuditLogs SecurityAuditLog[] @relation("DeviceAuditLogs")
   threatAlerts ThreatAlert[] @relation("DeviceThreatAlerts")
   supportTickets SupportTicket[]
   diagnosticReports DiagnosticReport[]
   predictiveAlerts PredictiveAlert[]
+=======
+  hardwareEncoders HardwareEncoder[]
+  detectedGames    DetectedGame[]
+>>>>>>> origin/manus/cloud-gaming
 }
 
 model DeviceTrust {
@@ -329,7 +339,12 @@ model Session {
   createdAt DateTime      @default(now())
   host      User          @relation("HostSessions", fields: [hostId], references: [id])
   client    User          @relation("ClientSessions", fields: [clientId], references: [id])
+<<<<<<< HEAD
   sessionReplay SessionReplay?
+=======
+  gamingSession     GamingSession?
+  performanceSnaps  PerformanceSnapshot[]
+>>>>>>> origin/manus/cloud-gaming
 }
 
 model Subscription {
@@ -368,7 +383,6 @@ enum SubscriptionStatus {
   TRIALING
   INCOMPLETE
 }
-
 model DeviceFingerprint {
   id                String    @id @default(uuid())
   deviceId          String    @unique
@@ -509,5 +523,104 @@ model PredictiveAlert {
   device               Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
 
   @@index([deviceId])
-
 }
+
+// ─── Cloud Gaming & High-Performance Streaming ───────────────────────────────
+
+model StreamingProfile {
+  id              String   @id @default(cuid())
+  userId          String
+  name            String
+  codec           String   @default("h264")
+  encoder         String   @default("software")
+  resolution      String   @default("1920x1080")
+  framerate       Int      @default(60)
+  bitrate         Int      @default(20000)
+  minBitrate      Int      @default(5000)
+  maxBitrate      Int      @default(50000)
+  adaptiveBitrate Boolean  @default(true)
+  hdrEnabled      Boolean  @default(false)
+  hdrFormat       String?
+  audioChannels   Int      @default(2)
+  audioCodec      String   @default("opus")
+  latencyMode     String   @default("balanced")
+  roiEnabled      Boolean  @default(false)
+  isDefault       Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model HardwareEncoder {
+  id          String   @id @default(cuid())
+  deviceId    String
+  type        String
+  name        String
+  vendor      String
+  codecs      String   @default("[]")
+  maxWidth    Int      @default(3840)
+  maxHeight   Int      @default(2160)
+  maxFps      Int      @default(60)
+  available   Boolean  @default(true)
+  detectedAt  DateTime @default(now())
+  device      Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+}
+
+model DetectedGame {
+  id                 String   @id @default(cuid())
+  deviceId           String
+  name               String
+  processName        String
+  platform           String   @default("unknown")
+  isRunning          Boolean  @default(false)
+  lastSeen           DateTime @default(now())
+  recommendedProfile String?
+  device             Device   @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+}
+
+model GamingSession {
+  id                   String    @id @default(cuid())
+  sessionId            String    @unique
+  profileId            String?
+  encoderUsed          String?
+  avgFps               Float?
+  avgLatency           Float?
+  avgBitrate           Int?
+  peakBitrate          Int?
+  totalFrames          Int       @default(0)
+  droppedFrames        Int       @default(0)
+  controllerConnected  Boolean   @default(false)
+  hdrActive            Boolean   @default(false)
+  gameDetected         String?
+  startedAt            DateTime  @default(now())
+  endedAt              DateTime?
+  session              Session   @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+}
+
+model WakeOnLanTarget {
+  id          String    @id @default(cuid())
+  userId      String
+  deviceId    String?
+  name        String
+  macAddress  String
+  broadcastIp String    @default("255.255.255.255")
+  port        Int       @default(9)
+  lastWoken   DateTime?
+  createdAt   DateTime  @default(now())
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model PerformanceSnapshot {
+  id            String   @id @default(cuid())
+  sessionId     String
+  timestamp     DateTime @default(now())
+  fps           Float    @default(0)
+  latencyMs     Float    @default(0)
+  bitrateKbps   Int      @default(0)
+  packetLoss    Float    @default(0)
+  encodeTimeMs  Float    @default(0)
+  decodeTimeMs  Float    @default(0)
+  rttMs         Float    @default(0)
+  jitterMs      Float    @default(0)
+}
+

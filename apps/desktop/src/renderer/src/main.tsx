@@ -53,6 +53,7 @@ import {
   type DeviceCommand
 } from "./services/api.js";
 import type { CaptureState, ScreenSource } from "./types/screen.js";
+import CloudGamingPanel from "./features/cloudGaming/CloudGamingPanel.js";
 import "./styles.css";
 import { ZeroTrustPanel } from "./features/zeroTrust/ZeroTrustPanel.js";
 
@@ -929,6 +930,11 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
           <AiSupportPanel token={token} deviceId={device?.id} />
         </div>
       </section>
+
+      <section className="grid" style={{ marginTop: 16 }}>
+        <div style={{ gridColumn: "1 / -1", background: "#0f172a", borderRadius: 12, border: "1px solid #1e293b", overflow: "hidden", minHeight: 520 }}>
+          <CloudGamingPanel />
+        </div>
       {activeSession ? (
         <RemoteSessionView
           sessionId={activeSession.sessionId}
