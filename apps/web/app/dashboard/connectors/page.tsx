@@ -35,7 +35,7 @@ interface ConnectorAuditEvent {
 }
 
 export default function ConnectorsPage() {
-  useAuthGuard();
+  const { initialized } = useAuthGuard();
   const [catalog, setCatalog] = useState<ConnectorCatalogItem[]>([]);
   const [auditEvents, setAuditEvents] = useState<ConnectorAuditEvent[]>([]);
   const [loading, setLoading] = useState(true);
@@ -62,8 +62,10 @@ export default function ConnectorsPage() {
   }
 
   useEffect(() => {
-    void loadConnectors();
-  }, []);
+    if (initialized) {
+      void loadConnectors();
+    }
+  }, [initialized]);
 
   const installedCount = useMemo(
     () => catalog.filter((connector) => connector.installStatus === "installed").length,
