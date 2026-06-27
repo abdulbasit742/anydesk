@@ -92,7 +92,7 @@ router.patch("/:id/respond", asyncHandler<AuthedRequest>(async (req, res) => {
   if (session.hostId !== req.user!.id) return res.status(403).json({ success: false, message: "Only host can respond" });
   if (session.status !== "PENDING") return res.status(400).json({ success: false, message: "Session is not pending" });
 
-  const newStatus = input.data.action === "accept" ? "ACTIVE" : "DENIED";
+  const newStatus = input.data.action === "accept" ? "ACTIVE" : "REJECTED";
   const updated = await prisma.session.update({
     where: { id: session.id },
     data: {

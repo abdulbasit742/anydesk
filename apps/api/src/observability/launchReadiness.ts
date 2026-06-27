@@ -77,7 +77,7 @@ const launchChecks: LaunchCheck[] = [
   },
   {
     id: "release-certification",
-    area: "deploy",
+    area: "infra",
     label: "Release certification gates are satisfied",
     status: certificationBlockers(releaseCertification).length === 0 ? "pass" : "fail",
     required: true

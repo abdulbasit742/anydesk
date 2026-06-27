@@ -140,7 +140,7 @@ export class ClipboardChannel {
     }
     const decision = resolveClipboardConflict(this.lastLocalSnapshot, incoming);
     if (decision.action !== 'apply') {
-      this.send({ kind: 'clipboard.rejected', sessionId: this.options.sessionId, reason: decision.reason, sequence: message.sequence });
+      this.send({ kind: 'clipboard.rejected', sessionId: this.options.sessionId, reason: decision.reason ?? 'conflict', sequence: message.sequence });
       return;
     }
     await this.options.writeText({ text: message.text, sourceSessionId: message.sessionId });

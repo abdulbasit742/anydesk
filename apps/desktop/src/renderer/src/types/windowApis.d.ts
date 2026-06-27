@@ -28,13 +28,21 @@ export interface RemoteDeskClipboardApi {
 }
 
 export interface RemoteDeskInputApi {
-  setRemoteInputEnabled(input: { sessionId: string; enabled: boolean }): Promise<{ enabled: boolean }>;
-  emergencyStop(input: { sessionId: string; reason?: string }): Promise<{ enabled: false }>;
+  setRemoteInputEnabled(input: { sessionId: string; enabled: boolean }): Promise<{ enabled: boolean; emergencyStopped: boolean }>;
+  emergencyStop(input: { sessionId: string; reason?: string }): Promise<{ enabled: false; emergencyStopped: boolean }>;
   getRemoteInputState(input: { sessionId: string }): Promise<{ enabled: boolean; emergencyStopped: boolean }>;
 }
 
 export interface RemoteDeskDiagnosticsApi {
   exportSupportBundle(input: { fileName: string; json: string }): Promise<{ accepted: boolean; path?: string }>;
+}
+
+export interface RemoteDeskElectronAPI {
+  createTcpListener(input: { tunnelId: string; localPort: number }): void;
+  closeTcpListener(input: { tunnelId: string }): void;
+  tunnelData(input: { tunnelId: string; connectionId: string; data: string }): void;
+  createTcpConnection(input: { tunnelId: string; host: string; port: number }): void;
+  lockScreen(): void;
 }
 
 declare global {
@@ -43,6 +51,7 @@ declare global {
     remoteDeskClipboard?: RemoteDeskClipboardApi;
     remoteDeskInput?: RemoteDeskInputApi;
     remoteDeskDiagnostics?: RemoteDeskDiagnosticsApi;
+    electronAPI?: RemoteDeskElectronAPI;
   }
 }
 

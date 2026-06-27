@@ -176,7 +176,7 @@ export async function updateDeviceAccessPolicy(input: {
       deviceId: input.deviceId,
       before: policyAuditSnapshot(previousPolicy),
       after: policyAuditSnapshot(policy)
-    })
+    }) as unknown as import("@prisma/client").Prisma.InputJsonObject
   });
 
   return policy;

@@ -218,7 +218,7 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
     refreshSources();
     socketClient.connect();
     append("Connected to signaling server.");
-    return () => socketClient.disconnect();
+    return () => { socketClient.disconnect(); };
   }, [socketClient]);
 
   useEffect(() => {

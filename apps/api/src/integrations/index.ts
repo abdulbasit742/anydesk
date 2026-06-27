@@ -4,12 +4,12 @@
  */
 
 // AI Services
-export { askAI, remoteDesk_AI, AI_MODELS } from './ai/orchestrator';
-export { scheduler, AUTOMATION_TEMPLATES } from './ai/automationEngine';
+export { askAI, remoteDesk_AI, AI_MODELS } from './ai/orchestrator.js';
+export { scheduler, AUTOMATION_TEMPLATES } from './ai/automationEngine.js';
 
 // Notifications
-export { TelegramNotifier, createTelegramNotifier } from './notifications/telegram';
-export type { NotificationPayload, TelegramConfig } from './notifications/telegram';
+export { TelegramNotifier, createTelegramNotifier } from './notifications/telegram.js';
+export type { NotificationPayload, TelegramConfig } from './notifications/telegram.js';
 
 // Security
 export {
@@ -21,7 +21,7 @@ export {
   unblockIP,
   recordSecurityEvent,
   RateLimiter,
-} from './security/suspiciousActivity';
+} from './security/suspiciousActivity.js';
 
 // Payments
 export {
@@ -31,8 +31,8 @@ export {
   createPortalSession,
   cancelSubscription,
   handleWebhook as handleStripeWebhook,
-} from './payments/stripe';
-export type { PlanId } from './payments/stripe';
+} from './payments/stripe.js';
+export type { PlanId } from './payments/stripe.js';
 
 // Location
 export {
@@ -43,5 +43,5 @@ export {
   removeGeofence,
   getLocationHistory,
   getIPLocation,
-} from './location/deviceLocation';
-export type { DeviceLocation, Geofence, GeofenceEvent } from './location/deviceLocation';
+} from './location/deviceLocation.js';
+export type { DeviceLocation, Geofence, GeofenceEvent } from './location/deviceLocation.js';

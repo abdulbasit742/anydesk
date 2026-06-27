@@ -16,7 +16,7 @@ export interface WebRtcQualitySnapshot {
   remoteCandidateType: string | null;
 }
 
-type StatsRecord = RTCStats & Record<string, unknown>;
+type StatsRecord = Record<string, unknown>;
 
 function asNumber(value: unknown): number | null {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
@@ -62,9 +62,12 @@ export async function collectWebRtcStats(peer: RTCPeerConnection): Promise<WebRt
     }
   });
 
-  const rttSeconds = selectedPair ? asNumber(selectedPair.currentRoundTripTime) : null;
-  const localCandidate = selectedPair ? findReport(report, selectedPair.localCandidateId) : null;
-  const remoteCandidate = selectedPair ? findReport(report, selectedPair.remoteCandidateId) : null;
+  // Re-bind through an explicit annotation to avoid CFA narrowing selectedPair to never
+  const sp: Record<string, unknown> | null = selectedPair;
+
+  const rttSeconds = sp !== null ? asNumber(sp['currentRoundTripTime']) : null;
+  const localCandidate = sp !== null ? findReport(report, sp['localCandidateId']) : null;
+  const remoteCandidate = sp !== null ? findReport(report, sp['remoteCandidateId']) : null;
 
   return {
     timestamp: Date.now(),
@@ -76,10 +79,10 @@ export async function collectWebRtcStats(peer: RTCPeerConnection): Promise<WebRt
     framesPerSecond,
     bytesReceived,
     bytesSent,
-    availableOutgoingBitrate: selectedPair ? asNumber(selectedPair.availableOutgoingBitrate) : null,
-    candidatePairState: selectedPair ? asString(selectedPair.state) : null,
-    localCandidateType: localCandidate ? asString(localCandidate.candidateType) : null,
-    remoteCandidateType: remoteCandidate ? asString(remoteCandidate.candidateType) : null
+    availableOutgoingBitrate: sp !== null ? asNumber(sp['availableOutgoingBitrate']) : null,
+    candidatePairState: sp !== null ? asString(sp['state']) : null,
+    localCandidateType: localCandidate !== null ? asString(localCandidate['candidateType']) : null,
+    remoteCandidateType: remoteCandidate !== null ? asString(remoteCandidate['candidateType']) : null
   };
 }
 

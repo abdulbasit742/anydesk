@@ -73,7 +73,7 @@ app.use(cors({ origin: env.corsOrigin, credentials: true, methods: ALLOWED_CORS_
 app.use(rejectUnsupportedContentEncoding);
 app.use(requireJsonContentType);
 app.use(rejectUnsupportedJsonCharset);
-app.use(express.json({ limit: JSON_BODY_LIMIT, type: JSON_BODY_TYPES, inflate: false, strict: true }));
+app.use(express.json({ limit: JSON_BODY_LIMIT, type: [...JSON_BODY_TYPES], inflate: false, strict: true }));
 
 app.get("/health", noStore, (_req, res) => {
   res.json(health.liveness());

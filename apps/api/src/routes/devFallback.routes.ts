@@ -736,7 +736,7 @@ devFallbackRouter.patch("/launch/checks/:key", fbRequireAuth, (req: Request, res
   const allowed = ["area", "label", "status", "required", "notes"] as const;
   for (const field of allowed) {
     if (req.body?.[field] !== undefined) {
-      (check as Record<string, unknown>)[field] = req.body[field];
+      (check as unknown as Record<string, unknown>)[field] = req.body[field];
     }
   }
   check.updatedAt = new Date().toISOString();
@@ -790,7 +790,7 @@ devFallbackRouter.patch("/launch/release-candidates/:rcId", fbRequireAuth, (req:
   }
   const updatable = ["version", "gitSha", "signedDesktopBuild", "migrationsReviewed", "smokeTestsPassed", "notes"] as const;
   for (const f of updatable) {
-    if (req.body?.[f] !== undefined) (rc as Record<string, unknown>)[f] = req.body[f];
+    if (req.body?.[f] !== undefined) (rc as unknown as Record<string, unknown>)[f] = req.body[f];
   }
   if (req.body?.status) {
     rc.status = req.body.status;
@@ -883,7 +883,7 @@ devFallbackRouter.patch("/launch/support-escalations/:escId", fbRequireAuth, (re
   }
   const updatable = ["title", "priority", "category", "description", "status"] as const;
   for (const f of updatable) {
-    if (req.body?.[f] !== undefined) (esc as Record<string, unknown>)[f] = req.body[f];
+    if (req.body?.[f] !== undefined) (esc as unknown as Record<string, unknown>)[f] = req.body[f];
   }
   if (esc.status === "resolved" || esc.status === "closed") {
     esc.resolvedAt = new Date().toISOString();

@@ -6,7 +6,9 @@
 
 import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+// deviceLocation model requires a Prisma migration before use
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const prisma = new PrismaClient() as any;
 
 export interface DeviceLocation {
   deviceId: string;
