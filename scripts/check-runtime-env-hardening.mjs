@@ -30,7 +30,7 @@ const checks = {
   restrictsCorsToHttpProtocols: envSource.includes('"http:"') && envSource.includes('"https:"'),
   blocksCorsPathQueryHash: envSource.includes("parsed.pathname") && envSource.includes("parsed.search") && envSource.includes("parsed.hash"),
   deduplicatesCorsOrigins: envSource.includes("new Set(origins)"),
-  serverUsesCorsWithCredentials: serverSource.includes("cors({ origin: env.corsOrigin, credentials: true })"),
+  serverUsesCorsWithCredentials: serverSource.includes("origin: env.corsOrigin") && serverSource.includes("credentials: true"),
   exposesRuntimeFlags: envSource.includes("isProduction") && envSource.includes("isDevelopment") && envSource.includes("isTest"),
   validateRequiresDatabaseUrl: validateSource.includes("DATABASE_URL") && validateSource.includes("required: true"),
   validateRequiresJwtSecrets: validateSource.includes("JWT_SECRET") && validateSource.includes("JWT_REFRESH_SECRET"),

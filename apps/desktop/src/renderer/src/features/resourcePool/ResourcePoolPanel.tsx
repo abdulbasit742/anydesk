@@ -11,7 +11,7 @@
 
 import React, { useState } from "react";
 import { Cpu, MemoryStick, Monitor, Thermometer, Network, Play, Square, Plus, LogIn, LogOut, Send, RefreshCw, Server } from "lucide-react";
-import { useResourcePool, type Cluster, type ClusterNode } from "./useResourcePool.ts";
+import { useResourcePool, type Cluster, type ClusterNode } from "./useResourcePool";
 
 interface ResourcePoolPanelProps {
   apiBase: string;

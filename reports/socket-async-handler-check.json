@@ -1,0 +1,29 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:25.681Z",
+  "status": "PASS",
+  "checks": {
+    "socketFileExists": true,
+    "shutdownFileExists": true,
+    "packageFileExists": true,
+    "packageHasSocketAsyncCheckScript": true,
+    "ciRunsSocketAsyncCheck": true,
+    "exportsSocketServer": true,
+    "returnsSocketInstance": true,
+    "hasSafeHandlerHelper": true,
+    "safeHandlerCatchesErrors": true,
+    "safeHandlerLogsErrors": true,
+    "safeHandlerEmitsGenericError": true,
+    "connectRequestWrapped": true,
+    "connectResponseWrapped": true,
+    "webRtcOfferWrapped": true,
+    "webRtcAnswerWrapped": true,
+    "webRtcIceWrapped": true,
+    "sessionEndWrapped": true,
+    "disconnectWrapped": true,
+    "signalingGateStillPresent": true,
+    "socketGateStillPresent": true,
+    "gracefulShutdownClosesIo": true
+  },
+  "failures": []
+}

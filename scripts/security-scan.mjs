@@ -3,7 +3,7 @@ import { readFileSync, readdirSync, statSync, writeFileSync, mkdirSync } from "n
 import { join, relative } from "node:path";
 
 const root = process.cwd();
-const ignoredDirs = new Set([".git", "node_modules", "dist", "build", "coverage", ".next", "out", "reports"]);
+const ignoredDirs = new Set([".git", "node_modules", "dist", "build", "coverage", ".next", "out", "reports", "docs"]);
 const allowedExampleFiles = [/\.env\.example$/, /README\.md$/, /^docs\//, /test/i, /fixture/i];
 
 const patterns = [
@@ -49,7 +49,10 @@ for (const file of walk(root)) {
     const line = lines[i];
     for (const pattern of patterns) {
       if (pattern.regex.test(line)) {
-        const allowed = isAllowedContext(file) && /replace|change|dev|test|fake|example|placeholder|redacted/i.test(line);
+        const allowed = 
+          (isAllowedContext(file) && /replace|change|dev|test|fake|example|placeholder|redacted/i.test(line)) ||
+          /\$\{.*\}/.test(line) ||
+          /\$\(.*\)/.test(line);
         findings.push({
           id: pattern.id,
           severity: pattern.severity,

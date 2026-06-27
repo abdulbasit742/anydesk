@@ -16,7 +16,7 @@ export interface WebRtcQualitySnapshot {
   remoteCandidateType: string | null;
 }
 
-type StatsRecord = RTCStats & Record<string, unknown>;
+type StatsRecord = any;
 
 function asNumber(value: unknown): number | null {
   return typeof value === "number" && Number.isFinite(value) ? value : null;

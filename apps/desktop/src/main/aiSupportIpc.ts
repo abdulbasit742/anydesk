@@ -141,8 +141,8 @@ export function registerAiSupportIpc(): void {
     };
   });
 
-  // Execute an auto-fix script
-  ipcMain.handle("ai:execute-script", async (_event, script: string): Promise<ScriptResult> => {
+  // Internal helper to execute a script
+  async function executeScriptInternal(script: string): Promise<ScriptResult> {
     const platform = process.platform;
     const tmpDir = os.tmpdir();
     const ext = platform === "win32" ? ".ps1" : ".sh";
@@ -167,6 +167,11 @@ export function registerAiSupportIpc(): void {
     } finally {
       try { fs.unlinkSync(scriptPath); } catch { /* ignore */ }
     }
+  }
+
+  // Execute an auto-fix script
+  ipcMain.handle("ai:execute-script", async (_event, script: string): Promise<ScriptResult> => {
+    return executeScriptInternal(script);
   });
 
   // Restart a system service
@@ -259,7 +264,7 @@ echo "Temp files cleared"
 `;
     }
 
-    return ipcMain.emit("ai:execute-script", null, script);
+    return executeScriptInternal(script);
   });
 
   // Reset network adapter (Windows)

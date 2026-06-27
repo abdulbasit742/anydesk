@@ -224,7 +224,9 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
     refreshSources();
     socketClient.connect();
     append("Connected to signaling server.");
-    return () => socketClient.disconnect();
+    return () => {
+      socketClient.disconnect();
+    };
   }, [socketClient]);
 
   useEffect(() => {
@@ -928,7 +930,7 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
 
       <section className="grid" style={{ marginTop: 24 }}>
         <div style={{ gridColumn: '1 / -1', minHeight: 480 }}>
-          <AiSupportPanel token={token} deviceId={device?.id} />
+          <AiSupportPanel token={token} deviceId={registeredDevice?.id} />
         </div>
       </section>
 

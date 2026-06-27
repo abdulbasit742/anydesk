@@ -1,0 +1,112 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:21.886Z",
+  "strict": false,
+  "status": "WARN",
+  "results": [
+    {
+      "name": "DATABASE_URL",
+      "required": true,
+      "serverOnly": true,
+      "description": "Postgres/Prisma database connection string",
+      "present": false,
+      "status": "missing"
+    },
+    {
+      "name": "JWT_SECRET",
+      "required": true,
+      "serverOnly": true,
+      "description": "Access-token signing secret",
+      "present": false,
+      "status": "missing"
+    },
+    {
+      "name": "JWT_REFRESH_SECRET",
+      "required": true,
+      "serverOnly": true,
+      "description": "Refresh-token signing secret",
+      "present": false,
+      "status": "missing"
+    },
+    {
+      "name": "ENGINE_ID",
+      "required": false,
+      "serverOnly": true,
+      "description": "Stable engine identifier for webhooks/events",
+      "present": false,
+      "status": "ok"
+    },
+    {
+      "name": "DASHBOARD_ENGINE_SIGNING_SECRET",
+      "required": false,
+      "serverOnly": true,
+      "description": "HMAC secret for dashboard-to-engine signed requests",
+      "present": false,
+      "status": "ok"
+    },
+    {
+      "name": "ENGINE_WEBHOOK_SIGNING_SECRET",
+      "required": false,
+      "serverOnly": true,
+      "description": "HMAC secret for engine-to-dashboard webhooks",
+      "present": false,
+      "status": "ok"
+    },
+    {
+      "name": "DASHBOARD_ENGINE_WEBHOOK_URL",
+      "required": false,
+      "serverOnly": true,
+      "description": "Dashboard endpoint that receives engine webhooks",
+      "present": false,
+      "status": "ok"
+    },
+    {
+      "name": "CORS_ORIGIN",
+      "required": false,
+      "serverOnly": false,
+      "description": "Comma-separated allowed web origins",
+      "present": false,
+      "status": "ok"
+    },
+    {
+      "name": "WEBRTC_STUN_URLS",
+      "required": false,
+      "serverOnly": false,
+      "description": "Comma-separated STUN URLs",
+      "present": false,
+      "status": "ok"
+    },
+    {
+      "name": "WEBRTC_TURN_URLS",
+      "required": false,
+      "serverOnly": true,
+      "description": "Comma-separated TURN URLs",
+      "present": false,
+      "status": "ok"
+    },
+    {
+      "name": "WEBRTC_TURN_USERNAME",
+      "required": false,
+      "serverOnly": true,
+      "description": "TURN username",
+      "present": false,
+      "status": "ok"
+    },
+    {
+      "name": "WEBRTC_TURN_CREDENTIAL",
+      "required": false,
+      "serverOnly": true,
+      "description": "TURN credential/password",
+      "present": false,
+      "status": "ok"
+    },
+    {
+      "name": "RELEASE_MANIFEST_URL",
+      "required": false,
+      "serverOnly": false,
+      "description": "Client release manifest URL",
+      "present": false,
+      "status": "ok"
+    }
+  ]
+}

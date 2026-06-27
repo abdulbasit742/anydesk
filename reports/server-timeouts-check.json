@@ -1,0 +1,20 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:33.166Z",
+  "status": "PASS",
+  "checks": {
+    "packageFileExists": true,
+    "serverFileExists": true,
+    "packageHasServerTimeoutScript": true,
+    "ciRunsServerTimeoutCheck": true,
+    "definesRequestTimeout": true,
+    "definesHeadersTimeout": true,
+    "definesKeepAliveTimeout": true,
+    "appliesRequestTimeout": true,
+    "appliesHeadersTimeout": true,
+    "appliesKeepAliveTimeout": true,
+    "appliesLegacySocketTimeout": true,
+    "createsServerBeforeSocket": true
+  },
+  "failures": []
+}

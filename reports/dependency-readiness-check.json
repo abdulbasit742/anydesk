@@ -1,0 +1,32 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:34.430Z",
+  "status": "PASS",
+  "checks": {
+    "dependencyFileExists": true,
+    "serverFileExists": true,
+    "packageFileExists": true,
+    "packageHasDependencyReadinessCheckScript": true,
+    "ciRunsDependencyReadinessCheck": true,
+    "exportsDependencyHealth": true,
+    "exportsDatabaseHealthCheck": true,
+    "databaseUsesPrismaQuery": true,
+    "databaseReportsLatency": true,
+    "databaseReportsDegraded": true,
+    "databaseReportsCached": true,
+    "databaseReportsTimeout": true,
+    "databaseHasTimeoutLimit": true,
+    "databaseHasCacheTtl": true,
+    "databaseUsesPromiseRace": true,
+    "timeoutIsUnrefed": true,
+    "serverImportsDependencyCheck": true,
+    "serverImportsAsyncHandler": true,
+    "hasReadinessBodyHelper": true,
+    "readinessIncludesDependencies": true,
+    "readyRequiresDatabaseOk": true,
+    "healthReadyRouteAsync": true,
+    "readyzRouteAsync": true,
+    "degradedReturns503": true
+  },
+  "failures": []
+}

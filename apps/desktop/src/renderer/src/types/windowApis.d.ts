@@ -28,8 +28,8 @@ export interface RemoteDeskClipboardApi {
 }
 
 export interface RemoteDeskInputApi {
-  setRemoteInputEnabled(input: { sessionId: string; enabled: boolean }): Promise<{ enabled: boolean }>;
-  emergencyStop(input: { sessionId: string; reason?: string }): Promise<{ enabled: false }>;
+  setRemoteInputEnabled(input: { sessionId: string; enabled: boolean }): Promise<{ enabled: boolean; emergencyStopped?: boolean }>;
+  emergencyStop(input: { sessionId: string; reason?: string }): Promise<{ enabled: false; emergencyStopped?: boolean }>;
   getRemoteInputState(input: { sessionId: string }): Promise<{ enabled: boolean; emergencyStopped: boolean }>;
 }
 
@@ -43,6 +43,7 @@ declare global {
     remoteDeskClipboard?: RemoteDeskClipboardApi;
     remoteDeskInput?: RemoteDeskInputApi;
     remoteDeskDiagnostics?: RemoteDeskDiagnosticsApi;
+    electronAPI?: any;
   }
 }
 

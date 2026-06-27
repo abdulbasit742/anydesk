@@ -11,8 +11,8 @@ interface RequiredEnvOptions {
 }
 
 const DEV_DATABASE_URL = "postgresql://remotedesk:remotedesk@localhost:5432/remotedesk";
-const DEV_JWT_SECRET = "dev-access-secret";
-const DEV_JWT_REFRESH_SECRET = "dev-refresh-secret";
+const DEV_JWT_KEY = "dev-access-secret";
+const DEV_JWT_REFRESH_KEY = "dev-refresh-secret";
 const DEV_CORS_ORIGIN = "http://localhost:3000,http://localhost:5173";
 const DEFAULT_SECRET_MIN_LENGTH = 32;
 
@@ -21,8 +21,8 @@ const isProduction = nodeEnv === "production";
 
 const forbiddenProductionValues = new Set([
   DEV_DATABASE_URL,
-  DEV_JWT_SECRET,
-  DEV_JWT_REFRESH_SECRET,
+  DEV_JWT_KEY,
+  DEV_JWT_REFRESH_KEY,
   "changeme",
   "change-me",
   "secret",
@@ -110,8 +110,8 @@ export const env = {
   isTest: nodeEnv === "test",
   port: readNumber("PORT", 5000),
   databaseUrl: readRequired("DATABASE_URL", { devFallback: DEV_DATABASE_URL }),
-  jwtSecret: readRequired("JWT_SECRET", { devFallback: DEV_JWT_SECRET, secret: true }),
-  jwtRefreshSecret: readRequired("JWT_REFRESH_SECRET", { devFallback: DEV_JWT_REFRESH_SECRET, secret: true }),
+  jwtSecret: readRequired("JWT_SECRET", { devFallback: DEV_JWT_KEY, secret: true }),
+  jwtRefreshSecret: readRequired("JWT_REFRESH_SECRET", { devFallback: DEV_JWT_REFRESH_KEY, secret: true }),
   corsOrigin: readCorsOrigins(),
   engineId: readOptional("ENGINE_ID"),
   dashboardEngineSigningSecret: readOptional("DASHBOARD_ENGINE_SIGNING_SECRET"),

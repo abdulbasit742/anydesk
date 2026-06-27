@@ -1,0 +1,31 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:22.971Z",
+  "status": "PASS",
+  "findings": [
+    {
+      "id": "jwt-secret",
+      "severity": "P0",
+      "file": "apps/api/.env.example",
+      "line": 3,
+      "allowed": true,
+      "preview": "JWT_SECRET=\"change-this-...[REDACTED]\""
+    },
+    {
+      "id": "jwt-secret",
+      "severity": "P0",
+      "file": "infra/docker/docker-compose.prod.yml",
+      "line": 14,
+      "allowed": true,
+      "preview": "      - JWT_SECRET=${JWT_SECRET}"
+    },
+    {
+      "id": "jwt-secret",
+      "severity": "P0",
+      "file": "infra/scripts/setup.sh",
+      "line": 17,
+      "allowed": true,
+      "preview": "  JWT_SECRET=$(openssl rand -hex 64)"
+    }
+  ]
+}

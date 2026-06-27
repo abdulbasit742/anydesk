@@ -1,0 +1,25 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:31.324Z",
+  "status": "PASS",
+  "checks": {
+    "rateLimitFileExists": true,
+    "serverFileExists": true,
+    "authRoutesFileExists": true,
+    "packageFileExists": true,
+    "packageHasRateLimitCheckScript": true,
+    "ciRunsRateLimitCheck": true,
+    "exportsCreateRateLimit": true,
+    "hasNamedPolicies": true,
+    "hasCleanupInterval": true,
+    "deletesStaleBuckets": true,
+    "clampsPositiveIntegers": true,
+    "checksBeforeAddingRejectedHit": true,
+    "sendsRetryAfterSeconds": true,
+    "sendsStandardHeaders": true,
+    "sendsPolicyHeader": true,
+    "globalLimiterNamed": true,
+    "authLimiterStillApplied": true
+  },
+  "failures": []
+}

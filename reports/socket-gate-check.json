@@ -1,0 +1,17 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:25.063Z",
+  "status": "PASS",
+  "checks": {
+    "socketFileExists": true,
+    "betaGateFileExists": true,
+    "socketImportsGate": true,
+    "socketChecksSocketAccess": true,
+    "socketChecksSignalingAccess": true,
+    "socketEmitsFeatureDisabled": true,
+    "socketUsesSafeLogger": true,
+    "betaGateDefinesSocketAccess": true,
+    "betaGateDefinesSignalingAccess": true
+  },
+  "failures": []
+}

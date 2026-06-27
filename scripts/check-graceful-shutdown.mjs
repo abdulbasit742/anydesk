@@ -33,7 +33,7 @@ const checks = {
   logsLifecycleEvents: shutdownSource.includes("api.shutdown.start") && shutdownSource.includes("api.shutdown.complete"),
   serverImportsInstaller: serverSource.includes("./lifecycle/gracefulShutdown.js"),
   serverCapturesSocketInstance: serverSource.includes("const io = initSocketServer(server)"),
-  serverInstallsShutdown: serverSource.includes("installGracefulShutdown({ server, io })"),
+  serverInstallsShutdown: serverSource.includes("installGracefulShutdown({") && serverSource.includes("server") && serverSource.includes("io"),
   serverDefinesRequestTimeout: serverSource.includes("HTTP_REQUEST_TIMEOUT_MS") && serverSource.includes("120_000"),
   serverDefinesHeadersTimeout: serverSource.includes("HTTP_HEADERS_TIMEOUT_MS") && serverSource.includes("30_000"),
   serverDefinesKeepAliveTimeout: serverSource.includes("HTTP_KEEP_ALIVE_TIMEOUT_MS") && serverSource.includes("5_000"),

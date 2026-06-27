@@ -1,0 +1,26 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:26.323Z",
+  "status": "PASS",
+  "checks": {
+    "envFileExists": true,
+    "validateScriptExists": true,
+    "serverFileExists": true,
+    "detectsProductionMode": true,
+    "blocksDevJwtAccessSecret": true,
+    "blocksDevJwtRefreshSecret": true,
+    "enforcesSecretLength": true,
+    "requiresCorsOriginInProduction": true,
+    "normalizesCorsOrigins": true,
+    "blocksWildcardCorsWithCredentials": true,
+    "validatesCorsUrl": true,
+    "restrictsCorsToHttpProtocols": true,
+    "blocksCorsPathQueryHash": true,
+    "deduplicatesCorsOrigins": true,
+    "serverUsesCorsWithCredentials": true,
+    "exposesRuntimeFlags": true,
+    "validateRequiresDatabaseUrl": true,
+    "validateRequiresJwtSecrets": true
+  },
+  "failures": []
+}

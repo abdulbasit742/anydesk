@@ -1,0 +1,26 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:27.578Z",
+  "status": "PASS",
+  "checks": {
+    "tokensFileExists": true,
+    "authRoutesFileExists": true,
+    "hasVerifyRefreshToken": true,
+    "accessUsesJwtSecret": true,
+    "refreshUsesRefreshSecret": true,
+    "validatesTokenPayload": true,
+    "hasIssueTokenPair": true,
+    "authRouteHasRefreshEndpoint": true,
+    "refreshEndpointVerifiesRefreshToken": true,
+    "authResponsesUseIssueTokenPair": true,
+    "importsRateLimit": true,
+    "definesAuthRateLimit": true,
+    "appliesSignupRateLimit": true,
+    "appliesLoginRateLimit": true,
+    "appliesRefreshRateLimit": true,
+    "emailTrimsBeforeValidation": true,
+    "emailIsLowercased": true,
+    "doesNotReturnPasswordHash": true
+  },
+  "failures": []
+}

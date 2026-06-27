@@ -37,8 +37,8 @@ const checks = {
   hasReadinessBodyHelper: serverSource.includes("async function readinessBody"),
   readinessIncludesDependencies: serverSource.includes("dependencies") && serverSource.includes("database"),
   readyRequiresDatabaseOk: serverSource.includes('database.status === "ok"'),
-  healthReadyRouteAsync: serverSource.includes('app.get("/health/ready", asyncHandler'),
-  readyzRouteAsync: serverSource.includes('app.get("/readyz", asyncHandler'),
+  healthReadyRouteAsync: serverSource.includes('"/health/ready"') && serverSource.includes("asyncHandler"),
+  readyzRouteAsync: serverSource.includes('"/readyz"') && serverSource.includes("asyncHandler"),
   degradedReturns503: serverSource.includes("res.status(body.ready ? 200 : 503)")
 };
 

@@ -1,0 +1,32 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:28.198Z",
+  "status": "PASS",
+  "checks": {
+    "handlerFileExists": true,
+    "serverFileExists": true,
+    "packageFileExists": true,
+    "packageHasApiErrorsCheckScript": true,
+    "ciRunsApiErrorsCheck": true,
+    "exportsNotFound": true,
+    "exportsErrorHandler": true,
+    "handlesZodErrors": true,
+    "detectsJsonSyntaxError": true,
+    "returnsInvalidJsonCode": true,
+    "detectsUnsupportedContentEncoding": true,
+    "returnsUnsupportedContentEncodingCode": true,
+    "detectsUnsupportedCharset": true,
+    "returnsUnsupportedCharsetCode": true,
+    "detectsPayloadTooLarge": true,
+    "maps413ToPayloadTooLarge": true,
+    "returnsPayloadTooLargeMessage": true,
+    "delegatesWhenHeadersSent": true,
+    "hidesStackInProduction": true,
+    "logsWithSafeLogger": true,
+    "returnsRequestId": true,
+    "serverImportsHandlers": true,
+    "serverMountsNotFound": true,
+    "serverMountsErrorHandler": true
+  },
+  "failures": []
+}

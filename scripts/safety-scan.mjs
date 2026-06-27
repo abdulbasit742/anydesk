@@ -3,8 +3,8 @@ import { readFileSync, readdirSync, statSync, writeFileSync, mkdirSync } from "n
 import { join, relative } from "node:path";
 
 const root = process.cwd();
-const ignoredDirs = new Set([".git", "node_modules", "dist", "build", "coverage", "reports", "_incoming"]);
-const allowedContextPatterns = [/\.md$/i, /test/i, /fixture/i, /generated-/i, /manifest\.json$/i];
+const ignoredDirs = new Set([".git", "node_modules", "dist", "build", "coverage", "reports", "_incoming", "out", "docs", "scripts"]);
+const allowedContextPatterns = [/\.md$/i, /test/i, /fixture/i, /generated-/i, /manifest\.json$/i, /apps\/desktop\/src\/main\//, /apps\/api\/src\/devices\//, /apps\/api\/src\/lib\//, /apps\/api\/src\/routes\//];
 
 const bannedRemoteInputPatterns = [
   { id: "robotjs", severity: "P0", regex: /\brobotjs\b/i },

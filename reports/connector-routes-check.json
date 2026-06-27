@@ -1,0 +1,32 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:30.107Z",
+  "status": "PASS",
+  "checks": {
+    "routeFileExists": true,
+    "libFileExists": true,
+    "asyncCheckFileExists": true,
+    "packageFileExists": true,
+    "packageHasConnectorsCheckScript": true,
+    "ciRunsConnectorsCheck": true,
+    "routeUsesAuth": true,
+    "routeUsesAsyncHandler": true,
+    "connectorKeyParamsBounded": true,
+    "auditQuerySchemaExists": true,
+    "auditLimitCoerced": true,
+    "auditLimitHardCapped": true,
+    "auditQueryValidated": true,
+    "auditPassesLimitToLib": true,
+    "auditReturnsMetaLimit": true,
+    "libDefinesDefaultLimit": true,
+    "libDefinesMaxLimit": true,
+    "libClampsLimit": true,
+    "libUsesClampedTake": true,
+    "libHasSeedPromiseCache": true,
+    "libHasDedicatedSeedFunction": true,
+    "libUsesNullishAssignmentForSeed": true,
+    "libResetsSeedPromiseOnFailure": true,
+    "asyncCheckerCoversConnectors": true
+  },
+  "failures": []
+}

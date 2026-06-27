@@ -1,0 +1,159 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:24.439Z",
+  "status": "PASS",
+  "findings": [
+    {
+      "id": "sendinput",
+      "severity": "P0",
+      "file": "apps/api/src/devices/implementations/SmartphoneDevice.ts",
+      "line": 139,
+      "allowed": true,
+      "preview": "          result = await this.sendInput(command.params);"
+    },
+    {
+      "id": "sendinput",
+      "severity": "P0",
+      "file": "apps/api/src/devices/implementations/SmartphoneDevice.ts",
+      "line": 200,
+      "allowed": true,
+      "preview": "  private async sendInput(params: any): Promise<any> {"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/api/src/lib/ai.ts",
+      "line": 76,
+      "allowed": true,
+      "preview": "Generate a safe, effective script (PowerShell for Windows, Bash for Linux/macOS) to resolve this issue."
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/api/src/routes/multiplatform/remoteShell.routes.ts",
+      "line": 13,
+      "allowed": true,
+      "preview": "  shell: z.enum([\"bash\", \"sh\", \"zsh\", \"powershell\"]).optional(),"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/desktop/src/main/aiSupportIpc.ts",
+      "line": 6,
+      "allowed": true,
+      "preview": " *  - Auto-fix script execution (PowerShell / Bash)"
+    },
+    {
+      "id": "child-process-exec",
+      "severity": "P1",
+      "file": "apps/desktop/src/main/aiSupportIpc.ts",
+      "line": 15,
+      "allowed": true,
+      "preview": "import { exec, spawn } from \"node:child_process\";"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/desktop/src/main/aiSupportIpc.ts",
+      "line": 74,
+      "allowed": true,
+      "preview": "        `powershell -Command \"Get-EventLog -LogName System -EntryType Error -Newest 5 | Select-Object -ExpandProperty Message\"`,"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/desktop/src/main/aiSupportIpc.ts",
+      "line": 155,
+      "allowed": true,
+      "preview": "        ? `powershell -ExecutionPolicy Bypass -File \"${scriptPath}\"`"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/desktop/src/main/aiSupportIpc.ts",
+      "line": 183,
+      "allowed": true,
+      "preview": "      command = `powershell -Command \"Restart-Service -Name '${serviceName}' -Force\"`;"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/desktop/src/main/aiSupportIpc.ts",
+      "line": 276,
+      "allowed": true,
+      "preview": "      command = `powershell -Command \""
+    },
+    {
+      "id": "child-process-exec",
+      "severity": "P1",
+      "file": "apps/desktop/src/main/cloudGamingIpc.ts",
+      "line": 9,
+      "allowed": true,
+      "preview": "import { execSync, exec } from \"node:child_process\";"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/desktop/src/main/cloudGamingIpc.ts",
+      "line": 286,
+      "allowed": true,
+      "preview": "      const output = execSync(\"powershell -Command \\\"Confirm-SecureBootUEFI\\\" 2>nul\", { timeout: 5000 }).toString().trim();"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/desktop/src/main/cloudGamingIpc.ts",
+      "line": 337,
+      "allowed": true,
+      "preview": "        const output = execSync(\"powershell -Command \\\"Get-WmiObject -Namespace root\\\\wmi -Class WmiMonitorBasicDisplayParams | Select-Object -Property Active,M"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/desktop/src/main/cloudGamingIpc.ts",
+      "line": 369,
+      "allowed": true,
+      "preview": "        const output = execSync(\"powershell -Command \\\"(Get-WmiObject -Namespace root\\\\wmi -Class WmiMonitorColorCharacteristics).DefaultColorSpace\\\" 2>nul\", { "
+    },
+    {
+      "id": "osascript",
+      "severity": "P0",
+      "file": "apps/desktop/src/main/remoteControlIpc.ts",
+      "line": 86,
+      "allowed": true,
+      "preview": "        command = \"osascript -e 'tell application \\\"System Events\\\" to log out'\";"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/desktop/src/main/zeroTrustIpc.ts",
+      "line": 53,
+      "allowed": true,
+      "preview": "      const out = execSync(\"powershell -command \\\"Confirm-SecureBootUEFI\\\"\", { encoding: \"utf8\", timeout: 5000 });"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "apps/desktop/src/main/zeroTrustIpc.ts",
+      "line": 67,
+      "allowed": true,
+      "preview": "      const out = execSync(\"powershell -command \\\"Get-Tpm | Select-Object -ExpandProperty TpmPresent\\\"\", { encoding: \"utf8\", timeout: 5000 });"
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "generated-kimi-title-analysis-manifest.json",
+      "line": 466,
+      "allowed": true,
+      "preview": "                            \"path\":  \"windows-powershell-run-guide.md\","
+    },
+    {
+      "id": "powershell",
+      "severity": "P0",
+      "file": "generated-remotedesk-self-work-launch-operations-summary.md",
+      "line": 47,
+      "allowed": true,
+      "preview": "Node/npm were unavailable in this environment, so Prisma generation, TypeScript checks, and Next/API builds could not run here. JSON/report/source scans were ru"
+    }
+  ]
+}

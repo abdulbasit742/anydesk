@@ -1,0 +1,32 @@
+{
+  "repo": "abdulbasit742/anydesk",
+  "generatedAt": "2026-06-27T08:47:26.945Z",
+  "status": "PASS",
+  "checks": {
+    "envFileExists": true,
+    "requestIdFileExists": true,
+    "methodGuardFileExists": true,
+    "serverFileExists": true,
+    "packageFileExists": true,
+    "hasNormalizeCorsOrigin": true,
+    "blocksWildcardWithCredentials": true,
+    "validatesUrlWithConstructor": true,
+    "restrictsHttpProtocols": true,
+    "blocksPathQueryHash": true,
+    "deduplicatesOrigins": true,
+    "exposesCorsOrigin": true,
+    "requestIdHeaderIsExported": true,
+    "methodGuardExportsAllowedMethods": true,
+    "serverUsesCorsPackage": true,
+    "serverUsesEnvCorsOrigin": true,
+    "serverUsesCredentials": true,
+    "serverDerivesCorsMethodsFromAllowlist": true,
+    "serverUsesSharedRequestIdHeaderInAllowedHeaders": true,
+    "serverUsesSharedRequestIdHeaderInExposedHeaders": true,
+    "serverUsesExplicitCorsPreflightMaxAge": true,
+    "serverUsesExplicitOptionsSuccessStatus": true,
+    "packageHasCorsCheckScript": true,
+    "ciRunsCorsCheck": true
+  },
+  "failures": []
+}
