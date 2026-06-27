@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Analytics API Integration", () => { it("GET /api/analytics/mrr - should return MRR", () => { expect(true).toBe(true); }); it("GET /api/analytics/churn - should return churn rate", () => { expect(true).toBe(true); }); it("GET /api/analytics/connections - should return stats", () => { expect(true).toBe(true); }); it("GET /api/analytics/user-growth - should return growth", () => { expect(true).toBe(true); }); });

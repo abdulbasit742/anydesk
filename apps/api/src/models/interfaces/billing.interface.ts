@@ -1,0 +1,2 @@
+export interface ISubscription { id: string; userId: string; plan: string; status: "active" | "cancelled" | "past_due" | "trialing"; stripeCustomerId?: string; stripeSubscriptionId?: string; currentPeriodStart: Date; currentPeriodEnd: Date; monthlyAmount: number; }
+export interface IInvoice { id: string; userId: string; invoiceNumber: string; status: "pending" | "paid" | "overdue" | "cancelled"; subtotal: number; tax: number; total: number; dueDate: Date; paidAt?: Date; }

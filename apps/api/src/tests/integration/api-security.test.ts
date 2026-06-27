@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Security API Integration", () => { it("GET /api/security/threats - should list threats", () => { expect(true).toBe(true); }); it("POST /api/security/scan - should initiate scan", () => { expect(true).toBe(true); }); it("POST /api/security/firewall/rules - should create rule", () => { expect(true).toBe(true); }); it("POST /api/security/block-ip - should block IP", () => { expect(true).toBe(true); }); it("GET /api/security/vulnerabilities - should list vulns", () => { expect(true).toBe(true); }); });

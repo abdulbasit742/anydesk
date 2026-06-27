@@ -1,0 +1,1 @@
+export interface CreateAlertRuleDto { name: string; metric: "cpu" | "ram" | "disk" | "network" | "temperature" | "uptime"; condition: "gt" | "lt" | "eq" | "gte" | "lte"; threshold: number; severity: "critical" | "warning" | "info"; duration?: number; targetDevices?: string[]; targetGroups?: string[]; channels: ("email" | "push" | "slack" | "webhook")[]; }

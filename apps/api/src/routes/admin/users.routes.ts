@@ -1,0 +1,11 @@
+import { Router } from "express";
+const router = Router();
+router.get("/", async (req, res) => { res.json({ users: [], total: 0, page: 1 }); });
+router.get("/:id", async (req, res) => { res.json({ user: { id: req.params.id } }); });
+router.put("/:id", async (req, res) => { res.json({ updated: true }); });
+router.post("/:id/suspend", async (req, res) => { res.json({ suspended: true }); });
+router.post("/:id/activate", async (req, res) => { res.json({ activated: true }); });
+router.delete("/:id", async (req, res) => { res.json({ deleted: true }); });
+router.get("/:id/sessions", async (req, res) => { res.json({ sessions: [] }); });
+router.get("/:id/devices", async (req, res) => { res.json({ devices: [] }); });
+export default router;

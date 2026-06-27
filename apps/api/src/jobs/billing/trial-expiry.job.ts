@@ -1,0 +1,1 @@
+export const trialExpiryJob = { name: "trial-expiry-check", schedule: "0 9 * * *", async handler() { console.log("[Job] Checking trial expirations..."); /* Notify users whose trials are ending, convert or downgrade */ } };

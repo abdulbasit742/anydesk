@@ -1,0 +1,1 @@
+export const tempFilesCleanupJob = { name: "temp-files-cleanup", schedule: "0 4 * * *", async handler() { console.log("[Job] Cleaning temp files..."); /* Remove temporary file transfers, expired recordings */ } };

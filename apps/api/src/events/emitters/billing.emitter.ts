@@ -1,0 +1,3 @@
+import { EventEmitter } from "events";
+class BillingEventEmitter extends EventEmitter { emitPaymentReceived(userId: string, amount: number) { this.emit("billing.payment_received", { userId, amount, timestamp: new Date() }); } emitPaymentFailed(userId: string, reason: string) { this.emit("billing.payment_failed", { userId, reason, timestamp: new Date() }); } emitSubscriptionCreated(userId: string, plan: string) { this.emit("billing.subscription_created", { userId, plan, timestamp: new Date() }); } emitSubscriptionCancelled(userId: string) { this.emit("billing.subscription_cancelled", { userId, timestamp: new Date() }); } }
+export const billingEmitter = new BillingEventEmitter();

@@ -1,0 +1,1 @@
+export const fleetConfig = { deployment: { maxConcurrent: 50, timeoutPerDevice: 600, retryAttempts: 3, retryDelay: 30000, rollbackOnFailureThreshold: 0.2 }, policies: { evaluationInterval: 3600000, enforcementMode: "monitor" }, groups: { maxDepth: 5, maxDevicesPerGroup: 1000 } };

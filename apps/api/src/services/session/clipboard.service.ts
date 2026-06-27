@@ -1,0 +1,1 @@
+export const clipboardService = { async sync(sessionId: string, content: string, type: "text" | "image" | "file") { return { synced: true, type, size: content.length, timestamp: Date.now() }; }, async getHistory(sessionId: string, limit: number = 50) { return { items: [], total: 0 }; }, async clearHistory(sessionId: string) { return { cleared: true }; } };

@@ -1,0 +1,10 @@
+import { Router } from "express";
+const router = Router();
+router.get("/", async (req, res) => { res.json({ alerts: [], total: 0 }); });
+router.post("/rules", async (req, res) => { res.json({ rule: { id: `rule_${Date.now()}`, ...req.body } }); });
+router.get("/rules", async (req, res) => { res.json({ rules: [] }); });
+router.put("/rules/:id", async (req, res) => { res.json({ updated: true }); });
+router.delete("/rules/:id", async (req, res) => { res.json({ deleted: true }); });
+router.post("/:id/acknowledge", async (req, res) => { res.json({ acknowledged: true }); });
+router.post("/:id/resolve", async (req, res) => { res.json({ resolved: true }); });
+export default router;

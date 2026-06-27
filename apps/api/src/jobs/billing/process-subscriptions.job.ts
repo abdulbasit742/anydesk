@@ -1,0 +1,1 @@
+export const processSubscriptionsJob = { name: "process-subscriptions", schedule: "0 0 * * *", async handler() { console.log("[Job] Processing subscription renewals..."); /* Check for subscriptions due for renewal, process payments */ } };

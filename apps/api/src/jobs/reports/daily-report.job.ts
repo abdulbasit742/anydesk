@@ -1,0 +1,1 @@
+export const dailyReportJob = { name: "daily-report", schedule: "0 8 * * *", async handler() { console.log("[Job] Generating daily report..."); /* Compile daily stats: connections, new users, revenue, alerts */ } };

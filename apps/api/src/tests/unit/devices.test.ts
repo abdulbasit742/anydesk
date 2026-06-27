@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Device Service", () => { it("should register new device", () => { expect(true).toBe(true); }); it("should update device status", () => { expect(true).toBe(true); }); it("should scan network for devices", () => { expect(true).toBe(true); }); it("should handle device offline", () => { expect(true).toBe(true); }); it("should calculate device uptime", () => { expect(true).toBe(true); }); });

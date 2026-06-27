@@ -1,0 +1,3 @@
+export enum NotificationType { DEVICE_ONLINE = "device_online", DEVICE_OFFLINE = "device_offline", ALERT_TRIGGERED = "alert_triggered", SECURITY_THREAT = "security_threat", BACKUP_COMPLETED = "backup_completed", DEPLOYMENT_FINISHED = "deployment_finished", PAYMENT_RECEIVED = "payment_received", PAYMENT_FAILED = "payment_failed", TRIAL_ENDING = "trial_ending", SUBSCRIPTION_RENEWED = "subscription_renewed" }
+export enum NotificationChannel { IN_APP = "in_app", EMAIL = "email", PUSH = "push", SMS = "sms", SLACK = "slack", WEBHOOK = "webhook" }
+export enum NotificationPriority { URGENT = "urgent", HIGH = "high", NORMAL = "normal", LOW = "low" }

@@ -1,0 +1,1 @@
+export const metricsAggregationJob = { name: "metrics-aggregation", schedule: "0 * * * *", async handler() { console.log("[Job] Aggregating hourly metrics..."); /* Aggregate raw metrics into hourly/daily summaries */ } };

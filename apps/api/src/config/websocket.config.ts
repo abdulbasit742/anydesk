@@ -1,0 +1,1 @@
+export const wsConfig = { path: "/ws", cors: { origin: "*" }, pingInterval: 25000, pingTimeout: 5000, maxPayload: 10 * 1024 * 1024, transports: ["websocket", "polling"], compression: true, perMessageDeflate: { threshold: 1024 } };

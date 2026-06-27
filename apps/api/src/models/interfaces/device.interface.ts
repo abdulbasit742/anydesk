@@ -1,0 +1,2 @@
+export interface IDevice { id: string; userId: string; name: string; type: string; os: string; osVersion?: string; ipAddress?: string; macAddress?: string; status: "online" | "offline" | "maintenance" | "error"; lastSeen: Date; cpuUsage?: number; ramUsage?: number; diskUsage?: number; agentVersion?: string; tags: string[]; createdAt: Date; updatedAt: Date; }
+export interface IDeviceMetrics { cpu: number; ram: number; disk: number; networkIn: number; networkOut: number; temperature?: number; processes: number; uptime: number; }

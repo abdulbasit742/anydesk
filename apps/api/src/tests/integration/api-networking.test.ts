@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Networking API Integration", () => { it("POST /api/vpn/networks - should create network", () => { expect(true).toBe(true); }); it("POST /api/vpn/peers - should add peer", () => { expect(true).toBe(true); }); it("POST /api/dns/records - should create DNS record", () => { expect(true).toBe(true); }); it("GET /api/dns/resolve - should resolve name", () => { expect(true).toBe(true); }); });

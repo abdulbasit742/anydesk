@@ -1,0 +1,2 @@
+import crypto from "crypto";
+export const hash = { md5: (data: string) => crypto.createHash("md5").update(data).digest("hex"), sha256: (data: string) => crypto.createHash("sha256").update(data).digest("hex"), sha512: (data: string) => crypto.createHash("sha512").update(data).digest("hex"), hmac: (data: string, key: string) => crypto.createHmac("sha256", key).update(data).digest("hex"), randomToken: (bytes: number = 32) => crypto.randomBytes(bytes).toString("hex"), uuid: () => crypto.randomUUID() };

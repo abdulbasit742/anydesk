@@ -1,0 +1,1 @@
+export const deviceSyncJob = { name: "device-sync", schedule: "*/10 * * * *", async handler() { console.log("[Job] Syncing device states..."); /* Sync device status with agents, update stale records */ } };

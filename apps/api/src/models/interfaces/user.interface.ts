@@ -1,0 +1,2 @@
+export interface IUser { id: string; email: string; name: string; avatar?: string; role: string; plan: string; orgId?: string; mfaEnabled: boolean; status: "active" | "suspended" | "deleted"; lastLoginAt?: Date; createdAt: Date; }
+export interface IUserPreferences { theme: "light" | "dark" | "system"; language: string; timezone: string; notifications: { email: boolean; push: boolean; sms: boolean }; defaultQuality: string; autoConnect: boolean; }

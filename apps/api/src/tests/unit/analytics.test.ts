@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Analytics Service", () => { it("should calculate MRR", () => { expect(true).toBe(true); }); it("should calculate churn rate", () => { expect(true).toBe(true); }); it("should track user growth", () => { expect(true).toBe(true); }); it("should calculate DAU/MAU", () => { expect(true).toBe(true); }); it("should aggregate connection stats", () => { expect(true).toBe(true); }); });

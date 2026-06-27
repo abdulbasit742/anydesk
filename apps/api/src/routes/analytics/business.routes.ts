@@ -1,0 +1,10 @@
+import { Router } from "express";
+const router = Router();
+router.get("/mrr", (req, res) => res.json({ mrr: 0 }));
+router.get("/arr", (req, res) => res.json({ arr: 0 }));
+router.get("/churn", (req, res) => res.json({ churnRate: 0 }));
+router.get("/revenue-by-plan", (req, res) => res.json({ revenue: {} }));
+router.get("/user-growth", (req, res) => res.json({ growth: [] }));
+router.get("/dau", (req, res) => res.json({ dau: 0 }));
+router.get("/mau", (req, res) => res.json({ mau: 0 }));
+export default router;

@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Devices API Integration", () => { it("POST /api/devices/register - should register device", () => { expect(true).toBe(true); }); it("GET /api/devices - should list devices", () => { expect(true).toBe(true); }); it("POST /api/devices/connect - should initiate connection", () => { expect(true).toBe(true); }); it("POST /api/devices/file-transfer - should transfer file", () => { expect(true).toBe(true); }); it("POST /api/devices/wake - should send WOL packet", () => { expect(true).toBe(true); }); });

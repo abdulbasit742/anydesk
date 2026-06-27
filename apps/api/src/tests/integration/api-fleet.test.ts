@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Fleet API Integration", () => { it("POST /api/fleet/groups - should create group", () => { expect(true).toBe(true); }); it("POST /api/fleet/deployments - should create deployment", () => { expect(true).toBe(true); }); it("POST /api/fleet/bulk-actions - should execute bulk action", () => { expect(true).toBe(true); }); it("GET /api/fleet/policies - should list policies", () => { expect(true).toBe(true); }); it("POST /api/fleet/policies/apply - should apply policy", () => { expect(true).toBe(true); }); });

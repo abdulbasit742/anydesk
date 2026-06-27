@@ -1,0 +1,1 @@
+export interface CreateDeploymentDto { name: string; type: "script" | "update" | "config" | "package"; payload: string; targetDevices: string[]; targetGroups?: string[]; schedule?: string; rollbackOnFailure?: boolean; maxConcurrent?: number; }

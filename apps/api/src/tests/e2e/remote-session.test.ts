@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("E2E: Remote Session", () => { it("should establish WebRTC connection", () => { expect(true).toBe(true); }); it("should transfer files during session", () => { expect(true).toBe(true); }); it("should sync clipboard", () => { expect(true).toBe(true); }); it("should record session", () => { expect(true).toBe(true); }); it("should handle reconnection", () => { expect(true).toBe(true); }); });

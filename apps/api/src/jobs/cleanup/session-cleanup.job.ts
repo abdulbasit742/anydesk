@@ -1,0 +1,1 @@
+export const sessionCleanupJob = { name: "session-cleanup", schedule: "0 2 * * *", async handler() { console.log("[Job] Cleaning up expired sessions..."); /* Remove expired sessions, stale connections */ } };

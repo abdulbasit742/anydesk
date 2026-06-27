@@ -1,0 +1,3 @@
+import { EventEmitter } from "events";
+class DeviceEventEmitter extends EventEmitter { emitDeviceOnline(deviceId: string) { this.emit("device.online", { deviceId, timestamp: new Date() }); } emitDeviceOffline(deviceId: string) { this.emit("device.offline", { deviceId, timestamp: new Date() }); } emitDeviceAlert(deviceId: string, alert: any) { this.emit("device.alert", { deviceId, alert, timestamp: new Date() }); } emitDeviceMetrics(deviceId: string, metrics: any) { this.emit("device.metrics", { deviceId, metrics, timestamp: new Date() }); } }
+export const deviceEmitter = new DeviceEventEmitter();

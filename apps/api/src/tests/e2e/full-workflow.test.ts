@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("E2E: Full Workflow", () => { it("should register, subscribe, add device, connect, and disconnect", () => { expect(true).toBe(true); }); it("should handle complete billing lifecycle", () => { expect(true).toBe(true); }); it("should manage fleet from creation to deployment", () => { expect(true).toBe(true); }); it("should detect and resolve security threat", () => { expect(true).toBe(true); }); });

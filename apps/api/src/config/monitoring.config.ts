@@ -1,0 +1,1 @@
+export const monitoringConfig = { metrics: { collectionInterval: 30000, retentionDays: 90, aggregationIntervals: ["1m", "5m", "1h", "1d"] }, alerts: { evaluationInterval: 60000, cooldownPeriod: 300000, maxNotificationsPerHour: 10 }, healthCheck: { interval: 30000, timeout: 5000, unhealthyThreshold: 3, healthyThreshold: 2 } };

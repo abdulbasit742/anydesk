@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports: ["3001:3001"]
+    volumes: ["./src:/app/src"]
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/remotedesk_dev
+    depends_on: [db, redis]
+  db:
+    image: postgres:15-alpine
+    environment: { POSTGRES_DB: remotedesk_dev, POSTGRES_USER: postgres, POSTGRES_PASSWORD: postgres }
+    ports: ["5432:5432"]
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]

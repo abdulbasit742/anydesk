@@ -1,0 +1,1 @@
+export const logRotationJob = { name: "log-rotation", schedule: "0 3 * * 0", async handler() { console.log("[Job] Rotating logs..."); /* Archive old logs, delete logs older than retention period */ } };

@@ -1,0 +1,1 @@
+export const prismaConfig = { datasources: { db: { url: process.env.DATABASE_URL || "postgresql://localhost:5432/remotedesk" } }, log: process.env.NODE_ENV === "development" ? ["query", "info", "warn", "error"] : ["error"] };

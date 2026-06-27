@@ -1,0 +1,10 @@
+import { Router } from "express";
+const router = Router();
+router.get("/", async (req, res) => { res.json({ groups: [] }); });
+router.post("/", async (req, res) => { res.json({ group: { id: `grp_${Date.now()}`, ...req.body } }); });
+router.get("/:id", async (req, res) => { res.json({ group: { id: req.params.id } }); });
+router.put("/:id", async (req, res) => { res.json({ updated: true }); });
+router.delete("/:id", async (req, res) => { res.json({ deleted: true }); });
+router.post("/:id/devices", async (req, res) => { res.json({ added: true }); });
+router.delete("/:id/devices/:deviceId", async (req, res) => { res.json({ removed: true }); });
+export default router;

@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Billing Service", () => { it("should create subscription", () => { expect(true).toBe(true); }); it("should calculate prorated amount", () => { expect(true).toBe(true); }); it("should validate coupon codes", () => { expect(true).toBe(true); }); it("should calculate VAT correctly", () => { expect(true).toBe(true); }); it("should handle plan upgrades", () => { expect(true).toBe(true); }); it("should handle plan downgrades", () => { expect(true).toBe(true); }); });

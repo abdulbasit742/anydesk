@@ -1,0 +1,1 @@
+export const metricsHandler = { onDeviceMetrics(socket: any, data: { deviceId: string; cpu: number; ram: number; disk: number; network: { in: number; out: number } }) { socket.to(`device:${data.deviceId}:watchers`).emit("device_metrics", data); }, onHeartbeat(socket: any, data: { deviceId: string }) { socket.emit("heartbeat_ack", { timestamp: Date.now() }); } };

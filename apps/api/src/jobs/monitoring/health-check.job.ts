@@ -1,0 +1,1 @@
+export const healthCheckJob = { name: "device-health-check", schedule: "*/5 * * * *", async handler() { console.log("[Job] Running device health checks..."); /* Ping all devices, update status, trigger alerts for offline */ } };

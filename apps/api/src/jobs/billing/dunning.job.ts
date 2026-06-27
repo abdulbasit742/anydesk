@@ -1,0 +1,1 @@
+export const dunningJob = { name: "dunning-management", schedule: "0 */6 * * *", async handler() { console.log("[Job] Running dunning management..."); /* Retry failed payments, send reminders, downgrade if needed */ } };

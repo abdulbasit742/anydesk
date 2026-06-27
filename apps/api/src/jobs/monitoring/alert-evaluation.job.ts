@@ -1,0 +1,1 @@
+export const alertEvaluationJob = { name: "alert-evaluation", schedule: "* * * * *", async handler() { console.log("[Job] Evaluating alert rules..."); /* Check all alert rules against current metrics, trigger if threshold breached */ } };

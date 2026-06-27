@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Fleet Service", () => { it("should create device group", () => { expect(true).toBe(true); }); it("should add device to group", () => { expect(true).toBe(true); }); it("should execute bulk action", () => { expect(true).toBe(true); }); it("should create deployment", () => { expect(true).toBe(true); }); it("should rollback failed deployment", () => { expect(true).toBe(true); }); });

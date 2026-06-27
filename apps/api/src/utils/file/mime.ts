@@ -1,0 +1,3 @@
+const MIME_TYPES: Record<string, string> = { ".html": "text/html", ".css": "text/css", ".js": "application/javascript", ".json": "application/json", ".png": "image/png", ".jpg": "image/jpeg", ".gif": "image/gif", ".svg": "image/svg+xml", ".pdf": "application/pdf", ".zip": "application/zip", ".mp4": "video/mp4", ".mp3": "audio/mpeg" };
+export const getMimeType = (filename: string): string => { const ext = filename.slice(filename.lastIndexOf(".")); return MIME_TYPES[ext] || "application/octet-stream"; };
+export const getExtension = (mimeType: string): string => { const entry = Object.entries(MIME_TYPES).find(([, mime]) => mime === mimeType); return entry ? entry[0] : ""; };

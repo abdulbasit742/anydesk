@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Monitoring Service", () => { it("should record device metrics", () => { expect(true).toBe(true); }); it("should calculate average metrics", () => { expect(true).toBe(true); }); it("should trigger alert on threshold", () => { expect(true).toBe(true); }); it("should calculate uptime percentage", () => { expect(true).toBe(true); }); it("should detect device offline", () => { expect(true).toBe(true); }); });

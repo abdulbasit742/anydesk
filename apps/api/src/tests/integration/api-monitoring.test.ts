@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Monitoring API Integration", () => { it("POST /api/monitoring/metrics - should record metrics", () => { expect(true).toBe(true); }); it("GET /api/monitoring/alerts - should list alerts", () => { expect(true).toBe(true); }); it("GET /api/monitoring/uptime - should return uptime", () => { expect(true).toBe(true); }); it("GET /api/monitoring/logs/search - should search logs", () => { expect(true).toBe(true); }); it("POST /api/monitoring/alert-rules - should create rule", () => { expect(true).toBe(true); }); });

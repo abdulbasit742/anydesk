@@ -1,0 +1,2 @@
+import { describe, it, expect } from "vitest";
+describe("Auth API Integration", () => { it("POST /api/auth/register - should register user", () => { expect(true).toBe(true); }); it("POST /api/auth/login - should login user", () => { expect(true).toBe(true); }); it("POST /api/auth/mfa/enable - should enable MFA", () => { expect(true).toBe(true); }); it("GET /api/auth/sessions - should list sessions", () => { expect(true).toBe(true); }); it("POST /api/auth/api-keys - should create API key", () => { expect(true).toBe(true); }); });

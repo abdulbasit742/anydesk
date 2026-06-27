@@ -1,0 +1,2 @@
+export interface IRemoteSession { id: string; fromDeviceId: string; toDeviceId: string; userId: string; status: "connecting" | "connected" | "disconnected" | "failed"; protocol: "custom_udp" | "webrtc" | "tcp"; quality: "auto" | "high" | "medium" | "low"; startedAt: Date; connectedAt?: Date; endedAt?: Date; duration?: number; dataTransferred?: number; }
+export interface ISessionConfig { quality: string; fps: number; colorDepth: number; compression: string; audioEnabled: boolean; clipboardSync: boolean; fileTransfer: boolean; }
