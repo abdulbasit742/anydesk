@@ -13,6 +13,10 @@ import { verifyPassword } from "../lib/password.js";
 import { verifyAccessToken } from "../lib/tokens.js";
 import { isBetaApiFeatureEnabled } from "../middleware/betaFeatureGate.js";
 import { logger } from "../observability/safeLogger.js";
+import { devFallbackGetUserById } from "../routes/devFallback.routes.js";
+import { randomUUID } from "node:crypto";
+
+const DEV_FALLBACK = process.env.DEV_IN_MEMORY_FALLBACK === "true";
 
 interface AuthedSocket extends Socket {
   data: {
@@ -72,10 +76,17 @@ export function initSocketServer(httpServer: HttpServer) {
       const token = socket.handshake.auth.token as string | undefined;
       if (!token) return next(new Error("Missing token"));
       const payload = verifyAccessToken(token);
-      const user = await prisma.user.findUnique({
-        where: { id: payload.userId },
-        select: { id: true, email: true, remoteDeskId: true }
-      });
+      let user: { id: string; email: string; remoteDeskId: string } | null = null;
+
+      if (process.env.DEV_IN_MEMORY_FALLBACK === "true") {
+        user = devFallbackGetUserById(payload.userId);
+      } else {
+        user = await prisma.user.findUnique({
+          where: { id: payload.userId },
+          select: { id: true, email: true, remoteDeskId: true }
+        });
+      }
+
       if (!user) return next(new Error("User not found"));
       socket.data = { userId: user.id, email: user.email, remoteDeskId: user.remoteDeskId };
       next();
@@ -87,10 +98,13 @@ export function initSocketServer(httpServer: HttpServer) {
 
   io.on("connection", async (rawSocket) => {
     const socket = rawSocket as AuthedSocket;
-    await prisma.user.update({
-      where: { id: socket.data.userId },
-      data: { isOnline: true, socketId: socket.id, lastSeenAt: new Date() }
-    });
+
+    if (!DEV_FALLBACK) {
+      await prisma.user.update({
+        where: { id: socket.data.userId },
+        data: { isOnline: true, socketId: socket.id, lastSeenAt: new Date() }
+      });
+    }
     socket.join(`user:${socket.data.remoteDeskId}`);
 
     logger.info("Socket connected", {
@@ -102,6 +116,26 @@ export function initSocketServer(httpServer: HttpServer) {
 
     bindSafeSocketHandler<ConnectRequestPayload>(socket, ClientEvents.ConnectRequest, async (payload) => {
       const targetId = payload.targetRemoteDeskId.replace(/\s/g, "");
+
+      let targetSocketId: string | null = null;
+
+      if (DEV_FALLBACK) {
+        // In devFallback mode: find the target by the Socket.IO room they joined on connect
+        const room = io.sockets.adapter.rooms.get(`user:${targetId}`);
+        targetSocketId = room ? [...room][0] ?? null : null;
+        if (!targetSocketId) {
+          return socket.emit(ServerEvents.Error, { message: "Target is offline or not found" });
+        }
+        // Skip password verification in dev mode — no device passwords set
+        const sessionId = randomUUID();
+        io.to(targetSocketId).emit(ServerEvents.IncomingRequest, {
+          sessionId,
+          requesterRemoteDeskId: socket.data.remoteDeskId,
+          requesterSocketId: socket.id
+        });
+        return;
+      }
+
       const target = await prisma.user.findUnique({ where: { remoteDeskId: targetId } });
       if (!target?.socketId || !target.isOnline) {
         return socket.emit(ServerEvents.Error, { message: "Target is offline or not found" });
@@ -120,10 +154,12 @@ export function initSocketServer(httpServer: HttpServer) {
     });
 
     bindSafeSocketHandler<SessionResponsePayload>(socket, ClientEvents.ConnectResponse, async (payload) => {
-      await prisma.session.update({
-        where: { id: payload.sessionId },
-        data: { status: payload.accepted ? "ACTIVE" : "REJECTED", startedAt: payload.accepted ? new Date() : undefined }
-      });
+      if (!DEV_FALLBACK) {
+        await prisma.session.update({
+          where: { id: payload.sessionId },
+          data: { status: payload.accepted ? "ACTIVE" : "REJECTED", startedAt: payload.accepted ? new Date() : undefined }
+        });
+      }
       io.to(payload.requesterSocketId).emit(
         payload.accepted ? ServerEvents.RequestAccepted : ServerEvents.RequestRejected,
         { sessionId: payload.sessionId, hostSocketId: socket.id }
@@ -153,23 +189,27 @@ export function initSocketServer(httpServer: HttpServer) {
     bindSafeSocketHandler<SignalPayload>(socket, ClientEvents.WebrtcIce, (payload) => relay(ServerEvents.WebrtcIce, payload));
 
     bindSafeSocketHandler<{ sessionId: string; peerSocketId?: string }>(socket, ClientEvents.SessionEnd, async ({ sessionId, peerSocketId }) => {
-      const session = await prisma.session.findUnique({ where: { id: sessionId } });
-      await prisma.session.update({
-        where: { id: sessionId },
-        data: {
-          status: "ENDED",
-          endedAt: new Date(),
-          duration: session?.startedAt ? Math.floor((Date.now() - session.startedAt.getTime()) / 1000) : null
-        }
-      });
+      if (!DEV_FALLBACK) {
+        const session = await prisma.session.findUnique({ where: { id: sessionId } });
+        await prisma.session.update({
+          where: { id: sessionId },
+          data: {
+            status: "ENDED",
+            endedAt: new Date(),
+            duration: session?.startedAt ? Math.floor((Date.now() - session.startedAt.getTime()) / 1000) : null
+          }
+        });
+      }
       if (peerSocketId) io.to(peerSocketId).emit(ServerEvents.PeerDisconnected, { sessionId });
     });
 
     bindSafeSocketHandler(socket, "disconnect", async () => {
-      await prisma.user.update({
-        where: { id: socket.data.userId },
-        data: { isOnline: false, socketId: null, lastSeenAt: new Date() }
-      });
+      if (!DEV_FALLBACK) {
+        await prisma.user.update({
+          where: { id: socket.data.userId },
+          data: { isOnline: false, socketId: null, lastSeenAt: new Date() }
+        });
+      }
       socket.broadcast.emit(ServerEvents.PeerDisconnected, { remoteDeskId: socket.data.remoteDeskId });
       logger.info("Socket disconnected", {
         event: "socket.disconnected",

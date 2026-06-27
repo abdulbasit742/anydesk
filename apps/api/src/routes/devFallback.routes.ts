@@ -1138,4 +1138,12 @@ devFallbackRouter.patch("/launch/rollout-approvals/:approvalId", fbRequireAuth, 
   res.status(404).json({ success: false, message: "Rollout approval not found in fallback store" });
 });
 
+// Exported for the socket server so it can authenticate users from the in-memory store
+// when DEV_IN_MEMORY_FALLBACK=true (no PostgreSQL needed in dev).
+export function devFallbackGetUserById(id: string): { id: string; email: string; remoteDeskId: string } | null {
+  const u = users.get(id);
+  if (!u) return null;
+  return { id: u.id, email: u.email, remoteDeskId: u.remoteDeskId };
+}
+
 export default devFallbackRouter;
