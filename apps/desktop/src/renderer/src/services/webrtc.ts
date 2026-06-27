@@ -1,20 +1,17 @@
 import { collectWebRtcStats, type WebRtcQualitySnapshot } from "./webrtcStats.js";
 
+export type IceServerConfig = { urls: string; username?: string; credential?: string };
+
+const DEFAULT_ICE_SERVERS: IceServerConfig[] = [
+  { urls: "stun:stun.l.google.com:19302" }
+];
+
 export class PeerConnectionManager {
   private peer: RTCPeerConnection;
   private channels = new Map<string, RTCDataChannel>();
 
-  constructor() {
-    this.peer = new RTCPeerConnection({
-      iceServers: [
-        { urls: "stun:stun.l.google.com:19302" },
-        {
-          urls: "turn:localhost:3478",
-          username: "remotedesk",
-          credential: "remotedesk"
-        }
-      ]
-    });
+  constructor(iceServers: IceServerConfig[] = DEFAULT_ICE_SERVERS) {
+    this.peer = new RTCPeerConnection({ iceServers });
   }
 
   onIceCandidate(callback: (candidate: RTCIceCandidate) => void) {

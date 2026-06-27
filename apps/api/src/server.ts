@@ -25,6 +25,7 @@ import betaRoutes from "./routes/beta.routes.js";
 import twoFactorRoutes from "./routes/twoFactor.routes.js";
 import aclRoutes from "./routes/acl.routes.js";
 import integrationsRoutes from "./routes/integrations.routes.js";
+import iceRoutes from "./routes/ice.routes.js";
 import { devFallbackRouter } from "./routes/devFallback.routes.js";
 import { initSocketServer } from "./socket/index.js";
 import { checkDatabaseHealth } from "./observability/dependencyHealth.js";
@@ -119,6 +120,7 @@ app.use("/api/beta", betaRoutes);
 app.use("/api/2fa", twoFactorRoutes);
 app.use("/api/acl", aclRoutes);
 app.use("/api/integrations", integrationsRoutes);
+app.use("/api/ice", iceRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

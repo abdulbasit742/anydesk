@@ -34,9 +34,10 @@ import {
 import { fetchDeviceAccessPolicy } from "./services/devicePolicyClient.js";
 import { buildHostSessionPermissions, coerceRemoteInputWithSessionPermissions } from "./services/permissionState.js";
 import { inputAllowedByPolicy } from "./services/remoteInputGate.js";
-import { PeerConnectionManager } from "./services/webrtc.js";
+import { PeerConnectionManager, type IceServerConfig } from "./services/webrtc.js";
 import { formatQualityLabel, type WebRtcQualitySnapshot } from "./services/webrtcStats.js";
 import {
+  fetchIceConfig,
   getPendingDeviceCommands,
   heartbeatDevice,
   loadMe,
@@ -181,6 +182,7 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
   const [sessionPermissions, setSessionPermissions] = useState<SessionPermissionSet | null>(null);
   const [policyMessage, setPolicyMessage] = useState("Device policy has not loaded yet. Remote input, clipboard, and file transfer stay disabled.");
   const [policyFromCache, setPolicyFromCache] = useState(false);
+  const [iceServers, setIceServers] = useState<IceServerConfig[] | undefined>(undefined);
   const peerRef = useRef<PeerConnectionManager | null>(null);
   const sessionChannelRef = useRef<SessionDataChannel | null>(null);
   const remoteInputPermissionsRef = useRef<RemoteInputPermissionState>(defaultRemoteInputPermissions);
@@ -218,6 +220,7 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
     refreshSources();
     socketClient.connect();
     append("Connected to signaling server.");
+    fetchIceConfig(token).then(setIceServers).catch(() => undefined);
     return () => { socketClient.disconnect(); };
   }, [socketClient]);
 
@@ -513,7 +516,7 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
   function ensurePeer(role: "host" | "viewer", sessionId: string, targetSocketId: string) {
     peerRef.current?.close();
     pendingIceRef.current = [];
-    const peer = new PeerConnectionManager();
+    const peer = new PeerConnectionManager(iceServers);
 
     peer.onIceCandidate((candidate) => {
       socketClient.sendIce(sessionId, targetSocketId, candidate.toJSON());
@@ -685,7 +688,7 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
   }
 
   function createPeer() {
-    const peer = new PeerConnectionManager();
+    const peer = new PeerConnectionManager(iceServers);
     if (capture.stream) {
       peer.addStream(capture.stream);
       append("Local screen stream attached to WebRTC peer.");

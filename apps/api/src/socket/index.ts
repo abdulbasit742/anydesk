@@ -13,7 +13,12 @@ import { verifyPassword } from "../lib/password.js";
 import { verifyAccessToken } from "../lib/tokens.js";
 import { isBetaApiFeatureEnabled } from "../middleware/betaFeatureGate.js";
 import { logger } from "../observability/safeLogger.js";
-import { devFallbackGetUserById } from "../routes/devFallback.routes.js";
+import {
+  devFallbackGetUserById,
+  devFallbackGetUserByRemoteDeskId,
+  devFallbackVerifyDevicePassword,
+  devFallbackLogSessionAudit
+} from "../routes/devFallback.routes.js";
 import { randomUUID } from "node:crypto";
 
 const DEV_FALLBACK = process.env.DEV_IN_MEMORY_FALLBACK === "true";
@@ -120,14 +125,41 @@ export function initSocketServer(httpServer: HttpServer) {
       let targetSocketId: string | null = null;
 
       if (DEV_FALLBACK) {
-        // In devFallback mode: find the target by the Socket.IO room they joined on connect
+        const targetUser = devFallbackGetUserByRemoteDeskId(targetId);
+        if (!targetUser) {
+          return socket.emit(ServerEvents.Error, { message: "Target is offline or not found" });
+        }
+        // Verify device password only if one is set
+        if (targetUser.devicePassword && !devFallbackVerifyDevicePassword(targetId, payload.devicePassword ?? "")) {
+          devFallbackLogSessionAudit(socket.data.userId, {
+            sessionId: null,
+            actorRemoteDeskId: socket.data.remoteDeskId,
+            type: "session.password_failed",
+            message: `Failed password attempt targeting ${targetId}`,
+            metadata: { targetRemoteDeskId: targetId }
+          });
+          return socket.emit(ServerEvents.Error, { message: "Invalid device password" });
+        }
         const room = io.sockets.adapter.rooms.get(`user:${targetId}`);
         targetSocketId = room ? [...room][0] ?? null : null;
         if (!targetSocketId) {
           return socket.emit(ServerEvents.Error, { message: "Target is offline or not found" });
         }
-        // Skip password verification in dev mode — no device passwords set
         const sessionId = randomUUID();
+        devFallbackLogSessionAudit(socket.data.userId, {
+          sessionId,
+          actorRemoteDeskId: socket.data.remoteDeskId,
+          type: "session.requested",
+          message: `Session requested from ${socket.data.remoteDeskId} to ${targetId}`,
+          metadata: { targetRemoteDeskId: targetId }
+        });
+        devFallbackLogSessionAudit(targetUser.id, {
+          sessionId,
+          actorRemoteDeskId: socket.data.remoteDeskId,
+          type: "session.incoming",
+          message: `Incoming session request from ${socket.data.remoteDeskId}`,
+          metadata: { requesterRemoteDeskId: socket.data.remoteDeskId }
+        });
         io.to(targetSocketId).emit(ServerEvents.IncomingRequest, {
           sessionId,
           requesterRemoteDeskId: socket.data.remoteDeskId,
@@ -158,6 +190,14 @@ export function initSocketServer(httpServer: HttpServer) {
         await prisma.session.update({
           where: { id: payload.sessionId },
           data: { status: payload.accepted ? "ACTIVE" : "REJECTED", startedAt: payload.accepted ? new Date() : undefined }
+        });
+      } else {
+        devFallbackLogSessionAudit(socket.data.userId, {
+          sessionId: payload.sessionId,
+          actorRemoteDeskId: socket.data.remoteDeskId,
+          type: payload.accepted ? "session.accepted" : "session.rejected",
+          message: payload.accepted ? "Session accepted by host" : "Session rejected by host",
+          metadata: { requesterSocketId: payload.requesterSocketId }
         });
       }
       io.to(payload.requesterSocketId).emit(
@@ -198,6 +238,14 @@ export function initSocketServer(httpServer: HttpServer) {
             endedAt: new Date(),
             duration: session?.startedAt ? Math.floor((Date.now() - session.startedAt.getTime()) / 1000) : null
           }
+        });
+      } else {
+        devFallbackLogSessionAudit(socket.data.userId, {
+          sessionId,
+          actorRemoteDeskId: socket.data.remoteDeskId,
+          type: "session.ended",
+          message: "Session ended",
+          metadata: null
         });
       }
       if (peerSocketId) io.to(peerSocketId).emit(ServerEvents.PeerDisconnected, { sessionId });

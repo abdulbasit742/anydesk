@@ -896,6 +896,16 @@ devFallbackRouter.patch("/launch/support-escalations/:escId", fbRequireAuth, (re
 
 // ── /api/devices/:deviceId ─────────────────────────────────────────────────
 
+interface FbSessionAuditEvent {
+  id: string;
+  sessionId: string | null;
+  actorRemoteDeskId: string | null;
+  type: string;
+  message: string;
+  metadata: Record<string, unknown> | null;
+  createdAt: string;
+}
+
 interface FbDeviceSecurity {
   trust: {
     status: "trusted" | "untrusted" | "blocked";
@@ -937,6 +947,7 @@ interface FbDeviceCommand {
 
 const deviceSecurity = new Map<string, FbDeviceSecurity>();  // deviceId → security
 const deviceCommands = new Map<string, FbDeviceCommand[]>(); // deviceId → commands[]
+const sessionAuditEvents = new Map<string, FbSessionAuditEvent[]>(); // userId → events[]
 
 const SAFE_COMMAND_TYPES = ["refresh_policy", "collect_diagnostics", "check_update", "sign_out"] as const;
 
@@ -1120,6 +1131,107 @@ devFallbackRouter.post("/devices/:deviceId/commands", fbRequireAuth, (req: Reque
   res.status(201).json({ success: true, data: command });
 });
 
+// ── Device registration / heartbeat / commands (desktop client) ───────────
+
+devFallbackRouter.post("/devices/register", fbRequireAuth, (req: Request, res: Response) => {
+  const { id } = (req as AuthedRequest).user!;
+  const { name, platform, remoteDeskId: incomingRdId } = req.body ?? {};
+  if (!name || !platform) {
+    res.status(400).json({ success: false, message: "name and platform are required" });
+    return;
+  }
+
+  const userDevices = getOrCreateUserDevices(id);
+  // Re-use existing device if remoteDeskId matches (desktop re-registers on each start)
+  const rdId = (typeof incomingRdId === "string" && incomingRdId) || userDevices[0]?.remoteDeskId || generateRemoteDeskId();
+  const existing = userDevices.find((d) => d.remoteDeskId === rdId.replace(/\s/g, ""));
+  if (existing) {
+    existing.name = name;
+    existing.platform = platform as FbDevice["platform"];
+    existing.isOnline = true;
+    existing.lastSeenAt = new Date().toISOString();
+    res.json({ success: true, data: { ...existing, createdAt: existing.lastSeenAt } });
+    return;
+  }
+
+  const device: FbDevice = {
+    id: randomUUID(),
+    userId: id,
+    name,
+    platform: platform as FbDevice["platform"],
+    remoteDeskId: rdId.replace(/\s/g, ""),
+    remoteDeskIdFormatted: formatRemoteDeskId(rdId.replace(/\s/g, "")),
+    isOnline: true,
+    lastSeenAt: new Date().toISOString()
+  };
+  userDevices.push(device);
+  devices.set(id, userDevices);
+  res.status(201).json({ success: true, data: { ...device, createdAt: device.lastSeenAt } });
+});
+
+devFallbackRouter.patch("/devices/:deviceId/heartbeat", fbRequireAuth, (req: Request, res: Response) => {
+  const { id } = (req as AuthedRequest).user!;
+  const userDevices = getOrCreateUserDevices(id);
+  const device = userDevices.find((d) => d.id === req.params.deviceId);
+  if (!device) {
+    res.status(404).json({ success: false, message: "Device not found" });
+    return;
+  }
+  device.isOnline = true;
+  device.lastSeenAt = new Date().toISOString();
+  res.json({ success: true, data: { ...device, createdAt: device.lastSeenAt } });
+});
+
+devFallbackRouter.get("/devices/:deviceId/commands/pending", fbRequireAuth, (req: Request, res: Response) => {
+  const { id } = (req as AuthedRequest).user!;
+  const userDevices = getOrCreateUserDevices(id);
+  const device = userDevices.find((d) => d.id === req.params.deviceId);
+  if (!device) {
+    res.status(404).json({ success: false, message: "Device not found" });
+    return;
+  }
+  const now = Date.now();
+  const cmds = (deviceCommands.get(device.id) ?? []).filter(
+    (c) => c.status === "pending" && new Date(c.expiresAt).getTime() > now
+  );
+  res.json({ success: true, data: cmds });
+});
+
+devFallbackRouter.patch("/devices/:deviceId/commands/:commandId", fbRequireAuth, (req: Request, res: Response) => {
+  const { id } = (req as AuthedRequest).user!;
+  const userDevices = getOrCreateUserDevices(id);
+  const device = userDevices.find((d) => d.id === req.params.deviceId);
+  if (!device) {
+    res.status(404).json({ success: false, message: "Device not found" });
+    return;
+  }
+  const cmds = deviceCommands.get(device.id) ?? [];
+  const cmd = cmds.find((c) => c.id === req.params.commandId);
+  if (!cmd) {
+    res.status(404).json({ success: false, message: "Command not found" });
+    return;
+  }
+  const { status, result, failureReason } = req.body ?? {};
+  const now = new Date().toISOString();
+  if (status) cmd.status = status;
+  if (result) (cmd as unknown as Record<string, unknown>).result = result;
+  if (failureReason) cmd.failureReason = failureReason;
+  if (status === "delivered") cmd.deliveredAt = now;
+  if (status === "completed") cmd.completedAt = now;
+  if (status === "failed") cmd.failedAt = now;
+  cmd.updatedAt = now;
+  res.json({ success: true, data: cmd });
+});
+
+// ── Session audit log ──────────────────────────────────────────────────────
+
+devFallbackRouter.get("/sessions/audit", fbRequireAuth, (req: Request, res: Response) => {
+  const { id } = (req as AuthedRequest).user!;
+  const events = sessionAuditEvents.get(id) ?? [];
+  const limit = Math.min(Number(req.query.limit) || 50, 200);
+  res.json({ success: true, data: events.slice(0, limit) });
+});
+
 // Rollout approvals (stub — web page may call these)
 devFallbackRouter.post("/launch/rollout-approvals", fbRequireAuth, (req: Request, res: Response) => {
   const { id, email } = (req as AuthedRequest).user!;
@@ -1144,6 +1256,32 @@ export function devFallbackGetUserById(id: string): { id: string; email: string;
   const u = users.get(id);
   if (!u) return null;
   return { id: u.id, email: u.email, remoteDeskId: u.remoteDeskId };
+}
+
+export function devFallbackGetUserByRemoteDeskId(remoteDeskId: string): {
+  id: string; email: string; remoteDeskId: string; devicePassword: string | null;
+} | null {
+  const userId = remoteDeskIndex.get(remoteDeskId.replace(/\s/g, ""));
+  if (!userId) return null;
+  const u = users.get(userId);
+  if (!u) return null;
+  return { id: u.id, email: u.email, remoteDeskId: u.remoteDeskId, devicePassword: u.devicePassword };
+}
+
+export function devFallbackVerifyDevicePassword(remoteDeskId: string, password: string): boolean {
+  const user = devFallbackGetUserByRemoteDeskId(remoteDeskId);
+  if (!user) return false;
+  if (!user.devicePassword) return true; // no password set → allow unguarded access
+  return devVerify(password, user.devicePassword);
+}
+
+export function devFallbackLogSessionAudit(
+  userId: string,
+  event: Omit<FbSessionAuditEvent, "id" | "createdAt">
+): void {
+  const list = sessionAuditEvents.get(userId) ?? [];
+  list.unshift({ ...event, id: randomUUID(), createdAt: new Date().toISOString() });
+  sessionAuditEvents.set(userId, list.slice(0, 500));
 }
 
 export default devFallbackRouter;

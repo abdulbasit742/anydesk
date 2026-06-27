@@ -119,5 +119,10 @@ export const env = {
   dashboardEngineSigningSecret: readOptional("DASHBOARD_ENGINE_SIGNING_SECRET"),
   engineWebhookSigningSecret: readOptional("ENGINE_WEBHOOK_SIGNING_SECRET"),
   dashboardEngineWebhookUrl: readOptional("DASHBOARD_ENGINE_WEBHOOK_URL"),
-  releaseManifestUrl: readOptional("RELEASE_MANIFEST_URL")
+  releaseManifestUrl: readOptional("RELEASE_MANIFEST_URL"),
+  // WebRTC ICE server config — optional, falls back to public STUN in dev
+  stunUrl: readOptional("STUN_URL"),
+  turnUrl: readOptional("TURN_URL"),
+  turnUsername: readOptional("TURN_USERNAME"),
+  turnPassword: readOptional("TURN_PASSWORD")
 } as const;

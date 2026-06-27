@@ -132,6 +132,11 @@ export async function getPendingDeviceCommands(token: string, deviceId: string):
   return request<DeviceCommand[]>(`/devices/${deviceId}/commands/pending`, {}, token);
 }
 
+export async function fetchIceConfig(token: string): Promise<{ urls: string; username?: string; credential?: string }[]> {
+  const data = await request<{ iceServers: { urls: string; username?: string; credential?: string }[] }>("/ice/config", {}, token);
+  return data.iceServers;
+}
+
 export async function updateDeviceCommand(
   token: string,
   deviceId: string,

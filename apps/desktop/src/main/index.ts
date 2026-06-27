@@ -134,6 +134,9 @@ registerSupportBundleIpc();
 registerRemoteControlIpc();
 registerTcpTunnelIpc(() => mainWindow);
 
+// Disable hardware acceleration to prevent GPU process crash on some Windows configs
+app.disableHardwareAcceleration();
+
 app.whenReady().then(createWindow);
 
 app.on("activate", () => {

@@ -1,50 +1,41 @@
-appId: com.remotedesk.desktop
+﻿appId: com.remotedesk.desktop
 productName: RemoteDesk
-copyright: Copyright © 2026 RemoteDesk
-
-asar: true
-
-files:
-  - out/**
-  - package.json
-
-extraMetadata:
-  main: out/main/index.js
+copyright: Copyright © 2024 RemoteDesk
 
 directories:
-  buildResources: build
-  output: release
+  output: dist-installer
+  buildResources: resources
+
+files:
+  - out/**/*
+  - package.json
 
 win:
   target:
     - target: nsis
-      arch:
-        - x64
-  artifactName: RemoteDesk-Setup-${version}.${ext}
+      arch: [x64]
+  icon: resources/icon.ico
 
 nsis:
   oneClick: false
-  perMachine: false
+  allowElevation: true
   allowToChangeInstallationDirectory: true
+  installerIcon: resources/icon.ico
+  uninstallerIcon: resources/icon.ico
   createDesktopShortcut: true
   createStartMenuShortcut: true
+  shortcutName: RemoteDesk
 
 mac:
   target:
-    - dmg
-    - zip
-  category: public.app-category.productivity
-  entitlements: build/entitlements.mac.plist
-  entitlementsInherit: build/entitlements.mac.plist
-  hardenedRuntime: true
-  gatekeeperAssess: false
+    - target: dmg
+      arch: [x64, arm64]
+  icon: resources/icon.icns
+  category: public.app-category.utilities
 
 linux:
   target:
-    - AppImage
-    - deb
+    - target: AppImage
+      arch: [x64]
+  icon: resources/icons
   category: Utility
-
-publish:
-  provider: github
-  releaseType: draft
