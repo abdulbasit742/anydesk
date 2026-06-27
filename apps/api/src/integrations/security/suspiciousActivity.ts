@@ -4,11 +4,9 @@
  * Detects: brute force, rapid connections, unusual hours, geo-anomalies.
  */
 
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
 
-// securityEvent model requires a Prisma migration before use
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const prisma = new PrismaClient() as any;
+const prisma = new PrismaClient();
 
 type FlagSeverity = 'low' | 'medium' | 'high' | 'critical';
 
@@ -174,7 +172,7 @@ export async function recordSecurityEvent(event: SecurityEvent): Promise<void> {
         userId: event.userId,
         ip: event.ip,
         deviceId: event.deviceId || null,
-        metadata: event.metadata || {},
+        metadata: (event.metadata ?? {}) as unknown as Prisma.InputJsonObject,
         createdAt: event.timestamp,
       },
     });
