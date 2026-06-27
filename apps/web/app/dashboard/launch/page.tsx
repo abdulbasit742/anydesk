@@ -66,7 +66,7 @@ interface LaunchSnapshot {
 const checkStatuses: CheckStatus[] = ["pass", "warn", "fail", "not_applicable"];
 
 export default function LaunchReadinessPage() {
-  useAuthGuard();
+  const { initialized } = useAuthGuard();
   const [snapshot, setSnapshot] = useState<LaunchSnapshot | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState("");
@@ -88,8 +88,10 @@ export default function LaunchReadinessPage() {
   }
 
   useEffect(() => {
-    void loadSnapshot();
-  }, []);
+    if (initialized) {
+      void loadSnapshot();
+    }
+  }, [initialized]);
 
   const requiredFailures = useMemo(
     () => snapshot?.checks.filter((check) => check.required && check.status === "fail") ?? [],

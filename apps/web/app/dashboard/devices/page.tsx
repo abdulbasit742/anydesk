@@ -38,8 +38,10 @@ export default function DevicesPage() {
   }
 
   useEffect(() => {
-    void loadDevices();
-  }, []);
+    if (initialized) {
+      void loadDevices();
+    }
+  }, [initialized]);
 
   return (
     <main className="min-h-screen bg-slate-100">
