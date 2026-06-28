@@ -1,6 +1,8 @@
 {
   "name": "@remotedesk/desktop",
   "version": "0.1.0",
+  "description": "RemoteDesk desktop client — secure remote access for Windows, macOS, and Linux",
+  "author": "Abdul Basit <muhammadimran174007@gmail.com>",
   "private": true,
   "main": "out/main/index.js",
   "scripts": {
