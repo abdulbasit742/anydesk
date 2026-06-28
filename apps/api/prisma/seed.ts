@@ -63,8 +63,7 @@ async function main() {
       name: "Alice-Win11",
       platform: "windows",
       remoteDeskId: "100000001",
-      remoteDeskIdFormatted: "100 000 001",
-      isOnline: true,
+            isOnline: true,
       lastSeenAt: new Date(),
     },
   });
@@ -77,7 +76,6 @@ async function main() {
       name: "Alice-MacBook",
       platform: "macos",
       remoteDeskId: "100000002",
-      remoteDeskIdFormatted: "100 000 002",
       isOnline: false,
       lastSeenAt: new Date(Date.now() - 1000 * 60 * 60 * 2),
     },
@@ -91,7 +89,6 @@ async function main() {
       name: "Bob-Win10",
       platform: "windows",
       remoteDeskId: "200000002",
-      remoteDeskIdFormatted: "200 000 002",
       isOnline: true,
       lastSeenAt: new Date(),
     },
@@ -115,7 +112,7 @@ async function main() {
         status: "ENDED",
         startedAt,
         endedAt,
-        durationSeconds: Math.floor((endedAt.getTime() - startedAt.getTime()) / 1000),
+        duration: Math.floor((endedAt.getTime() - startedAt.getTime()) / 1000),
       },
     });
 
