@@ -2,8 +2,14 @@ import { collectWebRtcStats, type WebRtcQualitySnapshot } from "./webrtcStats.js
 
 export type IceServerConfig = { urls: string; username?: string; credential?: string };
 
+// Free public TURN (Open Relay) used when API ICE config fetch fails or before login.
+// Enables cross-internet WebRTC with no server setup required.
 const DEFAULT_ICE_SERVERS: IceServerConfig[] = [
-  { urls: "stun:stun.l.google.com:19302" }
+  { urls: "stun:stun.l.google.com:19302" },
+  { urls: "turn:openrelay.metered.ca:80",               username: "openrelayproject", credential: "openrelayproject" },
+  { urls: "turn:openrelay.metered.ca:443",              username: "openrelayproject", credential: "openrelayproject" },
+  { urls: "turns:openrelay.metered.ca:443",             username: "openrelayproject", credential: "openrelayproject" },
+  { urls: "turn:openrelay.metered.ca:80?transport=tcp", username: "openrelayproject", credential: "openrelayproject" },
 ];
 
 export class PeerConnectionManager {
