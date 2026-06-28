@@ -9,7 +9,8 @@
     "start": "node dist/server.js",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev"
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.19.1",
@@ -35,5 +36,8 @@
     "prisma": "^5.19.1",
     "tsx": "^4.16.2",
     "typescript": "^5.5.4"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }
