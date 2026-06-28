@@ -36,3 +36,6 @@ jobs:
 
       - name: Run local CI gates
         run: npm run ci:local
+
+      - name: Run API unit tests
+        run: npm run test --workspace=apps/api

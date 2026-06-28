@@ -15,6 +15,13 @@ win:
     - target: nsis
       arch: [x64]
   icon: resources/icon.ico
+  # Code signing — eliminates SmartScreen "Unknown Publisher" warning.
+  # Set env vars before running electron-builder (or via GitHub Actions secrets):
+  #   WIN_CSC_LINK          = path/to/cert.pfx  (or base64-encoded in CI)
+  #   WIN_CSC_KEY_PASSWORD  = your pfx password
+  # electron-builder auto-detects these — no extra config needed here.
+  # Get cert from: DigiCert ($200/yr), Sectigo ($75/yr), or SSL.com ($75/yr)
+  publisherName: RemoteDesk
 
 nsis:
   oneClick: false
