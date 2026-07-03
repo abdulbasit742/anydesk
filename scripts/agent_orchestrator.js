@@ -74,7 +74,15 @@ const filesToInspect = [
   'anydesk-clone/src/components/Sidebar.jsx', 'anydesk-clone/src/lib/peerConnection.js'
 ];
 
+let lastWriteTime = 0;
+
 function updateDashboard() {
+  const now = Date.now();
+  if (now - lastWriteTime < 1000) {
+    return;
+  }
+  lastWriteTime = now;
+
   const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
   
   const formatTime = (s) => {
@@ -104,7 +112,11 @@ function updateDashboard() {
     mdContent += `| **${log.role}** | \`${log.skill}\` | ${statusBadge} | \`${log.inspectedFile}\` | ${log.issuesFound} | *${new Date(log.lastUpdate).toLocaleTimeString()}* |\n`;
   });
 
-  fs.writeFileSync(dashboardPath, mdContent, 'utf8');
+  try {
+    fs.writeFileSync(dashboardPath, mdContent, 'utf8');
+  } catch (e) {
+    console.warn(`[Orchestrator] Warning writing to dashboard: ${e.message}`);
+  }
 }
 
 // Function to simulate agent action
