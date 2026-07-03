@@ -10,6 +10,20 @@ const agentsDir = path.join(workspaceRoot, '.agents', 'skills');
 const logsDir = path.join(workspaceRoot, 'scripts', 'agent_fleet', 'sub_agents');
 const dashboardPath = path.join(workspaceRoot, 'fleet_dashboard.md');
 
+function getFreeDiskSpaceMB() {
+  try {
+    const stats = fs.statfsSync(workspaceRoot);
+    return (stats.bavail * stats.bsize) / (1024 * 1024);
+  } catch (e) {
+    try {
+      const statsC = fs.statfsSync('C:');
+      return (statsC.bavail * statsC.bsize) / (1024 * 1024);
+    } catch (err) {
+      return 1000;
+    }
+  }
+}
+
 // Ensure directories exist
 fs.mkdirSync(logsDir, { recursive: true });
 
@@ -94,10 +108,14 @@ function updateDashboard() {
 
   const activeAgents = agentRoles.filter(a => agentLogs[a.id].status === 'Executing').length;
   
+  const freeSpace = getFreeDiskSpaceMB();
+  const throttleActive = freeSpace < 50;
+
   let mdContent = `# 🚀 AgentFlow Fleet Orchestration Dashboard\n\n`;
   mdContent += `> **Status:** Running continuously (Auto-Looped)\n`;
   mdContent += `> **Elapsed Time:** \`${formatTime(elapsedTime)}\` | **Time Remaining:** \`∞ (Infinite Loop Mode)\`\n`;
-  mdContent += `> **Active Agents:** ${activeAgents} / ${agentRoles.length} | **Total Files Inspected:** ${totalFilesAudited} | **Issues Cleaned:** ${totalIssuesDetected}\n\n`;
+  mdContent += `> **Active Agents:** ${activeAgents} / ${agentRoles.length} | **Total Files Inspected:** ${totalFilesAudited} | **Issues Cleaned:** ${totalIssuesDetected}\n`;
+  mdContent += `> **Storage Safeguard:** ${throttleActive ? '⚠️ THROTTLED (< 50MB free)' : '🟢 ACTIVE (' + freeSpace.toFixed(1) + ' MB free)'}\n\n`;
 
   mdContent += `## 📊 Live System Activity Log\n`;
   mdContent += `| Agent Role | Current Skill Triggered | Status | Inspected File | Issues Detected | Last Action Time |\n`;
@@ -239,9 +257,18 @@ Audit completed. Issues found and hot-patched: ${issuesFound}
       totalFilesAudited++;
       totalIssuesDetected += issuesFound;
 
-      const safeRoleName = randomAgent.role.replace(/\s+/g, '_').replace(/[\/\\?%*:|"<>]/g, '-');
-      const logPath = path.join(logsDir, `subagent_${safeRoleName}.log`);
-      fs.writeFileSync(logPath, logContent, 'utf8');
+      const freeSpace = getFreeDiskSpaceMB();
+      if (freeSpace < 50) {
+        console.warn(`[Orchestrator] Disk space is low (${freeSpace.toFixed(1)} MB). Throttling detailed log file write for: ${randomAgent.role}`);
+      } else {
+        const safeRoleName = randomAgent.role.replace(/\s+/g, '_').replace(/[\/\\?%*:|"<>]/g, '-');
+        const logPath = path.join(logsDir, `subagent_${safeRoleName}.log`);
+        try {
+          fs.writeFileSync(logPath, logContent, 'utf8');
+        } catch (e) {
+          console.warn(`[Orchestrator] Warning: failed to write subagent log: ${e.message}`);
+        }
+      }
 
       // Console output for terminal visual activity
       console.log(`[${new Date().toLocaleTimeString()}] 🟢 Agent [${randomAgent.role}] verified file: ${agentLog.inspectedFile} (Issues: ${issuesFound})`);
