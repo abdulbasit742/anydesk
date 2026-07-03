@@ -680,12 +680,178 @@ function ExportCenter({ activeModels, allMessages, onToast }) {
   );
 }
 
+// ─── AGENT HUB COMPONENT ─────────────────────────────────────────────────────
+
+function AgentHub({ onAgentOutput, onToast }) {
+  const [connectedAgents, setConnectedAgents] = useState({});
+  const [runningAgent, setRunningAgent] = useState(null);
+  const [agentOutputs, setAgentOutputs] = useState({});
+  const [agentPrompts, setAgentPrompts] = useState({});
+  const [customRegistry, setCustomRegistry] = useState([]);
+  const [showAddAgent, setShowAddAgent] = useState(false);
+  const [newAgentForm, setNewAgentForm] = useState({ name: "", emoji: "🤖", specialty: "", webhook: "" });
+
+  const toggleConnect = (agentId) => {
+    setConnectedAgents(prev => {
+      const next = { ...prev, [agentId]: !prev[agentId] };
+      onToast(next[agentId] ? `Agent connected!` : `Agent disconnected.`);
+      return next;
+    });
+  };
+
+  const dispatchAgent = (agent) => {
+    if (runningAgent) return;
+    const prompt = agentPrompts[agent.id] || agent.prompts[0];
+    setRunningAgent(agent.id);
+    setAgentOutputs(prev => ({ ...prev, [agent.id]: "" }));
+
+    const full = agent.response;
+    let i = 0;
+    const tick = setInterval(() => {
+      i += Math.floor(Math.random() * 6) + 3;
+      if (i >= full.length) {
+        i = full.length;
+        clearInterval(tick);
+        setRunningAgent(null);
+        onToast("Agent task complete ✓");
+        if (onAgentOutput) onAgentOutput(agent.name, full);
+      }
+      setAgentOutputs(prev => ({ ...prev, [agent.id]: full.slice(0, i) }));
+    }, 22);
+  };
+
+  const registerAgent = () => {
+    if (!newAgentForm.name.trim()) return;
+    const id = `custom-${Date.now()}`;
+    setCustomRegistry(prev => [...prev, {
+      id, ...newAgentForm,
+      color: "#a78bfa",
+      tags: ["Custom"],
+      status: "ready",
+      prompts: ["Run agent task"],
+      response: `**Custom Agent: ${newAgentForm.name}**\n\nWebhook endpoint: ${newAgentForm.webhook || "(not set)"}\n\nAgent is ready to receive tasks via the configured webhook or API endpoint.\n\n✅ Custom agent registered successfully.`,
+    }]);
+    setNewAgentForm({ name: "", emoji: "🤖", specialty: "", webhook: "" });
+    setShowAddAgent(false);
+    onToast("Custom agent registered!");
+  };
+
+  const allAgents = [...BUILTIN_AGENTS, ...customRegistry];
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+      {/* Header */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
+        <div>
+          <div style={{ fontSize: 16, fontWeight: 700, color: "#f0f0f5", marginBottom: 2 }}>🤖 Agent Registry</div>
+          <div style={{ fontSize: 11, color: "#6e7191" }}>{allAgents.length} agents · {Object.values(connectedAgents).filter(Boolean).length} connected</div>
+        </div>
+        <button
+          onClick={() => setShowAddAgent(v => !v)}
+          style={{ background: "linear-gradient(135deg, #a78bfa, #7c3aed)", border: "none", borderRadius: 8, color: "#fff", fontSize: 11, fontWeight: 600, padding: "6px 12px", cursor: "pointer" }}
+        >+ Register Agent</button>
+      </div>
+
+      {/* Add Custom Agent Form */}
+      {showAddAgent && (
+        <div style={{ background: "rgba(167,139,250,0.07)", border: "1px solid rgba(167,139,250,0.2)", borderRadius: 12, padding: 16 }}>
+          <div style={{ fontSize: 12, fontWeight: 600, color: "#a78bfa", marginBottom: 10 }}>Register Custom Agent</div>
+          {[["Name", "name", "text", "My Custom Agent"], ["Emoji", "emoji", "text", "🤖"], ["Specialty", "specialty", "text", "What does this agent do?"], ["Webhook URL", "webhook", "url", "https://api.example.com/agent"]].map(([label, key, type, ph]) => (
+            <div key={key} style={{ marginBottom: 8 }}>
+              <div style={{ fontSize: 10, color: "#6e7191", marginBottom: 3 }}>{label}</div>
+              <input
+                type={type}
+                value={newAgentForm[key]}
+                onChange={e => setNewAgentForm(p => ({ ...p, [key]: e.target.value }))}
+                placeholder={ph}
+                style={{ width: "100%", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 6, color: "#f0f0f5", fontSize: 11, padding: "6px 8px", boxSizing: "border-box" }}
+              />
+            </div>
+          ))}
+          <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+            <button onClick={registerAgent} style={{ flex: 1, background: "#a78bfa", border: "none", borderRadius: 6, color: "#fff", fontSize: 11, fontWeight: 600, padding: "7px 0", cursor: "pointer" }}>Register</button>
+            <button onClick={() => setShowAddAgent(false)} style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 6, color: "#a0aec0", fontSize: 11, padding: "7px 0", cursor: "pointer" }}>Cancel</button>
+          </div>
+        </div>
+      )}
+
+      {/* Agent Cards */}
+      {allAgents.map(agent => {
+        const connected = !!connectedAgents[agent.id];
+        const running = runningAgent === agent.id;
+        const output = agentOutputs[agent.id];
+        return (
+          <div key={agent.id} style={{ background: connected ? `rgba(${hexToRgb(agent.color)}, 0.07)` : "rgba(255,255,255,0.03)", border: `1px solid ${connected ? agent.color + "33" : "rgba(255,255,255,0.07)"}`, borderRadius: 12, padding: 14, transition: "all 0.25s" }}>
+            {/* Agent Header */}
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 8 }}>
+              <div style={{ fontSize: 26, lineHeight: 1 }}>{agent.emoji}</div>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "#f0f0f5", marginBottom: 2 }}>{agent.name}</div>
+                <div style={{ fontSize: 10, color: "#6e7191", lineHeight: 1.4 }}>{agent.specialty}</div>
+                <div style={{ display: "flex", gap: 4, marginTop: 5, flexWrap: "wrap" }}>
+                  {agent.tags.map(t => <span key={t} style={{ fontSize: 9, fontWeight: 600, color: agent.color, background: `${agent.color}18`, borderRadius: 4, padding: "2px 6px" }}>{t}</span>)}
+                </div>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 6, alignItems: "flex-end" }}>
+                <div style={{ width: 8, height: 8, borderRadius: "50%", background: connected ? "#10b981" : "#3d3d5c" }} />
+                <button
+                  onClick={() => toggleConnect(agent.id)}
+                  style={{ fontSize: 9, fontWeight: 700, border: `1px solid ${connected ? agent.color : "rgba(255,255,255,0.15)"}`, borderRadius: 5, color: connected ? agent.color : "#6e7191", background: "transparent", padding: "3px 8px", cursor: "pointer", whiteSpace: "nowrap" }}
+                >{connected ? "✓ Connected" : "Connect"}</button>
+              </div>
+            </div>
+
+            {/* Quick Prompt Selector */}
+            <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 8 }}>
+              {agent.prompts.map(p => (
+                <button key={p}
+                  onClick={() => setAgentPrompts(prev => ({ ...prev, [agent.id]: p }))}
+                  style={{ fontSize: 9, border: `1px solid ${agentPrompts[agent.id] === p ? agent.color : "rgba(255,255,255,0.1)"}`, borderRadius: 4, color: agentPrompts[agent.id] === p ? agent.color : "#6e7191", background: "transparent", padding: "3px 7px", cursor: "pointer" }}
+                >{p}</button>
+              ))}
+            </div>
+
+            {/* Dispatch Button */}
+            <button
+              onClick={() => dispatchAgent(agent)}
+              disabled={!connected || !!runningAgent}
+              style={{ width: "100%", background: connected && !runningAgent ? `linear-gradient(135deg, ${agent.color}, ${agent.color}99)` : "rgba(255,255,255,0.05)", border: "none", borderRadius: 7, color: connected && !runningAgent ? "#fff" : "#4a4a6a", fontSize: 11, fontWeight: 600, padding: "8px 0", cursor: connected && !runningAgent ? "pointer" : "not-allowed", transition: "all 0.2s" }}
+            >
+              {running ? "⟳ Running…" : connected ? "▶ Dispatch Agent" : "🔒 Connect First"}
+            </button>
+
+            {/* Streaming Output */}
+            {output && (
+              <div style={{ marginTop: 10, background: "rgba(0,0,0,0.3)", borderRadius: 8, padding: 10, maxHeight: 160, overflowY: "auto" }}>
+                <div style={{ fontSize: 9, color: agent.color, fontWeight: 700, marginBottom: 5, display: "flex", justifyContent: "space-between" }}>
+                  <span>{agent.name} Output</span>
+                  {!running && <button onClick={() => setAgentOutputs(p => ({ ...p, [agent.id]: "" }))} style={{ background: "none", border: "none", color: "#6e7191", cursor: "pointer", fontSize: 9 }}>✕ clear</button>}
+                </div>
+                <pre style={{ margin: 0, fontFamily: "'Fira Code', monospace", fontSize: 10, color: "#c0caf5", whiteSpace: "pre-wrap", wordBreak: "break-word", lineHeight: 1.55 }}>{output}{running ? "▌" : ""}</pre>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// Helper to convert hex color to rgb for rgba()
+function hexToRgb(hex) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `${r},${g},${b}`;
+}
+
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 
 export default function AIAssistantHub() {
   useEffect(() => { injectStyles(); }, []);
 
   // Core state
+  const [activeTab, setActiveTab] = useState("chat"); // "chat" | "agents"
   const [activeModels, setActiveModels] = useState(["gpt4o", "claude"]);
   const [prompt, setPrompt] = useState("");
   const [allMessages, setAllMessages] = useState({});
@@ -881,8 +1047,25 @@ export default function AIAssistantHub() {
         {/* MAIN CONTENT */}
         <div style={S.main}>
 
+          {/* TAB BAR */}
+          <div style={{ display: "flex", gap: 4, marginBottom: 16, background: "rgba(255,255,255,0.04)", borderRadius: 10, padding: 4, alignSelf: "flex-start" }}>
+            {[{ id: "chat", label: "💬 Multi-Model Chat" }, { id: "agents", label: "🤖 Agent Hub" }].map(tab => (
+              <button key={tab.id} onClick={() => setActiveTab(tab.id)}
+                style={{ padding: "7px 18px", borderRadius: 7, border: "none", fontWeight: 600, fontSize: 12, cursor: "pointer", transition: "all 0.2s",
+                  background: activeTab === tab.id ? "linear-gradient(135deg,#a78bfa,#7c3aed)" : "transparent",
+                  color: activeTab === tab.id ? "#fff" : "#6e7191" }}>{tab.label}</button>
+            ))}
+          </div>
+
+          {/* AGENT HUB TAB */}
+          {activeTab === "agents" && (
+            <div style={{ flex: 1, overflowY: "auto", paddingBottom: 20 }}>
+              <AgentHub onAgentOutput={() => {}} onToast={showToast} />
+            </div>
+          )}
+
           {/* CHAT PANES */}
-          <div style={S.chatArea}>
+          {activeTab === "chat" && <div style={S.chatArea}>
             {activeModels.map((modelId) => (
               <ChatPane
                 key={modelId}
@@ -894,7 +1077,7 @@ export default function AIAssistantHub() {
                 promptCount={promptCount}
               />
             ))}
-          </div>
+          </div>}
 
           {/* PROMPT PRESET LIBRARY */}
           <div style={S.promptLibrary}>

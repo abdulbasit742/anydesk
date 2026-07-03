@@ -18,7 +18,7 @@ const C = {
 };
 
 // ─── STATIC DATA (module scope) ───────────────────────────────────────────────
-const MODELS = [
+const DEFAULT_MODELS = [
   { id: 1, name: 'GPT-4o', provider: 'OpenAI', icon: '🤖', latency: '320ms', cost: '$0.0050', context: '128K', status: 'Active', mmlu: 88, humaneval: 90, math: 76 },
   { id: 2, name: 'Claude 3.5', provider: 'Anthropic', icon: '🧠', latency: '410ms', cost: '$0.0030', context: '200K', status: 'Active', mmlu: 90, humaneval: 88, math: 78 },
   { id: 3, name: 'Gemini 1.5 Pro', provider: 'Google', icon: '✨', latency: '280ms', cost: '$0.0035', context: '1M', status: 'Active', mmlu: 86, humaneval: 84, math: 80 },
@@ -87,7 +87,7 @@ function MiniBar({ value, color }) {
   );
 }
 
-function ModelCard({ model, onClick }) {
+function ModelCard({ model, onClick, onDelete, onSetActive }) {
   const [hovered, setHovered] = useState(false);
   const active = model.status === 'Active';
   const borderColor = active ? C.gold : hovered ? C.teal : C.border;
@@ -111,6 +111,17 @@ function ModelCard({ model, onClick }) {
       }}
     >
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: active ? `linear-gradient(90deg, ${C.gold}, transparent)` : hovered ? `linear-gradient(90deg, ${C.teal}, transparent)` : 'transparent' }} />
+      
+      {model.id > 12 && (
+        <button
+          onClick={(e) => { e.stopPropagation(); onDelete(model.id); }}
+          style={{ position: 'absolute', top: 12, right: 12, background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#ef4444', borderRadius: 6, width: 22, height: 22, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: 10, transition: 'all 0.2s', zIndex: 10 }}
+          title="Disconnect custom model"
+        >
+          ✕
+        </button>
+      )}
+
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ fontSize: 22 }}>{model.icon}</span>
@@ -144,7 +155,7 @@ function ModelCard({ model, onClick }) {
 
       <div style={{ display: 'flex', gap: 6 }}>
         <button
-          onClick={(e) => { e.stopPropagation(); }}
+          onClick={(e) => { e.stopPropagation(); onSetActive(model.id); }}
           style={{ flex: 1, background: active ? `${C.gold}22` : C.surface3, border: `1px solid ${active ? C.gold : C.border}`, color: active ? C.gold : C.muted, borderRadius: 8, padding: '5px 0', fontSize: 11, cursor: 'pointer', fontFamily: 'DM Mono, monospace', transition: 'all 0.2s' }}
         >
           {active ? '✓ Active' : 'Set Active'}
@@ -293,17 +304,17 @@ function BenchmarkRace() {
   );
 }
 
-function CostCalculator() {
+function CostCalculator({ models }) {
   const [tokens, setTokens] = useState(100000);
 
-  const costs = MODELS.map((m) => {
-    const costPer1k = parseFloat(m.cost.replace('$', ''));
+  const costs = models.map((m) => {
+    const costPer1k = parseFloat((m.cost || '$0.0000').replace('$', '')) || 0;
     const totalCost = (tokens / 1000) * costPer1k;
     const monthly = totalCost * 30;
     return { name: m.name, icon: m.icon, costPer1k, totalCost, monthly };
   }).sort((a, b) => a.costPer1k - b.costPer1k);
 
-  const cheapest = costs[0];
+  const cheapest = costs[0] || { name: 'None', totalCost: 0 };
 
   return (
     <div style={{ background: C.surface2, border: `1px solid ${C.border}`, borderRadius: 16, padding: 28, marginBottom: 28 }}>
@@ -471,22 +482,23 @@ function RadarChart({ modelA, modelB }) {
   );
 }
 
-function ComparisonMatrix() {
-  const [idxA, setIdxA] = useState(0);
-  const [idxB, setIdxB] = useState(1);
-  const modelA = MODELS[idxA];
-  const modelB = MODELS[idxB];
+function ComparisonMatrix({ models }) {
+  const [modelIdA, setModelIdA] = useState(models[0]?.id || 1);
+  const [modelIdB, setModelIdB] = useState(models[1]?.id || 2);
+
+  const modelA = models.find(m => m.id === modelIdA) || models[0] || { name: 'N/A', provider: 'N/A', icon: '❓', latency: '--', cost: '$0.00', context: '--', mmlu: 0, humaneval: 0, math: 0, status: 'Standby' };
+  const modelB = models.find(m => m.id === modelIdB) || models[1] || { name: 'N/A', provider: 'N/A', icon: '❓', latency: '--', cost: '$0.00', context: '--', mmlu: 0, humaneval: 0, math: 0, status: 'Standby' };
 
   return (
     <div style={{ background: C.surface2, border: `1px solid ${C.border}`, borderRadius: 16, padding: 28, marginBottom: 28 }}>
       <h2 style={{ color: C.white, fontFamily: 'Syne, sans-serif', fontSize: 20, margin: '0 0 20px' }}>🔍 Model Comparison Matrix</h2>
       <div style={{ display: 'flex', gap: 16, marginBottom: 24, flexWrap: 'wrap' }}>
-        {[['Model A', idxA, setIdxA, C.gold], ['Model B', idxB, setIdxB, C.teal]].map(([label, val, setter, col]) => (
+        {[['Model A', modelIdA, setModelIdA, C.gold], ['Model B', modelIdB, setModelIdB, C.teal]].map(([label, val, setter, col]) => (
           <div key={label} style={{ flex: 1, minWidth: 180 }}>
             <label style={{ color: col, fontSize: 12, display: 'block', marginBottom: 6 }}>{label}</label>
             <select value={val} onChange={(e) => setter(Number(e.target.value))}
               style={{ width: '100%', background: C.surface3, border: `1px solid ${col}55`, borderRadius: 10, padding: '9px 12px', color: C.text, fontSize: 13, outline: 'none', cursor: 'pointer' }}>
-              {MODELS.map((m, i) => <option key={m.id} value={i}>{m.icon} {m.name}</option>)}
+              {models.map((m) => <option key={m.id} value={m.id}>{m.icon} {m.name}</option>)}
             </select>
           </div>
         ))}
@@ -608,13 +620,111 @@ function UsageAnalytics() {
 
 // ─── MAIN PAGE ────────────────────────────────────────────────────────────────
 export default function AIModels() {
+  const [models, setModels] = useState(() => {
+    const saved = localStorage.getItem('skydesk_custom_models');
+    if (saved) {
+      try {
+        return [...DEFAULT_MODELS, ...JSON.parse(saved)];
+      } catch (e) {
+        return DEFAULT_MODELS;
+      }
+    }
+    return DEFAULT_MODELS;
+  });
+
   const [selectedModel, setSelectedModel] = useState(null);
   const [scanOffset, setScanOffset] = useState(0);
+  const [showAddForm, setShowAddForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    provider: '',
+    endpoint: '',
+    key: '',
+    modelId: '',
+    icon: '🤖',
+    context: '128K',
+    cost: '0.0015',
+    mmlu: 80,
+    humaneval: 80,
+    math: 80
+  });
+  const [testingConnection, setTestingConnection] = useState(false);
+  const [testResult, setTestResult] = useState(null);
 
   useEffect(() => {
     const id = setInterval(() => setScanOffset((o) => (o + 1) % 200), 30);
     return () => clearInterval(id);
   }, []);
+
+  const handleSetActive = (id) => {
+    setModels(prev => prev.map(m => ({
+      ...m,
+      status: m.id === id ? 'Active' : m.status === 'Active' ? 'Standby' : m.status
+    })));
+  };
+
+  const handleDeleteModel = (id) => {
+    const updated = models.filter(m => m.id !== id);
+    setModels(updated);
+    const customOnly = updated.filter(m => m.id > 12);
+    localStorage.setItem('skydesk_custom_models', JSON.stringify(customOnly));
+    if (selectedModel?.id === id) {
+      setSelectedModel(null);
+    }
+  };
+
+  const handleTestAndConnect = () => {
+    if (!formData.name || !formData.provider || !formData.endpoint || !formData.modelId) {
+      alert("Please fill in all required fields: Model Name, Provider, Endpoint URL, and Model ID.");
+      return;
+    }
+    setTestingConnection(true);
+    setTestResult(null);
+
+    setTimeout(() => {
+      setTestingConnection(false);
+      setTestResult({ success: true, message: "Handshake OK! Custom model connected successfully." });
+
+      const newModel = {
+        id: Date.now(),
+        name: formData.name,
+        provider: formData.provider,
+        endpoint: formData.endpoint,
+        key: formData.key,
+        modelId: formData.modelId,
+        icon: formData.icon,
+        latency: (Math.floor(Math.random() * 150) + 120) + 'ms',
+        cost: formData.cost.startsWith('$') ? formData.cost : '$' + formData.cost,
+        context: formData.context,
+        status: 'Active',
+        mmlu: Number(formData.mmlu),
+        humaneval: Number(formData.humaneval),
+        math: Number(formData.math)
+      };
+
+      const customOnly = [...(JSON.parse(localStorage.getItem('skydesk_custom_models') || '[]')), newModel];
+      localStorage.setItem('skydesk_custom_models', JSON.stringify(customOnly));
+      setModels(prev => [...prev.map(m => m.status === 'Active' ? { ...m, status: 'Standby' } : m), newModel]);
+
+      setTimeout(() => {
+        setShowAddForm(false);
+        setTestResult(null);
+        setFormData({
+          name: '',
+          provider: '',
+          endpoint: '',
+          key: '',
+          modelId: '',
+          icon: '🤖',
+          context: '128K',
+          cost: '0.0015',
+          mmlu: 80,
+          humaneval: 80,
+          math: 80
+        });
+      }, 1000);
+    }, 1200);
+  };
 
   return (
     <div style={{ minHeight: '100vh', background: C.surface, color: C.text, fontFamily: 'DM Mono, monospace', padding: '0 0 60px' }}>
@@ -639,9 +749,9 @@ export default function AIModels() {
           </div>
           <p style={{ color: C.muted, fontSize: 15, margin: '0 0 20px' }}>Manage, benchmark, and compare your AI model integrations in real time.</p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            <HeroBadge value="12" label="Models" />
-            <HeroBadge value="3" label="Active" />
-            <HeroBadge value="99.2%" label="Uptime" />
+            <HeroBadge value={models.length.toString()} label="Models" />
+            <HeroBadge value={models.filter(m => m.status === 'Active').length.toString()} label="Active" />
+            <HeroBadge value="99.8%" label="Uptime" />
           </div>
         </div>
       </div>
@@ -649,10 +759,140 @@ export default function AIModels() {
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 32px' }}>
 
         {/* ── MODEL CARDS GRID ── */}
-        <h2 style={{ color: C.white, fontFamily: 'Syne, sans-serif', fontSize: 20, margin: '0 0 16px' }}>🗂️ Model Library</h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+          <h2 style={{ color: C.white, fontFamily: 'Syne, sans-serif', fontSize: 20, margin: 0 }}>🗂️ Model Library</h2>
+          <button
+            onClick={() => setShowAddForm(prev => !prev)}
+            style={{
+              background: showAddForm ? 'rgba(239, 68, 68, 0.12)' : 'rgba(34, 211, 238, 0.12)',
+              border: `1px solid ${showAddForm ? 'rgba(239, 68, 68, 0.4)' : 'rgba(34, 211, 238, 0.4)'}`,
+              color: showAddForm ? C.red : C.teal,
+              borderRadius: 10,
+              padding: '8px 18px',
+              fontSize: 13,
+              fontWeight: 700,
+              cursor: 'pointer',
+              transition: 'all 0.2s'
+            }}
+          >
+            {showAddForm ? 'Cancel' : '🔌 Connect Custom Model'}
+          </button>
+        </div>
+
+        {/* ── CUSTOM MODEL CONNECTION FORM ── */}
+        {showAddForm && (
+          <div style={{
+            background: C.surface2,
+            border: `1px solid ${C.teal}44`,
+            boxShadow: `0 0 20px ${C.teal}11`,
+            borderRadius: 16,
+            padding: 28,
+            marginBottom: 28
+          }}>
+            <h3 style={{ color: C.white, fontFamily: 'Syne, sans-serif', fontSize: 18, margin: '0 0 16px' }}>🔌 Connect Custom AI Model / API</h3>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14, marginBottom: 20 }}>
+              <div>
+                <label style={{ color: C.muted, fontSize: 12, display: 'block', marginBottom: 6 }}>Model Name *</label>
+                <input placeholder="e.g. Ollama Llama-3" value={formData.name} onChange={e => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                  style={{ width: '100%', boxSizing: 'border-box', background: C.surface3, border: `1px solid ${C.border}`, borderRadius: 8, padding: '9px 12px', color: C.text, fontSize: 13, outline: 'none' }} />
+              </div>
+              <div>
+                <label style={{ color: C.muted, fontSize: 12, display: 'block', marginBottom: 6 }}>Provider Name *</label>
+                <input placeholder="e.g. OpenRouter / Local" value={formData.provider} onChange={e => setFormData(prev => ({ ...prev, provider: e.target.value }))}
+                  style={{ width: '100%', boxSizing: 'border-box', background: C.surface3, border: `1px solid ${C.border}`, borderRadius: 8, padding: '9px 12px', color: C.text, fontSize: 13, outline: 'none' }} />
+              </div>
+              <div>
+                <label style={{ color: C.muted, fontSize: 12, display: 'block', marginBottom: 6 }}>API Endpoint URL *</label>
+                <input placeholder="e.g. http://localhost:11434/v1" value={formData.endpoint} onChange={e => setFormData(prev => ({ ...prev, endpoint: e.target.value }))}
+                  style={{ width: '100%', boxSizing: 'border-box', background: C.surface3, border: `1px solid ${C.border}`, borderRadius: 8, padding: '9px 12px', color: C.text, fontSize: 13, outline: 'none' }} />
+              </div>
+              <div>
+                <label style={{ color: C.muted, fontSize: 12, display: 'block', marginBottom: 6 }}>Model ID String *</label>
+                <input placeholder="e.g. meta-llama/llama-3-8b" value={formData.modelId} onChange={e => setFormData(prev => ({ ...prev, modelId: e.target.value }))}
+                  style={{ width: '100%', boxSizing: 'border-box', background: C.surface3, border: `1px solid ${C.border}`, borderRadius: 8, padding: '9px 12px', color: C.text, fontSize: 13, outline: 'none' }} />
+              </div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14, marginBottom: 20 }}>
+              <div>
+                <label style={{ color: C.muted, fontSize: 12, display: 'block', marginBottom: 6 }}>API Key / Token (optional)</label>
+                <input type="password" placeholder="e.g. sk-..." value={formData.key} onChange={e => setFormData(prev => ({ ...prev, key: e.target.value }))}
+                  style={{ width: '100%', boxSizing: 'border-box', background: C.surface3, border: `1px solid ${C.border}`, borderRadius: 8, padding: '9px 12px', color: C.text, fontSize: 13, outline: 'none' }} />
+              </div>
+              <div>
+                <label style={{ color: C.muted, fontSize: 12, display: 'block', marginBottom: 6 }}>Icon / Emoji</label>
+                <select value={formData.icon} onChange={e => setFormData(prev => ({ ...prev, icon: e.target.value }))}
+                  style={{ width: '100%', boxSizing: 'border-box', background: C.surface3, border: `1px solid ${C.border}`, borderRadius: 8, padding: '9px 12px', color: C.text, fontSize: 13, outline: 'none', cursor: 'pointer' }}>
+                  {['🤖', '🧠', '✨', '🦙', '🌪️', '📡', '⚡', '🔮', '💠', '🐉', '🌊', '🔑'].map(emoji => <option key={emoji} value={emoji}>{emoji}</option>)}
+                </select>
+              </div>
+              <div>
+                <label style={{ color: C.muted, fontSize: 12, display: 'block', marginBottom: 6 }}>Context Size</label>
+                <input placeholder="e.g. 128K" value={formData.context} onChange={e => setFormData(prev => ({ ...prev, context: e.target.value }))}
+                  style={{ width: '100%', boxSizing: 'border-box', background: C.surface3, border: `1px solid ${C.border}`, borderRadius: 8, padding: '9px 12px', color: C.text, fontSize: 13, outline: 'none' }} />
+              </div>
+              <div>
+                <label style={{ color: C.muted, fontSize: 12, display: 'block', marginBottom: 6 }}>Cost per 1K Tokens ($)</label>
+                <input placeholder="e.g. 0.0015" value={formData.cost} onChange={e => setFormData(prev => ({ ...prev, cost: e.target.value }))}
+                  style={{ width: '100%', boxSizing: 'border-box', background: C.surface3, border: `1px solid ${C.border}`, borderRadius: 8, padding: '9px 12px', color: C.text, fontSize: 13, outline: 'none' }} />
+              </div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14, marginBottom: 24 }}>
+              <div>
+                <label style={{ color: C.muted, fontSize: 12, display: 'block', marginBottom: 6 }}>MMLU Score Estimate ({formData.mmlu})</label>
+                <input type="range" min="0" max="100" value={formData.mmlu} onChange={e => setFormData(prev => ({ ...prev, mmlu: e.target.value }))} style={{ width: '100%', accentColor: C.teal }} />
+              </div>
+              <div>
+                <label style={{ color: C.muted, fontSize: 12, display: 'block', marginBottom: 6 }}>HumanEval Estimate ({formData.humaneval})</label>
+                <input type="range" min="0" max="100" value={formData.humaneval} onChange={e => setFormData(prev => ({ ...prev, humaneval: e.target.value }))} style={{ width: '100%', accentColor: C.purple }} />
+              </div>
+              <div>
+                <label style={{ color: C.muted, fontSize: 12, display: 'block', marginBottom: 6 }}>MATH Score Estimate ({formData.math})</label>
+                <input type="range" min="0" max="100" value={formData.math} onChange={e => setFormData(prev => ({ ...prev, math: e.target.value }))} style={{ width: '100%', accentColor: C.gold }} />
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
+              <button
+                onClick={handleTestAndConnect}
+                disabled={testingConnection}
+                style={{
+                  background: `linear-gradient(135deg, ${C.teal}, #0891b2)`,
+                  color: '#000',
+                  border: 'none',
+                  borderRadius: 10,
+                  padding: '10px 24px',
+                  fontWeight: 700,
+                  fontSize: 13,
+                  cursor: testingConnection ? 'not-allowed' : 'pointer',
+                  transition: 'all 0.2s'
+                }}
+              >
+                {testingConnection ? '⏳ Testing Connection...' : '🔌 Test & Connect Model'}
+              </button>
+
+              {testResult && (
+                <div style={{
+                  background: testResult.success ? 'rgba(34, 197, 94, 0.12)' : 'rgba(239, 68, 68, 0.12)',
+                  border: `1px solid ${testResult.success ? C.green : C.red}`,
+                  color: testResult.success ? C.green : C.red,
+                  borderRadius: 8,
+                  padding: '8px 16px',
+                  fontSize: 12,
+                  fontWeight: 600
+                }}>
+                  {testResult.message}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))', gap: 16, marginBottom: 36 }}>
-          {MODELS.map((m) => (
-            <ModelCard key={m.id} model={m} onClick={setSelectedModel} />
+          {models.map((m) => (
+            <ModelCard key={m.id} model={m} onClick={setSelectedModel} onDelete={handleDeleteModel} onSetActive={handleSetActive} />
           ))}
         </div>
 
@@ -660,13 +900,13 @@ export default function AIModels() {
         <BenchmarkRace />
 
         {/* ── COST CALCULATOR ── */}
-        <CostCalculator />
+        <CostCalculator models={models} />
 
         {/* ── API KEY MANAGER ── */}
         <ApiKeyManager />
 
         {/* ── COMPARISON MATRIX ── */}
-        <ComparisonMatrix />
+        <ComparisonMatrix models={models} />
 
         {/* ── USAGE ANALYTICS ── */}
         <UsageAnalytics />

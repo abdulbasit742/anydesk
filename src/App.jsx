@@ -82,6 +82,65 @@ const LoadBalancer        = lazy(() => import('./pages/LoadBalancer'));
 const DbManager           = lazy(() => import('./pages/DbManager'));
 const LogAnalyzer         = lazy(() => import('./pages/LogAnalyzer'));
 const AIAssistantHub      = lazy(() => import('./pages/AIAssistantHub'));
+const MCPAgentLab         = lazy(() => import('./pages/MCPAgentLab'));
+const WorkflowBuilder     = lazy(() => import('./pages/WorkflowBuilder'));
+const RemoteTechHub       = lazy(() => import('./pages/RemoteTechHub'));
+const AgentPipeline       = lazy(() => import('./pages/AgentPipeline'));
+const LabComparison       = lazy(() => import('./pages/LabComparison'));
+const AgentMemory         = lazy(() => import('./pages/AgentMemory'));
+const AgentScheduler      = lazy(() => import('./pages/AgentScheduler'));
+const ClientPortal        = lazy(() => import('./pages/ClientPortal'));
+const BusinessSimulator   = lazy(() => import('./pages/BusinessSimulator'));
+const LeadGenHub          = lazy(() => import('./pages/LeadGenHub'));
+const LegalRiskAuditor    = lazy(() => import('./pages/LegalRiskAuditor'));
+const DynamicPluginLoader = lazy(() => import('./pages/DynamicPluginLoader'));
+const CodeGenerator       = lazy(() => import('./pages/CodeGenerator'));
+const SchemaBuilder       = lazy(() => import('./pages/SchemaBuilder'));
+const ApiDesigner         = lazy(() => import('./pages/ApiDesigner'));
+const UnattendedAccess    = lazy(() => import('./pages/UnattendedAccess'));
+const SessionRecorder     = lazy(() => import('./pages/SessionRecorder'));
+const FileTransfer        = lazy(() => import('./pages/FileTransfer'));
+const SessionCollab       = lazy(() => import('./pages/SessionCollab'));
+const SelfHealingAgent    = lazy(() => import('./pages/SelfHealingAgent'));
+const VoiceFleetCommander = lazy(() => import('./pages/VoiceFleetCommander'));
+const DnsManager          = lazy(() => import('./pages/DnsManager'));
+const CodeTranslator      = lazy(() => import('./pages/CodeTranslator'));
+const TerminalRecorder    = lazy(() => import('./pages/TerminalRecorder'));
+const DbPerformance       = lazy(() => import('./pages/DbPerformance'));
+const LiveApiSimulator    = lazy(() => import('./pages/LiveApiSimulator'));
+const SqlTuner            = lazy(() => import('./pages/SqlTuner'));
+const SystemHealthAnalyzer = lazy(() => import('./pages/SystemHealthAnalyzer'));
+const CloudCostAdvisor    = lazy(() => import('./pages/CloudCostAdvisor'));
+const AiDeviceOrchestrator = lazy(() => import('./pages/AiDeviceOrchestrator'));
+const TunnelsMonitor      = lazy(() => import('./pages/TunnelsMonitor'));
+const ContainerRegistry   = lazy(() => import('./pages/ContainerRegistry'));
+const SchemaVisualizer    = lazy(() => import('./pages/SchemaVisualizer'));
+const CronGantt           = lazy(() => import('./pages/CronGantt'));
+const GeoPingTester       = lazy(() => import('./pages/GeoPingTester'));
+const DocuWriter          = lazy(() => import('./pages/DocuWriter'));
+const BackupRestore       = lazy(() => import('./pages/BackupRestore'));
+const NetworkScanner      = lazy(() => import('./pages/NetworkScanner'));
+const LiveGitStudio       = lazy(() => import('./pages/LiveGitStudio'));
+const K8sDashboard        = lazy(() => import('./pages/K8sDashboard'));
+const LoadBalancerConfig  = lazy(() => import('./pages/LoadBalancerConfig'));
+const WebSocketTester     = lazy(() => import('./pages/WebSocketTester'));
+const LiveDatabaseClient  = lazy(() => import('./pages/LiveDatabaseClient'));
+const RefactorStudio      = lazy(() => import('./pages/RefactorStudio'));
+const DevOpsOrchestrator  = lazy(() => import('./pages/DevOpsOrchestrator'));
+const RagKnowledgeGraph   = lazy(() => import('./pages/RagKnowledgeGraph'));
+const CloudProvisioner    = lazy(() => import('./pages/CloudProvisioner'));
+const QueryProfiler       = lazy(() => import('./pages/QueryProfiler'));
+const VectorStoreManager  = lazy(() => import('./pages/VectorStoreManager'));
+const SecurityShield      = lazy(() => import('./pages/SecurityShield'));
+const BenchmarkArena      = lazy(() => import('./pages/BenchmarkArena'));
+const AgentCanvas         = lazy(() => import('./pages/AgentCanvas'));
+const TokenSaver          = lazy(() => import('./pages/TokenSaver'));
+const WebhookIntegrator   = lazy(() => import('./pages/WebhookIntegrator'));
+const DocQA               = lazy(() => import('./pages/DocQA'));
+const RoleManager         = lazy(() => import('./pages/RoleManager'));
+const EdgeDeployer        = lazy(() => import('./pages/EdgeDeployer'));
+const ActivityPulse       = lazy(() => import('./pages/ActivityPulse'));
+const RoiOptimizer        = lazy(() => import('./pages/RoiOptimizer'));
 const EventStreamHub      = lazy(() => import('./pages/EventStreamHub'));
 const PromptDNA           = lazy(() => import('./pages/PromptDNA'));
 const AIModels            = lazy(() => import('./pages/AIModels'));
@@ -159,6 +218,8 @@ const Digest              = lazy(() => import('./pages/Digest'));
 const ScholarshipAgent    = lazy(() => import('./pages/ScholarshipAgent'));
 const ApparelAgent        = lazy(() => import('./pages/ApparelAgent'));
 const QuantumExploration  = lazy(() => import('./pages/QuantumExploration'));
+const UsageAnalytics      = lazy(() => import('./pages/UsageAnalytics'));
+const PromptLibrary       = lazy(() => import('./pages/PromptLibrary'));
 
 /* ── Page loading skeleton ──────────────────────────────────────── */
 function PageLoader() {
@@ -278,6 +339,8 @@ const PAGES = [
   { id: 'vault',           label: 'Security Vault',   emoji: '🔒' },
   { id: 'terminal',        label: 'AI Terminal',      emoji: '🖥️' },
   { id: 'costtracker',     label: 'Cost Tracker',     emoji: '💰' },
+  { id: 'usageanalytics',  label: 'Usage Analytics',  emoji: '📊' },
+  { id: 'promptlibrary',   label: 'Prompt Library',   emoji: '📚' },
   { id: 'liveconsole',     label: 'Live Console',     emoji: '📺' },
   { id: 'autopromptengine',    label: 'Auto-Prompt',       emoji: '🎯' },
   { id: 'aiinsights',          label: 'AI Insights',       emoji: '💡' },
@@ -309,6 +372,65 @@ const PAGES = [
   { id: 'collaborationhub',    label: 'Collab Hub',        emoji: '🤝' },
   { id: 'commandcenter',       label: 'Command Center',    emoji: '🎯' },
   { id: 'aiassistanthub',      label: 'AI Assistant Hub',  emoji: '🤖' },
+  { id: 'mcpagentlab',         label: 'MCP Agent Lab',     emoji: '🧬' },
+  { id: 'workflowbuilder',     label: 'Workflow Builder',  emoji: '🔗' },
+  { id: 'remotechhub',         label: 'Remote Tech Hub',   emoji: '🔌' },
+  { id: 'agentpipeline',       label: 'Agent Pipeline',    emoji: '⛓️' },
+  { id: 'labcomparison',       label: 'Lab Comparison',    emoji: '⚖️' },
+  { id: 'agentmemory',         label: 'Agent Memory',      emoji: '🧠' },
+  { id: 'agentscheduler',      label: 'Agent Scheduler',   emoji: '⏰' },
+  { id: 'clientportal',        label: 'Client Portal',     emoji: '🏢' },
+  { id: 'businesssimulator',   label: 'Business Simulator', emoji: '📊' },
+  { id: 'leadgenhub',          label: 'Lead Gen Hub',      emoji: '🎯' },
+  { id: 'legalriskauditor',    label: 'Legal Risk Auditor', emoji: '⚖️' },
+  { id: 'dynamicpluginloader', label: 'Plugin Loader',     emoji: '🔌' },
+  { id: 'codegenerator',       label: 'Code Generator',    emoji: '💻' },
+  { id: 'schemabuilder',       label: 'Schema Builder',    emoji: '🗄️' },
+  { id: 'apidesigner',         label: 'API Designer',      emoji: '🔌' },
+  { id: 'unattendedaccess',    label: 'Unattended Access', emoji: '🔑' },
+  { id: 'sessionrecorder',     label: 'Session Recorder',  emoji: '📼' },
+  { id: 'filetransfer',        label: 'File Transfer',     emoji: '📁' },
+  { id: 'sessioncollab',       label: 'Session Collab',    emoji: '🤝' },
+  { id: 'dnsmanager',          label: 'DNS Manager',       emoji: '🌐' },
+  { id: 'codetranslator',      label: 'Code Translator',   emoji: '📝' },
+  { id: 'terminalrecorder',    label: 'Console Recorder',  emoji: '📼' },
+  { id: 'dbperformance',       label: 'DB Pool Monitor',   emoji: '🗄️' },
+  { id: 'liveapisimulator',    label: 'API Simulator',     emoji: '🔌' },
+  { id: 'sqltuner',            label: 'SQL Optimizer',     emoji: '🗄️' },
+  { id: 'systemhealthanalyzer', label: 'System Health',     emoji: '🖥️' },
+  { id: 'cloudcostadvisor',    label: 'Cloud Optimizer',    emoji: '💰' },
+  { id: 'aideviceorchestrator', label: 'AI Domain Monitor', emoji: '🤖' },
+  { id: 'tunnelsmonitor',      label: 'Tunnels Monitor',   emoji: '🚇' },
+  { id: 'containerregistry',   label: 'Docker Registry',   emoji: '🐋' },
+  { id: 'schemavisualizer',    label: 'Schema ERD Canvas', emoji: '🗺️' },
+  { id: 'crongantt',           label: 'Cron Gantt Chart',  emoji: '📊' },
+  { id: 'geopingtester',       label: 'Geo Ping Tester',   emoji: '🌐' },
+  { id: 'docuwriter',          label: 'Docu Writer',       emoji: '📝' },
+  { id: 'backuprestore',       label: 'Backup Restore',    emoji: '🗄️' },
+  { id: 'networkscanner',      label: 'Network Scanner',   emoji: '🔒' },
+  { id: 'livegitstudio',       label: 'Git Studio',        emoji: '🌿' },
+  { id: 'k8sdashboard',        label: 'K8s Dashboard',     emoji: '☸️' },
+  { id: 'loadbalancerconfig',  label: 'Load Balancer',     emoji: '🌐' },
+  { id: 'websockettester',     label: 'WebSocket Tester',  emoji: '⚡' },
+  { id: 'livedatabaseclient',  label: 'Database Client',   emoji: '🗄️' },
+  { id: 'refactorstudio',      label: 'Refactor Studio',   emoji: '💻' },
+  { id: 'devopsorchestrator',  label: 'DevOps Designer',   emoji: '⚙️' },
+  { id: 'ragknowledgegraph',   label: 'RAG Graph',         emoji: '🧠' },
+  { id: 'selfhealingagent',    label: 'Self-Healing Code', emoji: '🤖' },
+  { id: 'voicefleetcommander', label: 'Voice Commander',   emoji: '🎙️' },
+  { id: 'cloudprovisioner',    label: 'Cloud Provisioner', emoji: '🚂' },
+  { id: 'queryprofiler',       label: 'Query Profiler',    emoji: '🗄️' },
+  { id: 'vectorstoremanager',  label: 'Vector Store',      emoji: '🧬' },
+  { id: 'securityshield',      label: 'Security Shield',   emoji: '🛡️' },
+  { id: 'benchmarkarena',      label: 'Benchmark Arena',   emoji: '🏆' },
+  { id: 'agentcanvas',         label: 'Agent Canvas',      emoji: '👥' },
+  { id: 'tokensaver',          label: 'Token Saver',       emoji: '💰' },
+  { id: 'webhookintegrator',   label: 'Webhook Integrator', emoji: '🔌' },
+  { id: 'docqa',               label: 'Doc QA Chat',       emoji: '📖' },
+  { id: 'rolemanager',         label: 'Role Manager',      emoji: '👥' },
+  { id: 'edgedeployer',        label: 'Edge Deployer',     emoji: '🚂' },
+  { id: 'activitypulse',       label: 'Activity Pulse',    emoji: '🌐' },
+  { id: 'roioptimizer',        label: 'ROI Optimizer',     emoji: '📈' },
   { id: 'eventstreamhub',      label: 'Event Stream Hub',  emoji: '⚡' },
   { id: 'promptdna',           label: 'Prompt DNA',        emoji: '🧬' },
   { id: 'aimodels',            label: 'AI Models',         emoji: '🧠' },
@@ -1044,6 +1166,8 @@ export default function App() {
       case 'vault':          return <Vault />;
       case 'terminal':       return <Terminal        onNav={onNav} />;
       case 'costtracker':    return <CostTracker     onNav={onNav} />;
+      case 'usageanalytics': return <UsageAnalytics  onNav={onNav} />;
+      case 'promptlibrary':  return <PromptLibrary   onNav={onNav} />;
       case 'liveconsole':    return <LiveConsole     onNav={onNav} />;
       case 'tokenanalyzer':  return <TokenAnalyzer   onNav={onNav} />;
       case 'featuremarketplace': return <FeatureMarketplace onNav={onNav} />;
@@ -1075,6 +1199,65 @@ export default function App() {
       case 'dbmanager':           return <DbManager />;
       case 'loganalyzer':         return <LogAnalyzer />;
       case 'aiassistanthub':      return <AIAssistantHub   onNav={onNav} />;
+      case 'mcpagentlab':         return <MCPAgentLab      onNav={onNav} />;
+      case 'workflowbuilder':     return <WorkflowBuilder  onNav={onNav} />;
+      case 'remotechhub':         return <RemoteTechHub    onNav={onNav} />;
+      case 'agentpipeline':       return <AgentPipeline    onNav={onNav} />;
+      case 'labcomparison':       return <LabComparison    onNav={onNav} />;
+      case 'agentmemory':         return <AgentMemory      onNav={onNav} />;
+      case 'agentscheduler':      return <AgentScheduler   onNav={onNav} />;
+      case 'clientportal':        return <ClientPortal     onNav={onNav} />;
+      case 'businesssimulator':   return <BusinessSimulator onNav={onNav} />;
+      case 'leadgenhub':          return <LeadGenHub       onNav={onNav} />;
+      case 'legalriskauditor':    return <LegalRiskAuditor onNav={onNav} />;
+      case 'dynamicpluginloader': return <DynamicPluginLoader onNav={onNav} />;
+      case 'codegenerator':       return <CodeGenerator       onNav={onNav} />;
+      case 'schemabuilder':       return <SchemaBuilder       onNav={onNav} />;
+      case 'apidesigner':         return <ApiDesigner         onNav={onNav} />;
+      case 'unattendedaccess':    return <UnattendedAccess    onNav={onNav} />;
+      case 'sessionrecorder':     return <SessionRecorder     onNav={onNav} />;
+      case 'filetransfer':        return <FileTransfer        onNav={onNav} />;
+      case 'sessioncollab':       return <SessionCollab       onNav={onNav} />;
+      case 'dnsmanager':          return <DnsManager          onNav={onNav} />;
+      case 'codetranslator':      return <CodeTranslator      onNav={onNav} />;
+      case 'terminalrecorder':    return <TerminalRecorder    onNav={onNav} />;
+      case 'dbperformance':       return <DbPerformance       onNav={onNav} />;
+      case 'liveapisimulator':    return <LiveApiSimulator    onNav={onNav} />;
+      case 'sqltuner':            return <SqlTuner            onNav={onNav} />;
+      case 'systemhealthanalyzer': return <SystemHealthAnalyzer onNav={onNav} />;
+      case 'cloudcostadvisor':    return <CloudCostAdvisor    onNav={onNav} />;
+      case 'aideviceorchestrator': return <AiDeviceOrchestrator onNav={onNav} />;
+      case 'tunnelsmonitor':      return <TunnelsMonitor      onNav={onNav} />;
+      case 'containerregistry':   return <ContainerRegistry   onNav={onNav} />;
+      case 'schemavisualizer':    return <SchemaVisualizer    onNav={onNav} />;
+      case 'crongantt':           return <CronGantt           onNav={onNav} />;
+      case 'geopingtester':       return <GeoPingTester       onNav={onNav} />;
+      case 'docuwriter':          return <DocuWriter          onNav={onNav} />;
+      case 'backuprestore':       return <BackupRestore       onNav={onNav} />;
+      case 'networkscanner':      return <NetworkScanner      onNav={onNav} />;
+      case 'livegitstudio':       return <LiveGitStudio       onNav={onNav} />;
+      case 'k8sdashboard':        return <K8sDashboard        onNav={onNav} />;
+      case 'loadbalancerconfig':  return <LoadBalancerConfig  onNav={onNav} />;
+      case 'websockettester':     return <WebSocketTester     onNav={onNav} />;
+      case 'livedatabaseclient':  return <LiveDatabaseClient  onNav={onNav} />;
+      case 'refactorstudio':      return <RefactorStudio      onNav={onNav} />;
+      case 'devopsorchestrator':  return <DevOpsOrchestrator  onNav={onNav} />;
+      case 'ragknowledgegraph':   return <RagKnowledgeGraph   onNav={onNav} />;
+      case 'selfhealingagent':    return <SelfHealingAgent    onNav={onNav} />;
+      case 'voicefleetcommander': return <VoiceFleetCommander onNav={onNav} />;
+      case 'cloudprovisioner':    return <CloudProvisioner    onNav={onNav} />;
+      case 'queryprofiler':       return <QueryProfiler       onNav={onNav} />;
+      case 'vectorstoremanager':  return <VectorStoreManager  onNav={onNav} />;
+      case 'securityshield':      return <SecurityShield      onNav={onNav} />;
+      case 'benchmarkarena':      return <BenchmarkArena      onNav={onNav} />;
+      case 'agentcanvas':         return <AgentCanvas         onNav={onNav} />;
+      case 'tokensaver':          return <TokenSaver          onNav={onNav} />;
+      case 'webhookintegrator':   return <WebhookIntegrator   onNav={onNav} />;
+      case 'docqa':               return <DocQA               onNav={onNav} />;
+      case 'rolemanager':         return <RoleManager         onNav={onNav} />;
+      case 'edgedeployer':        return <EdgeDeployer        onNav={onNav} />;
+      case 'activitypulse':       return <ActivityPulse       onNav={onNav} />;
+      case 'roioptimizer':        return <RoiOptimizer        onNav={onNav} />;
       case 'eventstreamhub':      return <EventStreamHub   onNav={onNav} />;
       case 'promptdna':           return <PromptDNA        onNav={onNav} />;
       case 'aimodels':            return <AIModels         onNav={onNav} />;

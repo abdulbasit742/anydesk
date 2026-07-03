@@ -9,3 +9,14 @@ openjdk17/
 *.log
 local.properties
 .env
+.env.local
+.env.production
+.env.staging
+.env.*
+supersenderpro/.env
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+coverage/
+.nyc_output/

@@ -1,0 +1,12 @@
+{
+  "name": "antigravity-mcp-server",
+  "version": "1.0.0",
+  "description": "Antigravity MCP Server — exposes AI Labs, Agents and tools via Model Context Protocol",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": ["mcp", "ai", "agents", "llm"],
+  "license": "MIT"
+}
