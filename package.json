@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint src/App.jsx src/main.jsx src/components/*.jsx src/pages/*.jsx src/lib/*.js src/lib/remote/*.js src/components/remote/*.jsx src/pages/RemoteDesktop/*.jsx eslint.config.js vite.config.js",
+    "lint": "eslint \"src/**/*.{js,jsx}\" eslint.config.js vite.config.js",
     "test": "node scripts/testSuite.js",
     "preview": "vite preview",
     "prepare": "husky"
