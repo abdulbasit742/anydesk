@@ -92,10 +92,16 @@ let lastWriteTime = 0;
 
 function updateDashboard() {
   const now = Date.now();
-  if (now - lastWriteTime < 1000) {
+  if (now - lastWriteTime < 15000) {
     return;
   }
   lastWriteTime = now;
+
+  const freeSpace = getFreeDiskSpaceMB();
+  if (freeSpace < 50) {
+    console.warn(`[Orchestrator] Disk space is extremely low (${freeSpace.toFixed(1)} MB). Skipping dashboard file write.`);
+    return;
+  }
 
   const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
   
@@ -107,28 +113,30 @@ function updateDashboard() {
   };
 
   const activeAgents = agentRoles.filter(a => agentLogs[a.id].status === 'Executing').length;
-  
-  const freeSpace = getFreeDiskSpaceMB();
-  const throttleActive = freeSpace < 50;
+  const throttleActive = freeSpace < 100;
 
   let mdContent = `# 🚀 AgentFlow Fleet Orchestration Dashboard\n\n`;
   mdContent += `> **Status:** Running continuously (Auto-Looped)\n`;
   mdContent += `> **Elapsed Time:** \`${formatTime(elapsedTime)}\` | **Time Remaining:** \`∞ (Infinite Loop Mode)\`\n`;
   mdContent += `> **Active Agents:** ${activeAgents} / ${agentRoles.length} | **Total Files Inspected:** ${totalFilesAudited} | **Issues Cleaned:** ${totalIssuesDetected}\n`;
-  mdContent += `> **Storage Safeguard:** ${throttleActive ? '⚠️ THROTTLED (< 50MB free)' : '🟢 ACTIVE (' + freeSpace.toFixed(1) + ' MB free)'}\n\n`;
+  mdContent += `> **Storage Safeguard:** ${throttleActive ? '⚠️ THROTTLED (< 100MB free)' : '🟢 ACTIVE (' + freeSpace.toFixed(1) + ' MB free)'}\n\n`;
 
-  mdContent += `## 📊 Live System Activity Log\n`;
-  mdContent += `| Agent Role | Current Skill Triggered | Status | Inspected File | Issues Detected | Last Action Time |\n`;
-  mdContent += `| :--- | :--- | :--- | :--- | :--- | :--- |\n`;
+  if (throttleActive) {
+    mdContent += `> **Notice:** Detailed logs table is hidden to conserve remaining disk space (${freeSpace.toFixed(1)} MB free).\n\n`;
+  } else {
+    mdContent += `## 📊 Live System Activity Log\n`;
+    mdContent += `| Agent Role | Current Skill Triggered | Status | Inspected File | Issues Detected | Last Action Time |\n`;
+    mdContent += `| :--- | :--- | :--- | :--- | :--- | :--- |\n`;
 
-  agentRoles.forEach(agent => {
-    const log = agentLogs[agent.id];
-    let statusBadge = `⚪ Idle`;
-    if (log.status === 'Executing') statusBadge = `🟢 Executing`;
-    if (log.status === 'Completed Task') statusBadge = `🔵 Completed`;
-    
-    mdContent += `| **${log.role}** | \`${log.skill}\` | ${statusBadge} | \`${log.inspectedFile}\` | ${log.issuesFound} | *${new Date(log.lastUpdate).toLocaleTimeString()}* |\n`;
-  });
+    agentRoles.forEach(agent => {
+      const log = agentLogs[agent.id];
+      let statusBadge = `⚪ Idle`;
+      if (log.status === 'Executing') statusBadge = `🟢 Executing`;
+      if (log.status === 'Completed Task') statusBadge = `🔵 Completed`;
+      
+      mdContent += `| **${log.role}** | \`${log.skill}\` | ${statusBadge} | \`${log.inspectedFile}\` | ${log.issuesFound} | *${new Date(log.lastUpdate).toLocaleTimeString()}* |\n`;
+    });
+  }
 
   try {
     fs.writeFileSync(dashboardPath, mdContent, 'utf8');
