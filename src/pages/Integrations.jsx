@@ -368,7 +368,7 @@ function AICopilotTab({ setToast }) {
       if (data.success && Array.isArray(data.skills)) {
         setSkills(data.skills);
       }
-    } catch {}
+    } catch (err) { console.error('[Integrations] fetchSkills error:', err); }
   };
 
   useEffect(() => {
@@ -625,7 +625,7 @@ function TelemetryTab() {
       if (data.success && Array.isArray(data.traces)) {
         setTraces(data.traces);
       }
-    } catch {}
+    } catch (err) { console.error('[Integrations] fetchTraces error:', err); }
     setLoading(false);
   };
 

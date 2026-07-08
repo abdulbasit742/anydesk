@@ -1,5 +1,5 @@
 // src/components/AuthGuard.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { auth } from '../lib/supabase';
 
 export function AuthGuard({ children }) {
@@ -8,11 +8,12 @@ export function AuthGuard({ children }) {
   const [authed] = useState(isAuthed);
   const [loading] = useState(false);
 
-  // If not authenticated, redirect immediately
-  if (!isAuthed) {
-    window.location.href = '/login';
-    return null;
-  }
+  // Side-effects (redirects) must run inside useEffect
+  useEffect(() => {
+    if (!isAuthed) {
+      window.location.href = '/login';
+    }
+  }, [isAuthed]);
 
   if (loading) {
     return (

@@ -38,7 +38,7 @@ export default function CodeGenerator({ onNav }) {
     setGeneratedCode("");
 
     setTimeout(() => {
-      let code = "";
+      let code;
       if (compType === "React View") {
         code = `import React from 'react';\n\n// Generated component: ${desc}\nexport default function CustomView() {\n  return (\n    <div style={{ padding: 20, background: '#111', color: '#fff', borderRadius: 8 }}>\n      <h3>${desc}</h3>\n      <p>This is a custom auto-generated template workspace view.</p>\n    </div>\n  );\n}`;
       } else {

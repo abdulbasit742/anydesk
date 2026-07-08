@@ -825,7 +825,7 @@ const getPlan = () => {
         return parsed.plan
       }
     }
-  } catch (e) {}
+  } catch (e) { console.error('[store] getPlan parse error:', e); }
   return localStorage.getItem(K('plan')) || 'free'
 }
 
@@ -836,12 +836,12 @@ const setPlan = (plan) => {
     let storeObj = rawStore ? JSON.parse(rawStore) : {}
     storeObj.plan = plan
     localStorage.setItem('bolt_studio_pro_v2', JSON.stringify(storeObj))
-  } catch (e) {}
+  } catch (e) { console.error('[store] setPlan write error:', e); }
   bus.emit(E.STATE, { action: 'plan:updated', plan })
   if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
     try {
       window.dispatchEvent(new Event('storage'));
-    } catch (e) {}
+    } catch (e) { console.error('[store] dispatchEvent error:', e); }
   }
 }
 
