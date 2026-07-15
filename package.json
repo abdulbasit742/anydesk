@@ -8,6 +8,9 @@
     "build": "vite build",
     "lint": "eslint \"src/**/*.{js,jsx}\" eslint.config.js vite.config.js",
     "test": "node scripts/testSuite.js",
+    "test:remote": "node --test tests/remote-session-policy.test.mjs",
+    "security-check": "node scripts/remote-security-check.mjs",
+    "check": "npm run lint && npm run test && npm run test:remote && npm run security-check && npm run build",
     "preview": "vite preview",
     "prepare": "husky"
   },
