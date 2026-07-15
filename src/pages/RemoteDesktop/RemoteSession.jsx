@@ -1,203 +1,285 @@
-import { useState, useEffect, useRef } from 'react';
+import { useMemo, useState } from 'react';
+import {
+  approveSupportRequest,
+  createAuditEntry,
+  createSupportRequest,
+  endSupportRequest,
+  HIGH_RISK_SCOPES,
+  SESSION_STATUS,
+  startLocalPreview,
+  SUPPORT_SCOPES,
+} from '../../security/remoteSessionPolicy';
 
-const SESSION_ID = 'RD-' + Date.now().toString(36).toUpperCase().slice(-8);
+const SCOPE_LABELS = {
+  [SUPPORT_SCOPES.SCREEN_VIEW]: 'View shared screen',
+  [SUPPORT_SCOPES.POINTER_CONTROL]: 'Control pointer',
+  [SUPPORT_SCOPES.KEYBOARD_CONTROL]: 'Send keyboard input',
+  [SUPPORT_SCOPES.CLIPBOARD_READ]: 'Read host clipboard',
+  [SUPPORT_SCOPES.CLIPBOARD_WRITE]: 'Write host clipboard',
+  [SUPPORT_SCOPES.FILE_RECEIVE]: 'Receive files from host',
+  [SUPPORT_SCOPES.FILE_SEND]: 'Send files to host',
+};
+
+const ALL_SCOPES = Object.values(SUPPORT_SCOPES);
+const panelStyle = {
+  background: 'var(--card)',
+  border: '1px solid rgba(255,255,255,0.08)',
+  borderRadius: 12,
+  padding: 18,
+};
+
+function statusLabel(status) {
+  return {
+    [SESSION_STATUS.CONSENT_PENDING]: 'Awaiting host consent',
+    [SESSION_STATUS.APPROVED]: 'Consent approved',
+    [SESSION_STATUS.PREVIEW]: 'Local preview open',
+    [SESSION_STATUS.ENDED]: 'Request ended',
+  }[status] ?? 'Not created';
+}
 
 export default function RemoteSession({ onNav }) {
-  const [connected, setConnected] = useState(false);
-  const [connecting, setConnecting] = useState(false);
-  const [sessionId] = useState(SESSION_ID);
-  const [quality, setQuality] = useState(85);
-  const [latency, setLatency] = useState(24);
-  const [fps, setFps] = useState(60);
-  const [platform, setPlatform] = useState('Bolt.new');
-  const intervalRef = useRef(null);
+  const [requesterLabel, setRequesterLabel] = useState('Support operator');
+  const [hostLabel, setHostLabel] = useState('Host user');
+  const [targetLabel, setTargetLabel] = useState('Demo workstation');
+  const [selectedScopes, setSelectedScopes] = useState([SUPPORT_SCOPES.SCREEN_VIEW]);
+  const [request, setRequest] = useState(null);
+  const [audit, setAudit] = useState([]);
+  const [hostConfirmed, setHostConfirmed] = useState(false);
+  const [highRiskConfirmed, setHighRiskConfirmed] = useState(false);
+  const [error, setError] = useState('');
 
-  const connect = () => {
-    setConnecting(true);
-    setTimeout(() => {
-      setConnected(true);
-      setConnecting(false);
-      intervalRef.current = setInterval(() => {
-        setLatency(Math.floor(Math.random() * 40) + 10);
-        setFps(Math.floor(Math.random() * 10) + 55);
-      }, 2000);
-    }, 1800);
+  const hasHighRisk = useMemo(
+    () => selectedScopes.some((scope) => HIGH_RISK_SCOPES.has(scope)),
+    [selectedScopes],
+  );
+
+  const record = (nextRequest, action, details = {}) => {
+    setRequest(nextRequest);
+    setAudit((entries) => [...entries, createAuditEntry(nextRequest, action, { details })]);
   };
 
-  const disconnect = () => {
-    setConnected(false);
-    if (intervalRef.current) clearInterval(intervalRef.current);
+  const toggleScope = (scope) => {
+    if (request || scope === SUPPORT_SCOPES.SCREEN_VIEW) return;
+    setSelectedScopes((current) => current.includes(scope)
+      ? current.filter((item) => item !== scope)
+      : [...current, scope]);
   };
 
-  useEffect(() => () => { if (intervalRef.current) clearInterval(intervalRef.current); }, []);
+  const createRequest = () => {
+    setError('');
+    try {
+      const next = createSupportRequest({ requesterLabel, hostLabel, targetLabel, scopes: selectedScopes });
+      record(next, 'request_created', { target: next.targetLabel });
+    } catch (requestError) {
+      setError(requestError instanceof Error ? requestError.message : 'Unable to create request.');
+    }
+  };
+
+  const approve = () => {
+    setError('');
+    try {
+      const next = approveSupportRequest(request, { hostConfirmed, highRiskConfirmed });
+      record(next, 'consent_approved', { scopes: next.scopes.join('|') });
+    } catch (approvalError) {
+      setError(approvalError instanceof Error ? approvalError.message : 'Unable to record consent.');
+    }
+  };
+
+  const startPreview = () => {
+    setError('');
+    try {
+      const next = startLocalPreview(request);
+      record(next, 'preview_started', { transport: next.transport });
+    } catch (previewError) {
+      setError(previewError instanceof Error ? previewError.message : 'Unable to open preview.');
+    }
+  };
+
+  const endRequest = (reason = 'operator_ended') => {
+    setError('');
+    try {
+      const next = endSupportRequest(request, { reason });
+      record(next, 'request_ended', { reason });
+    } catch (endError) {
+      setError(endError instanceof Error ? endError.message : 'Unable to end request.');
+    }
+  };
+
+  const reset = () => {
+    setRequest(null);
+    setAudit([]);
+    setHostConfirmed(false);
+    setHighRiskConfirmed(false);
+    setSelectedScopes([SUPPORT_SCOPES.SCREEN_VIEW]);
+    setError('');
+  };
 
   return (
     <div style={{ padding: 24, color: '#e2e8f0', minHeight: '100vh', background: 'var(--bg)' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'flex-start', marginBottom: 20, flexWrap: 'wrap' }}>
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
-            <button 
-              onClick={() => onNav && onNav('remote')}
-              style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: 'none',
-                color: '#fff',
-                padding: '6px 10px',
-                borderRadius: 6,
-                cursor: 'pointer',
-                fontSize: 12,
-                fontWeight: 600,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 4
-              }}
-            >
-              ← Back
-            </button>
-            <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0 }}>🔗 Remote Session</h1>
-          </div>
-          <p style={{ color: 'var(--muted)', fontSize: 13, margin: 0 }}>
-            Session ID: <span style={{ color: '#6366f1', fontFamily: 'DM Mono, monospace' }}>{sessionId}</span>
+          <button type="button" onClick={() => onNav?.('remote')} style={{ border: 0, background: 'transparent', color: '#a5b4fc', cursor: 'pointer', padding: 0, marginBottom: 8 }}>
+            ← Remote support overview
+          </button>
+          <h1 style={{ fontSize: 23, marginBottom: 6 }}>Support request and consent preview</h1>
+          <p style={{ color: 'var(--muted)', fontSize: 13, maxWidth: 760, lineHeight: 1.55 }}>
+            This screen validates the consent lifecycle only. It does not connect to another device or capture, transmit, or control anything.
           </p>
         </div>
-        <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-          {!connected ? (
-            <button
-              onClick={connect}
-              disabled={connecting}
-              style={{
-                padding: '9px 20px',
-                borderRadius: 8,
-                border: 'none',
-                background: connecting ? 'rgba(99,102,241,0.3)' : 'rgba(99,102,241,0.8)',
-                color: '#fff',
-                cursor: connecting ? 'not-allowed' : 'pointer',
-                fontSize: 13,
-                fontWeight: 600,
-              }}
-            >
-              {connecting ? '⏳ Connecting...' : '⚡ Connect'}
-            </button>
-          ) : (
-            <button
-              onClick={disconnect}
-              style={{
-                padding: '9px 20px',
-                borderRadius: 8,
-                border: 'none',
-                background: 'rgba(239,68,68,0.2)',
-                color: '#ef4444',
-                cursor: 'pointer',
-                fontSize: 13,
-                fontWeight: 600,
-              }}
-            >
-              ✕ Disconnect
-            </button>
+        <span role="status" style={{ padding: '6px 10px', borderRadius: 999, background: 'rgba(99,102,241,0.15)', color: '#c7d2fe', fontSize: 12, fontWeight: 650 }}>
+          {statusLabel(request?.status)}
+        </span>
+      </div>
+
+      {error && <div role="alert" style={{ ...panelStyle, color: '#fecaca', borderColor: 'rgba(239,68,68,.4)', background: 'rgba(127,29,29,.22)', marginBottom: 16 }}>{error}</div>}
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))', gap: 16 }}>
+        <div style={{ display: 'grid', gap: 16 }}>
+          <section style={panelStyle} aria-labelledby="request-details-title">
+            <h2 id="request-details-title" style={{ fontSize: 16, marginBottom: 14 }}>1. Request details</h2>
+            <div style={{ display: 'grid', gap: 12 }}>
+              {[
+                ['Requester', requesterLabel, setRequesterLabel],
+                ['Host who must consent', hostLabel, setHostLabel],
+                ['Target label', targetLabel, setTargetLabel],
+              ].map(([label, value, setter]) => (
+                <label key={label} style={{ display: 'grid', gap: 5, fontSize: 12, color: 'var(--muted)' }}>
+                  {label}
+                  <input
+                    type="text"
+                    value={value}
+                    onChange={(event) => setter(event.target.value)}
+                    disabled={Boolean(request)}
+                    maxLength={80}
+                    style={{ padding: '9px 10px', borderRadius: 7, border: '1px solid rgba(255,255,255,.12)', background: 'rgba(255,255,255,.04)', color: '#fff' }}
+                  />
+                </label>
+              ))}
+            </div>
+
+            <fieldset disabled={Boolean(request)} style={{ border: 0, padding: 0, margin: '18px 0 0' }}>
+              <legend style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 9 }}>Requested capabilities</legend>
+              <div style={{ display: 'grid', gap: 8 }}>
+                {ALL_SCOPES.map((scope) => (
+                  <label key={scope} style={{ display: 'flex', alignItems: 'center', gap: 9, fontSize: 13 }}>
+                    <input
+                      type="checkbox"
+                      checked={selectedScopes.includes(scope)}
+                      disabled={scope === SUPPORT_SCOPES.SCREEN_VIEW || Boolean(request)}
+                      onChange={() => toggleScope(scope)}
+                    />
+                    <span>{SCOPE_LABELS[scope]}</span>
+                    {HIGH_RISK_SCOPES.has(scope) && <span style={{ color: '#fbbf24', fontSize: 10 }}>HIGH RISK</span>}
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            {!request && (
+              <button type="button" onClick={createRequest} style={{ marginTop: 18, padding: '9px 14px', borderRadius: 8, border: 0, background: '#4f46e5', color: '#fff', cursor: 'pointer', fontWeight: 650 }}>
+                Create 10-minute request
+              </button>
+            )}
+          </section>
+
+          {request?.status === SESSION_STATUS.CONSENT_PENDING && (
+            <section style={panelStyle} aria-labelledby="consent-title">
+              <h2 id="consent-title" style={{ fontSize: 16, marginBottom: 8 }}>2. Record explicit host consent</h2>
+              <p style={{ color: 'var(--muted)', fontSize: 12, lineHeight: 1.55 }}>
+                The host must understand that this prototype only opens a local preview. Selected capabilities are documented for review but are not executed.
+              </p>
+              <label style={{ display: 'flex', gap: 9, marginTop: 12, fontSize: 13 }}>
+                <input type="checkbox" checked={hostConfirmed} onChange={(event) => setHostConfirmed(event.target.checked)} />
+                The named host explicitly approves this request.
+              </label>
+              {hasHighRisk && (
+                <label style={{ display: 'flex', gap: 9, marginTop: 10, fontSize: 13, color: '#fde68a' }}>
+                  <input type="checkbox" checked={highRiskConfirmed} onChange={(event) => setHighRiskConfirmed(event.target.checked)} />
+                  The host separately acknowledges the requested input, clipboard, or file capabilities.
+                </label>
+              )}
+              <div style={{ display: 'flex', gap: 8, marginTop: 16, flexWrap: 'wrap' }}>
+                <button type="button" onClick={approve} style={{ padding: '9px 14px', borderRadius: 8, border: 0, background: '#047857', color: '#fff', cursor: 'pointer' }}>Approve request</button>
+                <button type="button" onClick={() => endRequest('host_declined')} style={{ padding: '9px 14px', borderRadius: 8, border: '1px solid rgba(239,68,68,.45)', background: 'transparent', color: '#fca5a5', cursor: 'pointer' }}>Host declines</button>
+              </div>
+            </section>
+          )}
+
+          {request?.status === SESSION_STATUS.APPROVED && (
+            <section style={panelStyle} aria-labelledby="preview-title">
+              <h2 id="preview-title" style={{ fontSize: 16, marginBottom: 8 }}>3. Open local preview</h2>
+              <p style={{ color: 'var(--muted)', fontSize: 12, lineHeight: 1.55 }}>
+                Consent is recorded. Opening the preview changes only this page state; transport remains <code>not_configured</code>.
+              </p>
+              <button type="button" onClick={startPreview} style={{ marginTop: 10, padding: '9px 14px', borderRadius: 8, border: 0, background: '#4f46e5', color: '#fff', cursor: 'pointer' }}>
+                Open local preview
+              </button>
+            </section>
+          )}
+
+          {request?.status === SESSION_STATUS.PREVIEW && (
+            <section style={{ ...panelStyle, minHeight: 270, display: 'grid', placeItems: 'center', textAlign: 'center', background: 'rgba(0,0,0,.28)' }} aria-labelledby="local-preview-title">
+              <div>
+                <div style={{ fontSize: 44, marginBottom: 10 }} aria-hidden="true">🛡️</div>
+                <h2 id="local-preview-title" style={{ fontSize: 18, marginBottom: 7 }}>Consent-approved local preview</h2>
+                <p style={{ color: 'var(--muted)', fontSize: 12, maxWidth: 520, lineHeight: 1.55 }}>
+                  No remote screen, camera, microphone, clipboard, file, keyboard, or pointer data is connected. A real transport must be implemented and independently security-reviewed before this state can represent a live session.
+                </p>
+                <button type="button" onClick={() => endRequest('operator_ended')} style={{ marginTop: 14, padding: '9px 14px', borderRadius: 8, border: '1px solid rgba(239,68,68,.45)', background: 'transparent', color: '#fca5a5', cursor: 'pointer' }}>
+                  End preview
+                </button>
+              </div>
+            </section>
+          )}
+
+          {request?.status === SESSION_STATUS.ENDED && (
+            <section style={panelStyle}>
+              <h2 style={{ fontSize: 16, marginBottom: 7 }}>Request ended</h2>
+              <p style={{ color: 'var(--muted)', fontSize: 12 }}>Reason: {request.endReason}. No capability remains active.</p>
+              <button type="button" onClick={reset} style={{ marginTop: 10, padding: '9px 14px', borderRadius: 8, border: 0, background: '#334155', color: '#fff', cursor: 'pointer' }}>Prepare another request</button>
+            </section>
           )}
         </div>
-      </div>
 
-      {/* Session screen */}
-      <div style={{
-        background: 'rgba(0,0,0,0.6)',
-        border: `1px solid ${connected ? 'rgba(16,185,129,0.3)' : 'rgba(255,255,255,0.06)'}`,
-        borderRadius: 12,
-        aspectRatio: '16/9',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: 16,
-        position: 'relative',
-        overflow: 'hidden',
-      }}>
-        {connected ? (
-          <>
-            <div style={{
-              position: 'absolute', inset: 0,
-              background: 'linear-gradient(135deg, rgba(99,102,241,0.05) 0%, rgba(16,185,129,0.05) 100%)',
-            }} />
-            <div style={{ textAlign: 'center', zIndex: 1 }}>
-              <div style={{ fontSize: 48, marginBottom: 12 }}>⚡</div>
-              <div style={{ fontSize: 16, fontWeight: 600, color: '#10b981' }}>{platform}</div>
-              <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 4 }}>Remote session active</div>
-            </div>
-            {/* Status overlay */}
-            <div style={{
-              position: 'absolute', top: 12, right: 12,
-              display: 'flex', gap: 8, alignItems: 'center',
-            }}>
-              <span style={{ fontSize: 10, color: '#10b981', background: 'rgba(0,0,0,0.6)', padding: '3px 8px', borderRadius: 99 }}>
-                ● {fps} FPS
-              </span>
-              <span style={{ fontSize: 10, color: '#f59e0b', background: 'rgba(0,0,0,0.6)', padding: '3px 8px', borderRadius: 99 }}>
-                {latency}ms
-              </span>
-            </div>
-          </>
-        ) : (
-          <div style={{ textAlign: 'center', color: 'var(--muted)' }}>
-            <div style={{ fontSize: 48, marginBottom: 12 }}>🖥️</div>
-            <div style={{ fontSize: 14 }}>
-              {connecting ? 'Establishing connection...' : 'No active session'}
-            </div>
-          </div>
-        )}
-      </div>
+        <aside style={{ display: 'grid', gap: 16, alignContent: 'start' }}>
+          <section style={panelStyle} aria-labelledby="boundary-title">
+            <h2 id="boundary-title" style={{ fontSize: 15, marginBottom: 10 }}>Enforced boundary</h2>
+            <dl style={{ margin: 0, display: 'grid', gap: 9, fontSize: 12 }}>
+              {[
+                ['Session ID', request?.id ?? 'Not created'],
+                ['Expires', request ? new Date(request.expiresAt).toLocaleString() : '—'],
+                ['Transport', request?.transport ?? 'not_configured'],
+                ['Media capture', 'Disabled'],
+                ['Remote input', 'Disabled'],
+                ['Persistence', 'None'],
+              ].map(([term, value]) => (
+                <div key={term} style={{ display: 'grid', gridTemplateColumns: '105px 1fr', gap: 8 }}>
+                  <dt style={{ color: 'var(--muted)' }}>{term}</dt>
+                  <dd style={{ margin: 0, overflowWrap: 'anywhere' }}>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
 
-      {/* Controls */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
-        gap: 12,
-      }}>
-        <div style={{ background: 'var(--card)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: 16 }}>
-          <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 8 }}>Platform</div>
-          <select
-            value={platform}
-            onChange={e => setPlatform(e.target.value)}
-            style={{
-              width: '100%',
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: 6,
-              padding: '6px 8px',
-              color: '#e2e8f0',
-              fontSize: 12,
-            }}
-          >
-            {['Bolt.new', 'Lovable', 'Cursor', 'Claude.ai', 'ChatGPT', 'Replit'].map(p => (
-              <option key={p} value={p}>{p}</option>
-            ))}
-          </select>
-        </div>
-
-        <div style={{ background: 'var(--card)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: 16 }}>
-          <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 8 }}>Quality: {quality}%</div>
-          <input
-            type="range"
-            min={30}
-            max={100}
-            value={quality}
-            onChange={e => setQuality(Number(e.target.value))}
-            style={{ width: '100%' }}
-          />
-        </div>
-
-        <div style={{ background: 'var(--card)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: 16 }}>
-          <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 8 }}>Session Stats</div>
-          <div style={{ display: 'flex', gap: 16, fontSize: 12 }}>
-            <span style={{ color: connected ? '#10b981' : '#ef4444' }}>
-              {connected ? '● Live' : '○ Offline'}
-            </span>
-            {connected && (
-              <>
-                <span style={{ color: 'var(--muted)' }}>{fps} fps</span>
-                <span style={{ color: 'var(--muted)' }}>{latency}ms</span>
-              </>
+          <section style={panelStyle} aria-labelledby="audit-title">
+            <h2 id="audit-title" style={{ fontSize: 15, marginBottom: 10 }}>Session-local audit timeline</h2>
+            {audit.length === 0 ? (
+              <p style={{ color: 'var(--muted)', fontSize: 12 }}>No events yet.</p>
+            ) : (
+              <ol style={{ margin: 0, paddingLeft: 18, display: 'grid', gap: 10 }}>
+                {audit.map((entry) => (
+                  <li key={entry.id} style={{ fontSize: 12 }}>
+                    <strong>{entry.action.replaceAll('_', ' ')}</strong>
+                    <div style={{ color: 'var(--muted)', fontSize: 10 }}>{new Date(entry.at).toLocaleString()} · {entry.status}</div>
+                  </li>
+                ))}
+              </ol>
             )}
-          </div>
-        </div>
+            <p style={{ color: 'var(--muted)', fontSize: 10, lineHeight: 1.5, marginTop: 12 }}>
+              This audit list is in memory only and is not tamper-evident or durable.
+            </p>
+          </section>
+        </aside>
       </div>
     </div>
   );
