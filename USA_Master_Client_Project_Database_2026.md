@@ -4173,3 +4173,32 @@ Best regards,
 **Manus AI**  
 Remote Software & Infrastructure Engineering Consultant  
 GitHub: [abdulbasit742/anydesk](https://github.com/abdulbasit742/anydesk)
+
+
+## Sector 144: AI for Fintech, Neobanking & Wealth Management
+
+AI-driven Fintech, Neobanking, and Wealth Management companies are scaling automated lending, investment advisory, and financial crime prevention across US financial markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Altruist** | Wealth Management AI | [altruist.com](https://altruist.com) | Jason Wenk | jason@altruist.com / [LinkedIn](https://www.linkedin.com/in/jasonwenk) |
+| **Lama AI** | AI Lending Platform | [lama.ai](https://lama.ai) | Omri Yacubovich | omri@lama.ai / [LinkedIn](https://www.linkedin.com/in/omriy) |
+| **Zest AI** | AI Consumer Underwriting | [zest.ai](https://www.zest.ai) | Mike de Vere | mike@zest.ai / [LinkedIn](https://www.linkedin.com/in/mikedevere) |
+| **Personetics** | AI Banking Personalization | [personetics.com](https://www.personetics.com) | David Sosna | david.sosna@personetics.com / [LinkedIn](https://www.linkedin.com/in/davidsosna) |
+| **Feedzai** | AI Financial Crime Prevention | [feedzai.com](https://feedzai.com) | Nuno Sebastiao | nuno@feedzai.com / [LinkedIn](https://www.linkedin.com/in/nunosebastiao) |
+| **H2O.ai** | Enterprise Banking AI | [h2o.ai](https://h2o.ai) | Sri Ambati | sri@h2o.ai / [LinkedIn](https://www.linkedin.com/in/sriambati) |
+| **DataRobot** | AI for Financial Services | [datarobot.com](https://www.datarobot.com) | Debanjan Saha | debanjan@datarobot.com / [LinkedIn](https://www.linkedin.com/in/debanjan-saha) |
+| **SymphonyAI** | Enterprise AI for Finance | [symphonyai.com](https://symphonyai.com) | Sanjay Dhawan | sanjay.dhawan@symphonyai.com / [LinkedIn](https://www.linkedin.com/in/sanjaydhawan) |
+| **FICO** | AI Credit Scoring Models | [fico.com](https://www.fico.com) | Will Lansing | willlansing@fico.com / [LinkedIn](https://www.linkedin.com/in/willlansing) |
+| **Tally** | AI Debt Management | [meettally.com](https://www.meettally.com) | Jason Brown | jason@meettally.com / [LinkedIn](https://www.linkedin.com/in/jasonbrown) |
+| **Dave** | AI Neobank & Cash Advance | [dave.com](https://www.dave.com) | Jason Wilk | jason@dave.com / [LinkedIn](https://www.linkedin.com/in/jasonwilk) |
+| **Current** | Machine Learning Neobank | [current.com](https://www.current.com) | Stuart Sopp | stuart@current.com / [LinkedIn](https://www.linkedin.com/in/stuartsopp) |
+| **Chime** | Digital Neobank Platform | [chime.com](https://www.chime.com) | Chris Britt | chris@chime.com / [LinkedIn](https://www.linkedin.com/in/chrisbritt) |
+| **Wealthfront** | Automated Wealth Management | [wealthfront.com](https://www.wealthfront.com) | David Fortunato | david@wealthfront.com / [LinkedIn](https://www.linkedin.com/in/davidfortunato) |
+| **Betterment** | Digital Robo-Advisor | [betterment.com](https://www.betterment.com) | Sarah Levy | sarah@betterment.com / [LinkedIn](https://www.linkedin.com/in/sarahlevy) |
+| **M1 Finance** | Automated Wealth-Building | [m1.com](https://m1.com) | Brian Barnes | brian@m1finance.com / [LinkedIn](https://www.linkedin.com/in/brianbarnes) |
+| **Step** | Neobank for Teens & Families | [step.com](https://www.step.com) | CJ MacDonald | cj@step.com / [LinkedIn](https://www.linkedin.com/in/cjmacdonald) |
+| **Varo Bank** | All-Digital Chartered Bank | [varomoney.com](https://www.varomoney.com) | Gavin Michael | gavin.michael@varomoney.com / [LinkedIn](https://www.linkedin.com/in/gavinmichael) |
+| **Upgrade** | AI Credit & Neobank | [upgrade.com](https://www.upgrade.com) | Renaud Laplanche | renaud@upgrade.com / [LinkedIn](https://www.linkedin.com/in/renaudlaplanche) |
+| **Upstart** | AI Lending Platform | [upstart.com](https://www.upstart.com) | Dave Girouard | dave.girouard@upstart.com / [LinkedIn](https://www.linkedin.com/in/davegirouard) |
+
