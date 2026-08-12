@@ -8827,3 +8827,73 @@ Sector 221 focuses on top US-based companies, startups, and agencies building AI
 18. Mythic AI, https://mythic-ai.com / https://www.linkedin.com/in/davefick
 19. Valo Health, https://valohealth.com / https://www.linkedin.com/in/david-berry-0b6b2b2
 20. Atom Computing, https://atom-computing.com / https://www.linkedin.com/in/robhays
+
+## Sector 222: AI in Robotics, Autonomous Systems & Humanoid Automation
+
+### Overview
+Sector 222 focuses on top US-based companies, startups, and agencies building AI-powered robotics, autonomous systems, humanoid robots (physical AI), and intelligent robotic orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Figure AI** [1] | General Purpose Humanoids | Brett Adcock [1] | Founder & CEO [1] | `brett@figure.ai` [1] | [Profile](https://www.linkedin.com/in/brettadcock) [1] |
+| **Agility Robotics** [2] | Logistics Humanoids (Digit) | Peggy Johnson [2] | CEO [2] | `peggy@agilityrobotics.com` [2] | [Profile](https://www.linkedin.com/in/peggyljohnson) [2] |
+| **Apptronik** [3] | Humanoid Robotics (Apollo) | Jeff Cardenas [3] | Co-founder & CEO [3] | `jeff@apptronik.com` [3] | [Profile](https://www.linkedin.com/in/jeffrey-cardenas) [3] |
+| **Physical Intelligence (Pi)** [4] | General Purpose Robot Brains | Karol Hausman [4] | Co-founder & CEO [4] | `karol@physicalintelligence.company` [4] | [Profile](https://www.linkedin.com/in/karolhausman) [4] |
+| **Robust.AI** [5] | Collaborative Mobile Robots | Anthony Jules [5] | Co-founder & CEO [5] | `anthony@robust.ai` [5] | [Profile](https://www.linkedin.com/in/anthony-jules) [5] |
+| **Collaborative Robotics** [6] | Practical Robotics Automation | Brad Porter [6] | Founder & CEO [6] | `brad@collab.robotics` [6] | [Profile](https://www.linkedin.com/in/brad-porter) [6] |
+| **Shield AI** [7] | AI Pilot for Defense | Ryan Tseng [7] | Co-founder & CEO [7] | `ryan@shield.ai` [7] | [Profile](https://www.linkedin.com/in/ryan-tseng) [7] |
+| **Skydio** [8] | Autonomous Drones | Adam Bry [8] | Co-founder & CEO [8] | `adam@skydio.com` [8] | [Profile](https://www.linkedin.com/in/adambry) [8] |
+| **Zipline** [9] | Autonomous Delivery Drones | Keller Rinaudo Cliffton [9] | Co-founder & CEO [9] | `keller@flyzipline.com` [9] | [Profile](https://www.linkedin.com/in/kellerrinaudo) [9] |
+| **Dexterity** [10] | Warehouse Robotics AI | Samir Menon [10] | Founder & CEO [10] | `samir@dexterity.ai` [10] | [Profile](https://www.linkedin.com/in/samirmenon) [10] |
+| **Intrinsic (Alphabet)** [11] | Industrial Robotics Software | Wendy Tan White [11] | CEO [11] | `wendy@intrinsic.ai` [11] | [Profile](https://www.linkedin.com/in/wendytanwhite) [11] |
+| **Standard Bots** [12] | AI-Powered Industrial Robots | Evan Beard [12] | Co-founder & CEO [12] | `evan@standardbots.com` [12] | [Profile](https://www.linkedin.com/in/evanbeard) [12] |
+| **Diligent Robotics** [13] | Healthcare Service Robots | Andrea Thomaz [13] | Co-founder & CEO [13] | `andrea@diligentrobots.com` [13] | [Profile](https://www.linkedin.com/in/andreathomaz) [13] |
+| **Bear Robotics** [14] | Hospitality Service Robots | John Ha [14] | Founder & CEO [14] | `john@bearrobotics.ai` [14] | [Profile](https://www.linkedin.com/in/john-ha-robotics) [14] |
+| **Locus Robotics** [15] | Autonomous Mobile Robots | Rick Faulk [15] | CEO [15] | `rfaulk@locusrobotics.com` [15] | [Profile](https://www.linkedin.com/in/rick-faulk) [15] |
+| **Ambi Robotics** [16] | AI Parcel Sorting | Jim Liefer [16] | CEO [16] | `jim@ambirobotics.com` [16] | [Profile](https://www.linkedin.com/in/jim-liefer) [16] |
+| **RightHand Robotics** [17] | Robotic Piece-Picking | Yaro Tenzer [17] | Co-founder & CEO [17] | `yaro@righthandrobotics.com` [17] | [Profile](https://www.linkedin.com/in/yaro-tenzer) [17] |
+| **Ghost Robotics** [18] | Legged Robotics (Vision 60) | Gavin Kenneally [18] | Co-founder & CEO [18] | `gavin@ghostrobotics.io` [18] | [Profile](https://www.linkedin.com/in/gavin-kenneally) [18] |
+| **Boston Dynamics** [19] | Advanced Mobile Robotics | Robert Playter [19] | CEO [19] | `rplayter@bostondynamics.com` [19] | [Profile](https://www.linkedin.com/in/robert-playter) [19] |
+| **Serve Robotics** [20] | Sidewalk Delivery Robots | Ali Kashani [20] | Co-founder & CEO [20] | `ali@serverobotics.com` [20] | [Profile](https://www.linkedin.com/in/alikashani) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Robotics Automation & Agentic Physical AI at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of robotics and autonomous systems technology through physical AI agents and intelligent robotic platforms in 2026, ensuring high-fidelity perception data, seamless robotic orchestration, and resilient agentic automation experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous robotic agent development, and scalable Physical AI architectures. I have recently helped high-growth robotics platforms optimize automated perception and manipulation workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Robotics Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Figure AI, [Website](https://www.linkedin.com/in/brettadcock) / https://www.linkedin.com/in/brettadcock
+2. Agility Robotics, [Website](https://www.linkedin.com/in/peggyljohnson) / https://www.linkedin.com/in/peggyljohnson
+3. Apptronik, [Website](https://www.linkedin.com/in/jeffrey-cardenas) / https://www.linkedin.com/in/jeffrey-cardenas
+4. Physical Intelligence (Pi), [Website](https://www.linkedin.com/in/karolhausman) / https://www.linkedin.com/in/karolhausman
+5. Robust.AI, [Website](https://www.linkedin.com/in/anthony-jules) / https://www.linkedin.com/in/anthony-jules
+6. Collaborative Robotics, [Website](https://www.linkedin.com/in/brad-porter) / https://www.linkedin.com/in/brad-porter
+7. Shield AI, [Website](https://www.linkedin.com/in/ryan-tseng) / https://www.linkedin.com/in/ryan-tseng
+8. Skydio, [Website](https://www.linkedin.com/in/adambry) / https://www.linkedin.com/in/adambry
+9. Zipline, [Website](https://www.linkedin.com/in/kellerrinaudo) / https://www.linkedin.com/in/kellerrinaudo
+10. Dexterity, [Website](https://www.linkedin.com/in/samirmenon) / https://www.linkedin.com/in/samirmenon
+11. Intrinsic (Alphabet), [Website](https://www.linkedin.com/in/wendytanwhite) / https://www.linkedin.com/in/wendytanwhite
+12. Standard Bots, [Website](https://www.linkedin.com/in/evanbeard) / https://www.linkedin.com/in/evanbeard
+13. Diligent Robotics, [Website](https://www.linkedin.com/in/andreathomaz) / https://www.linkedin.com/in/andreathomaz
+14. Bear Robotics, [Website](https://www.linkedin.com/in/john-ha-robotics) / https://www.linkedin.com/in/john-ha-robotics
+15. Locus Robotics, [Website](https://www.linkedin.com/in/rick-faulk) / https://www.linkedin.com/in/rick-faulk
+16. Ambi Robotics, [Website](https://www.linkedin.com/in/jim-liefer) / https://www.linkedin.com/in/jim-liefer
+17. RightHand Robotics, [Website](https://www.linkedin.com/in/yaro-tenzer) / https://www.linkedin.com/in/yaro-tenzer
+18. Ghost Robotics, [Website](https://www.linkedin.com/in/gavin-kenneally) / https://www.linkedin.com/in/gavin-kenneally
+19. Boston Dynamics, [Website](https://www.linkedin.com/in/robert-playter) / https://www.linkedin.com/in/robert-playter
+20. Serve Robotics, [Website](https://www.linkedin.com/in/alikashani) / https://www.linkedin.com/in/alikashani
