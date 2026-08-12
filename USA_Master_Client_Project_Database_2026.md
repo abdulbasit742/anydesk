@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 24 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, and EnergyTech & Grid Modernization) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 25 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, and Robotics & Industrial Automation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -362,6 +362,23 @@ EnergyTech and Grid Modernization companies focus on the transition to sustainab
 | **Enphase Energy** | Microinverters & Solar Storage | [enphase.com](https://enphase.com) | Badri Kothandaraman | badri@enphaseenergy.com / [LinkedIn](https://www.linkedin.com/in/badri-kothandaraman-0a1a1) |
 | **Form Energy** | Long-Duration Iron-Air Batteries | [formenergy.com](https://formenergy.com) | Mateo Jaramillo | mateo@formenergy.com / [LinkedIn](https://www.linkedin.com/in/mateojaramillo) |
 | **Zap Energy** | Z-Pinch Fusion Technology | [zapenergy.com](https://zapenergy.com) | Benj Conway | benj@zapenergy.com / [LinkedIn](https://www.linkedin.com/in/benjconway) |
+
+---
+
+## Sector 25: Robotics & Industrial Automation
+
+Robotics and Industrial Automation companies are bridging the gap between AI and the physical world through humanoid robots, autonomous mobile robots (AMRs) for logistics, and advanced manufacturing systems. These organizations require high-end talent in AI, computer vision, robotics software (ROS), and embedded systems for mission-critical remote and hybrid projects.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Figure AI** | General Purpose Humanoid Robots | [figure.ai](https://figure.ai) | Brett Adcock | brett@figure.ai / [LinkedIn](https://www.linkedin.com/in/brettadcock) |
+| **Agility Robotics** | Bipedal Robots for Logistics | [agilityrobotics.com](https://agilityrobotics.com) | Peggy Johnson | peggy@agilityrobotics.com / [LinkedIn](https://www.linkedin.com/in/peggyljohnson) |
+| **Boston Dynamics** | Advanced Humanoid & Mobile Robots | [bostondynamics.com](https://bostondynamics.com) | Amanda McMaster | amanda@bostondynamics.com / [LinkedIn](https://www.linkedin.com/in/amanda-mcmaster-8227168) |
+| **Physical Intelligence (Pi)** | Foundation Models for Robotics | [physicalintelligence.company](https://physicalintelligence.company) | Karol Hausman | karol@pi.company / [LinkedIn](https://www.linkedin.com/in/karolhausman) |
+| **Symbotic** | Warehouse Automation & AI | [symbotic.com](https://www.symbotic.com) | Rick Cohen | rcohen@symbotic.com / [LinkedIn](https://www.linkedin.com/in/rick-cohen-symbotic) |
+| **Skydio** | Autonomous Drones & AI Flight | [skydio.com](https://www.skydio.com) | Adam Bry | adambry@skydio.com / [LinkedIn](https://www.linkedin.com/in/adambry) |
+| **Robust AI** | Collaborative Mobile Robotics | [robust.ai](https://www.robust.ai) | Anthony Jules | anthony@robust.ai / [LinkedIn](https://www.linkedin.com/in/anthonyjules) |
+| **Bright Machines** | Software-Defined Manufacturing | [brightmachines.com](https://www.brightmachines.com) | Lior Susan | lior@brightmachines.com / [LinkedIn](https://www.linkedin.com/in/liorsusan) |
 
 ---
 
