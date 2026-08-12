@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 28 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, and Creator Economy & Social Media Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 29 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, and FinTech Infrastructure & Open Banking) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -430,6 +430,23 @@ Creator Economy and Social Media Tech companies empower content creators, influe
 | **Kajabi** | Knowledge Commerce & Courses | [kajabi.com](https://kajabi.com) | Kenny Rueter | kenny@kajabi.com / [LinkedIn](https://www.linkedin.com/in/kennyrueter) |
 | **Sprout Social** | Social Media Management | [sproutsocial.com](https://sproutsocial.com) | Ryan Barretto | ryan@sproutsocial.com / [LinkedIn](https://www.linkedin.com/in/justynhoward) |
 | **Kit (ConvertKit)** | Creator Marketing & Automation | [kit.com](https://kit.com) | Nathan Barry | nathan@kit.com / [LinkedIn](https://www.linkedin.com/in/nathanbarry) |
+
+---
+
+## Sector 29: FinTech Infrastructure & Open Banking
+
+FinTech Infrastructure and Open Banking companies provide the essential APIs and platforms that connect traditional banking systems with modern financial applications. These organizations require top-tier talent in backend engineering, API design, financial security, and compliance for mission-critical remote projects aimed at democratizing access to financial data and services.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Plaid** | Financial Data Aggregation & APIs | [plaid.com](https://plaid.com) | Zach Perret | zach@plaid.com / [LinkedIn](https://www.linkedin.com/in/zperret) |
+| **Stripe** | Global Payment Processing | [stripe.com](https://stripe.com) | Patrick Collison | patrick@stripe.com / [LinkedIn](https://www.linkedin.com/in/patrickcollison) |
+| **Marqeta** | Modern Card Issuing Platform | [marqeta.com](https://marqeta.com) | Simon Khalaf | simon@marqeta.com / [LinkedIn](https://www.linkedin.com/in/simonkhalaf) |
+| **Brex** | Corporate Cards & Expense Mgmt | [brex.com](https://brex.com) | Henrique Dubugras | henrique@brex.com / [LinkedIn](https://www.linkedin.com/in/henriquedubugras) |
+| **MX** | Open Finance & Data Platform | [mx.com](https://mx.com) | Jim Magats | jim@mx.com / [LinkedIn](https://www.linkedin.com/in/jim-magats-3601931) |
+| **Circle** | Digital Currency & Stablecoins | [circle.com](https://circle.com) | Jeremy Allaire | jeremy@circle.com / [LinkedIn](https://www.linkedin.com/in/jeremyallaire) |
+| **Unit** | Banking-as-a-Service (BaaS) | [unit.co](https://unit.co) | Itai Damti | itai@unit.co / [LinkedIn](https://www.linkedin.com/in/itaidamti) |
+| **Lithic** | Programmable Card Issuing | [lithic.com](https://lithic.com) | Bo Jiang | bo@lithic.com / [LinkedIn](https://www.linkedin.com/in/bo-jiang-4a342416) |
 
 ---
 
