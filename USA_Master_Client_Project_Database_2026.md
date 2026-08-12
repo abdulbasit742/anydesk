@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 32 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, and SalesTech & Revenue Operations) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 33 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, and Customer Success & Experience Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -498,6 +498,23 @@ SalesTech and Revenue Operations companies provide platforms for sales automatio
 | **6sense** | Account-Based Marketing (ABM) | [6sense.com](https://6sense.com) | Chris Ball | chris.ball@6sense.com / [LinkedIn](https://www.linkedin.com/in/chris-ball-6sense) |
 | **Impact.com** | Partnership Management Platform | [impact.com](https://impact.com) | David A. Yovanno | dyovanno@impact.com / [LinkedIn](https://www.linkedin.com/in/dyovanno) |
 | **People.ai** | Sales Solution & AI Insights | [people.ai](https://people.ai) | Oleg Rogynskyy | oleg@people.ai / [LinkedIn](https://www.linkedin.com/in/olegrogynskyy) |
+
+---
+
+## Sector 33: Customer Success & Experience Tech (CX Tech)
+
+Customer Success and Experience Tech companies build the platforms that manage customer relationships, automate support, and analyze user behavior. In 2026, these organizations are shifting towards AI-native autonomous support systems, requiring remote talent in AI/ML, full-stack development, and UX research to deliver hyper-personalized customer outcomes.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Zendesk** | Customer Service Software | [zendesk.com](https://www.zendesk.com) | Tom Eggemeier | tom.eggemeier@zendesk.com / [LinkedIn](https://www.linkedin.com/in/tomeggemeier) |
+| **Intercom** | AI Customer Service Platform | [intercom.com](https://www.intercom.com) | Eoghan McCabe | eoghan@intercom.io / [LinkedIn](https://www.linkedin.com/in/eoghanmccabe) |
+| **Gainsight** | Customer Success Management | [gainsight.com](https://www.gainsight.com) | Chuck Ganapathi | cganapathi@gainsight.com / [LinkedIn](https://www.linkedin.com/in/chuckganapathi) |
+| **Five9** | Intelligent Cloud Contact Center | [five9.com](https://www.five9.com) | Amit Mathradas | amit.mathradas@five9.com / [LinkedIn](https://www.linkedin.com/in/amitmathradas) |
+| **Pendo** | Product Experience & Analytics | [pendo.io](https://www.pendo.io) | Todd Olson | todd@pendo.io / [LinkedIn](https://www.linkedin.com/in/toddaolson) |
+| **Contentsquare** | Digital Experience Analytics | [contentsquare.com](https://contentsquare.com) | Jonathan Cherki | jonathan.cherki@contentsquare.com / [LinkedIn](https://www.linkedin.com/in/jonathancherki) |
+| **Qualtrics** | Experience Management (XM) | [qualtrics.com](https://www.qualtrics.com) | Zig Serafin | zig@qualtrics.com / [LinkedIn](https://www.linkedin.com/in/zigserafin) |
+| **Talkdesk** | Cloud Contact Center Solution | [talkdesk.com](https://www.talkdesk.com) | Tiago Paiva | tiago.paiva@talkdesk.com / [LinkedIn](https://www.linkedin.com/in/tiagopaiva) |
 
 ---
 
