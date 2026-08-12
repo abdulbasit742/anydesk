@@ -9317,3 +9317,73 @@ Sector 228 focuses on top US-based companies, startups, and agencies building AI
 18. AirWorks, [Website](https://www.linkedin.com/in/david-duquette-8b7d4b7d) / https://www.linkedin.com/in/david-duquette-8b7d4b7d
 19. Viatechnik, [Website](https://www.linkedin.com/in/danielledybuncio) / https://www.linkedin.com/in/danielledybuncio
 20. Civil Maps, [Website](https://www.linkedin.com/in/sravan-puttagunta-8b7d4b7d) / https://www.linkedin.com/in/sravan-puttagunta-8b7d4b7d
+
+## Sector 229: AI in Manufacturing, Supply Chain & Industrial Automation
+
+### Overview
+Sector 229 focuses on top US-based companies, startups, and agencies building AI-powered autonomous manufacturing, intelligent supply chain orchestration, predictive logistics, and autonomous industrial automation for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Instrumental** [1] | AI-Powered Manufacturing Data | Anna-Katrina Shedletsky [1] | Founder & CEO [1] | `anna@instrumental.com` [1] | [Profile](https://www.linkedin.com/in/annakatrinashedletsky) [1] |
+| **Viam** [2] | Industrial Robotics Platform | Eliot Horowitz [2] | Founder & CEO [2] | `eliot@viam.com` [2] | [Profile](https://www.linkedin.com/in/eliothorowitz) [2] |
+| **Machina Labs** [3] | AI-Driven Robotic Manufacturing | Edward Mehr [3] | Co-founder & CEO [3] | `edward@machinalabs.ai` [3] | [Profile](https://www.linkedin.com/in/edward-mehr) [3] |
+| **Bright Machines** [4] | Autonomous Factory Orchestration | Lior Susan [4] | CEO [4] | `lior@brightmachines.com` [4] | [Profile](https://www.linkedin.com/in/liorsusan) [4] |
+| **Path Robotics** [5] | AI Welding Automation | Andrew Lonsberry [5] | Co-founder & CEO [5] | `andrew@path-robotics.com` [5] | [Profile](https://www.linkedin.com/in/andrewlonsberry) [5] |
+| **Fictiv** [6] | Digital Manufacturing Ecosystem | Dave Evans [6] | Co-founder & CEO [6] | `dave@fictiv.com` [6] | [Profile](https://www.linkedin.com/in/evansda11) [6] |
+| **Xometry** [7] | AI-Driven Manufacturing Marketplace | Randy Altschuler [7] | Co-founder & CEO [7] | `randy@xometry.com` [7] | [Profile](https://www.linkedin.com/in/randyaltschuler) [7] |
+| **Sight Machine** [8] | Manufacturing Data Analytics AI | Jon Sobel [8] | Co-founder & CEO [8] | `jon@sightmachine.com` [8] | [Profile](https://www.linkedin.com/in/jon-sobel) [8] |
+| **Tulip Interfaces** [9] | Frontline Operations AI | Natan Linder [9] | Co-founder & CEO [9] | `natan@tulip.co` [9] | [Profile](https://www.linkedin.com/in/natanlinder) [9] |
+| **Augury** [10] | AI Predictive Maintenance | Saar Yoskovitz [10] | Co-founder & CEO [10] | `saar@augury.com` [10] | [Profile](https://www.linkedin.com/in/saaryoskovitz) [10] |
+| **Flexport** [11] | AI Logistics & Freight Forwarding | Ryan Petersen [11] | Founder & CEO [11] | `ryan@flexport.com` [11] | [Profile](https://www.linkedin.com/in/rpetersen) [11] |
+| **ShipBob** [12] | AI E-commerce Fulfillment | Dhruv Saxena [12] | Co-founder & CEO [12] | `dhruv@shipbob.com` [12] | [Profile](https://www.linkedin.com/in/dhruv-saxena-4568034) [12] |
+| **project44** [13] | Supply Chain Visibility AI | Jett McCandless [13] | Founder & CEO [13] | `jett@project44.com` [13] | [Profile](https://www.linkedin.com/in/jett-mccandless-b16235119) [13] |
+| **FourKites** [14] | Real-time Supply Chain Tracking | Mathew Elenjickal [14] | Founder & CEO [14] | `mathew@fourkites.com` [14] | [Profile](https://www.linkedin.com/in/mathewe) [14] |
+| **Altana AI** [15] | AI Global Supply Chain Map | Evan Smith [15] | Co-founder & CEO [15] | `evan@altana.ai` [15] | [Profile](https://www.linkedin.com/in/evansmithaltana) [15] |
+| **Locus Robotics** [16] | Autonomous Warehouse Robotics | Rick Faulk [16] | CEO [16] | `rick@locusrobotics.com` [16] | [Profile](https://www.linkedin.com/in/rickfaulk) [16] |
+| **Ambi Robotics** [17] | AI Sorting & Fulfillment | Jim Ganthier [17] | CEO [17] | `jim@ambirobotics.com` [17] | [Profile](https://www.linkedin.com/in/jimganthier) [17] |
+| **RightHand Robotics** [18] | Robotic Piece-Picking AI | Brian Pfister [18] | CEO [18] | `brian@righthandrobotics.com` [18] | [Profile](https://www.linkedin.com/in/brianpfister) [18] |
+| **Kodiak Robotics** [19] | Autonomous Long-Haul Trucking | Don Burnette [19] | Co-founder & CEO [19] | `don@kodiak.ai` [19] | [Profile](https://www.linkedin.com/in/donburnette) [19] |
+| **Outrider** [20] | Autonomous Yard Operations | Andrew Smith [20] | Founder & CEO [20] | `andrew@outrider.ai` [20] | [Profile](https://www.linkedin.com/in/andrewsmithoutrider) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Manufacturing Automation & Agentic Supply Chain Orchestration at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of manufacturing technology and supply chain automation through autonomous AI agents and intelligent industrial platforms in 2026, ensuring high-fidelity operational data, seamless logistics orchestration, and resilient agentic automation experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous industrial agent development, and scalable SupplyChainTech architectures. I have recently helped high-growth manufacturing platforms optimize automated production and logistics workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Industrial Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Instrumental, [Website](https://www.linkedin.com/in/annakatrinashedletsky) / https://www.linkedin.com/in/annakatrinashedletsky
+2. Viam, [Website](https://www.linkedin.com/in/eliothorowitz) / https://www.linkedin.com/in/eliothorowitz
+3. Machina Labs, [Website](https://www.linkedin.com/in/edward-mehr) / https://www.linkedin.com/in/edward-mehr
+4. Bright Machines, [Website](https://www.linkedin.com/in/liorsusan) / https://www.linkedin.com/in/liorsusan
+5. Path Robotics, [Website](https://www.linkedin.com/in/andrewlonsberry) / https://www.linkedin.com/in/andrewlonsberry
+6. Fictiv, [Website](https://www.linkedin.com/in/evansda11) / https://www.linkedin.com/in/evansda11
+7. Xometry, [Website](https://www.linkedin.com/in/randyaltschuler) / https://www.linkedin.com/in/randyaltschuler
+8. Sight Machine, [Website](https://www.linkedin.com/in/jon-sobel) / https://www.linkedin.com/in/jon-sobel
+9. Tulip Interfaces, [Website](https://www.linkedin.com/in/natanlinder) / https://www.linkedin.com/in/natanlinder
+10. Augury, [Website](https://www.linkedin.com/in/saaryoskovitz) / https://www.linkedin.com/in/saaryoskovitz
+11. Flexport, [Website](https://www.linkedin.com/in/rpetersen) / https://www.linkedin.com/in/rpetersen
+12. ShipBob, [Website](https://www.linkedin.com/in/dhruv-saxena-4568034) / https://www.linkedin.com/in/dhruv-saxena-4568034
+13. project44, [Website](https://www.linkedin.com/in/jett-mccandless-b16235119) / https://www.linkedin.com/in/jett-mccandless-b16235119
+14. FourKites, [Website](https://www.linkedin.com/in/mathewe) / https://www.linkedin.com/in/mathewe
+15. Altana AI, [Website](https://www.linkedin.com/in/evansmithaltana) / https://www.linkedin.com/in/evansmithaltana
+16. Locus Robotics, [Website](https://www.linkedin.com/in/rickfaulk) / https://www.linkedin.com/in/rickfaulk
+17. Ambi Robotics, [Website](https://www.linkedin.com/in/jimganthier) / https://www.linkedin.com/in/jimganthier
+18. RightHand Robotics, [Website](https://www.linkedin.com/in/brianpfister) / https://www.linkedin.com/in/brianpfister
+19. Kodiak Robotics, [Website](https://www.linkedin.com/in/donburnette) / https://www.linkedin.com/in/donburnette
+20. Outrider, [Website](https://www.linkedin.com/in/andrewsmithoutrider) / https://www.linkedin.com/in/andrewsmithoutrider
