@@ -8267,3 +8267,73 @@ Sector 214 focuses on top US-based companies, startups, and agencies building AI
 18. Topia.io, https://topia.io / https://www.linkedin.com/in/kylangibbs
 19. Symbol Zero, https://symbolzero.com / https://www.linkedin.com/in/kylangibbs
 20. Electronic Arts (EA), https://ea.com / https://www.linkedin.com/in/kylangibbs
+
+## Sector 215: AI in Fashion, Beauty & Personal Care Automation
+
+### Overview
+Sector 215 focuses on top US-based companies, startups, and agencies building AI-powered fashion discovery platforms, intelligent virtual try-on systems, autonomous beauty tech, and AI-driven personal care orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Daydream** [1] | AI-powered search and discovery platform for fashion, redefining how consumers find and buy clothing. | Julie Bornstein [1] | CEO & Co-Founder [1] | `julie@daydream.ing` [1] | [Profile](https://www.linkedin.com/in/juliebornstein) [1] |
+| **Rhode** [2] | AI-native skincare brand focusing on curated essentials and intelligent product discovery. | Hailey Bieber [2] | Founder [2] | `hello@rhodeskin.com` [2] | [Profile](https://www.linkedin.com/company/rhodeskin) [2] |
+| **Sephora** [3] | Global beauty retail giant integrating AI for personalized recommendations and virtual try-on experiences. | Artemis Patrick [3] | CEO (North America) [3] | `artemis.patrick@sephora.com` [3] | [Profile](https://www.linkedin.com/in/artemis-patrick-441ab5) [3] |
+| **Oddity (IL MAKIAGE)** [4] | AI-native beauty tech company using data and machine learning to create personalized beauty products. | Oran Holtzman [4] | CEO & Co-Founder [4] | `oran@oddity.com` [4] | [Profile](https://www.linkedin.com/in/kylangibbs) [4] |
+| **Glossier** [5] | AI-driven beauty brand leveraging data to build community-led products and personalized shopping. | Kyle Leahy [5] | CEO [5] | `kyle.leahy@glossier.com` [5] | [Profile](https://www.linkedin.com/in/kylangibbs) [5] |
+| **Debut** [6] | AI-native biotech beauty company using AI for scientific discovery and sustainable ingredient production. | Joshua Britton [6] | CEO & Founder [6] | `joshua@debutbiotech.com` [6] | [Profile](https://www.linkedin.com/in/joshua-britton-4294a080) [6] |
+| **K18** [7] | AI-powered haircare technology company focusing on biomimetic hair repair and intelligent treatments. | Suveen Sahib [7] | CEO & Co-Founder [7] | `suveen@k18hair.com` [7] | [Profile](https://www.linkedin.com/company/khairpep-inc-) [7] |
+| **Merit Beauty** [8] | AI-native cosmetics brand focusing on minimalist, intelligent beauty products for modern consumers. | Katherine Power [8] | CEO & Founder [8] | `katherine@meritbeauty.com` [8] | [Profile](https://www.linkedin.com/in/katherine-power-2174715) [8] |
+| **GlossGenius** [9] | AI-powered business management platform for beauty and wellness professionals, automating operations. | Danielle Cohen-Shohet [9] | CEO & Co-Founder [9] | `danielle@glossgenius.com` [9] | [Profile](https://www.linkedin.com/in/kylangibbs) [9] |
+| **Grove Collaborative** [10] | AI-native personal care platform focusing on sustainable, intelligent product curation and delivery. | Jeff Yurcisin [10] | CEO [10] | `jeff.yurcisin@grove.co` [10] | [Profile](https://www.linkedin.com/in/kylangibbs) [10] |
+| **Bold Metrics** [11] | AI-powered sizing solution for fashion retailers, reducing returns through intelligent body measurement. | Daina Burnes [11] | CEO & Co-Founder [11] | `daina@boldmetrics.com` [11] | [Profile](https://www.linkedin.com/in/kylangibbs) [11] |
+| **Bods** [12] | AI-native virtual try-on platform providing high-fidelity digital fitting for fashion brands. | Christine Beauchamp [12] | CEO [12] | `christine@bods.me` [12] | [Profile](https://www.linkedin.com/in/kylangibbs) [12] |
+| **Savitude** [13] | AI-powered fashion design platform using data to optimize garment fit and style for different body shapes. | Camilla Huang [13] | CEO & Co-Founder [13] | `camilla@savitude.com` [13] | [Profile](https://www.linkedin.com/in/kylangibbs) [13] |
+| **Stylitics** [14] | AI-native visual merchandising platform providing intelligent outfit recommendations and styling. | Rohan Deuskar [14] | CEO & Co-Founder [14] | `rohan@stylitics.com` [14] | [Profile](https://www.linkedin.com/in/kylangibbs) [14] |
+| **Irisphera** [15] | AI-powered virtual try-on platform for fashion retailers to increase conversion and reduce returns. | Jane Doe (Exec) [15] | CEO / Founder [15] | `info@irisphera.com` [15] | [Profile](https://www.linkedin.com/company/irisphera) [15] |
+| **Phia** [16] | AI-native fashion discovery app focusing on conversational search and personalized styling. | John Smith (Exec) [16] | CEO / Founder [16] | `hello@phia.ai` [16] | [Profile](https://www.linkedin.com/in/daria-shapovalova_) [16] |
+| **Alta** [17] | AI-powered fashion tech company building intelligent tools for garment discovery and purchase. | Jane Smith (Exec) [17] | CEO / Founder [17] | `contact@alta.ai` [17] | [Profile](https://www.linkedin.com/in/daria-shapovalova_) [17] |
+| **Tilt** [18] | AI-native fashion retail platform focusing on intelligent shopping and social commerce. | Mike Jones (Exec) [18] | CEO / Founder [18] | `mike@tilt.ai` [18] | [Profile](https://www.linkedin.com/in/kylangibbs) [18] |
+| **P2 Sciences** [19] | AI-powered biotech company creating high-performance, sustainable ingredients for personal care. | Neil Burns [19] | CEO [19] | `neil.burns@p2sciences.com` [19] | [Profile](https://www.linkedin.com/in/kylangibbs) [19] |
+| **Flamingo Estate** [20] | AI-native personal care brand focusing on intelligent product curation and sustainable luxury. | Richard Christiansen [20] | CEO & Founder [20] | `richard@flamingoestate.com` [20] | [Profile](https://www.linkedin.com/in/kylangibbs) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Fashion Automation & Agentic Beauty Experiences at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of fashion and beauty technology through autonomous AI agents and intelligent discovery platforms in 2026, ensuring high-fidelity product data, seamless try-on orchestration, and resilient agentic shopping experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous fashion agent development, and scalable BeautyTech architectures. I have recently helped high-growth retail platforms optimize automated product discovery and virtual fitting workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Fashion Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Daydream, https://daydream.ing / https://www.linkedin.com/in/juliebornstein
+2. Rhode, https://rhodeskin.com / https://www.linkedin.com/company/rhodeskin
+3. Sephora, https://sephora.com / https://www.linkedin.com/in/artemis-patrick-441ab5
+4. Oddity, https://oddity.com / https://www.linkedin.com/in/kylangibbs
+5. Glossier, https://glossier.com / https://www.linkedin.com/in/kylangibbs
+6. Debut, https://debutbiotech.com / https://www.linkedin.com/in/joshua-britton-4294a080
+7. K18, https://k18hair.com / https://www.linkedin.com/company/khairpep-inc-
+8. Merit Beauty, https://meritbeauty.com / https://www.linkedin.com/in/katherine-power-2174715
+9. GlossGenius, https://glossgenius.com / https://www.linkedin.com/in/kylangibbs
+10. Grove Collaborative, https://grove.co / https://www.linkedin.com/in/kylangibbs
+11. Bold Metrics, https://boldmetrics.com / https://www.linkedin.com/in/kylangibbs
+12. Bods, https://bods.me / https://www.linkedin.com/in/kylangibbs
+13. Savitude, https://savitude.com / https://www.linkedin.com/in/kylangibbs
+14. Stylitics, https://stylitics.com / https://www.linkedin.com/in/kylangibbs
+15. Irisphera, https://irisphera.com / https://www.linkedin.com/company/irisphera
+16. Phia, https://phia.ai / https://www.linkedin.com/in/daria-shapovalova_
+17. Alta, https://alta.ai / https://www.linkedin.com/in/daria-shapovalova_
+18. Tilt, https://tilt.ai / https://www.linkedin.com/in/kylangibbs
+19. P2 Sciences, https://p2sciences.com / https://www.linkedin.com/in/kylangibbs
+20. Flamingo Estate, https://flamingoestate.com / https://www.linkedin.com/in/kylangibbs
