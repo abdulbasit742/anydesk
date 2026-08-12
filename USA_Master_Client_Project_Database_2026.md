@@ -4724,3 +4724,32 @@ AI-driven Aerospace, SpaceTech, and Satellite Systems companies are scaling comm
 | **Terran Orbital** | Modular Spacecraft Manufacturing | [terranorbital.com](https://www.terranorbital.com) | Marc Bell | marc.bell@terranorbital.com / [LinkedIn](https://www.linkedin.com/in/marcbellterranorbital) |
 | **Redwire Space** | In-Space Manufacturing & Digital Engineering | [redwirespace.com](https://www.redwirespace.com) | Peter Cannito | peter.cannito@redwirespace.com / [LinkedIn](https://www.linkedin.com/in/petercannito) |
 
+
+
+## Sector 163: AI for FinOps, Cloud Cost Management & IT Infrastructure Optimization
+
+AI-driven FinOps, Cloud Cost Management, and IT Infrastructure Optimization companies are scaling unified cloud spend platforms, token-level optimization engines, autonomous Kubernetes orchestration, and multi-cloud commitment automation across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Finout** | Unified Cloud, AI & SaaS FinOps Spend | [finout.io](https://www.finout.io) | Roi Raviv | roi@finout.io / [LinkedIn](https://www.linkedin.com/in/roiraviv) |
+| **Usage.ai** | Automated AWS Cost Optimization | [usage.ai](https://www.usage.ai) | Kaveh Khorram | kaveh@usage.ai / [LinkedIn](https://www.linkedin.com/in/kavehkhorram) |
+| **ProsperOps** | Autonomous Cloud Commitment Management | [prosperops.com](https://www.prosperops.com) | Chris Cochran | chris@prosperops.com / [LinkedIn](https://www.linkedin.com/in/chriscochran) |
+| **CAST AI** | AI Kubernetes Automation & Cost Optimization | [cast.ai](https://cast.ai) | Yuri Frayman | yuri@cast.ai / [LinkedIn](https://www.linkedin.com/in/yurifrayman) |
+| **Kubecost** | Kubernetes Cost Monitoring & Allocation | [kubecost.com](https://www.kubecost.com) | Webb Brown | webb@kubecost.com / [LinkedIn](https://www.linkedin.com/in/webbbrown) |
+| **CloudZero** | Cloud Cost Intelligence & Unit Economics | [cloudzero.com](https://www.cloudzero.com) | Bill McNee | bill@cloudzero.com / [LinkedIn](https://www.linkedin.com/in/billmcnee) |
+| **Vantage** | Multi-Cloud Cost Management & FinOps | [vantage.sh](https://www.vantage.sh) | Ben Schaechter | ben@vantage.sh / [LinkedIn](https://www.linkedin.com/in/benschaechter) |
+| **Zolix AI** | AI Cloud Infrastructure Optimization | [zolix.ai](https://zolix.ai) | Raghuveer Sakuru | raghuveer@zolix.ai / [LinkedIn](https://www.linkedin.com/in/raghuveer-sakuru-4435a2140) |
+| **CloudEagle** | AI SaaS Management & Procurement | [cloudeagle.ai](https://www.cloudeagle.ai) | Nidhi Jain | nidhi@cloudeagle.ai / [LinkedIn](https://www.linkedin.com/in/nidhijaincloudeagle) |
+| **Anodot** | Autonomous Cloud Cost Anomaly Detection | [anodot.com](https://www.anodot.com) | David Drai | david@anodot.com / [LinkedIn](https://www.linkedin.com/in/daviddrai) |
+| **Harness** | AI Continuous Delivery & Cloud Cost | [harness.io](https://www.harness.io) | Jyoti Bansal | jyoti@harness.io / [LinkedIn](https://www.linkedin.com/in/jyotibansal) |
+| **Archera** | Cloud Commitment Automation & Risk Mgmt | [archera.ai](https://archera.ai) | Aran Khanna | aran@archera.ai / [LinkedIn](https://www.linkedin.com/in/aran-khanna) |
+| **Blunom AI** | Sovereign AI & Cloud Token Operations | [blunom.ai](https://www.blunom.ai) | Trevor Hansen | trevor@blunom.ai / [LinkedIn](https://www.linkedin.com/in/cloudtrev) |
+| **StormForge** | K8s App Performance & ML Optimization | [stormforge.io](https://www.stormforge.io) | Matt Provencal | matt@stormforge.io / [LinkedIn](https://www.linkedin.com/in/mattprovencal) |
+| **Akamas** | AI Autonomous Hybrid Cloud Optimization | [akamas.ai](https://akamas.ai) | Stefano Doni | stefano@akamas.ai / [LinkedIn](https://www.linkedin.com/in/stefanodoni) |
+| **Densify** | ML-Powered Cloud Resource Sizing | [densify.com](https://www.densify.com) | Gerry Smith | gerry@densify.com / [LinkedIn](https://www.linkedin.com/in/gerrysmithdensify) |
+| **Xosphere** | AI Spot Instance Migration & Savings | [xosphere.io](https://www.xosphere.io) | Alan Hand | alan@xosphere.io / [LinkedIn](https://www.linkedin.com/in/alanhand) |
+| **Opsani** | AI Continuous Cloud Performance & Cost | [opsani.com](https://www.opsani.com) | Ross Schibler | ross@opsani.com / [LinkedIn](https://www.linkedin.com/in/rossschibler) |
+| **CloudHealth** | Multi-Cloud Cost Governance (Broadcom) | [broadcom.com](https://www.broadcom.com) | Purnima Padmanabhan | purnima.padmanabhan@broadcom.com / [LinkedIn](https://www.linkedin.com/in/purnimapadmanabhan) |
+| **Apptio** | Technology Business Management (IBM) | [apptio.com](https://www.apptio.com) | Sunny Gupta | sunny@apptio.com / [LinkedIn](https://www.linkedin.com/in/sunnyapptio) |
+
