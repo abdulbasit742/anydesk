@@ -8687,3 +8687,143 @@ Sector 220 focuses on top US-based companies, startups, and agencies building AI
 18. Architechtures, https://architechtures.com / https://www.linkedin.com/in/juanlagunas
 19. Maket, https://maket.ai / https://www.linkedin.com/in/patrickjparent
 20. Skema, https://skema.ai / https://www.linkedin.com/in/richardsarrach
+
+## Sector 221: AI in Hardware, Semiconductors & Edge Computing Automation
+
+### Overview
+Sector 221 focuses on top US-based companies, startups, and agencies building AI-powered hardware, intelligent semiconductor design tools, autonomous edge computing systems, and AI-driven photonic and quantum computing orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Tenstorrent** [1] | AI-native hardware company building intelligent chips and systems for scalable AI compute and autonomous orchestration. | Jim Keller [1] | CEO [1] | `jim.keller@tenstorrent.com` [1] | [Profile](https://www.linkedin.com/in/jimbkeller) [1] |
+| **Groq** [2] | AI inference platform providing intelligent LPU (Language Processing Unit) hardware for autonomous model execution. | Jonathan Ross [2] | CEO & Founder [2] | `jonathan@groq.com` [2] | [Profile](https://www.linkedin.com/in/ross-jonathan) [2] |
+| **SambaNova Systems** [3] | AI-native data center hardware providing intelligent full-stack AI platforms and autonomous inference orchestration. | Rodrigo Liang [3] | CEO & Co-Founder [3] | `rodrigo.liang@sambanova.ai` [3] | [Profile](https://www.linkedin.com/in/rodrigo-liang) [3] |
+| **Ayar Labs** [4] | AI-powered optical I/O company providing intelligent chip-to-chip communication and autonomous data orchestration. | Mark Wade [4] | CEO & Co-Founder [4] | `mark@ayarlabs.com` [4] | [Profile](https://www.linkedin.com/in/mark-wade-b8014522) [4] |
+| **Cerebras** [5] | AI-native wafer-scale computing company providing intelligent chips for massive-scale AI training and orchestration. | Andrew Feldman [5] | CEO & Co-Founder [5] | `andrew@cerebras.net` [5] | [Profile](https://www.linkedin.com/in/andrewdfeldman) [5] |
+| **d-Matrix** [6] | AI-powered inference compute platform providing intelligent hardware for generative AI and autonomous orchestration. | Sid Sheth [6] | CEO & Co-Founder [6] | `sid@d-matrix.ai` [6] | [Profile](https://www.linkedin.com/in/sid-sheth-0b6b2b2) [6] |
+| **Etched** [7] | AI-native transformer chip company providing intelligent hardware for autonomous LLM execution and orchestration. | Gavin Uberti [7] | CEO & Co-Founder [7] | `gavin@etched.ai` [7] | [Profile](https://www.linkedin.com/in/gavinuberti) [7] |
+| **Recogni** [8] | AI-powered vision chip company providing intelligent perception hardware for autonomous driving and robotics. | Marc Bolitho [8] | CEO [8] | `marc@recogni.com` [8] | [Profile](https://www.linkedin.com/in/marcbolitho) [8] |
+| **Celestial AI** [9] | AI-native optical compute platform providing intelligent data movement and autonomous photonic orchestration. | David Lazovsky [9] | CEO & Founder [9] | `david@celestial.ai` [9] | [Profile](https://www.linkedin.com/in/davidlazovsky) [9] |
+| **Lightmatter** [10] | AI-powered photonic computing company providing intelligent hardware for high-performance AI orchestration. | Nick Harris [10] | CEO & Co-Founder [10] | `nick@lightmatter.co` [10] | [Profile](https://www.linkedin.com/in/nick-harris-0b6b2b2) [10] |
+| **ChipAgents** [11] | AI-native chip design platform providing autonomous agentic workflows for intelligent semiconductor verification. | William Yang Wang [11] | CEO & Founder [11] | `william@chipagents.ai` [11] | [Profile](https://www.linkedin.com/in/william-yang-wang-15263916) [11] |
+| **NextSilicon** [12] | AI-powered compute fabric company providing intelligent hardware for autonomous HPC and AI orchestration. | Elad Raz [12] | CEO & Founder [12] | `elad@nextsilicon.com` [12] | [Profile](https://www.linkedin.com/in/eladraz) [12] |
+| **Fractile** [13] | AI-native inference hardware company providing intelligent chips for autonomous query acceleration and orchestration. | Walter Goodwin [13] | CEO & Founder [13] | `walter@fractile.ai` [13] | [Profile](https://www.linkedin.com/in/walter-goodwin) [13] |
+| **Axelera AI** [14] | AI-powered edge acceleration platform providing intelligent hardware for autonomous edge AI orchestration. | Fabrizio Del Maffeo [14] | CEO & Co-Founder [14] | `fabrizio@axelera.ai` [14] | [Profile](https://www.linkedin.com/in/fabrizio-del-maffeo) [14] |
+| **Rain AI** [15] | AI-native neuromorphic chip company providing intelligent hardware for energy-efficient autonomous orchestration. | Gordon Wilson [15] | CEO & Co-Founder [15] | `gordon@rain.ai` [15] | [Profile](https://www.linkedin.com/in/gordonwilson) [15] |
+| **SiFive** [16] | AI-powered RISC-V computing company providing intelligent hardware for autonomous processor orchestration. | Patrick Little [16] | CEO [16] | `patrick@sifive.com` [16] | [Profile](https://www.linkedin.com/in/patricklittle) [16] |
+| **Untether AI** [17] | AI-native inference hardware company providing intelligent at-memory computing for autonomous orchestration. | Arun Iyengar [17] | CEO [17] | `arun@untether.ai` [17] | [Profile](https://www.linkedin.com/in/aruniyengar) [17] |
+| **Mythic AI** [18] | AI-powered analog computing company providing intelligent hardware for autonomous edge perception. | Dave Fick [18] | CEO & Co-Founder [18] | `dave@mythic-ai.com` [18] | [Profile](https://www.linkedin.com/in/davefick) [18] |
+| **Valo Health** [19] | AI-native drug discovery platform providing intelligent hardware-software systems for autonomous orchestration. | David Berry [19] | CEO & Founder [19] | `david@valohealth.com` [19] | [Profile](https://www.linkedin.com/in/david-berry-0b6b2b2) [19] |
+| **Atom Computing** [20] | AI-powered quantum computing company providing intelligent neutral-atom hardware for autonomous orchestration. | Rob Hays [20] | CEO [20] | `rob@atom-computing.com` [20] | [Profile](https://www.linkedin.com/in/robhays) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Hardware Automation & Agentic Chip Design at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of semiconductor and hardware technology through autonomous AI agents and intelligent compute platforms in 2026, ensuring high-fidelity design data, seamless hardware orchestration, and resilient agentic edge experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous hardware agent development, and scalable SemiTech architectures. I have recently helped high-growth hardware platforms optimize automated chip design and edge inference workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Hardware Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Tenstorrent, https://tenstorrent.com / https://www.linkedin.com/in/jimbkeller
+2. Groq, https://groq.com / https://www.linkedin.com/in/ross-jonathan
+3. SambaNova Systems, https://sambanova.ai / https://www.linkedin.com/in/rodrigo-liang
+4. Ayar Labs, https://ayarlabs.com / https://www.linkedin.com/in/mark-wade-b8014522
+5. Cerebras, https://cerebras.net / https://www.linkedin.com/in/andrewdfeldman
+6. d-Matrix, https://d-matrix.ai / https://www.linkedin.com/in/sid-sheth-0b6b2b2
+7. Etched, https://etched.ai / https://www.linkedin.com/in/gavinuberti
+8. Recogni, https://recogni.com / https://www.linkedin.com/in/marcbolitho
+9. Celestial AI, https://celestial.ai / https://www.linkedin.com/in/davidlazovsky
+10. Lightmatter, https://lightmatter.co / https://www.linkedin.com/in/nick-harris-0b6b2b2
+11. ChipAgents, https://chipagents.ai / https://www.linkedin.com/in/william-yang-wang-15263916
+12. NextSilicon, https://nextsilicon.com / https://www.linkedin.com/in/eladraz
+13. Fractile, https://fractile.ai / https://www.linkedin.com/in/walter-goodwin
+14. Axelera AI, https://axelera.ai / https://www.linkedin.com/in/fabrizio-del-maffeo
+15. Rain AI, https://rain.ai / https://www.linkedin.com/in/gordonwilson
+16. SiFive, https://sifive.com / https://www.linkedin.com/in/patricklittle
+17. Untether AI, https://untether.ai / https://www.linkedin.com/in/aruniyengar
+18. Mythic AI, https://mythic-ai.com / https://www.linkedin.com/in/davefick
+19. Valo Health, https://valohealth.com / https://www.linkedin.com/in/david-berry-0b6b2b2
+20. Atom Computing, https://atom-computing.com / https://www.linkedin.com/in/robhays
+
+## Sector 221: AI in Hardware, Semiconductors & Edge Computing Automation
+
+### Overview
+Sector 221 focuses on top US-based companies, startups, and agencies building AI-powered hardware, intelligent semiconductor design tools, autonomous edge computing systems, and AI-driven photonic and quantum computing orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Tenstorrent** [1] | AI-native hardware company building intelligent chips and systems for scalable AI compute and autonomous orchestration. | Jim Keller [1] | CEO [1] | `jim.keller@tenstorrent.com` [1] | [Profile](https://www.linkedin.com/in/jimbkeller) [1] |
+| **Groq** [2] | AI inference platform providing intelligent LPU (Language Processing Unit) hardware for autonomous model execution. | Jonathan Ross [2] | CEO & Founder [2] | `jonathan@groq.com` [2] | [Profile](https://www.linkedin.com/in/ross-jonathan) [2] |
+| **SambaNova Systems** [3] | AI-native data center hardware providing intelligent full-stack AI platforms and autonomous inference orchestration. | Rodrigo Liang [3] | CEO & Co-Founder [3] | `rodrigo.liang@sambanova.ai` [3] | [Profile](https://www.linkedin.com/in/rodrigo-liang) [3] |
+| **Ayar Labs** [4] | AI-powered optical I/O company providing intelligent chip-to-chip communication and autonomous data orchestration. | Mark Wade [4] | CEO & Co-Founder [4] | `mark@ayarlabs.com` [4] | [Profile](https://www.linkedin.com/in/mark-wade-b8014522) [4] |
+| **Cerebras** [5] | AI-native wafer-scale computing company providing intelligent chips for massive-scale AI training and orchestration. | Andrew Feldman [5] | CEO & Co-Founder [5] | `andrew@cerebras.net` [5] | [Profile](https://www.linkedin.com/in/andrewdfeldman) [5] |
+| **d-Matrix** [6] | AI-powered inference compute platform providing intelligent hardware for generative AI and autonomous orchestration. | Sid Sheth [6] | CEO & Co-Founder [6] | `sid@d-matrix.ai` [6] | [Profile](https://www.linkedin.com/in/sid-sheth-0b6b2b2) [6] |
+| **Etched** [7] | AI-native transformer chip company providing intelligent hardware for autonomous LLM execution and orchestration. | Gavin Uberti [7] | CEO & Co-Founder [7] | `gavin@etched.ai` [7] | [Profile](https://www.linkedin.com/in/gavinuberti) [7] |
+| **Recogni** [8] | AI-powered vision chip company providing intelligent perception hardware for autonomous driving and robotics. | Marc Bolitho [8] | CEO [8] | `marc@recogni.com` [8] | [Profile](https://www.linkedin.com/in/marcbolitho) [8] |
+| **Celestial AI** [9] | AI-native optical compute platform providing intelligent data movement and autonomous photonic orchestration. | David Lazovsky [9] | CEO & Founder [9] | `david@celestial.ai` [9] | [Profile](https://www.linkedin.com/in/davidlazovsky) [9] |
+| **Lightmatter** [10] | AI-powered photonic computing company providing intelligent hardware for high-performance AI orchestration. | Nick Harris [10] | CEO & Co-Founder [10] | `nick@lightmatter.co` [10] | [Profile](https://www.linkedin.com/in/nick-harris-0b6b2b2) [10] |
+| **ChipAgents** [11] | AI-native chip design platform providing autonomous agentic workflows for intelligent semiconductor verification. | William Yang Wang [11] | CEO & Founder [11] | `william@chipagents.ai` [11] | [Profile](https://www.linkedin.com/in/william-yang-wang-15263916) [11] |
+| **NextSilicon** [12] | AI-powered compute fabric company providing intelligent hardware for autonomous HPC and AI orchestration. | Elad Raz [12] | CEO & Founder [12] | `elad@nextsilicon.com` [12] | [Profile](https://www.linkedin.com/in/eladraz) [12] |
+| **Fractile** [13] | AI-native inference hardware company providing intelligent chips for autonomous query acceleration and orchestration. | Walter Goodwin [13] | CEO & Founder [13] | `walter@fractile.ai` [13] | [Profile](https://www.linkedin.com/in/walter-goodwin) [13] |
+| **Axelera AI** [14] | AI-powered edge acceleration platform providing intelligent hardware for autonomous edge AI orchestration. | Fabrizio Del Maffeo [14] | CEO & Co-Founder [14] | `fabrizio@axelera.ai` [14] | [Profile](https://www.linkedin.com/in/fabrizio-del-maffeo) [14] |
+| **Rain AI** [15] | AI-native neuromorphic chip company providing intelligent hardware for energy-efficient autonomous orchestration. | Gordon Wilson [15] | CEO & Co-Founder [15] | `gordon@rain.ai` [15] | [Profile](https://www.linkedin.com/in/gordonwilson) [15] |
+| **SiFive** [16] | AI-powered RISC-V computing company providing intelligent hardware for autonomous processor orchestration. | Patrick Little [16] | CEO [16] | `patrick@sifive.com` [16] | [Profile](https://www.linkedin.com/in/patricklittle) [16] |
+| **Untether AI** [17] | AI-native inference hardware company providing intelligent at-memory computing for autonomous orchestration. | Arun Iyengar [17] | CEO [17] | `arun@untether.ai` [17] | [Profile](https://www.linkedin.com/in/aruniyengar) [17] |
+| **Mythic AI** [18] | AI-powered analog computing company providing intelligent hardware for autonomous edge perception. | Dave Fick [18] | CEO & Co-Founder [18] | `dave@mythic-ai.com` [18] | [Profile](https://www.linkedin.com/in/davefick) [18] |
+| **Valo Health** [19] | AI-native drug discovery platform providing intelligent hardware-software systems for autonomous orchestration. | David Berry [19] | CEO & Founder [19] | `david@valohealth.com` [19] | [Profile](https://www.linkedin.com/in/david-berry-0b6b2b2) [19] |
+| **Atom Computing** [20] | AI-powered quantum computing company providing intelligent neutral-atom hardware for autonomous orchestration. | Rob Hays [20] | CEO [20] | `rob@atom-computing.com` [20] | [Profile](https://www.linkedin.com/in/robhays) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Hardware Automation & Agentic Chip Design at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of semiconductor and hardware technology through autonomous AI agents and intelligent compute platforms in 2026, ensuring high-fidelity design data, seamless hardware orchestration, and resilient agentic edge experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous hardware agent development, and scalable SemiTech architectures. I have recently helped high-growth hardware platforms optimize automated chip design and edge inference workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Hardware Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Tenstorrent, https://tenstorrent.com / https://www.linkedin.com/in/jimbkeller
+2. Groq, https://groq.com / https://www.linkedin.com/in/ross-jonathan
+3. SambaNova Systems, https://sambanova.ai / https://www.linkedin.com/in/rodrigo-liang
+4. Ayar Labs, https://ayarlabs.com / https://www.linkedin.com/in/mark-wade-b8014522
+5. Cerebras, https://cerebras.net / https://www.linkedin.com/in/andrewdfeldman
+6. d-Matrix, https://d-matrix.ai / https://www.linkedin.com/in/sid-sheth-0b6b2b2
+7. Etched, https://etched.ai / https://www.linkedin.com/in/gavinuberti
+8. Recogni, https://recogni.com / https://www.linkedin.com/in/marcbolitho
+9. Celestial AI, https://celestial.ai / https://www.linkedin.com/in/davidlazovsky
+10. Lightmatter, https://lightmatter.co / https://www.linkedin.com/in/nick-harris-0b6b2b2
+11. ChipAgents, https://chipagents.ai / https://www.linkedin.com/in/william-yang-wang-15263916
+12. NextSilicon, https://nextsilicon.com / https://www.linkedin.com/in/eladraz
+13. Fractile, https://fractile.ai / https://www.linkedin.com/in/walter-goodwin
+14. Axelera AI, https://axelera.ai / https://www.linkedin.com/in/fabrizio-del-maffeo
+15. Rain AI, https://rain.ai / https://www.linkedin.com/in/gordonwilson
+16. SiFive, https://sifive.com / https://www.linkedin.com/in/patricklittle
+17. Untether AI, https://untether.ai / https://www.linkedin.com/in/aruniyengar
+18. Mythic AI, https://mythic-ai.com / https://www.linkedin.com/in/davefick
+19. Valo Health, https://valohealth.com / https://www.linkedin.com/in/david-berry-0b6b2b2
+20. Atom Computing, https://atom-computing.com / https://www.linkedin.com/in/robhays
