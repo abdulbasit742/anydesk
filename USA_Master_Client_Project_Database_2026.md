@@ -4782,3 +4782,32 @@ AI-driven DevSecOps, Automated Testing, and Software Quality Assurance companies
 | **Palo Alto Networks** | Prisma Cloud Runtime & App Security | [paloaltonetworks.com](https://www.paloaltonetworks.com) | Nikesh Arora | narora@paloaltonetworks.com / [LinkedIn](https://www.linkedin.com/in/nikesharora) |
 | **Wiz** | Cloud-Native Application Protection Platform | [wiz.io](https://www.wiz.io) | Assaf Rappaport | assaf@wiz.io / [LinkedIn](https://www.linkedin.com/in/assaf-rappaport) |
 
+
+
+## Sector 165: AI for Data Engineering, Data Observability & Vector Database Infrastructure
+
+AI-driven Data Engineering, Data Observability, and Vector Database Infrastructure companies are scaling high-throughput ingestion pipelines, sub-millisecond vector retrieval for RAG, automated data reliability monitoring, and unified lakehouse architectures across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Pinecone** | Managed Vector Database for High-Performance RAG | [pinecone.io](https://www.pinecone.io) | Edo Liberty | edo@pinecone.io / [LinkedIn](https://www.linkedin.com/in/edoliberty) |
+| **Weaviate** | Open-Source Vector Database & Neural Search | [weaviate.io](https://weaviate.io) | Bob van Luijt | bob@weaviate.io / [LinkedIn](https://nl.linkedin.com/in/bobvanluijt) |
+| **Chroma** | AI-Native Open-Source Embedding Database | [trychroma.com](https://www.trychroma.com) | Jeff Huber | jeff@trychroma.com / [LinkedIn](https://www.linkedin.com/in/jeffchuber) |
+| **Qdrant** | High-Performance Vector Search Engine | [qdrant.tech](https://qdrant.tech) | Andre Zayarni | andre@qdrant.com / [LinkedIn](https://de.linkedin.com/in/zayarni) |
+| **Zilliz (Milvus)** | Unstructured Vector Data & Milvus Platform | [zilliz.com](https://zilliz.com) | Charles Xie | charles.xie@zilliz.com / [LinkedIn](https://www.linkedin.com/in/chaoxie) |
+| **Marqo** | End-to-End Vector Search & Neural Retrieval | [marqo.ai](https://www.marqo.ai) | Tom Hamer | tom@marqo.ai / [LinkedIn](https://www.linkedin.com/in/tom-hamer-04a6369b) |
+| **Databricks** | Unified Data Lakehouse & AI/ML Platform | [databricks.com](https://www.databricks.com) | Ali Ghodsi | ali.ghodsi@databricks.com / [LinkedIn](https://www.linkedin.com/in/alighodsi) |
+| **Fivetran** | Automated Cloud Data Movement & Pipelines | [fivetran.com](https://www.fivetran.com) | George Fraser | george@fivetran.com / [LinkedIn](https://www.linkedin.com/in/georgefraser) |
+| **Airbyte** | Open-Source Data Integration & ELT Pipelines | [airbyte.com](https://airbyte.com) | Michel Tricot | michel@airbyte.io / [LinkedIn](https://www.linkedin.com/in/micheltricot) |
+| **DBT Labs** | Analytics Engineering & Transformation | [getdbt.com](https://www.getdbt.com) | Tristan Handy | tristan@getdbt.com / [LinkedIn](https://www.linkedin.com/in/tristanhandy) |
+| **Starburst** | Distributed Analytics Engine Powered by Trino | [starburst.io](https://www.starburst.io) | Justin Borgman | justin@starburstdata.com / [LinkedIn](https://www.linkedin.com/in/justinborgman) |
+| **Cribl** | Observability Pipeline & Telemetry Routing | [cribl.io](https://cribl.io) | Clint Sharp | clint@cribl.io / [LinkedIn](https://www.linkedin.com/in/clintsharp) |
+| **Grafana Labs** | Observability & Monitoring Stack | [grafana.com](https://grafana.com) | Raj Dutt | raj@grafana.com / [LinkedIn](https://www.linkedin.com/in/rajdutt) |
+| **Monte Carlo Data** | Automated Data Observability & Reliability | [montecarlodata.com](https://www.montecarlodata.com) | Barr Moses | barr@montecarlodata.com / [LinkedIn](https://www.linkedin.com/in/barrmoses) |
+| **Acceldata** | Enterprise Data Observability Platform | [acceldata.io](https://www.acceldata.io) | Rohit Choudhary | rohit@acceldata.io / [LinkedIn](https://www.linkedin.com/in/rohitchoudhary) |
+| **Metaplane** | Data Observability & Quality Alerts | [metaplane.dev](https://www.metaplane.dev) | Kevin Hu | kevin@metaplane.dev / [LinkedIn](https://www.linkedin.com/in/kevinhu) |
+| **Anomalo** | Automated Data Quality Monitoring via ML | [anomalo.com](https://anomalo.com) | Elliot Shmukler | elliot@anomalo.com / [LinkedIn](https://www.linkedin.com/in/elliotshmukler) |
+| **Bigeye** | Data Health Guarantees & Observability | [bigeye.com](https://bigeye.com) | Kyle Kirwan | kyle@bigeye.com / [LinkedIn](https://www.linkedin.com/in/kylekirwan) |
+| **LangChain** | Framework for LLM & Vector Search Apps | [langchain.com](https://www.langchain.com) | Harrison Chase | harrison@langchain.dev / [LinkedIn](https://www.linkedin.com/in/harrison-chase) |
+| **LlamaIndex** | Data Framework Connecting Data to LLMs | [llamaindex.ai](https://www.llamaindex.ai) | Jerry Liu | jerry@llamaindex.ai / [LinkedIn](https://www.linkedin.com/in/jerry-liu-56420435) |
+
