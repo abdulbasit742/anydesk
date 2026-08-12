@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 40 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, and Events & Community Management Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 41 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, and E-learning Content & Professional Development Platforms) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -634,6 +634,23 @@ Events and Community Management companies are redefining how people connect thro
 | **Mighty Networks** | Community-Led Growth Platform | [mightynetworks.com](https://www.mightynetworks.com) | Gina Bianchini | gina@mightynetworks.com / [LinkedIn](https://www.linkedin.com/in/ginabianchini) |
 | **Goldcast** | B2B Virtual Event Platform | [goldcast.io](https://www.goldcast.io) | Kapil Agrawal | kapil@goldcast.io / [LinkedIn](https://www.linkedin.com/in/kapil-agrawal-goldcast) |
 | **Gather** | Virtual Office & Event Spaces | [gather.town](https://www.gather.town) | Phillip Wang | phillip@gather.town / [LinkedIn](https://www.linkedin.com/in/phillip-wang-707b7b102) |
+
+---
+
+## Sector 41: E-learning Content & Professional Development Platforms
+
+E-learning and Professional Development companies are transforming how the workforce learns and adapts through corporate upskilling and professional certifications. In 2026, the industry is scaling with AI-driven personalized learning paths and immersive micro-learning content, creating high demand for remote instructional designers, full-stack developers (LMS/LXP), content creators, and data analysts.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Coursera** | Global Online Learning Platform | [coursera.org](https://www.coursera.org) | Greg Hart | greg@coursera.org / [LinkedIn](https://www.linkedin.com/in/greg-hart-ceo) |
+| **Udemy** | Skill-Based Content Marketplace | [udemy.com](https://www.udemy.com) | Hugo Sarrazin | hugo@udemy.com / [LinkedIn](https://www.linkedin.com/in/hugo-sarrazin) |
+| **Guild** | Education & Upskilling Benefits | [guild.com](https://www.guild.com) | Rachel Romer | rachel@guild.com / [LinkedIn](https://www.linkedin.com/in/rachel-carlson-540b8523) |
+| **Pluralsight** | Tech Workforce Development | [pluralsight.com](https://www.pluralsight.com) | Erin Gajdalo | erin.gajdalo@pluralsight.com / [LinkedIn](https://www.linkedin.com/in/eringajdalo) |
+| **MasterClass** | Celebrity-Led Video Lessons | [masterclass.com](https://www.masterclass.com) | David Rogier | david@masterclass.com / [LinkedIn](https://www.linkedin.com/in/davidrogier) |
+| **Skillshare** | Creative Skill-Sharing Platform | [skillshare.com](https://www.skillshare.com) | Matt Cooper | matt@skillshare.com / [LinkedIn](https://www.linkedin.com/in/mattcooper) |
+| **Udacity** | Digital Skills Training (Accenture) | [udacity.com](https://www.udacity.com) | Kai Roemmelt | kai@udacity.com / [LinkedIn](https://www.linkedin.com/in/kairoemmelt) |
+| **Teachable** | Creator-Led Course Platform | [teachable.com](https://teachable.com) | Rochelle Posthuma | rochelle@teachable.com / [LinkedIn](https://www.linkedin.com/in/rochelle-posthuma) |
 
 ---
 
