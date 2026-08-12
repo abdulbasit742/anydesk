@@ -2,13 +2,13 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 12 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, and Gaming/Interactive Media) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 13 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, and CleanTech/Sustainability) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
 ## Executive Summary
 
-Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across twelve high-demand sectors in August 2026. 
+Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across thirteen high-demand sectors in August 2026. 
 
 ---
 
@@ -148,7 +148,7 @@ AdTech and MarTech platforms power programmatic advertising, customer relationsh
 | :--- | :--- | :--- | :--- | :--- |
 | **HubSpot** | Inbound Marketing & CRM | [hubspot.com](https://www.hubspot.com) | Dharmesh Shah | dharmesh@hubspot.com / [LinkedIn](https://www.linkedin.com/in/dharmesh) |
 | **Klaviyo** | E-commerce Email & SMS Automation | [klaviyo.com](https://www.klaviyo.com) | Andrew Bialecki | andrew@klaviyo.com / [LinkedIn](https://www.linkedin.com/in/bialecki) |
-| **The Trade Desk** | Programmatic Advertising Platform | [thetradedesk.com](https://www.thetradedesk.com) | Jeff Green | jeff.green@thetradedesk.com / [LinkedIn](https://www.linkedin.com/in/jefftgreen) |
+| **The Trade Desk** | Programmatic Advertising Platform | [thetradedesk.com](https://www.tradedesk.com) | Jeff Green | jeff.green@thetradedesk.com / [LinkedIn](https://www.linkedin.com/in/jefftgreen) |
 | **GumGum** | Contextual Intelligence & Ads | [gumgum.com](https://www.gumgum.com) | Ophir Tanz | [LinkedIn](https://www.linkedin.com/in/ophirtanz) |
 | **OpenX** | Programmatic Ad Exchange | [openx.com](https://www.openx.com) | John Gentry | [LinkedIn](https://www.linkedin.com/in/john-gentry) |
 
@@ -179,6 +179,20 @@ Interactive entertainment and game development studios frequently engage externa
 | **Valve** | Steam & Game Development | [valvesoftware.com](https://www.valvesoftware.com) | Gabe Newell | gaben@valvesoftware.com / [LinkedIn](https://www.linkedin.com/in/gabe-newell-630135249) |
 | **Electronic Arts** | Global Interactive Entertainment | [ea.com](https://www.ea.com) | Andrew Wilson | [LinkedIn](https://www.linkedin.com/in/andrew-wilson-ea) |
 | **Riot Games** | League of Legends & Valorant | [riotgames.com](https://www.riotgames.com) | Dylan Jadeja | [LinkedIn](https://www.linkedin.com/in/dylan-jadeja) |
+
+---
+
+## Sector 13: CleanTech & Sustainability Tech
+
+Climate technology and renewable energy firms are rapidly expanding across the US, offering high-impact remote project opportunities for software engineers, data analysts, and IoT telemetry specialists.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Redwood Materials** | Battery Recycling & Circular Supply | [redwoodmaterials.com](https://www.redwoodmaterials.com) | JB Straubel | jb@redwoodmaterials.com / [LinkedIn](https://www.linkedin.com/in/jb-straubel-b694981) |
+| **Form Energy** | Multi-day Energy Storage Systems | [formenergy.com](https://formenergy.com) | Mateo Jaramillo | mateo@formenergy.com / [LinkedIn](https://www.linkedin.com/in/mateojaramillo) |
+| **Commonwealth Fusion Systems** | Commercial Fusion Energy | [cfsenergy.com](https://www.cfsenergy.com) | Bob Mumgaard | [LinkedIn](https://www.linkedin.com/in/mumgaard) |
+| **Terraformation** | Forest Restoration & Carbon Tech | [terraformation.com](https://www.terraformation.com) | Yana Welinder | [LinkedIn](https://www.linkedin.com/in/yanawelinder) |
+| **Amperon** | Energy Forecasting & Grid Analytics | [amperon.ai](https://www.amperon.ai) | Sean Shannon | [LinkedIn](https://www.linkedin.com/in/seanshannon) |
 
 ---
 
