@@ -4637,3 +4637,32 @@ AI-driven Government, Defense, and Public Safety companies are scaling autonomou
 | **True Anomaly** | Autonomous Space Security & Orbit Systems | [trueanomaly.ai](https://trueanomaly.ai) | Even Rogers | even@trueanomaly.ai / [LinkedIn](https://www.linkedin.com/in/tanst-aafl) |
 | **Darkhive** | Open-Architecture Autonomous Drones | [darkhive.io](https://darkhive.io) | James Ganczewski | james@darkhive.io / [LinkedIn](https://www.linkedin.com/in/jamesganczewski) |
 
+
+
+## Sector 160: AI for Insurance (InsurTech), Risk Management & Actuarial Innovation
+
+AI-driven InsurTech, Risk Management, and Actuarial Innovation companies are scaling automated claims processing, generative AI underwriting orchestration, cyber risk analytics, and geospatial property valuation platforms across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Lemonade** | AI-First Insurance Carrier & Chatbots | [lemonade.com](https://www.lemonade.com) | Daniel Schreiber | daniel@lemonade.com / [LinkedIn](https://www.linkedin.com/in/danielaschreiber) |
+| **Tractable** | AI Computer Vision Claims & Recovery | [tractable.ai](https://tractable.ai) | Alex Dalyac | alex@tractable.ai / [LinkedIn](https://www.linkedin.com/in/alex-dalyac) |
+| **Akur8** | Transparent ML Actuarial Pricing Platform | [akur8.com](https://akur8.com) | Samuel Falmagne | samuel@akur8.com / [LinkedIn](https://www.linkedin.com/in/samuel-falmagne) |
+| **Shift Technology** | AI Fraud Detection & Claims Automation | [shift-technology.com](https://shift-technology.com) | Jeremy Jawish | jeremy.jawish@shift-technology.com / [LinkedIn](https://www.linkedin.com/in/jeremy-jawish) |
+| **Cowbell** | AI Cyber Insurance & SME Risk Assessment | [cowbell.ai](https://cowbell.ai) | Jack Kudale | jack@cowbell.ai / [LinkedIn](https://www.linkedin.com/in/jack-kudale) |
+| **CyberCube** | Cyber Risk Analytics & Exposure Modeling | [cybcube.com](https://www.cybcube.com) | Pascal Millaire | pascal@cybcube.com / [LinkedIn](https://www.linkedin.com/in/pascalmillaire) |
+| **Hippo Insurance** | AI Home Insurance & Smart Data Platforms | [hippo.com](https://www.hippo.com) | Rick McCathron | rick@hippo.com / [LinkedIn](https://www.linkedin.com/in/rick-mccathron) |
+| **Root Insurance** | Telematics Mobile Car Insurance Carrier | [root.com](https://www.root.com) | Alex Timm | alex@root.com / [LinkedIn](https://www.linkedin.com/in/alex-timm) |
+| **Coalition** | Active Cyber Insurance & Security Tools | [coalitioninc.com](https://www.coalitioninc.com) | Joshua Motta | joshua@coalitioninc.com / [LinkedIn](https://www.linkedin.com/in/joshuamotta) |
+| **Kin Insurance** | AI Direct-to-Consumer Home Insurance | [kin.com](https://www.kin.com) | Sean Harper | sean@kin.com / [LinkedIn](https://www.linkedin.com/in/seanharper) |
+| **ZestyAI** | Climate & Property Risk Geospatial Analytics | [zesty.ai](https://zesty.ai) | Attila Toth | attila@zesty.ai / [LinkedIn](https://www.linkedin.com/in/attilatoth) |
+| **Cape Analytics** | Instant Geospatial Property Intelligence | [capeanalytics.com](https://www.capeanalytics.com) | Ryan Kottenstette | ryan@capeanalytics.com / [LinkedIn](https://www.linkedin.com/in/ryan-kottenstette) |
+| **Arturo** | AI Property Analytics & Underwriting Data | [arturo.ai](https://arturo.ai) | Marty Smuin | marty@arturo.ai / [LinkedIn](https://www.linkedin.com/in/marty-smuin) |
+| **Avallon AI** | Conversational AI Agents for Insurance Claims | [avallon.ai](https://www.avallon.ai) | Cornelius Schramm | cornelius@avallon.ai / [LinkedIn](https://www.linkedin.com/in/cornelius-schramm) |
+| **Poetic AI** | Enterprise Underwriting AI (OpenAI Backed) | [poetic.ai](https://poetic.ai) | Markie Wagner | markie@poetic.ai / [LinkedIn](https://www.linkedin.com/in/markiewagner) |
+| **FurtherAI** | Insurance AI Orchestration & Submissions | [further.ai](https://further.ai) | Jonathan Crystal | jonathan@further.ai / [LinkedIn](https://www.linkedin.com/in/jonathancrystal) |
+| **Groundspeed Analytics** | AI Commercial Insurance Data Ingestion | [groundspeed.com](https://groundspeed.com) | Eric Kobe | eric.kobe@groundspeed.com / [LinkedIn](https://www.linkedin.com/in/erickobe) |
+| **Clearcover** | API-First Digital Car Insurance Carrier | [clearcover.com](https://clearcover.com) | Kyle Nakatsuji | kyle@clearcover.com / [LinkedIn](https://www.linkedin.com/in/kylenakatsuji) |
+| **Bold Penguin** | Commercial Insurance Exchange & Quoting | [boldpenguin.com](https://boldpenguin.com) | Ilya Bodner | ilya@boldpenguin.com / [LinkedIn](https://www.linkedin.com/in/ilyabodner) |
+| **Corvus Insurance** | AI Cyber Risk Underwriting & Mitigation | [corvusinsurance.com](https://www.corvusinsurance.com) | Madhu Tadikonda | madhu@corvusinsurance.com / [LinkedIn](https://www.linkedin.com/in/madhutadikonda) |
+
