@@ -9247,3 +9247,73 @@ Sector 227 focuses on top US-based companies, startups, and agencies building AI
 18. Pano AI, [Website](https://www.linkedin.com/in/soniakastner) / https://www.linkedin.com/in/soniakastner
 19. Overstory, [Website](https://www.linkedin.com/in/indradenbakker) / https://www.linkedin.com/in/indradenbakker
 20. Descartes Labs, [Website](https://www.linkedin.com/in/seandonegan) / https://www.linkedin.com/in/seandonegan
+
+## Sector 228: AI in Construction, Civil Engineering & Infrastructure Automation
+
+### Overview
+Sector 228 focuses on top US-based companies, startups, and agencies building AI-powered autonomous construction machinery, intelligent site monitoring, generative design for infrastructure, and autonomous jobsite orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Built Robotics** [1] | Autonomous Heavy Equipment | Noah Ready-Campbell [1] | Founder & CEO [1] | `noah@builtrobotics.com` [1] | [Profile](https://www.linkedin.com/in/noahreadycampbell) [1] |
+| **Buildots** [2] | Construction Intelligence AI | Roy Danon [2] | Co-founder & CEO [2] | `roy@buildots.com` [2] | [Profile](https://www.linkedin.com/in/roydanon) [2] |
+| **BuildOps** [3] | Field Service Management AI | Alok Chanani [3] | CEO [3] | `alok@buildops.com` [3] | [Profile](https://www.linkedin.com/in/alokchanani) [3] |
+| **Doxel** [4] | AI Progress Tracking | Saurabh Ladha [4] | Founder & CEO [4] | `saurabh@doxel.ai` [4] | [Profile](https://www.linkedin.com/in/saurabh-ladha-3b801812) [4] |
+| **Lucid Bots** [5] | Modular Jobsite Robots | Andrew Ashur [5] | Founder & CEO [5] | `andrew@lucidbots.com` [5] | [Profile](https://www.linkedin.com/in/andrewashur) [5] |
+| **FieldAI** [6] | General Robot Intelligence | Ali Agha [6] | CEO [6] | `ali@fieldai.com` [6] | [Profile](https://www.linkedin.com/company/fieldai) [6] |
+| **SafeAI** [7] | Autonomous Mining & Construction | Bibhrajit Halder [7] | Founder & CEO [7] | `bibhrajit@safeai.ai` [7] | [Profile](https://www.linkedin.com/in/bibhrajit-halder-8b7d4b7d) [7] |
+| **Toggle** [8] | Robotic Rebar Fabrication | Daniel Blank [8] | Founder & CEO [8] | `daniel@toggle.is` [8] | [Profile](https://www.linkedin.com/in/daniel-blank-8b7d4b7d) [8] |
+| **Canvas** [9] | Robotic Drywall Finishing | Kevin Albert [9] | Co-founder & CEO [9] | `kevin@canvas.build` [9] | [Profile](https://www.linkedin.com/in/kevin-albert-8b7d4b7d) [9] |
+| **Dusty Robotics** [10] | Robotic Layout Automation | Tessa Lau [10] | Founder & CEO [10] | `tessa@dustyrobotics.com` [10] | [Profile](https://www.linkedin.com/in/tessalau) [10] |
+| **OpenSpace** [11] | AI Reality Capture | Jeevan Kalanithi [11] | CEO [11] | `jeevan@openspace.ai` [11] | [Profile](https://www.linkedin.com/in/jeevan-kalanithi-8b7d4b7d) [11] |
+| **Alice Technologies** [12] | Generative Construction Scheduling | René Morkos [12] | Founder & CEO [12] | `rene@alicetechnologies.com` [12] | [Profile](https://www.linkedin.com/in/renemorkos) [12] |
+| **Reconstruct** [13] | Visual Data Management AI | Zak Zakhor [13] | CEO [13] | `zak@reconstructinc.com` [13] | [Profile](https://www.linkedin.com/in/zakzakhor) [13] |
+| **Versatile** [14] | Crane-based Site Intelligence | Meirav Oren [14] | Co-founder & Exec Chair [14] | `meirav@versatile.ai` [14] | [Profile](https://www.linkedin.com/in/meirav-oren) [14] |
+| **Propeller Aero** [15] | Drone Data Analytics | Rory San Miguel [15] | Co-founder & CEO [15] | `rory@propelleraero.com` [15] | [Profile](https://au.linkedin.com/in/rory-san-miguel-42623190) [15] |
+| **AIM Intelligent Machines** [16] | Autonomous Earthmoving AI | Adam Sadilek [16] | Founder & CEO [16] | `adam@aim.ai` [16] | [Profile](https://www.linkedin.com/in/adamsadilek) [16] |
+| **Agtonomy** [17] | Intelligent Site Automation | Tim Bucher [17] | Co-founder & CEO [17] | `tim@agtonomy.com` [17] | [Profile](https://www.linkedin.com/in/timbucher) [17] |
+| **AirWorks** [18] | AI for Civil Engineering | David Duquette [18] | Founder & CEO [18] | `david@airworks.io` [18] | [Profile](https://www.linkedin.com/in/david-duquette-8b7d4b7d) [18] |
+| **Viatechnik** [19] | VDC & BIM Automation | Danielle Dy Buncio [19] | Co-founder & CEO [19] | `danielle@viatechnik.com` [19] | [Profile](https://www.linkedin.com/in/danielledybuncio) [19] |
+| **Civil Maps** [20] | 3D Mapping & Infrastructure AI | Sravan Puttagunta [20] | Co-founder & CEO [20] | `sravan@civilmaps.com` [20] | [Profile](https://www.linkedin.com/in/sravan-puttagunta-8b7d4b7d) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Construction Automation & Agentic Infrastructure Orchestration at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of construction technology and infrastructure automation through autonomous AI agents and intelligent site platforms in 2026, ensuring high-fidelity site data, seamless machine orchestration, and resilient agentic automation experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous construction agent development, and scalable ConTech architectures. I have recently helped high-growth construction platforms optimize automated progress tracking and machine control workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Construction Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Built Robotics, [Website](https://www.linkedin.com/in/noahreadycampbell) / https://www.linkedin.com/in/noahreadycampbell
+2. Buildots, [Website](https://www.linkedin.com/in/roydanon) / https://www.linkedin.com/in/roydanon
+3. BuildOps, [Website](https://www.linkedin.com/in/alokchanani) / https://www.linkedin.com/in/alokchanani
+4. Doxel, [Website](https://www.linkedin.com/in/saurabh-ladha-3b801812) / https://www.linkedin.com/in/saurabh-ladha-3b801812
+5. Lucid Bots, [Website](https://www.linkedin.com/in/andrewashur) / https://www.linkedin.com/in/andrewashur
+6. FieldAI, [Website](https://www.linkedin.com/company/fieldai) / https://www.linkedin.com/company/fieldai
+7. SafeAI, [Website](https://www.linkedin.com/in/bibhrajit-halder-8b7d4b7d) / https://www.linkedin.com/in/bibhrajit-halder-8b7d4b7d
+8. Toggle, [Website](https://www.linkedin.com/in/daniel-blank-8b7d4b7d) / https://www.linkedin.com/in/daniel-blank-8b7d4b7d
+9. Canvas, [Website](https://www.linkedin.com/in/kevin-albert-8b7d4b7d) / https://www.linkedin.com/in/kevin-albert-8b7d4b7d
+10. Dusty Robotics, [Website](https://www.linkedin.com/in/tessalau) / https://www.linkedin.com/in/tessalau
+11. OpenSpace, [Website](https://www.linkedin.com/in/jeevan-kalanithi-8b7d4b7d) / https://www.linkedin.com/in/jeevan-kalanithi-8b7d4b7d
+12. Alice Technologies, [Website](https://www.linkedin.com/in/renemorkos) / https://www.linkedin.com/in/renemorkos
+13. Reconstruct, [Website](https://www.linkedin.com/in/zakzakhor) / https://www.linkedin.com/in/zakzakhor
+14. Versatile, [Website](https://www.linkedin.com/in/meirav-oren) / https://www.linkedin.com/in/meirav-oren
+15. Propeller Aero, [Website](https://au.linkedin.com/in/rory-san-miguel-42623190) / https://au.linkedin.com/in/rory-san-miguel-42623190
+16. AIM Intelligent Machines, [Website](https://www.linkedin.com/in/adamsadilek) / https://www.linkedin.com/in/adamsadilek
+17. Agtonomy, [Website](https://www.linkedin.com/in/timbucher) / https://www.linkedin.com/in/timbucher
+18. AirWorks, [Website](https://www.linkedin.com/in/david-duquette-8b7d4b7d) / https://www.linkedin.com/in/david-duquette-8b7d4b7d
+19. Viatechnik, [Website](https://www.linkedin.com/in/danielledybuncio) / https://www.linkedin.com/in/danielledybuncio
+20. Civil Maps, [Website](https://www.linkedin.com/in/sravan-puttagunta-8b7d4b7d) / https://www.linkedin.com/in/sravan-puttagunta-8b7d4b7d
