@@ -4666,3 +4666,32 @@ AI-driven InsurTech, Risk Management, and Actuarial Innovation companies are sca
 | **Bold Penguin** | Commercial Insurance Exchange & Quoting | [boldpenguin.com](https://boldpenguin.com) | Ilya Bodner | ilya@boldpenguin.com / [LinkedIn](https://www.linkedin.com/in/ilyabodner) |
 | **Corvus Insurance** | AI Cyber Risk Underwriting & Mitigation | [corvusinsurance.com](https://www.corvusinsurance.com) | Madhu Tadikonda | madhu@corvusinsurance.com / [LinkedIn](https://www.linkedin.com/in/madhutadikonda) |
 
+
+
+## Sector 161: AI for Telecommunications, 5G/6G & Network Infrastructure Automation
+
+AI-driven Telecommunications, 5G/6G, and Network Infrastructure companies are scaling AI-native cellular networks, Private 5G enterprise solutions, Open RAN software, edge computing processors, and network automation platforms across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Celona** | Private 5G & Industrial AI Wireless | [celona.io](https://www.celona.io) | Rajeev Shah | rajeev@celona.io / [LinkedIn](https://www.linkedin.com/in/shahrajeev) |
+| **Federated Wireless** | Shared Spectrum & CBRS Private Networks | [federatedwireless.com](https://www.federatedwireless.com) | Iyad Tarazi | iyad@federatedwireless.com / [LinkedIn](https://www.linkedin.com/in/itarazi) |
+| **Ubicquia** | AI & IoT Smart Utility Infrastructure | [ubicquia.com](https://www.ubicquia.com) | Ian Aaron | iaaron@ubicquia.com / [LinkedIn](https://www.linkedin.com/in/ian-aaron-113a831) |
+| **Cohere Technologies** | 5G/6G OTFS AI Spectral Efficiency | [cohere-technologies.com](https://www.cohere-technologies.com) | Ray Fischer | ray@cohere-technologies.com / [LinkedIn](https://www.linkedin.com/in/ray-fischer-4040a57b) |
+| **DeepSig** | AI/ML Wireless Communications & RAN | [deepsig.ai](https://www.deepsig.ai) | Jim Anderson | jim@deepsig.ai / [LinkedIn](https://www.linkedin.com/in/jimanderson) |
+| **EdgeQ** | Programmable 5G Base Station on a Chip | [edgeq.io](https://edgeq.io) | Vinay Ravuri | vinay@edgeq.io / [LinkedIn](https://www.linkedin.com/in/vinayravuri) |
+| **Tarana Wireless** | AI Fixed Wireless Access Broadband | [taranawireless.com](https://www.taranawireless.com) | Basil Alwan | basil@taranawireless.com / [LinkedIn](https://www.linkedin.com/in/basilalwan) |
+| **Aarna Networks** | Open Source 5G & Edge Orchestration | [aarnanetworks.com](https://www.aarnanetworks.com) | Amar Kapadia | amar@aarnanetworks.com / [LinkedIn](https://www.linkedin.com/in/amarkapadia) |
+| **Syntiant** | Ultra-Low-Power Edge AI Processors | [syntiant.com](https://www.syntiant.com) | Kurt Busch | kbusch@syntiant.com / [LinkedIn](https://www.linkedin.com/in/kurt-busch) |
+| **Mythic** | Analog AI Processors for Edge Inference | [mythic-ai.com](https://www.mythic-ai.com) | Dave Fick | dave@mythic-ai.com / [LinkedIn](https://www.linkedin.com/in/davefick) |
+| **Cerebras Systems** | Wafer-Scale Computing for Massive AI | [cerebras.net](https://www.cerebras.net) | Andrew Feldman | andrew@cerebras.net / [LinkedIn](https://www.linkedin.com/in/andrewfeldman) |
+| **Kajeet** | IoT Connectivity & Private 5G Enterprise | [kajeet.com](https://www.kajeet.com) | Ben Hecht | bhecht@kajeet.com / [LinkedIn](https://www.linkedin.com/in/benhecht) |
+| **Airspan Networks** | Open RAN 4G/5G Hardware & Software | [airspan.com](https://www.airspan.com) | Glenn Laxdal | glaxdal@airspan.com / [LinkedIn](https://www.linkedin.com/in/glennlaxdal) |
+| **JMA Wireless** | Software-Driven In-Building 5G Systems | [jmawireless.com](https://www.jmawireless.com) | John Mezzalingua | jmezzalingua@jmawireless.com / [LinkedIn](https://www.linkedin.com/in/johnmezzalingua) |
+| **Starry** | mmWave Fixed Wireless Broadband ISP | [starry.com](https://starry.com) | Alex Amaral | alex@starry.com / [LinkedIn](https://www.linkedin.com/in/alex-amaral) |
+| **Vero Networks** | High-Speed Broadband Network Automation | [veronetworks.com](https://www.veronetworks.com) | Gregg McVicar | gregg@veronetworks.com / [LinkedIn](https://www.linkedin.com/in/greggmcvicar) |
+| **Somos Inc.** | Telco Number Registry & Data Exchange | [somos.com](https://www.somos.com) | Gina Perini | gperini@somos.com / [LinkedIn](https://www.linkedin.com/in/ginaperini) |
+| **Itential** | Hybrid Cloud & Telecom Network Automation | [itential.com](https://www.itential.com) | Ian Bresnahan | ian.bresnahan@itential.com / [LinkedIn](https://www.linkedin.com/in/ianbresnahan) |
+| **Gluware** | Intent-Based Network Orchestration | [gluware.com](https://gluware.com) | Jeff Gray | jeff@gluware.com / [LinkedIn](https://www.linkedin.com/in/jeffgraygluware) |
+| **Parallel Wireless** | Cloud-Native Open RAN 5G Software | [parallelwireless.com](https://www.parallelwireless.com) | Steve Papa | spapa@parallelwireless.com / [LinkedIn](https://www.linkedin.com/in/stevepapa) |
+
