@@ -4202,3 +4202,32 @@ AI-driven Fintech, Neobanking, and Wealth Management companies are scaling autom
 | **Upgrade** | AI Credit & Neobank | [upgrade.com](https://www.upgrade.com) | Renaud Laplanche | renaud@upgrade.com / [LinkedIn](https://www.linkedin.com/in/renaudlaplanche) |
 | **Upstart** | AI Lending Platform | [upstart.com](https://www.upstart.com) | Dave Girouard | dave.girouard@upstart.com / [LinkedIn](https://www.linkedin.com/in/davegirouard) |
 
+
+
+## Sector 145: AI for HealthTech, Medical Diagnostics & BioTech Innovation
+
+AI-driven HealthTech, Medical Diagnostics, and BioTech companies are scaling precision medicine, automated pathology, and generative AI drug discovery across US healthcare markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Tempus AI** | AI & Precision Medicine | [tempus.com](https://www.tempus.com) | Eric Lefkofsky | eric@tempus.com / [LinkedIn](https://www.linkedin.com/in/ericlefkofsky) |
+| **Hippocratic AI** | Healthcare Generative AI | [hippocraticai.com](https://hippocraticai.com) | Munjal Shah | munjal@hippocraticai.com / [LinkedIn](https://www.linkedin.com/in/munjalshah747) |
+| **Viz.ai** | AI Acute Care Diagnostics | [viz.ai](https://www.viz.ai) | Dr. Chris Mansi | chris.mansi@viz.ai / [LinkedIn](https://www.linkedin.com/in/chrismansimd) |
+| **Suki AI** | AI Clinical Scribe | [suki.ai](https://suki.ai) | Punit Soni | punit@suki.ai / [LinkedIn](https://www.linkedin.com/in/punitsoni) |
+| **PathAI** | AI Digital Pathology | [pathai.com](https://www.pathai.com) | Dr. Andrew Beck | andy.beck@pathai.com / [LinkedIn](https://www.linkedin.com/in/andrew-beck-a77328aa) |
+| **Recursion Pharmaceuticals** | TechBio Drug Discovery | [recursion.com](https://www.recursion.com) | Najat Khan | najat.khan@recursion.com / [LinkedIn](https://www.linkedin.com/in/najatkhan) |
+| **Absci** | Generative AI Drug Creation | [absci.com](https://www.absci.com) | Sean McClain | sean@absci.com / [LinkedIn](https://www.linkedin.com/in/seanmcclain) |
+| **Freenome** | Early Cancer Detection AI | [freenome.com](https://www.freenome.com) | Mike Nolan | mike.nolan@freenome.com / [LinkedIn](https://www.linkedin.com/in/mikenolan) |
+| **Butterfly Network** | Handheld AI Ultrasound | [butterflynetwork.com](https://www.butterflynetwork.com) | Joseph DeVivo | jdevivo@butterflynetwork.com / [LinkedIn](https://www.linkedin.com/in/josephdevivo) |
+| **Digital Diagnostics** | Autonomous AI Diagnostics | [digitaldiagnostics.com](https://digitaldiagnostics.com) | Luke Miller | luke.miller@digitaldiagnostics.com / [LinkedIn](https://www.linkedin.com/in/lukemiller) |
+| **Proscia** | AI Pathology Software | [proscia.com](https://proscia.com) | David West | david.west@proscia.com / [LinkedIn](https://www.linkedin.com/in/davidwest) |
+| **Paige AI** | Cancer Diagnostics AI | [paige.ai](https://www.paige.ai) | Razik Yousfi | razik@paige.ai / [LinkedIn](https://www.linkedin.com/in/yousfi) |
+| **Schrodinger** | Computational Drug Discovery | [schrodinger.com](https://www.schrodinger.com) | Ramy Farid | ramy.farid@schrodinger.com / [LinkedIn](https://www.linkedin.com/in/ramyfarid) |
+| **Atomwise** | Deep Learning Drug Discovery | [atomwise.com](https://www.atomwise.com) | Abraham Heifets | abraham@atomwise.com / [LinkedIn](https://www.linkedin.com/in/abrahamheifets) |
+| **Enlitic** | Medical Imaging AI | [enlitic.com](https://www.enlitic.com) | Michael Sistenich | michael.sistenich@enlitic.com / [LinkedIn](https://www.linkedin.com/in/michaelsistenich) |
+| **Cleerly** | AI Heart Disease Evaluation | [cleerlyhealth.com](https://cleerlyhealth.com) | Dr. James Min | james.min@cleerlyhealth.com / [LinkedIn](https://www.linkedin.com/in/jamesmin) |
+| **HeartFlow** | Cardiovascular AI Software | [heartflow.com](https://www.heartflow.com) | John Farquhar | john.farquhar@heartflow.com / [LinkedIn](https://www.linkedin.com/in/johnfarquhar) |
+| **Overjet** | Dental AI Platform | [overjet.com](https://www.overjet.com) | Wardah Inam | wardah@overjet.com / [LinkedIn](https://www.linkedin.com/in/wardahinam) |
+| **Pearl** | Dental Radiology AI | [helppearl.com](https://www.helppearl.com) | Ophir Tanz | ophir@helppearl.com / [LinkedIn](https://www.linkedin.com/in/ophirtanz) |
+| **Qure.ai** | AI Radiology Imaging | [qure.ai](https://www.qure.ai) | Prashant Warier | prashant@qure.ai / [LinkedIn](https://www.linkedin.com/in/prashantwarier) |
+
