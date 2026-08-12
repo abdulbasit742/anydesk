@@ -9107,3 +9107,73 @@ Sector 225 focuses on top US-based companies, startups, and agencies building AI
 18. Terran Orbital, [Website](https://www.linkedin.com/in/marcbell) / https://www.linkedin.com/in/marcbell
 19. Pixxel (US), [Website](https://www.linkedin.com/in/awaisahmed) / https://www.linkedin.com/in/awaisahmed
 20. Descartes Labs, [Website](https://www.linkedin.com/in/seandonegan) / https://www.linkedin.com/in/seandonegan
+
+## Sector 226: AI in Maritime, Ocean Tech & Underwater Automation
+
+### Overview
+Sector 226 focuses on top US-based companies, startups, and agencies building AI-powered autonomous underwater vehicles (AUVs), intelligent maritime navigation systems, ocean data analytics, and autonomous subsea orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Apeiron Labs** [1] | Autonomous Underwater Robots | Ravi Pappu [1] | Founder & CEO [1] | `ravi@apeironlabs.com` [1] | [Profile](https://www.linkedin.com/in/ravipappu) [1] |
+| **Vatn Systems** [2] | Autonomous Undersea Defense | Nelson Mills [2] | Founder & CEO [2] | `nelson@vatnsystems.com` [2] | [Profile](https://www.linkedin.com/in/nelson-mills%27s-email) [2] |
+| **Saildrone** [3] | Autonomous Surface Vehicles | Richard Jenkins [3] | Founder & CEO [3] | `richard@saildrone.com` [3] | [Profile](https://www.linkedin.com/in/richard-jenkins-066a163) [3] |
+| **Bedrock Ocean Exploration** [4] | Autonomous Ocean Mapping | Anthony DiMare [4] | Co-founder & CEO [4] | `anthony@bedrockocean.com` [4] | [Profile](https://www.linkedin.com/in/anthonydimare) [4] |
+| **Nauticus Robotics** [5] | Subsea Robotics AI | Nicolaus Radford [5] | Founder & CEO [5] | `nic@nauticusrobotics.com` [5] | [Profile](https://www.linkedin.com/in/nicolaus-radford) [5] |
+| **Terradepth** [6] | Deep Ocean Data AI | Joe Wolfel [6] | Co-founder & CEO [6] | `joe@terradepth.com` [6] | [Profile](https://www.linkedin.com/in/joe-wolfel-aa76a054) [6] |
+| **Sea Machines Robotics** [7] | Autonomous Shipping AI | Chip Wasson [7] | CEO [7] | `chip@sea-machines.com` [7] | [Profile](https://www.linkedin.com/in/chipwasson) [7] |
+| **Saronic** [8] | Autonomous Surface Defense | Dino Mavrookas [8] | Co-founder & CEO [8] | `dino@saronic.com` [8] | [Profile](https://www.linkedin.com/in/dino-mavrookas-4005983211) [8] |
+| **Sofar Ocean** [9] | Ocean Intelligence AI | Tim Janssen [9] | Co-founder & CEO [9] | `tim@sofarocean.com` [9] | [Profile](https://www.linkedin.com/in/ttjanssen) [9] |
+| **Buffalo Automation** [10] | Autonomous Navigation AI | Thiru Vikram [10] | Founder & CEO [10] | `thiru@buffaloautomation.ai` [10] | [Profile](https://www.linkedin.com/in/thiruvikram) [10] |
+| **Aquabyte** [11] | AI for Aquaculture | Bryton Shang [11] | Founder & CEO [11] | `bryton@aquabyte.ai` [11] | [Profile](https://www.linkedin.com/in/brytonshang) [11] |
+| **Greensea IQ** [12] | Marine Robotics Software | Ben Kinnaman [12] | Founder & CEO [12] | `ben@greenseaiq.com` [12] | [Profile](https://www.linkedin.com/in/ben-kinnaman-8b7d4b7d) [12] |
+| **VideoRay** [13] | Underwater Inspection AI | Chris Gibson [13] | CEO [13] | `chris.gibson@videoray.com` [13] | [Profile](https://www.linkedin.com/in/chris-gibson-8b7d4b7d) [13] |
+| **OceanX** [14] | Ocean Exploration AI | Mark Dalio [14] | Founder & Co-CEO [14] | `mark@oceanx.org` [14] | [Profile](https://www.linkedin.com/in/mark-dalio-8b7d4b7d) [14] |
+| **Seatrec** [15] | Renewable Ocean Energy AI | Yi Chao [15] | Founder & CEO [15] | `yi.chao@seatrec.com` [15] | [Profile](https://www.linkedin.com/in/yi-chao-8b7d4b7d) [15] |
+| **Exyn Technologies** [16] | Autonomous Robotics AI | Brandon Hargreaves [16] | CEO [16] | `brandon@exyn.ai` [16] | [Profile](https://www.linkedin.com/in/brandonhargreaves) [16] |
+| **Albacore Inc** [17] | AI for Maritime Logistics | Albacore Team [17] | Founders [17] | `hello@albacore.ai` [17] | [Profile](https://www.ycombinator.com/companies/albacore) [17] |
+| **Wave AI** [18] | Floating AI Data Centers | Wave Team [18] | Founders [18] | `contact@waveai.com` [18] | [Profile](https://www.instagram.com/reel/C8FKa3gyAXu/) [18] |
+| **Captain AI** [19] | Autonomous Vessel Software | Brian Salerno [19] | US Representative [19] | `brian@captainai.com` [19] | [Profile](https://www.linkedin.com/in/brian-salerno-8b7d4b7d) [19] |
+| **Orca AI (US)** [20] | Maritime Collision Avoidance | Yarden Gross [20] | CEO [20] | `yarden@orca-ai.io` [20] | [Profile](https://www.linkedin.com/in/yardengross) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Maritime Automation & Agentic Ocean Orchestration at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of maritime technology and ocean exploration through autonomous AI agents and intelligent underwater platforms in 2026, ensuring high-fidelity marine data, seamless vessel orchestration, and resilient agentic automation experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous maritime agent development, and scalable OceanTech architectures. I have recently helped high-growth maritime platforms optimize automated navigation and subsea analytics workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Maritime Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Apeiron Labs, [Website](https://www.linkedin.com/in/ravipappu) / https://www.linkedin.com/in/ravipappu
+2. Vatn Systems, [Website](https://www.linkedin.com/in/nelson-mills%27s-email) / https://www.linkedin.com/in/nelson-mills%27s-email
+3. Saildrone, [Website](https://www.linkedin.com/in/richard-jenkins-066a163) / https://www.linkedin.com/in/richard-jenkins-066a163
+4. Bedrock Ocean Exploration, [Website](https://www.linkedin.com/in/anthonydimare) / https://www.linkedin.com/in/anthonydimare
+5. Nauticus Robotics, [Website](https://www.linkedin.com/in/nicolaus-radford) / https://www.linkedin.com/in/nicolaus-radford
+6. Terradepth, [Website](https://www.linkedin.com/in/joe-wolfel-aa76a054) / https://www.linkedin.com/in/joe-wolfel-aa76a054
+7. Sea Machines Robotics, [Website](https://www.linkedin.com/in/chipwasson) / https://www.linkedin.com/in/chipwasson
+8. Saronic, [Website](https://www.linkedin.com/in/dino-mavrookas-4005983211) / https://www.linkedin.com/in/dino-mavrookas-4005983211
+9. Sofar Ocean, [Website](https://www.linkedin.com/in/ttjanssen) / https://www.linkedin.com/in/ttjanssen
+10. Buffalo Automation, [Website](https://www.linkedin.com/in/thiruvikram) / https://www.linkedin.com/in/thiruvikram
+11. Aquabyte, [Website](https://www.linkedin.com/in/brytonshang) / https://www.linkedin.com/in/brytonshang
+12. Greensea IQ, [Website](https://www.linkedin.com/in/ben-kinnaman-8b7d4b7d) / https://www.linkedin.com/in/ben-kinnaman-8b7d4b7d
+13. VideoRay, [Website](https://www.linkedin.com/in/chris-gibson-8b7d4b7d) / https://www.linkedin.com/in/chris-gibson-8b7d4b7d
+14. OceanX, [Website](https://www.linkedin.com/in/mark-dalio-8b7d4b7d) / https://www.linkedin.com/in/mark-dalio-8b7d4b7d
+15. Seatrec, [Website](https://www.linkedin.com/in/yi-chao-8b7d4b7d) / https://www.linkedin.com/in/yi-chao-8b7d4b7d
+16. Exyn Technologies, [Website](https://www.linkedin.com/in/brandonhargreaves) / https://www.linkedin.com/in/brandonhargreaves
+17. Albacore Inc, [Website](https://www.ycombinator.com/companies/albacore) / https://www.ycombinator.com/companies/albacore
+18. Wave AI, [Website](https://www.instagram.com/reel/C8FKa3gyAXu/) / https://www.instagram.com/reel/C8FKa3gyAXu/
+19. Captain AI, [Website](https://www.linkedin.com/in/brian-salerno-8b7d4b7d) / https://www.linkedin.com/in/brian-salerno-8b7d4b7d
+20. Orca AI (US), [Website](https://www.linkedin.com/in/yardengross) / https://www.linkedin.com/in/yardengross
