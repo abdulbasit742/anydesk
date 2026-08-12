@@ -4347,3 +4347,32 @@ AI-driven EdTech, Personalized Learning, and Academic Research companies are sca
 | **GotIt! AI** | Conversational AI Tutoring | [gotit.ai](https://www.gotit.ai) | Hung Tran | hung@gotit.ai / [LinkedIn](https://www.linkedin.com/in/hungtran) |
 | **Tome** | Generative Presentation AI | [tome.app](https://tome.app) | Keith Peiris | keith@tome.app / [LinkedIn](https://www.linkedin.com/in/keithpeiris) |
 
+
+
+## Sector 150: AI for Energy, Sustainability & Climate Tech Innovation
+
+AI-driven Energy, Sustainability, and Climate Tech companies are scaling geothermal energy, grid optimization, carbon tracking, and automated asset management across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Fervo Energy** | AI Geothermal Energy Solutions | [fervoenergy.com](https://www.fervoenergy.com) | Tim Latimer | tim@fervoenergy.com / [LinkedIn](https://www.linkedin.com/in/timlatimer) |
+| **Base Power** | Home Battery & Grid Resiliency | [basepower.com](https://www.basepower.com) | Zach Dell | zach@basepower.com / [LinkedIn](https://www.linkedin.com/in/zach-dell) |
+| **Clarity AI** | AI Sustainability & ESG Analytics | [clarity.ai](https://clarity.ai) | Rebeca Minguela | rebeca@clarity.ai / [LinkedIn](https://www.linkedin.com/in/rebecaminguela) |
+| **Watershed** | Enterprise Carbon & Climate Platform | [watershed.com](https://watershed.com) | Christian Anderson | christian@watershed.com / [LinkedIn](https://www.linkedin.com/in/christian-anderson) |
+| **SparkCognition** | Industrial AI for Energy Reliability | [sparkcognition.com](https://www.sparkcognition.com) | Amir Hashmi | amir@sparkcognition.com / [LinkedIn](https://ca.linkedin.com/in/amirhashmi1) |
+| **Crusoe Energy** | Clean Compute & Flared Gas AI | [crusoeenergy.com](https://crusoeenergy.com) | Chase Lochmiller | chase@crusoeenergy.com / [LinkedIn](https://www.linkedin.com/in/chaselochmiller) |
+| **Aurora Solar** | AI Solar Design & Sales Software | [aurorasolar.com](https://aurorasolar.com) | Samuel Adeyemo | samuel@aurorasolar.com / [LinkedIn](https://www.linkedin.com/in/samueladeyemo) |
+| **Amperon** | AI Energy Forecasting & Utilities | [amperon.co](https://www.amperon.co) | Sean Kelly | sean@amperon.co / [LinkedIn](https://www.linkedin.com/in/seankellyamperon) |
+| **Pachama** | AI Forest Carbon Verification | [pachama.com](https://pachama.com) | Diego Saez Gil | diego@pachama.com / [LinkedIn](https://www.linkedin.com/in/dsaezgil) |
+| **Carbon Direct** | Carbon Management & Removal Science | [carbon-direct.com](https://www.carbon-direct.com) | Jonathan Goldberg | jgoldberg@carbon-direct.com / [LinkedIn](https://www.linkedin.com/in/jonathangoldberg) |
+| **AiDash** | AI Satellite Utility & Grid Ops | [aidash.com](https://www.aidash.com) | Abhishek Vinod Singh | abhishek@aidash.com / [LinkedIn](https://www.linkedin.com/in/abhishekvinodsingh) |
+| **Overstory** | AI Vegetation & Wildfire Prevention | [overstory.ai](https://overstory.ai) | Indra den Bakker | indra@overstory.ai / [LinkedIn](https://www.linkedin.com/in/indradenbakker) |
+| **BrainBox AI** | Autonomous AI Building HVAC | [brainboxai.com](https://brainboxai.com) | Sam Ramadori | sam@brainboxai.com / [LinkedIn](https://www.linkedin.com/in/samramadori) |
+| **Gridmatic** | AI Power Marketing & Storage | [gridmatic.com](https://gridmatic.com) | Matt Wytock | matt@gridmatic.com / [LinkedIn](https://www.linkedin.com/in/mattwytock) |
+| **Fero Labs** | Industrial ML for Emission Reduction | [ferolabs.com](https://ferolabs.com) | Berk Birand | berk@ferolabs.com / [LinkedIn](https://www.linkedin.com/in/berkbirand) |
+| **Stem** | AI Smart Grid Energy Storage | [stem.com](https://www.stem.com) | John Carrington | jcarrington@stem.com / [LinkedIn](https://www.linkedin.com/in/johncarrington) |
+| **75F** | AI Building Automation & HVAC | [75f.io](https://www.75f.io) | Deepinder Singh | deepinder@75f.io / [LinkedIn](https://www.linkedin.com/in/deepindersingh) |
+| **LevelTen Energy** | AI Renewable PPA Marketplace | [leveltenenergy.com](https://www.leveltenenergy.com) | Bryce Smith | bryce@leveltenenergy.com / [LinkedIn](https://www.linkedin.com/in/brycesmith) |
+| **Dexter Energy** | AI Renewable Asset Forecasting | [dexterenergy.ai](https://dexterenergy.ai) | Luuk Veelenturf | luuk@dexterenergy.ai / [LinkedIn](https://www.linkedin.com/in/luukveelenturf) |
+| **Iron Ox** | AI & Robotics Sustainable Farming | [ironox.com](https://ironox.com) | Brandon Alexander | brandon@ironox.com / [LinkedIn](https://www.linkedin.com/in/brandonjalexander) |
+
