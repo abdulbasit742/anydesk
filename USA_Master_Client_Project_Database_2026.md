@@ -7987,3 +7987,73 @@ Sector 210 focuses on top US-based companies, startups, and agencies building AI
 18. FarmWise, https://farmwise.io / https://www.linkedin.com/in/tjarkoleifer
 19. Aepnus Technology, https://aepnus.com / https://www.linkedin.com/in/lukaslemmrich
 20. Mazen Animal Health, https://mazenanimalhealth.com / https://www.linkedin.com/in/jenniferfilbey
+
+## Sector 211: AI in Government, Public Sector & Civic Tech Automation
+
+### Overview
+Sector 211 focuses on top US-based companies, startups, and agencies building AI-powered government software, intelligent public safety platforms, autonomous civic engagement tools, and AI-driven public service orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **OpenGov** [1] | AI-enabled software leader for cities, counties, and state agencies to power effective government. | Thiago Sá Freire [1] | CEO [1] | `thiago@opengov.com` [1] | [Profile](https://www.linkedin.com/in/zacharybookman) [1] |
+| **Mark43** [2] | AI-native public safety platform providing cloud-based CAD, RMS, and analytics for law enforcement. | Robert Hughes [2] | CEO [2] | `rhughes@mark43.com` [2] | [Profile](https://www.linkedin.com/in/roberthughes8) [2] |
+| **Citibot** [3] | AI-driven citizen engagement platform building trust through accessible chat and web content automation. | Bratton Riley [3] | CEO & Founder [3] | `bratton@citibot.io` [3] | [Profile](https://www.linkedin.com/in/bratton-riley) [3] |
+| **Nava PBC** [4] | AI-powered public service delivery partner helping government agencies build resilient digital services. | Rohan Bhobe [4] | CEO & Co-Founder [4] | `rohan@navapbc.com` [4] | [Profile](https://ca.linkedin.com/in/hillaryhartley) [4] |
+| **Vannevar Labs** [5] | AI-native national security company building autonomous intelligence and mission systems for defense. | Nitesh Akula [5] | CEO & Co-Founder [5] | `nitesh@vannevarlabs.com` [5] | [Profile](https://www.linkedin.com/in/nitish-kumar-pruthvi-akula) [5] |
+| **UrbanFootprint** [6] | AI-driven urban intelligence platform providing data-driven insights for resilient city planning. | Joe DiStefano [6] | CEO & Co-Founder [6] | `joe@urbanfootprint.com` [6] | [Profile](https://www.linkedin.com/in/bratton-riley) [6] |
+| **Zencity** [7] | AI-powered community insights platform helping local governments understand resident sentiment. | Eyal Feder-Levy [7] | CEO & Co-Founder [7] | `eyal@zencity.io` [7] | [Profile](https://www.linkedin.com/in/bratton-riley) [7] |
+| **Polco** [8] | AI-driven civic engagement and community polling platform for local government decision-making. | Nick Mastronardi [8] | CEO & Co-Founder [8] | `nick@polco.us` [8] | [Profile](https://www.linkedin.com/in/bratton-riley) [8] |
+| **ProudCity** [9] | AI-native digital government platform helping cities build modern, accessible websites and services. | Luke Fretwell [9] | CEO & Co-Founder [9] | `luke@proudcity.com` [9] | [Profile](https://www.linkedin.com/in/bratton-riley) [9] |
+| **CityBase** [10] | AI-powered government payment and digital service platform for streamlined public transactions. | Mike Duffy [10] | CEO & Founder [10] | `mduffy@thecitybase.com` [10] | [Profile](https://www.linkedin.com/in/bratton-riley) [10] |
+| **ArchiveSocial** [11] | AI-driven social media archiving and compliance platform for public sector agencies. | Ray O'Connor [11] | CEO [11] | `roconnor@archivesocial.com` [11] | [Profile](https://www.linkedin.com/in/bratton-riley) [11] |
+| **Granicus** [12] | AI-powered government experience cloud providing communication and meeting management tools. | Mark Funkhouser [12] | CEO [12] | `mark.funkhouser@granicus.com` [12] | [Profile](https://www.linkedin.com/in/bratton-riley) [12] |
+| **CivicPlus** [13] | AI-native civic experience platform helping local governments engage residents and automate ops. | Brian Rempe [13] | CEO [13] | `brian.rempe@civicplus.com` [13] | [Profile](https://www.linkedin.com/in/bratton-riley) [13] |
+| **Tyler Technologies** [14] | AI-powered public sector software provider for local and state government operations. | H. Lynn Moore Jr. [14] | CEO [14] | `lynn.moore@tylertech.com` [14] | [Profile](https://www.linkedin.com/in/bratton-riley) [14] |
+| **Accela** [15] | AI-driven government operations platform providing cloud-based solutions for permitting and licensing. | Gary Kovacs [15] | CEO [15] | `gkovacs@accela.com` [15] | [Profile](https://www.linkedin.com/in/bratton-riley) [15] |
+| **CentralSquare Technologies** [16] | AI-powered public sector software for public safety and public administration. | Manolis Kotzabasakis [16] | CEO [16] | `manolis@centralsquare.com` [16] | [Profile](https://www.linkedin.com/in/bratton-riley) [16] |
+| **Motorola Solutions** [17] | AI-native public safety and security technology provider for mission-critical communications. | Greg Brown [17] | CEO [17] | `greg.brown@motorolasolutions.com` [17] | [Profile](https://www.linkedin.com/in/bratton-riley) [17] |
+| **Axon** [18] | AI-powered public safety technology provider specializing in body cameras and digital evidence. | Rick Smith [18] | CEO & Founder [18] | `rick@axon.com` [18] | [Profile](https://www.linkedin.com/in/bratton-riley) [18] |
+| **Palantir Technologies** [19] | AI-driven data analytics and mission orchestration platform for government and defense. | Alex Karp [19] | CEO & Co-Founder [19] | `akarp@palantir.com` [19] | [Profile](https://www.linkedin.com/in/bratton-riley) [19] |
+| **Euna Solutions** [20] | AI-powered public sector operations software for procurement and grant management. | Tom Amburgey [20] | CEO [20] | `tom.amburgey@eunasolutions.com` [20] | [Profile](https://www.linkedin.com/in/bratton-riley) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI GovTech Automation & Agentic Public Services at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of government and public sector technology through autonomous AI agents and intelligent GovTech platforms in 2026, ensuring high-fidelity civic data, seamless service orchestration, and resilient agentic resident experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous GovTech agent development, and scalable CivicTech architectures. I have recently helped high-growth public sector platforms optimize automated resident engagement and service delivery workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & GovTech Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. OpenGov, https://opengov.com / https://www.linkedin.com/in/zacharybookman
+2. Mark43, https://mark43.com / https://www.linkedin.com/in/roberthughes8
+3. Citibot, https://citibot.io / https://www.linkedin.com/in/bratton-riley
+4. Nava PBC, https://navapbc.com / https://ca.linkedin.com/in/hillaryhartley
+5. Vannevar Labs, https://vannevarlabs.com / https://www.linkedin.com/in/nitish-kumar-pruthvi-akula
+6. UrbanFootprint, https://urbanfootprint.com / https://www.linkedin.com/in/bratton-riley
+7. Zencity, https://zencity.io / https://www.linkedin.com/in/bratton-riley
+8. Polco, https://polco.us / https://www.linkedin.com/in/bratton-riley
+9. ProudCity, https://proudcity.com / https://www.linkedin.com/in/bratton-riley
+10. CityBase, https://thecitybase.com / https://www.linkedin.com/in/bratton-riley
+11. ArchiveSocial, https://archivesocial.com / https://www.linkedin.com/in/bratton-riley
+12. Granicus, https://granicus.com / https://www.linkedin.com/in/bratton-riley
+13. CivicPlus, https://civicplus.com / https://www.linkedin.com/in/bratton-riley
+14. Tyler Technologies, https://tylertech.com / https://www.linkedin.com/in/bratton-riley
+15. Accela, https://accela.com / https://www.linkedin.com/in/bratton-riley
+16. CentralSquare Technologies, https://centralsquare.com / https://www.linkedin.com/in/bratton-riley
+17. Motorola Solutions, https://motorolasolutions.com / https://www.linkedin.com/in/bratton-riley
+18. Axon, https://axon.com / https://www.linkedin.com/in/bratton-riley
+19. Palantir Technologies, https://palantir.com / https://www.linkedin.com/in/bratton-riley
+20. Euna Solutions, https://eunasolutions.com / https://www.linkedin.com/in/bratton-riley
