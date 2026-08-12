@@ -4405,3 +4405,32 @@ AI-driven Retail, E-commerce, and Customer Experience Automation companies are s
 | **Braze** | Real-Time Customer Engagement | [braze.com](https://www.braze.com) | Bill Magnuson | bill@braze.com / [LinkedIn](https://www.linkedin.com/in/billmagnuson) |
 | **Yotpo** | E-Commerce Reviews & Loyalty AI | [yotpo.com](https://www.yotpo.com) | Tomer Tagrin | tomer@yotpo.com / [LinkedIn](https://www.linkedin.com/in/tomertagrin) |
 
+
+
+## Sector 152: AI for Manufacturing, Robotics & Industrial Automation
+
+AI-driven Manufacturing, Robotics, and Industrial Automation companies are scaling physical AI, humanoid and mobile robots, and intelligent factory floors across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Figure AI** | General-Purpose Humanoid Robotics | [figure.ai](https://www.figure.ai) | Brett Adcock | brett@figure.ai / [LinkedIn](https://www.linkedin.com/in/brettadcock) |
+| **Boston Dynamics** | Advanced Mobile & Humanoid Robots | [bostondynamics.com](https://www.bostondynamics.com) | Amanda McMaster | amanda.mcmaster@bostondynamics.com / [LinkedIn](https://www.linkedin.com/in/amanda-mcmaster-8227168) |
+| **Agility Robotics** | Bipedal Humanoid Robots (Digit) | [agilityrobotics.com](https://www.agilityrobotics.com) | Peggy Johnson | peggy@agilityrobotics.com / [LinkedIn](https://www.linkedin.com/in/peggyljohnson) |
+| **Cobot** | Physical AI & Robotics Software | [cobot.ai](https://www.cobot.ai) | Brad Porter | brad@cobot.ai / [LinkedIn](https://www.linkedin.com/in/brad-porter-cobot) |
+| **Intrinsic** | Robotics Software & AI (Alphabet) | [intrinsic.ai](https://www.intrinsic.ai) | Wendy Tan White | wendytw@intrinsic.ai / [LinkedIn](https://www.linkedin.com/in/wendytanwhite) |
+| **Symbotic** | AI Supply Chain & Warehouse Automation | [symbotic.com](https://www.symbotic.com) | Rick Cohen | rick.cohen@symbotic.com / [LinkedIn](https://www.linkedin.com/in/rick-cohen-symbotic) |
+| **Teradyne** | Industrial Automation & Cobots | [teradyne.com](https://www.teradyne.com) | Greg Smith | greg.smith@teradyne.com / [LinkedIn](https://www.linkedin.com/in/greg-smith-teradyne) |
+| **Bright Machines** | Software-Defined Manufacturing | [brightmachines.com](https://www.brightmachines.com) | Lior Susan | lior@brightmachines.com / [LinkedIn](https://www.linkedin.com/in/liorsusan) |
+| **Locus Robotics** | Autonomous Mobile Robots (AMRs) | [locusrobotics.com](https://www.locusrobotics.com) | Rick Faulk | rfaulk@locusrobotics.com / [LinkedIn](https://www.linkedin.com/in/rick-faulk-locus) |
+| **Berkshire Grey** | AI Robotic Fulfillment Automation | [berkshiregrey.com](https://www.berkshiregrey.com) | Tom Wagner | tom.wagner@berkshiregrey.com / [LinkedIn](https://www.linkedin.com/in/tomwagnerbg) |
+| **RightHand Robotics** | AI Robotic Piece-Picking Systems | [righthandrobotics.com](https://www.righthandrobotics.com) | Brian Stearns | brian@righthandrobotics.com / [LinkedIn](https://www.linkedin.com/in/brianstearns) |
+| **Ambi Robotics** | AI Robotic Parcel Sorting OS | [ambirobotics.com](https://www.ambirobotics.com) | Jim Liefer | jim@ambirobotics.com / [LinkedIn](https://www.linkedin.com/in/jimliefer) |
+| **UiPath** | Enterprise Automation & AI Agents | [uipath.com](https://www.uipath.com) | Daniel Dines | daniel.dines@uipath.com / [LinkedIn](https://www.linkedin.com/in/danieldines) |
+| **DataRobot** | Predictive Maintenance & QC Analytics | [datarobot.com](https://www.datarobot.com) | Debanjan Saha | debanjan@datarobot.com / [LinkedIn](https://www.linkedin.com/in/debanjansaha) |
+| **Robust AI** | Industrial Cognitive Robotics Engine | [robust.ai](https://www.robust.ai) | Anthony Jules | anthony@robust.ai / [LinkedIn](https://www.linkedin.com/in/anthonyjules) |
+| **Apptronik** | General-Purpose Humanoid (Apollo) | [apptronik.com](https://apptronik.com) | Jeff Cardenas | jeff@apptronik.com / [LinkedIn](https://www.linkedin.com/in/jeffcardenas) |
+| **Sanctuary AI** | Humanoid Intelligence for Work | [sanctuary.ai](https://sanctuary.ai) | Geordie Rose | geordie@sanctuary.ai / [LinkedIn](https://www.linkedin.com/in/geordierose) |
+| **Covariant** | Universal AI Robotics Brain | [covariant.ai](https://covariant.ai) | Peter Chen | peter@covariant.ai / [LinkedIn](https://www.linkedin.com/in/peterchenberkeley) |
+| **Rapid Robotics** | Robotic-as-a-Service (RaaS) Machine Tending | [rapidrobotics.com](https://www.rapidrobotics.com) | Jordan Kretchmer | jordan@rapidrobotics.com / [LinkedIn](https://www.linkedin.com/in/jordankretchmer) |
+| **Dexterity** | Full-Stack Robotic Dexterity Software | [dexterity.ai](https://www.dexterity.ai) | Samir Menon | samir@dexterity.ai / [LinkedIn](https://www.linkedin.com/in/samirmenon) |
+
