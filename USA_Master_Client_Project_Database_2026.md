@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 53 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, FemTech & Women's Health Innovation, ClimateTech & Carbon Management Innovation, Edge AI & Industrial IoT Innovation, Neurotech & Brain-Computer Interfaces Innovation, Longevity, Anti-Aging & Regenerative Medicine Innovation, Autonomous Systems & Unmanned Aerial Vehicles Innovation, OceanTech & Blue Economy Innovation, and Advanced Materials & Nanotechnology Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 54 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, FemTech & Women's Health Innovation, ClimateTech & Carbon Management Innovation, Edge AI & Industrial IoT Innovation, Neurotech & Brain-Computer Interfaces Innovation, Longevity, Anti-Aging & Regenerative Medicine Innovation, Autonomous Systems & Unmanned Aerial Vehicles Innovation, OceanTech & Blue Economy Innovation, Advanced Materials & Nanotechnology Innovation, and Quantum Computing & Quantum Sensing Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -855,6 +855,23 @@ Advanced Materials and Nanotechnology companies are manipulating matter at the a
 | **Sila Nanotechnologies** | Silicon Anode Technology | [silanano.com](https://www.silanano.com) | Gene Berdichevsky | gene@silanano.com / [LinkedIn](https://www.linkedin.com/in/berdichevsky) |
 | **Factorial Energy** | Solid-State Battery Materials | [factorialenergy.com](https://www.factorialenergy.com) | Siyu Huang | siyu.huang@factorialenergy.com / [LinkedIn](https://www.linkedin.com/in/siyuhuang) |
 | **Simplifyber** | Sustainable Textile Polymers | [simplifyber.com](https://www.simplifyber.com) | Maria Intscher-Owrang | maria@simplifyber.com / [LinkedIn](https://www.linkedin.com/in/mariaintscher) |
+
+---
+
+## Sector 54: Quantum Computing & Quantum Sensing Innovation
+
+Quantum Computing and Quantum Sensing companies are focused on superconducting qubits, trapped-ion systems, and high-precision sensing for navigation and imaging. In 2026, the sector is transitioning from research to commercial utility, creating high demand for remote quantum software engineers, physicist-programmers, and full-stack developers for quantum cloud platforms.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **IonQ** | Trapped-Ion Quantum Computing | [ionq.com](https://ionq.com) | Peter Chapman | pchapman@ionq.com / [LinkedIn](https://www.linkedin.com/in/peterhchapman) |
+| **Rigetti Computing** | Superconducting Quantum Processors | [rigetti.com](https://www.rigetti.com) | Subodh Kulkarni | kulkarni@rigetti.com / [LinkedIn](https://www.linkedin.com/in/subodh-kulkarni-21001611) |
+| **D-Wave Quantum** | Quantum Annealing & Gate Systems | [dwave2.com](https://www.dwave2.com) | Alan Baratz | abaratz@dwavesys.com / [LinkedIn](https://www.linkedin.com/in/alan-baratz) |
+| **Quantinuum** | High-Fidelity Quantum Computing | [quantinuum.com](https://www.quantinuum.com) | Rajeeb Hazra | raj.hazra@quantinuum.com / [LinkedIn](https://www.linkedin.com/in/rhazra) |
+| **PsiQuantum** | Photonic Quantum Computing | [psiquantum.com](https://www.psiquantum.com) | Victor Peng | vpeng@psiquantum.com / [LinkedIn](https://www.linkedin.com/company/psiquantum) |
+| **Q-CTRL** | Quantum Control & Sensing | [q-ctrl.com](https://q-ctrl.com) | Michael Biercuk | m.biercuk@q-ctrl.com / [LinkedIn](https://www.linkedin.com/in/mjbiercuk) |
+| **Qunnect** | Quantum Networking Infrastructure | [qunnect.inc](https://www.qunnect.inc) | Noel Goddard | noel@qunnect.inc / [LinkedIn](https://www.linkedin.com/in/noel-goddard-b973225) |
+| **Infleqtion** | Quantum Sensing & Computing | [infleqtion.com](https://www.infleqtion.com) | Matthew Kinsella | matt@infleqtion.com / [LinkedIn](https://www.linkedin.com/in/matthew-kinsella) |
 
 ---
 
