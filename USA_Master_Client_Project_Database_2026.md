@@ -2,13 +2,13 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 18 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, and RetailTech/Omnichannel Commerce) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 19 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, and Travel & Hospitality Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
 ## Executive Summary
 
-Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across eighteen high-demand sectors in August 2026. 
+Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across nineteen high-demand sectors in August 2026. 
 
 ---
 
@@ -263,6 +263,20 @@ RetailTech platforms unify physical retail stores with digital eCommerce website
 | **Instacart** | Grocery Delivery & Retail Media Network | [instacart.com](https://www.instacart.com) | Fidji Simo | fidji@instacart.com / [LinkedIn](https://www.linkedin.com/in/apoorvamehta) |
 | **Shopify** | Global Commerce & POS Infrastructure | [shopify.com](https://www.shopify.com) | Harley Finkelstein | harley@shopify.com / [LinkedIn](https://www.linkedin.com/in/harleyf) |
 | **Square (Block)** | Omnichannel Payments & POS Hardware | [squareup.com](https://www.squareup.com) | Jack Dorsey | jack@block.xyz / [LinkedIn](https://www.linkedin.com/in/jackdorsey) |
+
+---
+
+## Sector 19: Travel & Hospitality Tech
+
+Travel and hospitality technology platforms drive global tourism, booking engines, predictive pricing, and digital concierge services, creating robust remote project opportunities for full-stack and API engineers.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Airbnb** | Global Lodging & Travel Marketplace | [airbnb.com](https://www.airbnb.com) | Brian Chesky | chesky@airbnb.com / [LinkedIn](https://www.linkedin.com/in/brianchesky) |
+| **Hopper** | Predictive Travel Booking & FinTech Apps | [hopper.com](https://www.hopper.com) | Frederic Lalonde | flalonde@hopper.com / [LinkedIn](https://ca.linkedin.com/in/fredlalonde) |
+| **Tripadvisor** | Travel Guidance & Booking Platform | [tripadvisor.com](https://www.tripadvisor.com) | Matt Goldberg | mgoldberg@tripadvisor.com / [LinkedIn](https://www.linkedin.com/in/mattgoldberg01) |
+| **Expedia Group** | Global Travel Platform & Vrbo | [expediagroup.com](https://www.expediagroup.com) | Ariane Gorin | [LinkedIn](https://www.linkedin.com/in/arianegorin) |
+| **GetYourGuide (US)** | Tours & Activities Marketplace | [getyourguide.com](https://www.getyourguide.com) | Tao Tao | [LinkedIn](https://www.linkedin.com/in/taotaogyg) |
 
 ---
 
