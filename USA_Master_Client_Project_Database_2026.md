@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 49 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, FemTech & Women's Health Innovation, ClimateTech & Carbon Management Innovation, Edge AI & Industrial IoT Innovation, and Neurotech & Brain-Computer Interfaces Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 50 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, FemTech & Women's Health Innovation, ClimateTech & Carbon Management Innovation, Edge AI & Industrial IoT Innovation, Neurotech & Brain-Computer Interfaces Innovation, and Longevity, Anti-Aging & Regenerative Medicine Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -786,6 +786,23 @@ Neurotech and Brain-Computer Interface (BCI) companies are revolutionizing the w
 | **Science Corp** | Biohybrid Neural Interfaces & Vision | [science.xyz](https://science.xyz) | Max Hodak | max@science.xyz / [LinkedIn](https://www.linkedin.com/in/maxhodak) |
 | **Blackrock Neurotech** | Clinical BCI & Neural Engineering | [blackrockneurotech.com](https://blackrockneurotech.com) | Marcus Gerhardt | mgerhardt@blackrockneuro.com / [LinkedIn](https://www.linkedin.com/in/marcus-gerhardt-1583524) |
 | **Forest Neurotech** | Ultrasonic Brain-Computer Interfaces | [forestneurotech.org](https://forestneurotech.org) | Sumner Norman | sumner@forestneurotech.org / [LinkedIn](https://www.linkedin.com/in/sumnernorman) |
+
+---
+
+## Sector 50: Longevity, Anti-Aging & Regenerative Medicine Innovation
+
+Longevity and Regenerative Medicine companies are focused on extending human healthspan through cellular reprogramming, health-tech diagnostics, and advanced therapeutics. In 2026, the sector is experiencing a massive surge in funding and public interest, creating high demand for remote bioinformatics engineers, health-tech developers, and AI/ML researchers.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Altos Labs** | Cellular Reprogramming & Healthspan | [altoslabs.com](https://www.altoslabs.com) | Hal Barron | hbarron@altoslabs.com / [LinkedIn](https://www.linkedin.com/in/hal-barron-aa99045) |
+| **NewLimit** | Epigenetic Reprogramming & AI | [newlimit.com](https://www.newlimit.com) | Blake Byers | blake@newlimit.com / [LinkedIn](https://www.linkedin.com/in/blbyers) |
+| **Retro Biosciences** | Longevity Therapeutics & T-Cells | [retro.bio](https://www.retro.bio) | Joe Betts-LaCroix | joe@retro.bio / [LinkedIn](https://www.linkedin.com/in/bettslacroix) |
+| **Life Biosciences** | Age-Related Disease Therapeutics | [lifebiosciences.com](https://www.lifebiosciences.com) | Jerry McLaughlin | jmclaughlin@lifebiosciences.com / [LinkedIn](https://www.linkedin.com/in/jerry-mclaughlin-94bb23) |
+| **Loyal** | Longevity Drugs for Dogs & Humans | [loyalfordogs.com](https://loyalfordogs.com) | Celine Halioua | celine@loyalfordogs.com / [LinkedIn](https://www.linkedin.com/in/celinehh) |
+| **Fountain Life** | Preventative Longevity Diagnostics | [fountainlife.com](https://www.fountainlife.com) | Bill Kapp | bill.kapp@fountainlife.com / [LinkedIn](https://www.linkedin.com/in/william-kapp-595112257) |
+| **Neko Health** | AI-Powered Whole-Body Scanning | [nekohealth.com](https://www.nekohealth.com) | Hjalmar Nilsonne | hjalmar@nekohealth.com / [LinkedIn](https://se.linkedin.com/in/nilsonne) |
+| **Function Health** | Data-Driven Preventative Health | [functionhealth.com](https://www.functionhealth.com) | Jonathan Bush | jonathan@functionhealth.com / [LinkedIn](https://www.linkedin.com/in/jonathanbushjr) |
 
 ---
 
