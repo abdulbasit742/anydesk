@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 19 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, and Travel & Hospitality Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 20 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, and GovTech & Public Sector Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -277,6 +277,23 @@ Travel and hospitality technology platforms drive global tourism, booking engine
 | **Tripadvisor** | Travel Guidance & Booking Platform | [tripadvisor.com](https://www.tripadvisor.com) | Matt Goldberg | mgoldberg@tripadvisor.com / [LinkedIn](https://www.linkedin.com/in/mattgoldberg01) |
 | **Expedia Group** | Global Travel Platform & Vrbo | [expediagroup.com](https://www.expediagroup.com) | Ariane Gorin | [LinkedIn](https://www.linkedin.com/in/arianegorin) |
 | **GetYourGuide (US)** | Tours & Activities Marketplace | [getyourguide.com](https://www.getyourguide.com) | Tao Tao | [LinkedIn](https://www.linkedin.com/in/taotaogyg) |
+
+---
+
+## Sector 20: GovTech & Public Sector Innovation
+
+GovTech and Public Sector Innovation companies modernize government operations, public safety, and civic services through cloud software, AI, and data analytics. These organizations often hire remote software engineers, designers, and consultants for mission-critical projects.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **OpenGov** | Cloud Software for Local Gov | [opengov.com](https://opengov.com) | Zac Bookman | zac@opengov.com / [LinkedIn](https://www.linkedin.com/in/zacharybookman) |
+| **Mark43** | Public Safety & First Responder Tech | [mark43.com](https://mark43.com) | Scott Crouch | scott@mark43.com / [LinkedIn](https://www.linkedin.com/in/scottecrouch) |
+| **Nava PBC** | Digital Government Services | [navapbc.com](https://navapbc.com) | Rohan Bhobe | rohan@navapbc.com / [LinkedIn](https://www.linkedin.com/in/rbhobe) |
+| **Ad Hoc** | Government Digital Experience | [adhoc.team](https://adhoc.team) | Greg Gershman | greg@adhoc.team / [LinkedIn](https://www.linkedin.com/in/greggershman) |
+| **Coforma** | Civic Design & Systems | [coforma.io](https://coforma.io) | Ashleigh Axios | ashleigh@coforma.io / [LinkedIn](https://www.linkedin.com/in/ashleighaxios) |
+| **Biobot Analytics** | Wastewater Epidemiology & Data | [biobot.io](https://biobot.io) | Mariana Matus | mariana@biobot.io / [LinkedIn](https://www.linkedin.com/in/marianamatus) |
+| **Vannevar Labs** | Defense & Intelligence Software | [vannevarlabs.com](https://vannevarlabs.com) | Brett Granberg | brett@vannevarlabs.com / [LinkedIn](https://www.linkedin.com/in/brettgranberg) |
+| **Promise** | Gov Payment & Relief Platforms | [promise-pay.com](https://promise-pay.com) | Phaedra Ellis-Lamkins | phaedra@promise-pay.com / [LinkedIn](https://www.linkedin.com/in/phaedraellislamkins) |
 
 ---
 
