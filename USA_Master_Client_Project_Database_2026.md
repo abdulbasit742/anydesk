@@ -4231,3 +4231,32 @@ AI-driven HealthTech, Medical Diagnostics, and BioTech companies are scaling pre
 | **Pearl** | Dental Radiology AI | [helppearl.com](https://www.helppearl.com) | Ophir Tanz | ophir@helppearl.com / [LinkedIn](https://www.linkedin.com/in/ophirtanz) |
 | **Qure.ai** | AI Radiology Imaging | [qure.ai](https://www.qure.ai) | Prashant Warier | prashant@qure.ai / [LinkedIn](https://www.linkedin.com/in/prashantwarier) |
 
+
+
+## Sector 146: AI for Cybersecurity, Threat Intelligence & Privacy Tech
+
+AI-driven Cybersecurity, Threat Intelligence, and Privacy Technology companies are scaling zero-trust architecture, automated threat detection, and data governance across US security markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Zscaler** | Cloud Security & Zero Trust | [zscaler.com](https://www.zscaler.com) | Jay Chaudhry | jchaudhry@zscaler.com / [LinkedIn](https://www.linkedin.com/in/jaychaudhry) |
+| **CrowdStrike** | Endpoint Protection & AI | [crowdstrike.com](https://www.crowdstrike.com) | George Kurtz | george.kurtz@crowdstrike.com / [LinkedIn](https://www.linkedin.com/in/georgekurtz) |
+| **Cloudflare** | Web Infrastructure & Bot Defense | [cloudflare.com](https://www.cloudflare.com) | Matthew Prince | mprince@cloudflare.com / [LinkedIn](https://www.linkedin.com/in/mprince) |
+| **Check Point Software** | Enterprise AI Threat Prevention | [checkpoint.com](https://www.checkpoint.com) | Nadav Zafrir | nadavz@checkpoint.com / [LinkedIn](https://www.linkedin.com/in/nadav-zafrir) |
+| **Darktrace** | Autonomous Cyber Defense AI | [darktrace.com](https://www.darktrace.com) | Jill Popelka | jill.popelka@darktrace.com / [LinkedIn](https://www.linkedin.com/in/jillpopelka) |
+| **Abnormal Security** | Behavioral AI Email Security | [abnormalsecurity.com](https://abnormalsecurity.com) | Evan Reiser | evan@abnormalsecurity.com / [LinkedIn](https://www.linkedin.com/in/evanreiser) |
+| **Vanta** | Automated Security Compliance | [vanta.com](https://www.vanta.com) | Christina Cacioppo | christina@vanta.com / [LinkedIn](https://www.linkedin.com/in/ccacioppo) |
+| **Cyera** | Data Security Posture Management | [cyera.io](https://www.cyera.io) | Yotam Segev | yotams@cyera.io / [LinkedIn](https://www.linkedin.com/in/yotam-segev) |
+| **Flashpoint** | Threat Intelligence & Risk | [flashpoint.io](https://www.flashpoint.io) | Josh Lefkowitz | josh@flashpoint-intel.com / [LinkedIn](https://www.linkedin.com/in/joshua-a-lefkowitz-13a65a3) |
+| **Cyble** | Global Threat Intelligence | [cyble.com](https://cyble.com) | Beenu Arora | beenu@cyble.com / [LinkedIn](https://www.linkedin.com/in/beenuarora) |
+| **Drata** | Compliance Automation Platform | [drata.com](https://drata.com) | Desmond Chan | desmond@drata.com / [LinkedIn](https://www.linkedin.com/in/desmondchan) |
+| **Wiz** | Cloud Security Posture Management | [wiz.io](https://www.wiz.io) | Assaf Rappaport | assaf@wiz.io / [LinkedIn](https://www.linkedin.com/in/assaf-rappaport) |
+| **SentinelOne** | Autonomous Endpoint Security | [sentinelone.com](https://www.sentinelone.com) | Tomer Weingarten | tomer@sentinelone.com / [LinkedIn](https://www.linkedin.com/in/tomerweingarten) |
+| **Tanium** | Converged Endpoint Management | [tanium.com](https://www.tanium.com) | Dan Streetman | dan.streetman@tanium.com / [LinkedIn](https://www.linkedin.com/in/danstreetman) |
+| **Arctic Wolf** | Managed Detection & Response | [arcticwolf.com](https://arcticwolf.com) | Nick Schneider | nick.schneider@arcticwolf.com / [LinkedIn](https://www.linkedin.com/in/nickschneider) |
+| **Recorded Future** | Intelligence-Driven Security | [recordedfuture.com](https://www.recordedfuture.com) | Christopher Ahlberg | christopher@recordedfuture.com / [LinkedIn](https://www.linkedin.com/in/christopherahlberg) |
+| **Tenable** | Exposure Management Platform | [tenable.com](https://www.tenable.com) | Amit Yoran | ayoran@tenable.com / [LinkedIn](https://www.linkedin.com/in/amityoran) |
+| **Axonius** | Asset & SaaS Management | [axonius.com](https://www.axonius.com) | Dean Sysman | dean@axonius.com / [LinkedIn](https://www.linkedin.com/in/deansysman) |
+| **BigID** | Data Privacy & Governance AI | [bigid.com](https://bigid.com) | Dimitri Sirota | dimitri@bigid.com / [LinkedIn](https://www.linkedin.com/in/dimitrisirota) |
+| **Privacera** | Cloud Data Security & Governance | [privacera.com](https://www.privacera.com) | Balaji Ganesan | balaji@privacera.com / [LinkedIn](https://www.linkedin.com/in/balajiganesan) |
+
