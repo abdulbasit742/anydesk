@@ -4608,3 +4608,32 @@ AI-driven Automotive, Transportation, and Autonomous Mobility companies are scal
 | **Supernal** | Advanced Air Mobility Division of Hyundai | [supernal.aero](https://supernal.aero) | Jaiwon Shin | jaiwon.shin@supernal.aero / [LinkedIn](https://www.linkedin.com/in/jaiwon-shin) |
 | **Perceptive Automata** | Human Intent Prediction AI for AVs | [perceptiveautomata.com](https://www.perceptiveautomata.com) | Akash Datta | akash@perceptiveautomata.com / [LinkedIn](https://www.linkedin.com/in/akash-datta) |
 
+
+
+## Sector 159: AI for Government, Defense & Public Safety Technology
+
+AI-driven Government, Defense, and Public Safety companies are scaling autonomous defense systems, AI-piloted drones, national security data platforms, space situational awareness, and emergency response infrastructure across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Anduril Industries** | Autonomous Defense Systems & Lattice AI | [anduril.com](https://anduril.com) | Brian Schimpf | brian@anduril.com / [LinkedIn](https://www.linkedin.com/in/will-griffith-7460833948391358464) |
+| **Shield AI** | AI Pilot & Autonomous Drones | [shield.ai](https://shield.ai) | Gary Steele | gary@shield.ai / [LinkedIn](https://www.linkedin.com/in/gasteele) |
+| **Palantir Technologies** | Government Data Analytics & AIP Platforms | [palantir.com](https://palantir.com) | Alex Karp | alex@palantir.com / [LinkedIn](https://www.linkedin.com/in/alex-karp-palantir) |
+| **Skydio** | Autonomous Drones for Defense & Safety | [skydio.com](https://skydio.com) | Adam Bry | adam@skydio.com / [LinkedIn](https://www.linkedin.com/in/adambry) |
+| **Epirus** | High-Power Microwave Directed Energy | [epirusinc.com](https://epirusinc.com) | Ken Kolderup | ken@epirusinc.com / [LinkedIn](https://www.linkedin.com/in/kenkolderup) |
+| **Rebellion Defense** | AI Software for National Security | [rebelliondefense.com](https://rebelliondefense.com) | Leigh Madden | leigh@rebelliondefense.com / [LinkedIn](https://www.linkedin.com/in/leighmadden) |
+| **Vannevar Labs** | Non-Kinetic Warfare & Intelligence Software | [vannevarlabs.com](https://vannevarlabs.com) | Brett Granberg | brett@vannevarlabs.com / [LinkedIn](https://www.linkedin.com/in/brettgranberg) |
+| **Primer.ai** | NLP for Intelligence & Defense Analysis | [primer.ai](https://primer.ai) | Sean Gourley | sean@primer.ai / [LinkedIn](https://www.linkedin.com/in/seangourley) |
+| **HawkEye 360** | RF Space-Based Intelligence & Analytics | [he360.com](https://he360.com) | John Serafini | john@he360.com / [LinkedIn](https://www.linkedin.com/in/johnserafini) |
+| **Capella Space** | SAR Satellite Imagery for Defense | [capellaspace.com](https://capellaspace.com) | Frank Backes | frank@capellaspace.com / [LinkedIn](https://www.linkedin.com/in/frank-backes-8857744) |
+| **Promise** | GovTech Payment & Social Service Platform | [mypromise.com](https://mypromise.com) | Phaedra Ellis-Lamkins | phaedra@mypromise.com / [LinkedIn](https://www.linkedin.com/in/phaedraellislamkins) |
+| **Mark43** | Cloud-Native CAD/RMS Public Safety Software | [mark43.com](https://mark43.com) | Scott Crouch | scott@mark43.com / [LinkedIn](https://www.linkedin.com/in/scottcrouch) |
+| **RapidSOS** | Emergency Response IoT & Data Platform | [rapidsos.com](https://rapidsos.com) | Michael Martin | michael@rapidsos.com / [LinkedIn](https://www.linkedin.com/in/michael-martin-rapidsos) |
+| **Flock Safety** | AI License Plate Recognition for Security | [flocksafety.com](https://flocksafety.com) | Garrett Langley | garrett@flocksafety.com / [LinkedIn](https://www.linkedin.com/in/garrettlangley) |
+| **Axon** | Public Safety Tech & AI Body Cameras | [axon.com](https://axon.com) | Rick Smith | rick@axon.com / [LinkedIn](https://www.linkedin.com/in/rick-smith-axon) |
+| **Scale AI** | Data Infrastructure & Defense AI Contracts | [scale.com](https://scale.com) | Alexandr Wang | alexandr@scale.com / [LinkedIn](https://www.linkedin.com/in/alexandr-wang) |
+| **Saronic** | Autonomous Surface Maritime Vessels | [saronic.ai](https://saronic.ai) | Dino Becirovic | dino@saronic.ai / [LinkedIn](https://www.linkedin.com/in/dinobecirovic) |
+| **Mach Industries** | Hydrogen-Powered Defense Hardware | [machindustries.com](https://machindustries.com) | Ethan Thornton | ethan@machindustries.com / [LinkedIn](https://www.linkedin.com/in/ethan-thornton) |
+| **True Anomaly** | Autonomous Space Security & Orbit Systems | [trueanomaly.ai](https://trueanomaly.ai) | Even Rogers | even@trueanomaly.ai / [LinkedIn](https://www.linkedin.com/in/tanst-aafl) |
+| **Darkhive** | Open-Architecture Autonomous Drones | [darkhive.io](https://darkhive.io) | James Ganczewski | james@darkhive.io / [LinkedIn](https://www.linkedin.com/in/jamesganczewski) |
+
