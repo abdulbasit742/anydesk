@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 43 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, and SportsTech & Digital Fitness Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 44 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, and PetTech & Animal Care Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -685,6 +685,23 @@ SportsTech and Digital Fitness companies are redefining human performance throug
 | **Tonal** | AI-Powered Home Gym | [tonal.com](https://www.tonal.com) | Krystal Zell | krystal.zell@tonal.com / [LinkedIn](https://www.linkedin.com/in/krystal-zell) |
 | **Hydrow** | Connected Rowing Experience | [hydrow.com](https://hydrow.com) | Bruce Smith | bruce@hydrow.com / [LinkedIn](https://www.linkedin.com/in/brucesmithhydrow) |
 | **Zwift** | Gamified Virtual Training | [zwift.com](https://www.zwift.com) | Eric Min | eric@zwift.com / [LinkedIn](https://www.linkedin.com/in/ericminzwift) |
+
+---
+
+## Sector 44: PetTech & Animal Care Innovation
+
+PetTech and Animal Care companies are revolutionizing pet ownership through smart devices, fresh food subscriptions, and digital health platforms. In 2026, the industry is scaling with AI-driven health monitoring and integrated veterinary ecosystems, creating high demand for remote mobile/web developers, IoT engineers, data scientists, and product designers.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Chewy** | Pet E-commerce & Pharmacy | [chewy.com](https://www.chewy.com) | Sumit Singh | ssingh@chewy.com / [LinkedIn](https://www.linkedin.com/in/singh-sumit) |
+| **Rover** | Pet Sitting & Walking Marketplace | [rover.com](https://www.rover.com) | Brent Turner | brent@rover.com / [LinkedIn](https://www.linkedin.com/in/brent-turner-rover) |
+| **BARK (BarkBox)** | Subscription Dog Products | [bark.co](https://www.bark.co) | Matt Meeker | mmeeker@barkbox.com / [LinkedIn](https://www.linkedin.com/in/mattmeeker) |
+| **Ollie** | Fresh Dog Food Subscription | [ollie.com](https://www.ollie.com) | Nick Stafford | nstafford@myollie.com / [LinkedIn](https://www.linkedin.com/in/nicholasstafford) |
+| **Loyal** | Canine Longevity Biotech | [loyalfordogs.com](https://loyalfordogs.com) | Celine Halioua | celine@loyalfordogs.com / [LinkedIn](https://www.linkedin.com/in/celinehh) |
+| **PetDesk** | Veterinary Client Engagement | [petdesk.com](https://petdesk.com) | Taylor Cavanah | taylor@petdesk.com / [LinkedIn](https://www.linkedin.com/in/tcavanah) |
+| **Wag!** | On-Demand Pet Services | [wagwalking.com](https://wagwalking.com) | Garrett Smallwood | garrett@wagwalking.com / [LinkedIn](https://www.linkedin.com/in/garrettsmallwood) |
+| **Fi** | Smart Dog Collar & Tracking | [tryfi.com](https://www.tryfi.com) | Jonathan Bensamoun | jonathan@tryfi.com / [LinkedIn](https://www.linkedin.com/in/jbensamoun) |
 
 ---
 
