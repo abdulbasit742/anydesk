@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 34 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, and Productivity & Collaboration Software) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 35 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, and MediaTech & Digital Entertainment Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -532,6 +532,23 @@ Productivity and Collaboration companies build the tools that power the modern d
 | **ClickUp** | Productivity Platform | [clickup.com](https://clickup.com) | Zeb Evans | zeb@clickup.com / [LinkedIn](https://www.linkedin.com/in/zebevansclickup) |
 | **Slack** | Intelligent Work Messaging | [slack.com](https://slack.com) | Rob Seaman | rseaman@slack-corp.com / [LinkedIn](https://www.linkedin.com/in/seamanrob) |
 | **Linear** | Modern Product Management | [linear.app](https://linear.app) | Karri Saarinen | karri@linear.app / [LinkedIn](https://www.linkedin.com/in/karrisaarinen) |
+
+---
+
+## Sector 35: MediaTech & Digital Entertainment Innovation
+
+MediaTech and Digital Entertainment companies are revolutionizing how content is created, distributed, and consumed. In 2026, the industry is heavily focused on generative video, AI-driven personalization, and cloud-native creative workflows, creating high demand for remote video engineers, AI researchers, and full-stack developers.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Netflix** | Global Streaming & Production | [netflix.com](https://www.netflix.com) | Ted Sarandos | tsarandos@netflix.com / [LinkedIn](https://www.linkedin.com/in/tedsarandos) |
+| **Roku** | Streaming Platform & Hardware | [roku.com](https://www.roku.com) | Anthony Wood | ajwood@roku.com / [LinkedIn](https://www.linkedin.com/in/ajwood1965) |
+| **Tubi** | Free Ad-Supported Streaming | [tubi.tv](https://tubi.tv) | Anjali Sud | anjali.sud@tubi.tv / [LinkedIn](https://www.linkedin.com/in/anjalisud) |
+| **Synthesia** | AI Video Generation | [synthesia.io](https://www.synthesia.io) | Victor Riparbelli | victor@synthesia.io / [LinkedIn](https://www.linkedin.com/in/victorriparbelli) |
+| **HeyGen** | AI Avatar & Video Platform | [heygen.com](https://www.heygen.com) | Joshua Xu | joshua@heygen.com / [LinkedIn](https://www.linkedin.com/in/buffxz) |
+| **Pika Labs** | Generative AI Video | [pika.art](https://pika.art) | Demi Guo | demi@pika.art / [LinkedIn](https://www.linkedin.com/in/demi-g-9a9ab6a1) |
+| **Luma AI** | Multimodal AGI & Video | [lumalabs.ai](https://lumalabs.ai) | Amit Jain | amit@lumalabs.ai / [LinkedIn](https://www.linkedin.com/in/gravicle) |
+| **The Trade Desk** | Digital Advertising Tech | [thetradedesk.com](https://www.thetradedesk.com) | Jeff Green | jeff.green@thetradedesk.com / [LinkedIn](https://www.linkedin.com/in/jeff-green-b2b) |
 
 ---
 
