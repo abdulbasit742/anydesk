@@ -7917,3 +7917,73 @@ Sector 209 focuses on top US-based companies, startups, and agencies building AI
 18. Vast Space, https://vastspace.com / https://www.linkedin.com/in/maxhaot
 19. Deeper Breath, https://deeperbreath.ai / https://www.linkedin.com/in/dustinwish
 20. Red 6, https://red6ar.com / https://www.linkedin.com/in/daniel-r-b1aa18161
+
+## Sector 210: AI in Agriculture, FoodTech & Environmental Monitoring Automation
+
+### Overview
+Sector 210 focuses on top US-based companies, startups, and agencies building AI-powered vertical farming systems, autonomous agricultural robotics, intelligent food preservation technologies, and AI-driven environmental risk and carbon monitoring platforms for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Oishii** [1] | AI-powered vertical farming company producing high-quality fruit using intelligent indoor grow systems. | Hiroki Koga [1] | CEO & Co-Founder [1] | `hiroki@oishii.com` [1] | [Profile](https://www.linkedin.com/in/hirokikoga) [1] |
+| **Carbon Robotics** [2] | AI-native agricultural robotics company building high-precision laser weeding systems for farmers. | Paul Mikesell [2] | CEO & Founder [2] | `paul@carbonrobotics.com` [2] | [Profile](https://www.linkedin.com/in/paul-mikesell-4b63a9) [2] |
+| **Iron Ox** [3] | AI-driven autonomous farming company using robotics and machine learning to optimize produce growth. | Brandon Alexander [3] | CEO & Co-Founder [3] | `brandon@ironox.com` [3] | [Profile](https://www.linkedin.com/in/brandonacealexander) [3] |
+| **Bowery Farming** [4] | AI-powered indoor vertical farming company building a modern, sustainable food system. | Irving Fain [4] | CEO & Founder [4] | `irving@boweryfarming.com` [4] | [Profile](https://www.linkedin.com/in/irvingfain) [4] |
+| **Plenty** [5] | AI-native vertical farming company using machine learning to maximize crop yield and flavor. | Arama Kukutai [5] | CEO [5] | `arama@plenty.ag` [5] | [Profile](https://www.linkedin.com/in/arama-kukutai) [5] |
+| **80 Acres Farms** [6] | AI-powered vertical farming platform (Note: Announced ceasing operations Aug 2026). | Mike Zelkind [6] | CEO & Co-Founder [6] | `mike.zelkind@80acresfarms.com` [6] | [Profile](https://www.linkedin.com/in/mike-zelkind-5113624) [6] |
+| **Monarch Tractor** [7] | AI-driven autonomous electric tractor manufacturer for sustainable and efficient farming. | Praveen Penmetsa [7] | CEO & Co-Founder [7] | `praveen@monarchtractor.com` [7] | [Profile](https://www.linkedin.com/in/praveen-penmetsa-a8a8181) [7] |
+| **Verdant Robotics** [8] | AI-powered precision agriculture platform providing autonomous weeding and crop management. | Gabe Sibley [8] | CEO & Co-Founder [8] | `gabe@verdantrobotics.com` [8] | [Profile](https://www.linkedin.com/in/gabesibley) [8] |
+| **Apeel Sciences** [9] | AI-driven food technology company creating plant-derived coatings to extend produce shelf life. | James Rogers [9] | CEO & Founder [9] | `james@apeel.com` [9] | [Profile](https://www.linkedin.com/in/james-rogers-a8a8181) [9] |
+| **Upside Foods** [10] | AI-powered cultivated meat company building scalable systems for lab-grown protein production. | Uma Valeti [10] | CEO & Founder [10] | `uma@upsidefoods.com` [10] | [Profile](https://www.linkedin.com/in/umavaleti) [10] |
+| **Eat Just** [11] | AI-driven food technology company developing plant-based and cultivated meat products. | Josh Tetrick [11] | CEO & Founder [11] | `josh@ju.st` [11] | [Profile](https://www.linkedin.com/in/joshtetrick) [11] |
+| **ClimateAi** [12] | AI-native climate risk intelligence platform helping businesses adapt to environmental changes. | Himanshu Gupta [12] | CEO & Co-Founder [12] | `himanshu@climate.ai` [12] | [Profile](https://www.linkedin.com/in/himanshugupta) [12] |
+| **Pachama** [13] | AI-powered carbon monitoring platform using satellite imagery to verify forest conservation. | Diego Saez Gil [13] | CEO & Co-Founder [13] | `diego@pachama.com` [13] | [Profile](https://www.linkedin.com/in/diegosaezgil) [13] |
+| **Indigo Ag** [14] | AI-driven AgTech company providing biological products and carbon credit verification for farmers. | Dean Banks [14] | CEO [14] | `dbanks@indigoag.com` [14] | [Profile](https://www.linkedin.com/in/deanbanks) [14] |
+| **FBN (Farmers Business Network)** [15] | AI-powered agriculture commerce and data platform for independent farmers. | Diego Casanello [15] | CEO [15] | `dcasanello@farmersbusinessnetwork.com` [15] | [Profile](https://www.linkedin.com/in/diegocasanello) [15] |
+| **Vertical Harvest** [16] | AI-native hydroponic farming company building urban vertical farms for local produce. | Nona Yehia [16] | CEO & Co-Founder [16] | `nona@verticalharvestfarms.com` [16] | [Profile](https://www.linkedin.com/in/nonayehia) [16] |
+| **InnerPlant** [17] | AI-powered plant biosensor technology allowing plants to communicate their needs to farmers. | Shely Aronov [17] | CEO & Co-Founder [17] | `shely@innerplant.com` [17] | [Profile](https://www.linkedin.com/in/shelyaronov) [17] |
+| **FarmWise** [18] | AI-native autonomous weeding robots for vegetable crops and precision farming. | Tjarko Leifer [18] | CEO [18] | `tjarko@farmwise.io` [18] | [Profile](https://www.linkedin.com/in/tjarkoleifer) [18] |
+| **Aepnus Technology** [19] | AI-driven climate tech company focusing on resource recovery and circular economy solutions. | Lukas Lemmrich [19] | CEO & Co-Founder [19] | `lukas@aepnus.com` [19] | [Profile](https://www.linkedin.com/in/lukaslemmrich) [19] |
+| **Mazen Animal Health** [20] | AI-powered biotech company developing oral vaccines for livestock and animal health. | Jennifer Filbey [20] | CEO & Founder [20] | `jennifer.filbey@mazenanimalhealth.com` [20] | [Profile](https://www.linkedin.com/in/jenniferfilbey) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI AgTech Automation & Agentic Food Systems at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of agriculture and food technology through autonomous AI agents and intelligent AgTech platforms in 2026, ensuring high-fidelity environmental data, seamless grow orchestration, and resilient agentic food experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous AgTech agent development, and scalable FoodTech architectures. I have recently helped high-growth agriculture platforms optimize automated yield forecasting and robotic weeding workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & AgTech Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Oishii, https://oishii.com / https://www.linkedin.com/in/hirokikoga
+2. Carbon Robotics, https://carbonrobotics.com / https://www.linkedin.com/in/paul-mikesell-4b63a9
+3. Iron Ox, https://ironox.com / https://www.linkedin.com/in/brandonacealexander
+4. Bowery Farming, https://boweryfarming.com / https://www.linkedin.com/in/irvingfain
+5. Plenty, https://plenty.ag / https://www.linkedin.com/in/arama-kukutai
+6. 80 Acres Farms, https://80acresfarms.com / https://www.linkedin.com/in/mike-zelkind-5113624
+7. Monarch Tractor, https://monarchtractor.com / https://www.linkedin.com/in/praveen-penmetsa-a8a8181
+8. Verdant Robotics, https://verdantrobotics.com / https://www.linkedin.com/in/gabesibley
+9. Apeel Sciences, https://apeel.com / https://www.linkedin.com/in/james-rogers-a8a8181
+10. Upside Foods, https://upsidefoods.com / https://www.linkedin.com/in/umavaleti
+11. Eat Just, https://ju.st / https://www.linkedin.com/in/joshtetrick
+12. ClimateAi, https://climate.ai / https://www.linkedin.com/in/himanshugupta
+13. Pachama, https://pachama.com / https://www.linkedin.com/in/diegosaezgil
+14. Indigo Ag, https://indigoag.com / https://www.linkedin.com/in/deanbanks
+15. FBN (Farmers Business Network), https://farmersbusinessnetwork.com / https://www.linkedin.com/in/diegocasanello
+16. Vertical Harvest, https://verticalharvestfarms.com / https://www.linkedin.com/in/nonayehia
+17. InnerPlant, https://innerplant.com / https://www.linkedin.com/in/shelyaronov
+18. FarmWise, https://farmwise.io / https://www.linkedin.com/in/tjarkoleifer
+19. Aepnus Technology, https://aepnus.com / https://www.linkedin.com/in/lukaslemmrich
+20. Mazen Animal Health, https://mazenanimalhealth.com / https://www.linkedin.com/in/jenniferfilbey
