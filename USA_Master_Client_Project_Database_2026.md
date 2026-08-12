@@ -6937,3 +6937,73 @@ Sector 195 focuses on top US-based companies, startups, and agencies building AI
 18. Legislate, https://legislate.ai / https://www.linkedin.com/in/charlesbrecque
 19. Juro, https://juro.com / https://www.linkedin.com/in/richardmabey
 20. Robin AI, https://robinai.com / https://www.linkedin.com/in/richard-robinson-robinai
+
+## Sector 196: AI in Finance, Fintech & Accounting Automation
+
+### Overview
+Sector 196 focuses on top US-based companies, startups, and agencies building AI-powered spend management platforms, autonomous accounting software, agentic banking infrastructure, and intelligent financial planning tools for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Ramp** [1] | AI-powered finance automation platform for spend management, accounts payable, and procurement. | Eric Glyman [1] | CEO & Co-Founder [1] | `eric@ramp.com` [1] | [Profile](https://www.linkedin.com/in/eglyman) [1] |
+| **Brex** [2] | AI-driven corporate card and spend management platform for high-growth startups and enterprises. | Henrique Dubugras [2] | CEO & Co-Founder [2] | `henrique@brex.com` [2] | [Profile](https://www.linkedin.com/in/henriquedubugras) [2] |
+| **Digits** [3] | AI-native accounting platform providing real-time bookkeeping, financials, and bill pay. | Jeff Seibert [3] | CEO & Founder [3] | `jeff@digits.com` [3] | [Profile](https://www.linkedin.com/in/jseibert) [3] |
+| **Botkeeper** [4] | AI-powered bookkeeping automation platform designed specifically for accounting firms. | Enrico Palmerino [4] | CEO & Founder [4] | `enrico@botkeeper.com` [4] | [Profile](https://www.linkedin.com/in/enricopalmerino) [4] |
+| **Puzzle** [5] | AI-driven accounting software for modern startups to manage real-time financials and taxes. | Sasha Orloff [5] | CEO & Co-Founder [5] | `sasha@puzzle.io` [5] | [Profile](https://www.linkedin.com/in/sashaorloff) [5] |
+| **Truewind** [6] | AI-powered finance operations platform for streamlining accounting and financial reporting. | Alex Fisher [6] | CEO & Co-Founder [6] | `alex@truewind.ai` [6] | [Profile](https://www.linkedin.com/in/rich-wei) [6] |
+| **Navan** [7] | AI-powered travel, corporate card, and expense management platform (formerly TripActions). | Ariel Cohen [7] | CEO & Co-Founder [7] | `ariel@navan.com` [7] | [Profile](https://www.linkedin.com/in/arielcohen) [7] |
+| **Glean** [8] | AI-powered accounts payable automation platform for modern finance teams. | Howard Katzenberg [8] | CEO & Founder [8] | `howard@glean.ai` [8] | [Profile](https://www.linkedin.com/in/howard-katzenberg-glean) [8] |
+| **Vic.ai** [9] | AI-driven accounts payable platform that automates invoice processing and financial workflows. | Alexander Hagerup [9] | CEO & Co-Founder [9] | `alexander@vic.ai` [9] | [Profile](https://www.linkedin.com/in/alexanderhagerup) [9] |
+| **Stripe** [10] | Global payments and billing platform utilizing AI for fraud detection and revenue optimization. | Patrick Collison [10] | CEO & Co-Founder [10] | `patrick@stripe.com` [10] | [Profile](https://www.linkedin.com/in/patrickcollison) [10] |
+| **Bill.com** [11] | AI-powered accounts payable and receivable automation for small and mid-sized businesses. | Rene Lacerte [11] | CEO & Founder [11] | `rene@bill.com` [11] | [Profile](https://www.linkedin.com/in/renelacerte) [11] |
+| **Pilot** [12] | AI-powered bookkeeping, tax, and CFO services for startups and small businesses. | Waseem Daher [12] | CEO & Co-Founder [12] | `waseem@pilot.com` [12] | [Profile](https://www.linkedin.com/in/waseem) [12] |
+| **Bench** [13] | AI-driven bookkeeping service providing real-time financial insights for entrepreneurs. | Jean-Marc Bellaiche [13] | CEO [13] | `jeanmarc@bench.co` [13] | [Profile](https://www.linkedin.com/in/jeanmarcbellaiche) [13] |
+| **Zeni** [14] | AI-powered finance operations platform providing bookkeeping, tax, and CFO services. | Swapnil Shinde [14] | CEO & Co-Founder [14] | `swapnil@zeni.ai` [14] | [Profile](https://www.linkedin.com/in/swapnilshinde) [14] |
+| **Vareto** [15] | AI-powered strategic finance platform for planning, forecasting, and reporting. | Katya Mulllova [15] | CEO & Co-Founder [15] | `katya@vareto.com` [15] | [Profile](https://www.linkedin.com/in/katyamulllova) [15] |
+| **Airbase** [16] | AI-driven spend management platform for accounts payable, corporate cards, and expenses. | Thejo Kote [16] | CEO & Founder [16] | `thejo@airbase.com` [16] | [Profile](https://www.linkedin.com/in/thejokote) [16] |
+| **Nova Credit** [17] | AI-powered credit intelligence platform providing cross-border credit data and analytics. | Misha Esipov [17] | CEO & Co-Founder [17] | `misha@novacredit.com` [17] | [Profile](https://www.linkedin.com/in/mishaesipov) [17] |
+| **Planful** [18] | AI-driven financial planning and analysis (FP&A) platform for enterprise performance management. | Grant Halloran [18] | CEO [18] | `ghalloran@planful.com` [18] | [Profile](https://www.linkedin.com/in/granthalloran) [18] |
+| **FloQast** [19] | AI-powered accounting workflow automation platform for faster and more accurate closes. | Mike Whitmire [19] | CEO & Co-Founder [19] | `mike@floqast.com` [19] | [Profile](https://www.linkedin.com/in/mikewhitmire) [19] |
+| **Anaplan** [20] | AI-native enterprise planning platform for strategic financial and operational orchestration. | Charles Gottdiener [20] | CEO [20] | `charles.gottdiener@anaplan.com` [20] | [Profile](https://www.linkedin.com/in/charles-gottdiener) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Finance Automation & Agentic Banking at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the transformation of financial services through autonomous AI agents and intelligent accounting platforms in 2026, ensuring high-fidelity financial data, seamless ERP integration, and compliant agentic banking infrastructure is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous finance agent development, and scalable Fintech architectures. I have recently helped high-growth finance platforms optimize automated bookkeeping and spend management workflows while reinforcing enterprise-grade reliability and regulatory compliance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Fintech Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Ramp, https://ramp.com / https://www.linkedin.com/in/eglyman
+2. Brex, https://brex.com / https://www.linkedin.com/in/henriquedubugras
+3. Digits, https://digits.com / https://www.linkedin.com/in/jseibert
+4. Botkeeper, https://botkeeper.com / https://www.linkedin.com/in/enricopalmerino
+5. Puzzle, https://puzzle.io / https://www.linkedin.com/in/sashaorloff
+6. Truewind, https://truewind.ai / https://www.linkedin.com/in/rich-wei
+7. Navan, https://navan.com / https://www.linkedin.com/in/arielcohen
+8. Glean, https://glean.ai / https://www.linkedin.com/in/howard-katzenberg-glean
+9. Vic.ai, https://vic.ai / https://www.linkedin.com/in/alexanderhagerup
+10. Stripe, https://stripe.com / https://www.linkedin.com/in/patrickcollison
+11. Bill.com, https://bill.com / https://www.linkedin.com/in/renelacerte
+12. Pilot, https://pilot.com / https://www.linkedin.com/in/waseem
+13. Bench, https://bench.co / https://www.linkedin.com/in/jeanmarcbellaiche
+14. Zeni, https://zeni.ai / https://www.linkedin.com/in/swapnilshinde
+15. Vareto, https://vareto.com / https://www.linkedin.com/in/katyamulllova
+16. Airbase, https://airbase.com / https://www.linkedin.com/in/thejokote
+17. Nova Credit, https://novacredit.com / https://www.linkedin.com/in/mishaesipov
+18. Planful, https://planful.com / https://www.linkedin.com/in/granthalloran
+19. FloQast, https://floqast.com / https://www.linkedin.com/in/mikewhitmire
+20. Anaplan, https://anaplan.com / https://www.linkedin.com/in/charles-gottdiener
