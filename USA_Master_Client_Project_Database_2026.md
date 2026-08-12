@@ -4463,3 +4463,32 @@ AI-driven HRTech, Talent Acquisition, and Workforce Management companies are sca
 | **Hired** | Skills-Based AI Talent Marketplace | [hired.com](https://hired.com) | Josh Brenner | josh@hired.com / [LinkedIn](https://www.linkedin.com/in/josh-brenner-5527632) |
 | **Betterleap** | AI Recruiter Assistant & Sourcing | [betterleap.com](https://betterleap.com) | Khaled Rabbani | khaled@betterleap.com / [LinkedIn](https://www.linkedin.com/in/khaledrabbani) |
 
+
+
+## Sector 154: AI for Media, Entertainment & Content Creation
+
+AI-driven Media, Entertainment, and Content Creation companies are scaling generative video models, cinematic 3D environments, audio synthesis, and automated creator workflows across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Runway** | Generative AI Video & Filmmaking | [runwayml.com](https://runwayml.com) | Cristóbal Valenzuela | cvalenzuela@runwayml.com / [LinkedIn](https://www.linkedin.com/in/cvalenzuelab) |
+| **OpusClip** | AI Video Clipping & Short-Form Repurposing | [opus.pro](https://www.opus.pro) | Young Zhao | young@opus.pro / [LinkedIn](https://www.linkedin.com/in/yzopus) |
+| **Typeface** | Enterprise Generative AI Content Platform | [typeface.ai](https://www.typeface.ai) | Abhay Parasnis | abhay@typeface.ai / [LinkedIn](https://www.linkedin.com/in/abhayparasnis) |
+| **HeyGen** | AI Talking Avatar Video Generation | [heygen.com](https://www.heygen.com) | Joshua Xu | joshua@heygen.com / [LinkedIn](https://www.linkedin.com/in/buffxz) |
+| **Pika** | Idea-to-Video Generative AI Animation | [pika.art](https://pika.art) | Demi Guo | demi@pika.art / [LinkedIn](https://www.linkedin.com/in/demi-g-9a9ab6a1) |
+| **Luma AI** | Multimodal 3D Capture & Dream Machine | [lumalabs.ai](https://lumalabs.ai) | Amit Jain | amitj@lumalabs.ai / [LinkedIn](https://www.linkedin.com/in/gravicle) |
+| **Suno AI** | Generative AI Music & Song Creation | [suno.ai](https://www.suno.ai) | Mikey Shulman | mikey.shulman@suno.ai / [LinkedIn](https://www.linkedin.com/in/mikeyshulman) |
+| **Udio AI** | Studio-Quality Generative AI Music | [udio.com](https://www.udio.com) | David Ding | david@udio.com / [LinkedIn](https://www.linkedin.com/in/david-fengning-ding-053b1282) |
+| **Gamma** | AI-Powered Presentations & Storytelling | [gamma.app](https://gamma.app) | Grant Lee | grant@gamma.app / [LinkedIn](https://www.linkedin.com/in/grant-lee-gamma) |
+| **Synthesia** | Enterprise Synthetic Video Generation | [synthesia.io](https://www.synthesia.io) | Victor Riparbelli | victor@synthesia.io / [LinkedIn](https://www.linkedin.com/in/victorriparbelli) |
+| **Leonardo.ai** | Generative AI for Game Assets & Art | [leonardo.ai](https://leonardo.ai) | JJ Fiasson | jj@leonardo.ai / [LinkedIn](https://www.linkedin.com/in/jj-fiasson) |
+| **Inworld AI** | Character Engine & AI Gaming NPCs | [inworld.ai](https://inworld.ai) | Ilya Gelfenbeyn | ilya@inworld.ai / [LinkedIn](https://www.linkedin.com/in/ilyagelfenbeyn) |
+| **Higgsfield AI** | Director-Controlled AI Video Models | [higgsfield.ai](https://higgsfield.ai) | Alex Mashrabov | alex@higgsfield.ai / [LinkedIn](https://www.linkedin.com/in/alexmashrabov) |
+| **OthersideAI** | Generative AI Writing & HyperWrite | [othersideai.com](https://www.othersideai.com) | Matt Shumer | matt@othersideai.com / [LinkedIn](https://www.linkedin.com/in/mattshumer) |
+| **Symbol Zero** | AI-First Video Game Studio | [symbolzero.com](https://symbolzero.com) | Rafael Brown | rafael@symbolzero.com / [LinkedIn](https://www.linkedin.com/in/rafaelbrown) |
+| **Latitude** | AI Generative Interactive Fiction & Gaming | [latitude.io](https://latitude.io) | Nick Walton | nick@latitude.io / [LinkedIn](https://www.linkedin.com/in/nickwalton) |
+| **StreamElements** | Creator Economy & Live Streaming AI Tools | [streamelements.com](https://www.streamelements.com) | Orad Elkayam | orad@streamelements.com / [LinkedIn](https://www.linkedin.com/in/oradelkayam) |
+| **Rezona** | AI-Native UGC Gaming Platform | [rezona.ai](https://rezona.ai) | Arthur Cheung | arthur@rezona.ai / [LinkedIn](https://www.linkedin.com/in/arthurcheungai) |
+| **Civitai** | Open-Source Generative AI Model Hub | [civitai.com](https://civitai.com) | Justin Reckling | justin@civitai.com / [LinkedIn](https://www.linkedin.com/in/justinreckling) |
+| **KreadoAI** | AI Digital Humans & Video Marketing | [kreadoai.com](https://www.kreadoai.com) | Tim Zhang | tim@kreadoai.com / [LinkedIn](https://www.linkedin.com/in/timzhangai) |
+
