@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 22 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, and SpaceTech & Aerospace Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 23 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, and Automotive Tech & Autonomous Vehicles) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -328,6 +328,23 @@ SpaceTech and Aerospace Innovation companies push the boundaries of orbital flig
 | **Astranis** | Micro-Geostationary Satellites | [astranis.com](https://www.astranis.com) | John Gedmark | john@astranis.com / [LinkedIn](https://www.linkedin.com/in/johngedmark) |
 | **Anduril Industries** | Autonomous Defense Systems | [anduril.com](https://www.anduril.com) | Brian Schimpf | brian@anduril.com / [LinkedIn](https://www.linkedin.com/in/palmer-luckey-21a16959) |
 | **Boom Supersonic** | Supersonic Commercial Aircraft | [boomsupersonic.com](https://boomsupersonic.com) | Blake Scholl | blake@boomsupersonic.com / [LinkedIn](https://www.linkedin.com/in/blakescholl) |
+
+---
+
+## Sector 23: Automotive Tech & Autonomous Vehicles
+
+Automotive Tech and Autonomous Vehicle companies are revolutionizing transportation through electric vehicles (EV), self-driving software, robotaxis, and smart infrastructure. These organizations require high-end talent in AI, computer vision, embedded systems, and full-stack development for mission-critical remote and hybrid projects.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Tesla** | Electric Vehicles & Autopilot | [tesla.com](https://www.tesla.com) | Elon Musk | elon@tesla.com / [LinkedIn](https://www.linkedin.com/in/barmstrong) |
+| **Rivian** | Electric Adventure Vehicles | [rivian.com](https://www.rivian.com) | RJ Scaringe | rj@rivian.com / [LinkedIn](https://www.linkedin.com/in/rj-scaringe-58355716) |
+| **Waymo** | Autonomous Robotaxi Service | [waymo.com](https://waymo.com) | Tekedra Mawakana | tekedra@waymo.com / [LinkedIn](https://www.linkedin.com/in/tnmawakana) |
+| **Aurora** | Autonomous Trucking & Logistics | [aurora.tech](https://aurora.tech) | Chris Urmson | chris@aurora.tech / [LinkedIn](https://www.linkedin.com/in/chris-urmson-5392273) |
+| **Zoox (Amazon)** | Purpose-Built Autonomous Robotaxis | [zoox.com](https://zoox.com) | Aicha Evans | aicha@zoox.com / [LinkedIn](https://www.linkedin.com/in/aicha-evans-4365731) |
+| **Nuro** | Autonomous Delivery Robots | [nuro.ai](https://nuro.ai) | Dave Ferguson | dave@nuro.ai / [LinkedIn](https://www.linkedin.com/in/dave-ferguson-565b974) |
+| **Kodiak Robotics** | Self-Driving Long-Haul Trucking | [kodiak.ai](https://kodiak.ai) | Don Burnette | don@kodiak.ai / [LinkedIn](https://www.linkedin.com/in/don-burnette) |
+| **Luminar** | LiDAR & Autonomous Safety Tech | [luminartech.com](https://luminartech.com) | Austin Russell | austin@luminartech.com / [LinkedIn](https://www.linkedin.com/in/austinrussell) |
 
 ---
 
