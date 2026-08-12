@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 27 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, and AR/VR & Spatial Computing) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 28 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, and Creator Economy & Social Media Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -413,6 +413,23 @@ AR/VR and Spatial Computing companies are redefining human-computer interaction 
 | **Matterport** | Digital Twins & Spatial Data | [matterport.com](https://matterport.com) | RJ Pittman | rj@matterport.com / [LinkedIn](https://www.linkedin.com/in/rjpittman) |
 | **Spatial** | Social Metaverse & 3D Meetings | [spatial.io](https://spatial.io) | Anand Agarawala | anand@spatial.io / [LinkedIn](https://www.linkedin.com/in/anandx) |
 | **Groove Jones** | Creative XR Studio | [groovejones.com](https://www.groovejones.com) | Dan Ferguson | dan@groovejones.com / [LinkedIn](https://www.linkedin.com/in/itzaferg) |
+
+---
+
+## Sector 28: Creator Economy & Social Media Tech
+
+Creator Economy and Social Media Tech companies empower content creators, influencers, and digital entrepreneurs through monetization platforms, community tools, and AI-driven content creation. These organizations require remote talent in full-stack development, AI/ML for recommendation engines, and growth engineering to scale their platforms in a rapidly evolving digital landscape.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Discord** | Community Chat & Social Platform | [discord.com](https://discord.com) | Humam Sakhnini | humam@discord.com / [LinkedIn](https://www.linkedin.com/in/jasoncitron) |
+| **Runway** | AI Generative Video Creation | [runwayml.com](https://runwayml.com) | Cristóbal Valenzuela | cvalenzuela@runwayml.com / [LinkedIn](https://www.linkedin.com/in/cvalenzuelab) |
+| **Linktree** | Link-in-Bio & Creator Tools | [linktr.ee](https://linktr.ee) | Alex Zaccaria | alex@linktr.ee / [LinkedIn](https://www.linkedin.com/in/alexzac) |
+| **Patreon** | Creator Membership & Subscriptions | [patreon.com](https://www.patreon.com) | Jack Conte | jack@patreon.com / [LinkedIn](https://www.linkedin.com/in/jackconte) |
+| **Substack** | Newsletter & Writer Monetization | [substack.com](https://substack.com) | Chris Best | chris@substack.com / [LinkedIn](https://www.linkedin.com/in/cbest) |
+| **Kajabi** | Knowledge Commerce & Courses | [kajabi.com](https://kajabi.com) | Kenny Rueter | kenny@kajabi.com / [LinkedIn](https://www.linkedin.com/in/kennyrueter) |
+| **Sprout Social** | Social Media Management | [sproutsocial.com](https://sproutsocial.com) | Ryan Barretto | ryan@sproutsocial.com / [LinkedIn](https://www.linkedin.com/in/justynhoward) |
+| **Kit (ConvertKit)** | Creator Marketing & Automation | [kit.com](https://kit.com) | Nathan Barry | nathan@kit.com / [LinkedIn](https://www.linkedin.com/in/nathanbarry) |
 
 ---
 
