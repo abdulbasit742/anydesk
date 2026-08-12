@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 26 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, and DeepTech & Quantum Computing) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 27 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, and AR/VR & Spatial Computing) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -396,6 +396,23 @@ DeepTech and Quantum Computing companies are pushing the boundaries of tradition
 | **Q-CTRL** | Quantum Control Infrastructure | [q-ctrl.com](https://q-ctrl.com) | Michael J. Biercuk | michael@q-ctrl.com / [LinkedIn](https://www.linkedin.com/in/mjbiercuk) |
 | **BlueQubit** | Quantum Software & Algorithms | [bluequbit.io](https://www.bluequbit.io) | Hrant Gharibyan | hrant@bluequbit.io / [LinkedIn](https://www.linkedin.com/in/hrantgharibyan) |
 | **Lightmatter** | Photonic AI Accelerators | [lightmatter.co](https://lightmatter.co) | Nick Harris | nick@lightmatter.co / [LinkedIn](https://www.linkedin.com/in/nicholas-harris-7114b233) |
+
+---
+
+## Sector 27: AR/VR & Spatial Computing
+
+AR/VR and Spatial Computing companies are redefining human-computer interaction through immersive environments, digital twins, and virtual collaboration platforms. With the mass adoption of spatial devices, these organizations require specialized talent in 3D development (Unity/Unreal), spatial design, and computer vision for mission-critical remote projects.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Niantic Spatial** | Augmented Reality & Mapping | [nianticlabs.com](https://nianticlabs.com) | Inhi Cho Suh | inhi@nianticlabs.com / [LinkedIn](https://www.linkedin.com/in/inhichosuh) |
+| **Magic Leap** | Enterprise AR Solutions | [magicleap.com](https://www.magicleap.com) | Ross Rosenberg | ross@magicleap.com / [LinkedIn](https://www.linkedin.com/in/rossrosenberg) |
+| **Unity** | 3D Engine & Development Tools | [unity.com](https://unity.com) | Matthew Bromberg | matthew@unity3d.com / [LinkedIn](https://www.linkedin.com/in/matthew-bromberg-79836b13) |
+| **Epic Games** | Unreal Engine & Metaverse | [epicgames.com](https://www.epicgames.com) | Tim Sweeney | tim.sweeney@epicgames.com / [LinkedIn](https://www.linkedin.com/in/tim-sweeney-3b5957186) |
+| **Roblox** | User-Generated Immersive Worlds | [roblox.com](https://www.roblox.com) | David Baszucki | david@roblox.com / [LinkedIn](https://www.linkedin.com/in/davidbaszucki) |
+| **Matterport** | Digital Twins & Spatial Data | [matterport.com](https://matterport.com) | RJ Pittman | rj@matterport.com / [LinkedIn](https://www.linkedin.com/in/rjpittman) |
+| **Spatial** | Social Metaverse & 3D Meetings | [spatial.io](https://spatial.io) | Anand Agarawala | anand@spatial.io / [LinkedIn](https://www.linkedin.com/in/anandx) |
+| **Groove Jones** | Creative XR Studio | [groovejones.com](https://www.groovejones.com) | Dan Ferguson | dan@groovejones.com / [LinkedIn](https://www.linkedin.com/in/itzaferg) |
 
 ---
 
