@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 51 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, FemTech & Women's Health Innovation, ClimateTech & Carbon Management Innovation, Edge AI & Industrial IoT Innovation, Neurotech & Brain-Computer Interfaces Innovation, Longevity, Anti-Aging & Regenerative Medicine Innovation, and Autonomous Systems & Unmanned Aerial Vehicles Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 52 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, FemTech & Women's Health Innovation, ClimateTech & Carbon Management Innovation, Edge AI & Industrial IoT Innovation, Neurotech & Brain-Computer Interfaces Innovation, Longevity, Anti-Aging & Regenerative Medicine Innovation, Autonomous Systems & Unmanned Aerial Vehicles Innovation, and OceanTech & Blue Economy Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -820,6 +820,23 @@ Autonomous Systems and Unmanned Aerial Vehicles (Drones) companies are revolutio
 | **Auterion** | Open Source Drone OS & AI | [auterion.com](https://auterion.com) | Lorenz Meier | lorenz@auterion.com / [LinkedIn](https://www.linkedin.com/in/meierlorenz) |
 | **Wing** | Commercial Drone Delivery | [wing.com](https://wing.com) | Adam Woodworth | adam@wing.com / [LinkedIn](https://www.linkedin.com/in/awoodworth) |
 | **ModalAI** | AI-Powered Drone Hardware | [modalai.com](https://www.modalai.com) | Chad Sweet | chad@modalai.com / [LinkedIn](https://www.linkedin.com/in/sweetc) |
+
+---
+
+## Sector 52: OceanTech & Blue Economy Innovation
+
+OceanTech and Blue Economy companies are innovating in maritime autonomy, carbon removal, and sustainable aquaculture. In 2026, the sector is experiencing a surge in investment for ocean-based climate solutions and autonomous surveillance, creating high demand for remote software engineers, embedded systems experts, and marine data scientists.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Saronic Technologies** | Maritime Autonomy & Shipbuilding | [saronic.com](https://www.saronic.com) | Dino Mavrookas | dino@saronic.com / [LinkedIn](https://www.linkedin.com/in/saronic-technologies) |
+| **Bedrock Ocean Exploration** | Autonomous Ocean Mapping | [bedrockocean.com](https://www.bedrockocean.com) | Anthony DiMare | anthony@bedrockocean.com / [LinkedIn](https://www.linkedin.com/in/anthonydimare) |
+| **Seasats** | Autonomous Surface Vehicles | [seasats.com](https://seasats.com) | Mike Flanigan | mike@seasats.com / [LinkedIn](https://www.linkedin.com/in/mikeflan) |
+| **REGENT Craft** | Electric Seagliders | [regentcraft.com](https://www.regentcraft.com) | Billy Thalheimer | billy@regentcraft.com / [LinkedIn](https://www.linkedin.com/in/billy-thalheimer) |
+| **Wildtype** | Cultivated Seafood | [wildtypefoods.com](https://www.wildtypefoods.com) | Justin Kolbeck | justin@wildtypefoods.com / [LinkedIn](https://www.linkedin.com/in/justinkolbeck) |
+| **Loliware** | Seaweed-Based Resin & Materials | [loliware.com](https://www.loliware.com) | Sea Briganti | sea@loliware.com / [LinkedIn](https://www.linkedin.com/in/sea-f-briganti) |
+| **OpenOcean Robotics** | Autonomous Data Collection | [openoceanrobotics.com](https://www.openoceanrobotics.com) | Julie Angus | julie@openoceanrobotics.com / [LinkedIn](https://ca.linkedin.com/in/julie-angus) |
+| **Captura** | Ocean Carbon Removal | [capturacorp.com](https://capturacorp.com) | Steve Oldham | steve@capturacorp.com / [LinkedIn](https://www.linkedin.com/company/captura-corp) |
 
 ---
 
