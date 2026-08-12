@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 25 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, and Robotics & Industrial Automation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 26 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, and DeepTech & Quantum Computing) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -379,6 +379,23 @@ Robotics and Industrial Automation companies are bridging the gap between AI and
 | **Skydio** | Autonomous Drones & AI Flight | [skydio.com](https://www.skydio.com) | Adam Bry | adambry@skydio.com / [LinkedIn](https://www.linkedin.com/in/adambry) |
 | **Robust AI** | Collaborative Mobile Robotics | [robust.ai](https://www.robust.ai) | Anthony Jules | anthony@robust.ai / [LinkedIn](https://www.linkedin.com/in/anthonyjules) |
 | **Bright Machines** | Software-Defined Manufacturing | [brightmachines.com](https://www.brightmachines.com) | Lior Susan | lior@brightmachines.com / [LinkedIn](https://www.linkedin.com/in/liorsusan) |
+
+---
+
+## Sector 26: DeepTech & Quantum Computing
+
+DeepTech and Quantum Computing companies are pushing the boundaries of traditional computation through quantum processors, photonic hardware, and advanced R&D. These organizations require highly specialized talent in quantum algorithms, physics-informed software engineering, and high-performance computing for mission-critical remote and hybrid projects.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **PsiQuantum** | Silicon Photonic Quantum Computing | [psiquantum.com](https://psiquantum.com) | Victor Peng | victor@psiquantum.com / [LinkedIn](https://www.linkedin.com/in/jeremy-o-brien-39482631) |
+| **IonQ** | Trapped-Ion Quantum Computing | [ionq.com](https://ionq.com) | Peter Chapman | peter@ionq.com / [LinkedIn](https://www.linkedin.com/in/peterhchapman) |
+| **Rigetti Computing** | Superconducting Quantum Processors | [rigetti.com](https://rigetti.com) | Subodh Kulkarni | kulkarni@rigetti.com / [LinkedIn](https://www.linkedin.com/in/subodh-kulkarni-21001611) |
+| **D-Wave Quantum** | Quantum Annealing & Gate-Model | [dwavesys.com](https://www.dwavesys.com) | Alan Baratz | alan@dwavesys.com / [LinkedIn](https://www.linkedin.com/in/alan-baratz-a30a84) |
+| **Quantinuum** | Full-Stack Quantum Computing | [quantinuum.com](https://www.quantinuum.com) | Rajeeb Hazra | rajeeb@quantinuum.com / [LinkedIn](https://www.linkedin.com/in/rajeeb-hazra-143224) |
+| **Q-CTRL** | Quantum Control Infrastructure | [q-ctrl.com](https://q-ctrl.com) | Michael J. Biercuk | michael@q-ctrl.com / [LinkedIn](https://www.linkedin.com/in/mjbiercuk) |
+| **BlueQubit** | Quantum Software & Algorithms | [bluequbit.io](https://www.bluequbit.io) | Hrant Gharibyan | hrant@bluequbit.io / [LinkedIn](https://www.linkedin.com/in/hrantgharibyan) |
+| **Lightmatter** | Photonic AI Accelerators | [lightmatter.co](https://lightmatter.co) | Nick Harris | nick@lightmatter.co / [LinkedIn](https://www.linkedin.com/in/nicholas-harris-7114b233) |
 
 ---
 
