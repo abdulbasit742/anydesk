@@ -2,13 +2,13 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 11 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, and Web3/Crypto) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 12 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, and Gaming/Interactive Media) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
 ## Executive Summary
 
-Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across eleven high-demand sectors in August 2026. 
+Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across twelve high-demand sectors in August 2026. 
 
 ---
 
@@ -148,7 +148,7 @@ AdTech and MarTech platforms power programmatic advertising, customer relationsh
 | :--- | :--- | :--- | :--- | :--- |
 | **HubSpot** | Inbound Marketing & CRM | [hubspot.com](https://www.hubspot.com) | Dharmesh Shah | dharmesh@hubspot.com / [LinkedIn](https://www.linkedin.com/in/dharmesh) |
 | **Klaviyo** | E-commerce Email & SMS Automation | [klaviyo.com](https://www.klaviyo.com) | Andrew Bialecki | andrew@klaviyo.com / [LinkedIn](https://www.linkedin.com/in/bialecki) |
-| **The Trade Desk** | Programmatic Advertising Platform | [thetradedesk.com](https://www.tradedesk.com) | Jeff Green | jeff.green@thetradedesk.com / [LinkedIn](https://www.linkedin.com/in/jefftgreen) |
+| **The Trade Desk** | Programmatic Advertising Platform | [thetradedesk.com](https://www.thetradedesk.com) | Jeff Green | jeff.green@thetradedesk.com / [LinkedIn](https://www.linkedin.com/in/jefftgreen) |
 | **GumGum** | Contextual Intelligence & Ads | [gumgum.com](https://www.gumgum.com) | Ophir Tanz | [LinkedIn](https://www.linkedin.com/in/ophirtanz) |
 | **OpenX** | Programmatic Ad Exchange | [openx.com](https://www.openx.com) | John Gentry | [LinkedIn](https://www.linkedin.com/in/john-gentry) |
 
@@ -165,6 +165,20 @@ Web3 and blockchain organizations are predominantly remote-first, providing robu
 | **Consensys** | Ethereum Developer Tools & Infura | [consensys.io](https://consensys.io) | Joseph Lubin | joseph.lubin@consensys.net / [LinkedIn](https://www.linkedin.com/in/joseph-lubin-48406489) |
 | **Chainalysis** | Blockchain Compliance & Analytics | [chainalysis.com](https://www.chainalysis.com) | Michael Gronager | [LinkedIn](https://www.linkedin.com/in/gronager) |
 | **Ripple** | Enterprise Cross-Border Payments | [ripple.com](https://www.ripple.com) | Brad Garlinghouse | [LinkedIn](https://www.linkedin.com/in/bradgarlinghouse) |
+
+---
+
+## Sector 12: Gaming, E-sports & Interactive Media
+
+Interactive entertainment and game development studios frequently engage external technical artists, game engine specialists, and contractors for high-performance 3D graphics and gameplay systems.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Epic Games** | Unreal Engine & Fortnite | [epicgames.com](https://www.epicgames.com) | Tim Sweeney | tim@epicgames.com / [LinkedIn](https://www.linkedin.com/in/tim-sweeney-3b5957186) |
+| **Roblox** | User-Generated 3D Worlds & Platform | [roblox.com](https://www.roblox.com) | David Baszucki | davidbaszucki@roblox.com / [LinkedIn](https://www.linkedin.com/in/davidbaszucki) |
+| **Valve** | Steam & Game Development | [valvesoftware.com](https://www.valvesoftware.com) | Gabe Newell | gaben@valvesoftware.com / [LinkedIn](https://www.linkedin.com/in/gabe-newell-630135249) |
+| **Electronic Arts** | Global Interactive Entertainment | [ea.com](https://www.ea.com) | Andrew Wilson | [LinkedIn](https://www.linkedin.com/in/andrew-wilson-ea) |
+| **Riot Games** | League of Legends & Valorant | [riotgames.com](https://www.riotgames.com) | Dylan Jadeja | [LinkedIn](https://www.linkedin.com/in/dylan-jadeja) |
 
 ---
 
