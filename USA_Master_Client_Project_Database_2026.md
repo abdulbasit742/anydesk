@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 36 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, and WealthTech & Investment Platforms) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 37 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, and Security & Compliance Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -566,6 +566,23 @@ WealthTech and Investment Platforms are modernizing personal finance through aut
 | **Charles Schwab** | Global Investment Services | [schwab.com](https://www.schwab.com) | Rick Wurster | rick.wurster@schwab.com / [LinkedIn](https://www.linkedin.com/in/rickwurster) |
 | **Public.com** | Social Investing Platform | [public.com](https://public.com) | Leif Abraham | leif@public.com / [LinkedIn](https://www.linkedin.com/in/leifabraham) |
 | **Addepar** | Wealth Management Software | [addepar.com](https://addepar.com) | Eric Poirier | eric@addepar.com / [LinkedIn](https://www.linkedin.com/in/ericpoirier) |
+
+---
+
+## Sector 37: Security & Compliance Tech (GRC & Trust Platforms)
+
+Security and Compliance Tech companies are modernizing trust through automated security audits, risk management, and compliance workflows. In 2026, the focus is on "Agentic Trust," using AI to continuously monitor and prove security posture, creating high demand for remote software engineers, security researchers, and GRC specialists.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Vanta** | Compliance & Trust Automation | [vanta.com](https://www.vanta.com) | Christina Cacioppo | ccacioppo@vanta.com / [LinkedIn](https://www.linkedin.com/in/ccacioppo) |
+| **Drata** | Continuous Compliance Platform | [drata.com](https://drata.com) | Adam Markowitz | adam@drata.com / [LinkedIn](https://www.linkedin.com/in/markowitzadam) |
+| **Wiz** | Cloud Security & Compliance | [wiz.io](https://www.wiz.io) | Assaf Rappaport | assaf@wiz.io / [LinkedIn](https://www.linkedin.com/in/assafrappaport) |
+| **Secureframe** | Security & Compliance Automation | [secureframe.com](https://secureframe.com) | Shrav Mehta | shrav@secureframe.com / [LinkedIn](https://www.linkedin.com/in/shravmehta) |
+| **OneTrust** | Trust & Privacy Management | [onetrust.com](https://www.onetrust.com) | Kabir Barday | kabir@onetrust.com / [LinkedIn](https://www.linkedin.com/in/kabirbarday) |
+| **Sprinto** | Security Compliance for SaaS | [sprinto.com](https://sprinto.com) | Girish Redekar | girish@sprinto.com / [LinkedIn](https://www.linkedin.com/in/girishredekar) |
+| **Abnormal Security** | AI-Native Email Security | [abnormalsecurity.com](https://abnormalsecurity.com) | Evan Reiser | evan@abnormalsecurity.com / [LinkedIn](https://www.linkedin.com/in/evanreiser) |
+| **Orca Security** | Agentless Cloud Security | [orca.security](https://orca.security) | Gil Geron | gil@orca.security / [LinkedIn](https://www.linkedin.com/in/gilgeron) |
 
 ---
 
