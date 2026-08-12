@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 23 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, and Automotive Tech & Autonomous Vehicles) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 24 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, and EnergyTech & Grid Modernization) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -345,6 +345,23 @@ Automotive Tech and Autonomous Vehicle companies are revolutionizing transportat
 | **Nuro** | Autonomous Delivery Robots | [nuro.ai](https://nuro.ai) | Dave Ferguson | dave@nuro.ai / [LinkedIn](https://www.linkedin.com/in/dave-ferguson-565b974) |
 | **Kodiak Robotics** | Self-Driving Long-Haul Trucking | [kodiak.ai](https://kodiak.ai) | Don Burnette | don@kodiak.ai / [LinkedIn](https://www.linkedin.com/in/don-burnette) |
 | **Luminar** | LiDAR & Autonomous Safety Tech | [luminartech.com](https://luminartech.com) | Austin Russell | austin@luminartech.com / [LinkedIn](https://www.linkedin.com/in/austinrussell) |
+
+---
+
+## Sector 24: EnergyTech & Grid Modernization
+
+EnergyTech and Grid Modernization companies focus on the transition to sustainable energy through renewable integration, smart grid software, and advanced energy storage systems. These organizations require software engineers, data scientists, and IoT specialists for remote and hybrid projects aimed at building a more resilient and clean energy infrastructure.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Crusoe Energy** | Clean Computing & Methane Mitigation | [crusoeenergy.com](https://www.crusoeenergy.com) | Ashish Khanna | ashish@crusoeenergy.com / [LinkedIn](https://www.linkedin.com/in/ashish-khanna-799a68) |
+| **Mainspring Energy** | Linear Generator Technology | [mainspringenergy.com](https://www.mainspringenergy.com) | Shannon Miller | shannon@mainspringenergy.com / [LinkedIn](https://www.linkedin.com/in/shannon-miller-5a7bba5) |
+| **VEIR** | Superconducting Power Lines | [veir.com](https://www.veir.com) | Tim Heidel | tim@veir.com / [LinkedIn](https://www.linkedin.com/in/timheidel) |
+| **Heimdall Power** | Smart Grid Sensors & Software | [heimdallpower.com](https://www.heimdallpower.com) | Jørgen Festervoll | jorgen@heimdallpower.com / [LinkedIn](https://no.linkedin.com/in/j%C3%B8rgen-festervoll) |
+| **Helion Energy** | Magneto-Inertial Fusion Power | [helionenergy.com](https://www.helionenergy.com) | David K. Johnson | david@helionenergy.com / [LinkedIn](https://www.linkedin.com/in/david-johnson-p-eng-14597554) |
+| **Enphase Energy** | Microinverters & Solar Storage | [enphase.com](https://enphase.com) | Badri Kothandaraman | badri@enphaseenergy.com / [LinkedIn](https://www.linkedin.com/in/badri-kothandaraman-0a1a1) |
+| **Form Energy** | Long-Duration Iron-Air Batteries | [formenergy.com](https://formenergy.com) | Mateo Jaramillo | mateo@formenergy.com / [LinkedIn](https://www.linkedin.com/in/mateojaramillo) |
+| **Zap Energy** | Z-Pinch Fusion Technology | [zapenergy.com](https://zapenergy.com) | Benj Conway | benj@zapenergy.com / [LinkedIn](https://www.linkedin.com/in/benjconway) |
 
 ---
 
