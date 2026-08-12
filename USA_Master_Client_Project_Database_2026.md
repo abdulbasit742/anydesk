@@ -2,13 +2,13 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 17 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, and LegalTech) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 18 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, and RetailTech/Omnichannel Commerce) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
 ## Executive Summary
 
-Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across seventeen high-demand sectors in August 2026. 
+Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across eighteen high-demand sectors in August 2026. 
 
 ---
 
@@ -249,6 +249,20 @@ LegalTech platforms modernize contract lifecycle management, AI-driven legal res
 | **Clio** | Cloud-Based Practice Management & Legal OS | [clio.com](https://www.clio.com) | Jack Newton | jack.newton@clio.com / [LinkedIn](https://www.linkedin.com/in/jackbnewton) |
 | **Everlaw** | Cloud Litigation & Discovery Platform | [everlaw.com](https://www.everlaw.com) | AJ Shankar | aj@everlaw.com / [LinkedIn](https://www.linkedin.com/in/ajshankar) |
 | **CoCounsel (Casetext)** | AI Legal Research & Brief Analysis | [casetext.com](https://casetext.com) | Jake Heller | jake@casetext.com / [LinkedIn](https://www.linkedin.com/in/jake-heller) |
+
+---
+
+## Sector 18: RetailTech & Omnichannel Commerce
+
+RetailTech platforms unify physical retail stores with digital eCommerce websites, mobile apps, and marketplaces through advanced point-of-sale (POS) systems, inventory management, and merchant APIs.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Toast** | Restaurant POS & Omnichannel Operations | [pos.toasttab.com](https://pos.toasttab.com) | Aman Narang | aman@toasttab.com / [LinkedIn](https://www.linkedin.com/in/aman-narang-155628) |
+| **Lightspeed Commerce** | Omnichannel POS & Retail Software | [lightspeedhq.com](https://www.lightspeedhq.com) | Dax Dasilva | dax@lightspeedhq.com / [LinkedIn](https://ca.linkedin.com/in/daxdasilva) |
+| **Instacart** | Grocery Delivery & Retail Media Network | [instacart.com](https://www.instacart.com) | Fidji Simo | fidji@instacart.com / [LinkedIn](https://www.linkedin.com/in/apoorvamehta) |
+| **Shopify** | Global Commerce & POS Infrastructure | [shopify.com](https://www.shopify.com) | Harley Finkelstein | harley@shopify.com / [LinkedIn](https://www.linkedin.com/in/harleyf) |
+| **Square (Block)** | Omnichannel Payments & POS Hardware | [squareup.com](https://www.squareup.com) | Jack Dorsey | jack@block.xyz / [LinkedIn](https://www.linkedin.com/in/jackdorsey) |
 
 ---
 
