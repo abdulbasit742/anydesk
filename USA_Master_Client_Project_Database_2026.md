@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 39 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, and DefenseTech & National Security Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 40 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, and Events & Community Management Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -617,6 +617,23 @@ DefenseTech and National Security companies are modernizing defense through auto
 | **Epirus** | Directed Energy Systems | [epirusinc.com](https://www.epirusinc.com) | Andy Lowery | andy.lowery@epirusinc.com / [LinkedIn](https://www.linkedin.com/in/andylowery) |
 | **Helsing** | AI-Native Defense Software | [helsing.ai](https://helsing.ai) | Gundbert Scherf | gundbert@helsing.ai / [LinkedIn](https://www.linkedin.com/in/gundbertscherf) |
 | **Astranis** | Satellite Communication | [astranis.com](https://www.astranis.com) | John Gedmark | john@astranis.com / [LinkedIn](https://www.linkedin.com/in/gedmark) |
+
+---
+
+## Sector 40: Events, Ticketing & Community Management Tech
+
+Events and Community Management companies are redefining how people connect through virtual, hybrid, and immersive experiences. In 2026, the industry is scaling with AI-powered networking and integrated community ecosystems, creating high demand for remote full-stack developers, mobile engineers, and community operations specialists.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Eventbrite** | Event Marketplace & Ticketing | [eventbrite.com](https://www.eventbrite.com) | Luca Ferrari | luca@bendingspoons.com / [LinkedIn](https://www.linkedin.com/in/luca-ferrari-8b2a143b) |
+| **Circle** | Community Platform for Creators | [circle.so](https://circle.so) | Sid Yadav | sid@circle.so / [LinkedIn](https://www.linkedin.com/in/sidyadav) |
+| **Bevy** | Enterprise Community Events | [bevy.com](https://bevy.com) | Derek Andersen | derek@bevy.com / [LinkedIn](https://www.linkedin.com/in/derekjandersen) |
+| **Luma** | Event & Community Tools | [lu.ma](https://lu.ma) | Victor Pontis | victor@lu.ma / [LinkedIn](https://www.linkedin.com/in/vpontis) |
+| **Bizzabo** | Event Experience OS | [bizzabo.com](https://www.bizzabo.com) | Eran Ben-Shushan | eran@bizzabo.com / [LinkedIn](https://www.linkedin.com/in/eranbenshushan) |
+| **Mighty Networks** | Community-Led Growth Platform | [mightynetworks.com](https://www.mightynetworks.com) | Gina Bianchini | gina@mightynetworks.com / [LinkedIn](https://www.linkedin.com/in/ginabianchini) |
+| **Goldcast** | B2B Virtual Event Platform | [goldcast.io](https://www.goldcast.io) | Kapil Agrawal | kapil@goldcast.io / [LinkedIn](https://www.linkedin.com/in/kapil-agrawal-goldcast) |
+| **Gather** | Virtual Office & Event Spaces | [gather.town](https://www.gather.town) | Phillip Wang | phillip@gather.town / [LinkedIn](https://www.linkedin.com/in/phillip-wang-707b7b102) |
 
 ---
 
