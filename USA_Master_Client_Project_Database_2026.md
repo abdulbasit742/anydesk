@@ -2,13 +2,13 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 13 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, and CleanTech/Sustainability) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 14 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, and HRTech/Future of Work) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
 ## Executive Summary
 
-Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across thirteen high-demand sectors in August 2026. 
+Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across fourteen high-demand sectors in August 2026. 
 
 ---
 
@@ -193,6 +193,20 @@ Climate technology and renewable energy firms are rapidly expanding across the U
 | **Commonwealth Fusion Systems** | Commercial Fusion Energy | [cfsenergy.com](https://www.cfsenergy.com) | Bob Mumgaard | [LinkedIn](https://www.linkedin.com/in/mumgaard) |
 | **Terraformation** | Forest Restoration & Carbon Tech | [terraformation.com](https://www.terraformation.com) | Yana Welinder | [LinkedIn](https://www.linkedin.com/in/yanawelinder) |
 | **Amperon** | Energy Forecasting & Grid Analytics | [amperon.ai](https://www.amperon.ai) | Sean Shannon | [LinkedIn](https://www.linkedin.com/in/seanshannon) |
+
+---
+
+## Sector 14: HRTech & Future of Work Tech
+
+Human resources technology and remote workforce infrastructure platforms streamline global hiring, payroll, compliance, and talent acquisition, offering robust contractor opportunities for developers and API integrators.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Gusto** | Payroll, Benefits & HR Software | [gusto.com](https://www.gusto.com) | Josh Reeves | josh@gusto.com / [LinkedIn](https://www.linkedin.com/in/joshuareeves) |
+| **Greenhouse** | Enterprise Talent Acquisition & ATS | [greenhouse.io](https://www.greenhouse.io) | Daniel Chait | daniel@greenhouse.io / [LinkedIn](https://www.linkedin.com/in/dhchait) |
+| **Paradox** | Conversational AI Recruiting | [paradox.ai](https://www.paradox.ai) | Aaron Matos | [LinkedIn](https://www.linkedin.com/in/aaronmatos) |
+| **Remote.com** | Global Payroll, EOR & Compliance | [remote.com](https://remote.com) | Job van der Voort | job@remote.com / [LinkedIn](https://www.linkedin.com/in/jobvandervoort) |
+| **Deel** | Global HR & Contractor Payments | [deel.com](https://www.deel.com) | Alex Bouaziz | alex@deel.com / [LinkedIn](https://www.linkedin.com/in/alexbouaziz) |
 
 ---
 
