@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 52 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, FemTech & Women's Health Innovation, ClimateTech & Carbon Management Innovation, Edge AI & Industrial IoT Innovation, Neurotech & Brain-Computer Interfaces Innovation, Longevity, Anti-Aging & Regenerative Medicine Innovation, Autonomous Systems & Unmanned Aerial Vehicles Innovation, and OceanTech & Blue Economy Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 53 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, FemTech & Women's Health Innovation, ClimateTech & Carbon Management Innovation, Edge AI & Industrial IoT Innovation, Neurotech & Brain-Computer Interfaces Innovation, Longevity, Anti-Aging & Regenerative Medicine Innovation, Autonomous Systems & Unmanned Aerial Vehicles Innovation, OceanTech & Blue Economy Innovation, and Advanced Materials & Nanotechnology Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -837,6 +837,24 @@ OceanTech and Blue Economy companies are innovating in maritime autonomy, carbon
 | **Loliware** | Seaweed-Based Resin & Materials | [loliware.com](https://www.loliware.com) | Sea Briganti | sea@loliware.com / [LinkedIn](https://www.linkedin.com/in/sea-f-briganti) |
 | **OpenOcean Robotics** | Autonomous Data Collection | [openoceanrobotics.com](https://www.openoceanrobotics.com) | Julie Angus | julie@openoceanrobotics.com / [LinkedIn](https://ca.linkedin.com/in/julie-angus) |
 | **Captura** | Ocean Carbon Removal | [capturacorp.com](https://capturacorp.com) | Steve Oldham | steve@capturacorp.com / [LinkedIn](https://www.linkedin.com/company/captura-corp) |
+
+---
+
+## Sector 53: Advanced Materials & Nanotechnology Innovation
+
+Advanced Materials and Nanotechnology companies are manipulating matter at the atomic and molecular scale to revolutionize energy storage, water treatment, and sustainable manufacturing. In 2026, the sector is seeing massive demand for remote materials scientists, simulation engineers, and full-stack developers for research platforms.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Group14 Technologies** | Silicon-Anode Battery Materials | [group14.technology](https://group14.technology) | Rick Luebbe | rluebbe@group14.technology / [LinkedIn](https://www.linkedin.com/in/rick-eric-luebbe-486a4976) |
+| **Moleaer** | Nanobubble Technology | [moleaer.com](https://www.moleaer.com) | Nick Dyner | ndyner@moleaer.com / [LinkedIn](https://www.linkedin.com/in/nicholas-dyner-8394734) |
+| **Via Separations** | Industrial Separation Materials | [viaseparations.com](https://www.viaseparations.com) | Shreya Dave | shreya@viaseparations.com / [LinkedIn](https://www.linkedin.com/in/shdave) |
+| **Forge Nano** | Atomic Layer Deposition (ALD) | [forgenano.com](https://www.forgenano.com) | Paul Lichty | paul@forgenano.com / [LinkedIn](https://www.linkedin.com/in/paul-lichty-251a5b1) |
+| **UbiQD** | Quantum Dot Technology | [ubiqd.com](https://www.ubiqd.com) | Hunter McDaniel | hunter@ubiqd.com / [LinkedIn](https://www.linkedin.com/in/hunter-mcdaniel-4563a735) |
+| **Lyten** | Graphene-Based Battery Tech | [lyten.com](https://lyten.com) | Dan Cook | dcook@lyten.com / [LinkedIn](https://www.linkedin.com/in/dan-cook-1b10ba12) |
+| **Sila Nanotechnologies** | Silicon Anode Technology | [silanano.com](https://www.silanano.com) | Gene Berdichevsky | gene@silanano.com / [LinkedIn](https://www.linkedin.com/in/berdichevsky) |
+| **Factorial Energy** | Solid-State Battery Materials | [factorialenergy.com](https://www.factorialenergy.com) | Siyu Huang | siyu.huang@factorialenergy.com / [LinkedIn](https://www.linkedin.com/in/siyuhuang) |
+| **Simplifyber** | Sustainable Textile Polymers | [simplifyber.com](https://www.simplifyber.com) | Maria Intscher-Owrang | maria@simplifyber.com / [LinkedIn](https://www.linkedin.com/in/mariaintscher) |
 
 ---
 
