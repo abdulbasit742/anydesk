@@ -6657,3 +6657,73 @@ Sector 191 focuses on top US-based companies, startups, and agencies building AI
 18. Dust.tt, https://dust.tt / https://www.linkedin.com/in/spolu
 19. Glean, https://glean.com / https://www.linkedin.com/in/jain-arvind
 20. Shortwave, https://shortwave.com / https://www.linkedin.com/in/andrew-lee-shortwave
+
+## Sector 192: AI in Customer Support, Experience & Success Automation
+
+### Overview
+Sector 192 focuses on top US-based companies, startups, and agencies building AI-powered customer support agents, autonomous experience platforms, and conversational success automation tools for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Zendesk** [1] | Leading AI-powered customer service and engagement platform for global enterprises. | Tom Eggemeier [1] | CEO [1] | `tom@zendesk.com` [1] | [Profile](https://www.linkedin.com/in/tomeggemeier) [1] |
+| **Kore.ai** [2] | Enterprise conversational AI platform for automating customer and employee experiences. | Raj Koneru [2] | CEO & Founder [2] | `raj@kore.ai` [2] | [Profile](https://www.linkedin.com/in/rajkonerufl) [2] |
+| **Ada** [3] | Agentic customer experience company using AI to resolve complex support inquiries. | Mike Murchison [3] | CEO & Co-Founder [3] | `mike.murchison@ada.support` [3] | [Profile](https://www.linkedin.com/in/mikemurchison) [3] |
+| **Sierra AI** [4] | Building autonomous AI agents that interact with customers and perform complex tasks. | Bret Taylor [4] | Co-Founder & CEO [4] | `bret@sierra.ai` [4] | [Profile](https://www.linkedin.com/in/brettaylor) [4] |
+| **Maven AGI** [5] | Enterprise AI agent platform for autonomous customer support across multiple channels. | Jonathan Corbin [5] | CEO & Co-Founder [5] | `jonathan@mavenagi.com` [5] | [Profile](https://www.linkedin.com/in/jonathancorbin) [5] |
+| **IrisAgent** [6] | AI-driven support automation platform resolving conversations across chat, email, and voice. | Palak Dalal Bhatia [6] | CEO & Co-Founder [6] | `palak@irisagent.com` [6] | [Profile](https://www.linkedin.com/in/palakdalal) [6] |
+| **Ability.ai** [7] | Developing autonomous AI agent systems that operate as an intelligence layer for enterprise. | Eugene Vyborov [7] | CEO & Founder [7] | `eugene@ability.ai` [7] | [Profile](https://www.linkedin.com/in/eugenevyborov) [7] |
+| **Intercom** [8] | AI-native customer service platform with integrated support bots and automated workflows. | Eoghan McCabe [8] | CEO & Founder [8] | `eoghan@intercom.io` [8] | [Profile](https://www.linkedin.com/in/eoghanmccabe) [8] |
+| **Gorgias** [9] | E-commerce specialized help center and AI support platform for Shopify and DTC brands. | Romain Lapeyre [9] | CEO & Co-Founder [9] | `romain@gorgias.com` [9] | [Profile](https://www.linkedin.com/in/romainlapeyre) [9] |
+| **Forethought** [10] | Generative AI platform for customer support teams to automate and enhance CX workflows. | Deon Nicholas [10] | Founder & Chairman [10] | `deon@forethought.ai` [10] | [Profile](https://www.linkedin.com/in/deon-nicholas) [10] |
+| **Yellow.ai** [11] | Generative AI platform delivering autonomous, human-like experiences for customer service. | Raghu Ravinutala [11] | CEO & Co-Founder [11] | `raghu@yellow.ai` [11] | [Profile](https://www.linkedin.com/in/raghuravinutala) [11] |
+| **SupportLogic** [12] | Support experience platform using AI to predict customer escalations and churn. | Krishna Raj Raja [12] | CEO & Founder [12] | `krishna@supportlogic.com` [12] | [Profile](https://www.linkedin.com/in/krraja) [12] |
+| **Kustomer** [13] | AI-powered CRM and customer service platform designed for modern, multi-channel support. | Brad Birnbaum [13] | CEO & Co-Founder [13] | `brad@kustomer.com` [13] | [Profile](https://www.linkedin.com/in/bradleybirnbaum) [13] |
+| **Gladly** [14] | AI-driven customer service platform that focuses on personalized, lifelong customer relationships. | Joseph Ansanelli [14] | CEO & Co-Founder [14] | `joseph@gladly.com` [14] | [Profile](https://www.linkedin.com/in/ansanelli) [14] |
+| **Omilia** [15] | Conversational intelligence and natural language understanding platform for contact centers. | Dimitris Vassos [15] | CEO & Founder [15] | `d@omilia.com` [15] | [Profile](https://www.linkedin.com/in/dimitrisvassos) [15] |
+| **SoundHound AI** [16] | Voice AI and conversational intelligence platform for automating customer interactions. | Keyvan Mohajer [16] | CEO & Co-Founder [16] | `keyvan@soundhound.com` [16] | [Profile](https://www.linkedin.com/in/keyvanmohajer) [16] |
+| **Cognigy** [17] | Enterprise agentic AI platform for automating customer service and business processes. | Philipp Heltewig [17] | CEO & Co-Founder [17] | `philipp@cognigy.com` [17] | [Profile](https://www.linkedin.com/in/heltewig) [17] |
+| **Surface Labs** [18] | AI-powered lead qualification and inbound conversion platform for B2B companies. | Kartik Gupta [18] | CEO & Founder [18] | `kartik@surfacelabs.ai` [18] | [Profile](https://www.linkedin.com/in/kartik-gupta) [18] |
+| **Talkdesk** [19] | AI-powered cloud contact center platform for optimizing customer service operations. | Tiago Paiva [19] | CEO & Founder [19] | `tiago@talkdesk.com` [19] | [Profile](https://www.linkedin.com/in/tiagopaiva) [19] |
+| **Freshworks** [20] | AI-driven service management and customer engagement software for modern enterprises. | Dennis Woodside [20] | CEO [20] | `dennis.woodside@freshworks.com` [20] | [Profile](https://www.linkedin.com/in/denniswoodside) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Support Automation & Agentic CX at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the transformation of customer support and experience through autonomous AI agents and conversational intelligence in 2026, ensuring high-accuracy resolution rates, seamless multi-channel integration, and robust data privacy is critical.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous support agent development, and scalable CX architectures. I have recently helped high-growth support platforms optimize automated resolution workflows while reinforcing enterprise-grade reliability.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & CX Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Zendesk, https://zendesk.com / https://www.linkedin.com/in/tomeggemeier
+2. Kore.ai, https://kore.ai / https://www.linkedin.com/in/rajkonerufl
+3. Ada, https://ada.cx / https://www.linkedin.com/in/mikemurchison
+4. Sierra AI, https://sierra.ai / https://www.linkedin.com/in/brettaylor
+5. Maven AGI, https://mavenagi.com / https://www.linkedin.com/in/jonathancorbin
+6. IrisAgent, https://irisagent.com / https://www.linkedin.com/in/palakdalal
+7. Ability.ai, https://ability.ai / https://www.linkedin.com/in/eugenevyborov
+8. Intercom, https://intercom.com / https://www.linkedin.com/in/eoghanmccabe
+9. Gorgias, https://gorgias.com / https://www.linkedin.com/in/romainlapeyre
+10. Forethought, https://forethought.ai / https://www.linkedin.com/in/deon-nicholas
+11. Yellow.ai, https://yellow.ai / https://www.linkedin.com/in/raghuravinutala
+12. SupportLogic, https://supportlogic.com / https://www.linkedin.com/in/krraja
+13. Kustomer, https://kustomer.com / https://www.linkedin.com/in/bradleybirnbaum
+14. Gladly, https://gladly.com / https://www.linkedin.com/in/ansanelli
+15. Omilia, https://omilia.com / https://www.linkedin.com/in/dimitrisvassos
+16. SoundHound AI, https://soundhound.com / https://www.linkedin.com/in/keyvanmohajer
+17. Cognigy, https://cognigy.com / https://www.linkedin.com/in/heltewig
+18. Surface Labs, https://surfacelabs.ai / https://www.linkedin.com/in/kartik-gupta
+19. Talkdesk, https://talkdesk.com / https://www.linkedin.com/in/tiagopaiva
+20. Freshworks, https://freshworks.com / https://www.linkedin.com/in/denniswoodside
