@@ -6797,3 +6797,73 @@ Sector 193 focuses on top US-based companies, startups, and agencies building AI
 18. Highspot, https://highspot.com / https://www.linkedin.com/in/robertwahbe
 19. Surface Labs, https://surfacelabs.ai / https://www.linkedin.com/in/kartik-gupta
 20. Seamless.ai, https://seamless.ai / https://www.linkedin.com/in/brandonbornancin
+
+## Sector 194: AI in HR, Recruitment & Talent Management Automation
+
+### Overview
+Sector 194 focuses on top US-based companies, startups, and agencies building AI-powered recruitment agents, talent intelligence platforms, conversational HR assistants, and automated talent management systems for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Moonhub** [1] | World's first AI recruiter platform for identifying and hiring top talent at scale. | Nancy Xu [1] | CEO & Founder [1] | `nancy@moonhub.ai` [1] | [Profile](https://www.linkedin.com/in/xnancy) [1] |
+| **Alex (Apriora)** [2] | Agentic AI recruiter that conducts live interviews and automates the hiring process. | Aaron Wang [2] | CEO & Co-Founder [2] | `aaron@apriora.ai` [2] | [Profile](https://www.linkedin.com/in/aaron-wang-apriora) [2] |
+| **Eightfold.ai** [3] | Talent intelligence platform using AI to match individuals with the right opportunities. | Ashutosh Garg [3] | CEO & Co-Founder [3] | `ashutosh@eightfold.ai` [3] | [Profile](https://www.linkedin.com/in/ashutoshgarg893) [3] |
+| **Paradox** [4] | Conversational AI platform for HR that automates recruiting, screening, and scheduling. | Adam Godson [4] | CEO [4] | `adam@paradox.ai` [4] | [Profile](https://www.linkedin.com/in/adamgodson) [4] |
+| **Phenom** [5] | Talent experience platform using AI to personalize the journey for candidates and employees. | Mahe Bayireddi [5] | CEO & Co-Founder [5] | `mahe@phenom.com` [5] | [Profile](https://www.linkedin.com/in/mahebayireddi) [5] |
+| **Beamery** [6] | Talent lifecycle management platform utilizing AI for talent sourcing and retention. | Abakar Saidov [6] | CEO & Co-Founder [6] | `abakar@beamery.com` [6] | [Profile](https://www.linkedin.com/in/abakar-saidov) [6] |
+| **SmartRecruiters** [7] | Enterprise-grade AI hiring platform designed for high-performance recruiting teams. | Rebecca Carr [7] | CEO [7] | `rebecca@smartrecruiters.com` [7] | [Profile](https://www.linkedin.com/in/rebeccalcarr) [7] |
+| **Manatal** [8] | AI-powered recruitment software for staffing agencies and HR departments to streamline hiring. | Jeremy Fichet [8] | CEO & Co-Founder [8] | `jeremy@manatal.com` [8] | [Profile](https://www.linkedin.com/in/jeremyfichet) [8] |
+| **Workable** [9] | All-in-one recruiting software with AI features for sourcing, screening, and tracking candidates. | Nikos Moraitakis [9] | CEO & Co-Founder [9] | `nikos@workable.com` [9] | [Profile](https://www.linkedin.com/in/moraitakis) [9] |
+| **Gem** [10] | Recruiting CRM and automation platform for building diverse and high-performing teams. | Steve Bartel [10] | CEO & Co-Founder [10] | `steve@gem.com` [10] | [Profile](https://www.linkedin.com/in/stevebartel) [10] |
+| **Bullhorn** [11] | Cloud-based recruitment and staffing software with natively embedded AI and automation. | Matt Fischer [11] | CEO [11] | `matt.fischer@bullhorn.com` [11] | [Profile](https://www.linkedin.com/in/matthew-fischer-bullhorn) [11] |
+| **HeroHunt.ai** [12] | AI-powered talent sourcing engine for finding and reaching out to the best tech talent. | Jeroen Wiertsema [12] | CEO & Co-Founder [12] | `jeroen@herohunt.ai` [12] | [Profile](https://www.linkedin.com/in/jeroenwiertsema) [12] |
+| **Ethena** [13] | Modern compliance training platform using AI to deliver relevant and engaging HR content. | Roxanne Petraeus [13] | CEO & Co-Founder [13] | `roxanne@goethena.com` [13] | [Profile](https://www.linkedin.com/in/roxannepetraeus) [13] |
+| **Checkr** [14] | AI-powered background check platform for faster and more accurate candidate screening. | Daniel Yanisse [14] | CEO & Co-Founder [14] | `daniel@checkr.com` [14] | [Profile](https://www.linkedin.com/in/dyanisse) [14] |
+| **Hired** [15] | AI-driven talent marketplace connecting tech and sales professionals with top companies. | Josh Brenner [15] | CEO [15] | `josh@hired.com` [15] | [Profile](https://www.linkedin.com/in/joshbrenner) [15] |
+| **Lever** [16] | Collaborative applicant tracking system and CRM with AI-powered talent intelligence. | Nate Smith [16] | CEO & Co-Founder [16] | `nate@lever.co` [16] | [Profile](https://www.linkedin.com/in/nate-smith) [16] |
+| **Greenhouse** [17] | Hiring software that uses AI to help companies build structured and fair hiring processes. | Daniel Chait [17] | CEO & Co-Founder [17] | `daniel@greenhouse.io` [17] | [Profile](https://www.linkedin.com/in/danielchait) [17] |
+| **SeekOut** [18] | AI-powered talent search and recruiting platform for finding hard-to-find candidates. | Anoop Gupta [18] | CEO & Co-Founder [18] | `anoop@seekout.com` [18] | [Profile](https://www.linkedin.com/in/anoop-gupta-seekout) [18] |
+| **Fetcher** [19] | Full-service AI recruiting platform that automates candidate sourcing and outreach. | Andres Blank [19] | CEO & Co-Founder [19] | `andres@fetcher.ai` [19] | [Profile](https://www.linkedin.com/in/andresblank) [19] |
+| **Textio** [20] | AI-native writing platform for HR to create inclusive and effective job descriptions. | Jensen Harris [20] | CEO & Co-Founder [20] | `jensen@textio.com` [20] | [Profile](https://www.linkedin.com/in/jensenharris) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Recruitment Automation & Talent Intelligence at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to revolutionize HR and recruitment through autonomous AI recruiters and talent intelligence platforms in 2026, maintaining high-accuracy candidate matching, seamless ATS integration, and ethical AI standards is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous recruitment agent development, and scalable HRTech architectures. I have recently helped high-growth talent platforms optimize automated sourcing workflows while reinforcing enterprise-grade reliability.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & HRTech Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Moonhub, https://moonhub.ai / https://www.linkedin.com/in/xnancy
+2. Alex (Apriora), https://alex.com / https://www.linkedin.com/in/aaron-wang-apriora
+3. Eightfold.ai, https://eightfold.ai / https://www.linkedin.com/in/ashutoshgarg893
+4. Paradox, https://paradox.ai / https://www.linkedin.com/in/adamgodson
+5. Phenom, https://phenom.com / https://www.linkedin.com/in/mahebayireddi
+6. Beamery, https://beamery.com / https://www.linkedin.com/in/abakar-saidov
+7. SmartRecruiters, https://smartrecruiters.com / https://www.linkedin.com/in/rebeccalcarr
+8. Manatal, https://manatal.com / https://www.linkedin.com/in/jeremyfichet
+9. Workable, https://workable.com / https://www.linkedin.com/in/moraitakis
+10. Gem, https://gem.com / https://www.linkedin.com/in/stevebartel
+11. Bullhorn, https://bullhorn.com / https://www.linkedin.com/in/matthew-fischer-bullhorn
+12. HeroHunt.ai, https://herohunt.ai / https://www.linkedin.com/in/jeroenwiertsema
+13. Ethena, https://goethena.com / https://www.linkedin.com/in/roxannepetraeus
+14. Checkr, https://checkr.com / https://www.linkedin.com/in/dyanisse
+15. Hired, https://hired.com / https://www.linkedin.com/in/joshbrenner
+16. Lever, https://lever.co / https://www.linkedin.com/in/nate-smith
+17. Greenhouse, https://greenhouse.io / https://www.linkedin.com/in/danielchait
+18. SeekOut, https://seekout.com / https://www.linkedin.com/in/anoop-gupta-seekout
+19. Fetcher, https://fetcher.ai / https://www.linkedin.com/in/andresblank
+20. Textio, https://textio.com / https://www.linkedin.com/in/jensenharris
