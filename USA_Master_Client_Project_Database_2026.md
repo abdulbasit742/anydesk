@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 38 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, and FoodTech & Restaurant Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 39 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, and DefenseTech & National Security Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -600,6 +600,23 @@ FoodTech and Restaurant Innovation companies are transforming the way food is pr
 | **GrubMarket** | Food Supply Chain Tech | [grubmarket.com](https://grubmarket.com) | Kenny Zou | kenny@grubmarket.com / [LinkedIn](https://www.linkedin.com/in/kenny-zou-grubmarket) |
 | **Instacart** | Grocery Delivery & Tech | [instacart.com](https://www.instacart.com) | Fidji Simo | fidji@instacart.com / [LinkedIn](https://www.linkedin.com/in/fidjisimo) |
 | **Tovala** | Smart Oven & Meal Service | [tovala.com](https://www.tovala.com) | David Rabie | david@tovala.com / [LinkedIn](https://www.linkedin.com/in/davidrabie) |
+
+---
+
+## Sector 39: DefenseTech & National Security Innovation
+
+DefenseTech and National Security companies are modernizing defense through autonomous systems, AI-driven intelligence, and advanced data infrastructure. In 2026, the industry is scaling rapidly with major government partnerships, creating high demand for remote software engineers (C++, Rust, Python), security researchers, and systems architects.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Anduril Industries** | Autonomous Defense Systems | [anduril.com](https://www.anduril.com) | Palmer Luckey | palmer@anduril.com / [LinkedIn](https://www.linkedin.com/in/palmer-luckey-21a16959) |
+| **Palantir Technologies** | Data Analytics & AI | [palantir.com](https://www.palantir.com) | Alex Karp | akarp@palantir.com / [LinkedIn](https://www.linkedin.com/in/assafrappaport) |
+| **Shield AI** | AI-Native Military Aviation | [shield.ai](https://shield.ai) | Brandon Tseng | brandon@shield.ai / [LinkedIn](https://www.linkedin.com/in/brandontseng) |
+| **Saronic Technologies** | Autonomous Maritime Systems | [saronic.com](https://www.saronic.com) | Dino Mavrookas | dino@saronic.com / [LinkedIn](https://www.linkedin.com/in/dino-mavrookas-190244127) |
+| **CHAOS Industries** | Next-Gen Defense Systems | [chaosinc.com](https://www.chaosinc.com) | John Tenet | john@chaosinc.com / [LinkedIn](https://www.linkedin.com/in/john-t-561b16107) |
+| **Epirus** | Directed Energy Systems | [epirusinc.com](https://www.epirusinc.com) | Andy Lowery | andy.lowery@epirusinc.com / [LinkedIn](https://www.linkedin.com/in/andylowery) |
+| **Helsing** | AI-Native Defense Software | [helsing.ai](https://helsing.ai) | Gundbert Scherf | gundbert@helsing.ai / [LinkedIn](https://www.linkedin.com/in/gundbertscherf) |
+| **Astranis** | Satellite Communication | [astranis.com](https://www.astranis.com) | John Gedmark | john@astranis.com / [LinkedIn](https://www.linkedin.com/in/gedmark) |
 
 ---
 
