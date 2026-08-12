@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 20 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, and GovTech & Public Sector Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 21 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, and BioTech & Life Sciences Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -294,6 +294,23 @@ GovTech and Public Sector Innovation companies modernize government operations, 
 | **Biobot Analytics** | Wastewater Epidemiology & Data | [biobot.io](https://biobot.io) | Mariana Matus | mariana@biobot.io / [LinkedIn](https://www.linkedin.com/in/marianamatus) |
 | **Vannevar Labs** | Defense & Intelligence Software | [vannevarlabs.com](https://vannevarlabs.com) | Brett Granberg | brett@vannevarlabs.com / [LinkedIn](https://www.linkedin.com/in/brettgranberg) |
 | **Promise** | Gov Payment & Relief Platforms | [promise-pay.com](https://promise-pay.com) | Phaedra Ellis-Lamkins | phaedra@promise-pay.com / [LinkedIn](https://www.linkedin.com/in/phaedraellislamkins) |
+
+---
+
+## Sector 21: BioTech & Life Sciences Tech
+
+BioTech and Life Sciences Tech companies operate at the intersection of biology and technology, focusing on drug discovery, genetic engineering, bioinformatics, and R&D software. These organizations have a high demand for remote software engineers, data scientists, and specialized technical researchers to accelerate scientific breakthroughs.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Benchling** | R&D Cloud Software for Scientists | [benchling.com](https://benchling.com) | Sajith Wickramasekara | sajith@benchling.com / [LinkedIn](https://www.linkedin.com/in/sajithw) |
+| **Ginkgo Bioworks** | Cell Programming & Synthetic Biology | [ginkgobioworks.com](https://ginkgobioworks.com) | Jason Kelly | jason@ginkgobioworks.com / [LinkedIn](https://www.linkedin.com/in/jrkelly2) |
+| **insitro** | AI-Driven Drug Discovery | [insitro.com](https://insitro.com) | Daphne Koller | daphne@insitro.com / [LinkedIn](https://www.linkedin.com/in/daphne-koller-4053a820) |
+| **Color Health** | Precision Medicine & Diagnostics | [color.com](https://color.com) | Othman Laraki | othman@color.com / [LinkedIn](https://www.linkedin.com/in/othmanlaraki) |
+| **Colossal Biosciences** | Genetic Engineering & De-extinction | [colossal.com](https://colossal.com) | Ben Lamm | ben@colossal.com / [LinkedIn](https://www.linkedin.com/in/benlamm) |
+| **Verge Labs** | AI World Models for Human Biology | [vergelabs.ai](https://vergelabs.ai) | Alice Zhang | alice@vergelabs.ai / [LinkedIn](https://www.linkedin.com/in/alice-zhang-2087862b) |
+| **Recursion** | AI-Powered Drug Development | [recursion.com](https://recursion.com) | Chris Gibson | chris@recursion.com / [LinkedIn](https://www.linkedin.com/in/chrisgibson-rx) |
+| **Neuralink** | Brain-Computer Interface Tech | [neuralink.com](https://neuralink.com) | Elon Musk | elon@neuralink.com / [LinkedIn](https://www.linkedin.com/in/barmstrong) |
 
 ---
 
