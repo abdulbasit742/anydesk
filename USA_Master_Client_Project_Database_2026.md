@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 33 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, and Customer Success & Experience Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 34 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, and Productivity & Collaboration Software) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -515,6 +515,23 @@ Customer Success and Experience Tech companies build the platforms that manage c
 | **Contentsquare** | Digital Experience Analytics | [contentsquare.com](https://contentsquare.com) | Jonathan Cherki | jonathan.cherki@contentsquare.com / [LinkedIn](https://www.linkedin.com/in/jonathancherki) |
 | **Qualtrics** | Experience Management (XM) | [qualtrics.com](https://www.qualtrics.com) | Zig Serafin | zig@qualtrics.com / [LinkedIn](https://www.linkedin.com/in/zigserafin) |
 | **Talkdesk** | Cloud Contact Center Solution | [talkdesk.com](https://www.talkdesk.com) | Tiago Paiva | tiago.paiva@talkdesk.com / [LinkedIn](https://www.linkedin.com/in/tiagopaiva) |
+
+---
+
+## Sector 34: Productivity & Collaboration Software
+
+Productivity and Collaboration companies build the tools that power the modern distributed workforce. In 2026, these organizations are evolving into "AI Work Platforms," requiring remote talent in full-stack development, product design, and AI integration to build the next generation of collaborative workspace tools.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Notion** | All-in-one Workspace | [notion.so](https://www.notion.so) | Ivan Zhao | ivan@notion.so / [LinkedIn](https://www.linkedin.com/in/ivanhzhao) |
+| **Zoom** | Video Communication & AI | [zoom.us](https://zoom.us) | Eric Yuan | eric@zoom.us / [LinkedIn](https://www.linkedin.com/in/ericsyuan) |
+| **Airtable** | Connected Apps Platform | [airtable.com](https://www.airtable.com) | Howie Liu | howie@airtable.com / [LinkedIn](https://www.linkedin.com/in/howieliu) |
+| **Monday.com** | Work Operating System (OS) | [monday.com](https://monday.com) | Roy Mann | roy@monday.com / [LinkedIn](https://www.linkedin.com/in/manroy) |
+| **Miro** | Visual Collaboration Workspace | [miro.com](https://miro.com) | Andrey Khusid | khusid@realtimeboard.com / [LinkedIn](https://www.linkedin.com/in/khusid) |
+| **ClickUp** | Productivity Platform | [clickup.com](https://clickup.com) | Zeb Evans | zeb@clickup.com / [LinkedIn](https://www.linkedin.com/in/zebevansclickup) |
+| **Slack** | Intelligent Work Messaging | [slack.com](https://slack.com) | Rob Seaman | rseaman@slack-corp.com / [LinkedIn](https://www.linkedin.com/in/seamanrob) |
+| **Linear** | Modern Product Management | [linear.app](https://linear.app) | Karri Saarinen | karri@linear.app / [LinkedIn](https://www.linkedin.com/in/karrisaarinen) |
 
 ---
 
