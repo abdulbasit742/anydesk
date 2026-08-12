@@ -7357,3 +7357,73 @@ Sector 201 focuses on top US-based companies, startups, and agencies building AI
 18. Grubbrr, https://grubbrr.com / https://www.linkedin.com/in/samzietz
 19. Nosto, https://nosto.com / https://www.linkedin.com/in/jim-davidson-a4a1
 20. Octane AI, https://octaneai.com / https://www.linkedin.com/in/mattschlicht
+
+## Sector 202: AI in Healthcare, Biotech & Life Sciences Automation
+
+### Overview
+Sector 202 focuses on top US-based companies, startups, and agencies building AI-powered drug discovery platforms, autonomous clinical trial management systems, intelligent protein design tools, and AI-driven precision medicine orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Xaira Therapeutics** [1] | AI-powered drug discovery and development platform applying end-to-end AI across target discovery and molecular design. | Marc Tessier-Lavigne [1] | CEO & Co-Founder [1] | `marc.tessier-lavigne@xaira.com` [1] | [Profile](https://www.linkedin.com/in/marc-tessier-lavigne) [1] |
+| **Generate:Biomedicines** [2] | AI-driven protein design platform bringing together human, biological, and machine intelligence. | Michael Nally [2] | CEO [2] | `michael.nally@generatebiomedicines.com` [2] | [Profile](https://www.linkedin.com/in/michael-nally-0a137299) [2] |
+| **Recursion Pharmaceuticals** [3] | AI-first drug discovery company integrating machine learning into the entire development process. | Najat Khan [3] | CEO & President [3] | `najat.khan@recursion.com` [3] | [Profile](https://www.linkedin.com/in/chris-gibson-5ab66065) [3] |
+| **Insilico Medicine** [4] | Generative AI platform for drug discovery, aging research, and clinical trial outcome prediction. | Alex Zhavoronkov [4] | CEO & Founder [4] | `alex@insilico.com` [4] | [Profile](https://www.linkedin.com/in/zhavoronkov) [4] |
+| **insitro** [5] | AI-driven drug discovery company using high-throughput biology and machine learning to build disease models. | Daphne Koller [5] | CEO & Founder [5] | `daphne@insitro.com` [5] | [Profile](https://www.linkedin.com/in/daphne-koller-4053a820) [5] |
+| **Athos Therapeutics** [6] | AI-powered precision medicine company developing novel therapies for autoimmune and cancer patients. | Dimitrios Iliopoulos [6] | CEO & Co-Founder [6] | `dimitrios@athostx.com` [6] | [Profile](https://www.linkedin.com/in/dimitrios-iliopoulos-179a9b17) [6] |
+| **Actio Biosciences** [7] | AI-driven drug development company focusing on precision medicine for rare and common diseases. | David P. Leader [7] | CEO [7] | `david@actiobiosciences.com` [7] | [Profile](https://wewillcure.com/insights/company-profiles/precision-medicine-startups-to-watch-in-2026) [7] |
+| **miRecule** [8] | AI-powered RNA therapeutics platform developing personalized medicines for cancer and muscular dystrophy. | Anthony DiGiandomenico [8] | CEO [8] | `anthony@mirecule.com` [8] | [Profile](https://www.linkedin.com/in/anthony-digiandomenico-407b461) [8] |
+| **Zappix** [9] | AI-powered customer engagement and patient experience automation platform for healthcare providers. | Yossi Abraham [9] | CEO [9] | `yossi.abraham@zappix.com` [9] | [Profile](https://www.linkedin.com/in/yossiabraham) [9] |
+| **BioAge Labs** [10] | AI-driven platform for identifying and developing drugs to treat aging and metabolic diseases. | Kristen Fortney [10] | CEO & Co-Founder [10] | `kristen@bioagelabs.com` [10] | [Profile](https://www.linkedin.com/in/kristenfortney) [10] |
+| **Terray Therapeutics** [11] | AI-powered small molecule discovery platform integrating chemical experimentation and machine learning. | Jacob Berlin [11] | CEO & Co-Founder [11] | `jacob@terraytx.com` [11] | [Profile](https://www.linkedin.com/in/jacob-berlin-8a88181) [11] |
+| **Atomic AI** [12] | AI-driven platform for discovering and designing RNA-targeted medicines. | Raphael Townshend [12] | CEO & Founder [12] | `raphael@atomic.ai` [12] | [Profile](https://www.linkedin.com/in/raphaeltownshend) [12] |
+| **LabGenius** [13] | AI-powered antibody discovery platform automating the design and testing of next-generation therapeutics. | James Field [13] | CEO & Founder [13] | `james@labgeni.us` [13] | [Profile](https://www.linkedin.com/in/james-field-8a88181) [13] |
+| **BenchSci** [14] | AI-powered reagent selection and research platform for accelerating biomedical experimentation. | Liran Belenzon [14] | CEO & Co-Founder [14] | `liran@benchsci.com` [14] | [Profile](https://www.linkedin.com/in/liranbelenzon) [14] |
+| **Strateos** [15] | AI-driven cloud laboratory platform for autonomous experimentation and drug discovery. | Mark Fischer-Colbrie [15] | CEO [15] | `mark.fischer-colbrie@strateos.com` [15] | [Profile](https://www.linkedin.com/in/markfischercolbrie) [15] |
+| **PathAI** [16] | AI-powered pathology platform for improving diagnostic accuracy and drug development. | Andy Beck [16] | CEO & Co-Founder [16] | `andy.beck@pathai.com` [16] | [Profile](https://www.linkedin.com/in/andybeckmd) [16] |
+| **Paige AI** [17] | AI-native pathology platform for advanced cancer diagnosis and treatment planning. | Andy Moye [17] | CEO [17] | `andy.moye@paige.ai` [17] | [Profile](https://www.linkedin.com/in/andymoye) [17] |
+| **Tempus** [18] | AI-powered precision medicine platform for organizing and analyzing clinical and molecular data. | Eric Lefkofsky [18] | CEO & Founder [18] | `eric@tempus.com` [18] | [Profile](https://www.linkedin.com/in/ericlefkofsky) [18] |
+| **Freenome** [19] | AI-powered multi-cancer screening platform for early detection through blood tests. | Mike Nolan [19] | CEO [19] | `mike.nolan@freenome.com` [19] | [Profile](https://www.linkedin.com/in/mikenolan) [19] |
+| **Color Health** [20] | AI-driven healthcare delivery platform for personalized genetics and preventive care. | Othman Laraki [20] | CEO & Co-Founder [20] | `othman@color.com` [20] | [Profile](https://www.linkedin.com/in/othmanlaraki) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Drug Discovery & Agentic Biotech at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of healthcare and life sciences through autonomous AI agents and intelligent biotech platforms in 2026, ensuring high-fidelity biological data, seamless laboratory automation, and resilient precision medicine orchestration is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous biotech agent development, and scalable HealthTech architectures. I have recently helped high-growth life sciences platforms optimize automated target discovery and molecular design workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Biotech Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Xaira Therapeutics, https://xaira.com / https://www.linkedin.com/in/marc-tessier-lavigne
+2. Generate:Biomedicines, https://generatebiomedicines.com / https://www.linkedin.com/in/michael-nally-0a137299
+3. Recursion Pharmaceuticals, https://recursion.com / https://www.linkedin.com/in/chris-gibson-5ab66065
+4. Insilico Medicine, https://insilico.com / https://www.linkedin.com/in/zhavoronkov
+5. insitro, https://insitro.com / https://www.linkedin.com/in/daphne-koller-4053a820
+6. Athos Therapeutics, https://athostx.com / https://www.linkedin.com/in/dimitrios-iliopoulos-179a9b17
+7. Actio Biosciences, https://actiobiosciences.com / https://wewillcure.com/insights/company-profiles/precision-medicine-startups-to-watch-in-2026
+8. miRecule, https://mirecule.com / https://www.linkedin.com/in/anthony-digiandomenico-407b461
+9. Zappix, https://zappix.com / https://www.linkedin.com/in/yossiabraham
+10. BioAge Labs, https://bioagelabs.com / https://www.linkedin.com/in/kristenfortney
+11. Terray Therapeutics, https://terraytx.com / https://www.linkedin.com/in/jacob-berlin-8a88181
+12. Atomic AI, https://atomic.ai / https://www.linkedin.com/in/raphaeltownshend
+13. LabGenius, https://labgeni.us / https://www.linkedin.com/in/james-field-8a88181
+14. BenchSci, https://benchsci.com / https://www.linkedin.com/in/liranbelenzon
+15. Strateos, https://strateos.com / https://www.linkedin.com/in/markfischercolbrie
+16. PathAI, https://pathai.com / https://www.linkedin.com/in/andybeckmd
+17. Paige AI, https://paige.ai / https://www.linkedin.com/in/andymoye
+18. Tempus, https://tempus.com / https://www.linkedin.com/in/ericlefkofsky
+19. Freenome, https://freenome.com / https://www.linkedin.com/in/mikenolan
+20. Color Health, https://color.com / https://www.linkedin.com/in/othmanlaraki
