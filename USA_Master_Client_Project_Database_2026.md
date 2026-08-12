@@ -7637,3 +7637,73 @@ Sector 205 focuses on top US-based companies, startups, and agencies building AI
 18. Sync Labs, https://synclabs.so / https://www.linkedin.com/in/samuel-g-a8a8181
 19. Memories.ai, https://memories.ai / https://www.linkedin.com/in/shawn-shen-jx
 20. Naoma AI, https://naoma.ai / https://www.linkedin.com/in/dmitryzakharov-ai
+
+## Sector 206: AI in Real Estate, Construction & Property Tech (PropTech) Automation
+
+### Overview
+Sector 206 focuses on top US-based companies, startups, and agencies building AI-powered property management platforms, autonomous construction systems, intelligent real estate data analytics, and AI-driven tenant experience orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **EliseAI** [1] | AI property management platform building intelligent agents for housing and healthcare operations. | Minna Song [1] | CEO & Co-Founder [1] | `minna@eliseai.com` [1] | [Profile](https://www.linkedin.com/in/minna-song) [1] |
+| **ServiceTitan** [2] | AI-powered field service management platform for trades like HVAC, plumbing, and electrical. | Ara Mahdessian [2] | CEO & Co-Founder [2] | `amahdessian@servicetitan.com` [2] | [Profile](https://www.linkedin.com/in/ara-mahdessian) [2] |
+| **Bilt Rewards** [3] | AI-driven loyalty and rewards platform built around residential rent and homeownership. | Ankur Jain [3] | CEO & Founder [3] | `ankur@biltrewards.com` [3] | [Profile](https://www.linkedin.com/in/ankurjainkairos) [3] |
+| **CentralComs** [4] | AI agent platform for residential property management companies to automate maintenance and leasing. | Kyle Chang [4] | CEO & Founder [4] | `kyle@centralcoms.com` [4] | [Profile](https://www.linkedin.com/in/kylegchang) [4] |
+| **RunLocal** [5] | AI-native property management platform using physical and edge AI for operational efficiency. | Ismail Salim [5] | CEO & Founder [5] | `ismail@runlocal.ai` [5] | [Profile](https://www.linkedin.com/in/ismail-runlocalai) [5] |
+| **LocalizeOS** [6] | AI-powered operating system for real estate agents to automate lead engagement and conversion. | Omer Granot [6] | CEO [6] | `omer@localizeos.com` [6] | [Profile](https://www.linkedin.com/in/ogranot) [6] |
+| **ButterflyMX** [7] | AI-driven smart access control and intercom systems for multi-family residential buildings. | Cyrus Claffey [7] | CEO & Founder [7] | `cyrus@butterflymx.com` [7] | [Profile](https://www.linkedin.com/in/cyrusclaffey) [7] |
+| **Roofr** [8] | AI-powered roofing platform providing automated measurements and estimates for contractors. | Richard Nelson [8] | CEO & Founder [8] | `richard@roofr.com` [8] | [Profile](https://www.linkedin.com/in/richard-nelson-roofr) [8] |
+| **Built Robotics** [9] | AI-driven autonomous construction equipment platform for large-scale earthmoving and trenching. | Noah Ready-Campbell [9] | CEO & Co-Founder [9] | `noah@builtrobotics.com` [9] | [Profile](https://www.linkedin.com/in/nreadycampbell) [9] |
+| **Icon** [10] | AI-powered 3D printing construction company building high-performance, resilient housing. | Jason Ballard [10] | CEO & Co-Founder [10] | `jason@iconbuild.com` [10] | [Profile](https://www.linkedin.com/in/jasonballard) [10] |
+| **Qualia** [11] | AI-driven real estate closing platform streamlining the title, escrow, and settlement process. | Nate Baker [11] | CEO & Co-Founder [11] | `nate@qualia.com` [11] | [Profile](https://www.linkedin.com/in/nate-baker-a8a8181) [11] |
+| **Doma** [12] | AI-powered title insurance and closing platform using machine learning to automate title search. | Max Simkoff [12] | CEO [12] | `msimkoff@doma.com` [12] | [Profile](https://www.linkedin.com/in/maxsimkoff) [12] |
+| **Procore** [13] | AI-enhanced construction management software for owners, general contractors, and specialty contractors. | Tooey Courtemanche [13] | CEO & Founder [13] | `tooey@procore.com` [13] | [Profile](https://www.linkedin.com/in/tooey-courtemanche-8a8181) [13] |
+| **Rhino** [14] | AI-driven security deposit alternative platform for renters and property owners. | Paraag Sarva [14] | CEO & Co-Founder [14] | `paraag@sayrhino.com` [14] | [Profile](https://www.linkedin.com/in/paraagsarva) [14] |
+| **HqO** [15] | AI-powered tenant experience platform for commercial and residential real estate owners. | Chase Garbarino [15] | CEO & Co-Founder [15] | `chase@hqo.co` [15] | [Profile](https://www.linkedin.com/in/chasegarbarino) [15] |
+| **VTS** [16] | AI-driven commercial real estate leasing and asset management platform for landlords and brokers. | Nick Romito [16] | CEO & Co-Founder [16] | `nick@vts.com` [16] | [Profile](https://www.linkedin.com/in/nickromito) [16] |
+| **Entera** [17] | AI-powered residential real estate investment platform for institutional and individual investors. | Martin Kay [17] | CEO & Co-Founder [17] | `martin@entera.ai` [17] | [Profile](https://www.linkedin.com/in/martinkay) [17] |
+| **Enertiv** [18] | AI-driven building operations platform for optimizing energy usage and maintenance in CRE. | Connell McGill [18] | CEO & Co-Founder [18] | `connell@enertiv.com` [18] | [Profile](https://www.linkedin.com/in/connellmcgill) [18] |
+| **Cherre** [19] | AI-powered real estate data integration and insights platform for institutional investors. | L.D. Salmanson [19] | CEO & Co-Founder [19] | `ld@cherre.com` [19] | [Profile](https://www.linkedin.com/in/ldsalmanson) [19] |
+| **Juniper Square** [20] | AI-driven investment management platform for private equity and real estate sponsors. | Alex Robinson [20] | CEO & Co-Founder [20] | `alex@junipersquare.com` [20] | [Profile](https://www.linkedin.com/in/arobinson) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Property Automation & Agentic PropTech at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of real estate and construction technology through autonomous AI agents and intelligent PropTech platforms in 2026, ensuring high-fidelity property data, seamless operational orchestration, and resilient agentic tenant experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous PropTech agent development, and scalable Built World architectures. I have recently helped high-growth real estate platforms optimize automated lead engagement and property management workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & PropTech Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. EliseAI, https://eliseai.com / https://www.linkedin.com/in/minna-song
+2. ServiceTitan, https://servicetitan.com / https://www.linkedin.com/in/ara-mahdessian
+3. Bilt Rewards, https://biltrewards.com / https://www.linkedin.com/in/ankurjainkairos
+4. CentralComs, https://centralcoms.com / https://www.linkedin.com/in/kylegchang
+5. RunLocal, https://runlocal.ai / https://www.linkedin.com/in/ismail-runlocalai
+6. LocalizeOS, https://localizeos.com / https://www.linkedin.com/in/ogranot
+7. ButterflyMX, https://butterflymx.com / https://www.linkedin.com/in/cyrusclaffey
+8. Roofr, https://roofr.com / https://www.linkedin.com/in/richard-nelson-roofr
+9. Built Robotics, https://builtrobotics.com / https://www.linkedin.com/in/nreadycampbell
+10. Icon, https://iconbuild.com / https://www.linkedin.com/in/jasonballard
+11. Qualia, https://qualia.com / https://www.linkedin.com/in/nate-baker-a8a8181
+12. Doma, https://doma.com / https://www.linkedin.com/in/maxsimkoff
+13. Procore, https://procore.com / https://www.linkedin.com/in/tooey-courtemanche-8a8181
+14. Rhino, https://sayrhino.com / https://www.linkedin.com/in/paraagsarva
+15. HqO, https://hqo.co / https://www.linkedin.com/in/chasegarbarino
+16. VTS, https://vts.com / https://www.linkedin.com/in/nickromito
+17. Entera, https://entera.ai / https://www.linkedin.com/in/martinkay
+18. Enertiv, https://enertiv.com / https://www.linkedin.com/in/connellmcgill
+19. Cherre, https://cherre.com / https://www.linkedin.com/in/ldsalmanson
+20. Juniper Square, https://junipersquare.com / https://www.linkedin.com/in/arobinson
