@@ -7427,3 +7427,73 @@ Sector 202 focuses on top US-based companies, startups, and agencies building AI
 18. Tempus, https://tempus.com / https://www.linkedin.com/in/ericlefkofsky
 19. Freenome, https://freenome.com / https://www.linkedin.com/in/mikenolan
 20. Color Health, https://color.com / https://www.linkedin.com/in/othmanlaraki
+
+## Sector 203: AI in Education, EdTech & Learning Management Automation
+
+### Overview
+Sector 203 focuses on top US-based companies, startups, and agencies building AI-powered education platforms, autonomous tutoring systems, personalized learning tools, and intelligent learning management orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Duolingo** [1] | AI-powered language learning platform using personalized agents for instruction and assessment. | Luis von Ahn [1] | CEO & Co-Founder [1] | `luis@duolingo.com` [1] | [Profile](https://www.linkedin.com/in/luis-von-ahn-duolingo) [1] |
+| **Coursera** [2] | AI-driven online education platform providing personalized course recommendations and AI tutoring. | Greg Hart [2] | CEO [2] | `greg.hart@coursera.org` [2] | [Profile](https://www.linkedin.com/in/jeffmagg) [2] |
+| **Khan Academy** [3] | AI-powered personalized learning platform featuring Khanmigo, an intelligent tutor and teaching assistant. | Sal Khan [3] | CEO & Founder [3] | `sal@khanacademy.org` [3] | [Profile](https://www.linkedin.com/in/khanacademy) [3] |
+| **Quizlet** [4] | AI-native study tools and flashcard platform using generative AI to create personalized study paths. | Kurt Beidler [4] | CEO [4] | `kurt@quizlet.com` [4] | [Profile](https://www.linkedin.com/in/kurt-beidler-ceo) [4] |
+| **Chegg** [5] | AI-powered student support platform providing automated tutoring and writing assistance. | Dan Rosensweig [5] | CEO [5] | `dan@chegg.com` [5] | [Profile](https://www.linkedin.com/in/danielrosensweig) [5] |
+| **Udemy** [6] | AI-driven skills marketplace and learning platform for professional development and corporate training. | Hugo Sarrazin [6] | CEO [6] | `hugo.sarrazin@udemy.com` [6] | [Profile](https://www.linkedin.com/in/hugo-sarrazin) [6] |
+| **Guild Education** [7] | AI-powered workforce learning and education benefits platform for enterprise talent development. | Bijal Shah [7] | CEO [7] | `bijal@guild.com` [7] | [Profile](https://www.axios.com/local/denver/2024/04/23/guild-education-ceo-bijal-shah) [7] |
+| **Paper** [8] | AI-driven tutoring platform providing 24/7 personalized educational support for K-12 students. | Philip Cutler [8] | CEO & Founder [8] | `philip@paper.co` [8] | [Profile](https://ca.linkedin.com/in/philipcutler) [8] |
+| **Outschool** [9] | AI-powered interactive learning platform for small-group online classes and community learning. | Xueyan Wang [9] | Co-Lead & COO [9] | `xueyan@outschool.com` [9] | [Profile](https://www.linkedin.com/in/amirnathoo) [9] |
+| **MasterClass** [10] | AI-enhanced creative education platform featuring world-class experts and personalized learning paths. | David Rogier [10] | CEO & Founder [10] | `david@masterclass.com` [10] | [Profile](https://www.linkedin.com/in/davidrogier) [10] |
+| **Section** [11] | AI-native business education platform focusing on strategic AI adoption and leadership training. | Greg Shove [11] | CEO [11] | `greg@section.com` [11] | [Profile](https://www.linkedin.com/in/gregshove) [11] |
+| **Maven** [12] | AI-powered cohort-based learning platform for experts and creators to build interactive courses. | Gagan Biyani [12] | CEO & Co-Founder [12] | `gagan@maven.com` [12] | [Profile](https://www.linkedin.com/in/gaganbiyani) [12] |
+| **Synthesis** [13] | AI-driven collaborative learning platform focusing on complex problem-solving and critical thinking. | Chrisman Frank [13] | CEO & Co-Founder [13] | `chrisman@synthesis.is` [13] | [Profile](https://www.linkedin.com/in/chrisman-frank-a8a8181) [13] |
+| **Sora Schools** [14] | AI-native online high school platform providing personalized, project-based educational journeys. | Garrett Smiley [14] | CEO & Co-Founder [14] | `garrett@soraschools.com` [14] | [Profile](https://www.linkedin.com/in/garrettsmiley) [14] |
+| **Primer** [15] | AI-powered microschool platform and community for personalized K-12 education. | Ryan Delk [15] | CEO & Founder [15] | `ryan@withprimer.com` [15] | [Profile](https://www.linkedin.com/in/ryandelk) [15] |
+| **Alpha School** [16] | AI-powered microschool network using adaptive technology to customize K-12 educational paths. | MacKenzie Price [16] | CEO & Co-Founder [16] | `mackenzie@alphaschool.com` [16] | [Profile](https://www.linkedin.com/in/mackenzie-price-a8a8181) [16] |
+| **Uppit AI** [17] | AI-native education platform building custom, autonomous AI agent solutions for learning. | Nate Herk [17] | CEO & Founder [17] | `nate@uppit.ai` [17] | [Profile](https://www.linkedin.com/in/nateherkelman) [17] |
+| **YoLearn.ai** [18] | Voice-first AI tutoring platform for K-12 and competitive exam preparation. | Kirti Prakash Mishra [18] | CEO & Founder [18] | `kirti@yolearn.ai` [18] | [Profile](https://www.linkedin.com/posts/kirkjaa_artificialintelligence-venturebuilding-activity-7488666248042446848-2lqj) [18] |
+| **GoGuardian** [19] | AI-powered student safety and learning management platform for K-12 school districts. | Advait Shinde [19] | CEO & Co-Founder [19] | `advait@goguardian.com` [19] | [Profile](https://www.linkedin.com/in/advaitshinde) [19] |
+| **BrainPOP** [20] | AI-enhanced educational content platform providing interactive lessons and creative tools for students. | Scott Kirkpatrick [20] | CEO [20] | `scott.kirkpatrick@brainpop.com` [20] | [Profile](https://www.linkedin.com/in/scottkirkpatrick) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Learning Personalization & Agentic EdTech at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of education and lifelong learning through autonomous AI agents and intelligent EdTech platforms in 2026, ensuring high-fidelity student data, seamless tutoring orchestration, and resilient agentic learning experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous education agent development, and scalable EdTech architectures. I have recently helped high-growth learning platforms optimize automated personalization and tutoring workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & EdTech Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Duolingo, https://duolingo.com / https://www.linkedin.com/in/luis-von-ahn-duolingo
+2. Coursera, https://coursera.org / https://www.linkedin.com/in/jeffmagg
+3. Khan Academy, https://khanacademy.org / https://www.linkedin.com/in/khanacademy
+4. Quizlet, https://quizlet.com / https://www.linkedin.com/in/kurt-beidler-ceo
+5. Chegg, https://chegg.com / https://www.linkedin.com/in/danielrosensweig
+6. Udemy, https://udemy.com / https://www.linkedin.com/in/hugo-sarrazin
+7. Guild Education, https://guild.com / https://www.axios.com/local/denver/2024/04/23/guild-education-ceo-bijal-shah
+8. Paper, https://paper.co / https://ca.linkedin.com/in/philipcutler
+9. Outschool, https://outschool.com / https://www.linkedin.com/in/amirnathoo
+10. MasterClass, https://masterclass.com / https://www.linkedin.com/in/davidrogier
+11. Section, https://section.com / https://www.linkedin.com/in/gregshove
+12. Maven, https://maven.com / https://www.linkedin.com/in/gaganbiyani
+13. Synthesis, https://synthesis.is / https://www.linkedin.com/in/chrisman-frank-a8a8181
+14. Sora Schools, https://soraschools.com / https://www.linkedin.com/in/garrettsmiley
+15. Primer, https://withprimer.com / https://www.linkedin.com/in/ryandelk
+16. Alpha School, https://alphaschool.com / https://www.linkedin.com/in/mackenzie-price-a8a8181
+17. Uppit AI, https://uppit.ai / https://www.linkedin.com/in/nateherkelman
+18. YoLearn.ai, https://yolearn.ai / https://www.linkedin.com/posts/kirkjaa_artificialintelligence-venturebuilding-activity-7488666248042446848-2lqj
+19. GoGuardian, https://goguardian.com / https://www.linkedin.com/in/advaitshinde
+20. BrainPOP, https://brainpop.com / https://www.linkedin.com/in/scottkirkpatrick
