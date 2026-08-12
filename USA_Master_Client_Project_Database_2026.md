@@ -4550,3 +4550,32 @@ AI-driven Hospitality, Travel, and Leisure Technology companies are scaling auto
 | **Otter** | Restaurant Order Automation & Delivery OS | [tryotter.com](https://tryotter.com) | Travis Kalanick | travis@tryotter.com / [LinkedIn](https://www.linkedin.com/in/traviskalanick) |
 | **Hotel Effectiveness** | Hotel Labor Management & Scheduling | [hoteleffectiveness.com](https://hoteleffectiveness.com) | Mike James | mjames@hoteleffectiveness.com / [LinkedIn](https://www.linkedin.com/in/mikejames1) |
 
+
+
+## Sector 157: AI for Agriculture, FoodTech & Environmental Monitoring
+
+AI-driven Agriculture, FoodTech, and Environmental Monitoring companies are scaling autonomous weeding robots, microbial biotechnology, food supply chain digital platforms, and geospatial carbon monitoring across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Indigo Agriculture** | Microbial Science & Carbon Farming AI | [indigoag.com](https://www.indigoag.com) | Ron Hovsepian | ron@indigoag.com / [LinkedIn](https://www.linkedin.com/in/ron-hovsepian) |
+| **Pivot Bio** | Sustainable Nitrogen-Fixing Microbial Tech | [pivotbio.com](https://www.pivotbio.com) | Chris Abbott | cabbott@pivotbio.com / [LinkedIn](https://www.linkedin.com/in/christopherayre) |
+| **Inari** | AI Seed Breeding & Gene Editing Platform | [inari.com](https://inari.com) | Ponsi Trivisvavet | ponsi@inari.com / [LinkedIn](https://www.linkedin.com/in/ponsi-trivisvavet-686932125) |
+| **GrubMarket** | AI Food Supply Chain B2B Platform | [grubmarket.com](https://www.grubmarket.com) | Mike Xu | mxu@grubmarket.com / [LinkedIn](https://www.linkedin.com/in/mikexu11) |
+| **Wonder** | AI-Optimized Food Delivery & Logistics | [wonder.com](https://www.wonder.com) | Marc Lore | marc@wonder.com / [LinkedIn](https://www.linkedin.com/in/marclore) |
+| **Olo** | Enterprise Restaurant Ordering SaaS Platform | [olo.com](https://www.olo.com) | Noah Glass | noah@olo.com / [LinkedIn](https://www.linkedin.com/in/noahglassolo) |
+| **Zerocater** | AI-Driven Corporate Catering Platform | [zerocater.com](https://www.zerocater.com) | Ali Sabeti | ali@zerocater.com / [LinkedIn](https://www.linkedin.com/in/alisabeti) |
+| **Strella Biotech** | Biosensor Produce Ripeness AI Platform | [strellabiotech.com](https://strellabiotech.com) | Katherine Sizov | katherine@strellabiotech.com / [LinkedIn](https://www.linkedin.com/in/katherinesizov) |
+| **Beyond Limits** | Cognitive AI for Energy & Environment | [beyond.ai](https://www.beyond.ai) | AJ Abdallat | aj@beyond.ai / [LinkedIn](https://www.linkedin.com/in/ajabdallat) |
+| **Redwoods.ai** | Autonomous AI Agents for ESG & Climate | [redwoods.ai](https://redwoods.ai) | Arvind Reddy | arvind@redwoods.ai / [LinkedIn](https://www.linkedin.com/in/arvindkreddy) |
+| **AiDash** | Satellite AI & Infrastructure Vegetation Management | [aidash.com](https://www.aidash.com) | Abhishek Vinod Singh | abhishek@aidash.com / [LinkedIn](https://www.linkedin.com/in/abhishekvinodsingh) |
+| **Pachama** | Geospatial AI Carbon Credit Verification | [pachama.com](https://pachama.com) | Diego Saez Gil | diego@pachama.com / [LinkedIn](https://www.linkedin.com/in/dsaezgil) |
+| **Carbon Robotics** | Computer Vision Laser Weeding Robots | [carbonrobotics.com](https://www.carbonrobotics.com) | Paul Mikesell | paul@carbonrobotics.com / [LinkedIn](https://www.linkedin.com/in/paulmikesell) |
+| **FarmWise** | Precision Agricultural Robotics & Weeding | [farmwise.io](https://farmwise.io) | Sebastien Boyer | sebastien@farmwise.io / [LinkedIn](https://www.linkedin.com/in/sebastienboyer) |
+| **Bear Flag Robotics** | Autonomous Tractor Technology | [bearflagrobotics.com](https://www.bearflagrobotics.com) | Igino Cafiero | igino@bearflagrobotics.com / [LinkedIn](https://www.linkedin.com/in/iginocafiero) |
+| **Benson Hill** | AI Crop Design & Ingredient Innovation | [bensonhill.com](https://www.bensonhill.com) | Deanie Elsner | deanie@bensonhill.com / [LinkedIn](https://www.linkedin.com/in/deanie-elsner-6b45922) |
+| **InnerPlant** | Living Plant Optical Stress Sensors | [innerplant.com](https://innerplant.com) | Shely Aronov | shely@innerplant.com / [LinkedIn](https://www.linkedin.com/in/shelyaronov) |
+| **Taranis** | AI Crop Intelligence & Aerial Agronomy | [taranis.com](https://taranis.com) | Oded Itzhak | oded@taranis.com / [LinkedIn](https://www.linkedin.com/in/odeditzhak) |
+| **Iron Ox** | Autonomous Greenhouse Farming Robotics | [ironox.com](https://ironox.com) | Brandon Alexander | brandon@ironox.com / [LinkedIn](https://www.linkedin.com/in/brandon-alexander-iron-ox) |
+| **Plenty** | Vertical Indoor Farming AI Platform | [plenty.ag](https://plenty.ag) | Arama Kukutai | arama@plenty.ag / [LinkedIn](https://www.linkedin.com/in/aramakukutai) |
+
