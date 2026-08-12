@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 29 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, and FinTech Infrastructure & Open Banking) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 30 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, and Data Infrastructure & Analytics Platforms) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -447,6 +447,23 @@ FinTech Infrastructure and Open Banking companies provide the essential APIs and
 | **Circle** | Digital Currency & Stablecoins | [circle.com](https://circle.com) | Jeremy Allaire | jeremy@circle.com / [LinkedIn](https://www.linkedin.com/in/jeremyallaire) |
 | **Unit** | Banking-as-a-Service (BaaS) | [unit.co](https://unit.co) | Itai Damti | itai@unit.co / [LinkedIn](https://www.linkedin.com/in/itaidamti) |
 | **Lithic** | Programmable Card Issuing | [lithic.com](https://lithic.com) | Bo Jiang | bo@lithic.com / [LinkedIn](https://www.linkedin.com/in/bo-jiang-4a342416) |
+
+---
+
+## Sector 30: Data Infrastructure & Analytics Platforms
+
+Data Infrastructure and Analytics companies provide the foundational tools for storing, processing, and analyzing large-scale datasets. These organizations require specialized talent in data engineering, backend development (Python/Go), and cloud architecture to build and maintain high-performance data pipelines and analytics engines for mission-critical remote projects.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Snowflake** | Cloud Data Warehousing | [snowflake.com](https://www.snowflake.com) | Sridhar Ramaswamy | ramaswamy@snowflake.com / [LinkedIn](https://www.linkedin.com/in/sridhar-ramaswamy) |
+| **Databricks** | Unified Data & AI Platform | [databricks.com](https://databricks.com) | Ali Ghodsi | ali.ghodsi@databricks.com / [LinkedIn](https://www.linkedin.com/in/alighodsi) |
+| **Confluent** | Real-time Data Streaming | [confluent.io](https://www.confluent.io) | Jay Kreps | jay@confluent.io / [LinkedIn](https://www.linkedin.com/in/jaykreps) |
+| **Fivetran** | Automated Data Integration | [fivetran.com](https://fivetran.com) | George Fraser | george@fivetran.com / [LinkedIn](https://www.linkedin.com/in/george-fraser-841b8010) |
+| **dbt Labs** | Data Transformation & Workflow | [getdbt.com](https://www.getdbt.com) | Tristan Handy | tristan@getdbt.com / [LinkedIn](https://www.linkedin.com/in/tristanhandy) |
+| **MotherDuck** | Serverless Data Analytics | [motherduck.com](https://motherduck.com) | Jordan Tigani | jordan@motherduck.com / [LinkedIn](https://www.linkedin.com/in/jordantigani) |
+| **Monte Carlo** | Data Observability & Quality | [montecarlodata.com](https://www.montecarlodata.com) | Barr Moses | barr@montecarlodata.com / [LinkedIn](https://www.linkedin.com/in/barrmoses) |
+| **Pinecone** | Vector Database for AI | [pinecone.io](https://www.pinecone.io) | Edo Liberty | edo@pinecone.io / [LinkedIn](https://www.linkedin.com/in/edoliberty) |
 
 ---
 
