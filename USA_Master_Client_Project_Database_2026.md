@@ -2,13 +2,13 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 16 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, and AgTech) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 17 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, and LegalTech) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
 ## Executive Summary
 
-Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across sixteen high-demand sectors in August 2026. 
+Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across seventeen high-demand sectors in August 2026. 
 
 ---
 
@@ -235,6 +235,20 @@ AgTech platforms modernize farming operations, precision agriculture, supply cha
 | **Indigo Ag** | Agricultural Sustainability & Carbon | [indigoag.com](https://www.indigoag.com) | Ron Hovsepian | r-hovsepian@indigoag.com / [LinkedIn](https://www.linkedin.com/in/ron-hovsepian-9a295115) |
 | **Granular** | Farm Management Software & Analytics | [granular.ag](https://granular.ag) | Sid Gorham | [LinkedIn](https://www.linkedin.com/in/sid-gorham-a54314) |
 | **Climate Corporation** | Digital Agronomy & FieldView Platform | [climate.com](https://www.climate.com) | Mike Stern | [LinkedIn](https://www.linkedin.com/company/the-climate-corporation) |
+
+---
+
+## Sector 17: LegalTech (Legal Technology)
+
+LegalTech platforms modernize contract lifecycle management, AI-driven legal research, dispute resolution, and law practice management, creating high-value remote contracting opportunities for software engineers and AI specialists.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Harvey** | Generative AI Legal Assistant & Reasoning | [harvey.ai](https://www.harvey.ai) | Winston Weinberg | winston@harvey.ai / [LinkedIn](https://www.linkedin.com/in/winston-weinberg) |
+| **Ironclad** | Digital Contract Lifecycle Management | [ironcladapp.com](https://ironcladapp.com) | Jason Boehmig | jason@ironcladapp.com / [LinkedIn](https://www.linkedin.com/in/jboehmig) |
+| **Clio** | Cloud-Based Practice Management & Legal OS | [clio.com](https://www.clio.com) | Jack Newton | jack.newton@clio.com / [LinkedIn](https://www.linkedin.com/in/jackbnewton) |
+| **Everlaw** | Cloud Litigation & Discovery Platform | [everlaw.com](https://www.everlaw.com) | AJ Shankar | aj@everlaw.com / [LinkedIn](https://www.linkedin.com/in/ajshankar) |
+| **CoCounsel (Casetext)** | AI Legal Research & Brief Analysis | [casetext.com](https://casetext.com) | Jake Heller | jake@casetext.com / [LinkedIn](https://www.linkedin.com/in/jake-heller) |
 
 ---
 
