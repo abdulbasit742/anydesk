@@ -4579,3 +4579,32 @@ AI-driven Agriculture, FoodTech, and Environmental Monitoring companies are scal
 | **Iron Ox** | Autonomous Greenhouse Farming Robotics | [ironox.com](https://ironox.com) | Brandon Alexander | brandon@ironox.com / [LinkedIn](https://www.linkedin.com/in/brandon-alexander-iron-ox) |
 | **Plenty** | Vertical Indoor Farming AI Platform | [plenty.ag](https://plenty.ag) | Arama Kukutai | arama@plenty.ag / [LinkedIn](https://www.linkedin.com/in/aramakukutai) |
 
+
+
+## Sector 158: AI for Automotive, Transportation & Autonomous Mobility
+
+AI-driven Automotive, Transportation, and Autonomous Mobility companies are scaling commercial robotaxi services, autonomous trucking corridors, drone delivery logistics, and eVTOL urban air mobility across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Waymo** | Autonomous Robotaxi Services & Software | [waymo.com](https://waymo.com) | Tekedra Mawakana & Dmitri Dolgov | dmitri@waymo.com / [LinkedIn](https://www.linkedin.com/in/dmitri-dolgov) |
+| **Aurora Innovation** | Autonomous Trucking & Self-Driving Software | [aurora.tech](https://aurora.tech) | Chris Urmson | chris@aurora.tech / [LinkedIn](https://www.linkedin.com/in/chris-urmson) |
+| **May Mobility** | Autonomous Micro-Transit & Robotaxis | [maymobility.com](https://maymobility.com) | Edwin Olson | edwin@maymobility.com / [LinkedIn](https://www.linkedin.com/in/edwin-olson-06103b1) |
+| **Zipline** | Autonomous Commercial Drone Delivery | [flyzipline.com](https://www.flyzipline.com) | Keller Rinaudo Cliffton | keller@flyzipline.com / [LinkedIn](https://www.linkedin.com/in/keller-rinaudo) |
+| **Metropolis** | AI Computer Vision Parking Infrastructure | [metropolis.io](https://www.metropolis.io) | Alex Israel | alex@metropolis.io / [LinkedIn](https://www.linkedin.com/in/alex-israel-metropolis) |
+| **Zoox** | Purpose-Built Autonomous Robotaxis | [zoox.com](https://zoox.com) | Aicha Evans | aicha@zoox.com / [LinkedIn](https://www.linkedin.com/in/aicha-evans) |
+| **Motional** | Autonomous Driving & Robotaxi Networks | [motional.com](https://motional.com) | Karl Iagnemma | karl.iagnemma@motional.com / [LinkedIn](https://www.linkedin.com/in/karl-iagnemma) |
+| **Cruise** | Autonomous Vehicle Software & Fleets | [getcruise.com](https://getcruise.com) | Marc Whitten | marc@getcruise.com / [LinkedIn](https://www.linkedin.com/in/marcwhitten) |
+| **Waabi** | Generative Simulation for Autonomous Trucking | [waabi.ai](https://waabi.ai) | Raquel Urtasun | raquel@waabi.ai / [LinkedIn](https://www.linkedin.com/in/raquel-urtasun) |
+| **Gatik** | Autonomous Middle-Mile B2B Trucking | [gatik.ai](https://gatik.ai) | Gautam Narang | gautam@gatik.ai / [LinkedIn](https://www.linkedin.com/in/gautam-narang) |
+| **Kodiak Robotics** | Self-Driving Software for Long-Haul Trucking | [kodiak.ai](https://kodiak.ai) | Don Burnette | don@kodiak.ai / [LinkedIn](https://www.linkedin.com/in/don-burnette) |
+| **Applied Intuition** | Simulation & AV Software Development Tools | [applied.co](https://www.applied.co) | Qasar Younis | qasar@applied.co / [LinkedIn](https://www.linkedin.com/in/qasaryounis) |
+| **Helm.ai** | Deep Learning Foundation Models for AVs | [helm.ai](https://www.helm.ai) | Vladislav Voroninski | vlad@helm.ai / [LinkedIn](https://www.linkedin.com/in/vladislav-voroninski) |
+| **Pony.ai** | Level 4 Autonomous Driving Technology | [pony.ai](https://www.pony.ai) | James Peng | james@pony.ai / [LinkedIn](https://www.linkedin.com/in/james-peng-pony) |
+| **Beta Technologies** | Electric eVTOL Aerospace & Aviation | [beta.team](https://www.beta.team) | Kyle Clark | kyle@beta.team / [LinkedIn](https://www.linkedin.com/in/kyle-clark-beta) |
+| **Archer Aviation** | Urban Air Mobility & eVTOL Aircraft | [archer.com](https://www.archer.com) | Adam Goldstein | adam@archer.com / [LinkedIn](https://www.linkedin.com/in/adam-goldstein-archer) |
+| **Joby Aviation** | Commercial eVTOL Passenger Air Ridesharing | [jobyaviation.com](https://www.jobyaviation.com) | JoeBen Bevirt | joeben@jobyaviation.com / [LinkedIn](https://www.linkedin.com/in/joeben-bevirt) |
+| **Overair** | Advanced Air Mobility & eVTOL Aircraft | [overair.com](https://www.overair.com) | Ben Tigner | btigner@overair.com / [LinkedIn](https://www.linkedin.com/in/ben-tigner) |
+| **Supernal** | Advanced Air Mobility Division of Hyundai | [supernal.aero](https://supernal.aero) | Jaiwon Shin | jaiwon.shin@supernal.aero / [LinkedIn](https://www.linkedin.com/in/jaiwon-shin) |
+| **Perceptive Automata** | Human Intent Prediction AI for AVs | [perceptiveautomata.com](https://www.perceptiveautomata.com) | Akash Datta | akash@perceptiveautomata.com / [LinkedIn](https://www.linkedin.com/in/akash-datta) |
+
