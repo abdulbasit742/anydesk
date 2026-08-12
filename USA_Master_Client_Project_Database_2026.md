@@ -4521,3 +4521,32 @@ AI-driven Real Estate, PropTech, and Construction Technology companies are scali
 | **FlowManual** | AI Construction Bidding & Back Office | [flowmanual.com](https://www.flowmanual.com) | David Shijoon Bae | david@flowmanual.com / [LinkedIn](https://www.linkedin.com/in/shijoonbae) |
 | **Propify** | Property Management API Infrastructure | [propify.com](https://propify.com) | Nathan Miller | nathan@propify.com / [LinkedIn](https://www.linkedin.com/in/nathanmillerpropify) |
 
+
+
+## Sector 156: AI for Hospitality, Travel & Leisure Technology
+
+AI-driven Hospitality, Travel, and Leisure Technology companies are scaling autonomous hotel operations agents, AI travel planners, supersonic air travel, and intelligent restaurant management platforms across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Lance (YC W26)** | AI Agents for Hotel Operations | [trylance.com](https://trylance.com) | Caleb Chan | caleb@trylance.com / [LinkedIn](https://www.linkedin.com/in/caleb-chan-327b14239) |
+| **Acai Travel** | Vertical AI for Travel Call Centers | [acaitravel.com](https://www.acaitravel.com) | Riccardo Vittoria | riccardo@acaitravel.com / [LinkedIn](https://www.linkedin.com/in/riccardovittoria) |
+| **Boom Supersonic** | Supersonic Air Travel & Airliners | [boomsupersonic.com](https://boomsupersonic.com) | Blake Scholl | blake.scholl@boomsupersonic.com / [LinkedIn](https://www.linkedin.com/in/blakescholl) |
+| **Mews** | AI-Native Hospitality Operating System | [mews.com](https://www.mews.com) | Matthijs Welle | matt.welle@mews.com / [LinkedIn](https://www.linkedin.com/in/matthijswelle) |
+| **WeTravel** | Travel FinTech & Booking SaaS Platform | [wetravel.com](https://www.wetravel.com) | Ted Clements | ted.clements@wetravel.com / [LinkedIn](https://www.linkedin.com/in/teddyclements) |
+| **Odessia** | AI Travel Tech & Innovation | [odessia.com](https://odessia.com) | Francis Davidson | francis@odessia.com / [LinkedIn](https://www.linkedin.com/in/francisdavidson) |
+| **Hopper** | Predictive AI Travel Booking App | [hopper.com](https://www.hopper.com) | Frederic Lalonde | flalonde@hopper.com / [LinkedIn](https://ca.linkedin.com/in/fredlalonde) |
+| **Navan (TripActions)** | Business Travel & Expense Management AI | [navan.com](https://navan.com) | Ariel Cohen | ariel.cohen@navan.com / [LinkedIn](https://www.linkedin.com/in/arielmcohen) |
+| **Cloudbeds** | Hospitality Management & PMS Software | [cloudbeds.com](https://www.cloudbeds.com) | Adam Harris | adam.harris@cloudbeds.com / [LinkedIn](https://www.linkedin.com/in/adamharris) |
+| **7shifts** | Restaurant Team Management & Scheduling | [7shifts.com](https://www.7shifts.com) | Jordan Boesch | jordan@7shifts.com / [LinkedIn](https://www.linkedin.com/in/jordanboesch) |
+| **Toast Inc.** | Restaurant POS & Management Platform | [toasttab.com](https://www.toasttab.com) | Aman Narang | aman.narang@toasttab.com / [LinkedIn](https://www.linkedin.com/in/aman-narang-toast) |
+| **Stardrift** | AI Travel Assistant & Itinerary Planner | [stardrift.ai](https://stardrift.ai) | Leila Clark | leila@stardrift.ai / [LinkedIn](https://www.linkedin.com/in/leila-clark) |
+| **Canary Technologies** | Hotel Guest Management & Check-in AI | [canarytechnologies.com](https://www.canarytechnologies.com) | Harman Singh Narula | harman@canarytechnologies.com / [LinkedIn](https://www.linkedin.com/in/harmansinghnarula) |
+| **Revinate** | Hotel Guest Data & Direct Booking Platform | [revinate.com](https://www.revinate.com) | Marc Heyneker | marc@revinate.com / [LinkedIn](https://www.linkedin.com/in/marcheyneker) |
+| **Duetto** | Hotel Revenue Management Analytics | [duettocloud.com](https://www.duettocloud.com) | David Wooltenberg | david@duettocloud.com / [LinkedIn](https://www.linkedin.com/in/david-wooldridge-b59a851) |
+| **Sonder** | Tech-Enabled Hospitality Platform | [sonder.com](https://www.sonder.com) | Janice Sears | janice.sears@sonder.com / [LinkedIn](https://www.linkedin.com/in/janice-sears-5b28b85) |
+| **SevenRooms** | Restaurant Guest Experience & Retention | [sevenrooms.com](https://sevenrooms.com) | Joel Montaniel | joel@sevenrooms.com / [LinkedIn](https://www.linkedin.com/in/joelmontaniel) |
+| **ChowNow** | Independent Restaurant Online Ordering | [chownow.com](https://chownow.com) | Christopher Webb | chris@chownow.com / [LinkedIn](https://www.linkedin.com/in/christopherjwebb) |
+| **Otter** | Restaurant Order Automation & Delivery OS | [tryotter.com](https://tryotter.com) | Travis Kalanick | travis@tryotter.com / [LinkedIn](https://www.linkedin.com/in/traviskalanick) |
+| **Hotel Effectiveness** | Hotel Labor Management & Scheduling | [hoteleffectiveness.com](https://hoteleffectiveness.com) | Mike James | mjames@hoteleffectiveness.com / [LinkedIn](https://www.linkedin.com/in/mikejames1) |
+
