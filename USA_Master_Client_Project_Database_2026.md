@@ -4753,3 +4753,32 @@ AI-driven FinOps, Cloud Cost Management, and IT Infrastructure Optimization comp
 | **CloudHealth** | Multi-Cloud Cost Governance (Broadcom) | [broadcom.com](https://www.broadcom.com) | Purnima Padmanabhan | purnima.padmanabhan@broadcom.com / [LinkedIn](https://www.linkedin.com/in/purnimapadmanabhan) |
 | **Apptio** | Technology Business Management (IBM) | [apptio.com](https://www.apptio.com) | Sunny Gupta | sunny@apptio.com / [LinkedIn](https://www.linkedin.com/in/sunnyapptio) |
 
+
+
+## Sector 164: AI for DevSecOps, Automated Testing & Software Quality Assurance
+
+AI-driven DevSecOps, Automated Testing, and Software Quality Assurance companies are scaling deterministic reliability testing, AI governance control planes, self-healing test automation, and developer security platforms across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Antithesis** | Autonomous Reliability & Deterministic Testing | [antithesis.com](https://antithesis.com) | Will Wilson | will@antithesis.com / [LinkedIn](https://www.linkedin.com/in/will-wilson-330276112) |
+| **Openlayer** | AI Governance, Evaluation & Observability | [openlayer.com](https://www.openlayer.com) | Gabriel Bayomi Kalejaiye | gabriel@openlayer.com / [LinkedIn](https://www.linkedin.com/in/gbayomi) |
+| **Rainforest QA** | No-Code End-to-End Test Automation | [rainforestqa.com](https://www.rainforestqa.com) | Fred Stevens-Smith | fred@rainforestqa.com / [LinkedIn](https://www.linkedin.com/in/fredstevenssmith) |
+| **Snyk** | Developer Security & AI Vulnerability Fixing | [snyk.io](https://snyk.io) | Peter McKay | peter.mckay@snyk.io / [LinkedIn](https://www.linkedin.com/in/pemckay) |
+| **Applitools** | Visual AI Automated Software Testing | [applitools.com](https://applitools.com) | Anand Sundaram | anand.sundaram@applitools.com / [LinkedIn](https://www.linkedin.com/in/anand-sundaram-1a2ba) |
+| **mabl** | Intelligent Low-Code Test Automation | [mabl.com](https://www.mabl.com) | Dan Belcher | dbelcher@mabl.com / [LinkedIn](https://www.linkedin.com/in/dbelcher) |
+| **Tines** | Intelligent Security & Engineering Workflows | [tines.com](https://www.tines.com) | Eoin Hinchy | eoin@tines.io / [LinkedIn](https://www.linkedin.com/in/eoinhinchy) |
+| **StackHawk** | Application Security Testing for Developers | [stackhawk.com](https://www.stackhawk.com) | Joni Klippert | joni@stackhawk.com / [LinkedIn](https://www.linkedin.com/in/joniklippert) |
+| **Blameless** | SRE & Automated Incident Management | [blameless.com](https://www.blameless.com) | Lyon Wong | lyon@blameless.com / [LinkedIn](https://www.linkedin.com/in/lyonwong) |
+| **LaunchDarkly** | Feature Management & Safe Software Delivery | [launchdarkly.com](https://launchdarkly.com) | Dan Rogers | dan@launchdarkly.com / [LinkedIn](https://www.linkedin.com/in/danrogersld) |
+| **CircleCI** | CI/CD Platform with AI Insights | [circleci.com](https://circleci.com) | Jim Rose | jrose@circleci.com / [LinkedIn](https://www.linkedin.com/in/jimrose0) |
+| **GitLab** | AI-Powered Comprehensive DevSecOps Platform | [about.gitlab.com](https://about.gitlab.com) | Sid Sijbrandij | sid@gitlab.com / [LinkedIn](https://www.linkedin.com/in/sidsijbrandij) |
+| **JFrog** | Universal Software Supply Chain & Security | [jfrog.com](https://jfrog.com) | Shlomi Ben Haim | shlomib@jfrog.com / [LinkedIn](https://www.linkedin.com/in/shlomibenhaim) |
+| **Checkmarx** | Application Security & SAST/DAST Testing | [checkmarx.com](https://checkmarx.com) | Sandeep Johri | sandeep.johri@checkmarx.com / [LinkedIn](https://www.linkedin.com/in/sandeepjohri) |
+| **Harness** | AI Software Delivery & CI/CD Platform | [harness.io](https://www.harness.io) | Jyoti Bansal | jyoti@harness.io / [LinkedIn](https://www.linkedin.com/in/jyotibansal) |
+| **Datadog** | Cloud Observability & Security Telemetry | [datadoghq.com](https://www.datadoghq.com) | Olivier Pomel | olivier@datadoghq.com / [LinkedIn](https://www.linkedin.com/in/opomel) |
+| **Dynatrace** | AI-Driven Observability & Testing Platform | [dynatrace.com](https://www.dynatrace.com) | Rick McConnell | rick.mcconnell@dynatrace.com / [LinkedIn](https://www.linkedin.com/in/rickmcconnell) |
+| **New Relic** | Developer Observability & Error Detection | [newrelic.com](https://newrelic.com) | Ashan Willy | awilly@newrelic.com / [LinkedIn](https://www.linkedin.com/in/ashanwilly) |
+| **Palo Alto Networks** | Prisma Cloud Runtime & App Security | [paloaltonetworks.com](https://www.paloaltonetworks.com) | Nikesh Arora | narora@paloaltonetworks.com / [LinkedIn](https://www.linkedin.com/in/nikesharora) |
+| **Wiz** | Cloud-Native Application Protection Platform | [wiz.io](https://www.wiz.io) | Assaf Rappaport | assaf@wiz.io / [LinkedIn](https://www.linkedin.com/in/assaf-rappaport) |
+
