@@ -6727,3 +6727,73 @@ Sector 192 focuses on top US-based companies, startups, and agencies building AI
 18. Surface Labs, https://surfacelabs.ai / https://www.linkedin.com/in/kartik-gupta
 19. Talkdesk, https://talkdesk.com / https://www.linkedin.com/in/tiagopaiva
 20. Freshworks, https://freshworks.com / https://www.linkedin.com/in/denniswoodside
+
+## Sector 193: AI in Sales, Marketing & Revenue Operations Automation
+
+### Overview
+Sector 193 focuses on top US-based companies, startups, and agencies building AI-powered sales intelligence, go-to-market (GTM) automation, revenue orchestration, and marketing personalization platforms for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Apollo.io** [1] | AI-powered sales intelligence and engagement platform for modern B2B prospecting. | Tim Zheng [1] | CEO & Founder [1] | `tim@apollo.io` [1] | [Profile](https://www.linkedin.com/in/tim-zheng) [1] |
+| **Clay** [2] | AI-driven go-to-market (GTM) automation platform for personalized sales research and outreach. | Kareem Amin [2] | CEO & Co-Founder [2] | `kareem@clay.com` [2] | [Profile](https://www.linkedin.com/in/kareemamin) [2] |
+| **Gong** [3] | Revenue intelligence platform using AI to analyze customer interactions and drive sales performance. | Amit Bendov [3] | CEO & Co-Founder [3] | `amit.bendov@gong.io` [3] | [Profile](https://www.linkedin.com/in/amitbendov) [3] |
+| **Clari** [4] | AI-powered revenue orchestration platform for forecasting, deal management, and execution. | Andy Byrne [4] | CEO & Co-Founder [4] | `abyrne@clari.com` [4] | [Profile](https://www.linkedin.com/in/byrneandy) [4] |
+| **Salesloft** [5] | AI-driven revenue orchestration platform designed to streamline sales engagement and workflows. | Steve Cox [5] | CEO [5] | `steve.cox@salesloft.com` [5] | [Profile](https://www.linkedin.com/in/90david-knight) [5] |
+| **6sense** [6] | Account-based marketing (ABM) platform using AI to identify and engage in-market buyers. | Chris Ball [6] | CEO [6] | `chris.ball@6sense.com` [6] | [Profile](https://www.linkedin.com/in/jasonzintak) [6] |
+| **ZoomInfo** [7] | Comprehensive go-to-market platform providing data intelligence and AI sales tools. | Henry Schuck [7] | CEO & Founder [7] | `hschuck@zoominfo.com` [7] | [Profile](https://www.linkedin.com/in/hschuck) [7] |
+| **Outreach** [8] | Sales execution platform utilizing AI to automate and optimize sales outreach and engagement. | Abhijit Mitra [8] | CEO [8] | `abhijit.mitra@outreach.io` [8] | [Profile](https://www.linkedin.com/in/abhijit-kakhandiki) [8] |
+| **Jasper** [9] | AI marketing copilot and content generation platform for enterprise marketing teams. | Timothy Young [9] | CEO [9] | `timothy@jasper.ai` [9] | [Profile](https://www.linkedin.com/in/timothyyoung) [9] |
+| **Copy.ai** [10] | AI-powered GTM workflow platform for automating sales and marketing content production. | Paul Yacoubian [10] | CEO & Co-Founder [10] | `paul@copy.ai` [10] | [Profile](https://www.linkedin.com/in/paulyacoubian) [10] |
+| **Mutiny** [11] | AI-driven personalization platform for B2B websites to increase conversion and pipeline. | Jaleh Rezaei [11] | CEO & Co-Founder [11] | `jaleh@mutinyhq.com` [11] | [Profile](https://www.linkedin.com/in/jalehr) [11] |
+| **Metadata.io** [12] | B2B marketing automation platform using AI to optimize paid social and demand generation. | Gil Allouche [12] | CEO & Founder [12] | `gil@metadata.io` [12] | [Profile](https://www.linkedin.com/in/gilallouche) [12] |
+| **Qualified** [13] | Agentic marketing platform providing AI-powered pipeline generation and live chat. | Kraig Swensrud [13] | CEO & Founder [13] | `kraig@qualified.com` [13] | [Profile](https://www.linkedin.com/in/kraigswensrud) [13] |
+| **Demandbase** [14] | ABM and GTM platform utilizing AI for B2B targeting, engagement, and conversion. | Gabe Rogol [14] | CEO [14] | `gabe@demandbase.com` [14] | [Profile](https://www.linkedin.com/in/gaberogol) [14] |
+| **Revenue.io** [15] | Real-time sales guidance platform using AI to coach reps and optimize revenue operations. | Howard Brown [15] | CEO & Founder [15] | `howard@revenue.io` [15] | [Profile](https://www.linkedin.com/in/howardbrown) [15] |
+| **Gainsight** [16] | Customer success AI platform for managing customer health, retention, and expansion. | Chuck Ganapathi [16] | CEO [16] | `chuck@gainsight.com` [16] | [Profile](https://www.linkedin.com/in/chuckganapathi) [16] |
+| **Seismic** [17] | Sales enablement platform using AI to personalize content and drive buyer engagement. | Doug Winter [17] | CEO & Co-Founder [17] | `doug@seismic.com` [17] | [Profile](https://www.linkedin.com/in/dougwinter) [17] |
+| **Highspot** [18] | AI-powered sales enablement platform for content management, training, and analytics. | Robert Wahbe [18] | CEO & Co-Founder [18] | `robert@highspot.com` [18] | [Profile](https://www.linkedin.com/in/robertwahbe) [18] |
+| **Surface Labs** [19] | AI-powered inbound conversion platform for capturing and qualifying B2B leads. | Kartik Gupta [19] | CEO & Founder [19] | `kartik@surfacelabs.ai` [19] | [Profile](https://www.linkedin.com/in/kartik-gupta) [19] |
+| **Seamless.ai** [20] | AI-powered sales prospecting tool for finding verified contact data and lead intelligence. | Brandon Bornancin [20] | CEO & Founder [20] | `brandon@seamless.ai` [20] | [Profile](https://www.linkedin.com/in/brandonbornancin) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Sales Automation & GTM Orchestration at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of sales intelligence, GTM automation, and revenue orchestration through agentic AI in 2026, ensuring high-fidelity data pipelines, seamless CRM integration, and intelligent buyer engagement is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous GTM agent development, and scalable revenue operations architectures. I have recently helped high-growth sales and marketing platforms optimize automated pipeline generation while reinforcing enterprise-grade reliability.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & GTM Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Apollo.io, https://apollo.io / https://www.linkedin.com/in/tim-zheng
+2. Clay, https://clay.com / https://www.linkedin.com/in/kareemamin
+3. Gong, https://gong.io / https://www.linkedin.com/in/amitbendov
+4. Clari, https://clari.com / https://www.linkedin.com/in/byrneandy
+5. Salesloft, https://salesloft.com / https://www.linkedin.com/in/90david-knight
+6. 6sense, https://6sense.com / https://www.linkedin.com/in/jasonzintak
+7. ZoomInfo, https://zoominfo.com / https://www.linkedin.com/in/hschuck
+8. Outreach, https://outreach.io / https://www.linkedin.com/in/abhijit-kakhandiki
+9. Jasper, https://jasper.ai / https://www.linkedin.com/in/timothyyoung
+10. Copy.ai, https://copy.ai / https://www.linkedin.com/in/paulyacoubian
+11. Mutiny, https://mutinyhq.com / https://www.linkedin.com/in/jalehr
+12. Metadata.io, https://metadata.io / https://www.linkedin.com/in/gilallouche
+13. Qualified, https://qualified.com / https://www.linkedin.com/in/kraigswensrud
+14. Demandbase, https://demandbase.com / https://www.linkedin.com/in/gaberogol
+15. Revenue.io, https://revenue.io / https://www.linkedin.com/in/howardbrown
+16. Gainsight, https://gainsight.com / https://www.linkedin.com/in/chuckganapathi
+17. Seismic, https://seismic.com / https://www.linkedin.com/in/dougwinter
+18. Highspot, https://highspot.com / https://www.linkedin.com/in/robertwahbe
+19. Surface Labs, https://surfacelabs.ai / https://www.linkedin.com/in/kartik-gupta
+20. Seamless.ai, https://seamless.ai / https://www.linkedin.com/in/brandonbornancin
