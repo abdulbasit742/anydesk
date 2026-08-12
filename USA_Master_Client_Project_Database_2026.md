@@ -4695,3 +4695,32 @@ AI-driven Telecommunications, 5G/6G, and Network Infrastructure companies are sc
 | **Gluware** | Intent-Based Network Orchestration | [gluware.com](https://gluware.com) | Jeff Gray | jeff@gluware.com / [LinkedIn](https://www.linkedin.com/in/jeffgraygluware) |
 | **Parallel Wireless** | Cloud-Native Open RAN 5G Software | [parallelwireless.com](https://www.parallelwireless.com) | Steve Papa | spapa@parallelwireless.com / [LinkedIn](https://www.linkedin.com/in/stevepapa) |
 
+
+
+## Sector 162: AI for Aerospace, SpaceTech & Satellite Systems
+
+AI-driven Aerospace, SpaceTech, and Satellite Systems companies are scaling commercial mega-constellations, AI-powered space situational awareness (SSA), autonomous spacecraft navigation, in-space manufacturing, and rapid satellite bus production across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Planet Labs** | Daily Satellite Imagery & Geospatial AI | [planet.com](https://www.planet.com) | Will Marshall | will@planet.com / [LinkedIn](https://www.linkedin.com/in/will-marshall-planet) |
+| **AST SpaceMobile** | Space-Based Direct Cellular Broadband | [ast-science.com](https://ast-science.com) | Abel Avellan | abel@ast-science.com / [LinkedIn](https://www.linkedin.com/in/abelavellan) |
+| **Rocket Lab** | Orbital Launch & Spacecraft Manufacturing | [rocketlabusa.com](https://www.rocketlabusa.com) | Peter Beck | peter@rocketlabusa.com / [LinkedIn](https://www.linkedin.com/in/peter-beck-rocketlab) |
+| **Relativity Space** | 3D-Printed Rockets & Autonomous Manufacturing | [relativityspace.com](https://www.relativityspace.com) | Tim Ellis | tim@relativityspace.com / [LinkedIn](https://www.linkedin.com/in/timellis1) |
+| **Slingshot Aerospace** | Space Situational Awareness & Traffic AI | [slingshot.space](https://www.slingshot.space) | Tim Solms | tim.solms@slingshot.space / [LinkedIn](https://www.linkedin.com/in/timsolms) |
+| **LeoLabs** | Commercial Radar & Orbital Debris Mapping AI | [leolabs.space](https://www.leolabs.space) | Tony Frazier | tony@leolabs.space / [LinkedIn](https://www.linkedin.com/in/tonyfrazier) |
+| **Apex Space** | Standard Satellite Bus Manufacturing | [apex.space](https://www.apex.space) | Ian Cinnamon | ian@apex.space / [LinkedIn](https://www.linkedin.com/in/iancinnamon) |
+| **K2 Space** | Large Satellite Buses for Constellations | [k2space.com](https://www.k2space.com) | Karan Kanzaria | karan@k2space.com / [LinkedIn](https://www.linkedin.com/in/karankanzaria) |
+| **Varda Space Industries** | In-Space Microgravity Manufacturing | [varda.com](https://www.varda.com) | Will Bruey | will@varda.com / [LinkedIn](https://www.linkedin.com/in/willbruey) |
+| **Muon Space** | Climate Satellite Constellations & IoT | [muonspace.com](https://www.muonspace.com) | Jonny Dyer | jonny@muonspace.com / [LinkedIn](https://www.linkedin.com/in/jonnydyer) |
+| **Impulse Space** | In-Space Transportation & Orbit Transfer | [impulsespace.com](https://www.impulsespace.com) | Tom Mueller | tom@impulsespace.com / [LinkedIn](https://www.linkedin.com/in/tom-mueller-rocketman) |
+| **Vast Space** | Commercial Space Stations & Artificial Gravity | [vastspace.com](https://www.vastspace.com) | Max Haot | max@vastspace.com / [LinkedIn](https://www.linkedin.com/in/maxhaot) |
+| **Firefly Aerospace** | Economic Orbital Launch & Lunar Landers | [fireflyspace.com](https://www.fireflyspace.com) | Jason Kim | jason.kim@firefly.com / [LinkedIn](https://www.linkedin.com/in/jason-kim-0a8a0a1) |
+| **BlackSky** | Real-Time Geospatial AI Intelligence | [blacksky.com](https://www.blacksky.com) | Brian O'Toole | brian.otoole@blacksky.com / [LinkedIn](https://www.linkedin.com/in/brian-otoole-blacksky) |
+| **Capella Space** | Synthetic Aperture Radar (SAR) Analytics | [capellaspace.com](https://www.capellaspace.com) | Frank Backes | frank@capellaspace.com / [LinkedIn](https://www.linkedin.com/in/frank-backes-8857744) |
+| **Stellerian** | AI Autonomous Satellite Navigation Software | [stellerian.com](https://www.stellerian.com) | Cody Waldecker | cody@stellerian.com / [LinkedIn](https://www.linkedin.com/in/cody-waldecker) |
+| **Aadi Space** | Autonomous Spacecraft Intelligence Layer | [aadi.space](https://www.aadi.space) | Jayram A. Deshpande | jayram@aadi.space / [LinkedIn](https://www.linkedin.com/in/jayram-deshpande) |
+| **Sidus Space** | Space-as-a-Service Satellite Manufacturing | [sidusspace.com](https://www.sidusspace.com) | Carol Craig | carol.craig@sidusspace.com / [LinkedIn](https://www.linkedin.com/in/carolcraigsidus) |
+| **Terran Orbital** | Modular Spacecraft Manufacturing | [terranorbital.com](https://www.terranorbital.com) | Marc Bell | marc.bell@terranorbital.com / [LinkedIn](https://www.linkedin.com/in/marcbellterranorbital) |
+| **Redwire Space** | In-Space Manufacturing & Digital Engineering | [redwirespace.com](https://www.redwirespace.com) | Peter Cannito | peter.cannito@redwirespace.com / [LinkedIn](https://www.linkedin.com/in/petercannito) |
+
