@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 30 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, and Data Infrastructure & Analytics Platforms) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 31 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, and Cloud Computing & DevOps Tools) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -464,6 +464,23 @@ Data Infrastructure and Analytics companies provide the foundational tools for s
 | **MotherDuck** | Serverless Data Analytics | [motherduck.com](https://motherduck.com) | Jordan Tigani | jordan@motherduck.com / [LinkedIn](https://www.linkedin.com/in/jordantigani) |
 | **Monte Carlo** | Data Observability & Quality | [montecarlodata.com](https://www.montecarlodata.com) | Barr Moses | barr@montecarlodata.com / [LinkedIn](https://www.linkedin.com/in/barrmoses) |
 | **Pinecone** | Vector Database for AI | [pinecone.io](https://www.pinecone.io) | Edo Liberty | edo@pinecone.io / [LinkedIn](https://www.linkedin.com/in/edoliberty) |
+
+---
+
+## Sector 31: Cloud Computing & DevOps Tools
+
+Cloud Computing and DevOps companies build the infrastructure and tools that power the modern web. From frontend cloud platforms to infrastructure-as-code and CI/CD pipelines, these organizations require specialized talent in DevOps, SRE, backend engineering, and developer experience (DevEx) for mission-critical remote projects.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Vercel** | Frontend Cloud & Next.js | [vercel.com](https://vercel.com) | Guillermo Rauch | guillermo@vercel.com / [LinkedIn](https://www.linkedin.com/in/rauchg) |
+| **Netlify** | Web Development & Hosting | [netlify.com](https://www.netlify.com) | Matt Biilmann | matt@netlify.com / [LinkedIn](https://www.linkedin.com/in/mathias-biilmann-christensen-a5a3805) |
+| **Pulumi** | Infrastructure as Code (IaC) | [pulumi.com](https://www.pulumi.com) | Joe Duffy | joe@pulumi.com / [LinkedIn](https://www.linkedin.com/in/joeduffy) |
+| **Harness** | Software Delivery Platform | [harness.io](https://harness.io) | Jyoti Bansal | jyoti@harness.io / [LinkedIn](https://www.linkedin.com/in/jyotibansal) |
+| **GitLab** | DevSecOps Platform | [gitlab.com](https://about.gitlab.com) | Sid Sijbrandij | sid@gitlab.com / [LinkedIn](https://www.linkedin.com/in/sijbrandij) |
+| **CircleCI** | Continuous Integration (CI) | [circleci.com](https://circleci.com) | Jim Rose | jim@circleci.com / [LinkedIn](https://www.linkedin.com/in/jimdotrose) |
+| **Replit** | Collaborative IDE & Hosting | [replit.com](https://replit.com) | Amjad Masad | amjad@replit.com / [LinkedIn](https://www.linkedin.com/in/amjadmasad) |
+| **Docker** | Containerization & Development | [docker.com](https://www.docker.com) | Scott Johnston | scott@docker.com / [LinkedIn](https://www.linkedin.com/in/scottjohnston) |
 
 ---
 
