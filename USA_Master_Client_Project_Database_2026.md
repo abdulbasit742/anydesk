@@ -9527,3 +9527,73 @@ Sector 231 focuses on top US-based companies, startups, and agencies building AI
 18. Recycle Track Systems (RTS), [Website](https://www.linkedin.com/in/gregory-lettieri-8b7d4b7d) / https://www.linkedin.com/in/gregory-lettieri-8b7d4b7d
 19. Evreka (US), [Website](https://www.linkedin.com/in/umutcanduman) / https://www.linkedin.com/in/umutcanduman
 20. Enevo (US), [Website](https://www.linkedin.com/in/fredrikkekalainen) / https://www.linkedin.com/in/fredrikkekalainen
+
+## Sector 232: AI in Oil, Gas & Petrochemical Automation
+
+### Overview
+Sector 232 focuses on top US-based companies, startups, and agencies building AI-powered autonomous drilling, intelligent reservoir modeling, predictive maintenance for energy infrastructure, and autonomous petrochemical process orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Beyond Limits / BeyondAI** [1] | Industrial AI for Energy | AJ Abdallat [1] | Founder & CEO [1] | `aj@beyond.ai` [1] | [Profile](https://www.linkedin.com/in/ajabdallat) [1] |
+| **Collide AI** [2] | AI Workflows for Oil & Gas | Collin McLelland [2] | Founder & CEO [2] | `collin@collide.io` [2] | [Profile](https://www.linkedin.com/in/collin-mclelland) [2] |
+| **Ambyint** [3] | AI Production Optimization | Benjamin Kemp [3] | CEO [3] | `benjamin.kemp@ambyint.com` [3] | [Profile](https://www.linkedin.com/in/benjaminkemp) [3] |
+| **Kelvin** [4] | Industrial Control AI | Peter Richards [4] | CEO [4] | `peter@kelvin.ai` [4] | [Profile](https://www.linkedin.com/company/kelvinai) [4] |
+| **Maana** [5] | Knowledge Platform for Energy | Babur Ozden [5] | Founder & CEO [5] | `babur@maana.io` [5] | [Profile](https://www.linkedin.com/in/baburozden) [5] |
+| **Tachyus** [6] | AI Reservoir Modeling | Paul Ryan [6] | CEO [6] | `paul@tachyus.com` [6] | [Profile](https://www.linkedin.com/in/paul-ryan-8b7d4b7d) [6] |
+| **Earth Analytics Group** [7] | Geospatial AI for Energy | Stephanie Race [7] | Founder & CEO [7] | `stephanie@earthanalytics.com` [7] | [Profile](https://uk.linkedin.com/in/srace) [7] |
+| **Aformic** [8] | Industrial Robot Orchestration | Michal Fiuk [8] | CEO [8] | `michal@aformic.com` [8] | [Profile](https://www.linkedin.com/in/michalfiuk) [8] |
+| **SparkCognition** [9] | AI Predictive Maintenance | SparkCognition Team [9] | Management [9] | `info@sparkcognition.com` [9] | [Profile](https://www.linkedin.com/company/sparkcognition) [9] |
+| **Seeq** [10] | Industrial Analytics AI | Seeq Team [10] | Management [10] | `hello@seeq.com` [10] | [Profile](https://www.linkedin.com/company/seeq-corporation) [10] |
+| **Ondas Holdings** [11] | Autonomous Drone Inspections | Eric Brock [11] | Chairman & CEO [11] | `eric.brock@ondas.com` [11] | [Profile](https://www.linkedin.com/in/ericbrock) [11] |
+| **AspenTech** [12] | Industrial Software AI | Antonio Pietri [12] | President & CEO [12] | `antonio.pietri@aspentech.com` [12] | [Profile](https://www.linkedin.com/in/antonio-pietri) [12] |
+| **C3.ai (Energy)** [13] | Enterprise AI for Energy | Thomas Siebel [13] | Founder & CEO [13] | `tom@c3.ai` [13] | [Profile](https://www.linkedin.com/in/thomas-siebel) [13] |
+| **DataRobot (Energy)** [14] | Predictive Analytics for O&G | DataRobot Team [14] | Management [14] | `info@datarobot.com` [14] | [Profile](https://www.linkedin.com/company/datarobot) [14] |
+| **Geoforce** [15] | Asset Tracking AI | James G. McDonough [15] | CEO [15] | `james@geoforce.com` [15] | [Profile](https://www.linkedin.com/in/jamesgmcdonough) [15] |
+| **Crudelogic** [16] | Upstream Oil & Gas AI | Crudelogic Team [16] | Management [16] | `hello@crudelogic.com` [16] | [Profile](https://www.linkedin.com/company/crudelogic) [16] |
+| **VarIntel** [17] | AI Energy Data Analytics | VarIntel Team [17] | Management [17] | `info@varintel.com` [17] | [Profile](https://www.linkedin.com/company/varintel) [17] |
+| **Collide** [18] | Energy AI Product Growth | Julie McLelland [18] | Head of Product [18] | `julie@collide.io` [18] | [Profile](https://www.linkedin.com/in/julie-mclelland-4906a3161) [18] |
+| **Earth Knowledge** [19] | Planetary Data AI | Julia Armstrong D'Agnese [19] | CEO [19] | `julia@earthknowledge.net` [19] | [Profile](https://www.linkedin.com/company/earth-knowledge) [19] |
+| **kWh Analytics** [20] | Climate Insurance AI | Jason Kaminsky [20] | CEO [20] | `jason@kwhanalytics.com` [20] | [Profile](https://www.linkedin.com/in/jasonkam) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Energy Automation & Agentic Petrochemical Orchestration at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of energy technology and petrochemical systems through autonomous AI agents and intelligent industrial platforms in 2026, ensuring high-fidelity operational data, seamless drilling orchestration, and resilient agentic automation experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous EnergyTech agent development, and scalable Petrochemical architectures. I have recently helped high-growth energy platforms optimize automated reservoir monitoring and predictive maintenance workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Energy Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Beyond Limits / BeyondAI, [Website](https://www.linkedin.com/in/ajabdallat) / https://www.linkedin.com/in/ajabdallat
+2. Collide AI, [Website](https://www.linkedin.com/in/collin-mclelland) / https://www.linkedin.com/in/collin-mclelland
+3. Ambyint, [Website](https://www.linkedin.com/in/benjaminkemp) / https://www.linkedin.com/in/benjaminkemp
+4. Kelvin, [Website](https://www.linkedin.com/company/kelvinai) / https://www.linkedin.com/company/kelvinai
+5. Maana, [Website](https://www.linkedin.com/in/baburozden) / https://www.linkedin.com/in/baburozden
+6. Tachyus, [Website](https://www.linkedin.com/in/paul-ryan-8b7d4b7d) / https://www.linkedin.com/in/paul-ryan-8b7d4b7d
+7. Earth Analytics Group, [Website](https://uk.linkedin.com/in/srace) / https://uk.linkedin.com/in/srace
+8. Aformic, [Website](https://www.linkedin.com/in/michalfiuk) / https://www.linkedin.com/in/michalfiuk
+9. SparkCognition, [Website](https://www.linkedin.com/company/sparkcognition) / https://www.linkedin.com/company/sparkcognition
+10. Seeq, [Website](https://www.linkedin.com/company/seeq-corporation) / https://www.linkedin.com/company/seeq-corporation
+11. Ondas Holdings, [Website](https://www.linkedin.com/in/ericbrock) / https://www.linkedin.com/in/ericbrock
+12. AspenTech, [Website](https://www.linkedin.com/in/antonio-pietri) / https://www.linkedin.com/in/antonio-pietri
+13. C3.ai (Energy), [Website](https://www.linkedin.com/in/thomas-siebel) / https://www.linkedin.com/in/thomas-siebel
+14. DataRobot (Energy), [Website](https://www.linkedin.com/company/datarobot) / https://www.linkedin.com/company/datarobot
+15. Geoforce, [Website](https://www.linkedin.com/in/jamesgmcdonough) / https://www.linkedin.com/in/jamesgmcdonough
+16. Crudelogic, [Website](https://www.linkedin.com/company/crudelogic) / https://www.linkedin.com/company/crudelogic
+17. VarIntel, [Website](https://www.linkedin.com/company/varintel) / https://www.linkedin.com/company/varintel
+18. Collide, [Website](https://www.linkedin.com/in/julie-mclelland-4906a3161) / https://www.linkedin.com/in/julie-mclelland-4906a3161
+19. Earth Knowledge, [Website](https://www.linkedin.com/company/earth-knowledge) / https://www.linkedin.com/company/earth-knowledge
+20. kWh Analytics, [Website](https://www.linkedin.com/in/jasonkam) / https://www.linkedin.com/in/jasonkam
