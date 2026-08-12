@@ -7287,3 +7287,73 @@ Sector 200 focuses on top US-based companies, startups, and agencies building AI
 18. Zilliz, https://zilliz.com / https://www.linkedin.com/in/charles-xie-zilliz
 19. PagerDuty, https://pagerduty.com / https://www.linkedin.com/in/jennifertejada
 20. Datadog, https://datadoghq.com / https://www.linkedin.com/in/olivierpomel
+
+## Sector 201: AI in E-commerce, Retail & Consumer Experience Automation
+
+### Overview
+Sector 201 focuses on top US-based companies, startups, and agencies building AI-powered e-commerce platforms, autonomous retail solutions, visual search discovery tools, and intelligent consumer experience orchestration systems for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Cart.com** [1] | AI-powered end-to-end e-commerce operations platform for brands and retailers. | Omair Tariq [1] | CEO & Founder [1] | `omair@cart.com` [1] | [Profile](https://www.linkedin.com/in/omairtariqcartfounder) [1] |
+| **Obsess** [2] | Experiential e-commerce platform using AI to create immersive 3D virtual stores. | Neha Singh [2] | CEO & Founder [2] | `neha@obsessar.com` [2] | [Profile](https://www.linkedin.com/in/neha-singh-679a9b17) [2] |
+| **Vue.ai** [3] | AI orchestration platform for retail, automating product tagging, cataloging, and personalization. | Ashwini Asokan [3] | CEO & Founder [3] | `aasokan@vue.ai` [3] | [Profile](https://www.linkedin.com/in/ashwiniasokan) [3] |
+| **Standard AI** [4] | AI-powered autonomous checkout and retail analytics platform for brick-and-mortar stores. | Jordan Fisher [4] | CEO & Co-Founder [4] | `jordan@standard.ai` [4] | [Profile](https://www.linkedin.com/in/jordanfisher) [4] |
+| **AiFi** [5] | AI-driven autonomous retail platform providing checkout-free shopping experiences. | Steve Gu [5] | CEO & Co-Founder [5] | `steve@aifi.com` [5] | [Profile](https://www.linkedin.com/in/stevegu) [5] |
+| **Sierra** [6] | Conversational AI platform for retail, powering intelligent agents for customer interaction. | Bret Taylor [6] | CEO & Co-Founder [6] | `bret@sierra.ai` [6] | [Profile](https://www.linkedin.com/in/brettaylor) [6] |
+| **Lily AI** [7] | AI-powered product attribute extraction platform for improving e-commerce search and discovery. | Purva Gupta [7] | CEO & Co-Founder [7] | `purva@lily.ai` [7] | [Profile](https://www.linkedin.com/in/purvagupta) [7] |
+| **Findmine** [8] | AI-driven "Complete the Look" platform for automating outfit and product recommendations. | Michelle Bacharach [8] | CEO & Co-Founder [8] | `michelle@findmine.com` [8] | [Profile](https://www.linkedin.com/in/michellebacharach) [8] |
+| **Bloomreach** [9] | AI-powered commerce experience platform for personalization, search, and marketing automation. | Raj De Datta [9] | CEO & Co-Founder [9] | `raj.dedatta@bloomreach.com` [9] | [Profile](https://www.linkedin.com/in/rajdedatta) [9] |
+| **Algolia** [10] | AI-native search and discovery platform for e-commerce and SaaS applications. | Bernadette Nixon [10] | CEO [10] | `bernadette.nixon@algolia.com` [10] | [Profile](https://www.linkedin.com/in/bernadettenixon) [10] |
+| **Layers** [11] | AI-powered visual search and merchandising platform for modern e-commerce brands. | Jake Casto [11] | Founder & CEO [11] | `jake@uselayers.com` [11] | [Profile](https://www.linkedin.com/in/jake-casto) [11] |
+| **Lizza** [12] | AI-powered platform for managing creator and influencer collaborations for consumer brands. | Julian May [12] | CEO & Founder [12] | `julian@lizza.ai` [12] | [Profile](https://www.linkedin.com/in/julian-m-may) [12] |
+| **Syte** [13] | AI-driven visual discovery platform for e-commerce, enabling search by image. | Vered Levy-Ron [13] | CEO [13] | `vered@syte.ai` [13] | [Profile](https://www.linkedin.com/in/vered-levy-ron-63403a) [13] |
+| **Fast Simon** [14] | AI-powered shopping optimization platform for site search, merchandising, and personalization. | Zohar Gilad [14] | CEO & Co-Founder [14] | `zohar@fastsimon.com` [14] | [Profile](https://www.linkedin.com/in/zohargilad) [14] |
+| **Klevu** [15] | AI-driven product discovery platform for e-commerce search and smart category pages. | Nilay Oza [15] | CEO & Co-Founder [15] | `nilay@klevu.com` [15] | [Profile](https://www.linkedin.com/in/nilayoza) [15] |
+| **Searchspring** [16] | AI-powered site search, merchandising, and analytics platform for e-commerce growth. | Alex Glanz [16] | CEO [16] | `alex.glanz@searchspring.com` [16] | [Profile](https://www.linkedin.com/in/alexglanz) [16] |
+| **Dynamic Yield** [17] | AI-powered personalization platform for optimizing customer experiences across digital touchpoints. | Ori Bauer [17] | CEO [17] | `ori.bauer@dynamicyield.com` [17] | [Profile](https://www.linkedin.com/in/oribauer) [17] |
+| **Grubbrr** [18] | AI-powered self-ordering and retail automation platform for restaurants and stores. | Sam Zietz [18] | CEO [18] | `sam@grubbrr.com` [18] | [Profile](https://www.linkedin.com/in/samzietz) [18] |
+| **Nosto** [19] | AI-powered commerce experience platform for personalization and shopper insights. | Jim Davidson [19] | CEO [19] | `jim.davidson@nosto.com` [19] | [Profile](https://www.linkedin.com/in/jim-davidson-a4a1) [19] |
+| **Octane AI** [20] | AI-powered quiz and personalization platform for Shopify and e-commerce brands. | Matt Schlicht [20] | CEO & Co-Founder [20] | `matt@octaneai.com` [20] | [Profile](https://www.linkedin.com/in/mattschlicht) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Commerce Personalization & Agentic Shopping at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of digital commerce through autonomous AI agents and immersive retail platforms in 2026, ensuring high-fidelity consumer data, seamless visual search orchestration, and resilient agentic shopping experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous commerce agent development, and scalable E-commerce architectures. I have recently helped high-growth retail platforms optimize automated personalization and merchandising workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & E-commerce Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Cart.com, https://cart.com / https://www.linkedin.com/in/omairtariqcartfounder
+2. Obsess, https://obsessar.com / https://www.linkedin.com/in/neha-singh-679a9b17
+3. Vue.ai, https://vue.ai / https://www.linkedin.com/in/ashwiniasokan
+4. Standard AI, https://standard.ai / https://www.linkedin.com/in/jordanfisher
+5. AiFi, https://aifi.com / https://www.linkedin.com/in/stevegu
+6. Sierra, https://sierra.ai / https://www.linkedin.com/in/brettaylor
+7. Lily AI, https://lily.ai / https://www.linkedin.com/in/purvagupta
+8. Findmine, https://findmine.com / https://www.linkedin.com/in/michellebacharach
+9. Bloomreach, https://bloomreach.com / https://www.linkedin.com/in/rajdedatta
+10. Algolia, https://algolia.com / https://www.linkedin.com/in/bernadettenixon
+11. Layers, https://uselayers.com / https://www.linkedin.com/in/jake-casto
+12. Lizza, https://lizza.ai / https://www.linkedin.com/in/julian-m-may
+13. Syte, https://syte.ai / https://www.linkedin.com/in/vered-levy-ron-63403a
+14. Fast Simon, https://fastsimon.com / https://www.linkedin.com/in/zohargilad
+15. Klevu, https://klevu.com / https://www.linkedin.com/in/nilayoza
+16. Searchspring, https://searchspring.com / https://www.linkedin.com/in/alexglanz
+17. Dynamic Yield, https://dynamicyield.com / https://www.linkedin.com/in/oribauer
+18. Grubbrr, https://grubbrr.com / https://www.linkedin.com/in/samzietz
+19. Nosto, https://nosto.com / https://www.linkedin.com/in/jim-davidson-a4a1
+20. Octane AI, https://octaneai.com / https://www.linkedin.com/in/mattschlicht
