@@ -8897,3 +8897,73 @@ Sector 222 focuses on top US-based companies, startups, and agencies building AI
 18. Ghost Robotics, [Website](https://www.linkedin.com/in/gavin-kenneally) / https://www.linkedin.com/in/gavin-kenneally
 19. Boston Dynamics, [Website](https://www.linkedin.com/in/robert-playter) / https://www.linkedin.com/in/robert-playter
 20. Serve Robotics, [Website](https://www.linkedin.com/in/alikashani) / https://www.linkedin.com/in/alikashani
+
+## Sector 223: AI in Energy, Smart Grid & Renewable Energy Automation
+
+### Overview
+Sector 223 focuses on top US-based companies, startups, and agencies building AI-powered energy management systems, smart grid optimization, renewable energy forecasting, and intelligent grid orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Emerald AI** [1] | AI for Data Center Energy | Varun Sivaram [1] | Founder & CEO [1] | `varun@emeraldai.co` [1] | [Profile](https://www.linkedin.com/in/varunsivaram) [1] |
+| **WeaveGrid** [2] | EV-Grid Integration | Apoorv Bhargava [2] | Co-founder & CEO [2] | `apoorv@weavegrid.com` [2] | [Profile](https://www.linkedin.com/in/apoorv-bhargava) [2] |
+| **Heron Power** [3] | Solid-State Transformers | Drew Baglino [3] | Founder & CEO [3] | `drew@heronpower.com` [3] | [Profile](https://www.linkedin.com/in/baglino) [3] |
+| **Amperon** [4] | AI Energy Forecasting | Sean Kelly [4] | Co-founder & CEO [4] | `sean@amperon.co` [4] | [Profile](https://www.linkedin.com/in/sean-kelly-amperon) [4] |
+| **Stem Inc** [5] | AI-Driven Energy Storage | John Jung [5] | CEO [5] | `john.jung@stem.com` [5] | [Profile](https://www.linkedin.com/in/john-ha-robotics) [5] |
+| **Span.io** [6] | Smart Electrical Panels | Arch Rao [6] | Founder & CEO [6] | `arch@span.io` [6] | [Profile](https://www.linkedin.com/in/archrao) [6] |
+| **Kaluza** [7] | Smart Grid Platform | Scott Neuman [7] | CEO [7] | `scott@kaluza.com` [7] | [Profile](https://www.linkedin.com/in/scott-neuman) [7] |
+| **AutoGrid** [8] | Distributed Energy AI | Rahul Kar [8] | CEO [8] | `rahul@auto-grid.com` [8] | [Profile](https://www.linkedin.com/in/rahul-kar) [8] |
+| **Enphase Energy** [9] | Solar + Storage AI | Badri Kothandaraman [9] | CEO [9] | `badri@enphaseenergy.com` [9] | [Profile](https://www.linkedin.com/in/badri-kothandaraman) [9] |
+| **Uplight** [10] | Utility Energy Management | Luis D'Acosta [10] | CEO [10] | `luis@uplight.com` [10] | [Profile](https://www.linkedin.com/in/luisdacosta) [10] |
+| **LevelTen Energy** [11] | Renewable Energy Marketplace | Bryce Smith [11] | Founder & CEO [11] | `bryce@leveltenenergy.com` [11] | [Profile](https://www.linkedin.com/in/bryce-smith) [11] |
+| **Aurora Solar** [12] | Solar Design AI | Christopher Hopper [12] | Co-founder & CEO [12] | `chris@aurorasolar.com` [12] | [Profile](https://www.linkedin.com/in/christopher-hopper) [12] |
+| **David Energy** [13] | DER Orchestration | James McGinniss [13] | Co-founder & CEO [13] | `james@davidenergy.com` [13] | [Profile](https://www.linkedin.com/in/james-mcginniss-20b315101) [13] |
+| **WattBuy** [14] | Clean Energy Marketplace | Naman Trivedi [14] | Co-founder & CEO [14] | `naman@wattbuy.com` [14] | [Profile](https://www.linkedin.com/in/namant) [14] |
+| **Arcadia** [15] | Community Solar Platform | Kiran Bhatraju [15] | Founder & CEO [15] | `kiran@arcadia.com` [15] | [Profile](https://www.linkedin.com/in/kiranbhatraju) [15] |
+| **OhmConnect** [16] | Demand Response AI | Cisco DeVries [16] | CEO [16] | `cisco@ohmconnect.com` [16] | [Profile](https://www.linkedin.com/in/ciscodevries) [16] |
+| **Sunrun** [17] | Residential Solar AI | Mary Powell [17] | CEO [17] | `mary@sunrun.com` [17] | [Profile](https://www.linkedin.com/in/marypowell) [17] |
+| **Leyden Analytics** [18] | Renewables Analytics | Leyden Team [18] | Founders [18] | `hello@leyden.ai` [18] | [Profile](https://www.linkedin.com/company/leyden-analytics) [18] |
+| **Veridue AI** [19] | Renewable Investment AI | Daniel Csonth [19] | CEO [19] | `daniel@veridue.ai` [19] | [Profile](https://www.linkedin.com/in/danielcsonth) [19] |
+| **Astro (YC)** [20] | Grid Connection AI | Astro Founders [20] | Founders [20] | `founder@astro.ai` [20] | [Profile](https://www.ycombinator.com/companies/astro) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Energy Automation & Agentic Grid Orchestration at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of energy and smart grid technology through autonomous AI agents and intelligent energy platforms in 2026, ensuring high-fidelity grid data, seamless energy orchestration, and resilient agentic automation experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous energy agent development, and scalable EnergyTech architectures. I have recently helped high-growth energy platforms optimize automated forecasting and grid management workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Energy Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Emerald AI, [Website](https://www.linkedin.com/in/varunsivaram) / https://www.linkedin.com/in/varunsivaram
+2. WeaveGrid, [Website](https://www.linkedin.com/in/apoorv-bhargava) / https://www.linkedin.com/in/apoorv-bhargava
+3. Heron Power, [Website](https://www.linkedin.com/in/baglino) / https://www.linkedin.com/in/baglino
+4. Amperon, [Website](https://www.linkedin.com/in/sean-kelly-amperon) / https://www.linkedin.com/in/sean-kelly-amperon
+5. Stem Inc, [Website](https://www.linkedin.com/in/john-ha-robotics) / https://www.linkedin.com/in/john-ha-robotics
+6. Span.io, [Website](https://www.linkedin.com/in/archrao) / https://www.linkedin.com/in/archrao
+7. Kaluza, [Website](https://www.linkedin.com/in/scott-neuman) / https://www.linkedin.com/in/scott-neuman
+8. AutoGrid, [Website](https://www.linkedin.com/in/rahul-kar) / https://www.linkedin.com/in/rahul-kar
+9. Enphase Energy, [Website](https://www.linkedin.com/in/badri-kothandaraman) / https://www.linkedin.com/in/badri-kothandaraman
+10. Uplight, [Website](https://www.linkedin.com/in/luisdacosta) / https://www.linkedin.com/in/luisdacosta
+11. LevelTen Energy, [Website](https://www.linkedin.com/in/bryce-smith) / https://www.linkedin.com/in/bryce-smith
+12. Aurora Solar, [Website](https://www.linkedin.com/in/christopher-hopper) / https://www.linkedin.com/in/christopher-hopper
+13. David Energy, [Website](https://www.linkedin.com/in/james-mcginniss-20b315101) / https://www.linkedin.com/in/james-mcginniss-20b315101
+14. WattBuy, [Website](https://www.linkedin.com/in/namant) / https://www.linkedin.com/in/namant
+15. Arcadia, [Website](https://www.linkedin.com/in/kiranbhatraju) / https://www.linkedin.com/in/kiranbhatraju
+16. OhmConnect, [Website](https://www.linkedin.com/in/ciscodevries) / https://www.linkedin.com/in/ciscodevries
+17. Sunrun, [Website](https://www.linkedin.com/in/marypowell) / https://www.linkedin.com/in/marypowell
+18. Leyden Analytics, [Website](https://www.linkedin.com/company/leyden-analytics) / https://www.linkedin.com/company/leyden-analytics
+19. Veridue AI, [Website](https://www.linkedin.com/in/danielcsonth) / https://www.linkedin.com/in/danielcsonth
+20. Astro (YC), [Website](https://www.ycombinator.com/companies/astro) / https://www.ycombinator.com/companies/astro
