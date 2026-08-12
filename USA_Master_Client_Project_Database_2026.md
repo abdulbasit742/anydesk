@@ -4318,3 +4318,32 @@ AI-driven LegalTech, Compliance Automation, and Regulatory Intelligence companie
 | **Supio** | AI Medical Record Analysis | [supio.com](https://www.supio.com) | Jerry Ting | jerry@supio.com / [LinkedIn](https://www.linkedin.com/in/jerryting) |
 | **Compliance.ai** | Regulatory Intelligence Platform | [compliance.ai](https://www.compliance.ai) | Asif Alam | asif@compliance.ai / [LinkedIn](https://www.linkedin.com/in/asifalam) |
 
+
+
+## Sector 149: AI for EdTech, Personalized Learning & Academic Research Innovation
+
+AI-driven EdTech, Personalized Learning, and Academic Research companies are scaling generative AI tutoring, mastery learning, and scientific literature synthesis across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Duolingo** | AI Language Learning & Gamification | [duolingo.com](https://www.duolingo.com) | Luis von Ahn | luis@duolingo.com / [LinkedIn](https://www.linkedin.com/in/luis-von-ahn-duolingo) |
+| **SchoolAI** | AI Classroom Assistant & Tutoring | [schoolai.com](https://schoolai.com) | Caleb Hicks | caleb@schoolai.com / [LinkedIn](https://www.linkedin.com/in/calebhicks) |
+| **Alpha School** | AI Personalized Mastery Learning | [alphaschool.com](https://alphaschool.com) | MacKenzie Price | mackenzie@alphaschool.com / [LinkedIn](https://www.linkedin.com/in/mackenzieprice) |
+| **Harmonic AI** | Mathematical Superintelligence AI | [harmonic.ai](https://harmonic.ai) | Tudor Achim | tudor@harmonic.ai / [LinkedIn](https://www.linkedin.com/in/tudorachim) |
+| **Khan Academy** | AI Tutoring Platform (Khanmigo) | [khanacademy.org](https://www.khanacademy.org) | Sal Khan | sal@khanacademy.org / [LinkedIn](https://www.linkedin.com/in/sal-khan) |
+| **Coursera** | Online Learning & AI Career Coaches | [coursera.org](https://www.coursera.org) | Jeff Maggioncalda | jeff@coursera.org / [LinkedIn](https://www.linkedin.com/in/jeffmaggioncalda) |
+| **Chegg** | AI Homework Assistance & Tutoring | [chegg.com](https://www.chegg.com) | Dan Rosensweig | dan@chegg.com / [LinkedIn](https://www.linkedin.com/in/danrosensweig) |
+| **Perplexity AI** | Conversational Academic Search | [perplexity.ai](https://www.perplexity.ai) | Aravind Srinivas | aravind@perplexity.ai / [LinkedIn](https://www.linkedin.com/in/aravindsrinivas) |
+| **Consensus** | AI Scientific Research Synthesis | [consensus.app](https://consensus.app) | Christian Busch | christian@consensus.app / [LinkedIn](https://www.linkedin.com/in/christianbusch) |
+| **Elicit** | AI Academic Literature Assistant | [elicit.org](https://elicit.org) | Andreas Stuhlmüller | andreas@elicit.org / [LinkedIn](https://www.linkedin.com/in/andreasstuhlmuller) |
+| **MagicSchool AI** | AI Lesson Planning for Teachers | [magicschool.ai](https://www.magicschool.ai) | Adeel Khan | adeel@magicschool.ai / [LinkedIn](https://www.linkedin.com/in/adeelkhan) |
+| **Brisk Teaching** | AI Curriculum & Assessment Tool | [briskteaching.com](https://www.briskteaching.com) | Arman Jaffer | arman@briskteaching.com / [LinkedIn](https://www.linkedin.com/in/armanjaffer) |
+| **Curipod** | Interactive AI Lesson Builder | [curipod.com](https://curipod.com) | Eirik Bergesen | eirik@curipod.com / [LinkedIn](https://www.linkedin.com/in/eirikbergesen) |
+| **Paper** | 24/7 AI Tutoring for Districts | [paper.co](https://paper.co) | Philip Cutler | philip@paper.co / [LinkedIn](https://www.linkedin.com/in/philipcutler) |
+| **Mainstay** | Behavioral AI Student Engagement | [mainstay.com](https://www.mainstay.com) | Drew Magliozzi | drew@mainstay.com / [LinkedIn](https://www.linkedin.com/in/drewmagliozzi) |
+| **Quizlet** | AI-Driven Adaptive Flashcards | [quizlet.com](https://quizlet.com) | Lex Bayer | lex@quizlet.com / [LinkedIn](https://www.linkedin.com/in/lexbayer) |
+| **Inflection AI** | Conversational AI Models | [inflection.ai](https://inflection.ai) | Reid Hoffman | reid@inflection.ai / [LinkedIn](https://www.linkedin.com/in/reidhoffman) |
+| **Preply** | AI-Powered Language Tutoring | [preply.com](https://preply.com) | Kirill Bigai | kirill@preply.com / [LinkedIn](https://www.linkedin.com/in/kirillbigai) |
+| **GotIt! AI** | Conversational AI Tutoring | [gotit.ai](https://www.gotit.ai) | Hung Tran | hung@gotit.ai / [LinkedIn](https://www.linkedin.com/in/hungtran) |
+| **Tome** | Generative Presentation AI | [tome.app](https://tome.app) | Keith Peiris | keith@tome.app / [LinkedIn](https://www.linkedin.com/in/keithpeiris) |
+
