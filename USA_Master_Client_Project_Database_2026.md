@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 41 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, and E-learning Content & Professional Development Platforms) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 42 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, and Mental Health & Wellness Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -651,6 +651,23 @@ E-learning and Professional Development companies are transforming how the workf
 | **Skillshare** | Creative Skill-Sharing Platform | [skillshare.com](https://www.skillshare.com) | Matt Cooper | matt@skillshare.com / [LinkedIn](https://www.linkedin.com/in/mattcooper) |
 | **Udacity** | Digital Skills Training (Accenture) | [udacity.com](https://www.udacity.com) | Kai Roemmelt | kai@udacity.com / [LinkedIn](https://www.linkedin.com/in/kairoemmelt) |
 | **Teachable** | Creator-Led Course Platform | [teachable.com](https://teachable.com) | Rochelle Posthuma | rochelle@teachable.com / [LinkedIn](https://www.linkedin.com/in/rochelle-posthuma) |
+
+---
+
+## Sector 42: Mental Health & Wellness Tech
+
+Mental Health and Wellness companies are leveraging technology to address the global wellbeing crisis through digital therapeutics and tele-therapy. In 2026, the industry is scaling with AI-driven support and predictive wellness features, creating high demand for remote mobile engineers, full-stack developers, data scientists, and security experts.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Lyra Health** | Employer Mental Health Platform | [lyrahealth.com](https://www.lyrahealth.com) | David Ebersman | david@lyrahealth.com / [LinkedIn](https://www.linkedin.com/in/david-ebersman-6a480b21) |
+| **Spring Health** | Precision Mental Healthcare | [springhealth.com](https://www.springhealth.com) | April Koh | akoh@springhealth.com / [LinkedIn](https://www.linkedin.com/in/aprilyjkoh) |
+| **Modern Health** | Holistic Employee Wellness | [modernhealth.com](https://www.modernhealth.com) | Alyson Watson | alyson@modernhealth.com / [LinkedIn](https://www.linkedin.com/in/alyson-friedensohn-watson-58317b27) |
+| **Headspace** | Mindfulness & Digital Therapy | [headspace.com](https://www.headspace.com) | Tom Pickett | tom.pickett@headspace.com / [LinkedIn](https://www.linkedin.com/in/tpickett) |
+| **Calm** | Sleep & Meditation Platform | [calm.com](https://www.calm.com) | David Ko | dave@calm.com / [LinkedIn](https://www.linkedin.com/in/daveko) |
+| **Talkspace** | Online Therapy & Telehealth | [talkspace.com](https://www.talkspace.com) | Jon Cohen | jcohen@talkspace.com / [LinkedIn](https://www.linkedin.com/in/joncohenmd) |
+| **Grow Therapy** | Provider-Centric Therapy Network | [growtherapy.com](https://growtherapy.com) | Jake Adams | jake@growtherapy.com / [LinkedIn](https://www.linkedin.com/in/jake-adams-grow) |
+| **Talkiatry** | Tech-Enabled Psychiatry | [talkiatry.com](https://www.talkiatry.com) | Robert Krayn | robert@talkiatry.com / [LinkedIn](https://www.linkedin.com/in/robertkrayn) |
 
 ---
 
