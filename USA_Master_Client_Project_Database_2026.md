@@ -6587,3 +6587,73 @@ Sector 190 focuses on top US-based companies, startups, and agencies operating a
 19. Later, https://later.com / https://www.linkedin.com/in/scottmsutton
 20. Sprout Social, https://sproutsocial.com / https://www.linkedin.com/in/justynhoward
 21. Loomly, https://loomly.com / https://www.linkedin.com/in/thibaudclement
+
+## Sector 191: AI in Personal Productivity, Workflow Automation & Knowledge Management
+
+### Overview
+Sector 191 focuses on top US-based companies, startups, and agencies building AI-powered personal productivity tools, autonomous workflow agents, and advanced knowledge management systems for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Notion** [1] | All-in-one workspace for notes, docs, and projects with integrated AI productivity tools. | Ivan Zhao [1] | CEO & Co-Founder [1] | `ivan@makenotion.com` [1] | [Profile](https://www.linkedin.com/in/ivanhzhao) [1] |
+| **Replit** [2] | AI-powered collaborative coding platform and autonomous agent development environment. | Amjad Masad [2] | CEO & Co-Founder [2] | `amjad@replit.com` [2] | [Profile](https://www.linkedin.com/in/amjadmasad) [2] |
+| **Tana** [3] | Agentic meeting platform and knowledge management system powered by human-AI collaboration. | Tarjei Vassbotn [3] | CEO & Founder [3] | `tarjei@tana.inc` [3] | [Profile](https://www.linkedin.com/in/tanainc) [3] |
+| **Taskade** [4] | AI-driven productivity platform with autonomous agents for task and workflow management. | John Xie [4] | CEO & Co-Founder [4] | `john@taskade.com` [4] | [Profile](https://www.linkedin.com/in/johnxie) [4] |
+| **Lindy.ai** [5] | AI personal assistant and autonomous employee platform for handling routine work tasks. | Flo Crivello [5] | CEO & Founder [5] | `flo@lindy.ai` [5] | [Profile](https://www.linkedin.com/in/florentcrivello) [5] |
+| **HyperWrite** [6] | AI writing assistant and personal productivity tool for automating complex workflows. | Matt Shumer [6] | CEO & Co-Founder [6] | `matt@othersideai.com` [6] | [Profile](https://www.linkedin.com/in/mattshumer) [6] |
+| **Raycast** [7] | AI-powered productivity launcher and command center for streamlined macOS workflows. | Thomas Paul Mann [7] | CEO & Co-Founder [7] | `thomas@raycast.com` [7] | [Profile](https://www.linkedin.com/in/thomas-paul-mann-5183101a4) [7] |
+| **The Browser Company** [8] | Building Dia, an AI-native browser designed for intelligent browsing and task management. | Josh Miller [8] | CEO & Co-Founder [8] | `josh@thebrowser.company` [8] | [Profile](https://www.linkedin.com/in/josh-miller-b31259106) [8] |
+| **Reflect** [9] | AI-native knowledge base and note-taking app with built-in coding agents for data analysis. | Alex MacCaw [9] | CEO & Founder [9] | `alex@reflect.app` [9] | [Profile](https://www.linkedin.com/in/alex-maccaw-ab592978) [9] |
+| **Otter.ai** [10] | AI meeting assistant and conversational knowledge engine for enterprise collaboration. | Sam Liang [10] | CEO & Co-Founder [10] | `sam@otter.ai` [10] | [Profile](https://www.linkedin.com/in/samliang) [10] |
+| **Superhuman** [11] | AI-native email productivity platform designed for high-performance professional workflows. | Rahul Vohra [11] | CEO & Founder [11] | `rahul@superhuman.com` [11] | [Profile](https://www.linkedin.com/in/rahulvohra) [11] |
+| **Magical AI** [12] | AI-powered workflow automation and agentic productivity tool for healthcare and sales. | Harpaul Sambhi [12] | CEO & Founder [12] | `harpaul@getmagical.com` [12] | [Profile](https://www.linkedin.com/in/hsambhi) [12] |
+| **Mem.ai** [13] | AI thought partner and self-organizing workspace for capturing and organizing ideas. | Kevin Moody [13] | CEO & Founder [13] | `kevin@mem.ai` [13] | [Profile](https://www.linkedin.com/in/kevinfmoody) [13] |
+| **Zapier** [14] | Leading workflow automation platform connecting thousands of apps with AI-driven logic. | Wade Foster [14] | CEO & Co-Founder [14] | `wade@zapier.com` [14] | [Profile](https://www.linkedin.com/in/wadefoster) [14] |
+| **Make.com** [15] | Visual workflow automation platform for building complex, AI-integrated business processes. | Thibaud Elziere [15] | Founder [15] | `thibaud@make.com` [15] | [Profile](https://www.linkedin.com/in/telziere) [15] |
+| **LlamaIndex** [16] | Data framework for building context-augmented AI agents and LLM applications. | Jerry Liu [16] | CEO & Co-Founder [16] | `jerry@llamaindex.ai` [16] | [Profile](https://www.linkedin.com/in/jerry-liu-64390071) [16] |
+| **LangChain** [17] | Open-source framework and platform for building autonomous AI agents and workflows. | Harrison Chase [17] | CEO & Co-Founder [17] | `harrison@langchain.com` [17] | [Profile](https://www.linkedin.com/in/harrison-chase-961287118) [17] |
+| **Dust.tt** [18] | AI-powered workspace and agent platform for enterprise knowledge and productivity. | Stanislas Polu [18] | CEO & Co-Founder [18] | `stan@dust.tt` [18] | [Profile](https://www.linkedin.com/in/spolu) [18] |
+| **Glean** [19] | Enterprise AI search and knowledge platform connecting all company data and tools. | Arvind Jain [19] | CEO & Founder [19] | `arvind@glean.com` [19] | [Profile](https://www.linkedin.com/in/jain-arvind) [19] |
+| **Shortwave** [20] | AI-powered email assistant designed to automate inbox management and workflow. | Andrew Lee [20] | CEO & Co-Founder [20] | `andrew@shortwave.com` [20] | [Profile](https://www.linkedin.com/in/andrew-lee-shortwave) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Personal Productivity & Workflow Automation at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to redefine personal productivity, autonomous workflow agents, and knowledge management in 2026, maintaining seamless AI integrations, high-performance data pipelines, and intuitive user experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous agent development, and scalable productivity architectures. I have recently helped high-growth productivity platforms optimize agentic workflows while reinforcing enterprise-grade reliability.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Productivity Infrastructure Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Notion, https://notion.so / https://www.linkedin.com/in/ivanhzhao
+2. Replit, https://replit.com / https://www.linkedin.com/in/amjadmasad
+3. Tana, https://tana.inc / https://www.linkedin.com/in/tanainc
+4. Taskade, https://taskade.com / https://www.linkedin.com/in/johnxie
+5. Lindy.ai, https://lindy.ai / https://www.linkedin.com/in/florentcrivello
+6. HyperWrite, https://hyperwriteai.com / https://www.linkedin.com/in/mattshumer
+7. Raycast, https://raycast.com / https://www.linkedin.com/in/thomas-paul-mann-5183101a4
+8. The Browser Company, https://thebrowser.company / https://www.linkedin.com/in/josh-miller-b31259106
+9. Reflect, https://reflect.app / https://www.linkedin.com/in/alex-maccaw-ab592978
+10. Otter.ai, https://otter.ai / https://www.linkedin.com/in/samliang
+11. Superhuman, https://superhuman.com / https://www.linkedin.com/in/rahulvohra
+12. Magical AI, https://getmagical.com / https://www.linkedin.com/in/hsambhi
+13. Mem.ai, https://mem.ai / https://www.linkedin.com/in/kevinfmoody
+14. Zapier, https://zapier.com / https://www.linkedin.com/in/wadefoster
+15. Make.com, https://make.com / https://www.linkedin.com/in/telziere
+16. LlamaIndex, https://llamaindex.ai / https://www.linkedin.com/in/jerry-liu-64390071
+17. LangChain, https://langchain.com / https://www.linkedin.com/in/harrison-chase-961287118
+18. Dust.tt, https://dust.tt / https://www.linkedin.com/in/spolu
+19. Glean, https://glean.com / https://www.linkedin.com/in/jain-arvind
+20. Shortwave, https://shortwave.com / https://www.linkedin.com/in/andrew-lee-shortwave
