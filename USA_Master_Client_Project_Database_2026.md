@@ -4492,3 +4492,32 @@ AI-driven Media, Entertainment, and Content Creation companies are scaling gener
 | **Civitai** | Open-Source Generative AI Model Hub | [civitai.com](https://civitai.com) | Justin Reckling | justin@civitai.com / [LinkedIn](https://www.linkedin.com/in/justinreckling) |
 | **KreadoAI** | AI Digital Humans & Video Marketing | [kreadoai.com](https://www.kreadoai.com) | Tim Zhang | tim@kreadoai.com / [LinkedIn](https://www.linkedin.com/in/timzhangai) |
 
+
+
+## Sector 155: AI for Real Estate, PropTech & Construction Technology
+
+AI-driven Real Estate, PropTech, and Construction Technology companies are scaling conversational property management, automated concrete takeoffs, BIM layout robotics, and digital closing platforms across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **EliseAI** | Conversational AI Property Management | [eliseai.com](https://eliseai.com) | Minna Song | minna@eliseai.com / [LinkedIn](https://www.linkedin.com/in/minna-song) |
+| **Bilt Rewards** | Rent Payments & Residential Rewards | [biltrewards.com](https://www.biltrewards.com) | Ankur Jain | ankur@biltrewards.com / [LinkedIn](https://www.linkedin.com/in/ankurjainkairos) |
+| **DroneDeploy** | AI Drone Mapping & Construction Site Intelligence | [dronedeploy.com](https://www.dronedeploy.com) | Mike Winn | mike@dronedeploy.com / [LinkedIn](https://www.linkedin.com/in/mikewinn1) |
+| **ServiceTitan** | Field Service Software for Contractors | [servicetitan.com](https://www.servicetitan.com) | Ara Mahdessian | ara@servicetitan.com / [LinkedIn](https://www.linkedin.com/in/aramahdessian) |
+| **Agora** | Real Estate Investment Management Software | [getagora.com](https://www.getagora.com) | Bar Mor | bar@getagora.com / [LinkedIn](https://www.linkedin.com/in/barmor) |
+| **Roofr** | AI Aerial Measurement & Roofing Estimates | [roofr.com](https://www.roofr.com) | Richard Nelson | richard@roofr.com / [LinkedIn](https://www.linkedin.com/in/richardnelsonroofr) |
+| **ButterflyMX** | Smart Access & Video Intercom PropTech | [butterflymx.com](https://butterflymx.com) | Aaron Ho | aaron@butterflymx.com / [LinkedIn](https://www.linkedin.com/in/aaronho1) |
+| **Qualia** | Digital Real Estate Closing & Title Software | [qualia.com](https://www.qualia.com) | Nate Baker | nate@qualia.com / [LinkedIn](https://www.linkedin.com/in/natebakerqualia) |
+| **Kojo** | Construction Procurement & Inventory AI | [usekojo.com](https://www.usekojo.com) | Maria Davidson | maria@usekojo.com / [LinkedIn](https://www.linkedin.com/in/mariadavidson) |
+| **Dusty Robotics** | BIM Layout Field Printing Robotics | [dustyrobotics.com](https://www.dustyrobotics.com) | Tessa Lau | tessa@dustyrobotics.com / [LinkedIn](https://www.linkedin.com/in/tessalau) |
+| **OpenSpace** | AI 360-Degree Jobsite Documentation | [openspace.ai](https://www.openspace.ai) | Jeevan Kalanithi | jeevan@openspace.ai / [LinkedIn](https://www.linkedin.com/in/jeevankalanithi) |
+| **Built Technologies** | Construction Finance & Lending Platform | [getbuilt.com](https://getbuilt.com) | Chase Gilbert | chase@getbuilt.com / [LinkedIn](https://www.linkedin.com/in/chasegilbert) |
+| **Doma** | AI Title Insurance & Digital Closings | [doma.com](https://www.doma.com) | Max Simkoff | max@doma.com / [LinkedIn](https://www.linkedin.com/in/maxsimkoff) |
+| **Procore** | Construction Management Software | [procore.com](https://www.procore.com) | Tooey Courtemanche | tooey@procore.com / [LinkedIn](https://www.linkedin.com/in/tooeycourtemanche) |
+| **Culdesac** | Car-Free Master-Planned Real Estate | [culdesac.com](https://culdesac.com) | Ryan Johnson | ryan@culdesac.com / [LinkedIn](https://www.linkedin.com/in/ryanjohnsonculdesac) |
+| **Brickwise** | AI Property Maintenance & Landlord OS | [brickwise.ai](https://brickwise.ai) | Ismail Jeilani | ismail@brickwise.ai / [LinkedIn](https://www.linkedin.com/in/jeilani) |
+| **Hint** | AI Home Management & Intelligence | [hint.home](https://hint.home) | Kyle Rush | kyle@hint.home / [LinkedIn](https://www.linkedin.com/in/kylerush) |
+| **Rudus** | AI Concrete Takeoff & Estimation | [rudus.ai](https://rudus.ai) | Rishi Pankhaniya | rishi@rudus.ai / [LinkedIn](https://www.linkedin.com/in/rishi-pankhaniya-b69649183) |
+| **FlowManual** | AI Construction Bidding & Back Office | [flowmanual.com](https://www.flowmanual.com) | David Shijoon Bae | david@flowmanual.com / [LinkedIn](https://www.linkedin.com/in/shijoonbae) |
+| **Propify** | Property Management API Infrastructure | [propify.com](https://propify.com) | Nathan Miller | nathan@propify.com / [LinkedIn](https://www.linkedin.com/in/nathanmillerpropify) |
+
