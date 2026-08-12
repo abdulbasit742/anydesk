@@ -2,13 +2,13 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 15 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, and InsurTech) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 16 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, and AgTech) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
 ## Executive Summary
 
-Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across fifteen high-demand sectors in August 2026. 
+Securing remote projects and high-value clients in the United States requires targeted outreach to decision-makers, agency founders, and high-growth startup executives. This master database consolidates verified companies, decision-maker contact details, official websites, and tailored outreach strategies across sixteen high-demand sectors in August 2026. 
 
 ---
 
@@ -92,7 +92,7 @@ Digital marketing and performance agencies manage high-budget campaigns and freq
 | :--- | :--- | :--- | :--- | :--- |
 | **NP Digital** | SEO & Performance Marketing | [npdigital.com](https://npdigital.com) | Neil Patel | neil@npdigital.com / [LinkedIn](https://www.linkedin.com/in/neilkpatel) |
 | **Disruptive Advertising** | Paid Ads & Conversion | [disruptiveadvertising.com](https://www.disruptiveadvertising.com) | Jacob Baadsgaard | jake@disruptiveadvertising.com / [LinkedIn](https://www.linkedin.com/in/jakebaadsgaard) |
-| **Power Digital Marketing** | Growth Marketing & Tech | [powerdigitalmarketing.com](https://powerdigitalmarketing.com) | Grayson Lafrenz | glafrenz@powerdigitalmarketing.com / [LinkedIn](https://www.linkedin.com/in/graysonlafrenz) |
+| **Power Digital Marketing** | Growth Marketing & Tech | [powerdigitalmarketing.com](https://www.powerdigitalmarketing.com) | Grayson Lafrenz | glafrenz@powerdigitalmarketing.com / [LinkedIn](https://www.linkedin.com/in/graysonlafrenz) |
 | **Single Grain** | SEO & Growth Marketing | [singlegrain.com](https://singlegrain.com) | Eric Siu | [LinkedIn](https://www.linkedin.com/in/ericsiu) |
 | **Ignite Visibility** | Full-Service Digital Marketing | [ignitevisibility.com](https://ignitevisibility.com) | John Lincoln | john@ignitevisibility.com / [LinkedIn](https://www.linkedin.com/in/johnelincoln) |
 
@@ -221,6 +221,20 @@ InsurTech platforms modernize risk assessment, underwriting automation, claims m
 | **Hippo Insurance** | Modern Property Insurance | [hippo.com](https://www.hippo.com) | Assaf Wand | awand@hippo.com / [LinkedIn](https://www.linkedin.com/in/assafwand) |
 | **Sure** | Embedded Insurance Infrastructure | [sureapp.com](https://www.sureapp.com) | Wayne Slavin | [LinkedIn](https://www.linkedin.com/in/wayneslavin) |
 | **Policygenius** | Digital Insurance Marketplace | [policygenius.com](https://www.policygenius.com) | Jennifer Fitzgerald | [LinkedIn](https://www.linkedin.com/in/jennifer-fitzgerald-a18a902) |
+
+---
+
+## Sector 16: AgTech (Agricultural Technology)
+
+AgTech platforms modernize farming operations, precision agriculture, supply chain transparency, and biological innovations, providing robust remote contracting opportunities for developers, data scientists, and IoT telemetry experts.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Farmers Business Network** | Farmer Commerce & Analytics Network | [fbn.com](https://www.fbn.com) | Charles Baron | info@farmersbusinessnetwork.com / [LinkedIn](https://www.linkedin.com/company/farmers-business-network) |
+| **Pivot Bio** | Microbial Nitrogen & Biological Ag Tech | [pivotbio.com](https://www.pivotbio.com) | Karsten Temme | [LinkedIn](https://www.linkedin.com/in/karstentemme) |
+| **Indigo Ag** | Agricultural Sustainability & Carbon | [indigoag.com](https://www.indigoag.com) | Ron Hovsepian | r-hovsepian@indigoag.com / [LinkedIn](https://www.linkedin.com/in/ron-hovsepian-9a295115) |
+| **Granular** | Farm Management Software & Analytics | [granular.ag](https://granular.ag) | Sid Gorham | [LinkedIn](https://www.linkedin.com/in/sid-gorham-a54314) |
+| **Climate Corporation** | Digital Agronomy & FieldView Platform | [climate.com](https://www.climate.com) | Mike Stern | [LinkedIn](https://www.linkedin.com/company/the-climate-corporation) |
 
 ---
 
