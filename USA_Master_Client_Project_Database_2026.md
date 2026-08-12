@@ -4376,3 +4376,32 @@ AI-driven Energy, Sustainability, and Climate Tech companies are scaling geother
 | **Dexter Energy** | AI Renewable Asset Forecasting | [dexterenergy.ai](https://dexterenergy.ai) | Luuk Veelenturf | luuk@dexterenergy.ai / [LinkedIn](https://www.linkedin.com/in/luukveelenturf) |
 | **Iron Ox** | AI & Robotics Sustainable Farming | [ironox.com](https://ironox.com) | Brandon Alexander | brandon@ironox.com / [LinkedIn](https://www.linkedin.com/in/brandonjalexander) |
 
+
+
+## Sector 151: AI for Retail, E-commerce & Customer Experience Automation
+
+AI-driven Retail, E-commerce, and Customer Experience Automation companies are scaling agentic commerce, hyper-personalized product discovery, and autonomous support across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Whatnot** | Live Shopping & E-Commerce Platform | [whatnot.com](https://www.whatnot.com) | Grant LaFontaine | grant@whatnot.com / [LinkedIn](https://www.linkedin.com/in/grantlafontaine) |
+| **Cognigy** | Agentic AI for Customer Service | [cognigy.com](https://www.cognigy.com) | Philipp Heltewig | philipp@cognigy.com / [LinkedIn](https://www.linkedin.com/in/philipp-heltewig) |
+| **Lily AI** | Agentic Product Intelligence | [lily.ai](https://www.lily.ai) | Purva Gupta | purva@lily.ai / [LinkedIn](https://www.linkedin.com/in/purvagupta) |
+| **Obsess** | 3D Immersive Virtual Stores | [obsessar.com](https://obsessar.com) | Neha Singh | neha@obsessar.com / [LinkedIn](https://www.linkedin.com/in/neha-singh-679a9b17) |
+| **Cresta** | Generative AI for Contact Centers | [cresta.ai](https://www.cresta.ai) | Ping Wu | ping@cresta.ai / [LinkedIn](https://www.linkedin.com/in/pingwu) |
+| **ASAPP** | AI Contact Center Automation | [asapp.com](https://www.asapp.com) | Priya Vijayarajendran | priya@asapp.com / [LinkedIn](https://www.linkedin.com/in/priyavijayarajendran) |
+| **Ada** | Agentic CX & Support Automation | [ada.support](https://www.ada.support) | Mike Murchison | mike@ada.support / [LinkedIn](https://ca.linkedin.com/in/mikemurchison) |
+| **ReCharge** | E-Commerce Subscription Management | [getrecharge.com](https://getrecharge.com) | Oisin O'Connor | oisin@rechargepayments.com / [LinkedIn](https://www.linkedin.com/in/oisino) |
+| **Postscript** | E-Commerce SMS Marketing | [postscript.io](https://postscript.io) | Adam Turner | adam@postscript.io / [LinkedIn](https://www.linkedin.com/in/adam-turner-postscript) |
+| **Gainsight** | Customer Success & Engagement | [gainsight.com](https://www.gainsight.com) | Chuck Ganapathi | chuck@gainsight.com / [LinkedIn](https://www.linkedin.com/in/chuck-ganapathi) |
+| **Gorgias** | E-Commerce Helpdesk & Support | [gorgias.com](https://www.gorgias.com) | Romain Lapeyre | romain@gorgias.com / [LinkedIn](https://www.linkedin.com/in/romainlapeyre) |
+| **Vue.ai** | AI Visual Retail Automation | [vue.ai](https://vue.ai) | Ashwini Asokan | ashwini@vue.ai / [LinkedIn](https://www.linkedin.com/in/ashwiniasokan) |
+| **Syte** | Visual AI Discovery Platform | [syte.ai](https://syte.ai) | Vered Levy-Ron | vered@syte.ai / [LinkedIn](https://www.linkedin.com/in/vered-levy-ron) |
+| **Intercom** | AI Customer Support (Fin) | [intercom.com](https://www.intercom.com) | Eoghan McCabe | eoghan@intercom.io / [LinkedIn](https://www.linkedin.com/in/eoghanmccabe) |
+| **Bolt** | One-Click E-Commerce Checkout | [bolt.com](https://www.bolt.com) | Maju Kuruvilla | maju@bolt.com / [LinkedIn](https://www.linkedin.com/in/majukuruvilla) |
+| **Talkdesk** | Cloud Contact Center AI | [talkdesk.com](https://www.talkdesk.com) | Tiago Paiva | tiago@talkdesk.com / [LinkedIn](https://www.linkedin.com/in/tiagopaiva) |
+| **Zendesk** | Enterprise CX & Self-Learning AI | [zendesk.com](https://www.zendesk.com) | Tom Eggemeier | teggemeier@zendesk.com / [LinkedIn](https://www.linkedin.com/in/tomeggemeier) |
+| **Freshworks** | AI Customer Support Suite | [freshworks.com](https://www.freshworks.com) | Dennis Woodside | dennis.woodside@freshworks.com / [LinkedIn](https://www.linkedin.com/in/denniswoodside) |
+| **Braze** | Real-Time Customer Engagement | [braze.com](https://www.braze.com) | Bill Magnuson | bill@braze.com / [LinkedIn](https://www.linkedin.com/in/billmagnuson) |
+| **Yotpo** | E-Commerce Reviews & Loyalty AI | [yotpo.com](https://www.yotpo.com) | Tomer Tagrin | tomer@yotpo.com / [LinkedIn](https://www.linkedin.com/in/tomertagrin) |
+
