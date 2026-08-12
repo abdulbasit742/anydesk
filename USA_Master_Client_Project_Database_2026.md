@@ -4289,3 +4289,32 @@ AI-driven Supply Chain, Logistics, and Warehouse Automation companies are scalin
 | **Locus Robotics** | Autonomous Mobile Robots | [locusrobotics.com](https://locusrobotics.com) | Rick Faulk | rfaulk@locusrobotics.com / [LinkedIn](https://www.linkedin.com/in/rickfaulk) |
 | **Berkshire Grey** | AI Robotic Fulfillment | [berkshiregrey.com](https://www.berkshiregrey.com) | Tom Wagner | tom.wagner@berkshiregrey.com / [LinkedIn](https://www.linkedin.com/in/tomwagner) |
 
+
+
+## Sector 148: AI for LegalTech, Compliance Automation & Regulatory Intelligence
+
+AI-driven LegalTech, Compliance Automation, and Regulatory Intelligence companies are scaling contract analysis, automated diligence, and risk governance across US legal markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Harvey** | Enterprise Legal AI Platform | [harvey.ai](https://www.harvey.ai) | Winston Weinberg | winston@harvey.ai / [LinkedIn](https://www.linkedin.com/in/winston-weinberg) |
+| **Spellbook** | Generative AI for Contracts | [spellbook.legal](https://www.spellbook.legal) | Scott Stevenson | scott@spellbook.legal / [LinkedIn](https://www.linkedin.com/in/scottas) |
+| **Darrow** | AI Corporate Legal Violations | [darrow.ai](https://www.darrow.ai) | Evyatar Ben Artzi | evyatar@darrow.ai / [LinkedIn](https://il.linkedin.com/in/evyatar-ben-artzi) |
+| **Paxton AI** | AI Legal Research & Drafting | [paxton.ai](https://www.paxton.ai) | Tanguy Chau | tanguy@paxton.ai / [LinkedIn](https://www.linkedin.com/in/tanguychau) |
+| **Legora** | Collaborative Legal AI Workspace | [legora.com](https://legora.com) | Max Junestrand | max@legora.com / [LinkedIn](https://www.linkedin.com/in/maxjunestrand) |
+| **Theo AI** | AI Legal Prediction Engine | [theo.ai](https://www.theo.ai) | Patrick Ip | patrick@theo.ai / [LinkedIn](https://www.linkedin.com/in/patrickip) |
+| **DeepJudge** | Enterprise Legal Knowledge AI | [deepjudge.ai](https://www.deepjudge.ai) | Paulina Grnarova | paulina@deepjudge.ai / [LinkedIn](https://ch.linkedin.com/in/paulinagrnarova) |
+| **GC AI** | AI for In-House Legal Counsel | [gc.ai](https://www.gc.ai) | Cecilia Ziniti | cecilia@gc.ai / [LinkedIn](https://www.linkedin.com/in/ceciliaziniti) |
+| **Laurel** | AI Automated Timekeeping | [laurel.ai](https://www.laurel.ai) | Ryan Alshak | ryan@laurel.ai / [LinkedIn](https://www.linkedin.com/in/ryan-alshak-72815722) |
+| **Dili** | AI Compliance & Deal Diligence | [dili.ai](https://www.dili.ai) | Brian Fernandez | brian@dili.ai / [LinkedIn](https://www.linkedin.com/in/brianfernandez1) |
+| **Caseflood.ai** | AI Client Intake for Law Firms | [caseflood.ai](https://www.caseflood.ai) | Ethan Hilton | ethan@caseflood.ai / [LinkedIn](https://www.linkedin.com/in/ethan-hilton) |
+| **Justpoint** | AI Medical-Legal Evaluation | [justpoint.com](https://www.justpoint.com) | Victor Bornstein | victor@justpoint.com / [LinkedIn](https://www.linkedin.com/in/victorbornstein) |
+| **Courtroom Insight** | Legal Analytics & Expert Witness | [courtroominsight.com](https://www.courtroominsight.com) | Mark Torchiana | mark@courtroominsight.com / [LinkedIn](https://www.linkedin.com/in/marktorchiana) |
+| **Atticus** | Legal Aid & Crisis Tech | [atticus.com](https://www.atticus.com) | Sam Byker | sam@atticus.com / [LinkedIn](https://www.linkedin.com/in/sam-byker) |
+| **Courtroom5** | AI Case Management for Litigants | [courtroom5.com](https://www.courtroom5.com) | Sonja Ebron | sonja@courtroom5.com / [LinkedIn](https://www.linkedin.com/in/sonjaebron) |
+| **Alloy** | KYC & Compliance Automation | [alloy.com](https://www.alloy.com) | Tommy Nicholas | tommy@alloy.com / [LinkedIn](https://www.linkedin.com/in/tommynicholas) |
+| **OneTrust** | Enterprise Compliance & Privacy | [onetrust.com](https://www.onetrust.com) | Kabir Barday | kabir@onetrust.com / [LinkedIn](https://www.linkedin.com/in/kabirbarday) |
+| **Patronus AI** | AI Model Evaluation & Compliance | [patronus.ai](https://www.patronus.ai) | Anand Kannappan | anand@patronus.ai / [LinkedIn](https://www.linkedin.com/in/anandkannappan) |
+| **Supio** | AI Medical Record Analysis | [supio.com](https://www.supio.com) | Jerry Ting | jerry@supio.com / [LinkedIn](https://www.linkedin.com/in/jerryting) |
+| **Compliance.ai** | Regulatory Intelligence Platform | [compliance.ai](https://www.compliance.ai) | Asif Alam | asif@compliance.ai / [LinkedIn](https://www.linkedin.com/in/asifalam) |
+
