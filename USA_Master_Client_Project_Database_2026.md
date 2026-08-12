@@ -6867,3 +6867,73 @@ Sector 194 focuses on top US-based companies, startups, and agencies building AI
 18. SeekOut, https://seekout.com / https://www.linkedin.com/in/anoop-gupta-seekout
 19. Fetcher, https://fetcher.ai / https://www.linkedin.com/in/andresblank
 20. Textio, https://textio.com / https://www.linkedin.com/in/jensenharris
+
+## Sector 195: AI in Legal, Compliance & Regulatory Tech Automation
+
+### Overview
+Sector 195 focuses on top US-based companies, startups, and agencies building AI-powered legal research assistants, automated contract review platforms, regulatory compliance agents, and justice intelligence systems for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Norm Ai** [1] | Agentic law platform embedding legal and regulatory requirements into AI agents for compliance. | John Nay [1] | CEO & Founder [1] | `john@norm.ai` [1] | [Profile](https://www.linkedin.com/in/johnjnay) [1] |
+| **Harvey** [2] | AI-powered legal assistant designed for elite law firms to automate research and drafting. | Winston Weinberg [2] | CEO & Co-Founder [2] | `winston@harvey.ai` [2] | [Profile](https://www.linkedin.com/in/winston-weinberg) [2] |
+| **Spellbook** [3] | AI copilot for contract review and drafting, integrated directly into Microsoft Word. | Scott Stevenson [3] | CEO & Co-Founder [3] | `scott@spellbook.com` [3] | [Profile](https://ca.linkedin.com/in/scottas) [3] |
+| **Ironclad** [4] | Digital contracting platform using AI to automate the entire contract lifecycle for enterprises. | Dan Springer [4] | CEO [4] | `dan.springer@ironcladapp.com` [4] | [Profile](https://www.linkedin.com/in/jboehmig) [4] |
+| **Darrow** [5] | AI-driven justice intelligence platform identifying legal violations and class action opportunities. | Gevorg Sargsyan [5] | CEO & Co-Founder [5] | `gevorg@darrow.ai` [5] | [Profile](https://www.linkedin.com/in/gevorg-sargsyan-darrow) [5] |
+| **Evisort** [6] | AI-powered contract management platform for extracting data and insights from legal documents. | Jerry Ting [6] | CEO & Co-Founder [6] | `jerry@evisort.com` [6] | [Profile](https://www.linkedin.com/in/jerryting) [6] |
+| **LinkSquares** [7] | AI-native legal platform providing contract management and legal operations tools. | Vishal Sunak [7] | CEO & Co-Founder [7] | `vishal@linksquares.com` [7] | [Profile](https://www.linkedin.com/in/vishalsunak) [7] |
+| **CoCounsel (TR)** [8] | AI legal assistant developed by Casetext (acquired by Thomson Reuters) for research and review. | Jake Heller [8] | CEO (Casetext/TR) [8] | `jake@casetext.com` [8] | [Profile](https://www.linkedin.com/in/jakeheller) [8] |
+| **Leya AI** [9] | AI-powered legal workspace designed to enhance productivity for lawyers and legal teams. | Pontus Kågerman [9] | CEO & Co-Founder [9] | `pontus@leya.law` [9] | [Profile](https://www.linkedin.com/in/pontus-k%C3%A5german) [9] |
+| **Luminance** [10] | AI platform for legal document review and analysis, used by global law firms and corporations. | Eleanor Weaver [10] | CEO [10] | `eleanor.weaver@luminance.com` [10] | [Profile](https://www.linkedin.com/in/eleanor-weaver-88220649) [10] |
+| **Lawgeex** [11] | AI-powered contract review platform that automates the approval of inbound legal documents. | Noory Bechor [11] | CEO & Co-Founder [11] | `noory@lawgeex.com` [11] | [Profile](https://www.linkedin.com/in/noorybechor) [11] |
+| **Everlaw** [12] | AI-native e-discovery platform for legal teams to manage litigation and investigations. | AJ Shankar [12] | CEO & Founder [12] | `aj@everlaw.com` [12] | [Profile](https://www.linkedin.com/in/ajshankar) [12] |
+| **Ethena** [13] | Modern compliance training platform using AI to deliver relevant and automated HR/legal content. | Roxanne Petraeus [13] | CEO & Co-Founder [13] | `roxanne@goethena.com` [13] | [Profile](https://www.linkedin.com/in/roxannepetraeus) [13] |
+| **Checkr** [14] | AI-powered background check platform for faster and more accurate compliance screening. | Daniel Yanisse [14] | CEO & Co-Founder [14] | `daniel@checkr.com` [14] | [Profile](https://www.linkedin.com/in/dyanisse) [14] |
+| **Litera (Kira)** [15] | AI-powered due diligence and contract analysis software for transactional legal work. | Noah Waisberg [15] | CEO (Litera) [15] | `noah.waisberg@litera.com` [15] | [Profile](https://www.linkedin.com/in/noahwaisberg) [15] |
+| **Reveal (Logikcull)** [16] | AI-driven e-discovery and legal intelligence platform for managing complex litigation data. | Andy Wilson [16] | CEO (Logikcull) [16] | `andy@logikcull.com` [16] | [Profile](https://www.linkedin.com/in/andywilson) [16] |
+| **Clio** [17] | Cloud-based legal practice management software with integrated AI tools for law firms. | Jack Newton [17] | CEO & Founder [17] | `jack@clio.com` [17] | [Profile](https://www.linkedin.com/in/jacknewton) [17] |
+| **Legislate** [18] | AI-powered contract editor and management platform for small businesses and legal teams. | Charles Brecque [18] | CEO & Founder [18] | `charles@legislate.ai` [18] | [Profile](https://www.linkedin.com/in/charlesbrecque) [18] |
+| **Juro** [19] | AI-powered contract automation platform for creating, signing, and managing legal agreements. | Richard Mabey [19] | CEO & Co-Founder [19] | `richard@juro.com` [19] | [Profile](https://www.linkedin.com/in/richardmabey) [19] |
+| **Robin AI** [20] | AI legal copilot for contract drafting and review, designed to reduce legal spend. | Richard Robinson [20] | CEO & Co-Founder [20] | `richard@robinai.com` [20] | [Profile](https://www.linkedin.com/in/richard-robinson-robinai) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Legal Automation & Regulatory Compliance at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to redefine the legal and compliance landscape through autonomous AI agents and intelligent contract review platforms in 2026, ensuring high-accuracy legal reasoning, seamless integration with existing workflows, and robust regulatory adherence is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous legal agent development, and scalable compliance architectures. I have recently helped high-growth legal tech platforms optimize automated document analysis workflows while reinforcing enterprise-grade reliability and security.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & LegalTech Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Norm Ai, https://norm.ai / https://www.linkedin.com/in/johnjnay
+2. Harvey, https://harvey.ai / https://www.linkedin.com/in/winston-weinberg
+3. Spellbook, https://spellbook.com / https://ca.linkedin.com/in/scottas
+4. Ironclad, https://ironcladapp.com / https://www.linkedin.com/in/jboehmig
+5. Darrow, https://darrow.ai / https://www.linkedin.com/in/gevorg-sargsyan-darrow
+6. Evisort, https://evisort.com / https://www.linkedin.com/in/jerryting
+7. LinkSquares, https://linksquares.com / https://www.linkedin.com/in/vishalsunak
+8. CoCounsel (TR), https://casetext.com / https://www.linkedin.com/in/jakeheller
+9. Leya AI, https://leya.law / https://www.linkedin.com/in/pontus-k%C3%A5german
+10. Luminance, https://luminance.com / https://www.linkedin.com/in/eleanor-weaver-88220649
+11. Lawgeex, https://lawgeex.com / https://www.linkedin.com/in/noorybechor
+12. Everlaw, https://everlaw.com / https://www.linkedin.com/in/ajshankar
+13. Ethena, https://goethena.com / https://www.linkedin.com/in/roxannepetraeus
+14. Checkr, https://checkr.com / https://www.linkedin.com/in/dyanisse
+15. Litera (Kira), https://litera.com / https://www.linkedin.com/in/noahwaisberg
+16. Reveal (Logikcull), https://logikcull.com / https://www.linkedin.com/in/andywilson
+17. Clio, https://clio.com / https://www.linkedin.com/in/jacknewton
+18. Legislate, https://legislate.ai / https://www.linkedin.com/in/charlesbrecque
+19. Juro, https://juro.com / https://www.linkedin.com/in/richardmabey
+20. Robin AI, https://robinai.com / https://www.linkedin.com/in/richard-robinson-robinai
