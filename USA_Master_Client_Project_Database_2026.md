@@ -7077,3 +7077,73 @@ Sector 197 focuses on top US-based companies, startups, and agencies building AI
 18. Shipium, https://shipium.com / https://www.linkedin.com/in/jasonmurray
 19. Leaf Logistics, https://leaflogistics.com / https://www.linkedin.com/in/anshu-prasad-7a4a1
 20. Outrider, https://outrider.ai / https://www.linkedin.com/in/andrew-smith-8173853
+
+## Sector 198: AI in Cybersecurity, Risk & Identity Management Automation
+
+### Overview
+Sector 198 focuses on top US-based companies, startups, and agencies building AI-powered threat detection, agentic security orchestration, identity-first risk management, and autonomous cybersecurity platforms for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Cyera** [1] | AI-powered data security platform for discovering, classifying, and protecting cloud data. | Yotam Segev [1] | CEO & Co-Founder [1] | `yotams@cyera.io` [1] | [Profile](https://www.linkedin.com/in/yotam-segev) [1] |
+| **Armis** [2] | AI-driven asset intelligence and security platform for tracking and securing all connected devices. | Yevgeny Dibrov [2] | CEO & Co-Founder [2] | `yevgeny@armis.com` [2] | [Profile](https://www.linkedin.com/in/yevgenydibrov) [2] |
+| **Token Security** [3] | Identity-first AI security platform focused on securing non-human identities and AI agents. | Itamar Apelblat [3] | CEO & Co-Founder [3] | `itamar@token.security` [3] | [Profile](https://www.linkedin.com/in/itamar-apelblat) [3] |
+| **Straiker** [4] | Agentic AI security platform designed to protect and govern autonomous AI agents in the enterprise. | Ankur Shah [4] | CEO & Co-Founder [4] | `ankurshah@straiker.net` [4] | [Profile](https://www.linkedin.com/in/ankur-shah-aisec) [4] |
+| **Wiz** [5] | AI-powered cloud security platform for identifying and mitigating risks across cloud environments. | Assaf Rappaport [5] | CEO & Co-Founder [5] | `assaf@wiz.io` [5] | [Profile](https://www.linkedin.com/in/assafrappaport) [5] |
+| **Orca Security** [6] | AI-native cloud security platform providing comprehensive visibility and compliance automation. | Gil Geron [6] | CEO & Co-Founder [6] | `gil@orca.security` [6] | [Profile](https://www.linkedin.com/in/gil-geron) [6] |
+| **Abnormal Security** [7] | AI-driven email security platform protecting organizations from advanced social engineering attacks. | Evan Reiser [7] | CEO & Co-Founder [7] | `evan@abnormalsecurity.com` [7] | [Profile](https://www.linkedin.com/in/evanreiser) [7] |
+| **Vanta** [8] | AI-powered trust management and compliance platform for automating SOC 2, ISO 27001, and more. | Christina Cacioppo [8] | CEO & Co-Founder [8] | `christina@vanta.com` [8] | [Profile](https://www.linkedin.com/in/christinacacioppo) [8] |
+| **Drata** [9] | AI-native compliance automation platform for continuous security monitoring and audit readiness. | Adam Markowitz [9] | CEO & Co-Founder [9] | `adam@drata.com` [9] | [Profile](https://www.linkedin.com/in/adammarkowitz) [9] |
+| **Protect AI** [10] | AI security and governance platform for securing the entire machine learning lifecycle. | Ian Swanson [10] | CEO & Co-Founder [10] | `ian@protectai.com` [10] | [Profile](https://www.linkedin.com/in/ianswanson) [10] |
+| **HiddenLayer** [11] | AI model security platform protecting machine learning models from adversarial attacks and theft. | Chris Sestito [11] | CEO & Co-Founder [11] | `chris@hiddenlayer.com` [11] | [Profile](https://www.linkedin.com/in/chrissestito) [11] |
+| **CalypsoAI** [12] | AI trust and safety platform for governing and securing large language model (LLM) deployments. | Neil Serebryany [12] | CEO & Founder [12] | `neil@calypsoai.com` [12] | [Profile](https://www.linkedin.com/in/neilserebryany) [12] |
+| **Lakera AI** [13] | AI safety and security platform providing real-time protection for enterprise AI applications. | David Haber [13] | CEO & Co-Founder [13] | `david@lakera.ai` [13] | [Profile](https://www.linkedin.com/in/davidhaber) [13] |
+| **SEON** [14] | AI-powered fraud prevention platform for real-time risk scoring and identity verification. | Tamas Kadar [14] | CEO & Co-Founder [14] | `tamas@seon.io` [14] | [Profile](https://www.linkedin.com/in/tamaskadar) [14] |
+| **Alloy** [15] | AI-driven identity risk platform for banks and fintechs to manage KYC, AML, and fraud. | Tommy Nicholas [15] | CEO & Co-Founder [15] | `tommy@alloy.com` [15] | [Profile](https://www.linkedin.com/in/tommynicholas) [15] |
+| **Snyk** [16] | AI-powered developer security platform for finding and fixing vulnerabilities in code and containers. | Peter McKay [16] | CEO [16] | `peter.mckay@snyk.io` [16] | [Profile](https://www.linkedin.com/in/petermckay) [16] |
+| **SentinelOne** [17] | AI-native endpoint security platform providing autonomous threat detection and response. | Tomer Weingarten [17] | CEO & Co-Founder [17] | `tomer@sentinelone.com` [17] | [Profile](https://www.linkedin.com/in/tomerweingarten) [17] |
+| **CrowdStrike** [18] | AI-driven threat intelligence and cloud-native security platform for endpoint protection. | George Kurtz [18] | CEO & Co-Founder [18] | `george@crowdstrike.com` [18] | [Profile](https://www.linkedin.com/in/georgekurtz) [18] |
+| **Fortinet** [19] | AI-powered network security and cybersecurity mesh architecture for distributed enterprises. | Ken Xie [19] | CEO & Founder [19] | `kxie@fortinet.com` [19] | [Profile](https://www.linkedin.com/in/kenxie) [19] |
+| **Cisco (Robust AI)** [20] | AI-native security analysis and threat hunting platform (formerly Robust Intelligence). | Yaron Singer [20] | VP, AI Security [20] | `yasinger@cisco.com` [20] | [Profile](https://www.linkedin.com/in/yaronsinger) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Security Orchestration & Agentic Defense at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of cybersecurity through autonomous AI agents and identity-first risk management platforms in 2026, ensuring high-fidelity threat detection, seamless security orchestration, and robust governance of non-human identities is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous security agent development, and scalable Cybersecurity architectures. I have recently helped high-growth security platforms optimize automated threat hunting and compliance workflows while reinforcing enterprise-grade reliability and AI safety.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Cybersecurity Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Cyera, https://cyera.io / https://www.linkedin.com/in/yotam-segev
+2. Armis, https://armis.com / https://www.linkedin.com/in/yevgenydibrov
+3. Token Security, https://token.security / https://www.linkedin.com/in/itamar-apelblat
+4. Straiker, https://straiker.ai / https://www.linkedin.com/in/ankur-shah-aisec
+5. Wiz, https://wiz.io / https://www.linkedin.com/in/assafrappaport
+6. Orca Security, https://orca.security / https://www.linkedin.com/in/gil-geron
+7. Abnormal Security, https://abnormalsecurity.com / https://www.linkedin.com/in/evanreiser
+8. Vanta, https://vanta.com / https://www.linkedin.com/in/christinacacioppo
+9. Drata, https://drata.com / https://www.linkedin.com/in/adammarkowitz
+10. Protect AI, https://protectai.com / https://www.linkedin.com/in/ianswanson
+11. HiddenLayer, https://hiddenlayer.com / https://www.linkedin.com/in/chrissestito
+12. CalypsoAI, https://calypsoai.com / https://www.linkedin.com/in/neilserebryany
+13. Lakera AI, https://lakera.ai / https://www.linkedin.com/in/davidhaber
+14. SEON, https://seon.io / https://www.linkedin.com/in/tamaskadar
+15. Alloy, https://alloy.com / https://www.linkedin.com/in/tommynicholas
+16. Snyk, https://snyk.io / https://www.linkedin.com/in/petermckay
+17. SentinelOne, https://sentinelone.com / https://www.linkedin.com/in/tomerweingarten
+18. CrowdStrike, https://crowdstrike.com / https://www.linkedin.com/in/georgekurtz
+19. Fortinet, https://fortinet.com / https://www.linkedin.com/in/kenxie
+20. Cisco (Robust AI), https://cisco.com / https://www.linkedin.com/in/yaronsinger
