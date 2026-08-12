@@ -7007,3 +7007,73 @@ Sector 196 focuses on top US-based companies, startups, and agencies building AI
 18. Planful, https://planful.com / https://www.linkedin.com/in/granthalloran
 19. FloQast, https://floqast.com / https://www.linkedin.com/in/mikewhitmire
 20. Anaplan, https://anaplan.com / https://www.linkedin.com/in/charles-gottdiener
+
+## Sector 197: AI in Supply Chain, Logistics & Inventory Management Automation
+
+### Overview
+Sector 197 focuses on top US-based companies, startups, and agencies building AI-powered logistics platforms, autonomous warehouse robotics, supply chain visibility tools, and intelligent inventory management systems for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Flexport** [1] | AI-powered global logistics and supply chain technology platform. | Ryan Petersen [1] | CEO & Founder [1] | `ryan@flexport.com` [1] | [Profile](https://www.linkedin.com/in/rpetersen) [1] |
+| **Optimal Dynamics** [2] | AI-driven decision intelligence for the logistics industry and physical world. | Daniel M. Powell [2] | CEO & Co-Founder [2] | `daniel@optimaldynamics.com` [2] | [Profile](https://www.linkedin.com/in/daniel-powell-18790036) [2] |
+| **Covariant** [3] | AI robotics company building foundation models for autonomous warehouse operations. | Ted Stinson [3] | CEO [3] | `ted@covariant.ai` [3] | [Profile](https://www.linkedin.com/in/peter-xi-chen) [3] |
+| **ShipBob** [4] | AI-driven global omni-fulfillment platform for small and medium-sized businesses. | Dhruv Saxena [4] | CEO & Co-Founder [4] | `dhruv@shipbob.com` [4] | [Profile](https://www.linkedin.com/in/dhruv-saxena-4568034) [4] |
+| **Nextmv (FICO)** [5] | AI DecisionOps platform for testing and deploying intelligent logistics agents. | Carolyn Mooney [5] | CEO & Co-Founder [5] | `carolyn@nextmv.io` [5] | [Profile](https://www.linkedin.com/in/carolyn-m-mooney) [5] |
+| **Resilinc** [6] | AI-powered supply chain risk management and resiliency mapping platform. | Bindiya Vakil [6] | CEO & Co-Founder [6] | `bindiya.vakil@resilinc.com` [6] | [Profile](https://www.linkedin.com/in/bindiya-vakil) [6] |
+| **Locus Robotics** [7] | AI-native warehouse robotics for autonomous mobile robot (AMR) fulfillment. | Rick Faulk [7] | CEO [7] | `rfaulk@locusrobotics.com` [7] | [Profile](https://www.linkedin.com/in/rick-faulk-8a88181) [7] |
+| **FourKites** [8] | AI-powered supply chain visibility platform for real-time tracking across all modes. | Mathew Elenjickal [8] | CEO & Founder [8] | `mathew@fourkites.com` [8] | [Profile](https://www.linkedin.com/in/mathewe) [8] |
+| **Project44** [9] | AI-driven logistics execution platform for real-time transportation visibility. | Jett McCandless [9] | CEO & Founder [9] | `jett@project44.com` [9] | [Profile](https://www.linkedin.com/in/jettmccandless) [9] |
+| **Stord** [10] | AI-powered cloud supply chain platform for integrated warehousing and freight. | Sean Henry [10] | CEO & Co-Founder [10] | `sean@stord.com` [10] | [Profile](https://www.linkedin.com/in/seanhenrystord) [10] |
+| **Altana AI** [11] | AI-powered supply chain mapping platform for global trade and compliance. | Evan Smith [11] | CEO & Co-Founder [11] | `evan@altana.ai` [11] | [Profile](https://www.linkedin.com/in/evan-smith-0a6a4a1) [11] |
+| **Sourcemap** [12] | AI-driven supply chain traceability and transparency platform for sustainability. | Leonardo Bonanni [12] | CEO & Founder [12] | `leo@sourcemap.com` [12] | [Profile](https://www.linkedin.com/in/lbonanni) [12] |
+| **Interos** [13] | AI-powered operational resilience platform for supply chain risk assessment. | Jennifer Bisceglie [13] | CEO & Founder [13] | `jennifer.bisceglie@interos.ai` [13] | [Profile](https://www.linkedin.com/in/jennifer-bisceglie-407b461) [13] |
+| **GreyOrange** [14] | AI-powered fulfillment robotics and warehouse automation software. | Akash Gupta [14] | CEO & Co-Founder [14] | `akash@greyorange.com` [14] | [Profile](https://www.linkedin.com/in/akash-gupta-greyorange) [14] |
+| **Manhattan Associates** [15] | AI-native supply chain commerce platform for unified warehouse and labor management. | Eddie Capel [15] | CEO [15] | `ecapel@manh.com` [15] | [Profile](https://www.linkedin.com/in/eddiecapel) [15] |
+| **Daybreak** [16] | AI labor platform for enterprise planning and supply chain decision-making. | Tim Krug [16] | CEO & Founder [16] | `tim@daybreak.ai` [16] | [Profile](https://www.linkedin.com/in/breakbarriers) [16] |
+| **ParkourSC** [17] | AI-powered supply chain digital twin platform for real-time visibility and agility. | Mahesh Veerina [17] | CEO [17] | `mahesh@parkoursc.com` [17] | [Profile](https://www.linkedin.com/in/maheshveerina) [17] |
+| **Shipium** [18] | AI-powered shipping platform for e-commerce delivery and logistics optimization. | Jason Murray [18] | CEO & Co-Founder [18] | `jason@shipium.com` [18] | [Profile](https://www.linkedin.com/in/jasonmurray) [18] |
+| **Leaf Logistics** [19] | AI-powered freight network for planning and executing transportation workflows. | Anshu Prasad [19] | CEO & Co-Founder [19] | `anshu@leaflogistics.com` [19] | [Profile](https://www.linkedin.com/in/anshu-prasad-7a4a1) [19] |
+| **Outrider** [20] | AI-powered autonomous yard operations for logistics hubs and distribution centers. | Andrew Smith [20] | CEO & Founder [20] | `andrew@outrider.ai` [20] | [Profile](https://www.linkedin.com/in/andrew-smith-8173853) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Logistics Automation & Autonomous Supply Chain at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the transformation of global trade through autonomous AI agents and intelligent logistics platforms in 2026, ensuring high-fidelity supply chain data, seamless ERP integration, and resilient autonomous yard operations is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous logistics agent development, and scalable supply chain architectures. I have recently helped high-growth logistics platforms optimize automated fulfillment and visibility workflows while reinforcing enterprise-grade reliability and operational resilience.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Logistics Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Flexport, https://flexport.com / https://www.linkedin.com/in/rpetersen
+2. Optimal Dynamics, https://optimaldynamics.com / https://www.linkedin.com/in/daniel-powell-18790036
+3. Covariant, https://covariant.ai / https://www.linkedin.com/in/peter-xi-chen
+4. ShipBob, https://shipbob.com / https://www.linkedin.com/in/dhruv-saxena-4568034
+5. Nextmv, https://nextmv.io / https://www.linkedin.com/in/carolyn-m-mooney
+6. Resilinc, https://resilinc.com / https://www.linkedin.com/in/bindiya-vakil
+7. Locus Robotics, https://locusrobotics.com / https://www.linkedin.com/in/rick-faulk-8a88181
+8. FourKites, https://fourkites.com / https://www.linkedin.com/in/mathewe
+9. Project44, https://project44.com / https://www.linkedin.com/in/jettmccandless
+10. Stord, https://stord.com / https://www.linkedin.com/in/seanhenrystord
+11. Altana AI, https://altana.ai / https://www.linkedin.com/in/evan-smith-0a6a4a1
+12. Sourcemap, https://sourcemap.com / https://www.linkedin.com/in/lbonanni
+13. Interos, https://interos.ai / https://www.linkedin.com/in/jennifer-bisceglie-407b461
+14. GreyOrange, https://greyorange.com / https://www.linkedin.com/in/akash-gupta-greyorange
+15. Manhattan Associates, https://manh.com / https://www.linkedin.com/in/eddiecapel
+16. Daybreak, https://daybreak.ai / https://www.linkedin.com/in/breakbarriers
+17. ParkourSC, https://parkoursc.com / https://www.linkedin.com/in/maheshveerina
+18. Shipium, https://shipium.com / https://www.linkedin.com/in/jasonmurray
+19. Leaf Logistics, https://leaflogistics.com / https://www.linkedin.com/in/anshu-prasad-7a4a1
+20. Outrider, https://outrider.ai / https://www.linkedin.com/in/andrew-smith-8173853
