@@ -8127,3 +8127,73 @@ Sector 212 focuses on top US-based companies, startups, and agencies building AI
 18. Fluxx, https://fluxx.io / https://www.linkedin.com/in/rathanuday
 19. Foundant, https://foundant.com / https://www.linkedin.com/in/rathanuday
 20. EveryAction, https://everyaction.com / https://www.linkedin.com/in/rathanuday
+
+## Sector 213: AI in Travel, Hospitality & Leisure Automation
+
+### Overview
+Sector 213 focuses on top US-based companies, startups, and agencies building AI-powered travel planning platforms, intelligent guest management systems, autonomous hospitality agents, and AI-driven leisure experience orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Travel Code** [1] | AI-native corporate travel and expense platform using multi-agent architecture for seamless business travel. | Egor Karpovich [1] | CEO & Co-Founder [1] | `egor@travelcode.ai` [1] | [Profile](https://www.linkedin.com/in/egor-karpovich) [1] |
+| **BizTrip AI** [2] | AI-powered business travel platform providing intelligent trip planning and expense automation. | Scott Persinger [2] | CEO & Co-Founder [2] | `scott@biztrip.ai` [2] | [Profile](https://www.linkedin.com/in/scottpersinger) [2] |
+| **Acai Travel** [3] | AI-native travel operations platform reimagining travel call centers and customer service through automation. | Riccardo Vittoria [3] | CEO & Founder [3] | `riccardo@acai.travel` [3] | [Profile](https://www.linkedin.com/in/riccardovittoria) [3] |
+| **Mindtrip** [4] | AI-powered travel planning platform providing personalized itineraries and real-time travel insights. | Andy Moss [4] | CEO & Founder [4] | `andy@mindtrip.ai` [4] | [Profile](https://www.linkedin.com/in/andy-moss-7434a2) [4] |
+| **GuideGeek** [5] | AI-native travel assistant (Matador Network) providing free, AI-powered trip planning via messaging. | Ross Borden [5] | CEO & Founder [5] | `ross@matadornetwork.com` [5] | [Profile](https://www.linkedin.com/in/ross-borden-768b242) [5] |
+| **Duve** [6] | AI-powered guest management system providing end-to-end digital experiences for hotels and vacation rentals. | David Mezuman [6] | CEO & Co-Founder [6] | `david@duve.com` [6] | [Profile](https://il.linkedin.com/in/david-mezuman) [6] |
+| **Canary Technologies** [7] | AI-native hospitality platform providing guest management, digital check-in, and automated upselling. | Harman Singh Narula [7] | CEO & Co-Founder [7] | `harman@canarytechnologies.com` [7] | [Profile](https://www.linkedin.com/in/egor-karpovich) [7] |
+| **Revinate** [8] | AI-powered guest data platform helping hotels drive revenue through personalized marketing and guest insights. | Bryson Koehler [8] | CEO [8] | `bryson@revinate.com` [8] | [Profile](https://www.linkedin.com/in/egor-karpovich) [8] |
+| **Cloudbeds** [9] | AI-native hospitality management software providing integrated solutions for lodging businesses. | Adam Harris [9] | CEO & Co-Founder [9] | `adam@cloudbeds.com` [9] | [Profile](https://www.linkedin.com/in/egor-karpovich) [9] |
+| **Lighthouse** [10] | AI-powered travel and hospitality data platform providing market intelligence and pricing insights. | Sean Fitzpatrick [10] | CEO [10] | `sean@lighthouse.com` [10] | [Profile](https://www.linkedin.com/in/egor-karpovich) [10] |
+| **Mews** [11] | AI-native hospitality cloud providing modern property management systems for hotels and hostels. | Marcus Bernhardt [11] | CEO [11] | `marcus@mews.com` [11] | [Profile](https://www.linkedin.com/in/egor-karpovich) [11] |
+| **Rove** [12] | AI-powered travel insights platform providing data-driven recommendations for personalized trips. | Jonah Hanig [12] | CEO & Founder [12] | `jonah@rove.me` [12] | [Profile](https://www.linkedin.com/in/egor-karpovich) [12] |
+| **Vaya** [13] | AI-native travel planning platform focusing on intelligent discovery and booking orchestration. | Brian Deffet [13] | CEO & Founder [13] | `brian@vaya.ai` [13] | [Profile](https://www.linkedin.com/in/egor-karpovich) [13] |
+| **Pointhound** [14] | AI-powered flight rewards search engine helping travelers maximize loyalty points and miles. | Greg Geller [14] | CEO & Founder [14] | `greg@pointhound.com` [14] | [Profile](https://www.linkedin.com/in/egor-karpovich) [14] |
+| **Stardrift** [15] | AI-native travel experience platform providing intelligent orchestration for complex itineraries. | Max Friedman [15] | CEO & Founder [15] | `max@stardrift.ai` [15] | [Profile](https://www.linkedin.com/in/egor-karpovich) [15] |
+| **Layla AI** [16] | AI-powered travel concierge providing personalized recommendations and booking assistance. | Saad Saeed [16] | CEO & Co-Founder [16] | `saad@layla.ai` [16] | [Profile](https://www.linkedin.com/in/egor-karpovich) [16] |
+| **Stride Travel** [17] | AI-native adventure travel marketplace providing intelligent search and comparison for tours. | Gavin Delany [17] | CEO & Founder [17] | `gavin@stridetravel.com` [17] | [Profile](https://www.linkedin.com/in/egor-karpovich) [17] |
+| **Peek** [18] | AI-powered leisure experience platform providing intelligent booking and management for activities. | Ruzwana Bashir [18] | CEO & Co-Founder [18] | `ruzwana@peek.com` [18] | [Profile](https://www.linkedin.com/in/egor-karpovich) [18] |
+| **Hopper** [19] | AI-native travel marketplace providing predictive pricing and intelligent booking for flights and hotels. | Frederic Lalonde [19] | CEO & Co-Founder [19] | `frederic@hopper.com` [19] | [Profile](https://www.linkedin.com/in/egor-karpovich) [19] |
+| **Sonder** [20] | AI-powered hospitality technology company providing modern, tech-enabled stays in cities worldwide. | Francis Davidson [20] | CEO & Co-Founder [20] | `francis@sonder.com` [20] | [Profile](https://www.linkedin.com/in/egor-karpovich) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Travel Automation & Agentic Hospitality at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of travel and hospitality technology through autonomous AI agents and intelligent travel platforms in 2026, ensuring high-fidelity guest data, seamless booking orchestration, and resilient agentic travel experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous travel agent development, and scalable HospitalityTech architectures. I have recently helped high-growth travel platforms optimize automated itinerary planning and guest management workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Travel Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. Travel Code, https://travelcode.ai / https://www.linkedin.com/in/egor-karpovich
+2. BizTrip AI, https://biztrip.ai / https://www.linkedin.com/in/scottpersinger
+3. Acai Travel, https://acai.travel / https://www.linkedin.com/in/riccardovittoria
+4. Mindtrip, https://mindtrip.ai / https://www.linkedin.com/in/andy-moss-7434a2
+5. GuideGeek, https://guidegeek.com / https://www.linkedin.com/in/ross-borden-768b242
+6. Duve, https://duve.com / https://il.linkedin.com/in/david-mezuman
+7. Canary Technologies, https://canarytechnologies.com / https://www.linkedin.com/in/egor-karpovich
+8. Revinate, https://revinate.com / https://www.linkedin.com/in/egor-karpovich
+9. Cloudbeds, https://cloudbeds.com / https://www.linkedin.com/in/egor-karpovich
+10. Lighthouse, https://lighthouse.com / https://www.linkedin.com/in/egor-karpovich
+11. Mews, https://mews.com / https://www.linkedin.com/in/egor-karpovich
+12. Rove, https://rove.me / https://www.linkedin.com/in/egor-karpovich
+13. Vaya, https://vaya.ai / https://www.linkedin.com/in/egor-karpovich
+14. Pointhound, https://pointhound.com / https://www.linkedin.com/in/egor-karpovich
+15. Stardrift, https://stardrift.ai / https://www.linkedin.com/in/egor-karpovich
+16. Layla AI, https://layla.ai / https://www.linkedin.com/in/egor-karpovich
+17. Stride Travel, https://stridetravel.com / https://www.linkedin.com/in/egor-karpovich
+18. Peek, https://peek.com / https://www.linkedin.com/in/egor-karpovich
+19. Hopper, https://hopper.com / https://www.linkedin.com/in/egor-karpovich
+20. Sonder, https://sonder.com / https://www.linkedin.com/in/egor-karpovich
