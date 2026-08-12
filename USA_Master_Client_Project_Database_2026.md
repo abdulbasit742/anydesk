@@ -4434,3 +4434,32 @@ AI-driven Manufacturing, Robotics, and Industrial Automation companies are scali
 | **Rapid Robotics** | Robotic-as-a-Service (RaaS) Machine Tending | [rapidrobotics.com](https://www.rapidrobotics.com) | Jordan Kretchmer | jordan@rapidrobotics.com / [LinkedIn](https://www.linkedin.com/in/jordankretchmer) |
 | **Dexterity** | Full-Stack Robotic Dexterity Software | [dexterity.ai](https://www.dexterity.ai) | Samir Menon | samir@dexterity.ai / [LinkedIn](https://www.linkedin.com/in/samirmenon) |
 
+
+
+## Sector 153: AI for HRTech, Talent Acquisition & Workforce Management
+
+AI-driven HRTech, Talent Acquisition, and Workforce Management companies are scaling autonomous candidate sourcing, conversational screening, and predictive performance analytics across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **SeekOut** | AI Talent Acquisition & Skills Platform | [seekout.com](https://www.seekout.com) | Sean Thompson | sean@seekout.com / [LinkedIn](https://www.linkedin.com/in/sean-thompson) |
+| **Eightfold AI** | Talent Intelligence & Career Pathing | [eightfold.ai](https://www.eightfold.ai) | Ashutosh Garg | ashutosh@eightfold.ai / [LinkedIn](https://www.linkedin.com/in/ashutoshgarg893) |
+| **Juicebox (PeopleGPT)** | Autonomous AI Sourcing & Outreach | [juicebox.ai](https://juicebox.ai) | David Paffenholz | david@juicebox.ai / [LinkedIn](https://www.linkedin.com/in/david-paffenholz) |
+| **Paradox** | Conversational AI Hiring Assistant | [paradox.ai](https://www.paradox.ai) | Adam Godson | adam@paradox.ai / [LinkedIn](https://www.linkedin.com/in/adamgodson) |
+| **Lattice** | People Success & Performance AI | [lattice.com](https://lattice.com) | Sarah Franklin | sarah@lattice.com / [LinkedIn](https://www.linkedin.com/in/sarahfranklin) |
+| **Ashby** | All-in-One Recruiting & ATS Software | [ashbyhq.com](https://www.ashbyhq.com) | Benjamin Encz | benjamin@ashbyhq.com / [LinkedIn](https://www.linkedin.com/in/benjaminencz) |
+| **Greenhouse** | Enterprise Hiring & ATS Platform | [greenhouse.io](https://www.greenhouse.io) | Daniel Chait | daniel@greenhouse.io / [LinkedIn](https://www.linkedin.com/in/danielchait) |
+| **Gem** | Talent CRM & Sourcing Analytics | [gem.com](https://www.gem.com) | Steve Bartel | steve@gem.com / [LinkedIn](https://www.linkedin.com/in/stevebartel) |
+| **Phenom** | AI Talent Experience Platform | [phenom.com](https://www.phenom.com) | Mahe Bayireddi | mahe@phenom.com / [LinkedIn](https://www.linkedin.com/in/mahebayireddi) |
+| **Beamery** | Talent Lifecycle Management AI | [beamery.com](https://beamery.com) | Abakar Saidov | abakar@beamery.com / [LinkedIn](https://www.linkedin.com/in/abakarsaidov) |
+| **Textio** | AI Writing & Bias Elimination | [textio.com](https://textio.com) | Jensen Harris | jensen@textio.com / [LinkedIn](https://www.linkedin.com/in/jensenharris) |
+| **Checkr** | AI-Powered Background Checks | [checkr.com](https://checkr.com) | Daniel Yanisse | daniel@checkr.com / [LinkedIn](https://www.linkedin.com/in/yanisse/en) |
+| **Employ Inc.** | Talent Acquisition Suite (Jobvite) | [employinc.com](https://www.employinc.com) | Pete Lamson | pete.lamson@employinc.com / [LinkedIn](https://www.linkedin.com/in/petelamson) |
+| **Findem** | 3D Talent Intelligence Platform | [findem.ai](https://www.findem.ai) | Hari Kolam | hari@findem.ai / [LinkedIn](https://www.linkedin.com/in/harikolam) |
+| **Dover** | Autonomous Recruiting Copilot | [dover.com](https://dover.com) | Max Kolysh | max@dover.com / [LinkedIn](https://www.linkedin.com/in/maxkolysh) |
+| **Humanly.io** | Conversational AI Screening & Scheduling | [humanly.io](https://humanly.io) | Prem Kumar | prem@humanly.io / [LinkedIn](https://www.linkedin.com/in/premkumar1) |
+| **Knoetic** | Chief People Officer Platform & Analytics | [knoetic.com](https://knoetic.com) | Joseph Quan | joseph@knoetic.com / [LinkedIn](https://www.linkedin.com/in/josephquan) |
+| **Metaview** | AI Interview Intelligence & Notes | [metaview.ai](https://www.metaview.ai) | Siadhal Magos | siadhal@metaview.ai / [LinkedIn](https://www.linkedin.com/in/siadhalmagos) |
+| **Hired** | Skills-Based AI Talent Marketplace | [hired.com](https://hired.com) | Josh Brenner | josh@hired.com / [LinkedIn](https://www.linkedin.com/in/josh-brenner-5527632) |
+| **Betterleap** | AI Recruiter Assistant & Sourcing | [betterleap.com](https://betterleap.com) | Khaled Rabbani | khaled@betterleap.com / [LinkedIn](https://www.linkedin.com/in/khaledrabbani) |
+
