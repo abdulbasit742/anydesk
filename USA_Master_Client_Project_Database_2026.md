@@ -4260,3 +4260,32 @@ AI-driven Cybersecurity, Threat Intelligence, and Privacy Technology companies a
 | **BigID** | Data Privacy & Governance AI | [bigid.com](https://bigid.com) | Dimitri Sirota | dimitri@bigid.com / [LinkedIn](https://www.linkedin.com/in/dimitrisirota) |
 | **Privacera** | Cloud Data Security & Governance | [privacera.com](https://www.privacera.com) | Balaji Ganesan | balaji@privacera.com / [LinkedIn](https://www.linkedin.com/in/balajiganesan) |
 
+
+
+## Sector 147: AI for Supply Chain, Logistics & Warehouse Automation
+
+AI-driven Supply Chain, Logistics, and Warehouse Automation companies are scaling global trade resilience, autonomous fulfillment, and freight optimization across US markets.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Flexport** | Global Freight & Logistics AI | [flexport.com](https://www.flexport.com) | Ryan Petersen | ryan@flexport.com / [LinkedIn](https://www.linkedin.com/in/rpetersen) |
+| **Altuna** | AI Trade Compliance & Mapping | [altuna.ai](https://www.altuna.ai) | Evan Smith | evan@altana.ai / [LinkedIn](https://www.linkedin.com/in/evan-smith-39516b8) |
+| **Nimble** | Autonomous AI Fulfillment | [nimble.ai](https://www.nimble.ai) | Simon Kalouche | simon@nimble.ai / [LinkedIn](https://www.linkedin.com/in/simon-kalouche-98883343) |
+| **Mytra** | Robotic Warehouse Automation | [mytra.ai](https://www.mytra.ai) | Chris Walti | chris@mytra.ai / [LinkedIn](https://www.linkedin.com/in/chris-walti) |
+| **Optimal Dynamics** | AI Transportation Optimization | [optimaldynamics.com](https://www.optimaldynamics.com) | Daniel P. McKenna | daniel@optimaldynamics.com / [LinkedIn](https://www.linkedin.com/in/danielpmckenna) |
+| **Covariant** | AI Robotics for Fulfillment | [covariant.ai](https://www.covariant.ai) | Peter Chen | peter@covariant.ai / [LinkedIn](https://www.linkedin.com/in/peter-chen-covariant) |
+| **Nextmv** | Logistics Decision Science AI | [nextmv.io](https://www.nextmv.io) | Carolyn Mooney | carolyn@nextmv.io / [LinkedIn](https://www.linkedin.com/in/carolyn-mooney) |
+| **Resilinc** | AI Supply Chain Risk Mapping | [resilinc.com](https://www.resilinc.com) | Bindiya Vakil | bindiya@resilinc.com / [LinkedIn](https://www.linkedin.com/in/bindiyavakil) |
+| **RightHand Robotics** | AI Robotic Piece-Picking | [righthandrobotics.com](https://www.righthandrobotics.com) | Brian Stearns | brian@righthandrobotics.com / [LinkedIn](https://www.linkedin.com/in/brianstearns) |
+| **Optibus** | AI Transit Network Planning | [optibus.com](https://www.optibus.com) | Amos Haggiag | amos@optibus.com / [LinkedIn](https://www.linkedin.com/in/amoshaggiag) |
+| **Loadsmart** | Digital Freight & ML Matching | [loadsmart.com](https://loadsmart.com) | Ricardo Salgado | ricardo@loadsmart.com / [LinkedIn](https://www.linkedin.com/in/ricardosalgado) |
+| **GreyOrange** | AI Warehouse Optimization | [greyorange.com](https://www.greyorange.com) | Akash Gupta | akash@greyorange.com / [LinkedIn](https://www.linkedin.com/in/akashgupta) |
+| **Project44** | Predictive Supply Chain Tracking | [project44.com](https://www.project44.com) | Jett McCandless | jett@project44.com / [LinkedIn](https://www.linkedin.com/in/jettmccandless) |
+| **FourKites** | Predictive Logistics Visibility | [fourkites.com](https://www.fourkites.com) | Mathew Elenjickal | mathew@fourkites.com / [LinkedIn](https://www.linkedin.com/in/mathevelenjickal) |
+| **ShipBob** | Omnichannel Fulfillment Tech | [shipbob.com](https://www.shipbob.com) | Dhruv Saxena | dhruv@shipbob.com / [LinkedIn](https://www.linkedin.com/in/dhruvsaxena) |
+| **Stord** | Cloud Supply Chain Platform | [stord.com](https://www.stord.com) | Sean Henry | sean@stord.com / [LinkedIn](https://www.linkedin.com/in/seanhenry) |
+| **Gatik** | Autonomous Middle-Mile Logistics | [gatik.ai](https://gatik.ai) | Gautam Narang | gautam@gatik.ai / [LinkedIn](https://www.linkedin.com/in/gautamnarang) |
+| **Outrider** | Autonomous Yard Operations | [outrider.ai](https://www.outrider.ai) | Andrew Smith | andrew@outrider.ai / [LinkedIn](https://www.linkedin.com/in/andrewsmith) |
+| **Locus Robotics** | Autonomous Mobile Robots | [locusrobotics.com](https://locusrobotics.com) | Rick Faulk | rfaulk@locusrobotics.com / [LinkedIn](https://www.linkedin.com/in/rickfaulk) |
+| **Berkshire Grey** | AI Robotic Fulfillment | [berkshiregrey.com](https://www.berkshiregrey.com) | Tom Wagner | tom.wagner@berkshiregrey.com / [LinkedIn](https://www.linkedin.com/in/tomwagner) |
+
