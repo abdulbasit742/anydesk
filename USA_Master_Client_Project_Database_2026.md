@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 47 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, FemTech & Women's Health Innovation, and ClimateTech & Carbon Management Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 48 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, FemTech & Women's Health Innovation, ClimateTech & Carbon Management Innovation, and Edge AI & Industrial IoT Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -753,6 +753,23 @@ ClimateTech and Carbon Management companies are at the forefront of the fight ag
 | **Fervo Energy** | Next-Gen Geothermal Energy | [fervoenergy.com](https://fervoenergy.com) | Tim Latimer | tim@fervoenergy.com / [LinkedIn](https://www.linkedin.com/in/timlatimer) |
 | **Aepnus Technology** | Industrial Waste-to-Chemicals | [aepnus.com](https://aepnus.com) | Lukas Hackl | lukas@aepnus.com / [LinkedIn](https://www.linkedin.com/in/lukashackl) |
 | **Beehive** | AI for Natural Disaster Response | [beehive.ai](https://beehive.ai) | Adriel Lubarsky | adriel@beehive.ai / [LinkedIn](https://www.linkedin.com/in/adriellubarsky) |
+
+---
+
+## Sector 48: Edge AI & Industrial IoT Innovation
+
+Edge AI and Industrial IoT (IIoT) companies are transforming manufacturing, logistics, and infrastructure by moving intelligence directly to the device level. In 2026, the convergence of "Physical AI" and industrial automation is driving massive demand for remote systems engineers, edge-native software developers, and IoT security specialists.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **VAST Data** | AI Data Infrastructure & Storage | [vastdata.com](https://vastdata.com) | Renen Hallak | renen@vastdata.com / [LinkedIn](https://www.linkedin.com/in/renenh) |
+| **Samsara** | Connected Operations & IoT Fleet | [samsara.com](https://www.samsara.com) | Sanjit Biswas | sanjit@samsara.com / [LinkedIn](https://www.linkedin.com/in/sanjitbiswas) |
+| **Armis** | IoT Asset Visibility & Security | [armis.com](https://www.armis.com) | Yevgeny Dibrov | yevgeny@armis.com / [LinkedIn](https://www.linkedin.com/in/yevgenydibrov) |
+| **Claroty** | Industrial Cybersecurity (CPS) | [claroty.com](https://claroty.com) | Yaniv Vardi | yaniv@claroty.com / [LinkedIn](https://il.linkedin.com/in/yaniv-vardi-2a671512) |
+| **SambaNova Systems** | Full-Stack AI Computing Platforms | [sambanova.ai](https://sambanova.ai) | Rodrigo Liang | rodrigo.liang@sambanova.ai / [LinkedIn](https://www.linkedin.com/in/rodrigo-liang) |
+| **GreyOrange** | AI-Driven Warehouse Robotics | [greyorange.com](https://www.greyorange.com) | Akash Gupta | akash@greyorange.com / [LinkedIn](https://www.linkedin.com/in/akashgor) |
+| **PlusAI** | Autonomous Trucking Technology | [plus.ai](https://plus.ai) | David Liu | david@plus.ai / [LinkedIn](https://www.linkedin.com/company/plusai) |
+| **SiFive** | RISC-V Edge AI Processors | [sifive.com](https://www.sifive.com) | Patrick Little | patrick@sifive.com / [LinkedIn](https://www.linkedin.com/in/patrick-little-b3b4b) |
 
 ---
 
