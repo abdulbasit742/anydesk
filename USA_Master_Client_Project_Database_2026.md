@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 45 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, and Construction Tech & Smart Building Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 46 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, and FemTech & Women's Health Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -719,6 +719,23 @@ Construction Tech (ConTech) and Smart Building companies are modernizing the bui
 | **PermitFlow** | Construction Permitting Software | [permitflow.com](https://www.permitflow.com) | Francis Thumpasery | francis@permitflow.com / [LinkedIn](https://www.linkedin.com/in/francis-thumpasery) |
 | **HOVER** | 3D Building Modeling | [hover.to](https://hover.to) | A.J. Altman | aj@hover.to / [LinkedIn](https://www.linkedin.com/in/aj-altman-0005704) |
 | **ICON** | 3D Printed Construction | [iconbuild.com](https://www.iconbuild.com) | Jason Ballard | jason@iconbuild.com / [LinkedIn](https://www.linkedin.com/in/jasonballard) |
+
+---
+
+## Sector 46: FemTech & Women's Health Innovation
+
+FemTech and Women's Health companies are revolutionizing healthcare through fertility tracking, maternal support, and hormone intelligence. In 2026, the industry is scaling with AI-driven diagnostics and personalized wellness ecosystems, creating high demand for remote software engineers, data scientists, and product designers.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Maven Clinic** | Virtual Women's Healthcare Platform | [mavenclinic.com](https://www.mavenclinic.com) | Kate Ryder | kate@mavenclinic.com / [LinkedIn](https://www.linkedin.com/in/kate-ryder-87474933) |
+| **Kindbody** | Fertility & Family Building | [kindbody.com](https://www.kindbody.com) | Gina Bartasi | gina@kindbody.com / [LinkedIn](https://www.linkedin.com/in/gina-bartasi) |
+| **Flo Health** | Period & Ovulation Tracker | [flo.health](https://flo.health) | Dmitry Gurski | dmitry@flo.health / [LinkedIn](https://uk.linkedin.com/in/dmitrygurski) |
+| **BillionToOne** | Molecular Diagnostics (Prenatal) | [billiontoone.com](https://www.billiontoone.com) | Oguzhan Atay | oguzhan@billiontoone.com / [LinkedIn](https://www.linkedin.com/in/oatay) |
+| **Aavia** | Hormone Intelligence Platform | [aavia.io](https://www.aavia.io) | Aagya Mathur | aagya@aavia.io / [LinkedIn](https://www.linkedin.com/in/aagyamathur) |
+| **Everly Health** | At-Home Health Testing | [everlyhealth.com](https://www.everlyhealth.com) | Julia Cheek | julia@everlywell.com / [LinkedIn](https://www.linkedin.com/in/juliataylorcheek) |
+| **Evvy** | Vaginal Microbiome Testing | [evvy.com](https://www.evvy.com) | Priyanka Jain | priyanka@evvy.com / [LinkedIn](https://www.linkedin.com/in/pjain16) |
+| **Tia** | Integrative Women's Healthcare | [asktia.com](https://www.asktia.com) | Carolyn Witte | carolyn@asktia.com / [LinkedIn](https://www.linkedin.com/in/carolyn-witte) |
 
 ---
 
