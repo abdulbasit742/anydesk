@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 46 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, and FemTech & Women's Health Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 47 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, Construction Tech & Smart Building Innovation, FemTech & Women's Health Innovation, and ClimateTech & Carbon Management Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -736,6 +736,23 @@ FemTech and Women's Health companies are revolutionizing healthcare through fert
 | **Everly Health** | At-Home Health Testing | [everlyhealth.com](https://www.everlyhealth.com) | Julia Cheek | julia@everlywell.com / [LinkedIn](https://www.linkedin.com/in/juliataylorcheek) |
 | **Evvy** | Vaginal Microbiome Testing | [evvy.com](https://www.evvy.com) | Priyanka Jain | priyanka@evvy.com / [LinkedIn](https://www.linkedin.com/in/pjain16) |
 | **Tia** | Integrative Women's Healthcare | [asktia.com](https://www.asktia.com) | Carolyn Witte | carolyn@asktia.com / [LinkedIn](https://www.linkedin.com/in/carolyn-witte) |
+
+---
+
+## Sector 47: ClimateTech & Carbon Management Innovation
+
+ClimateTech and Carbon Management companies are at the forefront of the fight against climate change, focusing on carbon removal, sustainable energy, and climate adaptation. In 2026, the sector is experiencing rapid growth due to significant federal investment and corporate sustainability mandates, creating high demand for remote software engineers, AI/ML specialists, and data analysts.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **CarbonCapture** | Direct Air Capture (DAC) Technology | [carboncapture.com](https://carboncapture.com) | Adrian Corless | adrian@carboncapture.com / [LinkedIn](https://www.linkedin.com/in/adriancorless) |
+| **Pachama** | AI-Powered Reforestation & Carbon Credits | [pachama.com](https://pachama.com) | Diego Saez Gil | diego@pachama.com / [LinkedIn](https://www.linkedin.com/in/diegosaezgil) |
+| **Carbon Direct** | Science-Backed Carbon Management | [carbon-direct.com](https://www.carbon-direct.com) | Jonathan Goldberg | jonathan@carbon-direct.com / [LinkedIn](https://www.linkedin.com/company/carbon-direct) |
+| **Heirloom** | Limestone-Based Carbon Removal | [heirloomcarbon.com](https://www.heirloomcarbon.com) | Shashank Samala | shashank@heirloomcarbon.com / [LinkedIn](https://www.linkedin.com/in/shashanksamala) |
+| **Charm Industrial** | Bio-Oil Sequestration & Green Iron | [charmindustrial.com](https://charmindustrial.com) | Peter Reinhardt | peter@charmindustrial.com / [LinkedIn](https://www.linkedin.com/in/peterreinhardt) |
+| **Fervo Energy** | Next-Gen Geothermal Energy | [fervoenergy.com](https://fervoenergy.com) | Tim Latimer | tim@fervoenergy.com / [LinkedIn](https://www.linkedin.com/in/timlatimer) |
+| **Aepnus Technology** | Industrial Waste-to-Chemicals | [aepnus.com](https://aepnus.com) | Lukas Hackl | lukas@aepnus.com / [LinkedIn](https://www.linkedin.com/in/lukashackl) |
+| **Beehive** | AI for Natural Disaster Response | [beehive.ai](https://beehive.ai) | Adriel Lubarsky | adriel@beehive.ai / [LinkedIn](https://www.linkedin.com/in/adriellubarsky) |
 
 ---
 
