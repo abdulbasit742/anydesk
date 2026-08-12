@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 35 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, and MediaTech & Digital Entertainment Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 36 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, and WealthTech & Investment Platforms) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -549,6 +549,23 @@ MediaTech and Digital Entertainment companies are revolutionizing how content is
 | **Pika Labs** | Generative AI Video | [pika.art](https://pika.art) | Demi Guo | demi@pika.art / [LinkedIn](https://www.linkedin.com/in/demi-g-9a9ab6a1) |
 | **Luma AI** | Multimodal AGI & Video | [lumalabs.ai](https://lumalabs.ai) | Amit Jain | amit@lumalabs.ai / [LinkedIn](https://www.linkedin.com/in/gravicle) |
 | **The Trade Desk** | Digital Advertising Tech | [thetradedesk.com](https://www.thetradedesk.com) | Jeff Green | jeff.green@thetradedesk.com / [LinkedIn](https://www.linkedin.com/in/jeff-green-b2b) |
+
+---
+
+## Sector 36: WealthTech & Investment Platforms
+
+WealthTech and Investment Platforms are modernizing personal finance through automated investing, fractional trading, and AI-native wealth management. In 2026, these companies are scaling their global infrastructures and integrating sophisticated predictive analytics, creating significant demand for remote FinTech engineers, data scientists, and security specialists.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Robinhood** | Retail Brokerage & Crypto | [robinhood.com](https://robinhood.com) | Vlad Tenev | vlad@robinhood.com / [LinkedIn](https://www.linkedin.com/in/vlad-tenev-7037591b) |
+| **Betterment** | Automated Investing & Advice | [betterment.com](https://www.betterment.com) | Sarah Levy | sarah.levy@betterment.com / [LinkedIn](https://www.linkedin.com/in/sarah-kirshbaum-levy) |
+| **Wealthfront** | Wealth Management Platform | [wealthfront.com](https://www.wealthfront.com) | David Fortunato | david@wealthfront.com / [LinkedIn](https://www.linkedin.com/in/davidfortunato) |
+| **SoFi** | All-in-one Personal Finance | [sofi.com](https://www.sofi.com) | Anthony Noto | anoto@sofi.org / [LinkedIn](https://www.linkedin.com/in/anthonynoto) |
+| **Acorns** | Micro-investing & Savings | [acorns.com](https://www.acorns.com) | Noah Kerner | noah@acorns.com / [LinkedIn](https://www.linkedin.com/in/noahkerner) |
+| **Charles Schwab** | Global Investment Services | [schwab.com](https://www.schwab.com) | Rick Wurster | rick.wurster@schwab.com / [LinkedIn](https://www.linkedin.com/in/rickwurster) |
+| **Public.com** | Social Investing Platform | [public.com](https://public.com) | Leif Abraham | leif@public.com / [LinkedIn](https://www.linkedin.com/in/leifabraham) |
+| **Addepar** | Wealth Management Software | [addepar.com](https://addepar.com) | Eric Poirier | eric@addepar.com / [LinkedIn](https://www.linkedin.com/in/ericpoirier) |
 
 ---
 
