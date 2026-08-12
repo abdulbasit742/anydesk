@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 42 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, and Mental Health & Wellness Tech) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 43 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, and SportsTech & Digital Fitness Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -668,6 +668,23 @@ Mental Health and Wellness companies are leveraging technology to address the gl
 | **Talkspace** | Online Therapy & Telehealth | [talkspace.com](https://www.talkspace.com) | Jon Cohen | jcohen@talkspace.com / [LinkedIn](https://www.linkedin.com/in/joncohenmd) |
 | **Grow Therapy** | Provider-Centric Therapy Network | [growtherapy.com](https://growtherapy.com) | Jake Adams | jake@growtherapy.com / [LinkedIn](https://www.linkedin.com/in/jake-adams-grow) |
 | **Talkiatry** | Tech-Enabled Psychiatry | [talkiatry.com](https://www.talkiatry.com) | Robert Krayn | robert@talkiatry.com / [LinkedIn](https://www.linkedin.com/in/robertkrayn) |
+
+---
+
+## Sector 43: SportsTech & Digital Fitness Innovation
+
+SportsTech and Digital Fitness companies are redefining human performance through connected equipment and biometric wearables. In 2026, the industry is scaling with hyper-personalized AI coaching and integrated community ecosystems, creating high demand for remote mobile developers, IoT engineers, data scientists, and backend developers.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **WHOOP** | Wearable Performance Technology | [whoop.com](https://www.whoop.com) | Will Ahmed | will@whoop.com / [LinkedIn](https://www.linkedin.com/in/willahmed) |
+| **Strava** | Digital Fitness Community & Tracking | [strava.com](https://www.strava.com) | Michael Martin | mike.martin@strava.com / [LinkedIn](https://www.linkedin.com/in/mike-martin-strava) |
+| **Peloton** | Connected Fitness & Streaming | [onepeloton.com](https://www.onepeloton.com) | Peter Stern | pstern@onepeloton.com / [LinkedIn](https://www.linkedin.com/in/peter-stern-ceo) |
+| **Oura Health** | Smart Ring & Health Tracking | [ouraring.com](https://ouraring.com) | Tom Hale | tom.hale@ouraring.com / [LinkedIn](https://www.linkedin.com/in/tomeghale) |
+| **Fitbit** | Wearable Health (Google) | [fitbit.com](https://www.fitbit.com) | James Park | jpark@fitbit.com / [LinkedIn](https://www.linkedin.com/in/james-park-fitbit) |
+| **Tonal** | AI-Powered Home Gym | [tonal.com](https://www.tonal.com) | Krystal Zell | krystal.zell@tonal.com / [LinkedIn](https://www.linkedin.com/in/krystal-zell) |
+| **Hydrow** | Connected Rowing Experience | [hydrow.com](https://hydrow.com) | Bruce Smith | bruce@hydrow.com / [LinkedIn](https://www.linkedin.com/in/brucesmithhydrow) |
+| **Zwift** | Gamified Virtual Training | [zwift.com](https://www.zwift.com) | Eric Min | eric@zwift.com / [LinkedIn](https://www.linkedin.com/in/ericminzwift) |
 
 ---
 
