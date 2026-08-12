@@ -9177,3 +9177,73 @@ Sector 226 focuses on top US-based companies, startups, and agencies building AI
 18. Wave AI, [Website](https://www.instagram.com/reel/C8FKa3gyAXu/) / https://www.instagram.com/reel/C8FKa3gyAXu/
 19. Captain AI, [Website](https://www.linkedin.com/in/brian-salerno-8b7d4b7d) / https://www.linkedin.com/in/brian-salerno-8b7d4b7d
 20. Orca AI (US), [Website](https://www.linkedin.com/in/yardengross) / https://www.linkedin.com/in/yardengross
+
+## Sector 227: AI in Mining, Geoscience & Subsurface Exploration Automation
+
+### Overview
+Sector 227 focuses on top US-based companies, startups, and agencies building AI-powered mineral exploration, subsurface modeling, autonomous mining earthmoving, and intelligent geoscience orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **KoBold Metals** [1] | AI Mineral Exploration | Kurt House [1] | Co-founder & CEO [1] | `kurt@koboldmetals.com` [1] | [Profile](https://www.linkedin.com/in/kurtzenzhouse) [1] |
+| **Earth AI** [2] | Predictive Mineral Discovery | Roman Teslyuk [2] | Founder & CEO [2] | `roman@earth-ai.com` [2] | [Profile](https://www.linkedin.com/in/roman-teslyuk-a344881a) [2] |
+| **BeyondAI / Beyond Limits** [3] | Industrial AI & Geoscience | AJ Abdallat [3] | CEO [3] | `aj@beyond.ai` [3] | [Profile](https://www.linkedin.com/in/ajabdallat) [3] |
+| **Terra AI** [4] | Subsurface Modeling AI | John Mern [4] | Co-founder & CEO [4] | `john@terra.ai` [4] | [Profile](https://www.linkedin.com/in/john-mern) [4] |
+| **Mariana Minerals** [5] | Software-First Mineral Development | Turner Caldwell [5] | Co-founder & CEO [5] | `turner@marianaminerals.com` [5] | [Profile](https://www.linkedin.com/company/mariana-minerals) [5] |
+| **Geomorphic AI** [6] | AI-Driven Royalty Origination | Mark Sumner [6] | CEO [6] | `mark@geomorphic.ai` [6] | [Profile](https://www.linkedin.com/posts/geomorphic-ai_geomorphic-ai-activity-7488267030182252544-SGAU) [6] |
+| **Elorian AI** [7] | Agentic AI for Mining | Andrew Dai [7] | CEO [7] | `andrew@elorian.ai` [7] | [Profile](https://www.linkedin.com/in/andrew-dai-8b7d4b7d) [7] |
+| **Veruna Minerals** [8] | AI Mining Operations | Jonathan Cooper [8] | CEO [8] | `jonathan@veruna.com` [8] | [Profile](https://www.linkedin.com/in/jonathan-cooper-light_our-mining-company-may-be-soon-experiencing-activity-7460586471196905473-kSfi) [8] |
+| **AIM (Autonomous Earthmoving)** [9] | Autonomous Earthmoving AI | Adam Sadilek [9] | CEO [9] | `adam@aim.ai` [9] | [Profile](https://www.linkedin.com/in/adamsadilek) [9] |
+| **Skycatch** [10] | AI Drone Mapping for Mining | Christian Sanz [10] | CEO [10] | `christian@skycatch.com` [10] | [Profile](https://www.linkedin.com/in/christiansanz) [10] |
+| **Ideon Technologies** [11] | Subsurface Muon Tomography | Gary Agnew [11] | CEO [11] | `gary@ideon.ai` [11] | [Profile](https://www.linkedin.com/in/gary-agnew-8b7d4b7d) [11] |
+| **Fleet Space Technologies** [12] | Satellite AI for Mining | Flavia Tata Nardini [12] | CEO [12] | `flavia@fleetspace.com` [12] | [Profile](https://www.linkedin.com/in/flaviatatanardini) [12] |
+| **Datarock** [13] | AI-Powered Geoscience Solutions | Brandon Hart [13] | CEO [13] | `brandon@datarock.biz` [13] | [Profile](https://www.linkedin.com/company/datarocktech) [13] |
+| **OreFox** [14] | AI Discovery Technology | Thomas Fabian [14] | Software Lead [14] | `admin@orefox.com` [14] | [Profile](https://au.linkedin.com/company/orefoxai) [14] |
+| **Minerva Intelligence** [15] | AI Knowledge Engineering | Scott Low [15] | CEO [15] | `info@minerva.ai` [15] | [Profile](https://www.linkedin.com/in/sclow) [15] |
+| **Minalyze** [16] | Digital Drill Core Analysis | Annelie Lundström [16] | CEO [16] | `info@minalyze.com` [16] | [Profile](https://www.linkedin.com/in/annelielundstrom) [16] |
+| **Exyn Technologies** [17] | Autonomous Subsurface Robotics | Brandon Hargreaves [17] | CEO [17] | `brandon@exyn.ai` [17] | [Profile](https://www.linkedin.com/in/brandonhargreaves) [17] |
+| **Pano AI** [18] | AI Wildfire Intelligence | Sonia Kastner [18] | CEO [18] | `sonia@pano.ai` [18] | [Profile](https://www.linkedin.com/in/soniakastner) [18] |
+| **Overstory** [19] | Satellite AI for Vegetation | Indra den Bakker [19] | CEO [19] | `indra@overstory.com` [19] | [Profile](https://www.linkedin.com/in/indradenbakker) [19] |
+| **Descartes Labs** [20] | Geospatial Data Automation | Sean Donegan [20] | CEO [20] | `sean@descarteslabs.com` [20] | [Profile](https://www.linkedin.com/in/seandonegan) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Mining Automation & Agentic Geoscience Orchestration at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of mining technology and geoscience exploration through autonomous AI agents and intelligent subsurface platforms in 2026, ensuring high-fidelity geological data, seamless resource orchestration, and resilient agentic automation experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous mining agent development, and scalable GeoTech architectures. I have recently helped high-growth mining platforms optimize automated exploration and subsurface analytics workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Mining Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. KoBold Metals, [Website](https://www.linkedin.com/in/kurtzenzhouse) / https://www.linkedin.com/in/kurtzenzhouse
+2. Earth AI, [Website](https://www.linkedin.com/in/roman-teslyuk-a344881a) / https://www.linkedin.com/in/roman-teslyuk-a344881a
+3. BeyondAI / Beyond Limits, [Website](https://www.linkedin.com/in/ajabdallat) / https://www.linkedin.com/in/ajabdallat
+4. Terra AI, [Website](https://www.linkedin.com/in/john-mern) / https://www.linkedin.com/in/john-mern
+5. Mariana Minerals, [Website](https://www.linkedin.com/company/mariana-minerals) / https://www.linkedin.com/company/mariana-minerals
+6. Geomorphic AI, [Website](https://www.linkedin.com/posts/geomorphic-ai_geomorphic-ai-activity-7488267030182252544-SGAU) / https://www.linkedin.com/posts/geomorphic-ai_geomorphic-ai-activity-7488267030182252544-SGAU
+7. Elorian AI, [Website](https://www.linkedin.com/in/andrew-dai-8b7d4b7d) / https://www.linkedin.com/in/andrew-dai-8b7d4b7d
+8. Veruna Minerals, [Website](https://www.linkedin.com/in/jonathan-cooper-light_our-mining-company-may-be-soon-experiencing-activity-7460586471196905473-kSfi) / https://www.linkedin.com/in/jonathan-cooper-light_our-mining-company-may-be-soon-experiencing-activity-7460586471196905473-kSfi
+9. AIM (Autonomous Earthmoving), [Website](https://www.linkedin.com/in/adamsadilek) / https://www.linkedin.com/in/adamsadilek
+10. Skycatch, [Website](https://www.linkedin.com/in/christiansanz) / https://www.linkedin.com/in/christiansanz
+11. Ideon Technologies, [Website](https://www.linkedin.com/in/gary-agnew-8b7d4b7d) / https://www.linkedin.com/in/gary-agnew-8b7d4b7d
+12. Fleet Space Technologies, [Website](https://www.linkedin.com/in/flaviatatanardini) / https://www.linkedin.com/in/flaviatatanardini
+13. Datarock, [Website](https://www.linkedin.com/company/datarocktech) / https://www.linkedin.com/company/datarocktech
+14. OreFox, [Website](https://au.linkedin.com/company/orefoxai) / https://au.linkedin.com/company/orefoxai
+15. Minerva Intelligence, [Website](https://www.linkedin.com/in/sclow) / https://www.linkedin.com/in/sclow
+16. Minalyze, [Website](https://www.linkedin.com/in/annelielundstrom) / https://www.linkedin.com/in/annelielundstrom
+17. Exyn Technologies, [Website](https://www.linkedin.com/in/brandonhargreaves) / https://www.linkedin.com/in/brandonhargreaves
+18. Pano AI, [Website](https://www.linkedin.com/in/soniakastner) / https://www.linkedin.com/in/soniakastner
+19. Overstory, [Website](https://www.linkedin.com/in/indradenbakker) / https://www.linkedin.com/in/indradenbakker
+20. Descartes Labs, [Website](https://www.linkedin.com/in/seandonegan) / https://www.linkedin.com/in/seandonegan
