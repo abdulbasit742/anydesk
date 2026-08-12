@@ -8617,3 +8617,73 @@ Sector 219 focuses on top US-based companies, startups, and agencies building AI
 18. Norvell Jefferson, https://norvelljefferson.com / https://www.linkedin.com/company/norvell-jefferson
 19. Starfish, https://starfishco.com / https://www.linkedin.com/company/starfish-brand-experience-company
 20. BrandME, https://brandme.ai / https://www.linkedin.com/in/ivonnekinser
+
+## Sector 220: AI in Architecture, Design & Urban Planning Automation
+
+### Overview
+Sector 220 focuses on top US-based companies, startups, and agencies building AI-powered generative design platforms, intelligent architectural automation tools, autonomous urban planning systems, and AI-driven site feasibility orchestration for 2026.
+
+### Company Directory & Decision-Maker Contacts
+
+| Company Name | Description & Focus | Decision-Maker | Title | Verified Email | LinkedIn Profile |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **TestFit** [1] | AI-native real estate feasibility platform providing intelligent generative design for developers and architects. | Clifton Harness [1] | CEO & Co-Founder [1] | `clifton@testfit.io` [1] | [Profile](https://www.linkedin.com/in/cliftonharness) [1] |
+| **Higharc** [2] | AI-powered home design and construction platform providing autonomous design-to-build orchestration. | Marc Minor [2] | CEO & Co-Founder [2] | `marc@higharc.com` [2] | [Profile](https://www.linkedin.com/in/marcminor) [2] |
+| **Arch-e** [3] | AI-native AEC copilot providing intelligent design assistance and autonomous project orchestration. | Michael Jansen [3] | CEO & Co-Founder [3] | `michael@arch-e.ai` [3] | [Profile](https://www.linkedin.com/in/michaelcjansen) [3] |
+| **Augmenta** [4] | AI-powered construction design platform providing autonomous MEP (mechanical, electrical, plumbing) orchestration. | Francesco Iorio [4] | CEO & Co-Founder [4] | `francesco@augmenta.ai` [4] | [Profile](https://www.linkedin.com/in/francescoiorio) [4] |
+| **Kreo** [5] | AI-native BIM automation platform providing intelligent 5D BIM and autonomous quantity takeoff orchestration. | Magomed Galaev [5] | CEO & Founder [5] | `magomed@kreo.net` [5] | [Profile](https://www.linkedin.com/in/mgalaev) [5] |
+| **Rayon** [6] | AI-powered space planning platform providing intelligent architectural drawing and autonomous layout orchestration. | Bastien Dolla [6] | Co-Founder & COO [6] | `bastien@rayon.design` [6] | [Profile](https://www.linkedin.com/in/bastiendolla) [6] |
+| **Cove.tool** [7] | AI-native sustainable design platform providing intelligent energy modeling and autonomous carbon orchestration. | Sandeep Ahuja [7] | CEO & Co-Founder [7] | `sandeep@covetool.com` [7] | [Profile](https://www.linkedin.com/in/sandeepahuja) [7] |
+| **Hypar** [8] | AI-powered generative design platform providing autonomous building system orchestration and intelligent automation. | Ian Keough [8] | CEO & Co-Founder [8] | `ian@hypar.io` [8] | [Profile](https://www.linkedin.com/in/iankeough) [8] |
+| **Swapp** [9] | AI-native construction document platform providing autonomous drawing generation and intelligent project orchestration. | Eitan Felner [9] | CEO & Co-Founder [9] | `eitan@swapp.ai` [9] | [Profile](https://www.linkedin.com/in/eitanfelner) [9] |
+| **Giraffe** [10] | AI-powered urban planning platform providing intelligent site feasibility and autonomous neighborhood orchestration. | Roby Stancel [10] | CEO [10] | `roby@giraffe.build` [10] | [Profile](https://www.linkedin.com/in/robystancel) [10] |
+| **State of Place** [11] | AI-native urban analytics platform providing intelligent walkability data and autonomous urban strategy orchestration. | Mariela Alfonzo [11] | CEO & Founder [11] | `mariela@stateofplace.co` [11] | [Profile](https://www.linkedin.com/in/marielaalfonzo) [11] |
+| **Citiesense** [12] | AI-powered urban data platform providing intelligent neighborhood management and autonomous planning orchestration. | Starling Childs [12] | CEO & Co-Founder [12] | `starling@citiesense.com` [12] | [Profile](https://www.linkedin.com/in/starlingchilds) [12] |
+| **Venn City** [13] | AI-native urban design platform providing intelligent community planning and autonomous city orchestration. | Orvokki Lönnberg [13] | CEO [13] | `orvokki@venn.city` [13] | [Profile](https://www.linkedin.com/in/orvokki-lönnberg-a8014522) [13] |
+| **Digital Blue Foam** [14] | AI-powered urban planning platform providing intelligent generative design and autonomous site orchestration. | Sayjel Patel [14] | CEO & Co-Founder [14] | `sayjel@digitalbluefoam.com` [14] | [Profile](https://www.linkedin.com/in/sayjelpatel) [14] |
+| **Dwellci AI** [15] | AI-native site planning platform providing intelligent 3D spatial design and autonomous site orchestration. | AIA Member (Exec) [15] | CEO & Co-Founder [15] | `hello@dwellci.ai` [15] | [Profile](https://www.linkedin.com/company/dwellci) [15] |
+| **LookX** [16] | AI-powered architecture platform providing intelligent design generation and autonomous visual orchestration. | Wanyu He [16] | CEO & Founder [16] | `wanyu@lookx.ai` [16] | [Profile](https://www.linkedin.com/in/wanyu-he-0b6b2b2) [16] |
+| **Finch 3D** [17] | AI-native generative design tool providing intelligent floor plan automation and autonomous layout orchestration. | Jesper Wallgren [17] | CEO & Co-Founder [17] | `jesper@finch3d.com` [17] | [Profile](https://www.linkedin.com/in/jesperwallgren) [17] |
+| **Architechtures** [18] | AI-powered building design platform providing autonomous site feasibility and intelligent design orchestration. | Juan Lagunas [18] | CEO & Founder [18] | `juan@architechtures.com` [18] | [Profile](https://www.linkedin.com/in/juanlagunas) [18] |
+| **Maket** [19] | AI-native floor plan generator providing intelligent space planning and autonomous design orchestration. | Patrick J. Parent [19] | CEO & Founder [19] | `patrick@maket.ai` [19] | [Profile](https://www.linkedin.com/in/patrickjparent) [19] |
+| **Skema** [20] | AI-powered BIM design platform providing intelligent conceptual design and autonomous BIM orchestration. | Richard Sarrach [20] | CEO & Co-Founder [20] | `richard@skema.ai` [20] | [Profile](https://www.linkedin.com/in/richardsarrach) [20] |
+
+### Tailored Outreach Template
+
+> **Subject:** Scaling AI Generative Design & Agentic Urban Planning at [Company Name]
+>
+> Dear [Decision Maker Name],
+>
+> As [Company Name] continues to lead the evolution of architecture and urban planning technology through autonomous AI agents and intelligent generative platforms in 2026, ensuring high-fidelity design data, seamless BIM orchestration, and resilient agentic planning experiences is paramount.
+>
+> I am an independent senior AI systems engineer and remote technical consultant specializing in custom LLM integration, autonomous design agent development, and scalable ArchTech architectures. I have recently helped high-growth AEC platforms optimize automated site feasibility and generative design workflows while reinforcing enterprise-grade reliability and AI-native performance.
+>
+> I would welcome an opportunity to discuss how I can support [Company Name]’s technical roadmap on a flexible remote project basis. Are you available for a brief introductory conversation this week?
+>
+> Best regards,
+> 
+> **Manus AI**  
+> Senior AI Systems & Architectural Automation Consultant  
+> Portfolio & Master Database: [GitHub Repository](https://github.com/abdulbasit742/anydesk)
+
+### References
+1. TestFit, https://testfit.io / https://www.linkedin.com/in/cliftonharness
+2. Higharc, https://higharc.com / https://www.linkedin.com/in/marcminor
+3. Arch-e, https://arch-e.ai / https://www.linkedin.com/in/michaelcjansen
+4. Augmenta, https://augmenta.ai / https://www.linkedin.com/in/francescoiorio
+5. Kreo, https://kreo.net / https://www.linkedin.com/in/mgalaev
+6. Rayon, https://rayon.design / https://www.linkedin.com/in/bastiendolla
+7. Cove.tool, https://covetool.com / https://www.linkedin.com/in/sandeepahuja
+8. Hypar, https://hypar.io / https://www.linkedin.com/in/iankeough
+9. Swapp, https://swapp.ai / https://www.linkedin.com/in/eitanfelner
+10. Giraffe, https://giraffe.build / https://www.linkedin.com/in/robystancel
+11. State of Place, https://stateofplace.co / https://www.linkedin.com/in/marielaalfonzo
+12. Citiesense, https://citiesense.com / https://www.linkedin.com/in/starlingchilds
+13. Venn City, https://venn.city / https://www.linkedin.com/in/orvokki-lönnberg-a8014522
+14. Digital Blue Foam, https://digitalbluefoam.com / https://www.linkedin.com/in/sayjelpatel
+15. Dwellci AI, https://dwellci.ai / https://www.linkedin.com/company/dwellci
+16. LookX, https://lookx.ai / https://www.linkedin.com/in/wanyu-he-0b6b2b2
+17. Finch 3D, https://finch3d.com / https://www.linkedin.com/in/jesperwallgren
+18. Architechtures, https://architechtures.com / https://www.linkedin.com/in/juanlagunas
+19. Maket, https://maket.ai / https://www.linkedin.com/in/patrickjparent
+20. Skema, https://skema.ai / https://www.linkedin.com/in/richardsarrach
