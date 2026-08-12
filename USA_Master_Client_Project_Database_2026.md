@@ -2,7 +2,7 @@
 
 Author: **Manus AI**  
 Date: August 11, 2026  
-Scope: Comprehensive contact and project lead database across 44 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, and PetTech & Animal Care Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
+Scope: Comprehensive contact and project lead database across 45 major US industry sectors (E-commerce, PropTech, HealthTech, SaaS/FinTech, AI/ML, Marketing Agencies, EdTech, Cybersecurity, Logistics/Supply Chain, AdTech/MarTech, Web3/Crypto, Gaming/Interactive Media, CleanTech/Sustainability, HRTech/Future of Work, InsurTech, AgTech, LegalTech, RetailTech, Travel & Hospitality Tech, GovTech & Public Sector Innovation, BioTech & Life Sciences Tech, SpaceTech & Aerospace Innovation, Automotive Tech & Autonomous Vehicles, EnergyTech & Grid Modernization, Robotics & Industrial Automation, DeepTech & Quantum Computing, AR/VR & Spatial Computing, Creator Economy & Social Media Tech, FinTech Infrastructure & Open Banking, Data Infrastructure & Analytics Platforms, Cloud Computing & DevOps Tools, SalesTech & Revenue Operations, Customer Success & Experience Tech, Productivity & Collaboration Software, MediaTech & Digital Entertainment Innovation, WealthTech & Investment Platforms, Security & Compliance Tech, FoodTech & Restaurant Innovation, DefenseTech & National Security Innovation, Events & Community Management Tech, E-learning Content & Professional Development Platforms, Mental Health & Wellness Tech, SportsTech & Digital Fitness Innovation, PetTech & Animal Care Innovation, and Construction Tech & Smart Building Innovation) for remote contractors, agencies, and freelancers seeking active project opportunities.
 
 ---
 
@@ -702,6 +702,23 @@ PetTech and Animal Care companies are revolutionizing pet ownership through smar
 | **PetDesk** | Veterinary Client Engagement | [petdesk.com](https://petdesk.com) | Taylor Cavanah | taylor@petdesk.com / [LinkedIn](https://www.linkedin.com/in/tcavanah) |
 | **Wag!** | On-Demand Pet Services | [wagwalking.com](https://wagwalking.com) | Garrett Smallwood | garrett@wagwalking.com / [LinkedIn](https://www.linkedin.com/in/garrettsmallwood) |
 | **Fi** | Smart Dog Collar & Tracking | [tryfi.com](https://www.tryfi.com) | Jonathan Bensamoun | jonathan@tryfi.com / [LinkedIn](https://www.linkedin.com/in/jbensamoun) |
+
+---
+
+## Sector 45: Construction Tech & Smart Building Innovation
+
+Construction Tech (ConTech) and Smart Building companies are modernizing the built environment through BIM, Digital Twins, and AI-driven site monitoring. In 2026, the industry is scaling with spatial intelligence and autonomous construction tools, creating high demand for remote software engineers, project management tech experts, and IoT specialists.
+
+| Company Name | Core Focus | Website | Key Contact Person | Direct Email / LinkedIn |
+| :--- | :--- | :--- | :--- | :--- |
+| **Procore Technologies** | Construction Management Software | [procore.com](https://www.procore.com) | Tooey Courtemanche | tooey@procore.com / [LinkedIn](https://www.linkedin.com/in/tooey) |
+| **Autodesk** | AEC Software & BIM Solutions | [autodesk.com](https://www.autodesk.com) | Andrew Anagnost | andrew.anagnost@autodesk.com / [LinkedIn](https://www.linkedin.com/in/andrewanagnost) |
+| **OpenSpace** | AI-Powered Site Documentation | [openspace.ai](https://www.openspace.ai) | Jeevan Kalanithi | jeevan@openspace.ai / [LinkedIn](https://www.linkedin.com/in/jeevan) |
+| **Kojo** | Materials Management Platform | [usekojo.com](https://www.usekojo.com) | Maria Davidson | maria@usekojo.com / [LinkedIn](https://www.linkedin.com/in/maria-davidson-801a1058) |
+| **Bridgit** | Construction Workforce Planning | [gobridgit.com](https://www.gobridgit.com) | Mallorie Brodie | mallorie@gobridgit.com / [LinkedIn](https://ca.linkedin.com/in/mallorie-brodie-b3885827) |
+| **PermitFlow** | Construction Permitting Software | [permitflow.com](https://www.permitflow.com) | Francis Thumpasery | francis@permitflow.com / [LinkedIn](https://www.linkedin.com/in/francis-thumpasery) |
+| **HOVER** | 3D Building Modeling | [hover.to](https://hover.to) | A.J. Altman | aj@hover.to / [LinkedIn](https://www.linkedin.com/in/aj-altman-0005704) |
+| **ICON** | 3D Printed Construction | [iconbuild.com](https://www.iconbuild.com) | Jason Ballard | jason@iconbuild.com / [LinkedIn](https://www.linkedin.com/in/jasonballard) |
 
 ---
 
