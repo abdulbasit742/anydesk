@@ -36,6 +36,7 @@ import { buildHostSessionPermissions, coerceRemoteInputWithSessionPermissions } 
 import { inputAllowedByPolicy } from "./services/remoteInputGate.js";
 import { PeerConnectionManager, type IceServerConfig } from "./services/webrtc.js";
 import { formatQualityLabel, type WebRtcQualitySnapshot } from "./services/webrtcStats.js";
+import { MeshPanel } from "./features/mesh/MeshPanel.js";
 import {
   fetchIceConfig,
   getPendingDeviceCommands,
@@ -905,6 +906,12 @@ function Dashboard({ user, token, onLogout }: { user: DesktopUser; token: string
         </article>
       </section>
 
+      <MeshPanel
+        user={user}
+        token={token}
+        device={registeredDevice}
+        apiUrl={import.meta.env.VITE_API_URL ?? "http://localhost:5000/api"}
+      />
       <section className="grid">
         <ScreenSourcePicker
           sources={sources}

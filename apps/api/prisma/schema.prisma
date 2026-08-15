@@ -42,6 +42,7 @@ model User {
   sessionAuditEvents SessionAuditEvent[] @relation("SessionAuditActors")
   accessControlEntries AccessControlEntry[]
   securityEvents   SecurityEvent[] @relation("SecurityEventActors")
+  meshNetworks     MeshNetwork[]
 }
 
 model AccessControlEntry {
@@ -75,6 +76,7 @@ model Device {
   accessPolicy    DeviceAccessPolicy?
   locationHistory DeviceLocation[]
   securityEvents  SecurityEvent[] @relation("SecurityEventDevices")
+  meshNode        MeshNode?
 }
 
 model DeviceTrust {
@@ -417,3 +419,213 @@ enum SubscriptionStatus {
   TRIALING
   INCOMPLETE
 }
+
+
+// ============================================================
+// Built-in VPN & Mesh Networking models
+// ============================================================
+
+model MeshNetwork {
+  id              String          @id @default(uuid())
+  userId          String
+  name            String          @default("My Network")
+  ipv4Cidr        String          @default("100.64.0.0/10")
+  ipv6Cidr        String          @default("fd7a:115c:a1e0::/48")
+  magicDnsDomain  String          @default("remotedesk.net")
+  magicDnsEnabled Boolean         @default(true)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nodes           MeshNode[]
+  acls            MeshAcl[]
+  routes          MeshRoute[]
+  dnsRecords      MeshDnsRecord[]
+  speedTests      MeshSpeedTest[]
+  multiHopRoutes  MeshMultiHopRoute[]
+  hotspotSessions MeshHotspotSession[]
+  invites         MeshNetworkInvite[]
+  peerEvents      MeshPeerEvent[]
+  @@index([userId])
+}
+
+model MeshNode {
+  id               String        @id @default(uuid())
+  networkId        String
+  deviceId         String        @unique
+  name             String
+  publicKey        String        @unique
+  virtualIpV4      String        @unique
+  virtualIpV6      String        @unique
+  magicDnsName     String        @unique
+  endpoints        String[]      @default([])
+  relayRegion      String?
+  os               String        @default("unknown")
+  clientVersion    String?
+  isExitNode       Boolean       @default(false)
+  exitNodeEnabled  Boolean       @default(false)
+  advertisedRoutes String[]      @default([])
+  tags             String[]      @default([])
+  online           Boolean       @default(false)
+  lastHandshakeAt  DateTime?
+  lastSeenAt       DateTime      @default(now())
+  alwaysOn         Boolean       @default(true)
+  keepaliveSeconds Int           @default(25)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  network          MeshNetwork   @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  device           Device        @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  approvedRoutes   MeshRoute[]   @relation("RouteAdvertiser")
+  splitTunnelRules MeshSplitTunnelRule[]
+  @@index([networkId, online])
+  @@index([networkId, isExitNode])
+}
+
+model MeshRoute {
+  id            String      @id @default(uuid())
+  networkId     String
+  advertiserId  String
+  cidr          String
+  kind          String      @default("subnet")
+  approved      Boolean     @default(false)
+  approvedAt    DateTime?
+  createdAt     DateTime    @default(now())
+  network       MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  advertiser    MeshNode    @relation("RouteAdvertiser", fields: [advertiserId], references: [id], onDelete: Cascade)
+  @@unique([advertiserId, cidr])
+  @@index([networkId, approved])
+}
+
+model MeshAcl {
+  id          String      @id @default(uuid())
+  networkId   String
+  action      String      @default("accept")
+  src         String
+  dst         String
+  ports       String      @default("*")
+  schedule    String?
+  priority    Int         @default(100)
+  enabled     Boolean     @default(true)
+  description String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  network     MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  @@index([networkId, enabled, priority])
+}
+
+model MeshDnsRecord {
+  id        String      @id @default(uuid())
+  networkId String
+  name      String
+  type      String      @default("A")
+  value     String
+  auto      Boolean     @default(true)
+  createdAt DateTime    @default(now())
+  network   MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  @@unique([networkId, name, type])
+  @@index([networkId])
+}
+
+model MeshSpeedTest {
+  id            String      @id @default(uuid())
+  networkId     String
+  fromNodeId    String
+  toNodeId      String
+  downMbps      Float
+  upMbps        Float
+  latencyMs     Float
+  jitterMs      Float       @default(0)
+  packetLoss    Float       @default(0)
+  via           String      @default("direct")
+  createdAt     DateTime    @default(now())
+  network       MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  @@index([networkId, createdAt])
+}
+
+model MeshPortForward {
+  id            String   @id @default(uuid())
+  networkId     String
+  targetNodeId  String
+  targetPort    Int
+  protocol      String   @default("tcp")
+  ingressHost   String   @unique
+  ingressPort   Int
+  enabled       Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  @@index([networkId, enabled])
+}
+
+model MeshMultiHopRoute {
+  id          String      @id @default(uuid())
+  networkId   String
+  sourceNodeId String
+  targetNodeId String
+  hopNodeIds  String[]
+  enabled     Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  network     MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  @@unique([sourceNodeId, targetNodeId])
+  @@index([networkId, enabled])
+}
+
+model MeshHotspotSession {
+  id          String      @id @default(uuid())
+  networkId   String
+  providerNodeId String
+  enabled     Boolean     @default(false)
+  ssid        String?
+  startedAt   DateTime?
+  stoppedAt   DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  network     MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  @@index([networkId, enabled])
+}
+
+model MeshSplitTunnelRule {
+  id          String      @id @default(uuid())
+  nodeId      String
+  kind        String      @default("cidr")
+  value       String
+  action      String      @default("include")
+  appId       String?
+  enabled     Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  node        MeshNode    @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+  @@index([nodeId, enabled])
+}
+
+model MeshNetworkInvite {
+  id          String      @id @default(uuid())
+  networkId   String
+  tokenHash   String      @unique
+  role        String      @default("member")
+  expiresAt   DateTime
+  acceptedAt  DateTime?
+  createdAt   DateTime    @default(now())
+  network     MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  @@index([networkId, expiresAt])
+}
+
+model MeshPeerEvent {
+  id          String      @id @default(uuid())
+  networkId   String
+  nodeId      String
+  type        String
+  metadata    Json?
+  createdAt   DateTime    @default(now())
+  network     MeshNetwork @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  @@index([networkId, createdAt])
+  @@index([nodeId, createdAt])
+}
+
+// Relations for the additional mesh control-plane models.
+// Prisma requires the opposite collections on the referenced models.
+
+// MeshNetwork: multihop/hotspot/invite/event relations are declared here via
+// the collections below using explicit model fields added to MeshNetwork.
+
+// NOTE: the collection fields are part of MeshNetwork above in the final schema.
+

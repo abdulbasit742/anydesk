@@ -6,6 +6,7 @@ import { registerInputIpc } from "./input/index.js";
 import { registerSupportBundleIpc } from "./supportBundleIpc.js";
 import { registerRemoteControlIpc } from "./remoteControlIpc.js";
 import { registerTcpTunnelIpc, cleanupAllTunnels } from "./tcpTunnelIpc.js";
+import { registerMeshIpc, stopMeshIpc } from "./mesh/meshIpc.js";
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -133,6 +134,7 @@ registerInputIpc();
 registerSupportBundleIpc();
 registerRemoteControlIpc();
 registerTcpTunnelIpc(() => mainWindow);
+registerMeshIpc();
 
 // Disable hardware acceleration to prevent GPU process crash on some Windows configs
 app.disableHardwareAcceleration();
@@ -145,5 +147,6 @@ app.on("activate", () => {
 
 app.on("window-all-closed", () => {
   cleanupAllTunnels();
+  void stopMeshIpc();
   if (process.platform !== "darwin") app.quit();
 });
