@@ -9,7 +9,12 @@
     "lint": "eslint \"src/**/*.{js,jsx}\" eslint.config.js vite.config.js",
     "test": "node scripts/testSuite.js",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "gtool": "powershell -NoProfile -ExecutionPolicy Bypass -File gtool.ps1",
+    "proxy:off": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/proxyfier.ps1 -Mode off",
+    "proxy:on": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/proxyfier.ps1 -Mode on",
+    "proxy:auto": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/proxyfier.ps1 -Mode auto",
+    "proxy:status": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/proxyfier.ps1 -Mode status"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.107.0",
