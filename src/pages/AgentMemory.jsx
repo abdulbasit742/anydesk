@@ -86,7 +86,13 @@ function TokenBudgetBar({ memories }) {
   const totalToks = grouped.reduce((s, g) => s + g.toks, 0);
   const pct = Math.min(100, (totalToks / MAX_TOKENS) * 100);
 
-  let cursor = 0;
+  const bars = grouped.map((g, i) => {
+    const prevToks = grouped.slice(0, i).reduce((s, prev) => s + prev.toks, 0);
+    const x = (prevToks / MAX_TOKENS) * 100;
+    const w = (g.toks / MAX_TOKENS) * 100;
+    return { ...g, x, w, key: g.tab || i };
+  });
+
   return (
     <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 12, padding: '16px 20px', marginBottom: 20 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
@@ -97,12 +103,9 @@ function TokenBudgetBar({ memories }) {
       </div>
       <svg width="100%" height={28} style={{ display: 'block', borderRadius: 8, overflow: 'hidden' }}>
         <rect x={0} y={0} width="100%" height={28} fill={C.surface} rx={8} />
-        {grouped.map((g, i) => {
-          const w = (g.toks / MAX_TOKENS) * 100;
-          const x = cursor;
-          cursor += w;
-          return <rect key={i} x={`${x}%`} y={0} width={`${w}%`} height={28} fill={g.color} opacity={0.85} />;
-        })}
+        {bars.map((b) => (
+          <rect key={b.key} x={`${b.x}%`} y={0} width={`${b.w}%`} height={28} fill={b.color} opacity={0.85} />
+        ))}
         {pct > 80 && <rect x={0} y={0} width="100%" height={28} fill="none" rx={8} stroke={C.red} strokeWidth={2} />}
       </svg>
       <div style={{ display: 'flex', gap: 16, marginTop: 8, flexWrap: 'wrap' }}>
@@ -323,7 +326,7 @@ const inputStyle = {
 /* ═══════════════════════════════════════════════════════════════════ */
 /*  MAIN COMPONENT                                                     */
 /* ═══════════════════════════════════════════════════════════════════ */
-export default function AgentMemory({ onNav }) {
+export default function AgentMemory() {
   const [memories, setMemories] = useState(loadMemories);
   const [activeTab, setActiveTab] = useState('Short-term');
   const [search, setSearch] = useState('');

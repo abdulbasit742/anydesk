@@ -682,6 +682,53 @@ function ExportCenter({ activeModels, allMessages, onToast }) {
 
 // ─── AGENT HUB COMPONENT ─────────────────────────────────────────────────────
 
+const BUILTIN_AGENTS = [
+  {
+    id: "agent-code-reviewer",
+    name: "Code Reviewer",
+    emoji: "🔍",
+    specialty: "Static analysis, security scans & architecture audit",
+    color: "#10b981",
+    tags: ["Security", "Audit", "Code"],
+    status: "ready",
+    prompts: ["Audit codebase security", "Inspect memory leaks", "Check dependencies"],
+    response: "✅ **Code Review Complete**\n\n- All critical security boundaries verified.\n- Zero high-risk injections detected.\n- Production bundle sizes within constraints.",
+  },
+  {
+    id: "agent-test-generator",
+    name: "Test Engineer",
+    emoji: "🧪",
+    specialty: "Unit test generation, coverage analysis & edge cases",
+    color: "#6366f1",
+    tags: ["Testing", "Vitest", "Coverage"],
+    status: "ready",
+    prompts: ["Generate unit tests", "Run regression suite", "Validate mock responses"],
+    response: "🧪 **Test Suite Execution**\n\n- Generated comprehensive unit tests.\n- All 29/29 assertions verified with GREEN pass status.\n- Edge case coverage: 100%.",
+  },
+  {
+    id: "agent-performance-tuner",
+    name: "Performance Tuner",
+    emoji: "⚡",
+    specialty: "Vite build speed, chunk splitting & latency reduction",
+    color: "#f59e0b",
+    tags: ["Performance", "Vite", "React"],
+    status: "ready",
+    prompts: ["Profile render performance", "Analyze bundle chunk size", "Optimize memoization"],
+    response: "⚡ **Performance Optimization Report**\n\n- Vendor chunks separated cleanly (React, JSZip).\n- Build execution time clocked at ~5.5 seconds.\n- Render frame rate steady at 60 FPS.",
+  },
+  {
+    id: "agent-devops-cloud",
+    name: "DevOps Engineer",
+    emoji: "🚀",
+    specialty: "CI/CD pipelines, Docker configs & Git automation",
+    color: "#ec4899",
+    tags: ["DevOps", "Git", "Docker"],
+    status: "ready",
+    prompts: ["Check CI/CD workflows", "Verify container health", "Sync git remotes"],
+    response: "🚀 **DevOps & Deployment Status**\n\n- Git remotes synchronized.\n- Docker and tunnel endpoints active.\n- Production environment healthy.",
+  },
+];
+
 function AgentHub({ onAgentOutput, onToast }) {
   const [connectedAgents, setConnectedAgents] = useState({});
   const [runningAgent, setRunningAgent] = useState(null);
@@ -701,8 +748,7 @@ function AgentHub({ onAgentOutput, onToast }) {
 
   const dispatchAgent = (agent) => {
     if (runningAgent) return;
-    const prompt = agentPrompts[agent.id] || agent.prompts[0];
-    setRunningAgent(agent.id);
+        setRunningAgent(agent.id);
     setAgentOutputs(prev => ({ ...prev, [agent.id]: "" }));
 
     const full = agent.response;

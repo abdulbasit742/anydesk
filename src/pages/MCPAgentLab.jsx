@@ -307,7 +307,7 @@ const S = {
   labTagRow: { display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 16 },
   labTag: (c) => ({ fontSize: 10, fontWeight: 600, color: c, background: `${c}18`, borderRadius: 6, padding: "3px 8px" }),
   connectBtn: (connected, color) => ({
-    padding: "10px 24px", borderRadius: 9, border: "none", fontWeight: 700, fontSize: 13, cursor: "pointer",
+    padding: "10px 24px", borderRadius: 9, fontWeight: 700, fontSize: 13, cursor: "pointer",
     background: connected ? "#1a2a1a" : `linear-gradient(135deg,${color},${color}99)`,
     color: connected ? "#10b981" : "#fff",
     border: connected ? "1px solid #10b981" : "none",
@@ -346,7 +346,7 @@ const S = {
 
 // ─── COMPONENT ────────────────────────────────────────────────────────────────
 
-export default function MCPAgentLab({ onNav }) {
+export default function MCPAgentLab() {
   const [activeTab, setActiveTab] = useState("labs");
   const [selectedLab, setSelectedLab] = useState(AI_LABS[0]);
   const [connectedLabs, setConnectedLabs] = useState({});
@@ -383,6 +383,10 @@ export default function MCPAgentLab({ onNav }) {
     setTimeout(() => setToast({ show: false, msg: "" }), 2500);
   }, []);
 
+  const appendLog = useCallback((type, text) => {
+    setMcpLog(prev => [...prev, { type, text, ts: new Date().toLocaleTimeString() }]);
+  }, []);
+
   // Attempt to ping MCP server
   useEffect(() => {
     fetch(`${MCP_SERVER}/status`, { signal: AbortSignal.timeout(1500) })
@@ -394,16 +398,12 @@ export default function MCPAgentLab({ onNav }) {
         setMcpServerUp(false);
         appendLog("warn", "⚠ MCP Server offline — run: node mcp-server/index.js");
       });
-  }, []);
+  }, [appendLog]);
 
   // Auto-scroll console
   useEffect(() => {
     if (consoleRef.current) consoleRef.current.scrollTop = consoleRef.current.scrollHeight;
   }, [mcpLog]);
-
-  const appendLog = (type, text) => {
-    setMcpLog(prev => [...prev, { type, text, ts: new Date().toLocaleTimeString() }]);
-  };
 
   const toggleLabConnect = (labId) => {
     const lab = AI_LABS.find(l => l.id === labId);
@@ -504,7 +504,7 @@ export default function MCPAgentLab({ onNav }) {
         const toolName = parts[1];
         const args = parts.slice(2).join(" ");
         let parsedArgs = {};
-        try { parsedArgs = args ? JSON.parse(args) : {}; } catch {}
+        try { parsedArgs = args ? JSON.parse(args) : {}; } catch { /* fallback to empty */ }
         const body = JSON.stringify({ jsonrpc: "2.0", id: 1, method: "tools/call", params: { name: toolName, arguments: parsedArgs } });
         const r = await fetch(`${MCP_SERVER}/rpc`, { method: "POST", body, headers: { "Content-Type": "application/json" } }).then(r => r.json());
         if (r.result) {

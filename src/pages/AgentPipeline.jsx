@@ -1,4 +1,6 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+let pipelineNodeSeq = 0;
+function generatePipelineNodeId() { return `node_${Date.now()}_${++pipelineNodeSeq}`; }
+import { useState, useCallback } from "react";
 
 // ─── DATA & CONSTANTS ─────────────────────────────────────────────────────────
 
@@ -60,7 +62,7 @@ const S = {
   toast: (v) => ({ position: "fixed", bottom: 24, right: 24, background: "#111122", border: "1px solid rgba(167,139,250,0.3)", borderRadius: 10, padding: "12px 20px", color: "#f0f0f5", fontSize: 13, fontWeight: 600, zIndex: 9999, opacity: v ? 1 : 0, transform: v ? "translateY(0)" : "translateY(12px)", transition: "all 0.25s" }),
 };
 
-export default function AgentPipeline({ onNav }) {
+export default function AgentPipeline() {
   const [nodes, setNodes] = useState(PIPELINE_TEMPLATES[0].nodes);
   const [selectedNode, setSelectedNode] = useState(nodes[0]);
   const [running, setRunning] = useState(false);
@@ -102,7 +104,7 @@ export default function AgentPipeline({ onNav }) {
   const addNode = (type) => {
     const lastNode = nodes[nodes.length - 1];
     const newNode = {
-      id: `node_${Date.now()}`,
+      id: generatePipelineNodeId(),
       type,
       x: lastNode ? lastNode.x + 220 : 50,
       y: 150,
@@ -146,7 +148,7 @@ export default function AgentPipeline({ onNav }) {
         
         {/* Canvas */}
         <div style={S.canvas}>
-          {nodes.map((node, index) => {
+          {nodes.map((node) => {
             const active = selectedNode?.id === node.id;
             return (
               <div

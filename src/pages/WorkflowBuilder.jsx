@@ -1,4 +1,12 @@
-import { useState, useRef, useCallback, useEffect } from "react";
+
+function createWorkflowNode(type, id) {
+  return {
+    id, type, label: NODE_TYPES[type].label, status: "idle",
+    x: 80 + Math.random() * 400, y: 80 + Math.random() * 200,
+    config: type === "ai" ? { model: AI_MODELS[0], prompt: "" } : type === "tool" ? { tool: TOOLS[0] } : type === "transform" ? { transform: TRANSFORMS[0] } : type === "trigger" ? { event: "Manual" } : {},
+  };
+}
+import { useState, useRef, useCallback } from "react";
 
 // ─── WORKFLOW NODE TYPES ───────────────────────────────────────────────────────
 const NODE_TYPES = {
@@ -122,7 +130,7 @@ const S = {
 };
 
 // ─── COMPONENT ────────────────────────────────────────────────────────────────
-export default function WorkflowBuilder({ onNav }) {
+export default function WorkflowBuilder() {
   const [nodes, setNodes] = useState(TEMPLATES[0].nodes.map(n => ({ ...n, status: "idle" })));
   const [edges, setEdges] = useState(TEMPLATES[0].edges);
   const [selectedNode, setSelectedNode] = useState(null);
@@ -150,11 +158,7 @@ export default function WorkflowBuilder({ onNav }) {
 
   const addNode = (type) => {
     const id = genId();
-    const newNode = {
-      id, type, label: NODE_TYPES[type].label, status: "idle",
-      x: 80 + Math.random() * 400, y: 80 + Math.random() * 200,
-      config: type === "ai" ? { model: AI_MODELS[0], prompt: "" } : type === "tool" ? { tool: TOOLS[0] } : type === "transform" ? { transform: TRANSFORMS[0] } : type === "trigger" ? { event: "Manual" } : {},
-    };
+    const newNode = createWorkflowNode(type, id);
     setNodes(prev => [...prev, newNode]);
     setSelectedNode(id);
     addLog("info", `Added ${NODE_TYPES[type].label} node`);

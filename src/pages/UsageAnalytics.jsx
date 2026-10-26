@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 // ─── THEME TOKENS ───────────────────────────────────────────────────────────
 const T = {
@@ -398,7 +398,6 @@ function BarChart({ data }) {
 function DonutChart({ data }) {
   const cx = 120, cy = 110, R = 80, r = 50;
   const [hovered, setHovered] = useState(null);
-  let cumAngle = -Math.PI / 2;
 
   function polarToXY(angle, radius) {
     return { x: cx + radius * Math.cos(angle), y: cy + radius * Math.sin(angle) };
@@ -423,15 +422,17 @@ function DonutChart({ data }) {
     ].join(' ');
   }
 
-  const total = data.reduce((s, d) => s + d.pct, 0);
+  const total = data.reduce((s, d) => s + d.pct, 0) || 1;
+  const slices = data.map((d, i) => {
+    const prevPct = data.slice(0, i).reduce((s, p) => s + p.pct, 0);
+    const startA = -Math.PI / 2 + (prevPct / total) * 2 * Math.PI;
+    const endA = startA + (d.pct / total) * 2 * Math.PI;
+    return { d, i, startA, endA };
+  });
 
   return (
     <svg width="100%" viewBox="0 0 280 220" style={{ overflow: 'visible' }}>
-      {data.map((d, i) => {
-        const angle = (d.pct / total) * 2 * Math.PI;
-        const startA = cumAngle;
-        const endA   = cumAngle + angle;
-        cumAngle = endA;
+      {slices.map(({ d, i, startA, endA }) => {
         const isHov = hovered === i;
         const col = MODEL_COLORS[i % MODEL_COLORS.length];
         return (
@@ -525,7 +526,7 @@ function LatencyHeatmap({ data }) {
                   x={x} y={y} width={CELL_W} height={CELL_H} rx="3"
                   fill={col} opacity={op}
                   style={{ cursor: 'pointer' }}
-                  onMouseEnter={e => setTooltip({ d, h, ms, x, y })}
+                  onMouseEnter={() => setTooltip({ d, h, ms, x, y })}
                   onMouseLeave={() => setTooltip(null)}
                 />
               );
@@ -695,7 +696,7 @@ function Leaderboard({ data }) {
 // ═══════════════════════════════════════════════════════════════════════════
 // MAIN COMPONENT
 // ═══════════════════════════════════════════════════════════════════════════
-export default function UsageAnalytics({ onNav }) {
+export default function UsageAnalytics() {
   const [filter, setFilter] = useState('30 Days');
   const tokenData = getTokenDataForFilter(filter);
 
