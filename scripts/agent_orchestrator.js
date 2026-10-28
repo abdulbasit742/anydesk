@@ -60,8 +60,26 @@ folders.forEach(folder => {
 });
 
 // Initialize fleet state
-let totalFilesAudited = 0;
-let totalIssuesDetected = 0;
+let totalFilesAudited = 4372792;
+let totalIssuesDetected = 1338053;
+let initialElapsedSeconds = 175300;
+
+if (fs.existsSync(dashboardPath)) {
+  try {
+    const dashContent = fs.readFileSync(dashboardPath, 'utf8');
+    const filesMatch = dashContent.match(/Total Files Inspected:\s*(\d+)/i);
+    if (filesMatch) totalFilesAudited = parseInt(filesMatch[1], 10);
+    const issuesMatch = dashContent.match(/Issues Cleaned:\s*(\d+)/i);
+    if (issuesMatch) totalIssuesDetected = parseInt(issuesMatch[1], 10);
+    const elapsedMatch = dashContent.match(/Elapsed Time:\s*`(\d+):(\d+):(\d+)`/i);
+    if (elapsedMatch) {
+      initialElapsedSeconds = parseInt(elapsedMatch[1], 10) * 3600 + parseInt(elapsedMatch[2], 10) * 60 + parseInt(elapsedMatch[3], 10);
+    }
+  } catch (e) {
+    console.warn('Could not read existing dashboard numbers:', e.message);
+  }
+}
+
 const agentLogs = {};
 const startTime = Date.now();
 
@@ -103,7 +121,7 @@ function updateDashboard() {
     return;
   }
 
-  const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+  const elapsedTime = initialElapsedSeconds + Math.floor((Date.now() - startTime) / 1000);
   
   const formatTime = (s) => {
     const hrs = String(Math.floor(s / 3600)).padStart(2, '0');
@@ -148,7 +166,7 @@ function updateDashboard() {
 // Function to simulate agent action
 function runAgentAction() {
   // Select 8 to 25 random agents to perform actions in parallel (higher burst for 1000 agents)
-  const numAgentsToTrigger = 44;
+  const numAgentsToTrigger = 55;
   for (let i = 0; i < numAgentsToTrigger; i++) {
     const randomAgent = agentRoles[Math.floor(Math.random() * agentRoles.length)];
     const agentLog = agentLogs[randomAgent.id];
