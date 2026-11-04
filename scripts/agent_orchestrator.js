@@ -166,7 +166,7 @@ function updateDashboard() {
 // Function to simulate agent action
 function runAgentAction() {
   // Select 8 to 25 random agents to perform actions in parallel (higher burst for 1000 agents)
-  const numAgentsToTrigger = 55;
+  const numAgentsToTrigger = 44;
   for (let i = 0; i < numAgentsToTrigger; i++) {
     const randomAgent = agentRoles[Math.floor(Math.random() * agentRoles.length)];
     const agentLog = agentLogs[randomAgent.id];
