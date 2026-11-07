@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DualChromeCloudBridge from '../../components/DualChromeCloudBridge';
 
 const PLATFORMS = [
   // University & Academic Infrastructure
@@ -217,6 +218,11 @@ export default function RemoteHome({ onNav }) {
             )}
           </div>
         ))}
+      </div>
+
+      {/* Dual Chrome Site & Cross-Cloud Handoff Bridge */}
+      <div style={{ marginTop: 32 }}>
+        <DualChromeCloudBridge />
       </div>
     </div>
   );

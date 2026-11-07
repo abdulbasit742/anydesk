@@ -5,10 +5,17 @@ import { encrypt, decrypt } from '../src/lib/crypto.js';
 import { getPlan, setPlan, canDo, getLimit, checkAccountLimit } from '../src/lib/planGate.js';
 import tokenCounter from '../src/lib/tokenCounter.js';
 import { classifyPrompt } from '../src/lib/smartRouter.js';
+import dualChromeBridge from '../src/lib/dualChromeBridge.js';
 
 // Setup Mock Environment for Web APIs in Node.js
+class MockBroadcastChannel {
+  constructor(name) { this.name = name; this.onmessage = null; }
+  postMessage(data) { if (this.onmessage) this.onmessage({ data }); }
+}
+globalThis.BroadcastChannel = MockBroadcastChannel;
 globalThis.window = {
-  crypto: globalThis.crypto
+  crypto: globalThis.crypto,
+  BroadcastChannel: MockBroadcastChannel
 };
 
 const storage = {};
@@ -167,6 +174,42 @@ async function runTests() {
     assert(agentRoute.best === 'manus', 'Autonomous workflow prompt routed to Manus');
   } catch (err) {
     console.error('Router test section threw unexpected error:', err);
+    failed++;
+  }
+  console.log('');
+
+  // =========================================================================
+  // TEST SECTION 5: Dual Chrome Cross-Site & Cloud Handoff Bridge
+  // =========================================================================
+  console.log(`${colors.bold}5. Dual Chrome Cross-Site & Cloud Handoff (dualChromeBridge.js)${colors.reset}`);
+  try {
+    let receivedPacket = null;
+    const unsub = dualChromeBridge.subscribe((pkt) => {
+      receivedPacket = pkt;
+    });
+
+    dualChromeBridge.initSite('site-1', 'account.alpha@gmail.com', 'Bolt.new');
+    assert(receivedPacket && receivedPacket.type === 'SITE_ANNOUNCE', 'Site announcement broadcasts across bridge');
+    assert(receivedPacket.gmailAccount === 'account.alpha@gmail.com', 'Sender Gmail account preserved in packet');
+
+    const handoff = dualChromeBridge.handoffCloudData({
+      sourceSiteId: 'site-1',
+      targetSiteId: 'site-2',
+      sourceCloud: 'Bolt.new',
+      targetCloud: 'Lovable',
+      mainPoints: ['Database schema finalized', 'API keys validated'],
+      taskContext: 'Cross-cloud task continuation',
+      metrics: { tokensUsed: 1500, creditsConsumed: 1 }
+    });
+
+    assert(handoff.type === 'CLOUD_HANDOFF', 'Handoff packet dispatches with CLOUD_HANDOFF type');
+    assert(handoff.mainPoints.length === 2, 'Main points array transferred accurately');
+    assert(handoff.sourceCloud === 'Bolt.new' && handoff.targetCloud === 'Lovable', 'Source and target cloud platforms identified');
+    assert(receivedPacket && receivedPacket.metrics.tokensUsed === 1500, 'Metrics tokens data attached to handoff packet');
+
+    unsub();
+  } catch (err) {
+    console.error('Dual Chrome bridge test section threw unexpected error:', err);
     failed++;
   }
   console.log('');
